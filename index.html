@@ -6,10 +6,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Minipivovar Tatras</title>
+    <title>Minipivovar TATRAS</title>
 
-    <meta name="description" content="Minipivovar Tatras">
-    <meta name="keywords" content="Minipivovar Tatras, Pivo, Poprad, Tatry, Ubytovanie, Restauracia, Penzion">
+    <meta name="description" content="Minipivovar TATRAS">
+    <meta name="keywords" content="Tatras, Minipivovar Tatras, Minipivovar Poprad, Pivovar, Pivovar Tatrasm, Pivovar Poprad,  Pivo, Beer, Restauracia, Poprad, Tatry, Vysoke Tatry, Hight Tatras, Penzion">
 
     <meta name="robots" content="index,follow">
 
@@ -34,38 +34,521 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
     <!-- javascript Libraries -->
     <script type="text/javascript" src="www/scripts/jquery-1.10.1.min.js"></script>
+    <script src='http://connect.facebook.net/en_US/all.js'></script>
 
-    <link rel="stylesheet" type="text/css" media="all" href="www/css/main.css">
+    <link rel="stylesheet" type="text/css" media="all" href="www/css/hamburger.css">
+    <link rel="stylesheet" type="text/css" media="all" href="www/css/main2.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
 </head>
 
-<body class="bg-2">
+<body class="bg-1">
 
-<div class="overlay">
-    <div class="wrapper">
-        <div class="load-content">
-            <a class="logo-load" href="page.html">
-                <img src="imgs/tatras_logo-bw.png" class="bw" alt="Minipivovar Tatras"/>
-                <img src="imgs/tatras_logo.png" class="color" alt="Minipivovar Tatras"/>
-                <div class="backlight"></div>
-            </a>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/sk_SK/sdk.js#xfbml=1&version=v2.8&appId=167064503379014";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+<div id="first" class="first">
+    <div class="filter">
+            <div class="logo-welcome"></div>
+            <h1 class="welcome-text">Vítajte</h1>
+            <a href="#start" class="scroll"></a>
+    </div>
+
+</div>
+
+<div class="wrapper">
+
+    <div class="left" id="left">
+        <div>
+            <div class="logo">
+                <img src="imgs/tatras_logo.png" alt="Minipivovar Tatras"/>
+            </div>
+
+            <div class="navigation">
+                <nav class="shadow">
+                    <ul class="main-menu">
+                        <li class="active"><a href="#start">Tatras</a></li>
+                        <li><a href="#beer-list">Pivovar</a></li>
+                        <li><a href="#restauracia">Reštaurácia </a></li>
+                        <li><a href="#kontakt">Kontakt</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div>
+                <div class="hours">
+                    <div class="day Monday">
+                        <span>Pondelok</span>
+                        <span class="time1">11:00</span>
+                        <span class="time2">23:00</span>
+                    </div>
+                    <div class="day Tuesday">
+                        <span>Utorok</span>
+                        <span class="time1">11:00</span>
+                        <span class="time2">23:00</span>
+                    </div>
+                    <div class="day Wednesday">
+                        <span>Streda</span>
+                        <span class="time1">11:00</span>
+                        <span class="time2">23:00</span>
+                    </div>
+                    <div class="day Thursday">
+                        <span>&#138;tvrtok</span>
+                        <span class="time1">11:00</span>
+                        <span class="time2">23:00</span>
+                    </div>
+                    <div class="day Friday">
+                        <span>Piatok</span>
+                        <span class="time1">11:00</span>
+                        <span class="time2">01:00</span>
+                    </div>
+                    <div class="day Saturday">
+                        <span>Sobota</span>
+                        <span class="time1">12:00</span>
+                        <span class="time2">01:00</span>
+                    </div>
+                    <div class="day Sunday">
+                        <span>Nedela</span>
+                        <span class="time1">12:00</span>
+                        <span class="time2">23:00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info">
+                <div class="social-contact">
+
+                    <a href="tel:00421948828727" target="_blank">
+                        <img src="imgs/icons/phone.png">
+                    </a>
+                    <a href="mailto:info&#64minipivovartatras&#46sk" class="email" name="email-kontakt" target="_blank">
+                        <img src="imgs/icons/mail.png">
+                    </a>
+
+                    <a href="https://www.facebook.com/minipivovartatras/" name="Facebook" target="_blank">
+                        <img src="imgs/icons/fb.png">
+                    </a>
+
+                    <a href="https://www.google.sk/maps/place/Minipivovar+Tatras/@49.110841,20.0118303,11z/data=!4m8!1m2!2m1!1sminipivovar+tatras!3m4!1s0x473e3a937a825883:0x737d3b4af45f4836!8m2!3d49.0547361!4d20.3021651" target="_blank">
+                        <img src="imgs/icons/location.png">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="fake-left"></div>
+
+    <div class="right">
+
+        <div class="right-content">
+            <!--<div id="mobile-menu"></div>-->
+            <button class="hamburger hamburger--collapse" type="button">
+                      <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                      </span>
+            </button>
+
+            <!--<div class="graphic"></div>-->
+
+            <div class="content-wrapper">
+
+                <section id="start" class="content-main">
+                    <div class="small-line"></div>
+                    <h1>Reštaurácia s domacím a vždy čerstvým jedlom a vlastným nepasterizovaným a nefiltrovaným pivom </h1>
+                    <div class="small-line"></div>
+
+
+                    <div class="content-main">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend eu tortor nec ornare. In
+                            congue mollis lacus in commodo. Vestibulum pulvinar aliquam metus at sagittis. Duis nec maximus
+                            tortor, eget iaculis sapien. Mauris lacinia enim vehicula lorem ullamcorper tempus. Sed mollis eros
+                            augue, ac sagittis dolor rutrum nec. Nunc ultrices libero purus, eget consequat odio tempus cursus.
+                            Sed tellus sapien, pharetra a magna vitae, sodales dignissim nulla.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend eu tortor nec ornare. In
+                            congue mollis lacus in commodo. Vestibulum pulvinar aliquam metus at sagittis. Duis nec maximus
+                            tortor, eget iaculis sapien. Mauris lacinia enim vehicula lorem ullamcorper tempus. Sed mollis eros
+                            augue, ac sagittis dolor rutrum nec. Nunc ultrices libero purus, eget consequat odio tempus cursus.
+                            Sed tellus sapien, pharetra a magna vitae, sodales dignissim nulla.
+                        </p>
+                    </div>
+
+                </section>
+
+                <div class="image">
+                    <img src="imgs/interier.JPG" width="100%" height="auto"/>
+                </div>
+
+                <div class="line"></div>
+
+
+                <div id="beer-list">
+                    <div class="small-line"></div>
+                    <h1>Naše ozajstné Pivo</h1>
+                    <div class="small-line"></div>
+
+                    <div class="content-main">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend eu tortor nec ornare. In
+                            congue mollis lacus in commodo. Vestibulum pulvinar aliquam metus at sagittis. Duis nec maximus
+                            tortor, eget iaculis sapien. Mauris lacinia enim vehicula lorem ullamcorper tempus. Sed mollis eros
+                            augue, ac sagittis dolor rutrum nec. Nunc ultrices libero purus, eget consequat odio tempus cursus.
+                            Sed tellus sapien, pharetra a magna vitae, sodales dignissim nulla.
+                        </p>
+                    </div>
+
+                    <div  class="beer-list">
+
+                        <div class="beer">
+                            <div class="beer-name">
+                                <h3>Leziak 12&#176;</h3>
+                            </div>
+                            <div class="beer-info">
+                                <p>Lorem ipsum pivo bla bla, Lorem ipsum pivo bla bla, Lorem ipsum pivo bla bla</p>
+                            </div>
+                            <div class="beer-foto">
+                                <img src="imgs/pivo/pivo2.JPG" />
+                            </div>
+                        </div>
+                        <div class="beer">
+                            <div class="beer-name">
+                                <h3>IPA 14&#176;</h3>
+                            </div>
+                            <div class="beer-info">
+                                <p>Lorem ipsum pivo bla bla, Lorem ipsum pivo bla bla, Lorem ipsum pivo bla bla</p>
+                            </div>
+                            <div class="beer-foto">
+                                <img src="imgs/pivo/pivo5.JPG" />
+                            </div>
+                        </div>
+                        <div class="beer">
+                            <div class="beer-name">
+                                <h3>Horkac 10&#176;</h3>
+                            </div>
+                            <div class="beer-info">
+                                <p>Lorem ipsum pivo bla bla, Lorem ipsum pivo bla bla, Lorem ipsum pivo bla bla</p>
+                            </div>
+                            <div class="beer-foto">
+                                <img src="imgs/pivo/pivo1.jpg" />
+                            </div>
+                        </div>
+
+                        <div class="beer">
+                            <div class="beer-name bottom">
+                                <h3>Kvasikove 11&#176;</h3>
+                            </div>
+                            <div class="beer-info">
+                                <p>Lorem ipsum pivo bla bla, Lorem ipsum pivo bla bla, Lorem ipsum pivo bla bla</p>
+                            </div>
+                            <div class="beer-foto">
+                                <img src="imgs/pivo/pivo4.JPG" />
+                            </div>
+                        </div>
+                        <div class="beer">
+                            <div class="beer-name bottom">
+                                <h3>Tmave 12&#176;</h3>
+                            </div>
+                            <div class="beer-info">
+                                <p>Lorem ipsum pivo bla bla, Lorem ipsum pivo bla bla, Lorem ipsum pivo bla bla</p>
+                            </div>
+                            <div class="beer-foto">
+                                <img src="imgs/pivo/pivo6.JPG" />
+                            </div>
+                        </div>
+                        <div class="beer">
+                            <div class="beer-name bottom">
+                                <h3>Horkac 10&#176;</h3>
+                            </div>
+                            <div class="beer-info">
+                                <p>Lorem ipsum pivo bla bla, Lorem ipsum pivo bla bla, Lorem ipsum pivo bla bla</p>
+                            </div>
+                            <div class="beer-foto">
+                                <img src="imgs/pivo/pivo3.JPG" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div id="minipivovar" class="content-main">
+                    <div class="small-line"></div>
+                    <h1>Naš Minipivovar</h1>
+                    <div class="small-line"></div>
+
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend eu tortor nec ornare. In
+                        congue mollis lacus in commodo. Vestibulum pulvinar aliquam metus at sagittis. Duis nec maximus
+                        tortor, eget iaculis sapien. Mauris lacinia enim vehicula lorem ullamcorper tempus. Sed mollis eros
+                        augue, ac sagittis dolor rutrum nec. Nunc ultrices libero purus, eget consequat odio tempus cursus.
+                        Sed tellus sapien, pharetra a magna vitae, sodales dignissim nulla.
+                    </p>
+
+                    <div class="food-list">
+
+                        <div class="food-item">
+                            <img src="imgs/varenie/varenie1.jpg" />
+                        </div>
+                        <div class="food-item">
+                            <img src="imgs/varenie/Varenie3.jpg" />
+                        </div>
+                        <div class="food-item">
+                            <img src="imgs/varenie/varenie4.jpg" />
+                        </div>
+                        <div class="food-item">
+                            <img src="imgs/varenie/varenie5.jpg" />
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div id="restauracia" class="content-main">
+                    <div class="small-line"></div>
+                    <h1>Naše chutné Jedlo</h1>
+                    <div class="small-line"></div>
+
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend eu tortor nec ornare. In
+                        congue mollis lacus in commodo. Vestibulum pulvinar aliquam metus at sagittis. Duis nec maximus
+                        tortor, eget iaculis sapien. Mauris lacinia enim vehicula lorem ullamcorper tempus. Sed mollis eros
+                        augue, ac sagittis dolor rutrum nec. Nunc ultrices libero purus, eget consequat odio tempus cursus.
+                        Sed tellus sapien, pharetra a magna vitae, sodales dignissim nulla.
+                    </p>
+
+                    <div class="food-list">
+
+                        <div class="food-item">
+                            <img src="imgs/jedlo/loparik.jpg" />
+                        </div>
+                        <div class="food-item">
+                            <img src="imgs/jedlo/polievka.jpg" />
+                        </div>
+                        <div class="food-item">
+                            <img src="imgs/jedlo/kolacik.jpg" />
+                        </div>
+                        <div class="food-item">
+                            <img src="imgs/jedlo/licka.JPG" />
+                        </div>
+
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend eu tortor nec ornare. In
+                        congue mollis lacus in commodo. Vestibulum pulvinar aliquam metus at sagittis. Duis nec maximus
+                        tortor, eget iaculis sapien. Mauris lacinia enim vehicula lorem ullamcorper tempus. Sed mollis eros
+                        augue, ac sagittis dolor rutrum nec. Nunc ultrices libero purus, eget consequat odio tempus cursus.
+                        Sed tellus sapien, pharetra a magna vitae, sodales dignissim nulla.
+                    </p>
+                    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fminipivovartatras%2Fposts%2F1171911356210177&width=500" width="100%" height="200" style="border:none;overflow:hidden;margin-top:20px;" frameborder="0" allowTransparency="true"></iframe>
+                    </div>
+
+                <div id="kontakt" class="content-kontakt">
+                    <div class="small-line"></div>
+                    <h1>Kontaktujte Nás</h1>
+                    <div class="small-line"></div>
+
+                    <div class="info">
+                        <div class="item">
+                            <p>Minipivovar TATRAS, s.r.o</p>
+                            <p>Bc. Lukáš Vdovjak</p>
+                        </div>
+                        <div class="item">
+                            <p>IČO: 36450308</p>
+                            <p>DIČ: 2021339045</p>
+                        </div>
+                        <div class="item">
+                            <a href="tel:00421948828727">+421 (0) 948828727</a>
+                            <a href="mailto:info&#64minipivovartatras&#46sk" class="email">info@minipivovartatras.sk</a>
+                        </div>
+
+                    </div>
+
+                    <div class="formular">
+                        <form class="form" id="contactform" action="processForm.php" method="post">
+                            <div class="left-form">
+                                <p class="name">
+                                    <label for="name">Meno</label>
+                                    <input type="text" name="name" id="name" tabindex="1" placeholder="Name" required
+                                           autofocus/>
+                                </p>
+
+                                <p class="email">
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email" id="email" tabindex="2" placeholder="email@email.de"
+                                           required/>
+                                </p>
+
+                                <p class="tel">
+                                    <label for="tel">Tel.Cislo</label>
+                                    <input type="tel" name="tel" id="tel" tabindex="3" placeholder="+49 177 8907048"
+                                           required/>
+                                </p>
+
+                            </div>
+                            <div class="right-form">
+                                <p class="message">
+                                    <label for="message">Nachricht</label>
+                                    <textarea name="message" placeholder="..." id="message" required tabindex="4"/></textarea>
+                                </p>
+                                <p class="submit">
+                                    <input class="yellow" type="submit" id="send" value="Senden"/>
+                                </p>
+                            </div>
+
+                            <p id="response"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
-<script>
-    $(document).ready(function() {
-        $('body').delay(1000).queue(function(){
-            $('.logo-load').addClass("loaded");
-            $('.overlay').addClass('fade').clearQueue();
+<!--<div class="last">-->
+    <!--<div class="map">-->
+        <!--<div style="width:100%;max-width:100%;overflow:hidden;height:400px;color:red;"><div id="gmap_display" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=+Námestie+svätého+Egídia+60,+058+01+Poprad&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe></div><a class="google-code" rel="nofollow" href="http://www.szablonypremium.pl" id="enable-map-data">jest tu</a><style>#gmap_display .text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style></div>-->
+        <!--<script src="https://www.szablonypremium.pl/google-maps-authorization.js?id=0b9110ca-0f66-68b1-8766-544fb0992f0a&c=google-code&u=1475691956" defer="defer" async="async"></script>-->
+    <!--</div>-->
+<!--</div>-->
+
+<footer>
+    <b><p>© 2016 Minipivovar TATRAS, s.r.o</p></b>
+    <p>
+        Designed with
+        <span> &#9825; </span>
+        in
+        <a class="flag" href="https://en.wikipedia.org/wiki/Slovakia" title="Slovakia"></a>
+        by
+        <a href="mailto:gresrichard&#64gmail&#46com" class="email" >ECHT TECH</a>
+        <!--Foto by <a href="http://tomasgriger.com/sk/" target="_blank">Tomas Griger</a>-->
+    </p>
+</footer>
+
+<script type="text/javascript">
+    $(function () {
+        $("#mobile-menu").click(function () {
+            var left = $("#left");
+            left.animate({ scrollTop: 0 }, "slow");
+            left.toggleClass('open');
+            return false;
         });
 
-        $('.color').click(function() {
-            $('.overlay').fadeOut('fast');
+        var body = $('body');
+        body.addClass('loaded');
+
+
+        $('a[href*=#]:not([href=#])').click(function() {
+
+            // adding and removing active class
+            $(".main-menu li").removeClass("active");
+            $(this).closest('li').addClass('active');
+
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                if (target.length) {
+                    $('body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+
         });
+
+        $(".hamburger").click(function () {
+            $(this).toggleClass('is-active');
+            var left = $("#left");
+            left.animate({ scrollTop: 0 }, "slow");
+            left.toggleClass('open');
+            return false;
+            return false;
+        });
+
+//        $('a[href^=#]').click(function(e){
+//            var name = $(this).attr('href').substr(1);
+//            var pos = $('a[name='+name+']').offset();
+//            $('body').animate({ scrollTop: pos.top });
+//            e.preventDefault();
+//        });
+
+        $('.map').click(function () {
+            $('.map iframe').css("pointer-events", "auto");
+        });
+
+        $( ".map" ).mouseleave(function() {
+            $('.map iframe').css("pointer-events", "none");
+        });
+
+
+
+        function getWindowHeight() {
+            // get window height, apply to first div
+            var viewportheight;
+
+            if (typeof window.innerWidth != 'undefined')
+            { viewportheight = window.innerHeight }
+
+            // IE6 in standards compliant mode (i.e. with a valid doctype as the first line in the document)
+
+            else if (typeof document.documentElement != 'undefined'
+                    && typeof document.documentElement.clientWidth !=
+                    'undefined' && document.documentElement.clientWidth != 0)
+            {  viewportheight = document.documentElement.clientHeight }
+
+            else{
+                viewportheight = document.getElementsByTagName('body')[0].clientHeight
+            }
+
+            var firstView = document.getElementById("first");
+            firstView.style.height = viewportheight + 'px';
+
+            //alert(viewportheight);
+        }
+        getWindowHeight();
+
+
+        //listen to window resize & resize the first view
+        window.addEventListener('resize', function(event){
+            getWindowHeight();
+        });
+
+
+
+        /// get day name and highlight the day
+        function myFunction() {
+            var d = new Date();
+            var weekday = new Array(7);
+            weekday[0] = "Sunday";
+            weekday[1] = "Monday";
+            weekday[2] = "Tuesday";
+            weekday[3] = "Wednesday";
+            weekday[4] = "Thursday";
+            weekday[5] = "Friday";
+            weekday[6] = "Saturday";
+
+            var n = weekday[d.getDay()];
+            //alert(n);
+
+            $('.' + n).addClass('active-day');
+        }
+        myFunction();
+
+
     });
 </script>
 
