@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Minipivovar Tatras</title>
+
+    <meta name="description" content="Minipivovar Tatras">
+    <meta name="keywords" content="Minipivovar Tatras, Pivo, Poprad, Tatry, Ubytovanie, Restauracia, Penzion">
+
+    <meta name="robots" content="index,follow">
+
+    <meta property="og:url"           content="http://www.minipivovartatras.sk/index.html" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Pivovar Tatras" />
+    <meta property="og:description"   content="Minipivovar Tatras" />
+    <meta property="og:image"         content="W1-539_small.jpg" />
+
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="favicon.ico"/>
+
+    <!-- icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="29x29" href="imgs/icons/tatras_icon-29.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="50x50" href="imgs/icons/tatras_icon-50.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="imgs/icons/tatras_icon-57.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="imgs/icons/tatras_icon-72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="imgs/icons/tatras_icon-114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="imgs/icons/tatras_icon-144.png" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- javascript Libraries -->
+    <script type="text/javascript" src="www/scripts/jquery-1.10.1.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" media="all" href="www/css/main.css">
+</head>
+
+<body class="bg-2">
+
+<div class="overlay">
+    <div class="wrapper">
+        <div class="load-content">
+            <a class="logo-load" href="page.html">
+                <img src="imgs/tatras_logo-bw.png" class="bw" alt="Minipivovar Tatras"/>
+                <img src="imgs/tatras_logo.png" class="color" alt="Minipivovar Tatras"/>
+                <div class="backlight"></div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('body').delay(1000).queue(function(){
+            $('.logo-load').addClass("loaded");
+            $('.overlay').addClass('fade').clearQueue();
+        });
+
+        $('.color').click(function() {
+            $('.overlay').fadeOut('fast');
+        });
+    });
+</script>
+
+</body>
+</html>
