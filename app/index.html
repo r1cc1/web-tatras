@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Minipivovar TATRAS</title>
+
+    <meta name="description" content="Minipivovar TATRAS">
+    <meta name="keywords"
+          content="Tatras, Minipivovar Tatras, Minipivovar Poprad, Pivovar, Pivovar Tatrasm, Pivovar Poprad,  Pivo, Beer, Restauracia, Poprad, Tatry, Vysoke Tatry, Hight Tatras, Penzion">
+
+    <meta name="robots" content="index,follow">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+    <link rel="stylesheet" href="app.css">
+
+
+    <link rel="stylesheet" type="text/css" media="all" href="components/assets/css/hamburger.css">
+    <link rel="stylesheet" type="text/css" media="all" href="components/assets/css/main2.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+
+</head>
+<body>
+<ul class="menu">
+    <li><a class="slovakia scroll-down" href="#!/SVK"></a></li>
+    <li><a class="english scroll-down" href="#!/ENG"></a></li>
+</ul>
+
+
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div ng-view></div>
+
+<div>Angular seed app: v<span app-version></span></div>
+<script src="components/assets/scripts/jquery-1.10.1.min.js"></script>
+<script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="app.js"></script>
+<script src="SVK/SVK.js"></script>
+<script src="ENG/ENG.js"></script>
+
+<script type="text/javascript">
+    $('.scroll-down').click(function(){
+        console.log('test');
+        $("html, body").animate({ scrollTop: $('#start').offset().top }, 1000);
+    });
+
+
+
+
+    $('.map').click(function () {
+        $('.map iframe').css("pointer-events", "auto");
+    });
+
+    $(".map").mouseleave(function () {
+        $('.map iframe').css("pointer-events", "none");
+    });
+
+    /// get day name and highlight the day
+    function myFunction() {
+        var d = new Date();
+        var weekday = new Array(7);
+        weekday[0] = "Sunday";
+        weekday[1] = "Monday";
+        weekday[2] = "Tuesday";
+        weekday[3] = "Wednesday";
+        weekday[4] = "Thursday";
+        weekday[5] = "Friday";
+        weekday[6] = "Saturday";
+
+        var n = weekday[d.getDay()];
+        //alert(n);
+        $('.' + n).addClass('active-day');
+    }
+
+
+
+</script>
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
+
+</body>
+</html>

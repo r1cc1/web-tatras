@@ -1,0 +1,24 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+  display: block;
+  z-index: 999;
+  position: absolute;
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  top: 50%;
+}
+
+
+
+
+.menu > li {
+  display: inline;
+}
+
+
+
