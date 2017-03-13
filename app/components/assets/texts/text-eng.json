@@ -1,0 +1,21 @@
+{
+  "texty":[
+    {
+      "title1": "Uvod-eng ",
+      "mainText1": "text-eng",
+      "mainText2": "text2-eng text2-eng text2-eng text2-eng text2-eng text2-eng text2-eng ",
+      "title2":" About beer-eng  ",
+      "mainText3": "druh piva-eng druh piva-eng druh piva-eng druh piva-eng druh piva-eng druh piva-eng druh piva-eng  ",
+      "mainBrewery":"Minibrewery-eng ",
+      "mainBrewery1":"minipivovar text-eng  minipivovar text-eng  minipivovar text-eng  minipivovar text-eng  minipivovar text-eng  minipivovar text-eng  ",
+      "ourFood":"Our food-eng",
+      "food":"jedlo-eng  jedlo-eng  jedlo-eng  jedlo-eng  jedlo-eng  jedlo-eng  jedlo-eng  jedlo-eng  jedlo-eng  jedlo-eng  jedlo-eng  jedlo-eng  jedlo-eng  ",
+      "foodText":"o jedle-eng o jedle-eng o jedle-eng o jedle-eng o jedle-eng o jedle-eng o jedle-eng o jedle-eng o jedle-eng o jedle-eng o jedle-eng o jedle-eng ",
+      "contact": "Contact-eng ",
+      "beerSpa1": "BeerSpa-eng ",
+      "beerSpatext":"beerSpa text-eng beerSpa text-eng beerSpa text-eng beerSpa text-eng beerSpa text-eng beerSpa text-eng beerSpa text-eng beerSpa text-eng beerSpa text-eng beerSpa text-eng beerSpa text-eng ",
+      "pension1": "Pension-eng ",
+      "pensionText": "pensiontext-eng pensiontext-eng pensiontext-eng pensiontext-eng pensiontext-eng pensiontext-eng pensiontext-eng pensiontext-eng pensiontext-eng pensiontext-eng pensiontext-eng pensiontext-eng "
+    }
+  ]
+}

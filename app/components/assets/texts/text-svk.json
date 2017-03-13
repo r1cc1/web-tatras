@@ -1,0 +1,21 @@
+{
+  "texty":[
+    {
+      "title1": "Uvod-svk ",
+      "mainText1": "text1-svk text1-svk text1-svk text1-svk text1-svk text1-svk text1-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk",
+      "mainText2": "text2-svk text2-svk text2-svk text2-svk text2-svk text2-svk text2-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk",
+      "title2":" O pive-svk",
+      "mainText3": "druh piva druh piva druh piva druh piva druh piva druh piva druh piva druh piva druh piva druh piva druh piva druh piva druh piva druh piva druh piva druh piva",
+      "mainBrewery":"Minipivovar-svk ",
+      "mainBrewery1":"minipivovar text minipivovar text minipivovar text minipivovar text minipivovar text minipivovar text minipivovar text minipivovar text minipivovar text minipivovar text ",
+      "ourFood":"Nase jedlo-svk",
+      "food":"jedlo jedlo jedlo jedlo jedlo jedlo jedlo jedlo jedlo jedlo jedlo jedlo jedlo jedlo jedlo jedlo jedlo jedlo jedlo jedlo jedlo jedlo jedlo jedlo jedlo jedlo jedlo jedlo jedlo jedlo ",
+      "foodText":"o jedle o jedle o jedle o jedle o jedle o jedle o jedle o jedle o jedle o jedle o jedle o jedle o jedle o jedle o jedle o jedle o jedle o jedle o jedle o jedle o jedle o jedle o jedle ",
+      "contact": "Contact",
+      "beerSpa1": "Pivné kúpele-svk",
+      "beerSpatext":"beerSpa text beerSpa text beerSpa text beerSpa text beerSpa text beerSpa text beerSpa text beerSpa text beerSpa text beerSpa text beerSpa text beerSpa text beerSpa text beerSpa text beerSpa text ",
+      "pension1": "Penzion-svk",
+      "pensionText": "pensiontext pensiontext pensiontext pensiontext pensiontext pensiontext pensiontext pensiontext pensiontext pensiontext pensiontext pensiontext pensiontext pensiontext pensiontext pensiontext pensiontext "
+    }
+  ]
+}
