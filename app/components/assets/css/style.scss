@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  background: gray no-repeat center center fixed;
+  background: white no-repeat center center fixed;
   height: 100%;
   position: absolute;
   -webkit-touch-callout: none;
@@ -796,6 +796,8 @@ body {
   div {
     display: table;
     height: 100%;
+    width: 170px;
+    margin: 0 auto;
 
     .logo {
       display: table-row;
@@ -920,7 +922,7 @@ body {
   display: inline-block;
   position: relative;
   background: transparent;
-  width: 210px;
+  width: 190px;
   height: 100%;
 }
 .right {
@@ -976,11 +978,12 @@ nav {
       margin: 0;
       border: 1px solid transparent;
       width: 100%;
-      padding: 5px 0;
+      padding: 0;
 
       a {
+        font-family: 'Merriweather', serif;
         color: #2b2a29;
-        display: block;
+        display: inline-block;
         text-decoration: none;
         text-transform: uppercase;
         font-size: 1.2em;
@@ -992,26 +995,30 @@ nav {
         -ms-transition: all 0.2s;
         -o-transition: all 0.2s;
         transition: all 0.2s;
-        letter-spacing: 4px;
+        letter-spacing: 1px;
+        text-align: right;
+        padding: 3px 7px;
 
         &:hover{
           cursor: pointer;
-        }
-        &:hover {
-          transform: scale(1.2);
-          -webkit-transition: all 0.2s;
-          -moz-transition: all 0.2s;
-          -ms-transition: all 0.2s;
-          -o-transition: all 0.2s;
-          transition: all 0.2s;
+          background: #d6b472;
+          -webkit-transition: all 0.25s;
+          -moz-transition: all 0.25s;
+          -ms-transition: all 0.25s;
+          -o-transition: all 0.25s;
+          transition: all 0.25s;
         }
       }
     }
-    li.active {
+    li {
       color: white;
+      a.active {
+        color: white;
+        background: #c02731;
 
-      a {
-        color: #c02731;
+        &:hover {
+          color: black;
+        }
       }
     }
     li:hover > ul{
@@ -1196,7 +1203,7 @@ form p textarea {
     width: 100%;
     min-height: 100%;
     height: 100%;
-    background: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.8);
     left: 0;
     top: 0;
     z-index: 1;
@@ -1321,7 +1328,7 @@ div.footer .info {
 }
 
 .footer-link a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 
@@ -1466,7 +1473,6 @@ aside {
     }
   }
   .formular {
-    background: #d7b56d;
     padding: 20px;
 
     form {
@@ -1489,7 +1495,7 @@ aside {
       }
       input {
         border: 0;
-        background: white;
+        background: #d7b56d;
         padding: 10px;
         color: #3d3d3d;
         width: 80%;
@@ -1584,15 +1590,15 @@ aside {
       -o-transition: all 1s ease-in-out;
       transition: all 1s ease-in-out;
 
-       p {
-         text-align: center;
-         display: block;
-         padding: 10px;
-         color: black;
-         margin: 0;
-         font-size: 15px;
-         background: rgba(255,255,255,0.8);
-       }
+      p {
+        text-align: center;
+        display: block;
+        padding: 10px;
+        color: black;
+        margin: 0;
+        font-size: 15px;
+        background: rgba(255,255,255,0.8);
+      }
     }
 
     &:hover {
@@ -1738,13 +1744,13 @@ img.overlay-bg {
     display: table-row;
     z-index: 999;
 
-     img {
+    img {
       width: 25%;
       position: relative;
       display: block;
       margin: 0 auto;
-       padding: 20px;
-       z-index: 999;
+      padding: 20px;
+      z-index: 999;
     }
   }
 
@@ -1932,26 +1938,52 @@ img.overlay-bg {
     max-width: 0;
   }
 }
-.slovakia {
-  background-image: url("../imgs/slovakia.svg");
-  display: inline-block;
-  position: relative;
-  width: 75px;
-  height: 75px;
-  margin: 10px;
 
+
+.lang-menu {
+  list-style: none;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+  display: block;
+  z-index: 999;
+  position: absolute;
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  bottom: 50px;
+
+  li {
+    display: inline;
+    margin: 0 20px;
+  }
+
+  .flag {
+    display: inline-block;
+    position: relative;
+    width: 75px;
+    height: 49px;
+    background-size: 100% auto;
+    background-position: center;
+    border-radius: 2px;
+    cursor: pointer;
+
+    &:hover {
+      border-color: #d6b472;
+      transform: scale(1.1);
+      transition: all 0.25s linear;
+    }
+
+    &.slovakia {
+      background-image: url("../imgs/slovakia.svg");
+    }
+    &.english {
+      background-image: url("../imgs/english.svg");
+    }
+  }
 
 }
-.english {
-  background-image: url("../imgs/english.svg");
-  display: inline-block;
-  position: relative;
-  width: 75px;
-  height: 75px;
-  margin: 10px;
 
 
-}
 
 @media only screen and (min-width: 620px) and (max-width: 960px) {
   .beer-list .beer {

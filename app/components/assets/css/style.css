@@ -9,7 +9,7 @@ html {
   padding: 0; }
 
 body {
-  background: gray no-repeat center center fixed;
+  background: white no-repeat center center fixed;
   height: 100%;
   position: absolute;
   -webkit-touch-callout: none;
@@ -34,7 +34,12 @@ body {
   -webkit-backface-visibility: hidden;
   -webkit-user-drag: none;
   -ms-content-zooming: none;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  letter-spacing: 1px;
+  background-color: white;
+  background-image: url("../imgs/clouds.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed; }
   body:before {
     background: rgba(255, 0, 0, 0.8);
     width: 96%;
@@ -474,14 +479,14 @@ html[xmlns] .clearfix {
 
 @font-face {
   font-family: 'eternal';
-  src: url("../../fonts/eternal/eternal_fascination-webfont.eot");
-  src: url("../../fonts/eternal/eternal_fascination-webfont.eot?#iefix") format("embedded-opentype"), url("../../fonts/eternal/eternal_fascination-webfont.woff2") format("woff2"), url("../../fonts/eternal/eternal_fascination-webfont.woff") format("woff"), url("../../fonts/eternal/eternal_fascination-webfont.ttf") format("truetype"), url("../../fonts/eternal/eternal_fascination-webfont.svg#eternal_fascinationregular") format("svg");
+  src: url("../fonts/eternal/eternal_fascination-webfont.eot");
+  src: url("../fonts/eternal/eternal_fascination-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/eternal/eternal_fascination-webfont.woff2") format("woff2"), url("../fonts/eternal/eternal_fascination-webfont.woff") format("woff"), url("../fonts/eternal/eternal_fascination-webfont.ttf") format("truetype"), url("../fonts/eternal/eternal_fascination-webfont.svg#eternal_fascinationregular") format("svg");
   font-weight: normal;
   font-style: normal; }
 @font-face {
   font-family: 'rounded';
-  src: url("../../fonts/rounded/rounded_elegance-webfont.eot");
-  src: url("../../fonts/rounded/rounded_elegance-webfont.eot?#iefix") format("embedded-opentype"), url("../../fonts/rounded/rounded_elegance-webfont.woff2") format("woff2"), url("../../fonts/rounded/rounded_elegance-webfont.woff") format("woff"), url("../../fonts/rounded/rounded_elegance-webfont.ttf") format("truetype"), url("../../fonts/rounded/rounded_elegance-webfont.svg#eternal_fascinationregular") format("svg");
+  src: url("../fonts/rounded/rounded_elegance-webfont.eot");
+  src: url("../fonts/rounded/rounded_elegance-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/rounded/rounded_elegance-webfont.woff2") format("woff2"), url("../fonts/rounded/rounded_elegance-webfont.woff") format("woff"), url("../fonts/rounded/rounded_elegance-webfont.ttf") format("truetype"), url("../fonts/rounded/rounded_elegance-webfont.svg#eternal_fascinationregular") format("svg");
   font-weight: normal;
   font-style: normal; }
 /* line 1, ../../../framework/core/_text.scss */
@@ -500,15 +505,16 @@ h1.center, h2.center, h3.center, h4.center, h5.center, h6.center {
   text-align: center; }
 
 h1 {
-  font-size: 30px;
+  font-family: 'Merriweather', serif;
   color: #c02731;
   margin: 0;
   display: inline-block;
-  line-height: 35px;
+  line-height: 1.5em;
   width: 100%;
   text-align: center;
-  padding-top: 20px;
-  padding-bottom: 10px; }
+  padding-top: 1em;
+  padding-bottom: 1em;
+  font-size: 1.5em; }
 
 h2 {
   font-size: 25px;
@@ -680,17 +686,20 @@ body {
 .left {
   display: block;
   position: fixed;
-  width: 170px;
+  width: 190px;
   height: 100%;
   min-height: 100%;
-  background: #2b2a29;
-  padding: 0 20px;
+  background: transparent;
+  padding: 0 10px;
   overflow: hidden;
   z-index: 98;
-  vertical-align: top; }
+  vertical-align: top;
+  top: 0; }
   .left div {
     display: table;
-    height: 100%; }
+    height: 100%;
+    width: 170px;
+    margin: 0 auto; }
     .left div .logo {
       display: table-row;
       position: relative;
@@ -701,8 +710,7 @@ body {
       .left div .logo img {
         width: 100%;
         position: relative;
-        padding-top: 20px;
-        transform: scale(1.1); }
+        padding-top: 20px; }
     .left div .info {
       display: table-row;
       position: relative;
@@ -710,7 +718,7 @@ body {
       .left div .info p, .left div .info a {
         display: block;
         position: relative;
-        color: white !important;
+        color: #2b2a29 !important;
         text-align: center;
         text-decoration: none;
         font-size: 15px;
@@ -751,13 +759,14 @@ body {
         width: 100%; }
         .left div .hours .day span {
           display: table-cell;
-          width: 33%;
+          width: 36%;
           text-align: left;
-          font-weight: bold;
-          font-size: 12px;
-          color: white;
+          color: #2b2a29;
           margin: 0;
-          padding: 0; }
+          padding: 0;
+          font-size: 0.8em;
+          letter-spacing: 1px;
+          padding: 2px 0; }
         .left div .hours .day span.time1, .left div .hours .day span.time2 {
           text-align: right;
           font-weight: normal; }
@@ -765,9 +774,11 @@ body {
           display: block;
           content: "-";
           position: relative;
-          left: 15px;
+          left: 12px;
           top: 0;
           float: right; }
+        .left div .hours .day.active-day span {
+          color: #c02731 !important; }
     .left div .navigation {
       position: relative;
       display: table-row;
@@ -779,8 +790,8 @@ body {
 .fake-left {
   display: inline-block;
   position: relative;
-  background: white;
-  width: 210px;
+  background: transparent;
+  width: 190px;
   height: 100%; }
 
 .right {
@@ -788,15 +799,22 @@ body {
   position: relative;
   width: 100%;
   min-height: 100%;
-  background: #2b2a29;
-  vertical-align: top; }
+  vertical-align: top;
+  z-index: 3; }
   .right div.right-content {
     display: block;
     position: relative;
-    height: auto; }
+    height: auto;
+    padding-left: 10px; }
   .right .graphic {
-    margin-bottom: -4px;
-    top: -5px; }
+    padding: 20px 0;
+    margin: 0 auto;
+    width: 100%;
+    height: 150px;
+    position: relative;
+    display: block;
+    background: url("../imgs/tatry-silueta.svg") no-repeat;
+    background-size: contain; }
 
 nav {
   color: #2b2a29;
@@ -820,35 +838,40 @@ nav {
       margin: 0;
       border: 1px solid transparent;
       width: 100%;
-      padding: 5px 0; }
+      padding: 0; }
       nav ul.main-menu li a {
-        color: white;
-        display: block;
+        font-family: 'Merriweather', serif;
+        color: #2b2a29;
+        display: inline-block;
         text-decoration: none;
         text-transform: uppercase;
-        font-size: 18px;
-        text-align: center;
+        font-size: 1.2em;
         width: auto;
-        line-height: 26px;
+        line-height: 1.2em;
         vertical-align: middle;
         -webkit-transition: all 0.2s;
         -moz-transition: all 0.2s;
         -ms-transition: all 0.2s;
         -o-transition: all 0.2s;
-        transition: all 0.2s; }
+        transition: all 0.2s;
+        letter-spacing: 1px;
+        text-align: right;
+        padding: 3px 7px; }
         nav ul.main-menu li a:hover {
-          cursor: pointer; }
-        nav ul.main-menu li a:hover {
-          transform: scale(1.2);
-          -webkit-transition: all 0.2s;
-          -moz-transition: all 0.2s;
-          -ms-transition: all 0.2s;
-          -o-transition: all 0.2s;
-          transition: all 0.2s; }
-    nav ul.main-menu li.active {
+          cursor: pointer;
+          background: #d6b472;
+          -webkit-transition: all 0.25s;
+          -moz-transition: all 0.25s;
+          -ms-transition: all 0.25s;
+          -o-transition: all 0.25s;
+          transition: all 0.25s; }
+    nav ul.main-menu li {
       color: white; }
-      nav ul.main-menu li.active a {
-        color: #c02731; }
+      nav ul.main-menu li a.active {
+        color: white;
+        background: #c02731; }
+        nav ul.main-menu li a.active:hover {
+          color: black; }
     nav ul.main-menu li:hover > ul {
       display: table;
       z-index: 3; }
@@ -879,22 +902,21 @@ form p textarea {
   min-width: 95%; }
 
 .bg-1 {
-  background-position: 30% 0%;
+  background-position: 0 0;
   background-size: cover;
   min-height: 100%;
-  background: #2b2a29;
   -webkit-transition: all 3s ease-in-out;
   -moz-transition: all 3s ease-in-out;
   -o-transition: all 3s ease-in-out;
-  transition: all 3s ease-in-out; }
+  transition: all 3s ease-in-out;
+  background-repeat: no-repeat;
+  background-attachment: fixed; }
 
 .bg-2 {
-  background-position: 0 0;
+  background-position: 30% 0%;
+  background-size: cover;
   min-height: 100%;
-  background: url(../../imgs/ta3.jpg);
-  background-size: 100% auto;
-  background-attachment: fixed;
-  background-repeat: no-repeat; }
+  background: url("../../imgs/ta3.jpg"); }
 
 .bg-3 {
   background-position: 30% 0%;
@@ -906,6 +928,93 @@ form p textarea {
   -o-transition: all 10s ease-in-out;
   transition: all 10s ease-in-out; }
 
+.first {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  height: 800px;
+  max-height: 100%;
+  width: auto;
+  z-index: 99;
+  background-color: white;
+  background-image: url("../imgs/clouds.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center top; }
+  .first .filter {
+    position: relative;
+    display: block;
+    min-height: 100%;
+    margin: 0 auto;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.3); }
+  .first .logo-welcome {
+    display: block;
+    position: relative;
+    top: 150px;
+    height: 250px;
+    width: 250px;
+    margin: 0 auto;
+    background-image: url("../imgs/tatras_logo.png");
+    background-repeat: no-repeat;
+    background-size: contain; }
+  .first h1.welcome-text {
+    color: white;
+    position: absolute;
+    font-size: 3em;
+    bottom: 50px;
+    text-align: center; }
+  .first a.scroll {
+    display: block;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 20px;
+    background-image: url(../imgs/icons/angle-arrow-down-white.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out; }
+    .first a.scroll:hover {
+      background-image: url(../imgs/icons/angle-arrow-down.svg);
+      -webkit-transition: all 1s ease-in-out;
+      -moz-transition: all 1s ease-in-out;
+      -o-transition: all 1s ease-in-out;
+      transition: all 1s ease-in-out; }
+
+.last {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  height: 300px;
+  max-height: 100%;
+  width: auto;
+  z-index: 99;
+  background-color: white; }
+  .last .filter {
+    position: relative;
+    display: block;
+    min-height: 100%;
+    margin: 0 auto;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.5); }
+
+.graphic {
+  padding: 20px 0;
+  margin: 0 auto;
+  width: 100%;
+  height: 150px;
+  position: relative;
+  display: block;
+  background: url("../imgs/tatry-silueta.svg") no-repeat;
+  background-size: contain; }
+
 .wrapper {
   position: relative;
   display: table;
@@ -914,13 +1023,25 @@ form p textarea {
   max-height: 100%;
   width: auto;
   min-width: 620px;
-  max-width: 1024px; }
+  max-width: 1020px;
+  z-index: 2; }
+  .wrapper::after {
+    display: block;
+    content: "";
+    position: fixed;
+    min-width: 100%;
+    width: 100%;
+    min-height: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    left: 0;
+    top: 0;
+    z-index: 1; }
 
 .content-wrapper {
   display: block;
   position: relative;
   min-height: 100%;
-  background: white;
   min-width: 100%;
   padding: 0;
   overflow: hidden; }
@@ -944,23 +1065,35 @@ form p textarea {
     background: #d7b56d;
     margin: 0 auto; }
 
-.content-footer {
+footer {
   display: block;
   position: relative;
   height: auto;
   width: auto;
-  padding: 10px;
-  background: #2b2a29;
-  border-top: 4px solid #d7b56d; }
-  .content-footer p {
+  padding: 40px 0;
+  z-index: 999; }
+  footer p {
     display: block;
     position: relative;
     margin: 0 auto;
-    color: white;
+    color: #2b2a29;
     text-align: center;
     font-size: 12px;
-    line-height: 20px;
-    padding: 2px 0; }
+    line-height: 20px; }
+  footer a {
+    color: #2b2a29;
+    text-decoration: none; }
+  footer a:hover {
+    cursor: pointer;
+    color: #c02731; }
+  footer a.flag {
+    display: inline-block;
+    position: relative;
+    width: 18px;
+    height: 12px;
+    background: url("../imgs/slovakian-flag.svg") no-repeat;
+    background-size: contain;
+    margin: 0 5px; }
 
 div.push {
   height: 50px; }
@@ -978,10 +1111,11 @@ div.footer .wrap {
   min-width: 960px; }
 
 /******** div.footer *********/
-.footer {
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
-  padding: 10px;
-  background-color: #2b2a29; }
+footer {
+  border-top: 4px solid #d7b56d;
+  background: #3d3d3d; }
+  footer p, footer a {
+    color: white; }
 
 div.footer .info {
   display: table-cell;
@@ -1073,7 +1207,7 @@ aside {
   display: block;
   position: relative;
   top: 0;
-  padding: 20px; }
+  padding: 20px 0; }
   .content-main .food-list {
     display: block;
     position: relative;
@@ -1084,12 +1218,15 @@ aside {
       display: inline-block;
       position: relative;
       height: auto;
-      width: 49%; }
+      width: 48.5%; }
       .content-main .food-list .food-item img {
         display: block;
         position: relative;
         height: auto;
         width: 100%; }
+  .content-main p {
+    font-size: 15px;
+    line-height: 22px; }
 
 .content-kontakt {
   display: block;
@@ -1103,21 +1240,48 @@ aside {
     .content-kontakt .info .item {
       display: table-cell;
       position: relative;
-      padding: 20px; }
+      padding: 20px 0;
+      width: 50%; }
       .content-kontakt .info .item a, .content-kontakt .info .item p {
         display: block;
         padding: 0;
+        padding-bottom: 10px;
         margin: 0;
         color: #2b2a29; }
       .content-kontakt .info .item a:hover {
         cursor: pointer;
         color: #c02731; }
-  .content-kontakt .map {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 300px;
-    overflow: hidden; }
+  .content-kontakt .formular {
+    padding: 20px; }
+    .content-kontakt .formular form {
+      display: table;
+      width: 100%; }
+      .content-kontakt .formular form .left-form,
+      .content-kontakt .formular form .right-form {
+        display: table-cell;
+        width: 50%; }
+        .content-kontakt .formular form .left-form p,
+        .content-kontakt .formular form .right-form p {
+          margin: 0 0 20px 0;
+          padding: 0; }
+          .content-kontakt .formular form .left-form p label,
+          .content-kontakt .formular form .right-form p label {
+            font-weight: normal; }
+      .content-kontakt .formular form input {
+        border: 0;
+        background: #d7b56d;
+        padding: 10px;
+        color: #3d3d3d;
+        width: 80%; }
+
+.map {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden; }
+  .map iframe {
+    pointer-events: none; }
 
 #beer-list {
   padding-top: 20px;
@@ -1134,7 +1298,7 @@ aside {
   .beer-list .beer {
     display: inline-block;
     position: relative;
-    width: 32.8%;
+    width: 32.5%;
     height: auto;
     border: 4px solid white;
     margin-left: -4px;
@@ -1168,8 +1332,7 @@ aside {
         text-transform: uppercase;
         text-align: center !important;
         margin: 0 auto;
-        text-shadow: 0 0 3px black;
-        font-family: serif; }
+        text-shadow: 0 0 3px black; }
     .beer-list .beer .bottom {
       top: 80% !important; }
     .beer-list .beer .beer-info {
@@ -1188,17 +1351,15 @@ aside {
         text-align: center;
         display: block;
         padding: 10px;
-        color: white;
-        text-shadow: 0 0 3px black;
-        font-weight: bold;
+        color: black;
         margin: 0;
         font-size: 15px;
-        font-family: serif; }
+        background: rgba(255, 255, 255, 0.8); }
     .beer-list .beer:hover .beer-foto {
       cursor: pointer; }
       .beer-list .beer:hover .beer-foto img {
-        -webkit-filter: blur(3px);
-        filter: blur(3px);
+        -webkit-filter: blur(2px);
+        filter: blur(2px);
         -webkit-transition: all 1s ease-in-out;
         -moz-transition: all 1s ease-in-out;
         -o-transition: all 1s ease-in-out;
@@ -1232,7 +1393,7 @@ img.overlay-bg {
   top: 0;
   min-height: 100%;
   min-width: 100%;
-  background: white; }
+  background: #6f6f6f; }
   .overlay.fade {
     background: rgba(111, 111, 111, 0.1);
     -webkit-transition: all 5s ease-in-out;
@@ -1333,9 +1494,7 @@ img.overlay-bg {
       .content .hours .day span {
         display: table-cell;
         width: 33%;
-        text-align: left;
-        font-weight: bold;
-        font-size: 20px; }
+        text-align: left; }
       .content .hours .day span.time1, .content .hours .day span.time2 {
         text-align: right;
         font-weight: normal; }
@@ -1386,6 +1545,9 @@ img.overlay-bg {
   .content #container div {
     position: absolute; }
 
+.hamburger {
+  display: none; }
+
 @media only screen and (min-width: 320px) and (max-width: 620px) {
   h1 {
     font-size: 25px;
@@ -1401,7 +1563,13 @@ img.overlay-bg {
       .wrapper .left.open {
         left: 0;
         -webkit-transition: all 1s;
-        transition: all 1s; }
+        transition: all 1s;
+        box-shadow: 0 0 100px 10px #afafaf; }
+    .wrapper.open {
+      left: 0;
+      -webkit-transition: all 1s;
+      transition: all 1s;
+      box-shadow: 0 0 100px 10px #afafaf; }
     .wrapper .fake-left {
       width: 0; }
     .wrapper #mobile-menu {
@@ -1450,7 +1618,42 @@ img.overlay-bg {
     position: relative;
     height: auto;
     width: 48%;
-    border-right: 4px solid white; } }
+    border-right: 4px solid white; }
+
+  .content-wrapper {
+    max-width: 0; } }
+.lang-menu {
+  list-style: none;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+  display: block;
+  z-index: 999;
+  position: absolute;
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  bottom: 50px; }
+  .lang-menu li {
+    display: inline;
+    margin: 0 20px; }
+  .lang-menu .flag {
+    display: inline-block;
+    position: relative;
+    width: 75px;
+    height: 49px;
+    background-size: 100% auto;
+    background-position: center;
+    border-radius: 2px;
+    cursor: pointer; }
+    .lang-menu .flag:hover {
+      border-color: #d6b472;
+      transform: scale(1.1);
+      transition: all 0.25s linear; }
+    .lang-menu .flag.slovakia {
+      background-image: url("../imgs/slovakia.svg"); }
+    .lang-menu .flag.english {
+      background-image: url("../imgs/english.svg"); }
+
 @media only screen and (min-width: 620px) and (max-width: 960px) {
   .beer-list .beer {
     width: 48.9%; }
@@ -1460,6 +1663,9 @@ img.overlay-bg {
     margin-bottom: -25px; }
 
   .beer-list .beer .beer-name h3 {
-    font-size: 20px; } }
+    font-size: 20px; }
 
-/*# sourceMappingURL=main.css.map */
+  .hamburger {
+    display: inline-block; } }
+
+/*# sourceMappingURL=style.css.map */
