@@ -4,12 +4,12 @@ angular.module('myApp.ENG', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/ENG', {
-    templateUrl: 'ENG/ENG.html',
-    controller: 'View2Ctrl'
+    templateUrl: 'SVK/SVK.html',
+    controller: 'engCtrl'
   });
 }])
 
-.controller('View2Ctrl', [function() {
+.controller('engCtrl', [function() {
     function loadJSON(callback) {
         var xobj = new XMLHttpRequest();
         xobj.overrideMimeType("application/json");
@@ -35,10 +35,10 @@ angular.module('myApp.ENG', ['ngRoute'])
         var food = $('#food');
         var foodText = $('#food-text');
         var contact = $('#contact');
-        var beerSpa1 = $('#beer-spa1')
-        var beerSpatext = $('#beer-spatext')
-        var pension1 = $ ('#pension1')
-        var pensionText = $('#pension-text')
+        var beerSpa1 = $('#beer-spa1');
+        var beerSpatext = $('#beer-spatext');
+        var pension1 = $ ('#pension1');
+        var pensionText = $('#pension-text');
 
         loadJSON(function(response) {
             // Parse JSON string into object

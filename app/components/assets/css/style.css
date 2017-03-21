@@ -505,16 +505,19 @@ h1.center, h2.center, h3.center, h4.center, h5.center, h6.center {
   text-align: center; }
 
 h1 {
-  font-family: 'Merriweather', serif;
+  font-family: 'Playfair Display', serif;
   color: #c02731;
   margin: 0;
   display: inline-block;
   line-height: 1.5em;
   width: 100%;
   text-align: center;
-  padding-top: 1em;
+  padding-top: 2em;
   padding-bottom: 1em;
   font-size: 1.5em; }
+  h1.main-title {
+    font-size: 3em;
+    color: white; }
 
 h2 {
   font-size: 25px;
@@ -689,9 +692,8 @@ body {
   width: 190px;
   height: 100%;
   min-height: 100%;
-  background: transparent;
+  background: #2b2a29;
   padding: 0 10px;
-  overflow: hidden;
   z-index: 98;
   vertical-align: top;
   top: 0; }
@@ -748,7 +750,27 @@ body {
             transition: all 0.2s; }
     .left div div {
       display: table-row;
-      height: 20%; }
+      height: 10%; }
+      .left div div.call-action {
+        display: table-cell;
+        vertical-align: middle; }
+        .left div div.call-action button {
+          display: inline-block;
+          position: relative;
+          padding: 1em;
+          font-size: 1em;
+          text-align: center;
+          -webkit-appearance: none;
+          background: transparent;
+          width: 100%;
+          border-radius: 3px;
+          text-transform: uppercase;
+          font-family: 'Roboto', sans-serif;
+          border: 2px solid #d6b472;
+          color: #d6b472; }
+          .left div div.call-action button:hover {
+            border-color: white;
+            color: white; }
     .left div .hours {
       display: block;
       position: relative;
@@ -791,7 +813,7 @@ body {
   display: inline-block;
   position: relative;
   background: transparent;
-  width: 190px;
+  width: 210px;
   height: 100%; }
 
 .right {
@@ -801,20 +823,62 @@ body {
   min-height: 100%;
   vertical-align: top;
   z-index: 3; }
+  .right .sub-menu {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 210px;
+    width: 50px;
+    height: 100%;
+    background: white;
+    z-index: 9999; }
+    .right .sub-menu div {
+      display: block;
+      position: absolute;
+      height: 100%;
+      top: 0;
+      width: 100%;
+      background: rgba(214, 180, 114, 0.5); }
+      .right .sub-menu div ul {
+        list-style: none;
+        display: table;
+        height: 100%;
+        width: 100%;
+        table-layout: fixed;
+        padding: 0;
+        margin: 0; }
+        .right .sub-menu div ul li {
+          display: block;
+          height: 25%; }
+          .right .sub-menu div ul li a {
+            display: inline-block;
+            position: relative;
+            text-decoration: none;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1em;
+            color: #2b2a29;
+            text-align: center;
+            text-transform: uppercase;
+            transform: rotate(-90deg);
+            margin: 0 auto;
+            top: 40%;
+            left: -5px; }
+          .right .sub-menu div ul li.active {
+            background: #d6b472; }
   .right div.right-content {
     display: block;
     position: relative;
-    height: auto;
-    padding-left: 10px; }
+    height: auto; }
   .right .graphic {
     padding: 20px 0;
     margin: 0 auto;
     width: 100%;
     height: 150px;
     position: relative;
-    display: block;
-    background: url("../imgs/tatry-silueta.svg") no-repeat;
-    background-size: contain; }
+    display: inline-block;
+    background: url(../imgs/tatry-silueta-biela.svg) no-repeat center;
+    background-size: contain;
+    margin: 0 auto; }
 
 nav {
   color: #2b2a29;
@@ -828,20 +892,24 @@ nav {
     display: table;
     width: 100%; }
     nav ul.main-menu li {
+      color: white;
       display: block;
-      list-style-type: none;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 1em;
+      width: auto;
+      line-height: 1em;
+      vertical-align: middle;
       -webkit-transition: all 0.2s;
       -moz-transition: all 0.2s;
       -ms-transition: all 0.2s;
       -o-transition: all 0.2s;
       transition: all 0.2s;
-      margin: 0;
-      border: 1px solid transparent;
-      width: 100%;
-      padding: 0; }
+      letter-spacing: 1px;
+      text-align: right;
+      padding: 1em; }
       nav ul.main-menu li a {
-        font-family: 'Merriweather', serif;
-        color: #2b2a29;
+        color: white;
         display: inline-block;
         text-decoration: none;
         text-transform: uppercase;
@@ -855,23 +923,15 @@ nav {
         -o-transition: all 0.2s;
         transition: all 0.2s;
         letter-spacing: 1px;
-        text-align: right;
-        padding: 3px 7px; }
+        text-align: right; }
         nav ul.main-menu li a:hover {
-          cursor: pointer;
-          background: #d6b472;
-          -webkit-transition: all 0.25s;
-          -moz-transition: all 0.25s;
-          -ms-transition: all 0.25s;
-          -o-transition: all 0.25s;
-          transition: all 0.25s; }
+          cursor: pointer; }
     nav ul.main-menu li {
       color: white; }
       nav ul.main-menu li a.active {
-        color: white;
-        background: #c02731; }
+        color: #c02731; }
         nav ul.main-menu li a.active:hover {
-          color: black; }
+          color: #d7b56d; }
     nav ul.main-menu li:hover > ul {
       display: table;
       z-index: 3; }
@@ -1023,7 +1083,6 @@ form p textarea {
   max-height: 100%;
   width: auto;
   min-width: 620px;
-  max-width: 1020px;
   z-index: 2; }
   .wrapper::after {
     display: block;
@@ -1033,7 +1092,7 @@ form p textarea {
     width: 100%;
     min-height: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.8);
+    background: transparent;
     left: 0;
     top: 0;
     z-index: 1; }
@@ -1045,6 +1104,16 @@ form p textarea {
   min-width: 100%;
   padding: 0;
   overflow: hidden; }
+  .content-wrapper .content-main {
+    background: transparent; }
+    .content-wrapper .content-main.bg-25 {
+      background: rgba(255, 255, 255, 0.25); }
+    .content-wrapper .content-main.bg-50 {
+      background: rgba(255, 255, 255, 0.5); }
+    .content-wrapper .content-main.bg-75 {
+      background: rgba(255, 255, 255, 0.75); }
+    .content-wrapper .content-main.bg-100 {
+      background: white; }
   .content-wrapper .image {
     display: block;
     position: relative;
@@ -1060,7 +1129,7 @@ form p textarea {
   .content-wrapper .small-line {
     display: block;
     position: relative;
-    width: 25%;
+    width: 50%;
     height: 2px;
     background: #d7b56d;
     margin: 0 auto; }
@@ -1113,7 +1182,7 @@ div.footer .wrap {
 /******** div.footer *********/
 footer {
   border-top: 4px solid #d7b56d;
-  background: #3d3d3d; }
+  background: #2b2a29; }
   footer p, footer a {
     color: white; }
 
@@ -1207,7 +1276,7 @@ aside {
   display: block;
   position: relative;
   top: 0;
-  padding: 20px 0; }
+  padding: 0 25px 25px 50px; }
   .content-main .food-list {
     display: block;
     position: relative;
@@ -1653,6 +1722,69 @@ img.overlay-bg {
       background-image: url("../imgs/slovakia.svg"); }
     .lang-menu .flag.english {
       background-image: url("../imgs/english.svg"); }
+
+.actions {
+  display: table;
+  position: relative;
+  padding-top: 100px;
+  width: initial;
+  margin: 0 auto; }
+  .actions a.btn {
+    display: inline-block;
+    position: relative;
+    font-size: 1em;
+    padding: 1em 2em;
+    border: 2px solid;
+    border-radius: 3px;
+    color: white;
+    margin: 0 1em;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    -webkit-transition: all 0.25s linear;
+    -moz-transition: all 0.25s linear;
+    -ms-transition: all 0.25s linear;
+    -o-transition: all 0.25s linear;
+    transition: all 0.25s linear; }
+    .actions a.btn.book-table:before {
+      content: '';
+      display: inline-block;
+      position: relative;
+      width: 20px;
+      height: 20px;
+      float: left;
+      background: url("../imgs/icons/icon-restaurant.svg") no-repeat center;
+      background-size: 100% auto;
+      margin-right: 25px; }
+    .actions a.btn.book-room:before {
+      content: '';
+      display: inline-block;
+      position: relative;
+      width: 20px;
+      height: 20px;
+      float: left;
+      background: url("../imgs/icons/icon-pension.svg") no-repeat center;
+      background-size: 100% auto;
+      margin-right: 25px; }
+    .actions a.btn.book-spa:before {
+      content: '';
+      display: inline-block;
+      position: relative;
+      width: 20px;
+      height: 20px;
+      float: left;
+      background: url("../imgs/icons/icon-spa.svg") no-repeat center;
+      background-size: 100% auto;
+      margin-right: 25px; }
+    .actions a.btn:hover {
+      color: #d6b472;
+      border-color: #d6b472;
+      background: #2b2a29;
+      -webkit-transition: all 0.25s linear;
+      -moz-transition: all 0.25s linear;
+      -ms-transition: all 0.25s linear;
+      -o-transition: all 0.25s linear;
+      transition: all 0.25s linear; }
 
 @media only screen and (min-width: 620px) and (max-width: 960px) {
   .beer-list .beer {
