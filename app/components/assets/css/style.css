@@ -880,6 +880,9 @@ body {
     background-size: contain;
     margin: 0 auto; }
 
+#welcome {
+  background: transparent; }
+
 nav {
   color: #2b2a29;
   width: 100%;
