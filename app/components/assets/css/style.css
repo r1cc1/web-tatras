@@ -478,20 +478,30 @@ html[xmlns] .clearfix {
   height: 1%; }
 
 @font-face {
-  font-family: 'eternal';
-  src: url("../fonts/eternal/eternal_fascination-webfont.eot");
-  src: url("../fonts/eternal/eternal_fascination-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/eternal/eternal_fascination-webfont.woff2") format("woff2"), url("../fonts/eternal/eternal_fascination-webfont.woff") format("woff"), url("../fonts/eternal/eternal_fascination-webfont.ttf") format("truetype"), url("../fonts/eternal/eternal_fascination-webfont.svg#eternal_fascinationregular") format("svg");
+  font-family: 'Playfair Display';
+  src: url("../fonts/Playfair_Display/PlayfairDisplay-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 @font-face {
-  font-family: 'rounded';
-  src: url("../fonts/rounded/rounded_elegance-webfont.eot");
-  src: url("../fonts/rounded/rounded_elegance-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/rounded/rounded_elegance-webfont.woff2") format("woff2"), url("../fonts/rounded/rounded_elegance-webfont.woff") format("woff"), url("../fonts/rounded/rounded_elegance-webfont.ttf") format("truetype"), url("../fonts/rounded/rounded_elegance-webfont.svg#eternal_fascinationregular") format("svg");
+  font-family: 'Roboto';
+  src: url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
-/* line 1, ../../../framework/core/_text.scss */
+@font-face {
+  font-family: 'Roboto-light';
+  src: url("../fonts/Roboto/Roboto-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Roboto-bold';
+  src: url("../fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+p, span, a {
+  font-family: 'Roboto-light', sans-serif; }
+
 h1, h2, h3, h4, h5, h6 {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 25px;
   line-height: 25px;
   font-weight: normal;
@@ -517,7 +527,7 @@ h1 {
   font-size: 1.5em; }
   h1.main-title {
     font-size: 3em;
-    color: white; }
+    color: black; }
 
 h2 {
   font-size: 25px;
