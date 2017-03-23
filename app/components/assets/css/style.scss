@@ -552,6 +552,7 @@ html[xmlns] .clearfix {
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'Roboto-light';
   src: url('../fonts/Roboto/Roboto-Light.ttf') format('truetype');
@@ -907,47 +908,7 @@ body {
         }
       }
     }
-    .hours {
-      display: block;
-      position: relative;
-      margin: 0 auto;
-      width: 100%;
 
-      .day {
-        display: table;
-        width: 100%;
-
-        span {
-          display: table-cell;
-          width: 36%;
-          text-align: left;
-          color: $color-black;
-          margin: 0;
-          padding: 0;
-          font-size: 0.8em;
-          letter-spacing: 1px;
-          padding: 2px 0;
-
-        }
-        span.time1, span.time2 {
-          text-align: right;
-          font-weight: normal;
-        }
-        span.time1:after{
-          display: block;
-          content: "-";
-          position: relative;
-          left: 12px;
-          top: 0;
-          float: right;
-        }
-        &.active-day {
-          span {
-            color: #c02731 !important;
-          }
-        }
-      }
-    }
     .navigation {
       position: relative;
       display: table-row;
@@ -982,11 +943,20 @@ body {
     display: block;
     position: fixed;
     top: 0;
-    left: 210px;
+    left: 160px;
     width: 50px;
     height: 100%;
     background: white;
     z-index: 9999;
+    transition: all 0.5s linear;
+    -webkit-transition: all 0.5s linear;
+
+    &.open{
+      display: block;
+      left: 210px;
+      transition: all 0.5s linear;
+      -webkit-transition: all 0.5s linear;
+    }
 
     div {
       display: block;
@@ -1336,6 +1306,54 @@ form p textarea {
     &.bg-100 {
       background: rgba(255,255,255,1);
     }
+
+    &.empty{
+      height: 400px;
+    }
+
+    .hours {
+      display: table;
+      position: relative;
+      margin: 0 auto;
+      width: 30%;
+      font-size: 1.5em;
+
+      .day {
+        display: table;
+        width: 100%;
+
+        span {
+          display: table-cell;
+          width: 36%;
+          text-align: left;
+          color: $color-black;
+          margin: 0;
+          padding: 0;
+          font-size: 1em;
+          letter-spacing: 1px;
+          padding: 2px 0;
+
+        }
+        span.time1, span.time2 {
+          text-align: right;
+          font-weight: normal;
+        }
+        span.time1:after{
+
+          display: block;
+          content: "-";
+          position: relative;
+          left: 12px;
+          top: 0;
+          float: right;
+        }
+        &.active-day {
+          span {
+            color: #c02731 !important;
+          }
+        }
+      }
+    }
   }
 
   .image {
@@ -1533,7 +1551,7 @@ aside {
 .content-main {
   display: block;
   position: relative;
-  top: 0;
+  top: 30px;
   padding: 0 25px 25px 50px;
 
   .food-list {

@@ -1,21 +1,68 @@
 {
-  "texty":[
+  "texty": [
     {
-      "title1": "Uvod-eng ",
-      "mainText1": "<p>text-eng</p>",
-      "mainText2": "text2-eng text2-eng text2-eng text2-eng text2-eng text2-eng text2-eng ",
-      "title2":" About beer-eng  ",
-      "mainText3": "druh piva-eng druh piva-eng druh piva-eng druh piva-eng druh piva-eng druh piva-eng druh piva-eng  ",
-      "mainBrewery":"Minibrewery-eng ",
-      "mainBrewery1":"minipivovar text-eng  minipivovar text-eng  minipivovar text-eng  minipivovar text-eng  minipivovar text-eng  minipivovar text-eng  ",
-      "ourFood":"Our food-eng",
-      "food":"jedlo-eng  jedlo-eng  jedlo-eng  jedlo-eng  jedlo-eng  jedlo-eng  jedlo-eng  jedlo-eng  jedlo-eng  jedlo-eng  jedlo-eng  jedlo-eng  jedlo-eng  ",
-      "foodText":"o jedle-eng o jedle-eng o jedle-eng o jedle-eng o jedle-eng o jedle-eng o jedle-eng o jedle-eng o jedle-eng o jedle-eng o jedle-eng o jedle-eng ",
-      "contact": "Contact-eng ",
-      "beerSpa1": "BeerSpa-eng ",
-      "beerSpatext":"beerSpa text-eng beerSpa text-eng beerSpa text-eng beerSpa text-eng beerSpa text-eng beerSpa text-eng beerSpa text-eng beerSpa text-eng beerSpa text-eng beerSpa text-eng beerSpa text-eng ",
-      "pension1": "Pension-eng ",
-      "pensionText": "pensiontext-eng pensiontext-eng pensiontext-eng pensiontext-eng pensiontext-eng pensiontext-eng pensiontext-eng pensiontext-eng pensiontext-eng pensiontext-eng pensiontext-eng pensiontext-eng "
+      "navi": {
+        "option1": "Brewery",
+        "option2": "Restaurant",
+        "opiton3": "Spa",
+        "option4": "Pension"
+      },
+      "home": {
+        "mainTitle": "Welcome",
+        "btnAction": "Call",
+        "openHours": "Open hours",
+        "info": "About brewery",
+        "fotos": "Photos",
+        "contact": "Contact",
+        "subNavi": {
+          "book": "Rezervation",
+          "open": "Open hours",
+          "info": "Info",
+          "photos": "Photos"
+        },
+        "restauracia": {
+          "mainTitle": "Restaurant",
+          "btnAction": "Rezervation table",
+          "openHours": "Open hours",
+          "info": "About restaurant",
+          "fotos": "Photos",
+          "contact": "Contact",
+          "subNavi": {
+            "book": "Rezervtion table",
+            "open": "Open hours",
+            "info": "Info",
+            "photos": "Photos"
+          }
+        },
+        "spa": {
+          "mainTitle": "Spa",
+          "btnAction": "Rezervation spa",
+          "openHours": "Open hours",
+          "info": "About spa",
+          "fotos": "Photos",
+          "contact": "Contact",
+          "subNavi": {
+            "book": "Rezervation spa",
+            "open": "Open hours",
+            "info": "Info",
+            "photos": "Photos"
+          }
+        },
+        "penzion": {
+          "mainTitle": "Pension",
+          "btnAction": "Rezervation rooms",
+          "openHours": "Open hours",
+          "info": "About pension",
+          "fotos": "Photos",
+          "contact": "Contact",
+          "subNavi": {
+            "book": "Rezervation",
+            "open": "Open hours",
+            "info": "Info",
+            "photos": "Photos"
+          }
+        }
+      }
     }
   ]
 }

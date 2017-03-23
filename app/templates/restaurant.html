@@ -1,8 +1,6 @@
-
-<div class="wrapper">
+<div class="wrapper" xmlns="http://www.w3.org/1999/html">
 
     <div ng-include="'templates/left.html'"></div>
-
 
     <div class="fake-left"></div>
 
@@ -11,7 +9,7 @@
             <div>
                 <ul>
                     <li class="active"><a href="#book">Book</a></li>
-                    <li><a href="#open-hours">Open</a></li>
+                    <li><a href="#open">Open</a></li>
                     <li><a href="#info">Info</a> </li>
                     <li><a href="#photos">Photos</a> </li>
                 </ul>
@@ -28,7 +26,11 @@
 
             <div class="content-wrapper">
 
-                <section id="book" class="content-main bg-100">
+                <section id="book" class="content-main bg-0">
+
+                </section>
+
+                <section id="category" class="content-main bg-100">
                     <h1 class="main-title">Restaurant</h1>
                     <div class="small-line"></div>
 
@@ -40,52 +42,59 @@
                         </p>
                     </div>
                 </section>
+                <section id="menu" class="content-main bg-100">
+                    <h1 class="main-title">Menu</h1>
+                    <div class="small-line"></div>
+                    <div class="content-main">
+                        <p class="content-text">
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                        </p>
+                    </div>
+                </section>
 
-                <!--<div class="line"></div>-->
-
-                <section id="open-hours" class="content-main bg-100">
+                <section id="open" class="content-main bg-100">
                     <h1 class="main-title">open-hours</h1>
                     <div class="small-line"></div>
 
                     <div class="content-main">
 
-                        <div>
-                            <div class="hours">
-                                <div class="day Monday">
-                                    <span>Pondelok</span>
-                                    <span class="time1">11:00</span>
-                                    <span class="time2">23:00</span>
-                                </div>
-                                <div class="day Tuesday">
-                                    <span>Utorok</span>
-                                    <span class="time1">11:00</span>
-                                    <span class="time2">23:00</span>
-                                </div>
-                                <div class="day Wednesday">
-                                    <span>Streda</span>
-                                    <span class="time1">11:00</span>
-                                    <span class="time2">23:00</span>
-                                </div>
-                                <div class="day Thursday">
-                                    <span>&#138;tvrtok</span>
-                                    <span class="time1">11:00</span>
-                                    <span class="time2">23:00</span>
-                                </div>
-                                <div class="day Friday">
-                                    <span>Piatok</span>
-                                    <span class="time1">11:00</span>
-                                    <span class="time2">01:00</span>
-                                </div>
-                                <div class="day Saturday">
-                                    <span>Sobota</span>
-                                    <span class="time1">12:00</span>
-                                    <span class="time2">01:00</span>
-                                </div>
-                                <div class="day Sunday">
-                                    <span>Nedela</span>
-                                    <span class="time1">12:00</span>
-                                    <span class="time2">23:00</span>
-                                </div>
+                        <div class="hours">
+                            <div class="day Monday">
+                                <span>Pondelok</span>
+                                <span class="time1">11:00</span>
+                                <span class="time2">23:00</span>
+                            </div>
+                            <div class="day Tuesday">
+                                <span>Utorok</span>
+                                <span class="time1">11:00</span>
+                                <span class="time2">23:00</span>
+                            </div>
+                            <div class="day Wednesday">
+                                <span>Streda</span>
+                                <span class="time1">11:00</span>
+                                <span class="time2">23:00</span>
+                            </div>
+                            <div class="day Thursday">
+                                <span>&#138;tvrtok</span>
+                                <span class="time1">11:00</span>
+                                <span class="time2">23:00</span>
+                            </div>
+                            <div class="day Friday">
+                                <span>Piatok</span>
+                                <span class="time1">11:00</span>
+                                <span class="time2">01:00</span>
+                            </div>
+                            <div class="day Saturday">
+                                <span>Sobota</span>
+                                <span class="time1">12:00</span>
+                                <span class="time2">01:00</span>
+                            </div>
+                            <div class="day Sunday">
+                                <span>Nedela</span>
+                                <span class="time1">12:00</span>
+                                <span class="time2">23:00</span>
                             </div>
                         </div>
                         <p class="content-text">
@@ -96,7 +105,7 @@
                     </div>
                 </section>
 
-                <section id="info" class="content-main bg-100">
+                <section  class="content-main empty bg-50"></section>                <section id="info" class="content-main bg-100">
                     <h1 class="main-title">info</h1>
                     <div class="small-line"></div>
 
@@ -110,7 +119,7 @@
                 </section>
 
                 <section id="photos" class="content-main bg-100">
-                    <h1 class="main-title">info</h1>
+                    <h1 class="main-title">foto</h1>
                     <div class="small-line"></div>
 
                     <div class="content-main">
@@ -134,7 +143,7 @@
                         <!--Foto by <a href="http://tomasgriger.com/sk/" target="_blank">Tomas Griger</a>-->
                     </p>
                 </footer>
-            </div>
+            </section>
         </div>
     </div>
 </div>

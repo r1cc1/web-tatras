@@ -781,36 +781,6 @@ body {
           .left div div.call-action button:hover {
             border-color: white;
             color: white; }
-    .left div .hours {
-      display: block;
-      position: relative;
-      margin: 0 auto;
-      width: 100%; }
-      .left div .hours .day {
-        display: table;
-        width: 100%; }
-        .left div .hours .day span {
-          display: table-cell;
-          width: 36%;
-          text-align: left;
-          color: #2b2a29;
-          margin: 0;
-          padding: 0;
-          font-size: 0.8em;
-          letter-spacing: 1px;
-          padding: 2px 0; }
-        .left div .hours .day span.time1, .left div .hours .day span.time2 {
-          text-align: right;
-          font-weight: normal; }
-        .left div .hours .day span.time1:after {
-          display: block;
-          content: "-";
-          position: relative;
-          left: 12px;
-          top: 0;
-          float: right; }
-        .left div .hours .day.active-day span {
-          color: #c02731 !important; }
     .left div .navigation {
       position: relative;
       display: table-row;
@@ -837,11 +807,18 @@ body {
     display: block;
     position: fixed;
     top: 0;
-    left: 210px;
+    left: 160px;
     width: 50px;
     height: 100%;
     background: white;
-    z-index: 9999; }
+    z-index: 9999;
+    transition: all 0.5s linear;
+    -webkit-transition: all 0.5s linear; }
+    .right .sub-menu.open {
+      display: block;
+      left: 210px;
+      transition: all 0.5s linear;
+      -webkit-transition: all 0.5s linear; }
     .right .sub-menu div {
       display: block;
       position: absolute;
@@ -1127,6 +1104,39 @@ form p textarea {
       background: rgba(255, 255, 255, 0.75); }
     .content-wrapper .content-main.bg-100 {
       background: white; }
+    .content-wrapper .content-main.empty {
+      height: 400px; }
+    .content-wrapper .content-main .hours {
+      display: table;
+      position: relative;
+      margin: 0 auto;
+      width: 30%;
+      font-size: 1.5em; }
+      .content-wrapper .content-main .hours .day {
+        display: table;
+        width: 100%; }
+        .content-wrapper .content-main .hours .day span {
+          display: table-cell;
+          width: 36%;
+          text-align: left;
+          color: #2b2a29;
+          margin: 0;
+          padding: 0;
+          font-size: 1em;
+          letter-spacing: 1px;
+          padding: 2px 0; }
+        .content-wrapper .content-main .hours .day span.time1, .content-wrapper .content-main .hours .day span.time2 {
+          text-align: right;
+          font-weight: normal; }
+        .content-wrapper .content-main .hours .day span.time1:after {
+          display: block;
+          content: "-";
+          position: relative;
+          left: 12px;
+          top: 0;
+          float: right; }
+        .content-wrapper .content-main .hours .day.active-day span {
+          color: #c02731 !important; }
   .content-wrapper .image {
     display: block;
     position: relative;
@@ -1288,7 +1298,7 @@ aside {
 .content-main {
   display: block;
   position: relative;
-  top: 0;
+  top: 30px;
   padding: 0 25px 25px 50px; }
   .content-main .food-list {
     display: block;
