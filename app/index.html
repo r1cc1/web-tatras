@@ -21,12 +21,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="components/bower/html5-boilerplate/dist/css/normalize.css">
     <link rel="stylesheet" href="components/bower/html5-boilerplate/dist/css/main.css">
-    <link rel="stylesheet" href="app.css">
-
 
     <link rel="stylesheet" type="text/css" media="all" href="components/assets/css/hamburger.css">
     <link rel="stylesheet" type="text/css" media="all" href="components/assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
 
 </head>
 <body>
@@ -37,17 +34,6 @@
     your browser</a> to improve your experience.</p>
 <![endif]-->
 
-<!--<div id="first" class="first">-->
-    <!--<div class="filter">-->
-        <!--<div class="logo-welcome"></div>-->
-        <!--<ul class="lang-menu">-->
-            <!--<li><a class="flag slovakia scroll-down" href="#!/SVK"></a></li>-->
-            <!--<li><a class="flag english scroll-down" href="#!/ENG"></a></li>-->
-        <!--</ul>-->
-        <!--<a href="#start" class="scroll"></a>-->
-    <!--</div>-->
-<!--</div>-->
-
 <div ng-view></div>
 
 <script src="components/assets/scripts/jquery-1.10.1.min.js"></script>
@@ -55,46 +41,10 @@
 <script src="components/bower/angular/angular.js"></script>
 <script src="components/bower/angular-route/angular-route.js"></script>
 <script src="app.js"></script>
-<script src="SVK/SVK.js"></script>
-<script src="ENG/ENG.js"></script>
-<script src="pension/pension.js"></script>
-<script src="spa/spa.js"></script>
-<script src="restaurant/restaurant.js"></script>
 
 
 <script type="text/javascript">
-    $('.scroll-down').click(function(){
-        console.log('test');
-        $("html, body").animate({ scrollTop: $('#start').offset().top }, 1000);
-    });
 
-
-
-
-    $('.map').click(function () {
-        $('.map iframe').css("pointer-events", "auto");
-    });
-
-    $(".map").mouseleave(function () {
-        $('.map iframe').css("pointer-events", "none");
-    });
-
-    /// get day name and highlight the day
-    function myFunction() {
-        var d = new Date();
-        var weekday = new Array(7);
-        weekday[0] = "Sunday";
-        weekday[1] = "Monday";
-        weekday[2] = "Tuesday";
-        weekday[3] = "Wednesday";
-        weekday[4] = "Thursday";
-        weekday[5] = "Friday";
-        weekday[6] = "Saturday";
-
-        var n = weekday[d.getDay()];
-        //alert(n);
-        $('.' + n).addClass('active-day');
-    }
 
 
 

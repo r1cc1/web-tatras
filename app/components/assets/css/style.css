@@ -919,7 +919,7 @@ nav {
       -o-transition: all 0.2s;
       transition: all 0.2s;
       letter-spacing: 1px;
-      text-align: right;
+      text-align: center;
       padding: 1em; }
       nav ul.main-menu li a {
         color: white;

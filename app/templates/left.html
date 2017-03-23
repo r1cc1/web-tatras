@@ -1,0 +1,45 @@
+<div class="left" id="left" ng-controller="langCtrl">
+    <div>
+        <div class="logo">
+            <img src="../components/assets/imgs/tatras_logo.png" alt="Minipivovar Tatras"/>
+        </div>
+        <div class="navigation">
+            <nav class="shadow">
+                <ul class="main-menu">
+                    <li class="active"><a href="#/{{lang}}">Minipivovar</a></li>
+                    <li><a href="#/restaurant/{{lang}}">Reštaurácia </a></li>
+                    <li><a href="#/spa/{{lang}}">Pivné kúpele </a> </li>
+                    <li><a href="#/pension/{{lang}}">Penzion </a> </li>
+                    <li>
+                        <p ng-if="lang != 'eng'" ng-click="english()">ENG</p>
+                        <p ng-if="lang != 'svk'" ng-click="slovak()">SVK</p>
+                    <li>
+                </ul>
+            </nav>
+        </div>
+
+        <!--<div class="info">-->
+        <!--<div class="social-contact">-->
+
+        <!--<a href="tel:00421948828727" target="_blank">-->
+        <!--<img src="../components/assets/imgs/icons/phone.png">-->
+        <!--</a>-->
+        <!--<a href="mailto:info&#64minipivovartatras&#46sk" class="email" name="email-kontakt" target="_blank">-->
+        <!--<img src="../components/assets/imgs/icons/mail.png">-->
+        <!--</a>-->
+
+        <!--<a href="https://www.facebook.com/minipivovartatras/" name="Facebook" target="_blank">-->
+        <!--<img src="../components/assets/imgs/icons/fb.png">-->
+        <!--</a>-->
+
+        <!--<a href="https://www.google.sk/maps/place/Minipivovar+Tatras/@49.110841,20.0118303,11z/data=!4m8!1m2!2m1!1sminipivovar+tatras!3m4!1s0x473e3a937a825883:0x737d3b4af45f4836!8m2!3d49.0547361!4d20.3021651" target="_blank">-->
+        <!--<img src="../components/assets/imgs/icons/location.png">-->
+        <!--</a>-->
+        <!--</div>-->
+        <!--</div>-->
+        <div class="call-action">
+            <button class="book" ng-bind="bookingText">button</button>
+        </div>
+
+    </div>
+</div>
