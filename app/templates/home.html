@@ -1,17 +1,20 @@
 <div class="wrapper">
 
+    <!-- include LEFT-NAVI -->
     <div ng-include="'templates/left.html'"></div>
+    <!-- end of LEFT-NAVI include -->
 
     <div class="fake-left"></div>
 
     <div class="right">
-        <div class="sub-menu">
+        <div class="sub-menu" ng-class="{open: subMenuState}">
             <div>
                 <ul>
-                    <li class="active"><a href="#start">start</a></li>
-                    <li><a href="#info">info</a></li>
-                    <li><a href="#photos">photos</a> </li>
-                    <li><a href="#contact">contact</a> </li>
+                    <li du-scrollspy="welcome"><span du-smooth-scroll="welcome">welcome</span></li>
+                    <li du-scrollspy="open"><span du-smooth-scroll="open">Open</span></li>
+                    <li du-scrollspy="history"><span du-smooth-scroll="info">history</span></li>
+                    <li du-scrollspy="photos"><span du-smooth-scroll="photos">Photos</span></li>
+                    <li du-scrollspy="contact"><span du-smooth-scroll="contact">contact</span></li>
                 </ul>
             </div>
         </div>
@@ -26,23 +29,33 @@
 
             <div class="content-wrapper">
 
-                <section id="book" class="content-main bg-0">
-                    <h1 class="main-title">.</h1>
 
-                    <div class="graphic"></div>
+                <section id="book" class="book bg-0" ng-style="{height: displayHeight + 'px'}">
+                    <div class="center-wrap">
+                        <div class="center-content home">
+                            <div class="graphic"></div>
+                            <h1 class="book-title">Minipivovar TATRAS</h1>
+                            <div class="actions">
+                                <a href="#/restaurant/{{lang}}" ng-if="lang != 'eng'" class="btn book-table">{{btnBookTableSvk}}</a>
+                                <a href="#/restaurant/{{lang}}" ng-if="lang != 'svk'" class="btn book-table">{{btnBookTableEng}}</a>
 
-                    <div class="actions">
-                        <a href="!" class="btn book-table">Book Table</a>
-                        <a href="!" class="btn book-room">Book Room</a>
-                        <a href="!" class="btn book-spa">Book SPA</a>
+                                <a href="#/pension/{{lang}}" ng-if="lang != 'eng'" class="btn book-room">{{btnBookRoomSvk}}</a>
+                                <a href="#/pension/{{lang}}" ng-if="lang != 'svk'" class="btn book-room">{{btnBookRoomEng}}</a>
+
+                                <a href="#/spa/{{lang}}" ng-if="lang != 'eng'" class="btn book-spa">{{btnBookSpaSvk}}</a>
+                                <a href="#/spa/{{lang}}" ng-if="lang != 'svk'" class="btn book-spa">{{btnBookSpaEng}}</a>
+                            </div>
+                        </div>
+                        <div class="stick-bottom" du-smooth-scroll="welcome">
+                            <ng-md-icon icon="expand_more" style="display: block; position: relative; left: -50px; fill: white; margin: 0 auto;" size="100"></ng-md-icon>
+                        </div>
                     </div>
                 </section>
 
-                <section id="open" class="content-main bg-100">
-                    <h1 id="main-title">header-svk header-svk header-svk header-svk header-svk header-svk header-svk</h1>
+
+                <section id="welcome" class="content-main bg-100">
+                    <h1 class="main-title">Welcome</h1>
                     <div class="small-line"></div>
-
-
 
                     <div class="content-main">
                         <p id="main-text1">
@@ -56,11 +69,84 @@
                             text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
                         </p>
                     </div>
-                    <!--<img src="../components/assets/imgs/interier.JPG" width="100%" height="auto"/>-->
                 </section>
 
-                <!--<div class="line"></div>-->
 
+                <section id="open" class="content-main bg-100">
+                    <h1 class="main-title">open-hours</h1>
+                    <div class="small-line"></div>
+
+                    <div class="content-main">
+
+                        <div class="hours">
+                            <div class="day Monday">
+                                <span>Pondelok</span>
+                                <span class="time1">11:00</span>
+                                <span class="time2">23:00</span>
+                            </div>
+                            <div class="day Tuesday">
+                                <span>Utorok</span>
+                                <span class="time1">11:00</span>
+                                <span class="time2">23:00</span>
+                            </div>
+                            <div class="day Wednesday">
+                                <span>Streda</span>
+                                <span class="time1">11:00</span>
+                                <span class="time2">23:00</span>
+                            </div>
+                            <div class="day Thursday">
+                                <span>&#138;tvrtok</span>
+                                <span class="time1">11:00</span>
+                                <span class="time2">23:00</span>
+                            </div>
+                            <div class="day Friday">
+                                <span>Piatok</span>
+                                <span class="time1">11:00</span>
+                                <span class="time2">01:00</span>
+                            </div>
+                            <div class="day Saturday">
+                                <span>Sobota</span>
+                                <span class="time1">12:00</span>
+                                <span class="time2">01:00</span>
+                            </div>
+                            <div class="day Sunday">
+                                <span>Nedela</span>
+                                <span class="time1">12:00</span>
+                                <span class="time2">23:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="history" class="content-main bg-100">
+                    <h1 class="main-title">History</h1>
+                    <div class="small-line"></div>
+
+                    <div class="content-main">
+                        <p id="main-text1">
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                        </p>
+                        <p id="main-text2">
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                        </p>
+                    </div>
+                </section>
+
+
+                <section  class="content-main empty bg-beer">
+                </section>
+
+                <section id="photos" class="content-main bg-100">
+                    <h1 class="main-title">Photos</h1>
+                    <div class="small-line"></div>
+
+                    <div class="content-main">
+                    </div>
+                </section>
 
                 <!--<div id="info">-->
                     <!--<h1 id="title2">header-svk header-svk header-svk header-svk header-svk header-svk </h1>-->
@@ -213,86 +299,74 @@
 
 
 
-                <section id="contact" class="content-kontakt bg-100">
-                    <h1 id="contact-text">Kontaktujte Nás</h1>
+                <section id="contact" class="content-main content-kontakt bg-100">
+                    <h1 class="main-title">Contact Us</h1>
                     <div class="small-line"></div>
 
-                    <div class="info">
-                        <div class="item">
-                            <p>Minipivovar TATRAS, s.r.o</p>
-                            <p>Bc. Lukáš Vdovjak</p>
-                        </div>
-                        <div class="item">
-                            <p>IČO: 36450308</p>
-                            <p>DIČ: 2021339045</p>
-                        </div>
-                        <div class="item">
-                            <a href="tel:00421948828727">+421 (0) 948828727</a>
-                            <a href="mailto:info&#64minipivovartatras&#46sk" class="email">info@minipivovartatras.sk</a>
-                        </div>
-
-                    </div>
-
-                    <div class="formular">
-                        <form class="form" id="contactform" action="processForm.php" method="post">
-                            <div class="left-form">
-                                <p class="name">
-                                    <label for="name">Meno</label>
-                                    <input type="text" name="name" id="name" tabindex="1" placeholder="Name" required
-                                           />
-                                </p>
-
-                                <p class="email">
-                                    <label for="email">Email</label>
-                                    <input type="email" name="email" id="email" tabindex="2" placeholder="email@email.de"
-                                           required/>
-                                </p>
-
-                                <p class="tel">
-                                    <label for="tel">Tel.Cislo</label>
-                                    <input type="tel" name="tel" id="tel" tabindex="3" placeholder="+49 177 8907048"
-                                           required/>
-                                </p>
-
+                    <div class="content-main">
+                        <div class="info">
+                            <div class="item">
+                                <p>Minipivovar TATRAS, s.r.o</p>
+                                <p>Bc. Lukáš Vdovjak</p>
                             </div>
-                            <div class="right-form">
-                                <p class="message">
-                                    <label for="message">Nachricht</label>
-                                    <textarea name="message" placeholder="..." id="message" required tabindex="4"/></textarea>
-                                </p>
-                                <p class="submit">
-                                    <input class="yellow" type="submit" id="send" value="Senden"/>
-                                </p>
+                            <div class="item">
+                                <p>IČO: 36450308</p>
+                                <p>DIČ: 2021339045</p>
+                            </div>
+                            <div class="item">
+                                <a href="tel:00421948828727">+421 (0) 948828727</a>
+                                <a href="mailto:info&#64minipivovartatras&#46sk" class="email">info@minipivovartatras.sk</a>
                             </div>
 
-                            <p id="response"></p>
-                        </form>
+                        </div>
+
+                        <div class="formular">
+                            <form class="form" id="contactform" action="processForm.php" method="post">
+                                <div class="left-form">
+                                    <p class="name">
+                                        <label for="name">Meno</label>
+                                        <input type="text" name="name" id="name" tabindex="1" placeholder="Name" required
+                                        />
+                                    </p>
+
+                                    <p class="email">
+                                        <label for="email">Email</label>
+                                        <input type="email" name="email" id="email" tabindex="2" placeholder="email@email.de"
+                                               required/>
+                                    </p>
+
+                                    <p class="tel">
+                                        <label for="tel">Tel.Cislo</label>
+                                        <input type="tel" name="tel" id="tel" tabindex="3" placeholder="+49 177 8907048"
+                                               required/>
+                                    </p>
+
+                                </div>
+                                <div class="right-form">
+                                    <p class="message">
+                                        <label for="message">Nachricht</label>
+                                        <textarea name="message" placeholder="..." id="message" required tabindex="4"/></textarea>
+                                    </p>
+                                    <p class="submit">
+                                        <button>Send</button>
+                                    </p>
+                                </div>
+
+                                <p id="response"></p>
+                            </form>
                     </div>
                 </section>
 
-                <footer>
-                    <b><p>© 2017 Minipivovar TATRAS, s.r.o</p></b>
-                    <p>
-                        Designed with
-                        <span> &#9825; </span>
-                        in
-                        <a class="flag" href="https://en.wikipedia.org/wiki/Slovakia" title="Slovakia"></a>
-                        by
-                        <a href="mailto:gresrichard&#64gmail&#46com" class="email" >ECHT TECH</a>
-                        <!--Foto by <a href="http://tomasgriger.com/sk/" target="_blank">Tomas Griger</a>-->
-                    </p>
-                </footer>
+                <!-- include FOOTER -->
+                <div ng-include="'templates/footer.html'"></div>
+                <!-- end of FOOTER include -->
+
             </div>
         </div>
     </div>
 </div>
 
-<!--<div class="last">-->
-<!--<div class="map">-->
-<!--<div style="width:100%;max-width:100%;overflow:hidden;height:400px;color:red;"><div id="gmap_display" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=+Námestie+svätého+Egídia+60,+058+01+Poprad&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe></div><a class="google-code" rel="nofollow" href="http://www.szablonypremium.pl" id="enable-map-data">jest tu</a><style>#gmap_display .text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style></div>-->
-<!--<script src="https://www.szablonypremium.pl/google-maps-authorization.js?id=0b9110ca-0f66-68b1-8766-544fb0992f0a&c=google-code&u=1475691956" defer="defer" async="async"></script>-->
-<!--</div>-->
-<!--</div>-->
+
 
 
 

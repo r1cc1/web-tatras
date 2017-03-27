@@ -1,11 +1,22 @@
 'use strict';
 
-// Declare app level module which depends on views, and components
 angular.module('myApp', [
-    'ngRoute'
-]).config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
+    'ngRoute',
+    'duScroll',
+    'ngMdIcons',
+    '720kb.datepicker'
+
+])
+    .value('duScrollDuration', 1000)
+    .value('duScrollOffset', 0)
+
+    .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
 
     //$locationProvider.hashPrefix('#');
+
+    $routeProvider.when('/', {
+        controller: 'mainCtrl'
+    });
 
     $routeProvider.when('/svk', {
         templateUrl: 'templates/home.html',
@@ -47,63 +58,29 @@ angular.module('myApp', [
     $routeProvider.otherwise({redirectTo: '/svk'});
 
 }])
+    .controller('mainCtrl', ['$scope','$location', function ($scope, $location) {
+        console.log('init');
 
+        // Submenu State init
+        $scope.subeMenuState = false;
+        // set Language
+        $scope.lang = 'svk';
 
-    .controller('langCtrl', [
-        '$scope',
-        function langCtrl($scope) {
-
+        $scope.english = function () {
+            $scope.lang = 'eng';
+            console.log('$scope.lang ' + $scope.lang);
+        };
+        $scope.slovak = function () {
             $scope.lang = 'svk';
-
-            $scope.english = function () {
-                $scope.lang = 'eng';
-                console.log('$scope.lang ' + $scope.lang);
-            };
-
-            $scope.slovak = function () {
-                $scope.lang = 'svk';
-                console.log('$scope.lang ' + $scope.lang);
-            };
-        }
-    ])
-
-    .controller('homeCtrl', ['$scope','$http', function ($scope, $http) {
-
-        $http.get('../components/assets/texts/text-svk.json')
-            .success(function(data) {
-                $scope.texts = data;
-
-                console.log($scope.texts.home);
-
-                $scope.bookingText = 'Call Us';
-            })
-            .error(function(data) {
-                // log error
-                console.log(error);
-            });
+            console.log('$scope.lang ' + $scope.lang);
+        };
 
 
+        $scope.getClass = function (path) {
+            return ($location.path().substr(0, path.length) === path) ? 'active' : '';
+        };
 
 
-
-
-        $('.scroll-down').click(function () {
-            console.log('test');
-            $("html, body").animate({scrollTop: $('#start').offset().top}, 1000);
-
-            console.log($scope.lang);
-        });
-
-        var map = jQuery('.map');
-        var mapFrame = jQuery('.map iframe');
-
-        map.click(function () {
-            mapFrame.css("pointer-events", "auto");
-        });
-
-        map.mouseleave(function () {
-            mapFrame.css("pointer-events", "none");
-        });
 
         /// get day name and highlight the day
         function myFunction() {
@@ -118,55 +95,14 @@ angular.module('myApp', [
             weekday[6] = "Saturday";
 
             var n = weekday[d.getDay()];
-            //alert(n);
             $('.' + n).addClass('active-day');
+
+            $scope.currentDay = n;
+            console.log($scope.currentDay);
         }
-
-        myFunction();
-
-
-
 
         function getWindowHeight() {
-            // get window height, apply to first div
             var viewportheight;
-            if (typeof window.innerWidth != 'undefined') {
-                viewportheight = window.innerHeight
-            }
-            // IE6 in standards compliant mode (i.e. with a valid doctype as the first line in the document)
-            else if (typeof document.documentElement != 'undefined'
-                && typeof document.documentElement.clientWidth !=
-                'undefined' && document.documentElement.clientWidth != 0) {
-                viewportheight = document.documentElement.clientHeight
-            }
-            else {
-                viewportheight = document.getElementsByTagName('body')[0].clientHeight
-            }
-            var book = document.getElementById("book");
-            book.style.height = viewportheight + 'px';
-        }
-
-        function onScroll(event) {
-            var scrollPos = $(document).scrollTop();
-
-            $('ul.main-menu li a').each(function () {
-                var currLink = $(this);
-                var refElement = $(currLink.attr("href"));
-                if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-                    $('ul.main-menu li a').removeClass("active");
-                    currLink.addClass("active");
-                }
-                else {
-                    currLink.removeClass("active");
-                }
-            });
-        }
-
-        $(window).scroll(function () {
-
-            onScroll();
-            var viewportheight;
-
             if (typeof window.innerWidth != 'undefined') {
                 viewportheight = window.innerHeight
             }
@@ -178,160 +114,134 @@ angular.module('myApp', [
             else {
                 viewportheight = document.getElementsByTagName('body')[0].clientHeight
             }
-            var scroll = $(window).scrollTop();
-
-            if (scroll >= (viewportheight - 100)) {
-                $(".navbar-default").removeClass("navbar-start");
-            } else {
-                $(".navbar-default").addClass("navbar-start");
-            }
-        });
-
-
-        $(document).ready(function () {
-            getWindowHeight();
-        });
-
-        window.addEventListener('resize', function (event) {
-            getWindowHeight();
-        });
-
-    }])
-    .controller('pensionCtrl', ['$scope', function ($scope) {
-
-        $scope.bookingText = 'Book a Room';
-
-
-        function loadJSON(callback) {
-            var xobj = new XMLHttpRequest();
-            xobj.overrideMimeType("application/json");
-            xobj.open('GET', './components/assets/texts/text-svk.json', true); // Replace 'my_data' with the path to your file
-            xobj.onreadystatechange = function () {
-                if (xobj.readyState == 4 && xobj.status == "200") {
-                    // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-                    callback(xobj.responseText);
-                }
-            };
-            xobj.send(null);
-        }
-
-
-        function getWindowHeight() {
-            // get window height, apply to first div
-            var viewportheight;
-            if (typeof window.innerWidth != 'undefined') {
-                viewportheight = window.innerHeight
-            }
-            // IE6 in standards compliant mode (i.e. with a valid doctype as the first line in the document)
-            else if (typeof document.documentElement != 'undefined'
-                && typeof document.documentElement.clientWidth !=
-                'undefined' && document.documentElement.clientWidth != 0) {
-                viewportheight = document.documentElement.clientHeight
-            }
-            else {
-                viewportheight = document.getElementsByTagName('body')[0].clientHeight
-            }
-            var firstView = document.getElementById("first");
-            var startView = document.getElementById("book");
-
-            firstView.style.height = viewportheight + 'px';
-            startView.style.height = viewportheight + 'px';
-
-        }
-
-    }])
-    .controller('restaurantCtrl', ['$scope', function ($scope) {
-
-
-        function getWindowHeight() {
-            // get window height, apply to first div
-            var viewportheight;
-            if (typeof window.innerWidth != 'undefined') {
-                viewportheight = window.innerHeight
-            }
-            // IE6 in standards compliant mode (i.e. with a valid doctype as the first line in the document)
-            else if (typeof document.documentElement != 'undefined'
-                && typeof document.documentElement.clientWidth !=
-                'undefined' && document.documentElement.clientWidth != 0) {
-                viewportheight = document.documentElement.clientHeight
-            }
-            else {
-                viewportheight = document.getElementsByTagName('body')[0].clientHeight
-            }
-            var book = document.getElementById("book");
-
-            book.style.height = viewportheight + 'px';
-
-            $scope.height = viewportheight;
+            $scope.displayHeight = viewportheight;
         }
 
         function onScroll() {
             var scroll = $(window).scrollTop();
-            console.log("scroll: " + scroll);
-
-            console.log($scope.height);
-
-            if(scroll >= $scope.height) {
-                $('.sub-menu').addClass("open");
+            //console.log("scroll: " + scroll);
+            if(scroll >= $scope.displayHeight) {
+                $scope.subMenuState = true;
+                $scope.$apply();
             } else {
-                //remove the background property so it comes transparent again (defined in your css)
-                $('.sub-menu').removeClass("open");
+                $scope.subMenuState = false;
+                $scope.$apply()
             }
         }
 
         $(window).scroll(function () {
-
             onScroll();
-            var scroll = $(window).scrollTop();
-
-            if (scroll >= (viewportheight - 100)) {
-                $(".navbar-default").removeClass("navbar-start");
-            } else {
-                $(".navbar-default").addClass("navbar-start");
-            }
         });
-
 
         $(document).ready(function () {
             getWindowHeight();
+            myFunction();
         });
 
         window.addEventListener('resize', function (event) {
             getWindowHeight();
         });
 
+
     }])
-        .controller('spaCrl', ['$scope', function ($scope) {
-        $scope.bookingText = 'Book SPA';
+    .controller('homeCtrl', ['$scope','$http', function ($scope, $http) {
 
-            function getWindowHeight() {
-                // get window height, apply to first div
-                var viewportheight;
-                if (typeof window.innerWidth != 'undefined') {
-                    viewportheight = window.innerHeight
-                }
-                // IE6 in standards compliant mode (i.e. with a valid doctype as the first line in the document)
-                else if (typeof document.documentElement != 'undefined'
-                    && typeof document.documentElement.clientWidth !=
-                    'undefined' && document.documentElement.clientWidth != 0) {
-                    viewportheight = document.documentElement.clientHeight
-                }
-                else {
-                    viewportheight = document.getElementsByTagName('body')[0].clientHeight
-                }
-                var book = document.getElementById("book");
+        // TEXTS
+        $scope.btnBookSvk = 'Zavolaj Nam';
+        $scope.btnBookEng = 'Call Us';
+        $scope.btnIcon = 'call';
 
-                book.style.height = viewportheight + 'px';
+        $scope.btnBookTableSvk = 'Rezervovat Stol';
+        $scope.btnBookTableEng = 'Book Table';
 
-            }
+        $scope.btnBookRoomSvk = 'Rezervovat Izbu';
+        $scope.btnBookRoomEng = 'Book Room';
 
-            $(document).ready(function () {
-                getWindowHeight();
+        $scope.btnBookSpaSvk = 'Rezervovat SPA';
+        $scope.btnBookSpaEng = 'Book SPA';
+
+
+
+
+        $http.get('../components/assets/texts/text-svk.json')
+            .success(function(data) {
+                $scope.texts = data;
+            })
+            .error(function(data) {
+                // log error
+                console.log(error);
             });
 
-            window.addEventListener('resize', function (event) {
-                getWindowHeight();
-            });
+
+
+        var map = jQuery('.map');
+        var mapFrame = jQuery('.map iframe');
+
+        map.click(function () {
+            mapFrame.css("pointer-events", "auto");
+        });
+
+        map.mouseleave(function () {
+            mapFrame.css("pointer-events", "none");
+        });
+
+    }])
+    .controller('restaurantCtrl', ['$scope', '$window', function ($scope, $window) {
+
+        // first scroll to top
+        $window.scrollTo(0, 0);
+        $scope.btnBookSvk = 'Rezervovat Stol';
+        $scope.btnBookEng = 'Book a Table';
+        $scope.btnIcon = 'local_restaurant';
+
+        $scope.btnBookTableSvk = 'Rezervovat Stol';
+        $scope.btnBookTableEng = 'Book Table';
+
+
+        /// get day name and highlight the day
+        function myFunction() {
+            var d = new Date();
+            var weekday = new Array(7);
+            weekday[0] = "Sunday";
+            weekday[1] = "Monday";
+            weekday[2] = "Tuesday";
+            weekday[3] = "Wednesday";
+            weekday[4] = "Thursday";
+            weekday[5] = "Friday";
+            weekday[6] = "Saturday";
+
+            var n = weekday[d.getDay()];
+            $('.' + n).addClass('active-day');
+
+            $scope.currentDay = n;
+            console.log($scope.currentDay);
+        }
+
+    }])
+    .controller('pensionCtrl', ['$scope', '$window', function ($scope, $window) {
+
+        // first scroll to top
+        $window.scrollTo(0, 0);
+
+        $scope.btnBookSvk = 'Rezervovat Izbu';
+        $scope.btnBookEng = 'Book a Room';
+        $scope.btnIcon = 'hotel';
+
+        $scope.btnBookRoomSvk = $scope.btnBookSvk;
+        $scope.btnBookRoomEng = $scope.btnBookEng;
+
+    }])
+
+    .controller('spaCrl', ['$scope', '$window', function ($scope, $window) {
+
+        // first scroll to top
+        $window.scrollTo(0, 0);
+
+        $scope.btnBookSvk = 'Rezervovat SPA';
+        $scope.btnBookEng = 'Book a SPA';
+        $scope.btnIcon = 'spa';
+
+        $scope.btnBookSpaSvk = $scope.btnBookSvk;
+        $scope.btnBookSpaEng = $scope.btnBookEng;
 
     }]);
-

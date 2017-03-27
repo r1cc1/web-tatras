@@ -1,34 +1,61 @@
-
 <div class="wrapper">
 
+    <!-- include LEFT-NAVI -->
     <div ng-include="'templates/left.html'"></div>
+    <!-- end of LEFT-NAVI include -->
 
     <div class="fake-left"></div>
 
     <div class="right">
-        <div class="sub-menu">
+        <div class="sub-menu" ng-class="{open: subMenuState}">
             <div>
                 <ul>
-                    <li class="active"><a href="#book">Book</a></li>
-                    <li><a href="#open-hours">Open</a></li>
-                    <li><a href="#info">Info</a> </li>
-                    <li><a href="#photos">Photos</a> </li>
+
+                    <li du-scrollspy="book"><span du-smooth-scroll="book">book</span></li>
+                    <li du-scrollspy="category"><span du-smooth-scroll="category">SPA</span></li>
+                    <li du-scrollspy="open"><span du-smooth-scroll="open">Open</span></li>
+                    <li du-scrollspy="info"><span du-smooth-scroll="info">Info</span></li>
+                    <li du-scrollspy="photos"><span du-smooth-scroll="photos">Photos</span></li>
                 </ul>
             </div>
         </div>
 
         <div class="right-content">
 
-            <button class="hamburger hamburger--collapse" type="button">
+            <div class="content-wrapper">
+
+                <button class="hamburger hamburger--collapse" type="button">
                       <span class="hamburger-box">
                         <span class="hamburger-inner"></span>
                       </span>
-            </button>
+                </button>
 
-            <div class="content-wrapper">
+                <section id="book" class="bg-spa book" ng-style="{height: displayHeight + 'px'}">
+                    <div class="center-wrap">
+                        <div class="center-content">
 
-                <section id="book" class="content-main bg-0">
+                            <h1 class="book-title">TATRAS Beer Spa</h1>
+
+                            <div class="book-form">
+                                <datepicker>
+                                    <input ng-model="date" type="date"/>
+                                </datepicker>
+                            </div>
+
+                            <div class="actions">
+                                <a href="#/restaurant/{{lang}}" ng-if="lang != 'eng'" class="btn book-spa">{{btnBookSpaSvk}}</a>
+                                <a href="#/restaurant/{{lang}}" ng-if="lang != 'svk'" class="btn book-spa">{{btnBookSpaEng}}</a>
+                            </div>
+                        </div>
+
+                        <div class="stick-bottom" du-smooth-scroll="category">
+                            <ng-md-icon icon="expand_more"
+                                        style="display: block; position: relative; left: -50px; fill: white; margin: 0 auto;"
+                                        size="100"></ng-md-icon>
+                        </div>
+                    </div>
                 </section>
+
 
                 <section id="category" class="content-main bg-100">
                     <h1 class="main-title">SPA</h1>
@@ -36,14 +63,17 @@
 
                     <div class="content-main">
                         <p class="content-text">
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
                         </p>
                     </div>
                 </section>
 
-                <section id="open-hours" class="content-main bg-100">
+                <section id="open" class="content-main bg-100">
                     <h1 class="main-title">open-hours</h1>
                     <div class="small-line"></div>
 
@@ -91,50 +121,51 @@
                     </div>
                 </section>
 
-                <section  class="content-main empty bg-50"></section>
-
                 <section id="info" class="content-main bg-100">
                     <h1 class="main-title">info</h1>
                     <div class="small-line"></div>
 
                     <div class="content-main">
                         <p class="content-text">
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
                         </p>
                     </div>
                 </section>
 
                 <section id="photos" class="content-main bg-100">
-                    <h1 class="main-title">Foto</h1>
+                    <h1 class="main-title">Photos</h1>
                     <div class="small-line"></div>
 
+                    <div class="content-main">
+                        <p class="content-text">
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                        </p>
+                    </div>
                 </section>
 
-                <footer>
-                    <b><p>© 2017 Minipivovar TATRAS, s.r.o</p></b>
-                    <p>
-                        Designed with
-                        <span> &#9825; </span>
-                        in
-                        <a class="flag" href="https://en.wikipedia.org/wiki/Slovakia" title="Slovakia"></a>
-                        by
-                        <a href="mailto:gresrichard&#64gmail&#46com" class="email" >ECHT TECH</a>
-                        <!--Foto by <a href="http://tomasgriger.com/sk/" target="_blank">Tomas Griger</a>-->
-                    </p>
-                </footer>
-            </div>
-        </div>
+                <section class="content-main empty bg-50"></section>
+
+                <!-- include FOOTER -->
+                <div ng-include="'templates/footer.html'"></div>
+                <!-- end of FOOTER include -->
+
+            </div><!-- content-wraper -->
+        </div><!-- /right-content -->
+
     </div>
 </div>
 
-<!--<div class="last">-->
-<!--<div class="map">-->
-<!--<div style="width:100%;max-width:100%;overflow:hidden;height:400px;color:red;"><div id="gmap_display" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=+Námestie+svätého+Egídia+60,+058+01+Poprad&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe></div><a class="google-code" rel="nofollow" href="http://www.szablonypremium.pl" id="enable-map-data">jest tu</a><style>#gmap_display .text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style></div>-->
-<!--<script src="https://www.szablonypremium.pl/google-maps-authorization.js?id=0b9110ca-0f66-68b1-8766-544fb0992f0a&c=google-code&u=1475691956" defer="defer" async="async"></script>-->
-<!--</div>-->
-<!--</div>-->
+
 
 
 

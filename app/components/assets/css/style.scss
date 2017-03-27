@@ -459,6 +459,9 @@ li {
 $color-black: #2b2a29;
 $color-red: #e0232e;
 $color-beige: #d6b472;
+$color-beige-light: #ebdab9;
+$color-beige-lightest: #f5eddc;
+
 
 .center {
   display: block;
@@ -599,10 +602,10 @@ font-family: 'Playfair Display', serif;
 
   &.main-title {
     font-size: 3em;
-    color: black;
-
-
-
+    line-height: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    color: $color-black;
   }
 }
 
@@ -884,26 +887,33 @@ body {
 
       &.call-action {
         display: table-cell;
-        vertical-align: middle;
+        vertical-align: bottom;
 
         button {
           display: inline-block;
           position: relative;
-          padding: 1em;
+          padding: 2em 1em;
           font-size: 1em;
           text-align: center;
           -webkit-appearance: none;
-          background: transparent;
-          width: 100%;
-          border-radius: 3px;
           text-transform: uppercase;
           font-family: 'Roboto', sans-serif;
-          border: 2px solid $color-beige;
-          color: $color-beige;
+          color: $color-black;
+          font-weight: bold;
+          margin-left: -20px;
+          margin-bottom: -2px;
+          width: 123.5%;
+          background: $color-beige;
+          border: 9px double $color-black;
+          transition: all 0.25s linear;
+          -webkit-transition: all 0.25s linear;
+
 
           &:hover {
-            border-color: white;
-            color: white;
+            background: white;
+            transition: all 0.25s linear;
+            -webkit-transition: all 0.25s linear;
+
           }
         }
       }
@@ -948,14 +958,14 @@ body {
     height: 100%;
     background: white;
     z-index: 9999;
-    transition: all 0.5s linear;
-    -webkit-transition: all 0.5s linear;
+    transition: left 0.5s linear;
+    -webkit-transition: left 0.5s linear;
 
     &.open{
-      display: block;
       left: 210px;
-      transition: all 0.5s linear;
-      -webkit-transition: all 0.5s linear;
+      opacity: 1;
+      transition: left 0.5s linear;
+      -webkit-transition: left 0.5s linear;
     }
 
     div {
@@ -964,46 +974,53 @@ body {
       height: 100%;
       top: 0;
       width: 100%;
-      background: rgba(214, 180, 114, 0.5);
+      background: white;
 
       ul {
         list-style: none;
-        display: table;
+        display: block;
         height: 100%;
         width: 100%;
-        table-layout: fixed;
         padding: 0;
         margin: 0;
 
-        li {
-          display: block;
-          height: 25%;
 
-          a {
-            display: inline-block;
+        li {
+          display: table;
+          height: 20%;
+          width: 50px;
+          table-layout: fixed;
+
+          a, span {
+            display: table-cell;
             position: relative;
             text-decoration: none;
             font-family: 'Roboto', sans-serif;
             font-size: 1em;
+            line-height: 1em;
             color: $color-black;
             text-align: center;
             text-transform: uppercase;
             transform: rotate(-90deg);
             margin: 0 auto;
-            top: 40%;
-            left: -5px;
-          }
+            vertical-align: middle;
+            cursor: pointer;
 
-          &.active {
+          }
+          &:hover {
             background: $color-beige;
+          }
+          &.active {
+            box-shadow: inset -5px -1px 0 -1px $color-beige;
+
+
           }
         }
       }
     }
   }
 
-
-  div.right-content {
+  .right-content {
     display: block;
     position: relative;
     height: auto;
@@ -1019,11 +1036,6 @@ body {
     background-size: contain;
     margin: 0 auto;
   }
-}
-
-
-#welcome {
-  background: transparent;
 }
 
 nav {
@@ -1057,6 +1069,17 @@ nav {
       text-align: center;
       padding: 1em;
 
+      &.language {
+        padding-top: 2em;
+
+        span {
+          cursor: pointer;
+          position: relative;
+          padding-top: 1em;
+          border-top: 1px solid $color-beige-light;
+          color: $color-beige-light;
+        }
+      }
       a {
         color: white;
         display: inline-block;
@@ -1076,23 +1099,13 @@ nav {
 
         &:hover{
           cursor: pointer;
-        }
-      }
-    }
-    li {
-      color: white;
-
-      a.active {
-        color: #c02731;
-
-        &:hover {
           color: #d7b56d;
         }
+
+        &.active {
+          color: $color-red;
+        }
       }
-    }
-    li:hover > ul{
-      display: table;
-      z-index: 3;
     }
   }
 }
@@ -1120,12 +1133,13 @@ form p input {
 
 form p textarea {
   width: auto;
-  min-height: 122px;
-  max-height: 122px;
-  border: 1px solid silver;
+  min-height: 100px;
+  max-height: 150px;
+  border: 0;
   padding: 10px;
   display: inline-block;
   min-width: 95%;
+  background: #ebdab9;
 }
 
 
@@ -1155,6 +1169,51 @@ form p textarea {
   -moz-transition: all 10s ease-in-out;
   -o-transition: all 10s ease-in-out;
   transition: all 10s ease-in-out;
+}
+
+.bg-restaurant {
+  background-color: white;
+  background-image: url("../imgs/interier.JPG");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center top;
+}
+
+.bg-beer {
+  background-color: white;
+  background-image: url("../imgs/pivo/3beers.jpg");
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center top;
+}
+
+.bg-food {
+  background-color: white;
+  background-image: url("../imgs/jedlo/rebra.JPG");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center top;
+}
+
+.bg-spa {
+  background-color: white;
+  background-image: url("../imgs/beer-spa.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center top;
+}
+.bg-pension {
+  background-color: white;
+  background-image: url("../imgs/pension.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center bottom;
 }
 
 .first {
@@ -1292,7 +1351,6 @@ form p textarea {
   overflow: hidden;
 
   .content-main {
-    background: transparent;
 
     &.bg-25 {
       background: rgba(255,255,255,0.25);
@@ -1304,7 +1362,7 @@ form p textarea {
       background: rgba(255,255,255,0.75);
     }
     &.bg-100 {
-      background: rgba(255,255,255,1);
+      background: $color-beige-lightest;
     }
 
     &.empty{
@@ -1355,6 +1413,80 @@ form p textarea {
       }
     }
   }
+  .book {
+    display: table;
+    position: relative;
+    width: 100%;
+
+    .center-wrap {
+      display: table-cell;
+      position: relative;
+      height: 50%;
+      width: 50%;
+      vertical-align: middle;
+
+      .center-content {
+        display: block;
+        position: relative;
+        vertical-align: middle;
+        width: 80%;
+        height: 50%;
+        margin: 0 auto;
+
+        &.home {
+          top: -5em;
+        }
+
+        h1.book-title {
+          color: white;
+          font-size:5em;
+          font-weight: bold;
+          text-shadow: 0 0 1px black;
+          padding: 0.5em 0;
+        }
+
+        .book-form {
+          display: block;
+          position: relative;
+          background: #d6b472;
+          padding: 2em;
+          margin-bottom: 3em;
+          border: 9px double #2b2a29;
+
+          .row {
+            display: table-row;
+
+            label {
+              display: table-cell;
+            }
+
+            input, select {
+              display: table-cell;
+              position: relative;
+              background: white;
+              -webkit-appearance: none;
+              border: 0;
+              border-radius: 0;
+              padding: 1em 2em;
+              font-size: 1em;
+              color: $color-black;
+            }
+          }
+        }
+        &.bg-white {
+          background: white;
+        }
+      }
+
+      .stick-bottom {
+        display: block;
+        position: absolute;
+        width: 100%;
+        bottom: 10px;
+        height: 100px;
+      }
+    }
+  }
 
   .image {
     display: block;
@@ -1386,8 +1518,7 @@ footer {
   position: relative;
   height: auto;
   width: auto;
-
-  padding: 40px 0;
+  padding: 35px 0;
   z-index: 999;
 
   p {
@@ -1416,6 +1547,23 @@ footer {
     background-size: contain;
     margin: 0 5px;
 
+  }
+
+  .copyright {
+    display: table;
+    position: relative;
+    padding: 2px;
+    width: 100%;
+    table-layout: fixed;
+
+    .row {
+      display: table-row;
+
+      .col-md-4 {
+        display: table-cell;
+        width: 33%;
+      }
+    }
   }
 }
 
@@ -1551,8 +1699,7 @@ aside {
 .content-main {
   display: block;
   position: relative;
-  top: 30px;
-  padding: 0 25px 25px 50px;
+  padding: 25px 25px 25px 50px;
 
   .food-list {
     display: block;
@@ -1589,8 +1736,8 @@ aside {
   .info {
     display: table;
     position: relative;
+    padding: 25px 0;
     width: 100%;
-    padding: 20px 0;
 
     .item {
       display: table-cell;
@@ -1612,8 +1759,6 @@ aside {
     }
   }
   .formular {
-    padding: 20px;
-
     form {
       display: table;
       width: 100%;
@@ -1632,11 +1777,11 @@ aside {
           }
         }
       }
-      input {
+      input, textarea {
         border: 0;
-        background: #d7b56d;
+        background: white;
         padding: 10px;
-        color: #3d3d3d;
+        color: $color-black;
         width: 80%;
       }
     }
@@ -2124,18 +2269,19 @@ img.overlay-bg {
 .actions {
   display: table;
   position: relative;
-  padding-top: 100px;
-
-  width: initial;
   margin: 0 auto;
+  width: 110%;
+  left: -1em;
+  top: 1em;
 
-  a.btn {
+  .btn {
     display: inline-block;
     position: relative;
+    font-family: 'Roboto', sans-serif;
     font-size: 1em;
-    padding: 1em 2em;
-    border: 2px solid;
-    border-radius: 3px;
+    font-weight: bold;
+    padding: 2em;
+    border: 7px double;
     color: white;
     margin: 0 1em;
     text-align: center;
@@ -2188,10 +2334,9 @@ img.overlay-bg {
     }
 
     &:hover {
-      color: $color-beige;
+      color: white;
       border-color: $color-beige;
       background: $color-black;
-
       -webkit-transition: all 0.25s linear;
       -moz-transition: all 0.25s linear;
       -ms-transition: all 0.25s linear;

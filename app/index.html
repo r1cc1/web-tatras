@@ -10,7 +10,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Minipivovar TATRAS</title>
+    <title>TATRAS</title>
 
     <meta name="description" content="Minipivovar TATRAS">
     <meta name="keywords"
@@ -18,15 +18,34 @@
 
     <meta name="robots" content="index,follow">
 
+    <meta property="og:url"           content="http://www.minipivovartatras.sk/index.html" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Pivovar Tatras" />
+    <meta property="og:description"   content="Minipivovar Tatras" />
+    <meta property="og:image"         content="W1-539_small.jpg" />
+
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="components/assets/imgs/icons/favicon.ico"/>
+
+    <!-- icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="29x29" href="components/assets/imgs/icons/tatras_icon-29.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="50x50" href="components/assets/imgs/icons/tatras_icon-50.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="components/assets/imgs/icons/tatras_icon-57.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="components/assets/imgs/icons/tatras_icon-72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="components/assets/imgs/icons/tatras_icon-114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="components/assets/imgs/icons/tatras_icon-144.png" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="components/bower/html5-boilerplate/dist/css/normalize.css">
     <link rel="stylesheet" href="components/bower/html5-boilerplate/dist/css/main.css">
 
     <link rel="stylesheet" type="text/css" media="all" href="components/assets/css/hamburger.css">
+    <link rel="stylesheet" type="text/css" media="all" href="components/bower/angular-material-icons/angular-material-icons.css">
+    <link rel="stylesheet" type="text/css" media="all" href="components/bower/angularjs-datepicker/dist/angular-datepicker.min.css">
     <link rel="stylesheet" type="text/css" media="all" href="components/assets/css/style.css">
 
 </head>
-<body>
+<body ng-app="myApp" ng-controller="mainCtrl">
 
 
 <!--[if lt IE 7]>
@@ -38,17 +57,12 @@
 
 <script src="components/assets/scripts/jquery-1.10.1.min.js"></script>
 <script src="components/bower/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
-<script src="components/bower/angular/angular.js"></script>
-<script src="components/bower/angular-route/angular-route.js"></script>
+<script src="components/bower/angular/angular.min.js"></script>
+<script src="components/bower/angular-route/angular-route.min.js"></script>
+<script src="components/bower/angular-scroll/angular-scroll.min.js"></script>
+<script src="components/bower/angular-material-icons/angular-material-icons.min.js"></script>
+<script src="components/bower/angularjs-datepicker/dist/angular-datepicker.min.js"></script>
 <script src="app.js"></script>
-
-
-<script type="text/javascript">
-
-
-
-
-</script>
 
 </body>
 </html>
