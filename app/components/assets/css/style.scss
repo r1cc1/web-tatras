@@ -1448,28 +1448,37 @@ form p textarea {
         .book-form {
           display: block;
           position: relative;
-          background: #d6b472;
+          background: transparent;
           padding: 2em;
           margin-bottom: 3em;
-          border: 9px double #2b2a29;
+          border: 9px double white;
 
           .row {
-            display: table-row;
+            display: table;
+            width: 100%;
 
-            label {
+            .wrap {
               display: table-cell;
-            }
+              width: 33.3%;
+              text-align: center;
 
-            input, select {
-              display: table-cell;
-              position: relative;
-              background: white;
-              -webkit-appearance: none;
-              border: 0;
-              border-radius: 0;
-              padding: 1em 2em;
-              font-size: 1em;
-              color: $color-black;
+              label {
+                display: inline-block;
+                margin: 0 auto;
+              }
+              input, select {
+                display: inline-block;
+                margin: 0 auto;
+                position: relative;
+                background: white;
+                -webkit-appearance: none;
+                border: 0;
+                border-radius: 0;
+                font-size: 1em;
+                color: $color-black;
+                width: 95%;
+                height:45px;
+              }
             }
           }
         }
@@ -1484,6 +1493,7 @@ form p textarea {
         width: 100%;
         bottom: 10px;
         height: 100px;
+        cursor: pointer;
       }
     }
   }
@@ -2270,9 +2280,9 @@ img.overlay-bg {
   display: table;
   position: relative;
   margin: 0 auto;
-  width: 110%;
   left: -1em;
   top: 1em;
+  text-align: -webkit-center;
 
   .btn {
     display: inline-block;
@@ -2345,6 +2355,7 @@ img.overlay-bg {
     }
   }
 }
+
 
 
 

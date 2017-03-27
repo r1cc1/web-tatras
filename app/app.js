@@ -145,6 +145,7 @@ angular.module('myApp', [
 
     }])
     .controller('homeCtrl', ['$scope','$http', function ($scope, $http) {
+        $scope.isHome = true;
 
         // TEXTS
         $scope.btnBookSvk = 'Zavolaj Nam';
@@ -245,3 +246,4 @@ angular.module('myApp', [
         $scope.btnBookSpaEng = $scope.btnBookEng;
 
     }]);
+

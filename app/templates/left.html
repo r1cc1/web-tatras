@@ -50,11 +50,20 @@
         <!--</div>-->
         <!--</div>-->
         <div class="call-action">
-            <button class="btn-book" ng-if="lang != 'eng'">
+            <button class="btn-book" du-smooth-scroll="book" ng-if="lang != 'eng' && isHome">
                 <ng-md-icon icon="{{btnIcon}}" style="fill: #2b2a29" size="20"></ng-md-icon>
                 {{btnBookSvk}}
             </button>
-            <button class="btn-book" ng-if="lang != 'svk'">
+            <button class="btn-book" du-smooth-scroll="book" ng-if="lang != 'svk' && isHome">
+                <ng-md-icon icon="{{btnIcon}}" style="fill: #2b2a29" size="20"></ng-md-icon>
+                {{btnBookEng}}
+            </button>
+
+            <button class="btn-book" du-smooth-scroll="book" ng-if="lang != 'eng' && !isHome">
+                <ng-md-icon icon="{{btnIcon}}" style="fill: #2b2a29" size="20"></ng-md-icon>
+                {{btnBookSvk}}
+            </button>
+            <button class="btn-book" du-smooth-scroll="book" ng-if="lang != 'svk' && !isHome">
                 <ng-md-icon icon="{{btnIcon}}" style="fill: #2b2a29" size="20"></ng-md-icon>
                 {{btnBookEng}}
             </button>
