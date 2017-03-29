@@ -1606,6 +1606,9 @@ form p textarea {
                   border-right: 25px solid;
                 }
 
+
+
+
                 label {
                   display: inline-block;
                   margin: 0 auto;
@@ -1656,7 +1659,7 @@ form p textarea {
 
         &:hover {
           svg {
-            fill: $color-beige-light;
+            fill: $color-beige;
           }
         }
       }
@@ -2458,6 +2461,28 @@ img.overlay-bg {
 
   &.float-right {
     float: right;
+
+  }
+  .btn-prev{
+    display: table-cell;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 2em;
+    border: 7px double;
+    color: white;
+    border-color: $color-beige;
+    background: $color-black;
+    margin: 0 10px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    -webkit-transition: all 0.25s linear;
+    -moz-transition: all 0.25s linear;
+    -ms-transition: all 0.25s linear;
+    -o-transition: all 0.25s linear;
+    transition: all 0.25s linear;
 
   }
 

@@ -37,28 +37,92 @@
 
                             <div class="book-form">
 
-                                <div class="row">
-                                    <div class="wrap">
-                                        <input id="date" type="date" placeholder="PRICHOD">
-                                    </div>
-                                    <div class="wrap">
-                                        <input id="date" type="date" placeholder="ODCHOD">
-                                    </div>
-                                    <div class="wrap">
-                                        <input id="amount" type="number" placeholder="POCET OSOB">
-                                    </div>
+                                <div class="book-wrap" ng-if="bookStep1">
+                                    <div class="row">
+                                        <div class="wrap four label">
+                                            <ng-md-icon icon="date_range"
+                                                        style="display: block; position: relative; fill: black; margin: 0 auto;"
+                                                        size="25px"></ng-md-icon>
+                                        </div>
+                                        <div class="wrap four label">
+                                            <ng-md-icon icon="date_range"
+                                                        style="display: block; position: relative; fill: black; margin: 0 auto;"
+                                                        size="25px"></ng-md-icon>
+                                        </div>
+                                        <div class="wrap four label">
+                                            <ng-md-icon icon="group"
+                                                        style="display: block; position: relative; fill: black; margin: 0 auto;"
+                                                        size="25px"></ng-md-icon>
+                                        </div>
 
+                                    </div>
+                                    <div class="row">
+                                        <div class="wrap four">
+                                            <input id="date" class="date" type="date"/>
+                                        </div>
+                                        <div class="wrap four">
+                                            <input id="date" class="date" type="date"/>
+                                        </div>
+                                        <div class="wrap four">
+                                            <input id="amount" type="number" placeholder="2"/>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="book-wrap" ng-if="bookStep2">
+                                    <div class="row">
+                                        <div class="wrap label">
+                                            <ng-md-icon icon="person"
+                                                        style="display: block; position: relative; fill: black; margin: 0 auto;"
+                                                        size="25px"></ng-md-icon>
+                                        </div>
+                                        <div class="wrap label">
+                                            <ng-md-icon icon="email"
+                                                        style="display: block; position: relative; fill: black; margin: 0 auto;"
+                                                        size="25px"></ng-md-icon>
+                                        </div>
+                                        <div class="wrap label">
+                                            <ng-md-icon icon="phone"
+                                                        style="display: block; position: relative; fill: black; margin: 0 auto;"
+                                                        size="25px"></ng-md-icon>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="wrap">
+                                            <input id="name" class="name" type="text" placeholder="Your Name" required/>
+                                        </div>
+                                        <div class="wrap">
+                                            <input id="email" class="email" type="email" placeholder="email" required/>
+                                        </div>
+                                        <div class="wrap">
+                                            <input id="tel" type="number" placeholder="+ 421 901 111 111"/>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="actions">
-                                <a href="#/restaurant/{{lang}}" ng-if="lang != 'eng'" class="btn book-room">{{btnBookRoomSvk}}</a>
-                                <a href="#/restaurant/{{lang}}" ng-if="lang != 'svk'" class="btn book-room">{{btnBookRoomEng}}</a>
+                            <div class="actions float-right" ng-if="bookStep1">
+                                <a href="#/pension/{{lang}}" ng-click="bookIt()" ng-if="lang != 'eng'" class="btn-next">Rezervovat<ng-md-icon icon="keyboard_arrow_right" style="white" size="20"></ng-md-icon></a>
+                                <a href="#/pension/{{lang}}" ng-click="bookIt()" ng-if="lang != 'svk'" class="btn-next">Book<ng-md-icon icon="keyboard_arrow_right" style="white" size="20"></ng-md-icon></a>
+                            </div>
+                            <div class="actions float-right" ng-if="bookStep2">
+                                <button class="btn-prev" ng-click="bookStepBack()">
+                                    <ng-md-icon icon="keyboard_arrow_left" style="fill: white" size="20"></ng-md-icon>
+                                    Back
+                                </button>
+                                <a href="#/pension/{{lang}}" ng-click="sendIt()" ng-if="lang != 'eng'" class="btn-next"><ng-md-icon icon="check" style="white" size="20"></ng-md-icon>Odoslat
+                                    Rezervaciu</a>
+                                <a href="#/pension/{{lang}}" ng-click="sendIt()" ng-if="lang != 'svk'" class="btn-next"><ng-md-icon icon="check" style="white" size="20"></ng-md-icon>Confirm
+                                    Booking</a>
                             </div>
                         </div>
 
                         <div class="stick-bottom" du-smooth-scroll="category">
-                            <ng-md-icon icon="expand_more" style="display: block; position: relative; left: -50px; fill: white; margin: 0 auto;" size="100"></ng-md-icon>
+                            <ng-md-icon icon="expand_more"
+                                        style="display: block; position: relative; left: -50px; fill: white; margin: 0 auto;"
+                                        size="100"></ng-md-icon>
                         </div>
                     </div>
                 </section>
@@ -69,9 +133,12 @@
 
                     <div class="content-main">
                         <p class="content-text">
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
                         </p>
                     </div>
                 </section>
@@ -130,9 +197,12 @@
 
                     <div class="content-main">
                         <p class="content-text">
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
                         </p>
                     </div>
                 </section>
@@ -143,9 +213,12 @@
 
                     <div class="content-main">
                         <p class="content-text">
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
                         </p>
                     </div>
                 </section>
@@ -156,14 +229,17 @@
 
                     <div class="content-main">
                         <p class="content-text">
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
                         </p>
                     </div>
                 </section>
 
-                <section  class="content-main empty bg-25"></section>
+                <section class="content-main empty bg-25"></section>
 
                 <!-- include FOOTER -->
                 <div ng-include="'templates/footer.html'"></div>

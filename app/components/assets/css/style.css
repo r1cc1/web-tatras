@@ -1385,7 +1385,7 @@ form p textarea {
         height: 80px;
         cursor: pointer; }
         .content-wrapper .book .center-wrap .stick-bottom:hover svg {
-          fill: #ebdab9; }
+          fill: #d6b472; }
   .content-wrapper .image {
     display: block;
     position: relative;
@@ -2017,6 +2017,26 @@ img.overlay-bg {
   text-align: center; }
   .actions.float-right {
     float: right; }
+  .actions .btn-prev {
+    display: table-cell;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 2em;
+    border: 7px double;
+    color: white;
+    border-color: #d6b472;
+    background: #2b2a29;
+    margin: 0 10px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    -webkit-transition: all 0.25s linear;
+    -moz-transition: all 0.25s linear;
+    -ms-transition: all 0.25s linear;
+    -o-transition: all 0.25s linear;
+    transition: all 0.25s linear; }
   .actions .btn-next {
     display: table-cell;
     position: relative;

@@ -37,24 +37,84 @@
                             <h1 class="book-title">TATRAS Beer Spa</h1>
 
                             <div class="book-form">
+                                <div class="book-wrap" ng-if="bookStep1">
+                                    <div class="row">
+                                        <div class="wrap four label">
+                                            <ng-md-icon icon="date_range" style="display: block; position: relative; fill: black; margin: 0 auto;" size="25px"></ng-md-icon>
+                                        </div>
+                                        <div class="wrap four label">
+                                            <ng-md-icon icon="access_time" style="display: block; position: relative; fill: black; margin: 0 auto;" size="25px"></ng-md-icon>
+                                        </div>
 
-                                <div class="row">
-                                    <div class="wrap">
-                                        <input id="date" type="date" placeholder="12-04-2017">
+                                        <div class="wrap four label">
+                                            <ng-md-icon icon="spa" style="display: block; position: relative; fill: black; margin: 0 auto;" size="25px"></ng-md-icon>
+                                        </div>
                                     </div>
-                                    <div class="wrap">
-                                        <input id="time" type="time" placeholder="12-04-2017">
-                                    </div>
-                                    <div class="wrap">
-                                        <input id="amount" type="number" placeholder="Pocet osob">
-                                    </div>
+                                    <div class="row">
+                                        <div class="wrap four">
+                                            <input id="date" class="date" type="date" />
+                                        </div>
+                                        <div class="wrap four">
+                                            <input id="time" class="time" type="time" value="12:00"/>
+                                        </div>
 
+                                        <div class="wrap four">
+                                            <select id="room-type">
+                                                <option>Masaz</option>
+                                                <option>Kupele</option>
+                                                <option>Sauna</option>
+                                                <option>Vsetko</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
+                                <div class="book-wrap" ng-if="bookStep2">
+                                    <div class="row">
+                                        <div class="wrap label">
+                                            <ng-md-icon icon="person"
+                                                        style="display: block; position: relative; fill: black; margin: 0 auto;"
+                                                        size="25px"></ng-md-icon>
+                                        </div>
+                                        <div class="wrap label">
+                                            <ng-md-icon icon="email"
+                                                        style="display: block; position: relative; fill: black; margin: 0 auto;"
+                                                        size="25px"></ng-md-icon>
+                                        </div>
+                                        <div class="wrap label">
+                                            <ng-md-icon icon="phone"
+                                                        style="display: block; position: relative; fill: black; margin: 0 auto;"
+                                                        size="25px"></ng-md-icon>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="wrap">
+                                            <input id="name" class="name" type="text" placeholder="Your Name" required/>
+                                        </div>
+                                        <div class="wrap">
+                                            <input id="email" class="email" type="email" placeholder="email" required/>
+                                        </div>
+                                        <div class="wrap">
+                                            <input id="tel" type="number" placeholder="+ 421 901 111 111"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+
                             </div>
 
-                            <div class="actions">
-                                <a href="#/restaurant/{{lang}}" ng-if="lang != 'eng'" class="btn book-spa">{{btnBookSpaSvk}}</a>
-                                <a href="#/restaurant/{{lang}}" ng-if="lang != 'svk'" class="btn book-spa">{{btnBookSpaEng}}</a>
+                            <div class="actions float-right" ng-if="bookStep1">
+                                <a href="#/spa/{{lang}}" ng-click="bookIt()" ng-if="lang != 'eng'" class="btn-next">Rezervovat<ng-md-icon icon="keyboard_arrow_right" style="white" size="20"></ng-md-icon></a>
+                                <a href="#/spa/{{lang}}" ng-click="bookIt()" ng-if="lang != 'svk'" class="btn-next">Book<ng-md-icon icon="keyboard_arrow_right" style="white" size="20"></ng-md-icon></a>
+                            </div>
+                            <div class="actions float-right" ng-if="bookStep2">
+                                <button class="btn-prev" ng-click="bookStepBack()">
+                                    <ng-md-icon icon="keyboard_arrow_left" style="fill: white" size="20"></ng-md-icon>
+                                    Back
+                                </button>
+                                <a href="#/spa/{{lang}}" ng-click="sendIt()" ng-if="lang != 'eng'" class="btn-next"><ng-md-icon icon="check" style="white" size="20"></ng-md-icon>Odoslat
+                                    Rezervaciu</a>
+                                <a href="#/spa/{{lang}}" ng-click="sendIt()" ng-if="lang != 'svk'" class="btn-next"><ng-md-icon icon="check" style="white" size="20"></ng-md-icon>Confirm
+                                    Booking</a>
                             </div>
                         </div>
 

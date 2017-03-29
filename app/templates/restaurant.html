@@ -98,12 +98,23 @@
                                 </div>
 
                                 <div class="actions float-right" ng-if="bookStep1">
-                                    <a href="#/restaurant/{{lang}}" ng-click="bookIt()" ng-if="lang != 'eng'" class="btn-next">Rezervovat</a>
-                                    <a href="#/restaurant/{{lang}}" ng-click="bookIt()" ng-if="lang != 'svk'" class="btn-next">Book</a>
+                                    <a href="#/restaurant/{{lang}}" ng-click="continueBook()" ng-if="lang != 'eng'" class="btn-next">Rezervovat<ng-md-icon icon="keyboard_arrow_right" style="white" size="20"></ng-md-icon></a>
+                                    <a href="#/restaurant/{{lang}}" ng-click="continueBook()" ng-if="lang != 'svk'" class="btn-next">Book<ng-md-icon icon="keyboard_arrow_right" style="white" size="20"></ng-md-icon></a>
                                 </div>
+
+
+
                                 <div class="actions float-right" ng-if="bookStep2">
-                                    <a href="#/restaurant/{{lang}}" ng-click="sendIt()" ng-if="lang != 'eng'" class="btn-next">Odoslat Rezervaciu</a>
-                                    <a href="#/restaurant/{{lang}}" ng-click="sendIt()" ng-if="lang != 'svk'" class="btn-next">Confirm Booking</a>
+                                    <button class="btn-prev" ng-click="bookStepBack()">
+                                        <ng-md-icon icon="keyboard_arrow_left" style="fill: white" size="20"></ng-md-icon>
+                                        Back
+                                    </button>
+
+
+
+
+                                    <a href="#/restaurant/{{lang}}" ng-click="sendIt()" ng-if="lang != 'eng'" class="btn-next"><ng-md-icon icon="check" style="white" size="20"></ng-md-icon>Odoslat Rezervaciu</a>
+                                    <a href="#/restaurant/{{lang}}" ng-click="sendIt()" ng-if="lang != 'svk'" class="btn-next"><ng-md-icon icon="check" style="white" size="20"></ng-md-icon>Confirm Booking</a>
                                 </div>
                             </div>
 

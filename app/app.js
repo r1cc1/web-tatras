@@ -193,13 +193,13 @@ angular.module('myApp', [
         $scope.bookStep1 = true;
         $scope.bookStep2 = false;
 
-        console.log($scope.bookStep2);
-
-        $scope.bookIt = function () {
-
+        $scope.continueBook = function () {
             $scope.bookStep2 = true;
             $scope.bookStep1 = false;
-            console.log($scope.bookStep2);
+        };
+        $scope.bookStepBack = function () {
+            $scope.bookStep2 = false;
+            $scope.bookStep1 = true;
         };
 
 
@@ -235,6 +235,19 @@ angular.module('myApp', [
         $scope.btnBookRoomSvk = $scope.btnBookSvk;
         $scope.btnBookRoomEng = $scope.btnBookEng;
 
+        $scope.bookStep1 = true;
+        $scope.bookStep2 = false;
+
+        $scope.bookIt = function () {
+            $scope.bookStep2 = true;
+            $scope.bookStep1 = false;
+        };
+
+        $scope.bookStepBack = function () {
+            $scope.bookStep2 = false;
+            $scope.bookStep1 = true;
+        };
+
     }])
 
     .controller('spaCrl', ['$scope', '$window', function ($scope, $window) {
@@ -248,6 +261,18 @@ angular.module('myApp', [
 
         $scope.btnBookSpaSvk = $scope.btnBookSvk;
         $scope.btnBookSpaEng = $scope.btnBookEng;
+
+        $scope.bookStep1 = true;
+        $scope.bookStep2 = false;
+
+        $scope.bookIt = function () {
+            $scope.bookStep2 = true;
+            $scope.bookStep1 = false;
+        };
+        $scope.bookStepBack = function () {
+            $scope.bookStep2 = false;
+            $scope.bookStep1 = true;
+        };
 
     }]);
 
