@@ -36,33 +36,82 @@
 
                             <div class="book-form">
 
+                               <div class="book-wrap" ng-if="bookStep1">
+                                   <div class="row">
+                                       <div class="wrap four label">
+                                           <ng-md-icon icon="date_range" style="display: block; position: relative; fill: black; margin: 0 auto;" size="25px"></ng-md-icon>
+                                       </div>
+                                       <div class="wrap four label">
+                                           <ng-md-icon icon="access_time" style="display: block; position: relative; fill: black; margin: 0 auto;" size="25px"></ng-md-icon>
+                                       </div>
+                                       <div class="wrap four label">
+                                           <ng-md-icon icon="group" style="display: block; position: relative; fill: black; margin: 0 auto;" size="25px"></ng-md-icon>
+                                       </div>
+                                       <div class="wrap four label">
+                                           <ng-md-icon icon="local_restaurant" style="display: block; position: relative; fill: black; margin: 0 auto;" size="25px"></ng-md-icon>
+                                       </div>
+                                   </div>
+                                   <div class="row">
+                                       <div class="wrap four">
+                                           <input id="date" class="date" type="date" />
+                                       </div>
+                                       <div class="wrap four">
+                                           <input id="time" class="time" type="time" value="12:00"/>
+                                       </div>
+                                       <div class="wrap four">
+                                           <input id="amount" type="number" placeholder="2" />
+                                       </div>
+                                       <div class="wrap four">
+                                           <select id="room-type">
+                                               <option>Galerka</option>
+                                               <option>Nezalezi</option>
+                                               <option>Pivnicka</option>
+                                               <option>Hudobka</option>
+                                           </select>
+                                       </div>
+                                   </div>
+                               </div>
 
-                                <div class="row">
-                                    <div class="wrap">
-                                        <input id="date" type="datetime-local" placeholder="12-04-2017">
+                                <div class="book-wrap" ng-if="bookStep2">
+                                    <div class="row">
+                                        <div class="wrap label">
+                                            <ng-md-icon icon="person" style="display: block; position: relative; fill: black; margin: 0 auto;" size="25px"></ng-md-icon>
+                                        </div>
+                                        <div class="wrap label">
+                                            <ng-md-icon icon="email" style="display: block; position: relative; fill: black; margin: 0 auto;" size="25px"></ng-md-icon>
+                                        </div>
+                                        <div class="wrap label">
+                                            <ng-md-icon icon="phone" style="display: block; position: relative; fill: black; margin: 0 auto;" size="25px"></ng-md-icon>
+                                        </div>
                                     </div>
-                                    <div class="wrap">
-                                        <input id="amount" type="number" placeholder="1">
+                                    <div class="row">
+                                        <div class="wrap">
+                                            <input id="name" class="name" type="text" placeholder="Your Name" required/>
+                                        </div>
+                                        <div class="wrap">
+                                            <input id="email" class="email" type="email" placeholder="email" required/>
+                                        </div>
+                                        <div class="wrap">
+                                            <input id="tel" type="number" placeholder="+ 421 901 111 111" />
+                                        </div>
                                     </div>
-                                    <div class="wrap">
-                                        <select id="room-type">
-                                            <option>Salonik</option>
-                                            <option>Salonik</option>
-                                            <option>Salonik</option>
-                                            <option>Salonik</option>
-                                        </select>
-                                    </div>
+                                </div>
+
+                                <div class="actions float-right" ng-if="bookStep1">
+                                    <a href="#/restaurant/{{lang}}" ng-click="bookIt()" ng-if="lang != 'eng'" class="btn-next">Rezervovat</a>
+                                    <a href="#/restaurant/{{lang}}" ng-click="bookIt()" ng-if="lang != 'svk'" class="btn-next">Book</a>
+                                </div>
+                                <div class="actions float-right" ng-if="bookStep2">
+                                    <a href="#/restaurant/{{lang}}" ng-click="sendIt()" ng-if="lang != 'eng'" class="btn-next">Odoslat Rezervaciu</a>
+                                    <a href="#/restaurant/{{lang}}" ng-click="sendIt()" ng-if="lang != 'svk'" class="btn-next">Confirm Booking</a>
                                 </div>
                             </div>
 
-                            <div class="actions">
-                                <a href="#/restaurant/{{lang}}" ng-if="lang != 'eng'" class="btn book-table">{{btnBookTableSvk}}</a>
-                                <a href="#/restaurant/{{lang}}" ng-if="lang != 'svk'" class="btn book-table">{{btnBookTableEng}}</a>
-                            </div>
+
                         </div>
 
                         <div class="stick-bottom" du-smooth-scroll="category">
-                            <ng-md-icon icon="expand_more" style="display: block; position: relative; left: -50px; fill: white; margin: 0 auto;" size="100"></ng-md-icon>
+                            <ng-md-icon icon="expand_more" style="display: block; position: relative; left: -25px; fill: white; margin: 0 auto;" size="100"></ng-md-icon>
                         </div>
                     </div>
                 </section>

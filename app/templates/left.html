@@ -50,14 +50,19 @@
         <!--</div>-->
         <!--</div>-->
         <div class="call-action">
-            <button class="btn-book" du-smooth-scroll="book" ng-if="lang != 'eng' && isHome">
+
+
+            <a href="tel:00421948828727" target="_self" name="call-us" class="btn-book" ng-if="isHome">
                 <ng-md-icon icon="{{btnIcon}}" style="fill: #2b2a29" size="20"></ng-md-icon>
-                {{btnBookSvk}}
-            </button>
-            <button class="btn-book" du-smooth-scroll="book" ng-if="lang != 'svk' && isHome">
-                <ng-md-icon icon="{{btnIcon}}" style="fill: #2b2a29" size="20"></ng-md-icon>
-                {{btnBookEng}}
-            </button>
+
+                <span ng-if="lang != 'eng'">
+                    {{btnBookSvk}}
+                </span>
+                <span ng-if="lang != 'svk'">
+                    {{btnBookEng}}
+                </span>
+            </a>
+
 
             <button class="btn-book" du-smooth-scroll="book" ng-if="lang != 'eng' && !isHome">
                 <ng-md-icon icon="{{btnIcon}}" style="fill: #2b2a29" size="20"></ng-md-icon>

@@ -816,7 +816,7 @@ body {
   div {
     display: table;
     height: 100%;
-    width: 170px;
+    width: 190px;
     margin: 0 auto;
 
     .logo {
@@ -891,29 +891,107 @@ body {
 
         button {
           display: inline-block;
-          position: relative;
-          padding: 2em 1em;
+          position: absolute;
           font-size: 1em;
           text-align: center;
           -webkit-appearance: none;
           text-transform: uppercase;
           font-family: 'Roboto', sans-serif;
-          color: $color-black;
+          color: #2b2a29;
           font-weight: bold;
-          margin-left: -20px;
-          margin-bottom: -2px;
-          width: 123.5%;
-          background: $color-beige;
-          border: 9px double $color-black;
+          width: 100%;
+          background: #f1ebda;
           transition: all 0.25s linear;
           -webkit-transition: all 0.25s linear;
+          background: #f1ebda url(../imgs/btn_small.gif);
+          background-repeat: no-repeat;
+          background-size: 210px 100px;
+          background-position: 0 0;
+          bottom: 0;
+          left: 0;
+          height: 101px;
+          border: 0;
+          z-index: 1;
 
+          &:before {
+            transition-duration: 0.5s;
+            transition-property: width;
+            transition-delay: 0s;
+            transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+            content: '';
+            display: block;
+            height: 100%;
+            top: 0;
+            left: 50%;
+            background: $color-beige;
+            width: 0;
+            position: absolute;
+            z-index: -1;
+            transform: translate3d(-50%, 0, 0);
+            opacity: 0.5;
+          }
 
           &:hover {
-            background: white;
-            transition: all 0.25s linear;
-            -webkit-transition: all 0.25s linear;
+            &:before {
+              width: 100%;
+            }
+          }
+        }
+        a {
+          display: inline-block;
+          position: absolute;
+          font-size: 1em;
+          text-align: center;
+          -webkit-appearance: none;
+          text-transform: uppercase;
+          font-family: 'Roboto', sans-serif;
+          color: #2b2a29;
+          font-weight: bold;
+          width: 100%;
+          background: #f1ebda;
+          transition: all 0.25s linear;
+          -webkit-transition: all 0.25s linear;
+          background: #f1ebda url(../imgs/btn_small.gif);
+          background-repeat: no-repeat;
+          background-size: 210px 100px;
+          background-position: 0 0;
+          bottom: 0;
+          left: 0;
+          height: 101px;
+          line-height: 100px;
+          border: 0;
+          z-index: 1;
+          text-decoration: none;
 
+          span {
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            color: $color-black;
+            text-transform: uppercase;
+          }
+
+          &:before {
+            transition-duration: 0.5s;
+            transition-property: width;
+            transition-delay: 0s;
+            transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+            content: '';
+            display: block;
+            height: 100%;
+            top: 0;
+            left: 50%;
+            background: $color-beige;
+            width: 0;
+            position: absolute;
+            z-index: -1;
+            transform: translate3d(-50%, 0, 0);
+            opacity: 0.5;
+          }
+
+          &:hover {
+            &:before {
+              width: 100%;
+            }
           }
         }
       }
@@ -929,8 +1007,6 @@ body {
         vertical-align: middle;
       }
     }
-
-
   }
 }
 
@@ -1035,6 +1111,7 @@ body {
     background: url(../imgs/tatry-silueta-biela.svg) no-repeat center;
     background-size: contain;
     margin: 0 auto;
+    transform: scale(1);
   }
 }
 
@@ -1067,7 +1144,14 @@ nav {
       transition: all 0.2s;
       letter-spacing: 1px;
       text-align: center;
-      padding: 1em;
+      padding: 1em 0;
+
+      transition-duration: 0.75s, 1s;
+      transition-property: transform, opacity;
+      transition-delay: 0s;
+      transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
 
       &.language {
         padding-top: 2em;
@@ -1097,9 +1181,43 @@ nav {
         letter-spacing: 1px;
         text-align: right;
 
+        &:before {
+          transition-duration: .45s;
+          transition-property: width;
+          transition-delay: 0s;
+          transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+          content: '';
+          width: 0%;
+          height: 1px;
+          background: $color-beige-light;
+          display: block;
+          position: absolute;
+          top: 0;
+          left: -1px;
+        }
+        &:after {
+          transition-duration: .45s;
+          transition-property: width;
+          transition-delay: 0s;
+          transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+          content: '';
+          width: 0%;
+          height: 1px;
+          background: $color-beige-light;
+          display: block;
+          position: absolute;
+          bottom: 0;
+          right: 1px;
+        }
+
         &:hover{
           cursor: pointer;
           color: #d7b56d;
+
+          &:after, &:before {
+            width: 100%;
+          }
+
         }
 
         &.active {
@@ -1142,7 +1260,6 @@ form p textarea {
   background: #ebdab9;
 }
 
-
 .bg-1 {
   background-position: 0 0;
   background-size: cover;
@@ -1155,13 +1272,13 @@ form p textarea {
   background-attachment: fixed;
 }
 .bg-2 {
-  background-position: 30% 0%;
+  background-position: 30% 0;
   background-size: cover;
   min-height: 100%;
   background: url("../../imgs/ta3.jpg");
 }
 .bg-3 {
-  background-position: 30% 0%;
+  background-position: 30% 0;
   background-size: cover;
   min-height: 100%;
   background: rgba(111,111,111,0.5);
@@ -1441,7 +1558,7 @@ form p textarea {
           color: white;
           font-size:5em;
           font-weight: bold;
-          text-shadow: 0 0 1px black;
+          text-shadow: 0 0 10px black;
           padding: 0.5em 0;
         }
 
@@ -1449,38 +1566,80 @@ form p textarea {
           display: block;
           position: relative;
           background: transparent;
-          padding: 2em;
           margin-bottom: 3em;
-          border: 9px double white;
 
-          .row {
-            display: table;
-            width: 100%;
+          .book-wrap {
+            display: block;
 
-            .wrap {
-              display: table-cell;
-              width: 33.3%;
-              text-align: center;
+            .row {
+              display: table;
+              width: 100%;
 
-              label {
-                display: inline-block;
-                margin: 0 auto;
-              }
-              input, select {
-                display: inline-block;
-                margin: 0 auto;
-                position: relative;
-                background: white;
-                -webkit-appearance: none;
-                border: 0;
-                border-radius: 0;
-                font-size: 1em;
-                color: $color-black;
-                width: 95%;
-                height:45px;
+              .wrap {
+                display: table-cell;
+                width: 33.3%;
+                text-align: center;
+                background: #f5eddc;
+                border: 25px solid;
+                outline: 0;
+                margin: 10px;
+                border-right: 0;
+                border-top: 50px solid;
+                color: #d6b472;
+
+                &.four {
+                  width: 25%;
+                }
+
+                &.label {
+                  background: transparent;
+                  text-align: left;
+                  color: $color-beige;
+                  border-color: transparent;
+                  border-bottom: 0;
+                  font-size: 1.5em;
+                  top: 40px;
+                  z-index: 2;
+                  border-top: 0;
+                }
+                &:last-child {
+                  border-right: 25px solid;
+                }
+
+                label {
+                  display: inline-block;
+                  margin: 0 auto;
+                  font-weight: normal;
+                  font-size: 1em;
+                }
+                input, select {
+                  display: inline-block;
+                  margin: 0 auto;
+                  position: relative;
+                  background: #f5eddc;
+                  -webkit-appearance: none;
+                  border: 0;
+                  border-radius: 0;
+                  font-size: 1em;
+                  width: auto;
+                  height: 45px;
+                  text-align: center;
+                  font-family: 'Roboto', sans-serif;
+                  font-weight: bold;
+                  color: $color-black;
+                  text-transform: uppercase;
+
+                  &::-webkit-input-placeholder {
+                    font-family: 'Roboto', sans-serif;
+                    text-align: center;
+                    font-weight: bold;
+                    color: $color-black;
+                  }
+                }
               }
             }
           }
+
         }
         &.bg-white {
           background: white;
@@ -1491,9 +1650,15 @@ form p textarea {
         display: block;
         position: absolute;
         width: 100%;
-        bottom: 10px;
-        height: 100px;
+        bottom: 0;
+        height: 80px;
         cursor: pointer;
+
+        &:hover {
+          svg {
+            fill: $color-beige-light;
+          }
+        }
       }
     }
   }
@@ -1528,7 +1693,7 @@ footer {
   position: relative;
   height: auto;
   width: auto;
-  padding: 35px 0;
+  padding: 35px 0 35px 35px;
   z-index: 999;
 
   p {
@@ -1784,6 +1949,14 @@ aside {
 
           label {
             font-weight: normal;
+          }
+
+          button {
+            -webkit-appearance: none;
+            padding: 1em;
+            font-family: 'Roboto', sans-serif;
+            text-transform: uppercase;
+
           }
         }
       }
@@ -2280,12 +2453,16 @@ img.overlay-bg {
   display: table;
   position: relative;
   margin: 0 auto;
-  left: -1em;
   top: 1em;
-  text-align: -webkit-center;
+  text-align: center;
 
-  .btn {
-    display: inline-block;
+  &.float-right {
+    float: right;
+
+  }
+
+  .btn-next {
+    display: table-cell;
     position: relative;
     font-family: 'Roboto', sans-serif;
     font-size: 1em;
@@ -2293,7 +2470,39 @@ img.overlay-bg {
     padding: 2em;
     border: 7px double;
     color: white;
-    margin: 0 1em;
+    border-color: $color-beige;
+    background: $color-black;
+    margin: 0 10px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    -webkit-transition: all 0.25s linear;
+    -moz-transition: all 0.25s linear;
+    -ms-transition: all 0.25s linear;
+    -o-transition: all 0.25s linear;
+    transition: all 0.25s linear;
+
+    &:hover {
+      color: white;
+      border-color: $color-beige;
+      background: $color-black;
+      -webkit-transition: all 0.25s linear;
+      -moz-transition: all 0.25s linear;
+      -ms-transition: all 0.25s linear;
+      -o-transition: all 0.25s linear;
+      transition: all 0.25s linear;
+    }
+  }
+  .btn {
+    display: table-cell;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 2em;
+    border: 7px double;
+    color: white;
+    margin: 0 10px;
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
@@ -2357,6 +2566,40 @@ img.overlay-bg {
 }
 
 
+
+.slideup {
+  .wrapper::after {
+    background: #2b2a29;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+
+  &.ng-enter {
+    .wrapper::after {
+      opacity: 0.5;
+      -webkit-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+    }
+  }
+  &.ng-leave {
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+
+    .wrapper::after {
+      opacity: 0.5;
+      -webkit-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+    }
+  }
+  &.ng-enter-active {
+    .wrapper::after {
+      opacity: 1;
+      -webkit-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+    }
+  }
+}
 
 
 

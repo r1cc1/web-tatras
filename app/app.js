@@ -2,9 +2,9 @@
 
 angular.module('myApp', [
     'ngRoute',
+    'ngAnimate',
     'duScroll',
-    'ngMdIcons',
-    '720kb.datepicker'
+    'ngMdIcons'
 
 ])
     .value('duScrollDuration', 1000)
@@ -12,17 +12,18 @@ angular.module('myApp', [
 
     .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
 
+
     //$locationProvider.hashPrefix('#');
 
-    $routeProvider.when('/', {
+    $routeProvider.when('/home', {
         controller: 'mainCtrl'
     });
 
-    $routeProvider.when('/svk', {
+    $routeProvider.when('/home/svk', {
         templateUrl: 'templates/home.html',
         controller: 'homeCtrl'
     });
-    $routeProvider.when('/eng', {
+    $routeProvider.when('/home/eng', {
         templateUrl: 'templates/home.html',
         controller: 'homeCtrl'
     });
@@ -54,8 +55,7 @@ angular.module('myApp', [
         controller: 'spaCrl'
     });
 
-
-    $routeProvider.otherwise({redirectTo: '/svk'});
+    $routeProvider.otherwise({redirectTo: '/home/svk'});
 
 }])
     .controller('mainCtrl', ['$scope','$location', function ($scope, $location) {
@@ -143,6 +143,8 @@ angular.module('myApp', [
         });
 
 
+
+
     }])
     .controller('homeCtrl', ['$scope','$http', function ($scope, $http) {
         $scope.isHome = true;
@@ -162,16 +164,6 @@ angular.module('myApp', [
         $scope.btnBookSpaEng = 'Book SPA';
 
 
-
-
-        $http.get('../components/assets/texts/text-svk.json')
-            .success(function(data) {
-                $scope.texts = data;
-            })
-            .error(function(data) {
-                // log error
-                console.log(error);
-            });
 
 
 
@@ -197,6 +189,18 @@ angular.module('myApp', [
 
         $scope.btnBookTableSvk = 'Rezervovat Stol';
         $scope.btnBookTableEng = 'Book Table';
+
+        $scope.bookStep1 = true;
+        $scope.bookStep2 = false;
+
+        console.log($scope.bookStep2);
+
+        $scope.bookIt = function () {
+
+            $scope.bookStep2 = true;
+            $scope.bookStep1 = false;
+            console.log($scope.bookStep2);
+        };
 
 
         /// get day name and highlight the day
