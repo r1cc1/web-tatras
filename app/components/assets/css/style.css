@@ -1903,6 +1903,37 @@ img.overlay-bg {
 .hamburger {
   display: none; }
 
+.submit {
+  display: table-cell;
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 2em;
+  border: 7px double;
+  color: black;
+  margin: 0 20px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  float: right; }
+  .submit:hover {
+    color: white;
+    border-color: #d6b472;
+    background: #2b2a29;
+    -webkit-transition: all 0.25s linear;
+    -moz-transition: all 0.25s linear;
+    -ms-transition: all 0.25s linear;
+    -o-transition: all 0.25s linear;
+    transition: all 0.25s linear; }
+    .submit:hover svg {
+      fill: white;
+      -webkit-transition: all 0.25s linear;
+      -moz-transition: all 0.25s linear;
+      -ms-transition: all 0.25s linear;
+      -o-transition: all 0.25s linear;
+      transition: all 0.25s linear; }
+
 @media only screen and (min-width: 320px) and (max-width: 620px) {
   h1 {
     font-size: 25px;
@@ -2123,6 +2154,34 @@ img.overlay-bg {
       -ms-transition: all 0.25s linear;
       -o-transition: all 0.25s linear;
       transition: all 0.25s linear; }
+
+.flexslider-container .flexslider {
+  border: 0;
+  margin: 0; }
+.flexslider-container .flex-control-nav {
+  bottom: 45px;
+  z-index: 999; }
+.flexslider-container .flex-direction-nav a {
+  width: 100px;
+  height: 100px;
+  text-shadow: none;
+  color: transparent; }
+.flexslider-container .flex-direction-nav a:before {
+  font-size: 100px;
+  color: white;
+  line-height: 100px; }
+.flexslider-container .flexslider:hover .flex-direction-nav .flex-prev {
+  left: 50px; }
+.flexslider-container .flex-control-paging li a {
+  width: 20px;
+  height: 20px;
+  background: white; }
+.flexslider-container .flex-control-paging li a.flex-active {
+  background: #d4ba68; }
+
+.flex-nopadding {
+  padding-right: 0;
+  padding-bottom: 0; }
 
 .slideup .wrapper::after {
   background: #2b2a29;

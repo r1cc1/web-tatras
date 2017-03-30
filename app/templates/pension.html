@@ -223,23 +223,15 @@
                     </div>
                 </section>
 
-                <section id="photos" class="content-main bg-100">
-                    <h1 class="main-title">photos</h1>
-                    <div class="small-line"></div>
-
-                    <div class="content-main">
-                        <p class="content-text">
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                        </p>
-                    </div>
+                <section id="photos" class="content-main bg-100 flex-nopadding">
+                    <flex-slider slide="s in mySlides">
+                        <li>
+                            <img ng-src="{{s}}" alt="img-name"/>
+                        </li>
+                    </flex-slider>
                 </section>
 
-                <section class="content-main empty bg-25"></section>
+
 
                 <!-- include FOOTER -->
                 <div ng-include="'templates/footer.html'"></div>

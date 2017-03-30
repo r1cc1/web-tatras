@@ -71,6 +71,8 @@
                     </div>
                 </section>
 
+                <section  class="content-main empty bg-beer">
+                </section>
 
                 <section id="open" class="content-main bg-100">
                     <h1 class="main-title">open-hours</h1>
@@ -137,15 +139,17 @@
                 </section>
 
 
-                <section  class="content-main empty bg-beer">
-                </section>
 
-                <section id="photos" class="content-main bg-100">
-                    <h1 class="main-title">Photos</h1>
-                    <div class="small-line"></div>
 
-                    <div class="content-main">
-                    </div>
+                <section id="photos" class="content-main bg-100 flex-nopadding">
+
+
+                    <flex-slider slide="s in mySlides">
+                        <li>
+                            <img ng-src="{{s}}">
+                        </li>
+                    </flex-slider>
+
                 </section>
 
                 <!--<div id="info">-->
@@ -347,8 +351,8 @@
                                         <label for="message">Nachricht</label>
                                         <textarea name="message" placeholder="..." id="message" required tabindex="4"/></textarea>
                                     </p>
-                                    <p class="submit">
-                                        <button>Send</button>
+                                    <p>
+                                        <button class="submit"><ng-md-icon icon="send" style="fill: #2b2a29" size="20"></ng-md-icon>Send</button>
                                     </p>
                                 </div>
 

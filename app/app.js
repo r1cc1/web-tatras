@@ -4,6 +4,7 @@ angular.module('myApp', [
     'ngRoute',
     'ngAnimate',
     'duScroll',
+    'angular-flexslider',
     'ngMdIcons'
 
 ])
@@ -163,6 +164,15 @@ angular.module('myApp', [
         $scope.btnBookSpaSvk = 'Rezervovat SPA';
         $scope.btnBookSpaEng = 'Book SPA';
 
+        $scope.mySlides = [
+            '/components/assets/imgs/varenie/varenie1.jpg',
+           // '/components/assets/imgs/varenie/varenie2.jpg',
+            '/components/assets/imgs/varenie/Varenie3.jpg',
+            '/components/assets/imgs/varenie/varenie4.jpg',
+            '/components/assets/imgs/varenie/varenie5.jpg'
+
+        ];
+
 
 
 
@@ -201,6 +211,15 @@ angular.module('myApp', [
             $scope.bookStep2 = false;
             $scope.bookStep1 = true;
         };
+
+        $scope.mySlides = [
+            '/components/assets/imgs/jedlo/kolacik.jpg',
+            '/components/assets/imgs/jedlo/loparik.jpg',
+            '/components/assets/imgs/jedlo/rebra.JPG',
+            '/components/assets/imgs/jedlo/polievka.jpg',
+            '/components/assets/imgs/jedlo/licka.JPG'
+
+        ];
 
 
         /// get day name and highlight the day
@@ -247,6 +266,14 @@ angular.module('myApp', [
             $scope.bookStep2 = false;
             $scope.bookStep1 = true;
         };
+        $scope.mySlides = [
+            '/components/assets/imgs/jedlo/kolacik.jpg',
+            '/components/assets/imgs/jedlo/loparik.jpg',
+            '/components/assets/imgs/jedlo/rebra.JPG',
+            '/components/assets/imgs/jedlo/polievka.jpg',
+            '/components/assets/imgs/jedlo/licka.JPG'
+
+        ];
 
     }])
 
@@ -273,6 +300,14 @@ angular.module('myApp', [
             $scope.bookStep2 = false;
             $scope.bookStep1 = true;
         };
+        $scope.mySlides = [
+            '/components/assets/imgs/jedlo/kolacik.jpg',
+            '/components/assets/imgs/jedlo/loparik.jpg',
+            '/components/assets/imgs/jedlo/rebra.JPG',
+            '/components/assets/imgs/jedlo/polievka.jpg',
+            '/components/assets/imgs/jedlo/licka.JPG'
+
+        ];
 
     }]);
 

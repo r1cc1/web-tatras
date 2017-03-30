@@ -216,17 +216,15 @@
                 <section class="content-main empty bg-food"></section>
 
 
-                <section id="photos" class="content-main bg-100">
-                    <h1 class="main-title">Photos</h1>
-                    <div class="small-line"></div>
+                <section id="photos" class="content-main bg-100 flex-nopadding">
 
-                    <div class="content-main">
-                        <p class="content-text">
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                        </p>
-                    </div>
+
+                    <flex-slider slide="s in mySlides">
+                        <li>
+                             <img ng-src="{{s}}">
+                        </li>
+                    </flex-slider>
+
                 </section>
 
                 <!-- include FOOTER -->
