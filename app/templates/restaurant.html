@@ -10,10 +10,10 @@
         <div class="sub-menu" ng-class="{open: subMenuState}">
             <div>
                 <ul>
-                    <li du-scrollspy="category"><span du-smooth-scroll="category">welcome</span></li>
-                    <li du-scrollspy="menu"><span du-smooth-scroll="menu">Daily Menu</span></li>
-                    <li du-scrollspy="open"><span du-smooth-scroll="open">Open</span></li>
-                    <li du-scrollspy="info"><span du-smooth-scroll="info">Info</span></li>
+                    <li du-scrollspy="category"><span du-smooth-scroll="category">{{restaurantWelcome}}</span></li>
+                    <li du-scrollspy="menu"><span du-smooth-scroll="menu">{{restaurantSaloniky}}</span></li>
+                    <li du-scrollspy="open"><span du-smooth-scroll="open">{{otvaracieHodiny}}</span></li>
+                    <li du-scrollspy="info"><span du-smooth-scroll="info">{{restaurantPribehTitle}}</span></li>
                     <li du-scrollspy="photos"><span du-smooth-scroll="photos">Photos</span></li>
                 </ul>
             </div>
@@ -32,7 +32,7 @@
                 <section id="book" class="book bg-restaurant" ng-style="{height: displayHeight + 'px'}">
                     <div class="center-wrap">
                         <div class="center-content">
-                            <h1 class="book-title">Restaurant TATRAS</h1>
+                            <h1 class="book-title">{{categoryName}} TATRAS</h1>
 
                             <div class="book-form">
 
@@ -98,62 +98,70 @@
                                 </div>
 
                                 <div class="actions float-right" ng-if="bookStep1">
-                                    <a href="#/restaurant/{{lang}}" ng-click="continueBook()" ng-if="lang != 'eng'" class="btn-next">Rezervovat<ng-md-icon icon="keyboard_arrow_right" style="white" size="20"></ng-md-icon></a>
-                                    <a href="#/restaurant/{{lang}}" ng-click="continueBook()" ng-if="lang != 'svk'" class="btn-next">Book<ng-md-icon icon="keyboard_arrow_right" style="white" size="20"></ng-md-icon></a>
+                                    <a href="#/restaurant/{{lang}}" ng-click="continueBook()" ng-if="lang != 'eng'" class="btn-next float-right">Rezervovat<ng-md-icon icon="keyboard_arrow_right" style="white" size="20"></ng-md-icon></a>
+                                    <a href="#/restaurant/{{lang}}" ng-click="continueBook()" ng-if="lang != 'svk'" class="btn-next float-right">Book<ng-md-icon icon="keyboard_arrow_right" style="white" size="20"></ng-md-icon></a>
                                 </div>
 
-
-
                                 <div class="actions float-right" ng-if="bookStep2">
-                                    <button class="btn-prev" ng-click="bookStepBack()">
+                                    <button class="btn-prev float-left" ng-click="bookStepBack()">
                                         <ng-md-icon icon="keyboard_arrow_left" style="fill: white" size="20"></ng-md-icon>
                                         Back
                                     </button>
 
-
-
-
-                                    <a href="#/restaurant/{{lang}}" ng-click="sendIt()" ng-if="lang != 'eng'" class="btn-next"><ng-md-icon icon="check" style="white" size="20"></ng-md-icon>Odoslat Rezervaciu</a>
-                                    <a href="#/restaurant/{{lang}}" ng-click="sendIt()" ng-if="lang != 'svk'" class="btn-next"><ng-md-icon icon="check" style="white" size="20"></ng-md-icon>Confirm Booking</a>
+                                    <a href="#/restaurant/{{lang}}" ng-click="sendIt()" ng-if="lang != 'eng'" class="btn-next float-right"><ng-md-icon icon="check" style="white" size="20"></ng-md-icon>Odoslat Rezervaciu</a>
+                                    <a href="#/restaurant/{{lang}}" ng-click="sendIt()" ng-if="lang != 'svk'" class="btn-next float-right"><ng-md-icon icon="check" style="white" size="20"></ng-md-icon>Confirm Booking</a>
                                 </div>
                             </div>
-
 
                         </div>
 
                         <div class="stick-bottom" du-smooth-scroll="category">
-                            <ng-md-icon icon="expand_more" style="display: block; position: relative; left: -25px; fill: white; margin: 0 auto;" size="100"></ng-md-icon>
+                            <span></span>
                         </div>
                     </div>
                 </section>
 
                 <section id="category" class="content-main bg-100">
-                    <h1 class="main-title">Restaurant</h1>
+                    <h1 class="main-title">{{restaurantWelcome}}</h1>
                     <div class="small-line"></div>
 
                     <div class="content-main">
                         <p class="content-text">
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            {{restaurantText1}}
                         </p>
                     </div>
                 </section>
 
                 <section id="menu" class="content-main bg-100">
-                    <h1 class="main-title">Menu</h1>
+                    <h1 class="main-title">{{restaurantSaloniky}}</h1>
                     <div class="small-line"></div>
                     <div class="content-main">
-                        <p class="content-text">
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                        </p>
+                        <h5>Barová pasáž</h5>
+                        <p>{{restaurantSalonik1}}</p>
+                        <h5>Pivo-nica</h5>
+                        <p>{{restaurantSalonik2}}</p>
+                        <h5>Pivo-banka</h5>
+                        <p>{{restaurantSalonik3}}</p>
+                        <h5>Likérka</h5>
+                        <p>{{restaurantSalonik4}}</p>
+                        <h5>Komôrka</h5>
+                        <p>{{restaurantSalonik5}}</p>
+                        <h5>Galérka</h5>
+                        <p>{{restaurantSalonik6}}</p>
+                        <h5>Záhradka</h5>
+                        <p>{{restaurantSalonik7}}</p>
+                        <h5>Hudobka</h5>
+                        <p>{{restaurantSalonik8}}</p>
                     </div>
                 </section>
 
+                <section class="content-main empty bg-food">
+                    <h6 class="item-title">Pečenné Rebierka</h6>
+                    <h6 class="item-label">19.99 &euro;</h6>
+                </section>
+
                 <section id="open" class="content-main bg-100">
-                    <h1 class="main-title">open-hours</h1>
+                    <h1 class="main-title">{{otvaracieHodiny}}</h1>
                     <div class="small-line"></div>
 
                     <div class="content-main">
@@ -198,26 +206,30 @@
                     </div>
                 </section>
 
+                <section class="content-main empty bg-food-licka">
+                    <h6 class="item-title">Hovädzie líčka</h6>
+                    <h6 class="item-label">7.99 &euro;</h6>
+                </section>
+
                 <section  id="info" class="content-main bg-100">
-                    <h1 class="main-title">info</h1>
+                    <h1 class="main-title">{{restaurantPribehTitle}}</h1>
                     <div class="small-line"></div>
 
                     <div class="content-main">
                         <p class="content-text">
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            {{restaurantPribehText}}
+                        </p>
+                        <p class="content-text">
+                            <b>Reštaurácia Tatras</b> {{restaurantPribehText2}}
+                        </p>
+                        <p class="content-text">
+                            <b>Naši kuchári varia moderným postupom</b> {{restaurantPribehText3}}
                         </p>
                     </div>
                 </section>
 
 
-
-                <section class="content-main empty bg-food"></section>
-
-
                 <section id="photos" class="content-main bg-100 flex-nopadding">
-
 
                     <flex-slider slide="s in mySlides">
                         <li>

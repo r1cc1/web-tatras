@@ -1,26 +1,26 @@
 <div class="left" id="left">
     <div>
         <div class="logo">
-            <img src="../components/assets/imgs/tatras_logo.png" alt="Minipivovar Tatras"/>
+            <img src="./components/assets/imgs/tatras_logo.png" alt="Minipivovar Tatras"/>
         </div>
         <div class="navigation">
             <nav class="shadow">
                 <ul class="main-menu">
                     <li>
-                        <a href="#home/{{lang}}" ng-class="getClass('/home')" ng-if="lang != 'svk'">MiniBrewery</a>
-                        <a href="#home/{{lang}}" ng-class="getClass('/home')" ng-if="lang != 'eng'">Minipivovar</a>
+                        <a href="#home/{{lang}}" ng-class="getClass('/home')" ng-show="lang !== 'svk'"  ng-init="lang == 'eng'">MiniBrewery</a>
+                        <a href="#home/{{lang}}" ng-class="getClass('/home')" ng-show="lang !== 'eng'"  ng-init="lang == 'svk'">Minipivovar</a>
                     </li>
                     <li>
-                        <a href="#/restaurant/{{lang}}" ng-class="getClass('/restaurant')" ng-if="lang != 'svk'">Restaurant</a>
-                        <a href="#/restaurant/{{lang}}" ng-class="getClass('/restaurant')" ng-if="lang != 'eng'">Reštaurácia</a>
+                        <a href="#/restaurant/{{lang}}" ng-class="getClass('/restaurant')" ng-show="lang != 'svk'" ng-init="lang == 'eng'">Restaurant</a>
+                        <a href="#/restaurant/{{lang}}" ng-class="getClass('/restaurant')" ng-show="lang != 'eng'" ng-init="lang == 'svk'">Reštaurácia</a>
                     </li>
                     <li>
-                        <a href="#/pension/{{lang}}" ng-class="getClass('/pension')" ng-if="lang != 'svk'">Pension</a>
-                        <a href="#/pension/{{lang}}" ng-class="getClass('/pension')" ng-if="lang != 'eng'">Penzion</a>
+                        <a href="#/pension/{{lang}}" ng-class="getClass('/pension')" ng-show="lang != 'svk'" ng-init="lang == 'eng'">Pension</a>
+                        <a href="#/pension/{{lang}}" ng-class="getClass('/pension')" ng-show="lang != 'eng'" ng-init="lang == 'svk'">Penzion</a>
                     </li>
                     <li>
-                        <a href="#/spa/{{lang}}" ng-class="getClass('/spa')" ng-if="lang != 'svk'">Beer SPA</a>
-                        <a href="#/spa/{{lang}}" ng-class="getClass('/spa')" ng-if="lang != 'eng'">Pivné kúpele</a>
+                        <a href="#/spa/{{lang}}" ng-class="getClass('/spa')" ng-show="lang != 'svk'" ng-init="lang == 'eng'">Beer SPA</a>
+                        <a href="#/spa/{{lang}}" ng-class="getClass('/spa')" ng-show="lang != 'eng'" ng-init="lang == 'svk'">Pivné kúpele</a>
                     </li>
                     <li class="language">
                         <span ng-if="lang != 'eng'" ng-click="english()">ENG</span>
@@ -29,7 +29,6 @@
                 </ul>
             </nav>
         </div>
-
         <!--<div class="info">-->
         <!--<div class="social-contact">-->
 
@@ -51,26 +50,23 @@
         <!--</div>-->
         <div class="call-action">
 
-
             <a href="tel:00421948828727" target="_self" name="call-us" class="btn-book" ng-if="isHome">
                 <ng-md-icon icon="{{btnIcon}}" style="fill: #2b2a29" size="20"></ng-md-icon>
-
                 <span ng-if="lang != 'eng'">
-                    {{btnBookSvk}}
+                    {{btnBook}}
                 </span>
                 <span ng-if="lang != 'svk'">
-                    {{btnBookEng}}
+                    {{btnBook}}
                 </span>
             </a>
 
-
             <button class="btn-book" du-smooth-scroll="book" ng-if="lang != 'eng' && !isHome">
                 <ng-md-icon icon="{{btnIcon}}" style="fill: #2b2a29" size="20"></ng-md-icon>
-                {{btnBookSvk}}
+                {{btnBook}}
             </button>
             <button class="btn-book" du-smooth-scroll="book" ng-if="lang != 'svk' && !isHome">
                 <ng-md-icon icon="{{btnIcon}}" style="fill: #2b2a29" size="20"></ng-md-icon>
-                {{btnBookEng}}
+                {{btnBook}}
             </button>
         </div>
 

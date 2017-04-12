@@ -34,25 +34,31 @@
                     <div class="center-wrap">
                         <div class="center-content">
 
-                            <h1 class="book-title">TATRAS Beer Spa</h1>
+                            <h1 class="book-title">{{categoryName}} TATRAS</h1>
 
                             <div class="book-form">
                                 <div class="book-wrap" ng-if="bookStep1">
                                     <div class="row">
                                         <div class="wrap four label">
-                                            <ng-md-icon icon="date_range" style="display: block; position: relative; fill: black; margin: 0 auto;" size="25px"></ng-md-icon>
+                                            <ng-md-icon icon="date_range"
+                                                        style="display: block; position: relative; fill: black; margin: 0 auto;"
+                                                        size="25px"></ng-md-icon>
                                         </div>
                                         <div class="wrap four label">
-                                            <ng-md-icon icon="access_time" style="display: block; position: relative; fill: black; margin: 0 auto;" size="25px"></ng-md-icon>
+                                            <ng-md-icon icon="access_time"
+                                                        style="display: block; position: relative; fill: black; margin: 0 auto;"
+                                                        size="25px"></ng-md-icon>
                                         </div>
 
                                         <div class="wrap four label">
-                                            <ng-md-icon icon="spa" style="display: block; position: relative; fill: black; margin: 0 auto;" size="25px"></ng-md-icon>
+                                            <ng-md-icon icon="spa"
+                                                        style="display: block; position: relative; fill: black; margin: 0 auto;"
+                                                        size="25px"></ng-md-icon>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="wrap four">
-                                            <input id="date" class="date" type="date" />
+                                            <input id="date" class="date" type="date"/>
                                         </div>
                                         <div class="wrap four">
                                             <input id="time" class="time" type="time" value="12:00"/>
@@ -99,52 +105,52 @@
                                     </div>
                                 </div>
 
-
                             </div>
 
                             <div class="actions float-right" ng-if="bookStep1">
-                                <a href="#/spa/{{lang}}" ng-click="bookIt()" ng-if="lang != 'eng'" class="btn-next">Rezervovat<ng-md-icon icon="keyboard_arrow_right" style="white" size="20"></ng-md-icon></a>
-                                <a href="#/spa/{{lang}}" ng-click="bookIt()" ng-if="lang != 'svk'" class="btn-next">Book<ng-md-icon icon="keyboard_arrow_right" style="white" size="20"></ng-md-icon></a>
+                                <a href="#/spa/{{lang}}" ng-click="bookIt()" ng-if="lang != 'eng'" class="btn-next">Rezervovat
+                                    <ng-md-icon icon="keyboard_arrow_right" style="white" size="20"></ng-md-icon>
+                                </a>
+                                <a href="#/spa/{{lang}}" ng-click="bookIt()" ng-if="lang != 'svk'" class="btn-next">Book
+                                    <ng-md-icon icon="keyboard_arrow_right" style="white" size="20"></ng-md-icon>
+                                </a>
                             </div>
                             <div class="actions float-right" ng-if="bookStep2">
                                 <button class="btn-prev" ng-click="bookStepBack()">
                                     <ng-md-icon icon="keyboard_arrow_left" style="fill: white" size="20"></ng-md-icon>
                                     Back
                                 </button>
-                                <a href="#/spa/{{lang}}" ng-click="sendIt()" ng-if="lang != 'eng'" class="btn-next"><ng-md-icon icon="check" style="white" size="20"></ng-md-icon>Odoslat
+                                <a href="#/spa/{{lang}}" ng-click="sendIt()" ng-if="lang != 'eng'" class="btn-next">
+                                    <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
+                                    Odoslat
                                     Rezervaciu</a>
-                                <a href="#/spa/{{lang}}" ng-click="sendIt()" ng-if="lang != 'svk'" class="btn-next"><ng-md-icon icon="check" style="white" size="20"></ng-md-icon>Confirm
+                                <a href="#/spa/{{lang}}" ng-click="sendIt()" ng-if="lang != 'svk'" class="btn-next">
+                                    <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
+                                    Confirm
                                     Booking</a>
                             </div>
                         </div>
 
                         <div class="stick-bottom" du-smooth-scroll="category">
-                            <ng-md-icon icon="expand_more"
-                                        style="display: block; position: relative; left: -50px; fill: white; margin: 0 auto;"
-                                        size="100"></ng-md-icon>
+                            <span></span>
                         </div>
                     </div>
                 </section>
 
 
                 <section id="category" class="content-main bg-100">
-                    <h1 class="main-title">SPA</h1>
+                    <h1 class="main-title">{{categoryName}}</h1>
                     <div class="small-line"></div>
 
                     <div class="content-main">
                         <p class="content-text">
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            {{spaText1}}
                         </p>
                     </div>
                 </section>
 
                 <section id="open" class="content-main bg-100">
-                    <h1 class="main-title">open-hours</h1>
+                    <h1 class="main-title">{{openHours}}</h1>
                     <div class="small-line"></div>
 
                     <div class="content-main">
@@ -152,37 +158,37 @@
                         <div>
                             <div class="hours">
                                 <div class="day Monday">
-                                    <span>Pondelok</span>
+                                    <span>{{monday}}</span>
                                     <span class="time1">11:00</span>
                                     <span class="time2">23:00</span>
                                 </div>
                                 <div class="day Tuesday">
-                                    <span>Utorok</span>
+                                    <span>{{tuesday}}</span>
                                     <span class="time1">11:00</span>
                                     <span class="time2">23:00</span>
                                 </div>
                                 <div class="day Wednesday">
-                                    <span>Streda</span>
+                                    <span>{{wednesday}}</span>
                                     <span class="time1">11:00</span>
                                     <span class="time2">23:00</span>
                                 </div>
                                 <div class="day Thursday">
-                                    <span>&#138;tvrtok</span>
+                                    <span>{{thursday}}</span>
                                     <span class="time1">11:00</span>
                                     <span class="time2">23:00</span>
                                 </div>
                                 <div class="day Friday">
-                                    <span>Piatok</span>
+                                    <span>{{friday}}</span>
                                     <span class="time1">11:00</span>
                                     <span class="time2">01:00</span>
                                 </div>
                                 <div class="day Saturday">
-                                    <span>Sobota</span>
+                                    <span>{{saturday}}</span>
                                     <span class="time1">12:00</span>
                                     <span class="time2">01:00</span>
                                 </div>
                                 <div class="day Sunday">
-                                    <span>Nedela</span>
+                                    <span>{{sunday}}</span>
                                     <span class="time1">12:00</span>
                                     <span class="time2">23:00</span>
                                 </div>
@@ -191,21 +197,40 @@
                     </div>
                 </section>
 
+                <section class="content-main empty bg-spa">
+                    <h6 class="item-title">Klasická Masáž</h6>
+                    <h6 class="item-label">19.99 &euro;</h6>
+                </section>
+
                 <section id="info" class="content-main bg-100">
-                    <h1 class="main-title">info</h1>
+                    <h1 class="main-title">{{spaTitle2}}</h1>
                     <div class="small-line"></div>
 
                     <div class="content-main">
-                        <p class="content-text">
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                        </p>
+                        <h5>{{spaUl}}</h5>
+                        <ul class="text-list">
+                            <li>{{spaLi1}}</li>
+                            <li>{{spaLi2}}</li>
+                            <li>{{spaLi3}}</li>
+                            <li>{{spaLi4}}</li>
+                        </ul>
                     </div>
                 </section>
+
+                <section class="content-main empty bg-spa">
+                    <h6 class="item-title">Už si sa kupal v Pive?</h6>
+                    <h6 class="item-label">U Nás môžeš a nie len to...</h6>
+                </section>
+
+                <section id="info2" class="content-main bg-100">
+                    <h1 class="main-title">{{spaTitle3}}</h1>
+                    <div class="small-line"></div>
+
+                    <div class="content-main">
+                        <p>{{spaText3}}</p>
+                    </div>
+                </section>
+
 
                 <section id="photos" class="content-main bg-100 flex-nopadding">
                     <flex-slider slide="s in mySlides">
@@ -214,8 +239,6 @@
                         </li>
                     </flex-slider>
                 </section>
-
-
 
                 <!-- include FOOTER -->
                 <div ng-include="'templates/footer.html'"></div>

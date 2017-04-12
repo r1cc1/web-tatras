@@ -10,10 +10,10 @@
         <div class="sub-menu" ng-class="{open: subMenuState}">
             <div>
                 <ul>
-                    <li du-scrollspy="category"><span du-smooth-scroll="category">SPA</span></li>
-                    <li du-scrollspy="open"><span du-smooth-scroll="open">Open</span></li>
-                    <li du-scrollspy="info"><span du-smooth-scroll="info">Info</span></li>
-                    <li du-scrollspy="info2"><span du-smooth-scroll="info">Info2</span></li>
+                    <li du-scrollspy="pension"><span du-smooth-scroll="pension">Penzion</span></li>
+                    <li du-scrollspy="info"><span du-smooth-scroll="info">Izby</span></li>
+                    <li du-scrollspy="open"><span du-smooth-scroll="open">Info</span></li>
+                    <li du-scrollspy="info2"><span du-smooth-scroll="info">Sluzby</span></li>
                     <li du-scrollspy="photos"><span du-smooth-scroll="photos">Photos</span></li>
                 </ul>
             </div>
@@ -33,7 +33,7 @@
 
                     <div class="center-wrap">
                         <div class="center-content">
-                            <h1 class="book-title">Pension TATRAS***</h1>
+                            <h1 class="book-title">{{categoryName}} TATRAS***</h1>
 
                             <div class="book-form">
 
@@ -119,107 +119,86 @@
                             </div>
                         </div>
 
-                        <div class="stick-bottom" du-smooth-scroll="category">
-                            <ng-md-icon icon="expand_more"
-                                        style="display: block; position: relative; left: -50px; fill: white; margin: 0 auto;"
-                                        size="100"></ng-md-icon>
+                        <div class="stick-bottom" du-smooth-scroll="pension">
+                            <span></span>
                         </div>
                     </div>
                 </section>
 
-                <section id="category" class="content-main bg-100">
-                    <h1 class="main-title">Pension</h1>
+                <section id="pension" class="content-main bg-100">
+                    <h1 class="main-title">{{categoryName}}</h1>
                     <div class="small-line"></div>
 
                     <div class="content-main">
-                        <p class="content-text">
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                        </p>
-                    </div>
-                </section>
-
-                <section id="open" class="content-main bg-100">
-                    <h1 class="main-title">open-hours</h1>
-                    <div class="small-line"></div>
-
-                    <div class="content-main">
-
-                        <div>
-                            <div class="hours">
-                                <div class="day Monday">
-                                    <span>Pondelok</span>
-                                    <span class="time1">11:00</span>
-                                    <span class="time2">23:00</span>
-                                </div>
-                                <div class="day Tuesday">
-                                    <span>Utorok</span>
-                                    <span class="time1">11:00</span>
-                                    <span class="time2">23:00</span>
-                                </div>
-                                <div class="day Wednesday">
-                                    <span>Streda</span>
-                                    <span class="time1">11:00</span>
-                                    <span class="time2">23:00</span>
-                                </div>
-                                <div class="day Thursday">
-                                    <span>&#138;tvrtok</span>
-                                    <span class="time1">11:00</span>
-                                    <span class="time2">23:00</span>
-                                </div>
-                                <div class="day Friday">
-                                    <span>Piatok</span>
-                                    <span class="time1">11:00</span>
-                                    <span class="time2">01:00</span>
-                                </div>
-                                <div class="day Saturday">
-                                    <span>Sobota</span>
-                                    <span class="time1">12:00</span>
-                                    <span class="time2">01:00</span>
-                                </div>
-                                <div class="day Sunday">
-                                    <span>Nedela</span>
-                                    <span class="time1">12:00</span>
-                                    <span class="time2">23:00</span>
-                                </div>
-                            </div>
-                        </div>
+                        <p class="content-text">{{pensionText1}}</p>
                     </div>
                 </section>
 
                 <section id="info" class="content-main bg-100">
-                    <h1 class="main-title">info</h1>
+                    <h1 class="main-title">Vybavenie Izby</h1>
                     <div class="small-line"></div>
 
                     <div class="content-main">
+                        <ul class="text-list-number">
+                            <li>trojlôžková izba s možnosťou prístelky, vhodná pre viacčlennú rodinu 26 m2</li>
+                            <li>dvojlôžková izba 22 m2</li>
+                            <li>dvojlôžková izba s možnosťou prístelky 28 m2</li>
+                            <li> dvojlôžková izba 28 m2</li>
+                        </ul>
                         <p class="content-text">
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            Všetky izby sú vybavené LED televízorom, WI-FI, chladničkou s minibarom, kúpeľňou so sprchovým kútom a fénom, WC. V budove sa nachádza kozmetika, krajčírstvo, zlatník.
+                            K dispozícií je privátne parkovisko strážené kamerovým systémom.
+                            Chcete si prenajať izbu na jeden či viac mesiacov? Je to možné. U nás sa budete cítiť ako „vo svojom“.
                         </p>
                     </div>
                 </section>
 
+                <section class="content-main empty bg-pension">
+                    <h6 class="item-title">Izba na noc už od</h6>
+                    <h6 class="item-label">29.99 &euro;</h6>
+                </section>
+
+                <section id="open" class="content-main bg-100">
+                    <h1 class="main-title">Check in & Check out</h1>
+                    <div class="small-line"></div>
+
+                    <div class="content-main">
+                        <p>Nástup na ubytovanie (check-in): 14,00 hod.</p>
+                        <p>Odchod z ubytovania (check-out): 10,00 hod.</p>
+                        <p>Recepcia: 8,00 hod. – 22,00 hod.</p>
+                    </div>
+                </section>
+
                 <section id="info2" class="content-main bg-100">
-                    <h1 class="main-title">info2</h1>
+                    <h1 class="main-title">Služby</h1>
                     <div class="small-line"></div>
 
                     <div class="content-main">
                         <p class="content-text">
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk text-svk
-                            text-svk text-svk text-svk text-svk text-svk text-svk text-svk
+                            Poloha penziónu je skvelým východiskovým bodom pre Vaše ďaľšie aktivity. Ak chcete zažiť pestrú dovolenku, navrhneme Vám program z ktorého si určite vyberiete. Zabezpečíme Vám zľavnené vstupenky.
                         </p>
+                        <p class="content-text">
+                            Doporučíme sprievodcu, vyhľadáme a zarezervujeme dopravné spojenie a večer môžete zregenerovať a načerpať sily v pivných kúpeloch, povečerať v našej reštaurácií a dobre sa vyspať v  našom útulnom penzióne ktorý si určite zamilu
+                        </p>
+                    </div>
+                </section>
+
+                <section class="content-main empty bg-pension">
+                    <h6 class="item-title">Tatranská galéria</h6>
+                    <h6 class="item-label">0,7 km, 7 min</h6>
+                </section>
+
+                <section id="info3" class="content-main bg-100">
+                    <h1 class="main-title">Ponúkame Vám</h1>
+                    <div class="small-line"></div>
+
+                    <div class="content-main">
+                        <ul class="text-list">
+                            <li>prehliadku minipivovaru Tatras s pivnou degustáciou a výkladom</li>
+                            <li>možnosť zúčastníť sa varenia piva so sládkom</li>
+                            <li>návštevu pivných kúpeľov, sauna, masáž</li>
+                            <li>raňajky v reštaurácií Tatras </li>
+                        </ul>
                     </div>
                 </section>
 
