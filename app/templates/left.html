@@ -22,6 +22,10 @@
                         <a href="#/spa/{{lang}}" ng-class="getClass('/spa')" ng-show="lang != 'svk'" ng-init="lang == 'eng'">Beer SPA</a>
                         <a href="#/spa/{{lang}}" ng-class="getClass('/spa')" ng-show="lang != 'eng'" ng-init="lang == 'svk'">Pivné kúpele</a>
                     </li>
+                    <li>
+                        <a href="#/shop/{{lang}}" ng-class="getClass('/shop')" ng-show="lang != 'svk'" ng-init="lang == 'eng'">Shop</a>
+                        <a href="#/shop/{{lang}}" ng-class="getClass('/shop')" ng-show="lang != 'eng'" ng-init="lang == 'svk'">Predajnička</a>
+                    </li>
                     <li class="language">
                         <span ng-if="lang != 'eng'" ng-click="english()">ENG</span>
                         <span ng-if="lang != 'svk'" ng-click="slovak()">SVK</span>

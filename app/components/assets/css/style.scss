@@ -857,6 +857,16 @@ $font_roboto_bold_url: url(../fonts/Roboto/Roboto-Bold.ttf);
     background-position: center bottom;
   }
 
+  .bg-shop {
+    background-color: white;
+    background-image: url("../imgs/shop.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center top;
+
+  }
+
   .first {
     position: relative;
     display: block;

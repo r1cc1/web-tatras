@@ -1,0 +1,146 @@
+<div class="wrapper">
+
+    <!-- include LEFT-NAVI -->
+    <div ng-include="'templates/left.html'"></div>
+    <!-- end of LEFT-NAVI include -->
+
+    <div class="fake-left"></div>
+
+    <div class="right">
+        <div class="sub-menu" ng-class="{open: subMenuState}">
+            <div>
+                <ul>
+
+                    <li du-scrollspy="book"><span du-smooth-scroll="book">book</span></li>
+                    <li du-scrollspy="category"><span du-smooth-scroll="category">shop</span></li>
+                    <li du-scrollspy="open"><span du-smooth-scroll="open">Products</span></li>
+                    <li du-scrollspy="info"><span du-smooth-scroll="info">Info</span></li>
+                    <li du-scrollspy="photos"><span du-smooth-scroll="photos">Photos</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="right-content">
+
+            <div class="content-wrapper">
+
+                <button class="hamburger hamburger--collapse" type="button">
+                      <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                      </span>
+                </button>
+
+                <section id="book" class="bg-shop book" ng-style="{height: displayHeight + 'px'}">
+                    <div class="center-wrap">
+                        <div class="center-content">
+
+                            <h1 class="book-title">TATRAS {{categoryName}}</h1>
+                        </div>
+
+                        <div class="stick-bottom" du-smooth-scroll="category">
+                            <span></span>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section id="category" class="content-main bg-100">
+                    <h1 class="main-title">{{shopTitle1}}</h1>
+                    <div class="small-line"></div>
+
+                    <div class="content-main">
+                        <p class="content-text">
+                            {{shopText1}}
+                            <br>
+                            <br>
+                            {{shopText2}}
+                        </p>
+                    </div>
+                </section>
+
+                <section id="open" class="content-main bg-100">
+                    <h1 class="main-title">{{openHours}}</h1>
+                    <div class="small-line"></div>
+
+                    <div class="content-main">
+
+                        <div>
+                            <div class="hours">
+                                <div class="day Monday">
+                                    <span>{{monday}}</span>
+                                    <span class="time1">11:00</span>
+                                    <span class="time2">23:00</span>
+                                </div>
+                                <div class="day Tuesday">
+                                    <span>{{tuesday}}</span>
+                                    <span class="time1">11:00</span>
+                                    <span class="time2">23:00</span>
+                                </div>
+                                <div class="day Wednesday">
+                                    <span>{{wednesday}}</span>
+                                    <span class="time1">11:00</span>
+                                    <span class="time2">23:00</span>
+                                </div>
+                                <div class="day Thursday">
+                                    <span>{{thursday}}</span>
+                                    <span class="time1">11:00</span>
+                                    <span class="time2">23:00</span>
+                                </div>
+                                <div class="day Friday">
+                                    <span>{{friday}}</span>
+                                    <span class="time1">11:00</span>
+                                    <span class="time2">01:00</span>
+                                </div>
+                                <div class="day Saturday">
+                                    <span>{{saturday}}</span>
+                                    <span class="time1">12:00</span>
+                                    <span class="time2">01:00</span>
+                                </div>
+                                <div class="day Sunday">
+                                    <span>{{sunday}}</span>
+                                    <span class="time1">12:00</span>
+                                    <span class="time2">23:00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-main empty bg-beer">
+                    <h6 class="item-title">IPA</h6>
+                    <h6 class="item-label">3.99 &euro;</h6>
+                </section>
+
+                <section id="info2" class="content-main bg-100">
+                    <h1 class="main-title">{{shopTitle2}}</h1>
+                    <div class="small-line"></div>
+
+                    <div class="content-main">
+                        <p>{{shopText3}}</p>
+                    </div>
+                </section>
+
+
+                <section id="photos" class="content-main bg-100 flex-nopadding">
+                    <flex-slider slide="s in mySlides">
+                        <li>
+                            <img ng-src="{{s}}">
+                        </li>
+                    </flex-slider>
+                </section>
+
+                <!-- include FOOTER -->
+                <div ng-include="'templates/footer.html'"></div>
+                <!-- end of FOOTER include -->
+
+            </div><!-- content-wraper -->
+        </div><!-- /right-content -->
+
+    </div>
+</div>
+
+
+
+
+
+

@@ -672,6 +672,14 @@
     background-size: cover;
     background-position: center bottom; }
 
+  .bg-shop {
+    background-color: white;
+    background-image: url("../imgs/shop.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center top; }
+
   .first {
     position: relative;
     display: block;

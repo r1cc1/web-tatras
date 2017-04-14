@@ -54,6 +54,15 @@ angular.module('myApp', [
             controller: 'spaCrlEng'
         });
 
+        $routeProvider.when('/shop/svk', {
+            templateUrl: 'templates/shop.html',
+            controller: 'shopCtrl'
+        });
+        $routeProvider.when('/shop/eng', {
+            templateUrl: 'templates/shop.html',
+            controller: 'shopCtrlEng'
+        });
+
         $routeProvider.otherwise({redirectTo: '/home/svk'});
     }])
     .controller('mainCtrl', ['$scope', '$location', '$rootScope', '$window', function ($scope, $location, $rootScope, $window) {
@@ -185,10 +194,8 @@ angular.module('myApp', [
 
         // TEXTS
         $scope.btnBook = 'Zavolajte Nam';
-
-        $scope.btnBookSvk = 'Zavolaj Nam';
-        $scope.btnBookEng = 'Call Us';
         $scope.btnIcon = 'call';
+        
 
         $scope.btnBookTable = 'Rezervovat Stol';
         $scope.btnBookRoom = 'Rezervovat Izbu';
@@ -587,6 +594,92 @@ angular.module('myApp', [
 
         $scope.spaTitle3 = 'Odporúčame Vám ';
         $scope.spaText3 = 'Odpočinok podporí vstrebávanie vitamínov a extraktov z predchádzajúceho kúpeľa.Pre dlhodobejší účinok sa odporúča byť niekoľko hodín bez opláchnutia alebo sprchy.Zažite ten pravý pivný kúpeľ pre dvoch v jednej vani. Na tento zážitok určite nezabudnete. Ležíte vo vani a môžete si, len tak mimochodom, načapovať pivo. Nie je to báječné? K dispozícii sú štyri vane či už pre jednotlivcov alebo pre pár. Kapacita pivných kúpeľov je max. 8 osôb. Ako doplnok sa ponúka masáž, zábal alebo maska z pivovarských kvasníc. Odporúčame Vám vypnúť mobil a myseľ a maximálne sa uvoľniť. So sebou si nič brať nemusíte. O všetko sa postaráme my (uteráky, plachty, prezuvky...). Celý priestor kúpeľov bude počas procedúry súkromný - iba Váš. Naša obsluha Vás iba uvedie, všetko vysvetlí a už Vás nikto nebude rušiť. Pivné kúpele neodporúčame tehotným ženám, ľuďom s vysokým krvným tlakom, chorobami srdca a otvorenými kožnými chorobami. Osoby alergické na bielkoviny, kvasnice či chmeľ by sa mali pred pivným kúpeľom poradiť s lekárom.';
+
+        $scope.bookStep1 = true;
+        $scope.bookStep2 = false;
+
+        $scope.bookIt = function () {
+            $scope.bookStep2 = true;
+            $scope.bookStep1 = false;
+        };
+        $scope.bookStepBack = function () {
+            $scope.bookStep2 = false;
+            $scope.bookStep1 = true;
+        };
+        $scope.mySlides = [
+            './components/assets/imgs/jedlo/kolacik.jpg',
+            './components/assets/imgs/jedlo/loparik.jpg',
+            './components/assets/imgs/jedlo/rebra.JPG',
+            './components/assets/imgs/jedlo/polievka.jpg',
+            './components/assets/imgs/jedlo/licka.JPG'
+        ];
+
+    }])
+    .controller('shopCtrl', ['$scope', '$rootScope', '$http', function ($scope, $rootScope) {
+        $rootScope.getCurrentDay();
+
+        // set Language
+        $rootScope.lang = 'svk';
+        // set Category
+        $rootScope.category = 'shop';
+        console.log('$rootScope.category: ' + $rootScope.category);
+
+        $scope.isHome = true;
+        $scope.categoryName = 'Predajnička';
+
+        // TEXTS
+        $scope.btnBook = 'Zavolajte Nám';
+        $scope.btnIcon = 'call';
+
+        $scope.shopText1 = 'V našej predajničke nájdete pivá nášho minipivovaru Tatras, ktoré sú vhodné na každú príležitosť. Všetky sú kvasinkové, nefiltrované a nepasterizované. Okrem pív v predajničke ponúkame náš špeciálny pivný destilát – pivovicu Jacobus Emerici, vybrané slovenské vína, alkohol.';
+
+        $scope.shopTitle1 = 'Vítame Vás';
+        $scope.shopText2 = 'Na pamiatku Vašej návštevy u nás a pre zberateľov máme pripravené krásne suveníry - pivové poháre, pivné tácky, etikety nášho minipivovaru, pivnú kozmetiku.Samozrejmosťou je zaslanie vybraného tovaru na Vašu adresu. ';
+        $scope.shopText3 = 'Veríme že chuťová rôznorodosť, neopakovateľná vôňa a charakter naších pív Vám ponúkne skutočný zážitok. Doprajte si aj pôžitok z nášho čapovaného „ozajstného piva“.  Všetci z nás niekedy niečo slávia. Na záhrade, v altánku či v lese na guláši. Viete akú môžete urobiť radosť priateľom, ak si budú môcť načapovať pivo sami? Požičajte si naše výčapne zariadenie domov. K nemu si vyberte z naších ôsmich druhov ozajstného piva súdok a užívajte svet!';
+        $scope.shopTitle2 = 'Skutočný zážitok';
+
+        $scope.bookStep1 = true;
+        $scope.bookStep2 = false;
+
+        $scope.bookIt = function () {
+            $scope.bookStep2 = true;
+            $scope.bookStep1 = false;
+        };
+        $scope.bookStepBack = function () {
+            $scope.bookStep2 = false;
+            $scope.bookStep1 = true;
+        };
+        $scope.mySlides = [
+            './components/assets/imgs/jedlo/kolacik.jpg',
+            './components/assets/imgs/jedlo/loparik.jpg',
+            './components/assets/imgs/jedlo/rebra.JPG',
+            './components/assets/imgs/jedlo/polievka.jpg',
+            './components/assets/imgs/jedlo/licka.JPG'
+        ];
+
+    }])
+    .controller('shopCtrlEng', ['$scope', '$rootScope', '$http', function ($scope, $rootScope) {
+        $rootScope.getCurrentDay();
+
+        // set Language
+        $rootScope.lang = 'eng';
+        // set Category
+        $rootScope.category = 'shop';
+        console.log('$rootScope.category: ' + $rootScope.category);
+
+        $scope.isHome = true;
+        $scope.categoryName = 'Shop';
+
+        // TEXTS
+        $scope.btnBook = 'Call Us Now';
+        $scope.btnIcon = 'call';
+
+        $scope.shopTitle1 = 'Welcome';
+        $scope.shopText1 = 'V našej predajničke nájdete pivá nášho minipivovaru Tatras, ktoré sú vhodné na každú príležitosť. Všetky sú kvasinkové, nefiltrované a nepasterizované. Okrem pív v predajničke ponúkame náš špeciálny pivný destilát – pivovicu Jacobus Emerici, vybrané slovenské vína, alkohol.';
+
+        $scope.shopText2 = 'Na pamiatku Vašej návštevy u nás a pre zberateľov máme pripravené krásne suveníry - pivové poháre, pivné tácky, etikety nášho minipivovaru, pivnú kozmetiku.Samozrejmosťou je zaslanie vybraného tovaru na Vašu adresu. ';
+        $scope.shopText3 = 'Veríme že chuťová rôznorodosť, neopakovateľná vôňa a charakter naších pív Vám ponúkne skutočný zážitok. Doprajte si aj pôžitok z nášho čapovaného „ozajstného piva“.  Všetci z nás niekedy niečo slávia. Na záhrade, v altánku či v lese na guláši. Viete akú môžete urobiť radosť priateľom, ak si budú môcť načapovať pivo sami? Požičajte si naše výčapne zariadenie domov. K nemu si vyberte z naších ôsmich druhov ozajstného piva súdok a užívajte svet!';
+        $scope.shopTitle2 = 'True experience';
 
         $scope.bookStep1 = true;
         $scope.bookStep2 = false;
