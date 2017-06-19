@@ -40,6 +40,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="components/assets/imgs/icons/tatras_icon-144.png" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
     <link rel="stylesheet" href="components/bower/html5-boilerplate/dist/css/normalize.css">
     <link rel="stylesheet" href="components/bower/html5-boilerplate/dist/css/main.css">
 
@@ -51,6 +52,15 @@
 </head>
 <body ng-app="myApp" ng-controller="mainCtrl">
 
+<!-- facebook -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/sk_SK/sdk.js#xfbml=1&version=v2.9&appId=167064503379014";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade

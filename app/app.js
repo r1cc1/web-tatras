@@ -20,11 +20,11 @@ angular.module('myApp', [
         });
 
         $routeProvider.when('/home/svk', {
-            templateUrl: 'templates/index.html',
+            templateUrl: 'templates/start.html',
             controller: 'homeCtrl'
         });
         $routeProvider.when('/home/eng', {
-            templateUrl: 'templates/index.html',
+            templateUrl: 'templates/start.html',
             controller: 'homeCtrl'
         });
 
@@ -193,8 +193,18 @@ angular.module('myApp', [
         $scope.mobileMenu = function() {
             $rootScope.openMobileMenu = !$rootScope.openMobileMenu;
             console.log($rootScope.openMobileMenu);
-        }
+        };
 
+        var $stopPropagation = $('a');
+
+        function clickHandler (event) {
+            $(this).toggleClass('distinctive')
+            if($stopPropagation.is(':checked'))
+                event.stopPropagation();
+
+            console.log('yeah');
+        }
+        $('.left').on('click', clickHandler);
 
 
     }])
@@ -1284,6 +1294,16 @@ angular.module('myApp', [
             }
         }
     }])
+    .directive('testClick', function () {
+        return {
+            restrict: 'A',
+            link: function (scope, element) {
+                element.onclick = function() {
+                    alert('click');
+                }
+            }
+        }
+    })
     .run(['$rootScope', '$location', '$routeParams', function ($rootScope, $location) {
 
         $rootScope.$on( "$routeChangeStart", function(event, next) {

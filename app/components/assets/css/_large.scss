@@ -7,40 +7,45 @@
 
   .content-wrapper .content-main .center-wrap .category-logo-wrap .category-logo {
     border: 4px solid $color_black;
-    padding: 3em 2em 2.5em 3em;
-  }
-  .content-main {
-    padding: 2em 1em 1em 3em;
+    padding: 3em 2.25em 2.5em 3em;
   }
   .content-main p {
     font-size: 1.5em;
     line-height: 2em;
+    margin: 0;
+    padding: 2em;
   }
   h1.main-title {
     font-size: 2.5em;
+    padding-top: 1.5em;
   }
   h2.category-title {
     font-size: 2.1em;
   }
   h1.logo-title {
     font-size: 7em;
+    line-height: 0.9em;
   }
   h3.moto-title {
-    font-size: 2em;
+    font-size: 2.4em;
+    margin-top: 0.3em;
   }
   .content-main p.welcome-text {
     font-size: 1.5em;
     line-height: 2em;
   }
   .content-main .daily-menu-list {
-    max-width: 40em;
+    max-width: 44em;
+  }
+  .content-main .daily-menu-list .daily-menu-item {
+    padding: 2em;
   }
   .content-main .daily-menu-list .daily-menu-item table tr h5 {
     font-size: 1.5em;
   }
   .content-main .daily-menu-list .daily-menu-item table tr p, .content-main .daily-menu-list .daily-menu-item table tr span {
     font-size: 1.5em;
-    line-height: 2em;
+    line-height: 1.5em;
   }
   .content-kontakt .info .item {
     display: table-cell;
@@ -104,11 +109,10 @@
       }
     }
   }
-
-  .right .content-wrapper .content-main .boxer .box-15 {
-    width: 15em;
+  .content-wrapper .content-main.bg-beige .main-title {
+    padding-top: 1em;
+    padding-bottom: 1.5em;
   }
-
   .right .content-wrapper .content-main .boxer .salon {
     width: 20em;
     padding: 1em;
@@ -126,10 +130,17 @@
   }
   .content-wrapper .content-main .hours {
     max-width: 30em;
+    font-size: 0.75em;
+    margin: 4em auto 2em auto;
   }
-
+  .actions {
+    text-align: right;
+  }
+  .right .actions .btn-next {
+    right: 1em;
+  }
   footer {
-    padding: 2em;
+    padding: 1.5em;
   }
   footer .copyright {
     padding: 0;
@@ -145,8 +156,8 @@
   }
   .book-form .book-wrap {
     display: table;
-    width: calc(100% - 1em);
-    margin-left: 0.5em;
+    width: calc(100% - 4em);
+    margin: 0;
   }
   .book-form .book-wrap .row {
     display: table-cell;
@@ -154,5 +165,16 @@
   }
   .right .sub-menu {
     left: 208px;
+  }
+
+  .bg {
+    background-attachment: fixed;
+  }
+  .content-wrapper .book .center-wrap .center-content .logo img {
+    width: 15em;
+    height: 15em;
+  }
+  .actions.start-btns {
+    margin-top: 5em;
   }
 }

@@ -5,13 +5,12 @@
                         <span class="hamburger-inner"></span>
                       </span>
         </button>
-        <div class="language">
-            <span ng-if="lang != 'eng'" ng-click="english()">EN</span>
-            <span ng-if="lang != 'svk'" ng-click="slovak()">SK</span>
-        </div>
+        <!--<div class="language">-->
+            <!--<span ng-if="lang != 'eng'" ng-click="english()">EN</span>-->
+            <!--<span ng-if="lang != 'svk'" ng-click="slovak()">SK</span>-->
+        <!--</div>-->
     </div>
     <div class="left-wrap">
-
         <div class="logo">
             <img src="./components/assets/imgs/tatras_logo.png" alt="Minipivovar Tatras"/>
         </div>
@@ -42,25 +41,6 @@
                 </ul>
             </nav>
         </div>
-        <!--<div class="info">-->
-        <!--<div class="social-contact">-->
-
-        <!--<a href="tel:00421948828727" target="_blank">-->
-        <!--<img src="../components/assets/imgs/icons/phone.png">-->
-        <!--</a>-->
-        <!--<a href="mailto:info&#64minipivovartatras&#46sk" class="email" name="email-kontakt" target="_blank">-->
-        <!--<img src="../components/assets/imgs/icons/mail.png">-->
-        <!--</a>-->
-
-        <!--<a href="https://www.facebook.com/minipivovartatras/" name="Facebook" target="_blank">-->
-        <!--<img src="../components/assets/imgs/icons/fb.png">-->
-        <!--</a>-->
-
-        <!--<a href="https://www.google.sk/maps/place/Minipivovar+Tatras/@49.110841,20.0118303,11z/data=!4m8!1m2!2m1!1sminipivovar+tatras!3m4!1s0x473e3a937a825883:0x737d3b4af45f4836!8m2!3d49.0547361!4d20.3021651" target="_blank">-->
-        <!--<img src="../components/assets/imgs/icons/location.png">-->
-        <!--</a>-->
-        <!--</div>-->
-        <!--</div>-->
         <div class="call-action">
 
             <a href="tel:00421948828727" target="_self" name="call-us" class="btn-book" ng-if="isHome">
@@ -73,15 +53,14 @@
                 </span>
             </a>
 
-            <button class="btn-book" du-smooth-scroll="book" ng-if="lang != 'eng' && !isHome">
+            <button class="btn-book" du-smooth-scroll="book" ng-if="lang != 'eng' && !isHome" ng-click="mobileMenu()">
                 <ng-md-icon icon="{{btnIcon}}" style="fill: #2b2a29" size="20"></ng-md-icon>
                 {{btnBook}}
             </button>
-            <button class="btn-book" du-smooth-scroll="book" ng-if="lang != 'svk' && !isHome">
+            <button class="btn-book" du-smooth-scroll="book" ng-if="lang != 'svk' && !isHome" ng-click="mobileMenu()">
                 <ng-md-icon icon="{{btnIcon}}" style="fill: #2b2a29" size="20"></ng-md-icon>
                 {{btnBook}}
             </button>
         </div>
-
     </div>
 </div>

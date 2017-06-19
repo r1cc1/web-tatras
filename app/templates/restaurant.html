@@ -7,14 +7,15 @@
     <div class="fake-left"></div>
 
     <div class="right">
+
         <div class="sub-menu" ng-class="{open: openMobileMenu}">
             <div>
                 <ul>
-                    <li du-scrollspy="welcome"><span du-smooth-scroll="welcome">{{restaurantWelcome}}</span></li>
-                    <li du-scrollspy="hours"><span du-smooth-scroll="hours">{{openHours}}</span></li>
-                    <li du-scrollspy="menu"><span du-smooth-scroll="menu">Denné Menu</span></li>
-                    <li du-scrollspy="info2"><span du-smooth-scroll="info2">{{restaurantSaloniky}}</span></li>
-                    <li du-scrollspy="kitchen"><span du-smooth-scroll="kitchen">Kuchyna</span></li>
+                    <li du-scrollspy="welcome"><span du-smooth-scroll="welcome" ng-click="mobileMenu()">{{restaurantWelcome}}</span></li>
+                    <li du-scrollspy="hours"><span du-smooth-scroll="hours" ng-click="mobileMenu()">{{openHours}}</span></li>
+                    <li du-scrollspy="menu"><span du-smooth-scroll="menu" ng-click="mobileMenu()">Denné Menu</span></li>
+                    <li du-scrollspy="info2"><span du-smooth-scroll="info2" ng-click="mobileMenu()">{{restaurantSaloniky}}</span></li>
+                    <li du-scrollspy="kitchen"><span du-smooth-scroll="kitchen" ng-click="mobileMenu()">Kuchyna</span></li>
                 </ul>
             </div>
         </div>
@@ -34,7 +35,7 @@
 
             <div class="content-wrapper">
 
-                <section id="restaurant" class="content-main bg-100 flex-nopadding" ng-style="{height: displayHeight + 'px'}">
+                <section id="restaurant" class="content-main bg bg-100 flex-nopadding" ng-style="{height: displayHeight + 'px'}">
                     <div class="center-wrap">
                         <div class="category-logo-wrap">
                             <div class="category-logo">
@@ -49,10 +50,10 @@
                     </div>
                 </section>
 
-                <section class="content-main empty bg-rebra">
+                <section class="content-main empty bg bg-rebra">
                 </section>
 
-                <section id="welcome" class="bg-100 ">
+                <section id="welcome" class="bg bg-100 ">
                     <div class="content-main">
                         <h1 class="main-title">{{categoryName}}</h1>
                         <div class="small-line"></div>
@@ -63,7 +64,7 @@
                     </div>
                 </section>
 
-                <section id="hours" class="bg-100">
+                <section id="hours" class="bg bg-100">
                     <div class="content-main">
                         <h1 class="main-title">{{otvaracieHodiny}}</h1>
                         <div class="small-line"></div>
@@ -109,17 +110,17 @@
                     </div>
                 </section>
 
-                <section class="content-main empty bg-restaurant">
+                <section class="content-main empty bg bg-restaurant">
                 </section>
 
-                <section id="menu" class="bg-100">
+                <section id="menu" class="bg bg-100">
                     <div id="content-logo"></div>
                     <h1 class="main-title">Denné Menu</h1>
                     <div class="small-line"></div>
 
-                    <div class="content-main">
+                    <div class="content-main no-padding">
 
-                        <h1 class="main-title no-padding-top"><span>Cena 5,50 &euro;</span></h1>
+                        <h1 class="main-title tag"><span>Cena 5,50 &euro;</span></h1>
 
                         <div class="daily-menu-list">
 
@@ -353,10 +354,10 @@
 
                 </section>
 
-                <section class="content-main empty bg-salonik">
+                <section class="content-main empty bg bg-salonik">
                 </section>
 
-                <section id="info2" class="content-main bg-100">
+                <section id="info2" class="content-main bg bg-100">
                     <h1 class="main-title">{{restaurantSaloniky}}</h1>
                     <div class="small-line"></div>
                     <div class="boxer">
@@ -399,11 +400,11 @@
                     </div>
                 </section>
 
-                <section class="content-main empty bg-kitchen">
+                <section class="content-main empty bg bg-kitchen">
                      <h6 class="item-title">Naši kuchári</h6>
                 </section>
 
-                <section id="kitchen" class="content-main bg-black">
+                <section id="kitchen" class="content-main bg bg-black">
                     <h1 class="main-title color-red">Varia moderným postupom</h1>
                     <div class="small-line"></div>
                     <div class="content-main">
@@ -413,7 +414,7 @@
                     </div>
                 </section>
 
-                <section  id="info" class="content-main bg-100">
+                <section  id="info" class="content-main bg bg-100">
                     <h1 class="main-title">{{restaurantPribehTitle}}</h1>
                     <div class="small-line"></div>
 
@@ -427,10 +428,10 @@
                     </div>
                 </section>
 
-                <section class="content-main empty bg-bar">
+                <section class="content-main empty bg bg-bar">
                 </section>
 
-                <section id="book" class="content-main bg-beige">
+                <section id="book" class="content-main bg bg-beige">
                     <h1 class="main-title">{{btnBook}}</h1>
 
                     <div class="book-form">
@@ -544,7 +545,7 @@
                     </div>
                 </section>
 
-                <section id="photos" class="content-main bg-100 flex-nopadding">
+                <section id="photos" class="content-main bg bg-100 flex-nopadding">
 
                     <flex-slider slide="s in mySlides">
                         <li>

@@ -4,8 +4,15 @@
   body:before {
     content: 'Extra Large Screen';
   }
-  .content-main {
-    padding: 2em 3em 2em 6em;
+  h1.main-title {
+    padding-top: 1em;
+  }
+  .actions {
+    text-align: right;
+    padding: 1.5em 0 2em 0;
+  }
+  .right .actions .btn-next {
+    right: 2.5em;
   }
   .content-main .table-info .table-info-item span {
     font-size: 1.25em;
@@ -13,25 +20,38 @@
   .right .content-main .table-info .table-info-item p {
     font-size: 2em;
   }
-
   .right .content-wrapper .content-main .boxer .box {
-    width: 25em;
+    width: calc(100% / 4);
   }
   .right .content-wrapper .content-main .boxer .box .img {
-    height: 25em;
+    height: 16em;
+  }
+  .content-wrapper .content-main .boxer {
+    padding-bottom: 1em;
   }
   .right .content-wrapper .content-main .boxer .salon {
-    width: 18em;
+    width: calc(100% / 4);
     padding: 1em;
   }
   .content-main .daily-menu-list {
-    max-width: 55em;
+    max-width: calc(100% - 10em);
   }
-  .book-form .book-wrap {
-     margin-left: 0;
-     padding: 0.5em;
-   }
-  .flex-nopadding {
-    padding: 0 0 0 3.5em;
+  .content-kontakt .info .item a,.content-kontakt .info .item p {
+    font-size: 1.5em;
+    padding: 0;
+  }
+  .content-wrapper .content-main .hours {
+    margin: 4em auto 4em auto;
+  }
+  .content-wrapper .content-main .boxer .salon h5 {
+    font-size: 1.75em;
+  }
+  .content-wrapper .content-main .boxer .salon p {
+    font-size: 1.5em;
+    line-height: 1.5em;
+  }
+  .content-wrapper .book .center-wrap .center-content .logo img {
+    width: 20em;
+    height: 20em;
   }
 }

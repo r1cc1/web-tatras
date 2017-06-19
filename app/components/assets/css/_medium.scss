@@ -8,20 +8,24 @@
   h1.main-title {
     font-size: 3em;
     line-height: 1em;
-    padding-top: 1em;
+    padding-top: 0.5em;
   }
   .content-main p {
     font-size: 1.25em;
     line-height: 2em;
-    margin-bottom: 1em;
+    padding: 0 2em;
   }
 
   .fake-left {
-    width: 208px;
+    width: 16.5em;
   }
   .left {
     width: 200px;
     left: 0;
+
+    div.left-wrap {
+      padding-top: 2em;
+    }
 
     .controls {
       .hamburger {
@@ -35,7 +39,7 @@
   }
   .right {
     .sub-menu {
-      left: 140px;
+      left: 208px;
       top:0;
 
       &.open {
@@ -59,17 +63,17 @@
       font-size: 1.5em;
     }
     .content-wrapper .content-main .boxer .salon {
-      width: 12em;
-      padding: 1em;
+      width: calc(100% / 2.5);
+      padding: 0.5em;
     }
     .content-wrapper .content-main .boxer .box-15 {
-      width: 11em;
+      width: calc(100% / 3);
     }
     .content-wrapper .content-main .boxer .box {
-      width: 15em;
+      width: calc(100% / 2);
     }
     .content-wrapper .content-main .boxer .box .img {
-      height: 15em;
+      height: 12em;
     }
     .actions {
       .btn-next {
@@ -83,12 +87,18 @@
     font-size: 2em;
   }
   h1.logo-title {
-    font-size: 7.5em;
+    font-size: 7em;
   }
   h3.moto-title {
     font-size: 2em;
   }
-
+  .book-form .book-wrap {
+    padding: 2em;
+    margin: 1em 0 0 0;
+  }
+  .actions {
+    text-align: center;
+  }
 
   nav {
     ul.main-menu {
@@ -96,5 +106,17 @@
         font-size: 1em;
       }
     }
+  }
+  .content-main .daily-menu-list {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    background: white;
+    max-width: 100%;
+  }
+  .content-kontakt .info .item a {
+    font-size: 1em;
+    padding: 0;
   }
 }

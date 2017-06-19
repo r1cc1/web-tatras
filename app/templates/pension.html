@@ -10,11 +10,11 @@
         <div class="sub-menu" ng-class="{open: openMobileMenu}">
             <div>
                 <ul>
-                    <li du-scrollspy="welcome"><span du-smooth-scroll="welcome">{{categoryName}}</span></li>
-                    <li du-scrollspy="info"><span du-smooth-scroll="info">Izby</span></li>
-                    <li du-scrollspy="book"><span du-smooth-scroll="book">Book</span></li>
-                    <li du-scrollspy="info2"><span du-smooth-scroll="info2">Služby</span></li>
-                    <li du-scrollspy="info3"><span du-smooth-scroll="info3">Ponuka</span></li>
+                    <li du-scrollspy="welcome"><span du-smooth-scroll="welcome" ng-click="mobileMenu()">{{categoryName}}</span></li>
+                    <li du-scrollspy="info"><span du-smooth-scroll="info" ng-click="mobileMenu()">Izby</span></li>
+                    <li du-scrollspy="book"><span du-smooth-scroll="book" ng-click="mobileMenu()">Book</span></li>
+                    <li du-scrollspy="info2"><span du-smooth-scroll="info2" ng-click="mobileMenu()">Služby</span></li>
+                    <li du-scrollspy="info3"><span du-smooth-scroll="info3" ng-click="mobileMenu()">Ponuka</span></li>
                 </ul>
             </div>
         </div>
@@ -34,7 +34,7 @@
 
             <div class="content-wrapper">
 
-                <section id="pension" class="content-main bg-100 flex-nopadding" ng-style="{height: displayHeight + 'px'}">
+                <section id="pension" class="content-main bg bg-100 flex-nopadding" ng-style="{height: displayHeight + 'px'}">
                     <div class="center-wrap">
                         <div class="category-logo-wrap">
                             <div class="category-logo">
@@ -50,10 +50,10 @@
                     </div>
                 </section>
 
-                <section class="content-main empty bg-pension">
+                <section class="content-main empty bg bg-pension">
                 </section>
 
-                <section id="welcome" class="content-main bg-100">
+                <section id="welcome" class="content-main bg bg-100">
                     <h1 class="main-title">{{categoryName}}</h1>
                     <div class="small-line"></div>
 
@@ -84,7 +84,7 @@
                     </div>
                 </section>
 
-                <section id="info" class="content-main bg-100">
+                <section id="info" class="content-main bg bg-100">
                     <h1 class="main-title">Izby</h1>
                     <div class="small-line"></div>
 
@@ -106,7 +106,7 @@
                                 <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
                                             size="30"></ng-md-icon>
                             </div>
-                            <div class="img bg-pension3"></div>
+                            <div class="img bg bg-pension3"></div>
                             <p>dvojlôžková izba</p>
                         </div>
                         <div class="box">
@@ -116,7 +116,7 @@
                                 <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
                                             size="30"></ng-md-icon>
                             </div>
-                            <div class="img bg-pension3"></div>
+                            <div class="img bg bg-pension3"></div>
                             <p>dvojlôžková izba</p>
                         </div>
                         <div class="box">
@@ -128,7 +128,7 @@
                                 <ng-md-icon icon="person_add" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
                                             size="30"></ng-md-icon>
                             </div>
-                            <div class="img bg-pension4"></div>
+                            <div class="img bg bg-pension4"></div>
 
                             <p>dvojlôžková izba</p>
                             <p>s možnosťou prístelky</p>
@@ -145,7 +145,7 @@
                                 <ng-md-icon icon="person_add" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
                                             size="30"></ng-md-icon>
                             </div>
-                            <div class="img bg-pension"></div>
+                            <div class="img bg bg-pension"></div>
                             <p>trojlôžková izba</p>
                             <p>s možnosťou prístelky</p>
                         </div>
@@ -185,7 +185,7 @@
                     </div>
                 </section>
 
-                <section id="book" class="content-main bg-beige">
+                <section id="book" class="content-main bg bg-beige">
                     <h1 class="main-title">{{btnBook}}</h1>
 
                     <div class="book-form" >
@@ -282,7 +282,7 @@
                     </div>
                 </section>
 
-                <section id="info2" class="content-main bg-100">
+                <section id="info2" class="content-main bg bg-100">
                     <h1 class="main-title">Služby</h1>
                     <div class="small-line"></div>
 
@@ -329,10 +329,10 @@
                     </div>
                 </section>
 
-                <section class="content-main empty bg-pension2">
+                <section class="content-main empty bg bg-pension2">
                 </section>
 
-                <section id="info3" class="content-main bg-100">
+                <section id="info3" class="content-main bg bg-100">
                     <h1 class="main-title">Ponúkame Vám</h1>
                     <div class="small-line"></div>
 
@@ -356,7 +356,7 @@
                 </section>
 
 
-                <!--<section id="photos" class="content-main bg-100 flex-nopadding">-->
+                <!--<section id="photos" class="content-main bg bg-100 flex-nopadding">-->
                     <!--<flex-slider slide="s in mySlides">-->
                         <!--<li>-->
                             <!--<img ng-src="{{s}}" alt="img-name"/>-->
