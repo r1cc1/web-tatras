@@ -30,112 +30,25 @@
                       </span>
                 </button>
 
-                <section id="book" class="bg-spa book" ng-style="{height: displayHeight + 'px'}">
+                <section id="spa" class="content-main bg-100 flex-nopadding" ng-style="{height: displayHeight + 'px'}">
                     <div class="center-wrap">
-                        <div class="center-content">
-
-                            <h1 class="book-title">{{categoryName}} TATRAS</h1>
-
-                            <div class="book-form">
-                                <div class="book-wrap" ng-if="bookStep1">
-                                    <div class="row">
-                                        <div class="wrap four label">
-                                            <ng-md-icon icon="date_range"
-                                                        style="display: block; position: relative; fill: black; margin: 0 auto;"
-                                                        size="25px"></ng-md-icon>
-                                        </div>
-                                        <div class="wrap four label">
-                                            <ng-md-icon icon="access_time"
-                                                        style="display: block; position: relative; fill: black; margin: 0 auto;"
-                                                        size="25px"></ng-md-icon>
-                                        </div>
-
-                                        <div class="wrap four label">
-                                            <ng-md-icon icon="spa"
-                                                        style="display: block; position: relative; fill: black; margin: 0 auto;"
-                                                        size="25px"></ng-md-icon>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="wrap four">
-                                            <input id="date" class="date" type="date"/>
-                                        </div>
-                                        <div class="wrap four">
-                                            <input id="time" class="time" type="time" value="12:00"/>
-                                        </div>
-
-                                        <div class="wrap four">
-                                            <select id="room-type">
-                                                <option>Masaz</option>
-                                                <option>Kupele</option>
-                                                <option>Sauna</option>
-                                                <option>Vsetko</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="book-wrap" ng-if="bookStep2">
-                                    <div class="row">
-                                        <div class="wrap label">
-                                            <ng-md-icon icon="person"
-                                                        style="display: block; position: relative; fill: black; margin: 0 auto;"
-                                                        size="25px"></ng-md-icon>
-                                        </div>
-                                        <div class="wrap label">
-                                            <ng-md-icon icon="email"
-                                                        style="display: block; position: relative; fill: black; margin: 0 auto;"
-                                                        size="25px"></ng-md-icon>
-                                        </div>
-                                        <div class="wrap label">
-                                            <ng-md-icon icon="phone"
-                                                        style="display: block; position: relative; fill: black; margin: 0 auto;"
-                                                        size="25px"></ng-md-icon>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="wrap">
-                                            <input id="name" class="name" type="text" placeholder="Your Name" required/>
-                                        </div>
-                                        <div class="wrap">
-                                            <input id="email" class="email" type="email" placeholder="email" required/>
-                                        </div>
-                                        <div class="wrap">
-                                            <input id="tel" type="number" placeholder="+ 421 901 111 111"/>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="actions float-right" ng-if="bookStep1">
-                                <a href="#/spa/{{lang}}" ng-click="bookIt()" ng-if="lang != 'eng'" class="btn-next">Rezervovat
-                                    <ng-md-icon icon="keyboard_arrow_right" style="white" size="20"></ng-md-icon>
-                                </a>
-                                <a href="#/spa/{{lang}}" ng-click="bookIt()" ng-if="lang != 'svk'" class="btn-next">Book
-                                    <ng-md-icon icon="keyboard_arrow_right" style="white" size="20"></ng-md-icon>
-                                </a>
-                            </div>
-                            <div class="actions float-right" ng-if="bookStep2">
-                                <button class="btn-prev" ng-click="bookStepBack()">
-                                    <ng-md-icon icon="keyboard_arrow_left" style="fill: white" size="20"></ng-md-icon>
-                                    Back
-                                </button>
-                                <a href="#/spa/{{lang}}" ng-click="sendIt()" ng-if="lang != 'eng'" class="btn-next">
-                                    <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
-                                    Odoslat
-                                    Rezervaciu</a>
-                                <a href="#/spa/{{lang}}" ng-click="sendIt()" ng-if="lang != 'svk'" class="btn-next">
-                                    <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
-                                    Confirm
-                                    Booking</a>
+                        <div class="category-logo-wrap">
+                            <div class="category-logo">
+                                <h2 class="category-title">{{categoryName}}</h2>
+                                <h1 class="logo-title">TATRAS</h1>
+                                <h3 class="moto-title">dokonalý relax</h3>
                             </div>
                         </div>
-
-                        <div class="stick-bottom" du-smooth-scroll="category">
-                            <span></span>
+                        <div class="stick-bottom">
+                            <span du-smooth-scroll="pension"></span>
                         </div>
                     </div>
                 </section>
+
+
+                <section class="content-main empty bg-spa-2">
+                </section>
+
 
 
                 <section id="category" class="content-main bg-100">
@@ -149,6 +62,7 @@
                     </div>
                 </section>
 
+
                 <section id="open" class="content-main bg-100">
                     <h1 class="main-title">{{openHours}}</h1>
                     <div class="small-line"></div>
@@ -159,67 +73,238 @@
                             <div class="hours">
                                 <div class="day Monday">
                                     <span>{{monday}}</span>
-                                    <span class="time1">11:00</span>
-                                    <span class="time2">23:00</span>
+                                    <span class="time1">08:00</span>
+                                    <span class="time2">22:00</span>
                                 </div>
                                 <div class="day Tuesday">
                                     <span>{{tuesday}}</span>
-                                    <span class="time1">11:00</span>
-                                    <span class="time2">23:00</span>
+                                    <span class="time1">08:00</span>
+                                    <span class="time2">22:00</span>
                                 </div>
                                 <div class="day Wednesday">
                                     <span>{{wednesday}}</span>
-                                    <span class="time1">11:00</span>
-                                    <span class="time2">23:00</span>
+                                    <span class="time1">08:00</span>
+                                    <span class="time2">22:00</span>
                                 </div>
                                 <div class="day Thursday">
                                     <span>{{thursday}}</span>
-                                    <span class="time1">11:00</span>
-                                    <span class="time2">23:00</span>
+                                    <span class="time1">08:00</span>
+                                    <span class="time2">22:00</span>
                                 </div>
                                 <div class="day Friday">
                                     <span>{{friday}}</span>
-                                    <span class="time1">11:00</span>
-                                    <span class="time2">01:00</span>
+                                    <span class="time1">08:00</span>
+                                    <span class="time2">22:00</span>
                                 </div>
                                 <div class="day Saturday">
                                     <span>{{saturday}}</span>
-                                    <span class="time1">12:00</span>
-                                    <span class="time2">01:00</span>
+                                    <span class="time1">08:00</span>
+                                    <span class="time2">22:00</span>
                                 </div>
                                 <div class="day Sunday">
                                     <span>{{sunday}}</span>
-                                    <span class="time1">12:00</span>
-                                    <span class="time2">23:00</span>
+                                    <span class="time1">08:00</span>
+                                    <span class="time2">22:00</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <section class="content-main empty bg-spa">
-                    <h6 class="item-title">Klasická Masáž</h6>
-                    <h6 class="item-label">19.99 &euro;</h6>
+
+                <section class="content-main empty bg-spa-4">
                 </section>
 
-                <section id="info" class="content-main bg-100">
-                    <h1 class="main-title">{{spaTitle2}}</h1>
+                <section id="treatments" class="content-main bg-100">
+                    <h1 class="main-title">Procedúry</h1>
                     <div class="small-line"></div>
+                    <div class="content-main boxer">
+                        <div class="salon">
+                            <h5>Klasicka Masáž</h5>
+                            <span>1 Osoba / 1 hod</span>
+                            <h3>19,99 &euro;</h3>
+                        </div>
+                        <div class="salon">
+                            <h5>Finska Sauna</h5>
+                            <span>1 Osoba / 1 hod</span>
+                            <h3>9,99 &euro;</h3>
+                        </div>
+                        <div class="salon">
+                            <h5>Pivny Kúpel</h5>
+                            <span>1 Osoba / 1 hod</span>
+                            <h3>29,99 &euro;</h3>
+                        </div>
+                        <div class="salon">
+                            <h5>Pivny Kúpel</h5>
+                            <span>2 Osoby / 1 hod</span>
+                            <h3>49,99 &euro;</h3>
+                        </div>
+                        <div class="salon">
+                            <h5>Finska Sauna & Klasicka Masáž</h5>
+                            <span>1 Osoba / 2 hod</span>
+                            <h3>25,99 &euro;</h3>
+                        </div>
+                        <div class="salon">
+                            <h5>Finska Sauna & Klasicka Masáž</h5>
+                            <span>2 Osoby / 2 hod</span>
+                            <h3>25,99 &euro;</h3>
+                        </div>
 
-                    <div class="content-main">
-                        <h5>{{spaUl}}</h5>
-                        <ul class="text-list">
-                            <li>{{spaLi1}}</li>
-                            <li>{{spaLi2}}</li>
-                            <li>{{spaLi3}}</li>
-                            <li>{{spaLi4}}</li>
-                        </ul>
+                        <div class="salon">
+                            <h5>Pivny Kúpel & Klasicka Masáž</h5>
+                            <span>1 Osoba / 2 hod</span>
+                            <h3>39,99 &euro;</h3>
+                        </div>
+                        <div class="salon">
+                            <h5>Pivny Kúpel & Klasicka Masáž</h5>
+                            <span>2 Osoby / 2 hod</span>
+                            <h3>79,99 &euro;</h3>
+                        </div>
+                        <div class="salon">
+                            <h5>Špeciálna procedúra</h5>
+                            <span>1 Osoba / 3 hod</span>
+                            <h3>89,99 &euro;</h3>
+                        </div>
                     </div>
                 </section>
 
-                <section class="content-main empty bg-spa">
-                    <h6 class="item-title">Už si sa kupal v Pive?</h6>
-                    <h6 class="item-label">U Nás môžeš a nie len to...</h6>
+
+                <section id="book" class="content-main bg-beige">
+                    <h1 class="main-title">{{btnBook}}</h1>
+                    <div class="book-form">
+                        <form name="bookSpa" role="form">
+
+                            <div class="book-wrap" ng-hide="bookFinnish">
+                                <div class="row transparent">
+                                    <div class="wrap four label">
+                                        <ng-md-icon icon="date_range" style="display: inline-block; position: relative; fill: #f5eddc;"
+                                                    size="25px"></ng-md-icon>
+                                        <label for="date">{{dateLabel}}</label>
+                                    </div>
+                                    <div class="wrap four label">
+                                        <ng-md-icon icon="access_time" style="display: inline-block; position: relative; fill: #f5eddc;"
+                                                    size="25px"></ng-md-icon>
+                                        <label for="time">{{timeLabel}}</label>
+                                    </div>
+                                    <div class="wrap four label">
+                                        <ng-md-icon icon="group" style="display: inline-block; position: relative; fill: #f5eddc;"
+                                                    size="25px"></ng-md-icon>
+                                        <label for="amount">{{amountLabel}}</label>
+                                    </div>
+                                    <div class="wrap four label">
+                                        <ng-md-icon icon="local_restaurant" style="display: inline-block; position: relative; fill: #f5eddc;"
+                                                    size="25px"></ng-md-icon>
+                                        <label for="treatment">{{treatmentLabel}}</label>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="wrap four">
+                                        <input id="date" class="date" name="date" type="date" min="2017-01-01" max="2020-01-01"
+                                               ng-model="date" required/>
+                                    </div>
+                                    <div class="wrap four">
+                                        <input id="time" name="timer" class="time" type="time" min="11:00:00" max="24:00:00"
+                                               ng-model="timer" pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$" required/>
+                                    </div>
+                                    <div class="wrap four">
+                                        <input id="amount" name="amount" type="number" value="2" min="2" max="200" placeholder="2" ng-model="amount"/>
+                                    </div>
+                                    <div class="wrap four">
+                                        <select id="treatment" name="treatment" ng-model="treatment">
+                                            <option value="masaz">Klasicka Masáž</option>
+                                            <option value="sauna">Sauna</option>
+                                            <option value="kupel">Pivony Kupel</option>
+                                            <option value="komplet">Komplet Balik</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row transparent">
+                                    <div class="wrap label">
+                                        <ng-md-icon icon="person"
+                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
+                                                    size="25px"></ng-md-icon>
+                                        <label for="name">{{nameLabel}}</label>
+                                    </div>
+                                    <div class="wrap label">
+                                        <ng-md-icon icon="email"
+                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
+                                                    size="25px"></ng-md-icon>
+                                        <label for="email">Email</label>
+                                    </div>
+                                    <div class="wrap label">
+                                        <ng-md-icon icon="phone"
+                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
+                                                    size="25px"></ng-md-icon>
+                                        <label for="tel">{{phoneLabel}}</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="wrap">
+                                        <input type="text" name="name" ng-model="name" class="form-control" placeholder="{{yourName}}" required/>
+                                    </div>
+                                    <div class="wrap">
+                                        <input type="email" name="email" ng-model="email" placeholder="email@email.com"
+                                               class="form-control" required/>
+                                    </div>
+                                    <div class="wrap">
+                                        <input id="phone" type="number" name="phone" ng-model="phone" placeholder="+XXX XXX XXX XXX"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="booking-done" ng-show="bookFinnish">
+                                <ng-md-icon icon="check_circle" style="display: block; position: relative;
+                                            background: #f1ebda; border-radius: 50%;
+                                            width: 150px; height:150px;fill: #2b2a29;"
+                                            size="150"></ng-md-icon>
+                                <h4>{{bookingSend1}}</h4>
+                                <h4>{{bookingSend2}}</h4>
+                            </div>
+
+                            <div class="actions" ng-hide="bookFinnish">
+                                <button ng-click="formsubmit(spaForm)" ng-if="lang != 'eng'" class="btn-next btn-submit">
+                                    <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
+                                    Odoslat
+                                    Rezervaciu
+                                </button>
+                                <button ng-click="formsubmit(spaForm)" ng-if="lang != 'svk'" class="btn-next btn-submit">
+                                    <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
+                                    Book Now
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
+                </section>
+
+                <section class="content-main empty bg-spa-3">
+                </section>
+
+                <section id="info" class="content-main bg-black">
+
+                    <h1 class="main-title color-red">{{spaTitle2}}</h1>
+                    <div class="small-line"></div>
+
+
+                    <div class="content-main">
+                        <p class="content-text color-light">
+                            <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #fff;"
+                                        size="25"></ng-md-icon>
+                            {{spaLi1}}<br><br>
+
+                            <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #fff;"
+                                        size="25"></ng-md-icon>
+                            {{spaLi2}}<br><br>
+
+                            <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #fff;"
+                                        size="25"></ng-md-icon>
+                            {{spaLi3}}<br><br>
+                            <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #fff;"
+                                        size="25"></ng-md-icon>
+                            {{spaLi4}}
+                        </p>
+                    </div>
                 </section>
 
                 <section id="info2" class="content-main bg-100">
@@ -231,7 +316,7 @@
                     </div>
                 </section>
 
-
+<!--
                 <section id="photos" class="content-main bg-100 flex-nopadding">
                     <flex-slider slide="s in mySlides">
                         <li>
@@ -239,7 +324,7 @@
                         </li>
                     </flex-slider>
                 </section>
-
+-->
                 <!-- include FOOTER -->
                 <div ng-include="'templates/footer.html'"></div>
                 <!-- end of FOOTER include -->

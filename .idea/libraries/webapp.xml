@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="webapp">
+    <CLASSES>
+      <root url="file://$USER_HOME$/Documents/Projekte/atmire/development/frontend/webapp" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$USER_HOME$/Documents/Projekte/atmire/development/frontend/webapp/src/main/java" />
+      <root url="file://$USER_HOME$/Documents/Projekte/atmire/development/frontend/webapp/src/test/java" />
+    </SOURCES>
+  </library>
+</component>

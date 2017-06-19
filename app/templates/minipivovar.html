@@ -1,0 +1,171 @@
+<div class="wrapper">
+
+    <!-- include LEFT-NAVI -->
+    <div ng-include="'templates/left.html'"></div>
+    <!-- end of LEFT-NAVI include -->
+
+    <div class="fake-left"></div>
+
+    <div class="right">
+        <div class="sub-menu" ng-class="{open: openMobileMenu}">
+            <div>
+                <ul>
+                    <li du-scrollspy="welcome"><span du-smooth-scroll="welcome">{{welcome}}</span></li>
+                    <li du-scrollspy="beers"><span du-smooth-scroll="beers">PIVO</span></li>
+                    <li du-scrollspy="history"><span du-smooth-scroll="history">{{history}}</span></li>
+                    <li du-scrollspy="lukas"><span du-smooth-scroll="lukas">Vdovjak</span></li>
+                    <li du-scrollspy="contact"><span du-smooth-scroll="contact">{{aboutUs}}</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="right-content">
+            <div class="top-nav">
+
+                <button class="hamburger hamburger--collapse" type="button" ng-click="mobileMenu()">
+                      <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                      </span>
+                </button>
+
+                <div class="top-bar-logo">
+                </div>
+            </div>
+
+
+            <div class="content-wrapper">
+
+
+                <!--
+                <section id="minipivovar" class="content-main bg-100">
+                    <h2 class="category-title">{{minipivovar}}</h2>
+                    <h1 class="logo-title">TATRAS</h1>
+                    <h3 class="moto-title">{{minipivovarTitle1}}</h3>
+                </section>
+
+                <section class="content-main empty bg-beers">
+                </section>
+
+
+-->
+
+                <section class="content-main empty bg-podpivnik">
+                </section>
+
+                <section id="welcome" class="content-main bg-100 box">
+                    <h1 class="main-title">{{welcome}}</h1>
+                    <div class="small-line"></div>
+
+                    <div class="content-main ">
+                        <p>{{minipivovarText1}}</p>
+                    </div>
+                </section>
+
+                <section id="beers" class="content-main bg-100">
+                    <h1 class="main-title">{{minipivovarTitle1}}</h1>
+                    <div class="small-line"></div>
+                    <div class="content-main ">
+                        <p >{{minipivovarText2}} <b>{{minipivovarTitle1}}</b></p>
+                    </div>
+                    <div class=" boxer">
+                        <div class="box-15">
+                            <img src="/components/assets/imgs/pivo/pivo1.jpg"/>
+                        </div>
+                        <div class="box-15">
+                            <img src="/components/assets/imgs/pivo/pivo2.JPG"/>
+                        </div>
+                        <div class="box-15">
+                            <img src="/components/assets/imgs/pivo/pivo3.JPG"/>
+                        </div>
+                        <div class="box-15">
+                            <img src="/components/assets/imgs/pivo/pivo4.JPG"/>
+                        </div>
+                        <div class="box-15">
+                            <img src="/components/assets/imgs/pivo/pivo5.JPG"/>
+                        </div>
+                        <div class="box-15">
+                            <img src="/components/assets/imgs/pivo/pivo6.JPG"/>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-main empty bg-beerhand">
+                </section>
+
+                <section id="history" class="content-main bg-100">
+                    <h1 class="main-title">{{history}}</h1>
+                    <div class="small-line"></div>
+
+                    <div class="content-main">
+                        <p>{{historyText1}}</p>
+                    </div>
+                    <div class="content-main">
+                        <p>{{historyText2}}</p>
+                    </div>
+                </section>
+
+                <section class="content-main empty bg-lukas" ng-style="{height: teaserHeight + 'px'}">
+                </section>
+
+                <section id="lukas" class="content-main bg-black">
+
+                    <h1 class="main-title color-red">Bc. Lukáš Vdovjak</h1>
+                    <div class="small-line"></div>
+
+                    <div class="content-main">
+                        <p class="content-text color-light">{{historyText3}}</p>
+                    </div>
+
+                </section>
+
+                <section class="content-main empty bg-exterier">
+                </section>
+
+
+                <section id="contact" class="content-main content-kontakt bg-100">
+                    <h1 class="main-title ">{{aboutUs}}</h1>
+                    <div class="small-line"></div>
+
+                    <div class="info">
+                        <div class="item">
+                            <p>Minipivovar TATRAS, s.r.o</p>
+                            <p>Bc. Lukáš Vdovjak</p>
+                        </div>
+                        <div class="item">
+                            <p>IČO: 36450308</p>
+                            <p>DIČ: 2021339045</p>
+                        </div>
+                        <div class="item">
+                            <a href="tel:00421948828727">+421 (0) 948828727</a>
+                            <a href="mailto:info&#64minipivovartatras&#46sk" class="email">info@minipivovartatras.sk</a>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section class="last" ng-style="{height: teaserHeight + 'px'}">
+                    <div class="map" ng-style="{height: teaserHeight + 'px'}">
+                        <div style="width:100%;max-width:100%;overflow:hidden;height:100%;color:red;">
+                            <div id="gmap_display" style="height:100%; width:100%;max-width:100%;">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10458.714031133324!2d20.3021651!3d49.0547361!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x737d3b4af45f4836!2sMinipivovar+Tatras!5e0!3m2!1ssk!2ssk!4v1496950044302"
+                                        style="height:100%;width:100%;border:0;" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- include FOOTER -->
+                <div ng-include="'templates/footer.html'"></div>
+                <!-- end of FOOTER include -->
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

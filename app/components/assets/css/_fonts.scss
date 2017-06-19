@@ -1,0 +1,32 @@
+$font_playfair_url: url(../fonts/Playfair_Display/PlayfairDisplay-Regular.ttf);
+$font_roboto_regular_url: url(../fonts/Roboto/Roboto-Regular.ttf);
+$font_roboto_light_url: url(../fonts/Roboto/Roboto-Light.ttf);
+$font_roboto_bold_url: url(../fonts/Roboto/Roboto-Bold.ttf);
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: $font_playfair_url format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: $font_roboto_regular_url format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto-light';
+  src: $font_roboto_light_url format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto-bold';
+  src: $font_roboto_bold_url format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

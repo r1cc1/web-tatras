@@ -1,0 +1,7 @@
+//* Small Screen *//
+@media all and(min-width: 24em) {
+  //* helper *//
+  body:before {
+    content: 'Small Screen';
+  }
+}

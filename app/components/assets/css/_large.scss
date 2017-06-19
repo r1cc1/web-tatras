@@ -1,0 +1,158 @@
+//* Large Screen *//
+@media all and(min-width: 60em) {
+  //* helper *//
+  body:before {
+    content: 'Large Screen';
+  }
+
+  .content-wrapper .content-main .center-wrap .category-logo-wrap .category-logo {
+    border: 4px solid $color_black;
+    padding: 3em 2em 2.5em 3em;
+  }
+  .content-main {
+    padding: 2em 1em 1em 3em;
+  }
+  .content-main p {
+    font-size: 1.5em;
+    line-height: 2em;
+  }
+  h1.main-title {
+    font-size: 2.5em;
+  }
+  h2.category-title {
+    font-size: 2.1em;
+  }
+  h1.logo-title {
+    font-size: 7em;
+  }
+  h3.moto-title {
+    font-size: 2em;
+  }
+  .content-main p.welcome-text {
+    font-size: 1.5em;
+    line-height: 2em;
+  }
+  .content-main .daily-menu-list {
+    max-width: 40em;
+  }
+  .content-main .daily-menu-list .daily-menu-item table tr h5 {
+    font-size: 1.5em;
+  }
+  .content-main .daily-menu-list .daily-menu-item table tr p, .content-main .daily-menu-list .daily-menu-item table tr span {
+    font-size: 1.5em;
+    line-height: 2em;
+  }
+  .content-kontakt .info .item {
+    display: table-cell;
+    width: auto;
+  }
+
+  .content-main .table-info .table-info-item span {
+    font-size: 1.5em;
+  }
+
+  .right .content-main .table-info .table-info-item p {
+    font-size: 2em;
+  }
+
+  .right .content-wrapper .content-main .boxer .box {
+    width: 20em;
+  }
+  .right .content-wrapper .content-main .boxer .box .img {
+    height: 20em;
+  }
+
+  .content-main .feature-icons-set .feature-icon ng-md-icon svg {
+    pointer-events: none;
+    display: block;
+    width: 3em;
+    height: 3em;
+  }
+
+  .info .item p {
+    padding-bottom: 0;
+  }
+  .info .item a {
+    font-size: 1.25em;
+    line-height: 2em;
+    padding-bottom: 0;
+  }
+  .info .item p {
+    font-size: 1.25em;
+  }
+
+  .content-wrapper {
+    .content-main.empty {
+      h6.item-label {
+        font-size: 2em;
+        top: 5em;
+      }
+    }
+    .book .center-wrap {
+      .center-content {
+
+        h1.book-title {
+          font-size: 4em;
+        }
+      }
+    }
+  }
+  .content-main {
+    .table-info {
+      .table-info-item p {
+        font-size: 2em;
+      }
+    }
+  }
+
+  .right .content-wrapper .content-main .boxer .box-15 {
+    width: 15em;
+  }
+
+  .right .content-wrapper .content-main .boxer .salon {
+    width: 20em;
+    padding: 1em;
+  }
+  .content-wrapper .content-main .boxer .salon p {
+    font-size: 1.5em;
+    line-height: 2em;
+  }
+  .content-wrapper .content-main .boxer .salon h5 {
+    font-size: 2em;
+  }
+
+  .content-wrapper .content-main .hours .day span {
+    font-size: 2em;
+  }
+  .content-wrapper .content-main .hours {
+    max-width: 30em;
+  }
+
+  footer {
+    padding: 2em;
+  }
+  footer .copyright {
+    padding: 0;
+  }
+  footer .copyright .row {
+    display: table;
+    width: 100%;
+  }
+  footer .copyright .row .col-md-4 {
+    display: table-cell;
+    width: 33.33%;
+    margin: 1em 0;
+  }
+  .book-form .book-wrap {
+    display: table;
+    width: calc(100% - 1em);
+    margin-left: 0.5em;
+  }
+  .book-form .book-wrap .row {
+    display: table-cell;
+    width: 50%;
+  }
+  .right .sub-menu {
+    left: 208px;
+  }
+}

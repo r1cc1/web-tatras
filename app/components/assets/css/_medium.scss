@@ -1,0 +1,100 @@
+//* Medium Screen *//
+@media all and(min-width: 46em) {
+  //* helper *//
+  body:before {
+    content: 'Medium Screen';
+  }
+
+  h1.main-title {
+    font-size: 3em;
+    line-height: 1em;
+    padding-top: 1em;
+  }
+  .content-main p {
+    font-size: 1.25em;
+    line-height: 2em;
+    margin-bottom: 1em;
+  }
+
+  .fake-left {
+    width: 208px;
+  }
+  .left {
+    width: 200px;
+    left: 0;
+
+    .controls {
+      .hamburger {
+        display: none;
+      }
+    }
+    nav ul.main-menu li a {
+      font-size: 1.25em;
+      line-height: 2em;
+    }
+  }
+  .right {
+    .sub-menu {
+      left: 140px;
+      top:0;
+
+      &.open {
+        left: 208px;
+      }
+    }
+    .right-content {
+      display: block;
+      position: relative;
+      height: auto;
+
+      .top-nav {
+        display: none;
+      }
+    }
+    .content-main .table-info .table-info-item {
+      display: inline-block;
+      width: 33.33%;
+    }
+    .content-main .table-info .table-info-item p {
+      font-size: 1.5em;
+    }
+    .content-wrapper .content-main .boxer .salon {
+      width: 12em;
+      padding: 1em;
+    }
+    .content-wrapper .content-main .boxer .box-15 {
+      width: 11em;
+    }
+    .content-wrapper .content-main .boxer .box {
+      width: 15em;
+    }
+    .content-wrapper .content-main .boxer .box .img {
+      height: 15em;
+    }
+    .actions {
+      .btn-next {
+        display: inline-block;
+        width: auto;
+      }
+    }
+  }
+
+  h2.category-title {
+    font-size: 2em;
+  }
+  h1.logo-title {
+    font-size: 7.5em;
+  }
+  h3.moto-title {
+    font-size: 2em;
+  }
+
+
+  nav {
+    ul.main-menu {
+      li {
+        font-size: 1em;
+      }
+    }
+  }
+}

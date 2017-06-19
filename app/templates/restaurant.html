@@ -1,214 +1,416 @@
 <div class="wrapper">
 
     <!-- include LEFT-NAVI -->
-    <div ng-include="'templates/left.html'"></div>
+    <div ng-include="'templates/left.html'" ></div>
     <!-- end of LEFT-NAVI include -->
 
     <div class="fake-left"></div>
 
     <div class="right">
-        <div class="sub-menu" ng-class="{open: subMenuState}">
+        <div class="sub-menu" ng-class="{open: openMobileMenu}">
             <div>
                 <ul>
-                    <li du-scrollspy="category"><span du-smooth-scroll="category">{{restaurantWelcome}}</span></li>
-                    <li du-scrollspy="menu"><span du-smooth-scroll="menu">{{restaurantSaloniky}}</span></li>
-                    <li du-scrollspy="open"><span du-smooth-scroll="open">{{otvaracieHodiny}}</span></li>
-                    <li du-scrollspy="info"><span du-smooth-scroll="info">{{restaurantPribehTitle}}</span></li>
-                    <li du-scrollspy="photos"><span du-smooth-scroll="photos">Photos</span></li>
+                    <li du-scrollspy="welcome"><span du-smooth-scroll="welcome">{{restaurantWelcome}}</span></li>
+                    <li du-scrollspy="hours"><span du-smooth-scroll="hours">{{openHours}}</span></li>
+                    <li du-scrollspy="menu"><span du-smooth-scroll="menu">Denné Menu</span></li>
+                    <li du-scrollspy="info2"><span du-smooth-scroll="info2">{{restaurantSaloniky}}</span></li>
+                    <li du-scrollspy="kitchen"><span du-smooth-scroll="kitchen">Kuchyna</span></li>
                 </ul>
             </div>
         </div>
 
         <div class="right-content">
+            <div class="top-nav">
 
-            <button class="hamburger hamburger--collapse" type="button">
+                <button class="hamburger hamburger--collapse" type="button" ng-click="mobileMenu()">
                       <span class="hamburger-box">
                         <span class="hamburger-inner"></span>
                       </span>
-            </button>
+                </button>
+
+                <div class="top-bar-logo">
+                </div>
+            </div>
 
             <div class="content-wrapper">
 
-                <section id="book" class="book bg-restaurant" ng-style="{height: displayHeight + 'px'}">
+                <section id="restaurant" class="content-main bg-100 flex-nopadding" ng-style="{height: displayHeight + 'px'}">
                     <div class="center-wrap">
-                        <div class="center-content">
-                            <h1 class="book-title">{{categoryName}} TATRAS</h1>
-
-                            <div class="book-form">
-
-                               <div class="book-wrap" ng-if="bookStep1">
-                                   <div class="row">
-                                       <div class="wrap four label">
-                                           <ng-md-icon icon="date_range" style="display: block; position: relative; fill: black; margin: 0 auto;" size="25px"></ng-md-icon>
-                                       </div>
-                                       <div class="wrap four label">
-                                           <ng-md-icon icon="access_time" style="display: block; position: relative; fill: black; margin: 0 auto;" size="25px"></ng-md-icon>
-                                       </div>
-                                       <div class="wrap four label">
-                                           <ng-md-icon icon="group" style="display: block; position: relative; fill: black; margin: 0 auto;" size="25px"></ng-md-icon>
-                                       </div>
-                                       <div class="wrap four label">
-                                           <ng-md-icon icon="local_restaurant" style="display: block; position: relative; fill: black; margin: 0 auto;" size="25px"></ng-md-icon>
-                                       </div>
-                                   </div>
-                                   <div class="row">
-                                       <div class="wrap four">
-                                           <input id="date" class="date" type="date" />
-                                       </div>
-                                       <div class="wrap four">
-                                           <input id="time" class="time" type="time" value="12:00"/>
-                                       </div>
-                                       <div class="wrap four">
-                                           <input id="amount" type="number" placeholder="2" />
-                                       </div>
-                                       <div class="wrap four">
-                                           <select id="room-type">
-                                               <option>Galerka</option>
-                                               <option>Nezalezi</option>
-                                               <option>Pivnicka</option>
-                                               <option>Hudobka</option>
-                                           </select>
-                                       </div>
-                                   </div>
-                               </div>
-
-                                <div class="book-wrap" ng-if="bookStep2">
-                                    <div class="row">
-                                        <div class="wrap label">
-                                            <ng-md-icon icon="person" style="display: block; position: relative; fill: black; margin: 0 auto;" size="25px"></ng-md-icon>
-                                        </div>
-                                        <div class="wrap label">
-                                            <ng-md-icon icon="email" style="display: block; position: relative; fill: black; margin: 0 auto;" size="25px"></ng-md-icon>
-                                        </div>
-                                        <div class="wrap label">
-                                            <ng-md-icon icon="phone" style="display: block; position: relative; fill: black; margin: 0 auto;" size="25px"></ng-md-icon>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="wrap">
-                                            <input id="name" class="name" type="text" placeholder="Your Name" required/>
-                                        </div>
-                                        <div class="wrap">
-                                            <input id="email" class="email" type="email" placeholder="email" required/>
-                                        </div>
-                                        <div class="wrap">
-                                            <input id="tel" type="number" placeholder="+ 421 901 111 111" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="actions float-right" ng-if="bookStep1">
-                                    <a href="#/restaurant/{{lang}}" ng-click="continueBook()" ng-if="lang != 'eng'" class="btn-next float-right">Rezervovat<ng-md-icon icon="keyboard_arrow_right" style="white" size="20"></ng-md-icon></a>
-                                    <a href="#/restaurant/{{lang}}" ng-click="continueBook()" ng-if="lang != 'svk'" class="btn-next float-right">Book<ng-md-icon icon="keyboard_arrow_right" style="white" size="20"></ng-md-icon></a>
-                                </div>
-
-                                <div class="actions float-right" ng-if="bookStep2">
-                                    <button class="btn-prev float-left" ng-click="bookStepBack()">
-                                        <ng-md-icon icon="keyboard_arrow_left" style="fill: white" size="20"></ng-md-icon>
-                                        Back
-                                    </button>
-
-                                    <a href="#/restaurant/{{lang}}" ng-click="sendIt()" ng-if="lang != 'eng'" class="btn-next float-right"><ng-md-icon icon="check" style="white" size="20"></ng-md-icon>Odoslat Rezervaciu</a>
-                                    <a href="#/restaurant/{{lang}}" ng-click="sendIt()" ng-if="lang != 'svk'" class="btn-next float-right"><ng-md-icon icon="check" style="white" size="20"></ng-md-icon>Confirm Booking</a>
-                                </div>
+                        <div class="category-logo-wrap">
+                            <div class="category-logo">
+                                <h2 class="category-title">{{categoryName}}</h2>
+                                <h1 class="logo-title">TATRAS</h1>
+                                <h3 class="moto-title">kvalitné jedlo</h3>
                             </div>
-
                         </div>
-
-                        <div class="stick-bottom" du-smooth-scroll="category">
-                            <span></span>
-                        </div>
+                    </div>
+                    <div class="stick-bottom">
+                        <span du-smooth-scroll="welcome"></span>
                     </div>
                 </section>
 
-                <section id="category" class="content-main bg-100">
-                    <h1 class="main-title">{{restaurantWelcome}}</h1>
-                    <div class="small-line"></div>
+                <section class="content-main empty bg-rebra">
+                </section>
 
+                <section id="welcome" class="bg-100 ">
                     <div class="content-main">
+                        <h1 class="main-title">{{categoryName}}</h1>
+                        <div class="small-line"></div>
+
                         <p class="content-text">
                             {{restaurantText1}}
                         </p>
                     </div>
                 </section>
 
-                <section id="menu" class="content-main bg-100">
-                    <h1 class="main-title">{{restaurantSaloniky}}</h1>
-                    <div class="small-line"></div>
+                <section id="hours" class="bg-100">
                     <div class="content-main">
-                        <h5>Barová pasáž</h5>
-                        <p>{{restaurantSalonik1}}</p>
-                        <h5>Pivo-nica</h5>
-                        <p>{{restaurantSalonik2}}</p>
-                        <h5>Pivo-banka</h5>
-                        <p>{{restaurantSalonik3}}</p>
-                        <h5>Likérka</h5>
-                        <p>{{restaurantSalonik4}}</p>
-                        <h5>Komôrka</h5>
-                        <p>{{restaurantSalonik5}}</p>
-                        <h5>Galérka</h5>
-                        <p>{{restaurantSalonik6}}</p>
-                        <h5>Záhradka</h5>
-                        <p>{{restaurantSalonik7}}</p>
-                        <h5>Hudobka</h5>
-                        <p>{{restaurantSalonik8}}</p>
-                    </div>
-                </section>
-
-                <section class="content-main empty bg-food">
-                    <h6 class="item-title">Pečenné Rebierka</h6>
-                    <h6 class="item-label">19.99 &euro;</h6>
-                </section>
-
-                <section id="open" class="content-main bg-100">
-                    <h1 class="main-title">{{otvaracieHodiny}}</h1>
-                    <div class="small-line"></div>
-
-                    <div class="content-main">
+                        <h1 class="main-title">{{otvaracieHodiny}}</h1>
+                        <div class="small-line"></div>
 
                         <div class="hours">
                             <div class="day Monday">
-                                <span>Pondelok</span>
+                                <span>{{monday}}</span>
                                 <span class="time1">11:00</span>
-                                <span class="time2">23:00</span>
+                                <span class="time2">24:00</span>
                             </div>
                             <div class="day Tuesday">
-                                <span>Utorok</span>
+                                <span>{{tuesday}}</span>
                                 <span class="time1">11:00</span>
-                                <span class="time2">23:00</span>
+                                <span class="time2">24:00</span>
                             </div>
                             <div class="day Wednesday">
-                                <span>Streda</span>
+                                <span>{{wednesday}}</span>
                                 <span class="time1">11:00</span>
-                                <span class="time2">23:00</span>
+                                <span class="time2">24:00</span>
                             </div>
                             <div class="day Thursday">
                                 <span>&#138;tvrtok</span>
                                 <span class="time1">11:00</span>
-                                <span class="time2">23:00</span>
+                                <span class="time2">24:00</span>
                             </div>
                             <div class="day Friday">
-                                <span>Piatok</span>
+                                <span>{{friday}}</span>
                                 <span class="time1">11:00</span>
-                                <span class="time2">01:00</span>
+                                <span class="time2">02:00</span>
                             </div>
                             <div class="day Saturday">
-                                <span>Sobota</span>
-                                <span class="time1">12:00</span>
-                                <span class="time2">01:00</span>
+                                <span>{{saturday}}</span>
+                                <span class="time1">11:00</span>
+                                <span class="time2">02:00</span>
                             </div>
                             <div class="day Sunday">
-                                <span>Nedela</span>
-                                <span class="time1">12:00</span>
-                                <span class="time2">23:00</span>
+                                <span>{{sunday}}</span>
+                                <span class="time1">11:00</span>
+                                <span class="time2">24:00</span>
                             </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section class="content-main empty bg-restaurant">
+                </section>
+
+                <section id="menu" class="bg-100">
+                    <div id="content-logo"></div>
+                    <h1 class="main-title">Denné Menu</h1>
+                    <div class="small-line"></div>
+
+                    <div class="content-main">
+
+                        <h1 class="main-title no-padding-top"><span>Cena 5,50 &euro;</span></h1>
+
+                        <div class="daily-menu-list">
+
+
+                            <div class="daily-menu-item Monday">
+                                <table>
+                                    <tr class="menu-day">
+                                        <td>
+                                            <h5>{{monday}}</h5>
+                                        </td>
+                                        <td>
+                                        </td>
+                                        <td colspan="1">
+                                            <h5 class="date">19.06.2017</h5>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-title">
+                                            <p>Polievka</p>
+                                            <span>250 ml</span>
+                                        </td>
+                                        <td colspan="2">
+                                            <p>{{menuMonday1}} <b>{{menuMonday1alergen}}</b></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-title">
+                                            <p>Jedlo 1.</p>
+                                            <span>150 g</span>
+                                        </td>
+                                        <td colspan="2">
+                                            <p>{{menuMonday2}} <b>{{menuMonday2alergen}}</b></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-title">
+                                            <p>Jedlo 2.</p>
+                                            <span>250 g</span>
+                                        </td>
+                                        <td colspan="2">
+                                            <p>{{menuMonday3}} <b>{{menuMonday3alergen}}</b></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+
+                            <div class="daily-menu-item Tuesday">
+                                <table>
+                                    <tr class="menu-day">
+                                        <td>
+                                            <h5>{{tuesday}}</h5>
+                                        </td>
+                                        <td>
+                                        </td>
+                                        <td colspan="1">
+                                            <h5 class="date">20.06.2017</h5>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-title">
+                                            <p>Polievka</p>
+                                            <span>250 ml</span>
+                                        </td>
+                                        <td colspan="2">
+                                            <p>{{menuTuesday1}}<b>{{menuTuesday1alergen}}</b></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-title">
+                                            <p>Jedlo 1.</p>
+                                            <span>150 g</span>
+                                        </td>
+                                        <td colspan="2">
+                                            <p>{{menuTuesday2}}<b>{{menuTuesday2alergen}}</b></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-title">
+                                            <p>Jedlo 2.</p>
+                                            <span>250 g</span>
+                                        </td>
+                                        <td colspan="2">
+                                            <p>{{menuTuesday3}}<b>{{menuTuesday3alergen}}</b></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="daily-menu-item Wednesday">
+                                <table>
+                                    <tr class="menu-day">
+                                        <td>
+                                            <h5>{{wednesday}}</h5>
+                                        </td>
+                                        <td>
+                                        </td>
+                                        <td colspan="1">
+                                            <h5 class="date">21.06.2017</h5>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-title">
+                                            <p>Polievka</p>
+                                            <span>250 ml</span>
+                                        </td>
+                                        <td colspan="2">
+                                            <p>{{menuWednesday1}}<b>{{menuWednesday1alergen}}</b></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-title">
+                                            <p>Jedlo 1.</p>
+                                            <span>150 g</span>
+                                        </td>
+                                        <td colspan="2">
+                                            <p>{{menuWednesday2}}<b>{{menuWednesday2alergen}}</b></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-title">
+                                            <p>Jedlo 2.</p>
+                                            <span>250 g</span>
+                                        </td>
+                                        <td colspan="2">
+                                            <p>{{menuWednesday3}}<b>{{menuWednesday3alergen}}</b></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="daily-menu-item Thursday">
+                                <table>
+                                    <tr class="menu-day">
+                                        <td>
+                                            <h5>{{thursday}}</h5>
+                                        </td>
+                                        <td>
+                                        </td>
+                                        <td colspan="1">
+                                            <h5 class="date">22.06.2017</h5>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-title">
+                                            <p>Polievka</p>
+                                            <span>250 ml</span>
+                                        </td>
+                                        <td colspan="2">
+                                            <p>{{menuThursday1}}<b>{{menuThursday1alergen}}</b></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-title">
+                                            <p>Jedlo 1.</p>
+                                            <span>150 g</span>
+                                        </td>
+                                        <td colspan="2">
+                                            <p>{{menuThursday2}}<b>{{menuThursday2alergen}}</b></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-title">
+                                            <p>Jedlo 2.</p>
+                                            <span>250 g</span>
+                                        </td>
+                                        <td colspan="2">
+                                            <p>{{menuThursday3}}<b>{{menuThursday3alergen}}</b></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="daily-menu-item Friday">
+                                <table>
+                                    <tr class="menu-day">
+                                        <td>
+                                            <h5>{{friday}}</h5>
+                                        </td>
+                                        <td>
+                                        </td>
+                                        <td colspan="1">
+                                            <h5 class="date">23.06.2017</h5>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-title">
+                                            <p>Polievka</p>
+                                            <span>250 ml</span>
+                                        </td>
+                                        <td colspan="2">
+                                            <p>{{menuFriday1}} <b>{{menuFriday1alergen}}</b></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-title">
+                                            <p>Jedlo 1.</p>
+                                            <span>150 g</span>
+                                        </td>
+                                        <td colspan="2">
+                                            <p>{{menuFriday2}} <b>{{menuFriday2alergen}}</b></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-title">
+                                            <p>Jedlo 2.</p>
+                                            <span>250 g</span>
+                                        </td>
+                                        <td colspan="2">
+                                            <p>{{menuFriday3}} <b>{{menuFriday3alergen}}</b></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="actions-share">
+                        <button ng-click="printMenu()" class="btn btn-share">
+                            <ng-md-icon icon="share" style="white" size="20"></ng-md-icon>
+                            Zdielaj cely tyzden
+                        </button>
+
+                        <button ng-click="printToday()" class="btn btn-share">
+                            <ng-md-icon icon="share" style="white" size="20"></ng-md-icon>
+                            Zdielaj dnešne Menu
+                        </button>
+                    </div>
+
+
+                </section>
+
+                <section class="content-main empty bg-salonik">
+                </section>
+
+                <section id="info2" class="content-main bg-100">
+                    <h1 class="main-title">{{restaurantSaloniky}}</h1>
+                    <div class="small-line"></div>
+                    <div class="boxer">
+                        <div class="salon">
+                            <h5>Barová pasáž</h5>
+                            <p>{{restaurantSalonik1}}</p>
+                        </div>
+                        <div class="salon">
+                            <h5>Pivo-nica</h5>
+                            <p>{{restaurantSalonik2}}</p>
+                        </div>
+                        <div class="salon">
+                            <h5>Pivo-banka</h5>
+                            <p>{{restaurantSalonik3}}</p>
+                        </div>
+                        <div class="salon">
+                            <h5>Likérka</h5>
+                            <p>{{restaurantSalonik4}}</p>
+                        </div>
+                        <div class="salon">
+                            <h5>Komôrka</h5>
+                            <p>{{restaurantSalonik5}}</p>
+                        </div>
+                        <div class="salon">
+                            <h5>Galérka</h5>
+                            <p>{{restaurantSalonik6}}</p>
+                        </div>
+                        <div class="salon">
+                            <h5>Záhradka</h5>
+                            <p>{{restaurantSalonik7}}</p>
+                        </div>
+                        <div class="salon">
+                            <h5>Hudobka</h5>
+                            <p>{{restaurantSalonik8}}</p>
+                        </div>
+                        <div class="salon">
+                            <h5>Kapacita</h5>
+                            <p>Celková kapacita reštaurácie je 171 hostí. Každý salónik sa môže rezervovať pre privátnu spoločnosť a uzavrieť.</p>
                         </div>
                     </div>
                 </section>
 
-                <section class="content-main empty bg-food-licka">
-                    <h6 class="item-title">Hovädzie líčka</h6>
-                    <h6 class="item-label">7.99 &euro;</h6>
+                <section class="content-main empty bg-kitchen">
+                     <h6 class="item-title">Naši kuchári</h6>
+                </section>
+
+                <section id="kitchen" class="content-main bg-black">
+                    <h1 class="main-title color-red">Varia moderným postupom</h1>
+                    <div class="small-line"></div>
+                    <div class="content-main">
+                        <p class="content-text color-light">
+                            {{restaurantPribehText3}}
+                        </p>
+                    </div>
                 </section>
 
                 <section  id="info" class="content-main bg-100">
@@ -222,12 +424,125 @@
                         <p class="content-text">
                             <b>Reštaurácia Tatras</b> {{restaurantPribehText2}}
                         </p>
-                        <p class="content-text">
-                            <b>Naši kuchári varia moderným postupom</b> {{restaurantPribehText3}}
-                        </p>
                     </div>
                 </section>
 
+                <section class="content-main empty bg-bar">
+                </section>
+
+                <section id="book" class="content-main bg-beige">
+                    <h1 class="main-title">{{btnBook}}</h1>
+
+                    <div class="book-form">
+                        <form name="restaurantBookForm" role="form">
+
+                            <div class="book-wrap" ng-hide="bookFinnish">
+                                <div class="row">
+                                    <div class="wrap four label">
+                                        <ng-md-icon icon="date_range" style="display: inline-block; position: relative; fill: #f5eddc;"
+                                                    size="25px"></ng-md-icon>
+                                        <label for="date">{{dateLabel}}</label>
+                                    </div>
+                                    <div class="wrap four">
+                                        <input id="date" class="date" name="date" type="date" min="2017-01-01" max="2020-01-01"
+                                               ng-model="date" required/>
+                                    </div>
+
+                                    <div class="wrap four label">
+                                        <ng-md-icon icon="access_time" style="display: inline-block; position: relative; fill: #f5eddc;"
+                                                    size="25px"></ng-md-icon>
+                                        <label for="time">{{timeLabel}}</label>
+                                    </div>
+                                    <div class="wrap four">
+                                        <input id="time" name="timer" class="time" type="time" min="11:00:00" max="24:00:00"
+                                               ng-model="timer" pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$" required/>
+                                    </div>
+
+                                    <div class="wrap four label">
+                                        <ng-md-icon icon="group" style="display: inline-block; position: relative; fill: #f5eddc;"
+                                                    size="25px"></ng-md-icon>
+                                        <label for="amount">{{amountLabel}}</label>
+                                    </div>
+                                    <div class="wrap four">
+                                        <input id="amount" name="amount" type="number" value="2" min="2" max="200" placeholder="2" ng-model="amount" required/>
+                                    </div>
+
+
+                                    <div class="wrap four label">
+                                        <ng-md-icon icon="local_restaurant" style="display: inline-block; position: relative; fill: #f5eddc;"
+                                                    size="25px"></ng-md-icon>
+                                        <label for="room-type">{{roomLabel}}</label>
+                                    </div>
+                                    <div class="wrap four">
+                                        <select id="room-type" name="room" ng-model="room" required>
+                                            <option value="nezalezi" selected>Nezáleži</option>
+                                            <option value="pivonice">Pivo-nice</option>
+                                            <option value="pivobanka">Pivo-banka</option>
+                                            <option value="likerka">Likérka</option>
+                                            <option value="komorka">Komôrka</option>
+                                            <option value="galerka">Galérka</option>
+                                            <option value="zahradka">Záhradka</option>
+                                            <option value="hudobka">Hudobka</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="wrap label">
+                                        <ng-md-icon icon="person"
+                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
+                                                    size="25px"></ng-md-icon>
+                                        <label for="name">{{nameLabel}}</label>
+                                    </div>
+                                    <div class="wrap">
+                                        <input type="text" name="name" ng-model="name" class="form-control" placeholder="{{yourName}}" required/>
+                                    </div>
+                                    <div class="wrap label">
+                                        <ng-md-icon icon="email"
+                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
+                                                    size="25px"></ng-md-icon>
+                                        <label for="email">Email</label>
+                                    </div>
+                                    <div class="wrap">
+                                        <input type="email" name="email" ng-model="email" placeholder="email@email.com"
+                                               class="form-control" required/>
+                                    </div>
+                                    <div class="wrap label">
+                                        <ng-md-icon icon="phone"
+                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
+                                                    size="25px"></ng-md-icon>
+                                        <label for="phone">{{phoneLabel}}</label>
+                                    </div>
+                                    <div class="wrap">
+                                        <input id="phone" type="number" name="phone" ng-model="phone" placeholder="+XXX XXX XXX XXX"/>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="booking-done" ng-show="bookFinnish">
+                                <ng-md-icon icon="check_circle" style="display: block; position: relative;
+                                            background: #f1ebda; border-radius: 50%;
+                                            width: 150px; height:150px;fill: #2b2a29;"
+                                            size="150"></ng-md-icon>
+                                <h4>{{bookingSend1}}</h4>
+                                <h4>{{bookingSend2}}</h4>
+                            </div>
+
+                            <div class="actions" ng-hide="bookFinnish">
+                                <button ng-click="formsubmit(restaurantBookForm)"  ng-if="lang != 'eng'" class="btn-next btn-submit">
+                                    <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
+                                    Odoslat
+                                    Rezervaciu
+                                </button>
+                                <button ng-click="formsubmit(restaurantBookForm)"  ng-if="lang != 'svk'" class="btn-next btn-submit">
+                                    <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
+                                    Book Now
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
+                </section>
 
                 <section id="photos" class="content-main bg-100 flex-nopadding">
 

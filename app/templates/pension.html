@@ -7,165 +7,278 @@
     <div class="fake-left"></div>
 
     <div class="right">
-        <div class="sub-menu" ng-class="{open: subMenuState}">
+        <div class="sub-menu" ng-class="{open: openMobileMenu}">
             <div>
                 <ul>
-                    <li du-scrollspy="pension"><span du-smooth-scroll="pension">Penzion</span></li>
+                    <li du-scrollspy="welcome"><span du-smooth-scroll="welcome">{{categoryName}}</span></li>
                     <li du-scrollspy="info"><span du-smooth-scroll="info">Izby</span></li>
-                    <li du-scrollspy="open"><span du-smooth-scroll="open">Info</span></li>
-                    <li du-scrollspy="info2"><span du-smooth-scroll="info">Sluzby</span></li>
-                    <li du-scrollspy="photos"><span du-smooth-scroll="photos">Photos</span></li>
+                    <li du-scrollspy="book"><span du-smooth-scroll="book">Book</span></li>
+                    <li du-scrollspy="info2"><span du-smooth-scroll="info2">Služby</span></li>
+                    <li du-scrollspy="info3"><span du-smooth-scroll="info3">Ponuka</span></li>
                 </ul>
             </div>
         </div>
 
         <div class="right-content">
 
-            <button class="hamburger hamburger--collapse" type="button">
+            <div class="top-nav">
+                <button class="hamburger hamburger--collapse " type="button" ng-click="mobileMenu()">
                       <span class="hamburger-box">
                         <span class="hamburger-inner"></span>
                       </span>
-            </button>
+                </button>
+
+                <div class="top-bar-logo">
+                </div>
+            </div>
 
             <div class="content-wrapper">
 
-                <section id="book" class="book bg-pension" ng-style="{height: displayHeight + 'px'}">
-
+                <section id="pension" class="content-main bg-100 flex-nopadding" ng-style="{height: displayHeight + 'px'}">
                     <div class="center-wrap">
-                        <div class="center-content">
-                            <h1 class="book-title">{{categoryName}} TATRAS***</h1>
-
-                            <div class="book-form">
-
-                                <div class="book-wrap" ng-if="bookStep1">
-                                    <div class="row">
-                                        <div class="wrap four label">
-                                            <ng-md-icon icon="date_range"
-                                                        style="display: block; position: relative; fill: black; margin: 0 auto;"
-                                                        size="25px"></ng-md-icon>
-                                        </div>
-                                        <div class="wrap four label">
-                                            <ng-md-icon icon="date_range"
-                                                        style="display: block; position: relative; fill: black; margin: 0 auto;"
-                                                        size="25px"></ng-md-icon>
-                                        </div>
-                                        <div class="wrap four label">
-                                            <ng-md-icon icon="group"
-                                                        style="display: block; position: relative; fill: black; margin: 0 auto;"
-                                                        size="25px"></ng-md-icon>
-                                        </div>
-
-                                    </div>
-                                    <div class="row">
-                                        <div class="wrap four">
-                                            <input id="date" class="date" type="date"/>
-                                        </div>
-                                        <div class="wrap four">
-                                            <input id="date" class="date" type="date"/>
-                                        </div>
-                                        <div class="wrap four">
-                                            <input id="amount" type="number" placeholder="2"/>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-
-                                <div class="book-wrap" ng-if="bookStep2">
-                                    <div class="row">
-                                        <div class="wrap label">
-                                            <ng-md-icon icon="person"
-                                                        style="display: block; position: relative; fill: black; margin: 0 auto;"
-                                                        size="25px"></ng-md-icon>
-                                        </div>
-                                        <div class="wrap label">
-                                            <ng-md-icon icon="email"
-                                                        style="display: block; position: relative; fill: black; margin: 0 auto;"
-                                                        size="25px"></ng-md-icon>
-                                        </div>
-                                        <div class="wrap label">
-                                            <ng-md-icon icon="phone"
-                                                        style="display: block; position: relative; fill: black; margin: 0 auto;"
-                                                        size="25px"></ng-md-icon>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="wrap">
-                                            <input id="name" class="name" type="text" placeholder="Your Name" required/>
-                                        </div>
-                                        <div class="wrap">
-                                            <input id="email" class="email" type="email" placeholder="email" required/>
-                                        </div>
-                                        <div class="wrap">
-                                            <input id="tel" type="number" placeholder="+ 421 901 111 111"/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="actions float-right" ng-if="bookStep1">
-                                <a href="#/pension/{{lang}}" ng-click="bookIt()" ng-if="lang != 'eng'" class="btn-next">Rezervovat<ng-md-icon icon="keyboard_arrow_right" style="white" size="20"></ng-md-icon></a>
-                                <a href="#/pension/{{lang}}" ng-click="bookIt()" ng-if="lang != 'svk'" class="btn-next">Book<ng-md-icon icon="keyboard_arrow_right" style="white" size="20"></ng-md-icon></a>
-                            </div>
-                            <div class="actions float-right" ng-if="bookStep2">
-                                <button class="btn-prev" ng-click="bookStepBack()">
-                                    <ng-md-icon icon="keyboard_arrow_left" style="fill: white" size="20"></ng-md-icon>
-                                    Back
-                                </button>
-                                <a href="#/pension/{{lang}}" ng-click="sendIt()" ng-if="lang != 'eng'" class="btn-next"><ng-md-icon icon="check" style="white" size="20"></ng-md-icon>Odoslat
-                                    Rezervaciu</a>
-                                <a href="#/pension/{{lang}}" ng-click="sendIt()" ng-if="lang != 'svk'" class="btn-next"><ng-md-icon icon="check" style="white" size="20"></ng-md-icon>Confirm
-                                    Booking</a>
+                        <div class="category-logo-wrap">
+                            <div class="category-logo">
+                                <h2 class="category-title">{{categoryName}} ***</h2>
+                                <h1 class="logo-title">TATRAS</h1>
+                                <h3 class="moto-title">oáza pokoja</h3>
                             </div>
                         </div>
 
-                        <div class="stick-bottom" du-smooth-scroll="pension">
-                            <span></span>
-                        </div>
                     </div>
-                </section>
-
-                <section id="pension" class="content-main bg-100">
-                    <h1 class="main-title">{{categoryName}}</h1>
-                    <div class="small-line"></div>
-
-                    <div class="content-main">
-                        <p class="content-text">{{pensionText1}}</p>
-                    </div>
-                </section>
-
-                <section id="info" class="content-main bg-100">
-                    <h1 class="main-title">Vybavenie Izby</h1>
-                    <div class="small-line"></div>
-
-                    <div class="content-main">
-                        <ul class="text-list-number">
-                            <li>trojlôžková izba s možnosťou prístelky, vhodná pre viacčlennú rodinu 26 m2</li>
-                            <li>dvojlôžková izba 22 m2</li>
-                            <li>dvojlôžková izba s možnosťou prístelky 28 m2</li>
-                            <li> dvojlôžková izba 28 m2</li>
-                        </ul>
-                        <p class="content-text">
-                            Všetky izby sú vybavené LED televízorom, WI-FI, chladničkou s minibarom, kúpeľňou so sprchovým kútom a fénom, WC. V budove sa nachádza kozmetika, krajčírstvo, zlatník.
-                            K dispozícií je privátne parkovisko strážené kamerovým systémom.
-                            Chcete si prenajať izbu na jeden či viac mesiacov? Je to možné. U nás sa budete cítiť ako „vo svojom“.
-                        </p>
+                    <div class="stick-bottom">
+                        <span du-smooth-scroll="welcome"></span>
                     </div>
                 </section>
 
                 <section class="content-main empty bg-pension">
-                    <h6 class="item-title">Izba na noc už od</h6>
-                    <h6 class="item-label">29.99 &euro;</h6>
                 </section>
 
-                <section id="open" class="content-main bg-100">
-                    <h1 class="main-title">Check in & Check out</h1>
+                <section id="welcome" class="content-main bg-100">
+                    <h1 class="main-title">{{categoryName}}</h1>
                     <div class="small-line"></div>
 
-                    <div class="content-main">
-                        <p>Nástup na ubytovanie (check-in): 14,00 hod.</p>
-                        <p>Odchod z ubytovania (check-out): 10,00 hod.</p>
-                        <p>Recepcia: 8,00 hod. – 22,00 hod.</p>
+                    <p class="content-text">{{pensionText1}}</p>
+
+                    <div class="table-info">
+
+                        <div class="table-info-item">
+                            <ng-md-icon icon="login" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                        size="50"></ng-md-icon>
+                            <span>Check-In</span>
+                            <p>14:00</p>
+                        </div>
+
+                        <div class="table-info-item">
+                            <ng-md-icon icon="room_service" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                        size="50"></ng-md-icon>
+                            <span>Reception</span>
+                            <p>09:00 - 24:00</p>
+                        </div>
+
+                        <div class="table-info-item">
+                            <ng-md-icon icon="logout" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                        size="50"></ng-md-icon>
+                            <span>Check-Out</span>
+                            <p>10:00</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="info" class="content-main bg-100">
+                    <h1 class="main-title">Izby</h1>
+                    <div class="small-line"></div>
+
+                    <p class="content-text">
+                        Všetky izby sú vybavené LED televízorom, WI-FI, chladničkou s minibarom, kúpeľňou so
+                        sprchovým kútom a fénom, WC. V budove sa nachádza kozmetika, krajčírstvo, zlatník.
+                        K dispozícií je privátne parkovisko strážené kamerovým systémom.
+                    </p>
+
+                    <h1 class="main-title"><span>už od 60 &euro; / noc</span></h1>
+
+                    <div class="boxer">
+
+                        <div class="box">
+
+                            <div class="icons">
+                                <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                            size="30"></ng-md-icon>
+                                <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                            size="30"></ng-md-icon>
+                            </div>
+                            <div class="img bg-pension3"></div>
+                            <p>dvojlôžková izba</p>
+                        </div>
+                        <div class="box">
+                            <div class="icons">
+                                <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                            size="30"></ng-md-icon>
+                                <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                            size="30"></ng-md-icon>
+                            </div>
+                            <div class="img bg-pension3"></div>
+                            <p>dvojlôžková izba</p>
+                        </div>
+                        <div class="box">
+                            <div class="icons">
+                                <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                            size="30"></ng-md-icon>
+                                <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                            size="30"></ng-md-icon>
+                                <ng-md-icon icon="person_add" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                            size="30"></ng-md-icon>
+                            </div>
+                            <div class="img bg-pension4"></div>
+
+                            <p>dvojlôžková izba</p>
+                            <p>s možnosťou prístelky</p>
+                        </div>
+                        <div class="box">
+
+                            <div class="icons">
+                                <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                            size="30"></ng-md-icon>
+                                <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                            size="30"></ng-md-icon>
+                                <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                            size="30"></ng-md-icon>
+                                <ng-md-icon icon="person_add" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                            size="30"></ng-md-icon>
+                            </div>
+                            <div class="img bg-pension"></div>
+                            <p>trojlôžková izba</p>
+                            <p>s možnosťou prístelky</p>
+                        </div>
+
+                        <div class="feature-icons-set">
+                            <div class="feature-icon">
+                                <ng-md-icon icon="live_tv" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                            size="50"></ng-md-icon>
+                            </div>
+                            <div class="feature-icon">
+                                <ng-md-icon icon="kitchen" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                            size="50"></ng-md-icon>
+                            </div>
+                            <div class="feature-icon">
+                                <ng-md-icon icon="wifi" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                            size="50"></ng-md-icon>
+                            </div>
+                            <div class="feature-icon">
+                                <ng-md-icon icon="local_parking" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                            size="50"></ng-md-icon>
+                            </div>
+                            <div class="feature-icon">
+                                <ng-md-icon icon="smoke_free" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                            size="50"></ng-md-icon>
+                            </div>
+                            <div class="feature-icon">
+                                <ng-md-icon icon="room_service" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                            size="50"></ng-md-icon>
+                            </div>
+                        </div>
+
+                        <p class="content-text">
+                            Chcete si prenajať izbu na jeden či viac mesiacov? Je to možné. U nás sa budete cítiť ako
+                            „vo svojom“.
+                        </p>
+
+                    </div>
+                </section>
+
+                <section id="book" class="content-main bg-beige">
+                    <h1 class="main-title">{{btnBook}}</h1>
+
+                    <div class="book-form" >
+                        <form name="penzionForm" role="form">
+
+                            <div class="book-wrap" ng-hide="bookFinnish">
+                                <div class="row">
+                                    <div class="wrap four label">
+                                        <ng-md-icon icon="date_range"
+                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
+                                                    size="25px"></ng-md-icon>
+                                        <label for="checkIn">{{checkinLabel}}</label>
+                                    </div>
+                                    <div class="wrap four">
+                                        <input id="checkIn" class="date" type="date" ng-model="checkin" min="2017-01-01" max="2020-01-01"/>
+                                    </div>
+
+                                    <div class="wrap four label">
+                                        <ng-md-icon icon="date_range"
+                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
+                                                    size="25px"></ng-md-icon>
+                                        <label for="checkOut">{{checkoutLabel}}</label>
+                                    </div>
+                                    <div class="wrap four">
+                                        <input id="checkOut" class="date" type="date" ng-model="checkout" min="2017-01-01" max="2020-01-01"/>
+                                    </div>
+
+                                    <div class="wrap four label">
+                                        <ng-md-icon icon="group"
+                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
+                                                    size="25px"></ng-md-icon>
+                                        <label for="amount">{{amountLabel}}</label>
+                                    </div>
+                                    <div class="wrap four">
+                                        <input id="amount" name="amount" type="number" value="2" min="1" max="200" placeholder="2" ng-model="amount"/>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="wrap label">
+                                        <ng-md-icon icon="person"
+                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
+                                                    size="25px"></ng-md-icon>
+                                        <label for="name">{{nameLabel}}</label>
+                                    </div>
+                                    <div class="wrap">
+                                        <input type="text" name="name" ng-model="name" class="form-control" placeholder="{{yourName}}" required/>
+                                    </div>
+
+                                    <div class="wrap label">
+                                        <ng-md-icon icon="email"
+                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
+                                                    size="25px"></ng-md-icon>
+                                        <label for="email">Email</label>
+                                    </div>
+                                    <div class="wrap">
+                                        <input type="email" name="email" ng-model="email" placeholder="email@email.com"
+                                               class="form-control" required/>
+                                    </div>
+
+                                    <div class="wrap label">
+                                        <ng-md-icon icon="phone"
+                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
+                                                    size="25px"></ng-md-icon>
+                                        <label for="tel">{{phoneLabel}}</label>
+                                    </div>
+                                    <div class="wrap">
+                                        <input id="phone" type="number" name="phone" ng-model="phone" placeholder="+XXX XXX XXX XXX"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="booking-done" ng-if="bookFinnish">
+                                <ng-md-icon icon="check_circle" style="display: block; position: relative;
+                                            background: #f1ebda; border-radius: 50%;
+                                            width: 150px; height:150px;fill: #2b2a29;"
+                                            size="150"></ng-md-icon>
+                                <h4>{{bookingSend1}}</h4>
+                                <h4>{{bookingSend2}}</h4>
+                            </div>
+
+                            <div class="actions" ng-hide="bookFinnish">
+                                <button data-ng-click="formsubmit(penzionForm)" ng-if="lang != 'eng'" class="btn-next btn-submit">
+                                    <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
+                                    Odoslat
+                                    Rezervaciu
+                                </button>
+                                <button data-ng-click="formsubmit(penzionForm)" ng-if="lang != 'svk'" class="btn-next btn-submit">
+                                    <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
+                                    Book Now
+                                </button>
+                            </div>
+
+                        </form>
                     </div>
                 </section>
 
@@ -174,18 +287,49 @@
                     <div class="small-line"></div>
 
                     <div class="content-main">
+
                         <p class="content-text">
-                            Poloha penziónu je skvelým východiskovým bodom pre Vaše ďaľšie aktivity. Ak chcete zažiť pestrú dovolenku, navrhneme Vám program z ktorého si určite vyberiete. Zabezpečíme Vám zľavnené vstupenky.
+                            Poloha penziónu je skvelým východiskovým bodom pre Vaše ďaľšie aktivity. Ak chcete zažiť
+                            pestrú dovolenku, navrhneme Vám program z ktorého si určite vyberiete. Zabezpečíme Vám
+                            zľavnené vstupenky.
                         </p>
+
                         <p class="content-text">
-                            Doporučíme sprievodcu, vyhľadáme a zarezervujeme dopravné spojenie a večer môžete zregenerovať a načerpať sily v pivných kúpeloch, povečerať v našej reštaurácií a dobre sa vyspať v  našom útulnom penzióne ktorý si určite zamilu
+                            Doporučíme sprievodcu, vyhľadáme a zarezervujeme dopravné spojenie a večer môžete
+                            zregenerovať a načerpať sily v pivných kúpeloch, povečerať v našej reštaurácií a dobre sa
+                            vyspať v našom útulnom penzióne ktorý si určite zamilu
                         </p>
+
+                        <div class="feature-icons-set">
+                            <div class="feature-icon">
+                                <ng-md-icon icon="landscape" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
+                                            size="50"></ng-md-icon>
+                            </div>
+                            <div class="feature-icon">
+                                <ng-md-icon icon="pool" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
+                                            size="50"></ng-md-icon>
+                            </div>
+                            <div class="feature-icon">
+                                <ng-md-icon icon="directions_bike" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
+                                            size="50"></ng-md-icon>
+                            </div>
+                            <div class="feature-icon">
+                                <ng-md-icon icon="spa" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
+                                            size="50"></ng-md-icon>
+                            </div>
+                            <div class="feature-icon">
+                                <ng-md-icon icon="local_bar" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
+                                            size="50"></ng-md-icon>
+                            </div>
+                            <div class="feature-icon">
+                                <ng-md-icon icon="shopping_cart" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
+                                            size="50"></ng-md-icon>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
-                <section class="content-main empty bg-pension">
-                    <h6 class="item-title">Tatranská galéria</h6>
-                    <h6 class="item-label">0,7 km, 7 min</h6>
+                <section class="content-main empty bg-pension2">
                 </section>
 
                 <section id="info3" class="content-main bg-100">
@@ -193,29 +337,36 @@
                     <div class="small-line"></div>
 
                     <div class="content-main">
-                        <ul class="text-list">
-                            <li>prehliadku minipivovaru Tatras s pivnou degustáciou a výkladom</li>
-                            <li>možnosť zúčastníť sa varenia piva so sládkom</li>
-                            <li>návštevu pivných kúpeľov, sauna, masáž</li>
-                            <li>raňajky v reštaurácií Tatras </li>
-                        </ul>
+                        <p class="content-text">
+                            <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                        size="25"></ng-md-icon>
+                        Raňajky v reštaurácií Tatras <br><br>
+
+                        <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                    size="25"></ng-md-icon>
+                        Prehliadku minipivovaru Tatras s pivnou degustáciou a výkladom<br><br>
+                        <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                    size="25"></ng-md-icon>
+                        Možnosť zúčastníť sa varenia piva so sládkom<br><br>
+                        <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                    size="25"></ng-md-icon>
+                        Návštevu pivných kúpeľov, sauna, masáž
+                        </p>
                     </div>
                 </section>
 
-                <section id="photos" class="content-main bg-100 flex-nopadding">
-                    <flex-slider slide="s in mySlides">
-                        <li>
-                            <img ng-src="{{s}}" alt="img-name"/>
-                        </li>
-                    </flex-slider>
-                </section>
 
-
+                <!--<section id="photos" class="content-main bg-100 flex-nopadding">-->
+                    <!--<flex-slider slide="s in mySlides">-->
+                        <!--<li>-->
+                            <!--<img ng-src="{{s}}" alt="img-name"/>-->
+                        <!--</li>-->
+                    <!--</flex-slider>-->
+                <!--</section>-->
 
                 <!-- include FOOTER -->
                 <div ng-include="'templates/footer.html'"></div>
                 <!-- end of FOOTER include -->
-
             </div>
         </div>
     </div>
