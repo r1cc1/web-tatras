@@ -18,8 +18,8 @@
             <nav class="shadow">
                 <ul class="main-menu">
                     <li ng-class="getClass('/beer')">
-                        <a href="#beer/{{lang}}" ng-class="getClass('/beer')" ng-show="lang !== 'svk'"  ng-init="lang == 'eng'">MiniBrewery</a>
-                        <a href="#beer/{{lang}}" ng-class="getClass('/beer')" ng-show="lang !== 'eng'"  ng-init="lang == 'svk'">Minipivovar</a>
+                        <a href="#/beer/{{lang}}" ng-class="getClass('/beer')" ng-show="lang !== 'svk'"  ng-init="lang == 'eng'">MiniBrewery</a>
+                        <a href="#/beer/{{lang}}" ng-class="getClass('/beer')" ng-show="lang !== 'eng'"  ng-init="lang == 'svk'">Minipivovar</a>
                     </li>
                     <li ng-class="getClass('/restaurant')">
                         <a href="#/restaurant/{{lang}}" ng-class="getClass('/restaurant')" ng-show="lang != 'svk'" ng-init="lang == 'eng'">Restaurant</a>
@@ -29,10 +29,10 @@
                         <a href="#/pension/{{lang}}" ng-class="getClass('/pension')" ng-show="lang != 'svk'" ng-init="lang == 'eng'">Pension ***</a>
                         <a href="#/pension/{{lang}}" ng-class="getClass('/pension')" ng-show="lang != 'eng'" ng-init="lang == 'svk'">Penzión ***</a>
                     </li>
-                    <!--<li ng-class="getClass('/spa')">-->
-                        <!--<a href="#/spa/{{lang}}" ng-class="getClass('/spa')" ng-show="lang != 'svk'" ng-init="lang == 'eng'">Beer Wellness</a>-->
-                        <!--<a href="#/spa/{{lang}}" ng-class="getClass('/spa')" ng-show="lang != 'eng'" ng-init="lang == 'svk'">Pivné kúpele</a>-->
-                    <!--</li>-->
+                    <li ng-class="getClass('/spa')">
+                        <a href="#/spa/{{lang}}" ng-class="getClass('/spa')" ng-show="lang != 'svk'" ng-init="lang == 'eng'">Beer Wellness</a>
+                        <a href="#/spa/{{lang}}" ng-class="getClass('/spa')" ng-show="lang != 'eng'" ng-init="lang == 'svk'">Pivné kúpele</a>
+                    </li>
 
                     <!--<li ng-class="getClass('/shop')">-->
                         <!--<a href="#/shop/{{lang}}" ng-class="getClass('/shop')" ng-show="lang != 'svk'" ng-init="lang == 'eng'">Shop</a>-->

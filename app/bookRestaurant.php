@@ -11,17 +11,22 @@ $amount  = $data->amount;
 $room    = $data->room;
 $name   = $data->name;
 $phone  = $data->phone;
+$text  = $data->text;
 $subject = 'Rezervacia Restauracia'; // predmet
 
 // text emailu
 $message = '';
 $message .= $name . ' ODOSLAL NOVU REZERVACIU :' . "\n\n";
-$message .= 'Dátum: ' . $date . "\n\n";
-$message .= 'Čas: ' . $timer . "\n\n";
+$message .= "\n\n";
+$message .= 'Datum: ' . $date . "\n\n";
+$message .= 'Cas: ' . $timer . "\n\n";
 $message .= 'Miestnost: ' . $room . "\n\n";
-$message .= 'Počet osôb: ' . $amount . "\n\n";
-$message .= 'Tel. číslo: ' . $phone . "\n\n";
-$message .= 'Email: ' . $from . "\n\n";
+$message .= 'Pocet osob: ' . $amount . "\n\n";
+$message .= "\n\n";
+$message .= 'Tel. cislo: ' . $phone . "\n\n";
+$message .= 'email: ' . $from . "\n\n";
+$message .= "\n\n";
+$message .= 'Poznamka: ' .$text . "\n\n";
 
 
 // hlavicky

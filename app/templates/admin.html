@@ -1,0 +1,525 @@
+<div class="admin-menu">
+    <div class="menu-wrap">
+
+        <div class="menu-left">
+            <button ng-show="previewOpen" ng-click="backToStart()" class="btn-submit" >
+                <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
+                NASPAT UPRAVIT
+            </button>
+        </div>
+        <div class="menu-center">
+            <h1>Admin Center</h1>
+        </div>
+        <div class="menu-right">
+
+            <button ng-show="!previewOpen  && !editOver"  ng-click="showPreview()" class="btn-submit" >
+                <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
+                Potvrdit Upravy
+            </button>
+
+            <button ng-show="previewOpen && !editOver"  ng-click="formsubmit(editMenuForm)" class="btn-submit" >
+                <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
+                PUBLIKOVAT
+            </button>
+            <button ng-show="previewOpen  && !editOver" ng-click="printMenu()" class="btn btn-print">
+                <ng-md-icon icon="share" style="white" size="20"></ng-md-icon>
+                TLACIT MENU
+            </button>
+
+        </div>
+    </div>
+</div>
+
+<div class="wrapper index" style="padding-top: 50px;">
+
+    <div class="center">
+
+        <div class="right-content">
+
+            <div class="content-wrapper">
+
+                <!--<section id="login" class="book transparent" ng-show="!adminCenter && !adminLogin"  ng-style="{height: displayHeight + 'px'}">-->
+                    <!--<div class="center-wrap">-->
+                        <!--<div class="center-content">-->
+                            <!--&lt;!&ndash;<div class="logo">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<img src="./components/assets/imgs/tatras_logo.png" alt="Minipivovar Tatras"/>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+                            <!--<h1 class="main-title">Admin Center</h1>-->
+
+                            <!--<div class="content-wrapper login">-->
+                                <!--<div class="input-wrap">-->
+                                    <!--<label for="login-email">email {{loginEmail}}</label>-->
+                                    <!--<input id="login-email" type="email" class="email"  ng-model="loginEmail" >-->
+                                <!--</div>-->
+                                <!--<div class="input-wrap">-->
+                                    <!--<label for="password">password {{loginPass}}</label>-->
+                                    <!--<input id="password" type="password" class="password"  ng-model="loginPass">-->
+                                <!--</div>-->
+                                <!--<div class="input-wrap">-->
+                                    <!--<button class="button" type="submit" ng-click="logMeIn()">Login</button>-->
+                                <!--</div>-->
+
+                            <!--</div>-->
+
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</section>-->
+
+                <!--<section id="center" class="book" ng-if="!adminCenter && adminLogin" ng-style="{height: displayHeight + 'px'}">-->
+                    <!--<div class="center-wrap">-->
+                        <!--<div class="center-content">-->
+
+
+                            <!--<h1 class="main-title">Admin Center</h1>-->
+
+                            <!--<div class="content-wrapper login">-->
+                                <!--<div class="input-wrap">-->
+                                    <!--<button class="button button-admin" type="submit" >Rezervacie</button>-->
+                                        <!--<span>{{restaurant}}</span>-->
+                                        <!--<span>{{pension}}</span>-->
+                                        <!--<span>{{spa}}</span>-->
+                                    <!--<button class="button button-admin" type="submit" >Denne Menu</button>-->
+                                    <!--<button class="button button-admin" type="submit" >Otvaracie Hodiny</button>-->
+                                    <!--<button class="button button-admin" type="submit" >Info o Prevadzke</button>-->
+                                    <!--<button class="button button-admin" type="submit" >Email Texty</button>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</section>-->
+
+                <section id="denne-menu" class="book bg-white" ng-show="!previewOpen" ng-style="{height: displayHeight + 'px'}">
+                    <div class="center-wrap">
+                        <div class="center-content">
+                            <h1 class="main-title">Denné Menu</h1>
+
+                            <div class="content-wrapper edit">
+                                <form name="editMenuForm" role="form">
+                                <div class="day">
+                                    <div class="input-wrap">
+                                        <h4>Cena</h4>
+                                    </div>
+                                    <div class="input-wrap">
+                                        <label for="price">menu</label>
+                                        <input id="price" type="text"  class="price" ng-model="dailyMenuPrice.$value" placeholder="{{dailyMenuPrice.$value}} &euro;">
+
+                                    </div>
+                                </div>
+
+                                <div class="day">
+                                    <div class="input-wrap">
+                                        <h4>Váha</h4>
+                                    </div>
+                                    <div class="input-wrap">
+                                        <label for="weight1">polievka</label>
+                                        <input id="weight1" type="text"  ng-model="dailyMenuWeight1.$value"  placeholder="{{dailyMenuWeight1.$value}}">
+                                    </div>
+                                    <div class="input-wrap">
+                                        <label for="weight2">hl.jedlo 1</label>
+                                        <input id="weight2" type="text"  ng-model="dailyMenuWeight2.$value" placeholder="{{dailyMenuWeight2.$value}}">
+                                    </div>
+                                    <div class="input-wrap">
+                                        <label for="weight3">hl.jedlo 2</label>
+                                        <input id="weight3" type="text" ng-model="dailyMenuWeight3.$value" placeholder="{{dailyMenuWeight3.$value}}">
+                                    </div>
+                                </div>
+
+
+                                <!--<div class="day" ng-repeat="day in dailyMenuList">-->
+                                    <!--<div class="input-wrap">-->
+                                        <!--<h4 ng-if="day.name == 'monday'">{{monday}}</h4>-->
+                                        <!--<h4 ng-if="day.name == 'tuesday'">{{tuesday}}</h4>-->
+                                        <!--<h4 ng-if="day.name == 'wednesday'">{{wednesday}}</h4>-->
+                                        <!--<h4 ng-if="day.name == 'thursday'">{{thursday}}</h4>-->
+                                        <!--<h4 ng-if="day.name == 'friday'">{{friday}}</h4>-->
+                                    <!--</div>-->
+                                    <!--<div class="input-wrap">-->
+                                        <!--<label for="polievka1">polievka ID:{{day.$id}}</label>-->
+                                        <!--<textarea id="polievka1" class="polievka" ng-change="dailyMenuList.$save(day.$id)" ng-model="day.food[0].text" placeholder="{{day.food[0].text}}" ></textarea>-->
+                                        <!--<input id="polievka1alergen" type="text" class="alergeny" ng-model="day.food[0].allergens" placeholder="allergeny?">-->
+                                    <!--</div>-->
+                                    <!--<div class="input-wrap">-->
+
+                                        <!--<label for="firstfood1">hl.jedlo 1</label>-->
+                                        <!--<textarea id="firstfood1" type="text" class="food"  ng-model="day.food[1].text" placeholder="{{day.food[1].text}}"></textarea>-->
+                                        <!--<input id="firstfood1alergen" type="text" class="alergeny"  ng-model="day.food[1].allergens" placeholder="allergeny?">-->
+                                    <!--</div>-->
+                                    <!--<div class="input-wrap">-->
+                                        <!--<label for="secondfood1">hl.jedlo 2</label>-->
+                                        <!--<textarea id="secondfood1" type="text" class="food"  ng-model="day.food[2].text" placeholder="{{day.food[2].text}}"></textarea>-->
+                                        <!--<input id="secondfood1alergen" type="text" class="alergeny"  ng-model="day.food[2].allergens" placeholder="allergeny?">-->
+                                    <!--</div>-->
+                                <!--</div>-->
+
+
+
+                                <div class="day">
+                                    <div class="input-wrap">
+                                        <h4 ng-if="day1Name.$value == 'monday'">{{monday}}</h4>
+                                        <input id="day1Date" type="text" class="date"ng-model="day1Date.$value"  placeholder="{{day1Date.$value}}">
+                                    </div>
+                                    <div class="input-wrap">
+                                        <label for="polievka1">polievka</label>
+                                        <textarea id="polievka1" class="polievka" ng-model="day1food1.$value" placeholder="{{day1food1.$value}}" ></textarea>
+                                        <input id="polievka1alergen" type="text" class="alergeny" ng-model="day1allergens1.$value" placeholder="allergeny?">
+                                    </div>
+                                    <div class="input-wrap">
+
+                                        <label for="firstfood1">hl.jedlo 1</label>
+                                        <textarea id="firstfood1" type="text" class="food" ng-model="day1food2.$value" placeholder="{{day1food2.$value}}" ></textarea>
+                                        <input id="firstfood1alergen" type="text" class="alergeny"  ng-model="day1allergens2.$value" placeholder="allergeny?">
+                                    </div>
+                                    <div class="input-wrap">
+                                        <label for="secondfood1">hl.jedlo 2</label>
+                                        <textarea id="secondfood1" type="text" class="food"  ng-model="day1food3.$value" placeholder="{{day1food3.$value}}"></textarea>
+                                        <input id="secondfood1alergen" type="text" class="alergeny" ng-model="day1allergens3.$value" placeholder="allergeny?">
+                                    </div>
+                                </div>
+
+                                <div class="day">
+                                    <div class="input-wrap">
+                                        <h4 ng-if="day2Name.$value == 'tuesday'">{{tuesday}}</h4>
+                                        <input id="day2Date" type="text" class="date"ng-model="day2Date.$value"  placeholder="{{day2Date.$value}}">
+                                    </div>
+                                    <div class="input-wrap">
+                                        <label for="polievka1">polievka</label>
+                                        <textarea id="polievka1" class="polievka" ng-model="day2food1.$value" placeholder="{{day2food1.$value}}" ></textarea>
+                                        <input id="polievka1alergen" type="text" class="alergeny" ng-model="day2allergens1.$value" placeholder="allergeny?">
+                                    </div>
+                                    <div class="input-wrap">
+
+                                        <label for="firstfood1">hl.jedlo 1</label>
+                                        <textarea id="firstfood1" type="text" class="food"  ng-change="day2food2.$save()" ng-model="day2food2.$value" placeholder="{{day2food2.$value}}" ></textarea>
+                                        <input id="firstfood1alergen" type="text" class="alergeny"  ng-model="day2allergens2.$value" placeholder="allergeny?">
+                                    </div>
+                                    <div class="input-wrap">
+                                        <label for="secondfood1">hl.jedlo 2</label>
+                                        <textarea id="secondfood1" type="text" class="food" ng-model="day2food3.$value" placeholder="{{day2food3.$value}}"></textarea>
+                                        <input id="secondfood1alergen" type="text" class="alergeny"  ng-model="day2allergens3.$value" placeholder="allergeny?">
+                                    </div>
+                                </div>
+
+                                <div class="day">
+                                    <div class="input-wrap">
+                                        <h4 ng-if="day3Name.$value == 'wednesday'">{{wednesday}}</h4>
+                                        <input id="day3Date" type="text" class="date"ng-model="day3Date.$value"  placeholder="{{day3Date.$value}}">
+                                    </div>
+                                    <div class="input-wrap">
+                                        <label for="polievka1">polievka</label>
+                                        <textarea id="polievka1" class="polievka"  ng-model="day3food1.$value" placeholder="{{day3food1.$value}}" ></textarea>
+                                        <input id="polievka1alergen" type="text" class="alergeny" ng-model="day3allergens1.$value" placeholder="allergeny?">
+                                    </div>
+                                    <div class="input-wrap">
+
+                                        <label for="firstfood1">hl.jedlo 1</label>
+                                        <textarea id="firstfood1" type="text" class="food"  ng-model="day3food2.$value" placeholder="{{day3food2.$value}}" ></textarea>
+                                        <input id="firstfood1alergen" type="text" class="alergeny" ng-model="day3allergens2.$value" placeholder="allergeny?">
+                                    </div>
+                                    <div class="input-wrap">
+                                        <label for="secondfood1">hl.jedlo 2</label>
+                                        <textarea id="secondfood1" type="text" class="food" ng-model="day3food3.$value" placeholder="{{day3food3.$value}}"></textarea>
+                                        <input id="secondfood1alergen" type="text" class="alergeny" ng-model="day3allergens3.$value" placeholder="allergeny?">
+                                    </div>
+                                </div>
+
+                                <div class="day">
+                                    <div class="input-wrap">
+                                        <h4 ng-if="day4Name.$value == 'thursday'">{{thursday}}</h4>
+                                        <input id="day4Date" type="text" class="date"ng-model="day4Date.$value"  placeholder="{{day4Date.$value}}">
+                                    </div>
+                                    <div class="input-wrap">
+                                        <label for="polievka1">polievka</label>
+                                        <textarea id="polievka1" class="polievka" ng-model="day4food1.$value" placeholder="{{day4food1.$value}}" ></textarea>
+                                        <input id="polievka1alergen" type="text" class="alergeny" ng-model="day4allergens1.$value" placeholder="allergeny?">
+                                    </div>
+                                    <div class="input-wrap">
+
+                                        <label for="firstfood1">hl.jedlo 1</label>
+                                        <textarea id="firstfood1" type="text" class="food" ng-model="day4food2.$value" placeholder="{{day4food2.$value}}" ></textarea>
+                                        <input id="firstfood1alergen" type="text" class="alergeny" ng-model="day4allergens2.$value" placeholder="allergeny?">
+                                    </div>
+                                    <div class="input-wrap">
+                                        <label for="secondfood1">hl.jedlo 2</label>
+                                        <textarea id="secondfood1" type="text" class="food" ng-model="day4food3.$value" placeholder="{{day4food3.$value}}"></textarea>
+                                        <input id="secondfood1alergen" type="text" class="alergeny" ng-model="day4allergens3.$value" placeholder="allergeny?">
+                                    </div>
+                                </div>
+
+                                    <!-- friday -->.
+                                <div class="day">
+                                    <div class="input-wrap">
+                                        <h4 ng-if="day5Name.$value == 'friday'">{{friday}}</h4>
+                                        <input id="day5Date" type="text" class="date" ng-model="day5Date.$value"  placeholder="{{day5Date.$value}}">
+                                    </div>
+                                    <div class="input-wrap">
+                                        <label for="polievka1">polievka</label>
+                                        <textarea id="polievka1" class="polievka"  ng-model="day5food1.$value" placeholder="{{day5food1.$value}}" ></textarea>
+                                        <input id="polievka1alergen" type="text" class="alergeny" ng-model="day5allergens1.$value" placeholder="allergeny?">
+                                    </div>
+                                    <div class="input-wrap">
+
+                                        <label for="firstfood1">hl.jedlo 1</label>
+                                        <textarea id="firstfood1" type="text" class="food"  ng-model="day5food2.$value" placeholder="{{day5food2.$value}}" ></textarea>
+                                        <input id="firstfood1alergen" type="text" class="alergeny"  ng-model="day5allergens2.$value" placeholder="allergeny?">
+                                    </div>
+                                    <div class="input-wrap">
+                                        <label for="secondfood1">hl.jedlo 2</label>
+                                        <textarea id="secondfood1" type="text" class="food" ng-model="day5food3.$value" placeholder="piatok jedlo 2"></textarea>
+                                        <input id="secondfood1alergen" type="text" class="alergeny"  ng-model="day5allergens3.$value" placeholder="allergeny?">
+                                    </div>
+                                </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="menu" class="content-main bg bg-black" ng-show="previewOpen && !editOver">
+                    <div id="preview"  class="preview">
+                        <div id="content-logo" style="display: block;"></div>
+                        <h1 class="main-title" ng-click="printMenu()">Denné Menu</h1>
+                        <div class="small-line"></div>
+
+                        <div class="content-main no-padding">
+                            <p class="align-center">Podávame v pracovné dni od <b>11:30</b> do <b>14:00</b> </br>Cena denného menu je <b class="red">{{dailyMenuPrice.$value}} &euro; </b></p>
+                            <div class="daily-menu-list">
+
+
+                                <div class="daily-menu-item">
+                                    <table>
+                                        <tr class="menu-day">
+                                            <td>
+                                                <h5>{{monday}}</h5>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td colspan="1">
+                                                <h5 class="date">{{day1Date.$value}}</h5>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="item-title">
+                                                <p>{{food1}}</p>
+                                                <span>{{dailyMenuWeight1.$value}}</span>
+                                            </td>
+                                            <td colspan="2">
+                                                <p>{{day1food1.$value}}<b> ({{day1allergens1.$value}}) </b></p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="item-title">
+                                                <p>{{food2}}</p>
+                                                <span>{{dailyMenuWeight2.$value}}</span>
+                                            </td>
+                                            <td colspan="2">
+                                                <p>{{day1food2.$value}}<b> ({{day1allergens2.$value}}) </b></p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="item-title">
+                                                <p>{{food3}}</p>
+                                                <span>{{dailyMenuWeight3.$value}}</span>
+                                            </td>
+                                            <td colspan="2">
+                                                <p>{{day1food3.$value}}<b> ({{day1allergens3.$value}}) </b></p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="daily-menu-item">
+                                    <table>
+                                        <tr class="menu-day">
+                                            <td>
+                                                <h5>{{tuesday}}</h5>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td colspan="1">
+                                                <h5 class="date">{{day2Date.$value}}</h5>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="item-title">
+                                                <p>{{food1}}</p>
+                                                <span>{{dailyMenuWeight1.$value}}</span>
+                                            </td>
+                                            <td colspan="2">
+                                                <p>{{day2food1.$value}}<b> ({{day2allergens1.$value}}) </b></p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="item-title">
+                                                <p>{{food2}}</p>
+                                                <span>{{dailyMenuWeight2.$value}}</span>
+                                            </td>
+                                            <td colspan="2">
+                                                <p>{{day2food2.$value}}<b> ({{day2allergens2.$value}}) </b></p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="item-title">
+                                                <p>{{food3}}</p>
+                                                <span>{{dailyMenuWeight3.$value}}</span>
+                                            </td>
+                                            <td colspan="2">
+                                                <p>{{day2food3.$value}}<b> ({{day2allergens3.$value}}) </b></p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="daily-menu-item">
+                                    <table>
+                                        <tr class="menu-day">
+                                            <td>
+                                                <h5>{{wednesday}}</h5>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td colspan="1">
+                                                <h5 class="date">{{day3Date.$value}}</h5>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="item-title">
+                                                <p>{{food1}}</p>
+                                                <span>{{dailyMenuWeight1.$value}}</span>
+                                            </td>
+                                            <td colspan="2">
+                                                <p>{{day3food1.$value}}<b> ({{day3allergens1.$value}}) </b></p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="item-title">
+                                                <p>{{food2}}</p>
+                                                <span>{{dailyMenuWeight2.$value}}</span>
+                                            </td>
+                                            <td colspan="2">
+                                                <p>{{day3food2.$value}}<b> ({{day3allergens2.$value}}) </b></p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="item-title">
+                                                <p>{{food3}}</p>
+                                                <span>{{dailyMenuWeight3.$value}}</span>
+                                            </td>
+                                            <td colspan="2">
+                                                <p>{{day3food3.$value}}<b> ({{day3allergens3.$value}}) </b></p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="daily-menu-item">
+                                    <table>
+                                        <tr class="menu-day">
+                                            <td>
+                                                <h5>{{thursday}}</h5>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td colspan="1">
+                                                <h5 class="date">{{day4Date.$value}}</h5>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="item-title">
+                                                <p>{{food1}}</p>
+                                                <span>{{dailyMenuWeight1.$value}}</span>
+                                            </td>
+                                            <td colspan="2">
+                                                <p>{{day4food1.$value}}<b> ({{day4allergens1.$value}}) </b></p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="item-title">
+                                                <p>{{food2}}</p>
+                                                <span>{{dailyMenuWeight2.$value}}</span>
+                                            </td>
+                                            <td colspan="2">
+                                                <p>{{day4food2.$value}}<b> ({{day4allergens2.$value}}) </b></p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="item-title">
+                                                <p>{{food3}}</p>
+                                                <span>{{dailyMenuWeight3.$value}}</span>
+                                            </td>
+                                            <td colspan="2">
+                                                <p>{{day4food3.$value}}<b> ({{day4allergens3.$value}}) </b></p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="daily-menu-item" >
+                                    <table>
+                                        <tr class="menu-day">
+                                            <td>
+                                                <h5>{{friday}}</h5>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td colspan="1">
+                                                <h5 class="date">{{day5Date.$value}}</h5>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="item-title">
+                                                <p>{{food1}}</p>
+                                                <span>{{dailyMenuWeight1.$value}}</span>
+                                            </td>
+                                            <td colspan="2">
+                                                <p>{{day5food1.$value}}<b> ({{day5allergens1.$value}}) </b></p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="item-title">
+                                                <p>{{food2}}</p>
+                                                <span>{{dailyMenuWeight2.$value}}</span>
+                                            </td>
+                                            <td colspan="2">
+                                                <p>{{day5food2.$value}}<b> ({{day5allergens2.$value}}) </b></p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="item-title">
+                                                <p>{{food3}}</p>
+                                                <span>{{dailyMenuWeight3.$value}}</span>
+                                            </td>
+                                            <td colspan="2">
+                                                <p>{{day5food3.$value}}<b> ({{day5allergens3.$value}}) </b></p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section id="over" class="book bg-white" ng-show="editOver"
+                         ng-style="{height: displayHeight + 'px'}">
+                    <div class="center-wrap">
+
+                        <div class="center-content">
+                            <h1 class="main-title">Hotovo</h1>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- include FOOTER -->
+                <div ng-include="'templates/footerAdmin.html'"></div>
+                <!-- end of FOOTER include -->
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

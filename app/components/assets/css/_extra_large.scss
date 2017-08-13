@@ -26,9 +26,6 @@
   .right .content-wrapper .content-main .boxer .box .img {
     height: 16em;
   }
-  .content-wrapper .content-main .boxer {
-    padding-bottom: 1em;
-  }
   .right .content-wrapper .content-main .boxer .salon {
     width: calc(100% / 4);
     padding: 1em;
@@ -53,5 +50,10 @@
   .content-wrapper .book .center-wrap .center-content .logo img {
     width: 20em;
     height: 20em;
+  }
+
+  .content-wrapper .content-main.empty {
+    height: 40em;
+    min-height: 40em;
   }
 }

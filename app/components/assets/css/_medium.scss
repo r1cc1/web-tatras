@@ -8,16 +8,15 @@
   h1.main-title {
     font-size: 3em;
     line-height: 1em;
-    padding-top: 0.5em;
   }
   .content-main p {
-    font-size: 1.25em;
+    font-size: 1.5em;
     line-height: 2em;
-    padding: 0 2em;
-  }
-
-  .fake-left {
-    width: 16.5em;
+    padding: 2em 3em 0 3em;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    max-width: 24em;
   }
   .left {
     width: 200px;
@@ -33,17 +32,25 @@
       }
     }
     nav ul.main-menu li a {
-      font-size: 1.25em;
+      font-size: 1em;
       line-height: 2em;
     }
   }
+  .fake-left {
+    &.show {
+      width: 256px;
+    }
+  }
   .right {
+    display: table-cell;
+    position: relative;
+
     .sub-menu {
-      left: 208px;
+      left: 140px;
       top:0;
 
       &.open {
-        left: 208px;
+        left: 200px;
       }
     }
     .right-content {
@@ -56,8 +63,8 @@
       }
     }
     .content-main .table-info .table-info-item {
-      display: inline-block;
-      width: 33.33%;
+      display: table-cell;
+      width: calc(100% / 3);
     }
     .content-main .table-info .table-info-item p {
       font-size: 1.5em;
@@ -74,6 +81,10 @@
     }
     .content-wrapper .content-main .boxer .box .img {
       height: 12em;
+    }
+    .content-wrapper .small-line {
+      width: 100%;
+      max-width: 24em;
     }
     .actions {
       .btn-next {
@@ -114,9 +125,33 @@
     margin: 0 auto;
     background: white;
     max-width: 100%;
+    padding: 3em 0;
   }
   .content-kontakt .info .item a {
     font-size: 1em;
     padding: 0;
   }
+  .content-wrapper .content-main.empty {
+    height: 20em;
+    min-height: 20em;
+  }
+
+
+
+  .content-wrapper .content-main.empty:after {
+    height: calc(100% - 4em);
+    width: calc(100% - 4em);
+    top: 2em;
+    left: 2em;
+    border: 2px solid white;
+  }
+  .bg.bg-spa-3 {
+    background-position: center center;
+  }
+
+  .actions .link-button {
+    display: table-cell;
+    padding: 0;
+  }
+
 }

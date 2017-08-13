@@ -1,13 +1,25 @@
-<div class="wrapper">
+<div class="loading" ng-class="{'close': !isloading}">
+    <div class="loading-wrap">
+        <div class="loading-align">
+            <div class="loading-content">
+                <div class="loading-logo"></div>
+                <div class="loading-progress" ng-class="{'load': isloading}">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper" ng-class="{'init': isloading}">
 
     <!-- include LEFT-NAVI -->
     <div ng-include="'templates/left.html'"></div>
     <!-- end of LEFT-NAVI include -->
 
-    <div class="fake-left"></div>
+    <div class="fake-left" ng-class="{'show': subMenuState}"></div>
 
     <div class="right">
-        <div class="sub-menu" ng-class="{open: openMobileMenu}">
+        <div class="sub-menu" ng-class="{'open': openMobileMenu, 'show': subMenuState}">
             <div>
                 <ul>
                     <li du-scrollspy="welcome"><span du-smooth-scroll="welcome" ng-click="mobileMenu()">{{categoryName}}</span></li>
@@ -34,13 +46,11 @@
 
             <div class="content-wrapper">
 
-                <section id="pension" class="content-main bg bg-100 flex-nopadding" ng-style="{height: displayHeight + 'px'}">
+                <section id="pension" class="content-main bg bg-pension01 flex-nopadding" ng-style="{height: displayHeight + 'px'}">
                     <div class="center-wrap">
                         <div class="category-logo-wrap">
                             <div class="category-logo">
                                 <h2 class="category-title">{{categoryName}} ***</h2>
-                                <h1 class="logo-title">TATRAS</h1>
-                                <h3 class="moto-title">oáza pokoja</h3>
                             </div>
                         </div>
 
@@ -50,8 +60,6 @@
                     </div>
                 </section>
 
-                <section class="content-main empty bg bg-pension">
-                </section>
 
                 <section id="welcome" class="content-main bg bg-100">
                     <h1 class="main-title">{{categoryName}}</h1>
@@ -59,29 +67,43 @@
 
                     <p class="content-text">{{pensionText1}}</p>
 
-                    <div class="table-info">
+                </section>
 
-                        <div class="table-info-item">
-                            <ng-md-icon icon="login" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
-                                        size="50"></ng-md-icon>
-                            <span>Check-In</span>
-                            <p>14:00</p>
-                        </div>
 
-                        <div class="table-info-item">
-                            <ng-md-icon icon="room_service" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
-                                        size="50"></ng-md-icon>
-                            <span>Reception</span>
-                            <p>09:00 - 24:00</p>
-                        </div>
+                <section id="about" class="content-main bg bg-black">
 
-                        <div class="table-info-item">
-                            <ng-md-icon icon="logout" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
-                                        size="50"></ng-md-icon>
-                            <span>Check-Out</span>
-                            <p>10:00</p>
+                    <div class="small-line"></div>
+
+                    <div class=" info">
+                        <div class="item">
+                            <div class="table-info">
+
+                                <div class="table-info-item">
+                                    <ng-md-icon icon="login" style="display: inline-block; position: relative; margin: 0 auto; fill: #FFF;"
+                                                size="50"></ng-md-icon>
+                                    <span>Check-In</span>
+                                    <p>14:00</p>
+                                </div>
+
+                                <div class="table-info-item">
+                                    <ng-md-icon icon="room_service" style="display: inline-block; position: relative; margin: 0 auto; fill: #FFF;"
+                                                size="50"></ng-md-icon>
+                                    <span>Reception</span>
+                                    <p>09:00 - 24:00</p>
+                                </div>
+
+                                <div class="table-info-item">
+                                    <ng-md-icon icon="logout" style="display: inline-block; position: relative; margin: 0 auto; fill: #FFF;"
+                                                size="50"></ng-md-icon>
+                                    <span>Check-Out</span>
+                                    <p>10:00</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+                    <div class="small-line"></div>
+
                 </section>
 
                 <section id="info" class="content-main bg bg-100">
@@ -94,11 +116,25 @@
                         K dispozícií je privátne parkovisko strážené kamerovým systémom.
                     </p>
 
-                    <h1 class="main-title"><span>už od 60 &euro; / noc</span></h1>
+                </section>
+
+                <section id="rooms" class="content-main bg bg-100">
 
                     <div class="boxer">
 
                         <div class="box">
+                            <div class="icons">
+                                <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                            size="30"></ng-md-icon>
+                                <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                            size="30"></ng-md-icon>
+                            </div>
+                            <div class="img bg bg-pension08"></div>
+                            <p>dvojlôžková izba</p>
+                            <p><b>1 {{person}} / 1 {{night}}</b></p>
+                            <h1 class="main-title"><span>od 60 &euro; </span></h1>
+                        </div>
+                        <div class="box">
 
                             <div class="icons">
                                 <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
@@ -108,16 +144,9 @@
                             </div>
                             <div class="img bg bg-pension3"></div>
                             <p>dvojlôžková izba</p>
-                        </div>
-                        <div class="box">
-                            <div class="icons">
-                                <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
-                                            size="30"></ng-md-icon>
-                                <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
-                                            size="30"></ng-md-icon>
-                            </div>
-                            <div class="img bg bg-pension3"></div>
-                            <p>dvojlôžková izba</p>
+                            <p><b>2 {{people}} / 1 {{night}}</b></p>
+
+                            <h1 class="main-title"><span>od 70 &euro; </span></h1>
                         </div>
                         <div class="box">
                             <div class="icons">
@@ -130,8 +159,9 @@
                             </div>
                             <div class="img bg bg-pension4"></div>
 
-                            <p>dvojlôžková izba</p>
-                            <p>s možnosťou prístelky</p>
+                            <p>dvojlôžková izba +</p>
+                            <p><b>3 {{people}} / 1 {{night}}</b></p>
+                            <h1 class="main-title"><span>od 80 &euro; </span></h1>
                         </div>
                         <div class="box">
 
@@ -145,48 +175,51 @@
                                 <ng-md-icon icon="person_add" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
                                             size="30"></ng-md-icon>
                             </div>
-                            <div class="img bg bg-pension"></div>
-                            <p>trojlôžková izba</p>
-                            <p>s možnosťou prístelky</p>
+                            <div class="img bg bg-pension04"></div>
+                            <p>trojlôžková izba +</p>
+                            <p><b>4 {{people}} / 1 {{night}}</b></p>
+                            <h1 class="main-title"><span>od 90 &euro; </span></h1>
                         </div>
-
-                        <div class="feature-icons-set">
-                            <div class="feature-icon">
-                                <ng-md-icon icon="live_tv" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
-                                            size="50"></ng-md-icon>
-                            </div>
-                            <div class="feature-icon">
-                                <ng-md-icon icon="kitchen" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
-                                            size="50"></ng-md-icon>
-                            </div>
-                            <div class="feature-icon">
-                                <ng-md-icon icon="wifi" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
-                                            size="50"></ng-md-icon>
-                            </div>
-                            <div class="feature-icon">
-                                <ng-md-icon icon="local_parking" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
-                                            size="50"></ng-md-icon>
-                            </div>
-                            <div class="feature-icon">
-                                <ng-md-icon icon="smoke_free" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
-                                            size="50"></ng-md-icon>
-                            </div>
-                            <div class="feature-icon">
-                                <ng-md-icon icon="room_service" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
-                                            size="50"></ng-md-icon>
-                            </div>
-                        </div>
-
-                        <p class="content-text">
-                            Chcete si prenajať izbu na jeden či viac mesiacov? Je to možné. U nás sa budete cítiť ako
-                            „vo svojom“.
-                        </p>
 
                     </div>
+
+                    <div class="feature-icons-set">
+                        <div class="feature-icon">
+                            <ng-md-icon icon="live_tv" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                        size="50"></ng-md-icon>
+                        </div>
+                        <div class="feature-icon">
+                            <ng-md-icon icon="kitchen" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                        size="50"></ng-md-icon>
+                        </div>
+                        <div class="feature-icon">
+                            <ng-md-icon icon="wifi" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                        size="50"></ng-md-icon>
+                        </div>
+                        <div class="feature-icon">
+                            <ng-md-icon icon="local_parking" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                        size="50"></ng-md-icon>
+                        </div>
+                        <div class="feature-icon">
+                            <ng-md-icon icon="smoke_free" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                        size="50"></ng-md-icon>
+                        </div>
+                        <div class="feature-icon">
+                            <ng-md-icon icon="room_service" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                        size="50"></ng-md-icon>
+                        </div>
+                    </div>
+
+                    <p class="content-text">
+                        Chcete si prenajať izbu na jeden či viac mesiacov? Je to možné. U nás sa budete cítiť ako
+                        „vo svojom“.
+                    </p>
                 </section>
 
-                <section id="book" class="content-main bg bg-beige">
+                <section id="book" class="bg invert">
                     <h1 class="main-title">{{btnBook}}</h1>
+
+                    <div class="small-line"></div>
 
                     <div class="book-form" >
                         <form name="penzionForm" role="form">
@@ -200,7 +233,11 @@
                                         <label for="checkIn">{{checkinLabel}}</label>
                                     </div>
                                     <div class="wrap four">
-                                        <input id="checkIn" class="date" type="date" ng-model="checkin" min="2017-01-01" max="2020-01-01"/>
+                                        <div class="input-wrap">
+                                            <datepicker date-format="dd.MM.yyyy" date-week-start-day="1" datepicker-mobile="true">
+                                                <input id="checkIn" class="date" type="text" ng-model="checkin" placeholder="01.01.2017" required/>
+                                            </datepicker>
+                                        </div>
                                     </div>
 
                                     <div class="wrap four label">
@@ -210,7 +247,11 @@
                                         <label for="checkOut">{{checkoutLabel}}</label>
                                     </div>
                                     <div class="wrap four">
-                                        <input id="checkOut" class="date" type="date" ng-model="checkout" min="2017-01-01" max="2020-01-01"/>
+                                        <div class="input-wrap">
+                                            <datepicker date-format="dd.MM.yyyy" date-week-start-day="1" datepicker-mobile="true">
+                                                <input id="checkOut" class="date" type="text" ng-model="checkout"  placeholder="07.01.2017" required/>
+                                            </datepicker>
+                                        </div>
                                     </div>
 
                                     <div class="wrap four label">
@@ -220,7 +261,22 @@
                                         <label for="amount">{{amountLabel}}</label>
                                     </div>
                                     <div class="wrap four">
-                                        <input id="amount" name="amount" type="number" value="2" min="1" max="200" placeholder="2" ng-model="amount"/>
+                                        <div class="input-wrap">
+                                            <select id="amount" name="amount" ng-model="amount" required>
+                                                <option value="" disabled selected hidden translate>vyberte</option>
+                                                <option value="1" >1</option>
+                                                <option value="2" >2</option>
+                                                <option value="3" >3</option>
+                                                <option value="4" >4</option>
+                                                <option value="5" >5</option>
+                                                <option value="6" >6</option>
+                                                <option value="7" >7</option>
+                                                <option value="8" >8</option>
+                                                <option value="9" >9</option>
+                                                <option value="10" >10</option>
+                                                <option value="11" >11</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -231,7 +287,9 @@
                                         <label for="name">{{nameLabel}}</label>
                                     </div>
                                     <div class="wrap">
-                                        <input type="text" name="name" ng-model="name" class="form-control" placeholder="{{yourName}}" required/>
+                                        <div class="input-wrap">
+                                            <input type="text" name="name" ng-model="name" class="form-control" placeholder="{{yourName}}" required/>
+                                        </div>
                                     </div>
 
                                     <div class="wrap label">
@@ -241,8 +299,10 @@
                                         <label for="email">Email</label>
                                     </div>
                                     <div class="wrap">
-                                        <input type="email" name="email" ng-model="email" placeholder="email@email.com"
-                                               class="form-control" required/>
+                                        <div class="input-wrap">
+                                            <input type="email" name="email" ng-model="email" placeholder="email@email.com"
+                                                   class="form-control" required/>
+                                        </div>
                                     </div>
 
                                     <div class="wrap label">
@@ -252,7 +312,9 @@
                                         <label for="tel">{{phoneLabel}}</label>
                                     </div>
                                     <div class="wrap">
-                                        <input id="phone" type="number" name="phone" ng-model="phone" placeholder="+XXX XXX XXX XXX"/>
+                                        <div class="input-wrap">
+                                            <input id="phone" type="text" name="phone" ng-model="phone" placeholder="+XXX XXX XXX XXX"/>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -266,13 +328,17 @@
                                 <h4>{{bookingSend2}}</h4>
                             </div>
 
+
                             <div class="actions" ng-hide="bookFinnish">
-                                <button data-ng-click="formsubmit(penzionForm)" ng-if="lang != 'eng'" class="btn-next btn-submit">
+                                <p class="link-button phone" ng-hide="penzionForm.$valid">
+                                    Prosím vyplnte všetky údaje
+                                </p>
+                                <button data-ng-click="formsubmit(penzionForm)" ng-if="lang != 'eng'" ng-disabled="!penzionForm.$valid" class="btn-next btn-submit">
                                     <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
                                     Odoslat
                                     Rezervaciu
                                 </button>
-                                <button data-ng-click="formsubmit(penzionForm)" ng-if="lang != 'svk'" class="btn-next btn-submit">
+                                <button data-ng-click="formsubmit(penzionForm)" ng-if="lang != 'svk'" ng-disabled="!penzionForm.$valid" class="btn-next btn-submit">
                                     <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
                                     Book Now
                                 </button>
@@ -280,6 +346,25 @@
 
                         </form>
                     </div>
+                </section>
+
+                <section id="contact" class="content-main content-kontakt bg bg-100">
+
+                    <div class="info">
+                        <div class="item">
+                            <ng-md-icon icon="settings_phone" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #000;"
+                                        size="4em"></ng-md-icon>
+                            <a href="tel:00421948828727">(+421) 0948 828 727</a>
+                        </div>
+                        <div class="item">
+                            <ng-md-icon icon="mail_outline" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #000;"
+                                        size="4em"></ng-md-icon>
+                            <a href="mailto:penzion&#64minipivovartatras&#46sk" class="email">penzion@minipivovartatras.sk</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-main empty bg bg-pension2">
                 </section>
 
                 <section id="info2" class="content-main bg bg-100">
@@ -300,37 +385,36 @@
                             vyspať v našom útulnom penzióne ktorý si určite zamilu
                         </p>
 
-                        <div class="feature-icons-set">
-                            <div class="feature-icon">
-                                <ng-md-icon icon="landscape" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
-                                            size="50"></ng-md-icon>
-                            </div>
-                            <div class="feature-icon">
-                                <ng-md-icon icon="pool" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
-                                            size="50"></ng-md-icon>
-                            </div>
-                            <div class="feature-icon">
-                                <ng-md-icon icon="directions_bike" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
-                                            size="50"></ng-md-icon>
-                            </div>
-                            <div class="feature-icon">
-                                <ng-md-icon icon="spa" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
-                                            size="50"></ng-md-icon>
-                            </div>
-                            <div class="feature-icon">
-                                <ng-md-icon icon="local_bar" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
-                                            size="50"></ng-md-icon>
-                            </div>
-                            <div class="feature-icon">
-                                <ng-md-icon icon="shopping_cart" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
-                                            size="50"></ng-md-icon>
-                            </div>
+
+                    </div>
+                    <div class="feature-icons-set">
+                        <div class="feature-icon">
+                            <ng-md-icon icon="landscape" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
+                                        size="50"></ng-md-icon>
+                        </div>
+                        <div class="feature-icon">
+                            <ng-md-icon icon="pool" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
+                                        size="50"></ng-md-icon>
+                        </div>
+                        <div class="feature-icon">
+                            <ng-md-icon icon="directions_bike" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
+                                        size="50"></ng-md-icon>
+                        </div>
+                        <div class="feature-icon">
+                            <ng-md-icon icon="spa" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
+                                        size="50"></ng-md-icon>
+                        </div>
+                        <div class="feature-icon">
+                            <ng-md-icon icon="local_bar" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
+                                        size="50"></ng-md-icon>
+                        </div>
+                        <div class="feature-icon">
+                            <ng-md-icon icon="shopping_cart" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
+                                        size="50"></ng-md-icon>
                         </div>
                     </div>
                 </section>
 
-                <section class="content-main empty bg bg-pension2">
-                </section>
 
                 <section id="info3" class="content-main bg bg-100">
                     <h1 class="main-title">Ponúkame Vám</h1>
@@ -340,11 +424,11 @@
                         <p class="content-text">
                             <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
                                         size="25"></ng-md-icon>
-                        Raňajky v reštaurácií Tatras <br><br>
+                        Raňajky v reštaurácií <br><br>
 
                         <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
                                     size="25"></ng-md-icon>
-                        Prehliadku minipivovaru Tatras s pivnou degustáciou a výkladom<br><br>
+                        Prehliadku pivovaru s degustáciou a výkladom<br><br>
                         <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
                                     size="25"></ng-md-icon>
                         Možnosť zúčastníť sa varenia piva so sládkom<br><br>

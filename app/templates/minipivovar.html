@@ -1,20 +1,32 @@
-<div class="wrapper">
+<div class="loading" ng-class="{'close': !isloading}">
+    <div class="loading-wrap">
+        <div class="loading-align">
+            <div class="loading-content">
+                <div class="loading-logo"></div>
+                <div class="loading-progress" ng-class="{'load': isloading}">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper" ng-class="{'init': isloading}">
 
     <!-- include LEFT-NAVI -->
-    <div ng-include="'templates/left.html'"></div>
+    <div ng-include="'../templates/left.html'"></div>
     <!-- end of LEFT-NAVI include -->
 
-    <div class="fake-left"></div>
+    <div class="fake-left" ng-class="{'show': subMenuState}"></div>
 
     <div class="right">
-        <div class="sub-menu" ng-class="{open: openMobileMenu}">
+        <div class="sub-menu" ng-class="{'open': openMobileMenu, 'show': subMenuState}">
             <div>
                 <ul>
                     <li du-scrollspy="welcome"><span du-smooth-scroll="welcome" ng-click="mobileMenu()">{{welcome}}</span></li>
-                    <li du-scrollspy="beers"><span du-smooth-scroll="beers" ng-click="mobileMenu()">PIVO</span></li>
+                    <li du-scrollspy="beers"><span du-smooth-scroll="beers" ng-click="mobileMenu()">Na&#353;e Piv&aacute;</span></li>
                     <li du-scrollspy="history"><span du-smooth-scroll="history" ng-click="mobileMenu()">{{history}}</span></li>
-                    <li du-scrollspy="lukas"><span du-smooth-scroll="lukas" ng-click="mobileMenu()">Vdovjak</span></li>
-                    <li du-scrollspy="contact"><span du-smooth-scroll="contact" ng-click="mobileMenu()">{{aboutUs}}</span></li>
+                    <li du-scrollspy="contact" offset="100"><span du-smooth-scroll="contact" ng-click="mobileMenu()">Kontakt</span></li>
+                    <li du-scrollspy="about"><span du-smooth-scroll="about" ng-click="mobileMenu()">{{aboutUs}}</span></li>
                 </ul>
             </div>
         </div>
@@ -35,14 +47,28 @@
 
             <div class="content-wrapper">
 
-                <section class="content-main empty bg bg-podpivnik" ng-style="{height: teaserHeight + 'px'}">
+                <section id="beer" class="content-main bg bg-pivo5 flex-nopadding" ng-style="{height: displayHeight + 'px'}">
+                    <div class="center-wrap">
+                        <div class="category-logo-wrap">
+                            <div class="category-logo">
+                                <h2 class="category-title">{{categoryName}}</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stick-bottom">
+                        <span du-smooth-scroll="welcome"></span>
+                    </div>
                 </section>
 
-                <section id="welcome" class="content-main bg bg-100 box">
-                    <h1 class="main-title">TATRAS</h1>
-                    <div class="small-line"></div>
+                <!--<section class="content-main empty bg bg-podpivnik" ng-style="{height: teaserHeight + 'px'}">-->
+                <!--</section>-->
 
-                    <div class="content-main ">
+                <section id="welcome" class="content-main bg bg-100 box">
+
+                    <div class="content-main">
+                        <h1 class="main-title">TATRAS</h1>
+                        <div class="small-line"></div>
+
                         <p>{{minipivovarText1}}</p>
                     </div>
 
@@ -68,14 +94,15 @@
                     </div>
                 </section>
 
-                <section id="beers" class="content-main bg bg-100">
-                    <h1 class="main-title">{{minipivovarTitle1}}</h1>
+                <section id="beers" class="content-main bg bg-black">
+                    <h1 class="main-title color-red">{{minipivovarTitle1}}</h1>
                     <div class="small-line"></div>
                     <div class="content-main ">
-                        <p >{{minipivovarText2}} <b>{{minipivovarTitle1}}</b></p>
+                        <p class="content-text color-light" >{{minipivovarText2}} <b>{{minipivovarTitle1}}</b></p>
                     </div>
-
                 </section>
+
+
 
                 <section class="content-main empty bg bg-beerhand">
                 </section>
@@ -97,7 +124,7 @@
 
                 <section id="lukas" class="content-main bg bg-black">
 
-                    <h1 class="main-title color-red">Bc. Lukáš Vdovjak</h1>
+                    <h1 class="main-title color-red">Bc. Luká&#353; Vdovjak</h1>
                     <div class="small-line"></div>
 
                     <div class="content-main">
@@ -109,44 +136,40 @@
                 <section class="content-main empty bg bg-exterier">
                 </section>
 
-                <section id="press" class="content-main content-kontakt bg bg-100">
-                    <h1 class="main-title ">{{aboutUs}}</h1>
-                    <div class="small-line"></div>
+                <section id="contact" class="content-main content-kontakt bg bg-100">
 
                     <div class="info">
 
                         <div class="item">
-                            <a href="http://www.kamnapivo.sk/webtron/pivny-triangel-2-3-tatras.html" class="email">KamNaPivo.sk</a>
+                            <ng-md-icon icon="settings_phone" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #000;"
+                                        size="4em"></ng-md-icon>
+                            <a href="tel:00421948828727">(+421) 0948 828 727</a>
                         </div>
                         <div class="item">
-                            <a href="http://opive.sk/prijemna-ipa-spod-tatier-tatras-ipa/" class="email">oPive.sk</a>
-                        </div>
-                        <div class="item">
-                            <a href="https://spis.korzar.sme.sk/c/20559013/minipivovar-tatras-poprad-prekvapi-originalnymi-pivami.html#axzz4k3Cuvy4t" class="email">Korzar Spiš</a>
+                            <ng-md-icon icon="mail_outline" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #000;"
+                                        size="4em"></ng-md-icon>
+                            <a href="mailto:info&#64minipivovartatras&#46sk" class="email">info@minipivovartatras.sk</a>
                         </div>
 
                     </div>
                 </section>
 
+                <section id="about" class="content-main bg bg-black">
 
-                <section id="contact" class="content-main content-kontakt bg bg-100">
-                    <h1 class="main-title ">Info</h1>
                     <div class="small-line"></div>
 
-                    <div class="info">
+                    <div class="content-main info">
                         <div class="item">
-                            <a href="tel:00421948828727">+421 (0) 948828727</a>
-                            <a href="mailto:info&#64minipivovartatras&#46sk" class="email">info@minipivovartatras.sk</a>
-                        </div>
-                        <div class="item">
-                            <p>Minipivovar TATRAS, s.r.o</p>
-                            <p>Bc. Lukáš Vdovjak</p>
-                        </div>
-                        <div class="item">
+                            <p>Minipivovar TATRAS, s.r.o.</p>
+                            <p>Námestie sväteho Egídia 60</p>
+                            <p>05801 Poprad</p>
+                            <br>
                             <p>IČO: 36450308</p>
                             <p>DIČ: 2021339045</p>
                         </div>
                     </div>
+
+                    <div class="small-line"></div>
 
                 </section>
 
@@ -161,8 +184,9 @@
                     </div>
                 </section>
 
+
                 <!-- include FOOTER -->
-                <div ng-include="'templates/footer.html'"></div>
+                <div ng-include="'../templates/footer.html'"></div>
                 <!-- end of FOOTER include -->
 
             </div>
