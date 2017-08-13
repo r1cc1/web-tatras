@@ -6,22 +6,34 @@ $data = json_decode($post_data);
 $to      = 'spa@minipivovartatras.sk'; // this is your Email address
 $from    = $data->email; // this is the sender's Email address
 $date    = $data->date;
-$timer   = $data->timer;
+$termin   = $data->termin;
+$treatment  = $data->treatment;
 $amount  = $data->amount;
-$treatment    = $data->treatment;
+$amount2  = $data->amount2;
+$finalPrice    = $data->finalPrice;
 $name   = $data->name;
 $phone  = $data->phone;
-$subject = 'Rezervacia Wellness'; // predmet
+$text  = $data->text;
+$subject = 'Rezervacia Kupele'; // predmet
 
 // text emailu
 $message = '';
 $message .= $name . ' ODOSLAL NOVU REZERVACIU:' . "\n\n";
-$message .= 'Dátum: ' . $date . "\n\n";
-$message .= 'Čas: ' . $timer . "\n\n";
-$message .= 'Procedúra: ' . $treatment . "\n\n";
-$message .= 'Počet osôb: ' . $amount . "\n\n";
-$message .= 'Tel. číslo: ' . $phone . "\n\n";
+$message .= "\n\n";
+$message .= 'Datum: ' . $date . "\n\n";
+$message .= 'Cas: ' . $termin . "\n\n";
+$message .= 'Procedura: ' . $treatment . "\n\n";
+$message .= "\n\n";
+$message .= 'Pocet osob: ' . $amount . "\n\n";
+$message .= 'Pocet vani: ' . $amount2 . "\n\n";
+$message .= "\n\n";
+$message .= 'Cena: ' . $finalPrice  ."\n\n";
+$message .= "\n\n";
+$message .= 'Tel. cislo: ' . $phone . "\n\n";
 $message .= 'Email: ' . $from . "\n\n";
+$message .= "\n\n";
+$message .= 'Poznamka: ' . $text . "\n\n";
+
 
 
 // hlavicky

@@ -15,11 +15,14 @@ $subject = 'Rezervacia Penzion'; // predmet
 // text emailu
 $message = '';
 $message .= $name . ' ODOSLAL NOVU REZERVACIU:' . "\n\n";
-$message .= 'Príchod: ' . $checkin . "\n\n";
+$message .= "\n\n";
+$message .= 'Prichod: ' . $checkin . "\n\n";
 $message .= 'Odchod: ' . $checkout . "\n\n";
-$message .= 'Počet osôb: ' . $amount . "\n\n";
-$message .= 'Tel. číslo: ' . $phone . "\n\n";
-$message .= 'Email: ' . $from . "\n\n";
+$message .= 'Pocet osôb: ' . $amount . "\n\n";
+$message .= "\n\n";
+$message .= 'email: ' . $from . "\n\n";
+$message .= 'Tel. cislo: ' . $phone . "\n\n";
+
 
 
 // hlavicky
