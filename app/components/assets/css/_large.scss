@@ -4,13 +4,8 @@
   body:before {
     content: 'Large Screen';
   }
-
-  section {
-    paddig: 0 0 0 60px;
-  }
-
   .content-wrapper .content-main .center-wrap .category-logo-wrap .category-logo {
-    padding: 3em 2.25em 2.5em 3em;
+    padding: 3em 0 1.5em 0;
   }
   h1.main-title {
     font-size: 3em;
@@ -43,10 +38,19 @@
     font-size: 1.5em;
     line-height: 1.5em;
   }
+
+  .content-main {
+    &.content-kontakt{
+      padding: 0;
+    }
+  }
+
   .content-kontakt .info .item {
-    display: table-cell;
-    width: auto;
+    display: table;
+    width: 50%;
     text-align: center;
+    float: left;
+
   }
 
   .content-main .table-info .table-info-item span {
@@ -55,10 +59,12 @@
 
   .right .content-main .table-info .table-info-item p {
     font-size: 2em;
+    line-height: 2em;
   }
 
   .right .content-wrapper .content-main .boxer .box {
     width: calc(100% /2);
+    margin-bottom: 4em;
   }
   .right .content-wrapper .content-main .boxer .box .img {
     height: 20em;
@@ -115,11 +121,11 @@
     padding: 1em;
   }
   .content-wrapper .content-main .boxer .salon p {
-    font-size: 1.5em;
-    line-height: 2em;
+    font-size: 1.25em;
+    line-height: 1.75em;
   }
   .content-wrapper .content-main .boxer .salon h5 {
-    font-size: 2em;
+    font-size: 1.75em;
   }
 
   .content-wrapper .content-main .hours .day span {
@@ -140,7 +146,7 @@
     right: 1em;
   }
   footer {
-    padding: 2em 0;
+    padding: 2em;
   }
   footer .copyright {
     padding: 0;
@@ -154,10 +160,15 @@
     width: 33.33%;
     margin: 1em 0;
   }
+  footer .copyright .row .col-md-4.facebook {
+    text-align: right;
+    margin: 0.5em 0;
+  }
   .book-form .book-wrap {
     display: table;
     width: calc(100% - 4em);
-    margin: 0;
+    margin: 0 auto;
+    max-width: 50em;
   }
   .book-form .book-wrap .row {
     display: table-cell;
@@ -177,11 +188,11 @@
     background-attachment: fixed;
   }
   .content-wrapper .book .center-wrap .center-content .logo img {
-    width: 15em;
-    height: 15em;
+    width: 20em;
+    height: 20em;
   }
   .actions.start-btns {
-    margin-top: 5em;
+    margin-top: 1em;
   }
   .content-main {
     padding: 5em 0 5em 0;
@@ -208,4 +219,11 @@
     text-align: left;
   }
 
+  .content-wrapper .content-main .boxer {
+    padding: 1em 3em;
+  }
+
+  .content-wrapper .content-main .boxer-big {
+    padding: 0;
+  }
 }

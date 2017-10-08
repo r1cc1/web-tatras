@@ -5,6 +5,7 @@
     content: 'Medium Screen';
   }
 
+
   h1.main-title {
     font-size: 3em;
     line-height: 1em;
@@ -12,11 +13,11 @@
   .content-main p {
     font-size: 1.5em;
     line-height: 2em;
-    padding: 2em 3em 0 3em;
+    padding: 2em 3em 2em 3em;
     display: block;
     position: relative;
     margin: 0 auto;
-    max-width: 24em;
+    max-width: 30em;
   }
   .left {
     width: 200px;
@@ -38,7 +39,7 @@
   }
   .fake-left {
     &.show {
-      width: 256px;
+      width: 248px;
     }
   }
   .right {

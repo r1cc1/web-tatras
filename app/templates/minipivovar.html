@@ -10,7 +10,7 @@
     </div>
 </div>
 
-<div class="wrapper" ng-class="{'init': isloading}">
+<div ng-cloak class="wrapper" ng-class="{'init': isloading}">
 
     <!-- include LEFT-NAVI -->
     <div ng-include="'../templates/left.html'"></div>
@@ -22,11 +22,11 @@
         <div class="sub-menu" ng-class="{'open': openMobileMenu, 'show': subMenuState}">
             <div>
                 <ul>
-                    <li du-scrollspy="welcome"><span du-smooth-scroll="welcome" ng-click="mobileMenu()">{{welcome}}</span></li>
-                    <li du-scrollspy="beers"><span du-smooth-scroll="beers" ng-click="mobileMenu()">Na&#353;e Piv&aacute;</span></li>
-                    <li du-scrollspy="history"><span du-smooth-scroll="history" ng-click="mobileMenu()">{{history}}</span></li>
-                    <li du-scrollspy="contact" offset="100"><span du-smooth-scroll="contact" ng-click="mobileMenu()">Kontakt</span></li>
-                    <li du-scrollspy="about"><span du-smooth-scroll="about" ng-click="mobileMenu()">{{aboutUs}}</span></li>
+                    <li du-scrollspy="welcome"><span du-smooth-scroll="welcome" ng-click="mobileMenu()" translate>welcome</span></li>
+                    <li du-scrollspy="beers"><span du-smooth-scroll="beers" ng-click="mobileMenu()" translate>our.beer</span></li>
+                    <li du-scrollspy="history"><span du-smooth-scroll="history" ng-click="mobileMenu()" translate>history</span></li>
+                    <li du-scrollspy="contact" offset="100"><span du-smooth-scroll="contact" ng-click="mobileMenu()" translate>contact</span></li>
+                    <li du-scrollspy="about"><span du-smooth-scroll="about" ng-click="mobileMenu()" translate>about.us</span></li>
                 </ul>
             </div>
         </div>
@@ -51,7 +51,7 @@
                     <div class="center-wrap">
                         <div class="category-logo-wrap">
                             <div class="category-logo">
-                                <h2 class="category-title">{{categoryName}}</h2>
+                                <h2 class="category-title" translate>{{categoryName}}</h2>
                             </div>
                         </div>
                     </div>
@@ -66,13 +66,13 @@
                 <section id="welcome" class="content-main bg bg-100 box">
 
                     <div class="content-main">
-                        <h1 class="main-title">TATRAS</h1>
+                        <h1 class="main-title color-red">TATRAS</h1>
                         <div class="small-line"></div>
 
                         <p>{{minipivovarText1}}</p>
                     </div>
 
-                    <div class=" boxer">
+                    <div class=" boxer boxer-big">
                         <div class="box-15">
                             <img src="/components/assets/imgs/pivo/pivo1.jpg"/>
                         </div>
@@ -95,10 +95,10 @@
                 </section>
 
                 <section id="beers" class="content-main bg bg-black">
-                    <h1 class="main-title color-red">{{minipivovarTitle1}}</h1>
+                    <h1 class="main-title color-red" translate>true.beer</h1>
                     <div class="small-line"></div>
-                    <div class="content-main ">
-                        <p class="content-text color-light" >{{minipivovarText2}} <b>{{minipivovarTitle1}}</b></p>
+                    <div class="">
+                        <p class="content-text color-light" >{{minipivovarText2}} <b translate> true.beer</b></p>
                     </div>
                 </section>
 
@@ -108,7 +108,7 @@
                 </section>
 
                 <section id="history" class="content-main bg bg-100">
-                    <h1 class="main-title">{{history}}</h1>
+                    <h1 class="main-title" translate>history</h1>
                     <div class="small-line"></div>
 
                     <div class="content-main">
@@ -136,26 +136,27 @@
                 <section class="content-main empty bg bg-exterier">
                 </section>
 
-                <section id="contact" class="content-main content-kontakt bg bg-100">
+                <section id="contact" class="content-main content-kontakt bg bg-red">
+                    <h1 class="main-title" translate>contact</h1>
+                    <div class="small-line"></div>
 
                     <div class="info">
-
                         <div class="item">
-                            <ng-md-icon icon="settings_phone" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #000;"
-                                        size="4em"></ng-md-icon>
+                            <ng-md-icon icon="settings_phone" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;"
+                                        size="3em"></ng-md-icon>
                             <a href="tel:00421948828727">(+421) 0948 828 727</a>
                         </div>
                         <div class="item">
-                            <ng-md-icon icon="mail_outline" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #000;"
-                                        size="4em"></ng-md-icon>
+                            <ng-md-icon icon="mail_outline" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;"
+                                        size="3em"></ng-md-icon>
                             <a href="mailto:info&#64minipivovartatras&#46sk" class="email">info@minipivovartatras.sk</a>
                         </div>
 
                     </div>
                 </section>
 
-                <section id="about" class="content-main bg bg-black">
-
+                <section id="about" class="content-main bg bg-black invert">
+                    <h1 class="main-title" translate>about.us</h1>
                     <div class="small-line"></div>
 
                     <div class="content-main info">
@@ -178,12 +179,11 @@
                         <div style="width:100%;max-width:100%;overflow:hidden;height:100%;color:red;">
                             <div id="gmap_display" style="height:100%; width:100%;max-width:100%;">
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10458.714031133324!2d20.3021651!3d49.0547361!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x737d3b4af45f4836!2sMinipivovar+Tatras!5e0!3m2!1ssk!2ssk!4v1496950044302"
-                                        style="height:100%;width:100%;border:0;" frameborder="0" allowfullscreen></iframe>
+                                style="height:100%;width:100%;border:0;" frameborder="0" allowfullscreen></iframe>
                             </div>
                         </div>
                     </div>
                 </section>
-
 
                 <!-- include FOOTER -->
                 <div ng-include="'../templates/footer.html'"></div>

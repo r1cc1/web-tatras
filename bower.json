@@ -22,6 +22,14 @@
     "moment": "^2.18.1",
     "angularfire": "^2.3.0",
     "angular-material": "^1.1.4",
-    "angularjs-datepicker": "^2.1.23"
+    "angularjs-datepicker": "^2.1.23",
+    "bootstrap": "3",
+    "angulartics-google-analytics": "^0.4.0",
+    "angulartics": "^1.4.0",
+    "angular-translate": "^2.15.2",
+    "angular-translate-loader-static-files": "^2.15.2"
+  },
+  "devDependencies": {
+    "angular-translate": "^2.15.2"
   }
 }

@@ -1,3 +1,14 @@
+<div id="fb-root"></div>
+<script>
+    (function(d, s, id) {
+        FB=null;
+        var js, fjs = d.getElementsByTagName(s)[0];
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=124870938245084&version=v2.10";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
 <footer>
         <div class="copyright">
             <div class="row">
@@ -11,10 +22,13 @@
                     </p>
                 </div>
 
-                <div class="col-md-4">
-                    <ng-md-icon icon="facebook-box" style="display: inline-block; position: relative; margin: 0 auto; fill: white;"
-                                size="2.5em"></ng-md-icon>
-                    <div class="fb-like" data-href="https://www.facebook.com/minipivovartatras/" data-width="50px" data-layout="box_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+                <div class="col-md-4 facebook">
+                    <!--<ng-md-icon icon="facebook-box" style="display: inline-block; position: relative; margin: 0 auto; fill: white;"-->
+                                <!--size="2.5em"></ng-md-icon>-->
+                    <!--<div class="fb-follow" data-href="https://www.facebook.com/minipivovartatras" data-layout="box_count" data-size="small" data-show-faces="true"></div>-->
+
+                    <div class="fb-like" data-href="https://www.facebook.com/minipivovartatras" data-layout="button_count"
+                         data-action="like" data-size="large" data-show-faces="false" data-share="true"></div>
                 </div>
             </div>
         </div>

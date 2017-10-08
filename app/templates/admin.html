@@ -4,282 +4,819 @@
         <div class="menu-left">
             <button ng-show="previewOpen" ng-click="backToStart()" class="btn-submit" >
                 <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
-                NASPAT UPRAVIT
+                naspäť upraviť Menu
             </button>
+
+            <a ng-show="!previewOpen" ng-href="#/welcome" class="btn-submit" >
+                <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
+                naspäť na Stranku
+            </a>
+
         </div>
         <div class="menu-center">
-            <h1>Admin Center</h1>
+            <h1>WEB ADMIN CENTER</h1>
         </div>
         <div class="menu-right">
 
-            <button ng-show="!previewOpen  && !editOver"  ng-click="showPreview()" class="btn-submit" >
+            <button ng-show="!previewOpen  && !editOver && !adminLogin"  ng-click="showPreview()" class="btn-submit" >
                 <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
-                Potvrdit Upravy
+                Potvrdiť Upravy
             </button>
 
-            <button ng-show="previewOpen && !editOver"  ng-click="formsubmit(editMenuForm)" class="btn-submit" >
+            <button ng-show="previewOpen && !editOver && !adminLogin"  ng-click="formsubmit(editMenuForm)" class="btn-submit" >
                 <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
-                PUBLIKOVAT
+                zverejniť na Stránke
             </button>
-            <button ng-show="previewOpen  && !editOver" ng-click="printMenu()" class="btn btn-print">
+            <button ng-show="previewOpen  && !editOver && !adminLogin" ng-click="printMenu()" class="btn btn-print">
                 <ng-md-icon icon="share" style="white" size="20"></ng-md-icon>
-                TLACIT MENU
+                tlačiť MENU
             </button>
 
         </div>
     </div>
 </div>
 
-<div class="wrapper index" style="padding-top: 50px;">
 
-    <div class="center">
+<div ng-cloak class="wrapper admin-center" style="padding-top: 50px;" ng-class="{'init': isloading}">
+
+    <!-- include LEFT-NAVI -->
+    <!--<div ng-include="'../templates/leftAdmin.html'"></div> -->
+
+   <!-- <div class="fake-left"></div> -->
+
+    <div class="right center">
 
         <div class="right-content">
 
+
             <div class="content-wrapper">
 
-                <!--<section id="login" class="book transparent" ng-show="!adminCenter && !adminLogin"  ng-style="{height: displayHeight + 'px'}">-->
-                    <!--<div class="center-wrap">-->
-                        <!--<div class="center-content">-->
-                            <!--&lt;!&ndash;<div class="logo">&ndash;&gt;-->
-                                <!--&lt;!&ndash;<img src="./components/assets/imgs/tatras_logo.png" alt="Minipivovar Tatras"/>&ndash;&gt;-->
-                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <header>
+                    <div id="header-content" class="header-content" ng-if="adminLogin || !adminCenter" ng-style="{height: displayHeight + 'px'}">
+                        <div class="header-content-inner">
+                            <div class="main-image" ng-class="{'ios': ios}">
 
-                            <!--<h1 class="main-title">Admin Center</h1>-->
+                                <div class="jumbotron vertical-center">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-xs-0 col-md-4"></div>
+                                            <div class="col-xs-12 col-md-4">
 
-                            <!--<div class="content-wrapper login">-->
-                                <!--<div class="input-wrap">-->
-                                    <!--<label for="login-email">email {{loginEmail}}</label>-->
-                                    <!--<input id="login-email" type="email" class="email"  ng-model="loginEmail" >-->
-                                <!--</div>-->
-                                <!--<div class="input-wrap">-->
-                                    <!--<label for="password">password {{loginPass}}</label>-->
-                                    <!--<input id="password" type="password" class="password"  ng-model="loginPass">-->
-                                <!--</div>-->
-                                <!--<div class="input-wrap">-->
-                                    <!--<button class="button" type="submit" ng-click="logMeIn()">Login</button>-->
-                                <!--</div>-->
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title text-center">Prihláste sa</h3>
+                                                    </div>
+                                                    <div class="panel-body">
+                                                        <br>
+                                                        <div class="alert alert-danger" role="alert" ng-show="showError">Nesprány email alebo heslo</div>
 
-                            <!--</div>-->
+                                                        <div class="form-horizontal">
+                                                            <div class="input-group">
+                                                                <div class="input-group-addon">meno</div>
+                                                                <input id="login-email" type="text" class="form-control email"  ng-model="loginEmail" required>
+                                                            </div>
+                                                            <br>
+                                                            <div class="input-group">
+                                                                <div class="input-group-addon">heslo</div>
+                                                                <input id="password" type="password" class="form-control password"  ng-model="loginPass" required>
+                                                            </div>
+                                                            <br>
+                                                            <div class="form-group">
+                                                                <div class="col-sm-offset-2 col-sm-10">
+                                                                    <button id="SubmitLoginForm" class="btn btn-warning btn-lg" style="float:right;" ng-click="logMeIn(loginEmail,loginPass); $event.stopPropagation();">Login</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</section>-->
-
-                <!--<section id="center" class="book" ng-if="!adminCenter && adminLogin" ng-style="{height: displayHeight + 'px'}">-->
-                    <!--<div class="center-wrap">-->
-                        <!--<div class="center-content">-->
-
-
-                            <!--<h1 class="main-title">Admin Center</h1>-->
-
-                            <!--<div class="content-wrapper login">-->
-                                <!--<div class="input-wrap">-->
-                                    <!--<button class="button button-admin" type="submit" >Rezervacie</button>-->
-                                        <!--<span>{{restaurant}}</span>-->
-                                        <!--<span>{{pension}}</span>-->
-                                        <!--<span>{{spa}}</span>-->
-                                    <!--<button class="button button-admin" type="submit" >Denne Menu</button>-->
-                                    <!--<button class="button button-admin" type="submit" >Otvaracie Hodiny</button>-->
-                                    <!--<button class="button button-admin" type="submit" >Info o Prevadzke</button>-->
-                                    <!--<button class="button button-admin" type="submit" >Email Texty</button>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</section>-->
-
-                <section id="denne-menu" class="book bg-white" ng-show="!previewOpen" ng-style="{height: displayHeight + 'px'}">
-                    <div class="center-wrap">
-                        <div class="center-content">
-                            <h1 class="main-title">Denné Menu</h1>
-
-                            <div class="content-wrapper edit">
-                                <form name="editMenuForm" role="form">
-                                <div class="day">
-                                    <div class="input-wrap">
-                                        <h4>Cena</h4>
-                                    </div>
-                                    <div class="input-wrap">
-                                        <label for="price">menu</label>
-                                        <input id="price" type="text"  class="price" ng-model="dailyMenuPrice.$value" placeholder="{{dailyMenuPrice.$value}} &euro;">
-
+                                            </div>
+                                            <div class="col-xs-0 col-md-4"></div>
+                                        </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
 
-                                <div class="day">
-                                    <div class="input-wrap">
-                                        <h4>Váha</h4>
+                <section id="denneMennuAdmin" class="bg-white" ng-if="!adminLogin || adminCenter" ng-hide="previewOpen">
+
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Denné menu</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="form-inline">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">Cenna</div>
+                                                <input type="text" class="form-control text-center" ng-model="dailyMenuPrice.$value"  placeholder="{{dailyMenuPrice.$value}}">
+                                                <span class="input-group-addon" id="basic-addon2">&euro;</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="input-wrap">
-                                        <label for="weight1">polievka</label>
-                                        <input id="weight1" type="text"  ng-model="dailyMenuWeight1.$value"  placeholder="{{dailyMenuWeight1.$value}}">
-                                    </div>
-                                    <div class="input-wrap">
-                                        <label for="weight2">hl.jedlo 1</label>
-                                        <input id="weight2" type="text"  ng-model="dailyMenuWeight2.$value" placeholder="{{dailyMenuWeight2.$value}}">
-                                    </div>
-                                    <div class="input-wrap">
-                                        <label for="weight3">hl.jedlo 2</label>
-                                        <input id="weight3" type="text" ng-model="dailyMenuWeight3.$value" placeholder="{{dailyMenuWeight3.$value}}">
+                                    <br>
+                                    <div class="row">
+
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                <tr>
+                                                    <td>
+                                                        <h4>Váha</h4>
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="daily-menu alergeny" ng-model="dailyMenuWeight1.$value" placeholder="ml">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="daily-menu alergeny"  ng-model="dailyMenuWeight2.$value" placeholder="g">
+                                                    </td>
+                                                    <td>
+                                                        <input  type="text" class="daily-menu alergeny"  ng-model="dailyMenuWeight3.$value" placeholder="g?">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-center"><h4>Den</h4></th>
+                                                    <th class="text-center"><h4>polievka</h4></th>
+                                                    <th class="text-center"><h4>hl.jedlo 1</h4></th>
+                                                    <th class="text-center"><h4>hl.jedlo 2</h4></th>
+                                                </tr>
+
+                                                </thead>
+                                                <tbody id="pricesTable-2">
+                                                <tr rowspan="2">
+                                                    <td>
+                                                        <h3 ng-if="day1Name.$value == 'monday'">{{monday}}</h3>
+                                                        <br>
+                                                        <input id="day1Date" type="text" class="daily-menu text-center date" ng-model="day1Date.$value"  placeholder="{{day1Date.$value}}">
+                                                        <br>
+                                                        <br>
+                                                        <p>Alergény</p>
+                                                    </td>
+                                                    <td>
+                                                        <textarea id="polievka1" class="polievka" ng-model="day1food1.$value" placeholder="{{day1food1.$value}}" ></textarea>
+                                                        <input id="polievka1alergen" type="text" class="daily-menu alergeny" ng-model="day1allergens1.$value" placeholder="_">
+                                                    </td>
+                                                    <td>
+                                                        <textarea id="firstfood1" type="text" class="food" ng-model="day1food2.$value" placeholder="{{day1food2.$value}}" ></textarea>
+                                                        <input id="firstfood1alergen" type="text" class="daily-menu alergeny"  ng-model="day1allergens2.$value" placeholder="_">
+                                                    </td>
+                                                    <td>
+                                                        <textarea id="secondfood1" type="text" class="food"  ng-model="day1food3.$value" placeholder="{{day1food3.$value}}"></textarea>
+                                                        <input id="secondfood1alergen" type="text" class="daily-menu alergeny" ng-model="day1allergens3.$value" placeholder="_">
+                                                    </td>
+                                                </tr>
+                                                <tr rowspan="2">
+                                                    <td>
+                                                        <h3 ng-if="day2Name.$value == 'tuesday'">{{tuesday}}</h3>
+                                                        <br>
+                                                        <input id="day2Date" type="text" class="daily-menu text-center date" ng-model="day2Date.$value"  placeholder="{{day2Date.$value}}">
+                                                        <br>
+                                                        <br>
+                                                        <p>Alergény</p>
+                                                    </td>
+                                                    <td>
+                                                        <textarea id="polievka1" class="polievka" ng-model="day2food1.$value" placeholder="{{day2food1.$value}}" ></textarea>
+                                                        <input id="polievka2alergen" type="text" class="daily-menu alergeny" ng-model="day2allergens1.$value" placeholder="_">
+                                                    </td>
+                                                    <td>
+                                                        <textarea id="firstfood2" type="text" class="food"  ng-change="day2food2.$save()" ng-model="day2food2.$value" placeholder="{{day2food2.$value}}" ></textarea>
+                                                        <input id="firstfood2alergen" type="text" class="daily-menu alergeny"  ng-model="day2allergens2.$value" placeholder="_">
+                                                    </td>
+                                                    <td>
+                                                        <textarea id="secondfood1" type="text" class="food" ng-model="day2food3.$value" placeholder="{{day2food3.$value}}"></textarea>
+                                                        <input id="secondfood2alergen" type="text" class="daily-menu alergeny"  ng-model="day2allergens3.$value" placeholder="_">
+                                                    </td>
+                                                </tr>
+                                                <tr rowspan="2">
+                                                    <td>
+                                                        <h3 ng-if="day3Name.$value == 'wednesday'">{{wednesday}}</h3>
+                                                        <br>
+                                                        <input id="day3Date" type="text" class="daily-menu date text-center" ng-model="day3Date.$value"  placeholder="{{day3Date.$value}}">
+                                                        <br>
+                                                        <br>
+                                                        <p>Alergény</p>
+                                                    </td>
+                                                    <td>
+                                                        <textarea  class="polievka" ng-model="day3food1.$value" placeholder="{{day3food1.$value}}" ></textarea>
+                                                        <input type="text" class="daily-menu alergeny" ng-model="day3allergens1.$value" placeholder="_">
+                                                    </td>
+                                                    <td>
+                                                        <textarea type="text" class="food"  ng-change="day3food2.$save()" ng-model="day3food2.$value" placeholder="{{day3food2.$value}}" ></textarea>
+                                                        <input type="text" class="daily-menu alergeny"  ng-model="day3allergens2.$value" placeholder="_">
+                                                    </td>
+                                                    <td>
+                                                        <textarea type="text" class="food" ng-model="day3food3.$value" placeholder="{{day3food3.$value}}"></textarea>
+                                                        <input  type="text" class="daily-menu alergeny"  ng-model="day3allergens3.$value" placeholder="_">
+                                                    </td>
+                                                </tr>
+
+                                                <tr rowspan="2">
+                                                    <td>
+                                                        <h3 ng-if="day4Name.$value == 'thursday'">{{thursday}}</h3>
+                                                        <br>
+                                                        <input type="text" class="daily-menu date text-center" ng-model="day4Date.$value"  placeholder="{{day4Date.$value}}">
+                                                        <br>
+                                                        <br>
+                                                        <p>Alergény</p>
+                                                    </td>
+                                                    <td>
+                                                        <textarea  class="polievka" ng-model="day4food1.$value" placeholder="{{day4food1.$value}}" ></textarea>
+                                                        <input type="text" class="daily-menu alergeny" ng-model="day4allergens1.$value" placeholder="_">
+                                                    </td>
+                                                    <td>
+                                                        <textarea type="text" class="food"  ng-change="day4food2.$save()" ng-model="day4food2.$value" placeholder="{{day4food2.$value}}" ></textarea>
+                                                        <input type="text" class="daily-menu alergeny"  ng-model="day4allergens2.$value" placeholder="_">
+                                                    </td>
+                                                    <td>
+                                                        <textarea type="text" class="food" ng-model="day4food3.$value" placeholder="{{day4food3.$value}}"></textarea>
+                                                        <input  type="text" class="daily-menu alergeny"  ng-model="day4allergens3.$value" placeholder="_">
+                                                    </td>
+                                                </tr>
+
+                                                <tr rowspan="2">
+                                                    <td>
+                                                        <h3 ng-if="day5Name.$value == 'friday'">{{friday}}</h3>
+                                                        <br>
+                                                        <input type="text" class="daily-menu date text-center" ng-model="day5Date.$value"  placeholder="{{day5Date.$value}}">
+                                                        <br>
+                                                        <br>
+                                                        <p>Alergény</p>
+                                                    </td>
+                                                    <td>
+                                                        <textarea  class="polievka" ng-model="day5food1.$value" placeholder="{{day5food1.$value}}" ></textarea>
+                                                        <input type="text" class="daily-menu alergeny" ng-model="day5allergens1.$value" placeholder="_">
+                                                    </td>
+                                                    <td>
+                                                        <textarea type="text" class="food"  ng-change="day5food2.$save()" ng-model="day5food2.$value" placeholder="{{day5food2.$value}}" ></textarea>
+                                                        <input type="text" class="daily-menu alergeny"  ng-model="day5allergens2.$value" placeholder="_">
+                                                    </td>
+                                                    <td>
+                                                        <textarea type="text" class="food" ng-model="day5food3.$value" placeholder="{{day5food3.$value}}"></textarea>
+                                                        <input  type="text" class="daily-menu alergeny"  ng-model="day5allergens3.$value" placeholder="_">
+                                                    </td>
+                                                </tr>
+
+
+
+
+
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
-
-
-                                <!--<div class="day" ng-repeat="day in dailyMenuList">-->
-                                    <!--<div class="input-wrap">-->
-                                        <!--<h4 ng-if="day.name == 'monday'">{{monday}}</h4>-->
-                                        <!--<h4 ng-if="day.name == 'tuesday'">{{tuesday}}</h4>-->
-                                        <!--<h4 ng-if="day.name == 'wednesday'">{{wednesday}}</h4>-->
-                                        <!--<h4 ng-if="day.name == 'thursday'">{{thursday}}</h4>-->
-                                        <!--<h4 ng-if="day.name == 'friday'">{{friday}}</h4>-->
-                                    <!--</div>-->
-                                    <!--<div class="input-wrap">-->
-                                        <!--<label for="polievka1">polievka ID:{{day.$id}}</label>-->
-                                        <!--<textarea id="polievka1" class="polievka" ng-change="dailyMenuList.$save(day.$id)" ng-model="day.food[0].text" placeholder="{{day.food[0].text}}" ></textarea>-->
-                                        <!--<input id="polievka1alergen" type="text" class="alergeny" ng-model="day.food[0].allergens" placeholder="allergeny?">-->
-                                    <!--</div>-->
-                                    <!--<div class="input-wrap">-->
-
-                                        <!--<label for="firstfood1">hl.jedlo 1</label>-->
-                                        <!--<textarea id="firstfood1" type="text" class="food"  ng-model="day.food[1].text" placeholder="{{day.food[1].text}}"></textarea>-->
-                                        <!--<input id="firstfood1alergen" type="text" class="alergeny"  ng-model="day.food[1].allergens" placeholder="allergeny?">-->
-                                    <!--</div>-->
-                                    <!--<div class="input-wrap">-->
-                                        <!--<label for="secondfood1">hl.jedlo 2</label>-->
-                                        <!--<textarea id="secondfood1" type="text" class="food"  ng-model="day.food[2].text" placeholder="{{day.food[2].text}}"></textarea>-->
-                                        <!--<input id="secondfood1alergen" type="text" class="alergeny"  ng-model="day.food[2].allergens" placeholder="allergeny?">-->
-                                    <!--</div>-->
-                                <!--</div>-->
-
-
-
-                                <div class="day">
-                                    <div class="input-wrap">
-                                        <h4 ng-if="day1Name.$value == 'monday'">{{monday}}</h4>
-                                        <input id="day1Date" type="text" class="date"ng-model="day1Date.$value"  placeholder="{{day1Date.$value}}">
-                                    </div>
-                                    <div class="input-wrap">
-                                        <label for="polievka1">polievka</label>
-                                        <textarea id="polievka1" class="polievka" ng-model="day1food1.$value" placeholder="{{day1food1.$value}}" ></textarea>
-                                        <input id="polievka1alergen" type="text" class="alergeny" ng-model="day1allergens1.$value" placeholder="allergeny?">
-                                    </div>
-                                    <div class="input-wrap">
-
-                                        <label for="firstfood1">hl.jedlo 1</label>
-                                        <textarea id="firstfood1" type="text" class="food" ng-model="day1food2.$value" placeholder="{{day1food2.$value}}" ></textarea>
-                                        <input id="firstfood1alergen" type="text" class="alergeny"  ng-model="day1allergens2.$value" placeholder="allergeny?">
-                                    </div>
-                                    <div class="input-wrap">
-                                        <label for="secondfood1">hl.jedlo 2</label>
-                                        <textarea id="secondfood1" type="text" class="food"  ng-model="day1food3.$value" placeholder="{{day1food3.$value}}"></textarea>
-                                        <input id="secondfood1alergen" type="text" class="alergeny" ng-model="day1allergens3.$value" placeholder="allergeny?">
-                                    </div>
-                                </div>
-
-                                <div class="day">
-                                    <div class="input-wrap">
-                                        <h4 ng-if="day2Name.$value == 'tuesday'">{{tuesday}}</h4>
-                                        <input id="day2Date" type="text" class="date"ng-model="day2Date.$value"  placeholder="{{day2Date.$value}}">
-                                    </div>
-                                    <div class="input-wrap">
-                                        <label for="polievka1">polievka</label>
-                                        <textarea id="polievka1" class="polievka" ng-model="day2food1.$value" placeholder="{{day2food1.$value}}" ></textarea>
-                                        <input id="polievka1alergen" type="text" class="alergeny" ng-model="day2allergens1.$value" placeholder="allergeny?">
-                                    </div>
-                                    <div class="input-wrap">
-
-                                        <label for="firstfood1">hl.jedlo 1</label>
-                                        <textarea id="firstfood1" type="text" class="food"  ng-change="day2food2.$save()" ng-model="day2food2.$value" placeholder="{{day2food2.$value}}" ></textarea>
-                                        <input id="firstfood1alergen" type="text" class="alergeny"  ng-model="day2allergens2.$value" placeholder="allergeny?">
-                                    </div>
-                                    <div class="input-wrap">
-                                        <label for="secondfood1">hl.jedlo 2</label>
-                                        <textarea id="secondfood1" type="text" class="food" ng-model="day2food3.$value" placeholder="{{day2food3.$value}}"></textarea>
-                                        <input id="secondfood1alergen" type="text" class="alergeny"  ng-model="day2allergens3.$value" placeholder="allergeny?">
-                                    </div>
-                                </div>
-
-                                <div class="day">
-                                    <div class="input-wrap">
-                                        <h4 ng-if="day3Name.$value == 'wednesday'">{{wednesday}}</h4>
-                                        <input id="day3Date" type="text" class="date"ng-model="day3Date.$value"  placeholder="{{day3Date.$value}}">
-                                    </div>
-                                    <div class="input-wrap">
-                                        <label for="polievka1">polievka</label>
-                                        <textarea id="polievka1" class="polievka"  ng-model="day3food1.$value" placeholder="{{day3food1.$value}}" ></textarea>
-                                        <input id="polievka1alergen" type="text" class="alergeny" ng-model="day3allergens1.$value" placeholder="allergeny?">
-                                    </div>
-                                    <div class="input-wrap">
-
-                                        <label for="firstfood1">hl.jedlo 1</label>
-                                        <textarea id="firstfood1" type="text" class="food"  ng-model="day3food2.$value" placeholder="{{day3food2.$value}}" ></textarea>
-                                        <input id="firstfood1alergen" type="text" class="alergeny" ng-model="day3allergens2.$value" placeholder="allergeny?">
-                                    </div>
-                                    <div class="input-wrap">
-                                        <label for="secondfood1">hl.jedlo 2</label>
-                                        <textarea id="secondfood1" type="text" class="food" ng-model="day3food3.$value" placeholder="{{day3food3.$value}}"></textarea>
-                                        <input id="secondfood1alergen" type="text" class="alergeny" ng-model="day3allergens3.$value" placeholder="allergeny?">
-                                    </div>
-                                </div>
-
-                                <div class="day">
-                                    <div class="input-wrap">
-                                        <h4 ng-if="day4Name.$value == 'thursday'">{{thursday}}</h4>
-                                        <input id="day4Date" type="text" class="date"ng-model="day4Date.$value"  placeholder="{{day4Date.$value}}">
-                                    </div>
-                                    <div class="input-wrap">
-                                        <label for="polievka1">polievka</label>
-                                        <textarea id="polievka1" class="polievka" ng-model="day4food1.$value" placeholder="{{day4food1.$value}}" ></textarea>
-                                        <input id="polievka1alergen" type="text" class="alergeny" ng-model="day4allergens1.$value" placeholder="allergeny?">
-                                    </div>
-                                    <div class="input-wrap">
-
-                                        <label for="firstfood1">hl.jedlo 1</label>
-                                        <textarea id="firstfood1" type="text" class="food" ng-model="day4food2.$value" placeholder="{{day4food2.$value}}" ></textarea>
-                                        <input id="firstfood1alergen" type="text" class="alergeny" ng-model="day4allergens2.$value" placeholder="allergeny?">
-                                    </div>
-                                    <div class="input-wrap">
-                                        <label for="secondfood1">hl.jedlo 2</label>
-                                        <textarea id="secondfood1" type="text" class="food" ng-model="day4food3.$value" placeholder="{{day4food3.$value}}"></textarea>
-                                        <input id="secondfood1alergen" type="text" class="alergeny" ng-model="day4allergens3.$value" placeholder="allergeny?">
-                                    </div>
-                                </div>
-
-                                    <!-- friday -->.
-                                <div class="day">
-                                    <div class="input-wrap">
-                                        <h4 ng-if="day5Name.$value == 'friday'">{{friday}}</h4>
-                                        <input id="day5Date" type="text" class="date" ng-model="day5Date.$value"  placeholder="{{day5Date.$value}}">
-                                    </div>
-                                    <div class="input-wrap">
-                                        <label for="polievka1">polievka</label>
-                                        <textarea id="polievka1" class="polievka"  ng-model="day5food1.$value" placeholder="{{day5food1.$value}}" ></textarea>
-                                        <input id="polievka1alergen" type="text" class="alergeny" ng-model="day5allergens1.$value" placeholder="allergeny?">
-                                    </div>
-                                    <div class="input-wrap">
-
-                                        <label for="firstfood1">hl.jedlo 1</label>
-                                        <textarea id="firstfood1" type="text" class="food"  ng-model="day5food2.$value" placeholder="{{day5food2.$value}}" ></textarea>
-                                        <input id="firstfood1alergen" type="text" class="alergeny"  ng-model="day5allergens2.$value" placeholder="allergeny?">
-                                    </div>
-                                    <div class="input-wrap">
-                                        <label for="secondfood1">hl.jedlo 2</label>
-                                        <textarea id="secondfood1" type="text" class="food" ng-model="day5food3.$value" placeholder="piatok jedlo 2"></textarea>
-                                        <input id="secondfood1alergen" type="text" class="alergeny"  ng-model="day5allergens3.$value" placeholder="allergeny?">
-                                    </div>
-                                </div>
-
-                                </form>
-
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <section id="menu" class="content-main bg bg-black" ng-show="previewOpen && !editOver">
+                <section id="openHoursTables" class="bg-white" ng-if="!adminLogin || adminCenter" ng-hide="previewOpen">
+                    <div class="container">
+                        <br>
+                        <br>
+                        <div class="row">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">{{openHours}}</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-2"></div>
+                                        <div class="col-xs-12 col-md-4">
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                    <tr>
+                                                        <th class="text-center" colspan="3"><h4>Restaurant</h4></th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-center"><h4>Den</h4></th>
+                                                        <th class="text-center"><h4>Od</h4></th>
+                                                        <th class="text-center"><h4>Do</h4></th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody id="openHoursTable-1">
+                                                    <tr rowspan="2">
+                                                        <td>
+                                                            <h3>{{monday}}</h3>
+                                                        </td>
+                                                        <td>
+                                                            <input id="restMonTimeFrom" type="text" class="daily-menu" ng-model="restMonTimeFrom.$value">
+                                                        </td>
+                                                        <td>
+                                                            <input id="restMonTimeTo" type="text" class="daily-menu"  ng-model="restMonTimeTo.$value">
+                                                        </td>
+                                                    </tr>
+                                                    <tr rowspan="2">
+                                                        <td>
+                                                            <h3>{{tuesday}}</h3>
+                                                        </td>
+                                                        <td>
+                                                            <input id="restTueTimeFrom" type="text" class="daily-menu" ng-model="restTueTimeFrom.$value">
+                                                        </td>
+                                                        <td>
+                                                            <input id="restTueTimeTo" type="text" class="daily-menu"  ng-model="restTueTimeTo.$value">
+                                                        </td>
+                                                    </tr>
+                                                    <tr rowspan="2">
+                                                        <td>
+                                                            <h3>{{wednesday}}</h3>
+                                                        </td>
+                                                        <td>
+                                                            <input id="restWedTimeFrom" type="text" class="daily-menu" ng-model="restWedTimeFrom.$value">
+                                                        </td>
+                                                        <td>
+                                                            <input id="restWedTimeTo" type="text" class="daily-menu"  ng-model="restWedTimeTo.$value">
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr rowspan="2">
+                                                        <td>
+                                                            <h3>{{thursday}}</h3>
+                                                        </td>
+                                                        <td>
+                                                            <input id="restThuTimeFrom" type="text" class="daily-menu" ng-model="restThuTimeFrom.$value">
+                                                        </td>
+                                                        <td>
+                                                            <input id="restThuTimeTo" type="text" class="daily-menu"  ng-model="restThuTimeTo.$value">
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr rowspan="2">
+                                                        <td>
+                                                            <h3>{{friday}}</h3>
+                                                        </td>
+                                                        <td>
+                                                            <input id="restFriTimeFrom" type="text" class="daily-menu" ng-model="restFriTimeFrom.$value">
+                                                        </td>
+                                                        <td>
+                                                            <input id="restFriTimeTo" type="text" class="daily-menu"  ng-model="restFriTimeTo.$value">
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr rowspan="2">
+                                                        <td>
+                                                            <h3>{{saturday}}</h3>
+                                                        </td>
+                                                        <td>
+                                                            <input id="restSatTimeFrom" type="text" class="daily-menu" ng-model="restSatTimeFrom.$value">
+                                                        </td>
+                                                        <td>
+                                                            <input id="restSatTimeTo" type="text" class="daily-menu"  ng-model="restSatTimeTo.$value">
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr rowspan="2">
+                                                        <td>
+                                                            <h3>{{sunday}}</h3>
+                                                        </td>
+                                                        <td>
+                                                            <input id="restSunTimeFrom" type="text" class="daily-menu" ng-model="restSunTimeFrom.$value">
+                                                        </td>
+                                                        <td>
+                                                            <input id="restSunTimeTo" type="text" class="daily-menu"  ng-model="restSunTimeTo.$value">
+                                                        </td>
+                                                    </tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-md-4">
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                    <tr>
+                                                        <th class="text-center" colspan="3"><h4>Kúpele</h4></th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-center"><h4>Den</h4></th>
+                                                        <th class="text-center"><h4>OD</h4></th>
+                                                        <th class="text-center"><h4>DO</h4></th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody id="openHoursTable-2">
+                                                    <tr rowspan="2">
+                                                        <td>
+                                                            <h3>{{monday}}</h3>
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaMonTimeFrom" type="text" class="daily-menu" ng-model="spaMonTimeFrom.$value">
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaMonTimeTo" type="text" class="daily-menu"  ng-model="spaMonTimeTo.$value">
+                                                        </td>
+                                                    </tr>
+                                                    <tr rowspan="2">
+                                                        <td>
+                                                            <h3>{{tuesday}}</h3>
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaTueTimeFrom" type="text" class="daily-menu" ng-model="spaTueTimeFrom.$value">
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaTueTimeTo" type="text" class="daily-menu"  ng-model="spaTueTimeTo.$value">
+                                                        </td>
+                                                    </tr>
+                                                    <tr rowspan="2">
+                                                        <td>
+                                                            <h3>{{wednesday}}</h3>
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaWedTimeFrom" type="text" class="daily-menu" ng-model="spaWedTimeFrom.$value">
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaWedTimeTo" type="text" class="daily-menu"  ng-model="spaWedTimeTo.$value">
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr rowspan="2">
+                                                        <td>
+                                                            <h3>{{thursday}}</h3>
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaThuTimeFrom" type="text" class="daily-menu" ng-model="spaThuTimeFrom.$value">
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaThuTimeTo" type="text" class="daily-menu"  ng-model="spaThuTimeTo.$value">
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr rowspan="2">
+                                                        <td>
+                                                            <h3>{{friday}}</h3>
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaFriTimeFrom" type="text" class="daily-menu" ng-model="spaFriTimeFrom.$value">
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaFriTimeTo" type="text" class="daily-menu"  ng-model="spaFriTimeTo.$value">
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr rowspan="2">
+                                                        <td>
+                                                            <h3>{{saturday}}</h3>
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaSatTimeFrom" type="text" class="daily-menu" ng-model="spaSatTimeFrom.$value">
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaSatTimeTo" type="text" class="daily-menu"  ng-model="spaSatTimeTo.$value">
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr rowspan="2">
+                                                        <td>
+                                                            <h3>{{sunday}}</h3>
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaSunTimeFrom" type="text" class="daily-menu" ng-model="spaSunTimeFrom.$value">
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaSunTimeTo" type="text" class="daily-menu"  ng-model="spaSunTimeTo.$value">
+                                                        </td>
+                                                    </tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-md-2"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-2"></div>
+                                        <div class="col-xs-12 col-md-8">
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                    <tr>
+                                                        <th class="text-center" colspan="4"><h4>Penzion</h4></th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-center"><h4>Od</h4></th>
+                                                        <th class="text-center"><h4>Do</h4></th>
+                                                        <th class="text-center"><h4>CheckIn</h4></th>
+                                                        <th class="text-center"><h4>CheckOut</h4></th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody id="openHoursTable-4">
+                                                        <tr>
+                                                            <td>
+                                                                <input id="pensionTimeFrom" type="text" class="daily-menu"  ng-model="pensionTimeFrom.$value">
+                                                            </td>
+                                                            <td>
+                                                                <input id="pensionTimeTo" type="text" class="daily-menu"  ng-model="pensionTimeTo.$value">
+                                                            </td>
+                                                            <td>
+                                                                <input id="pensionCheckIn" type="text" class="daily-menu" ng-model="pensionCheckIn.$value">
+                                                            </td>
+                                                            <td>
+                                                                <input id="pensionCheckOut" type="text" class="daily-menu" ng-model="pensionCheckOut.$value">
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-md-2"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section id="pensionAdmin" class="bg-white" ng-if="!adminLogin || adminCenter" ng-hide="previewOpen">
+                    <div class="container">
+
+                        <form name="adminForm" role="form">
+
+                            <div class="row">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Cenník Penzión</h3>
+                                    </div>
+                                    <div class="panel-body p-md">
+
+
+                                        <div class="row">
+                                            <div class="col-xs-12 col-md-2"></div>
+                                            <div class="col-xs-12 col-md-8">
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered">
+                                                        <thead>
+                                                        <tr>
+                                                            <th class="text-center"><h4>1 {{person}}</h4></th>
+                                                            <th class="text-center"><h4>2 {{people}}</h4></th>
+                                                            <th class="text-center"><h4>3 {{people}}</h4></th>
+                                                            <th class="text-center"><h4>4 {{people}}</h4></th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody id="prices-pension">
+                                                        <tr>
+                                                            <td>
+                                                                <input id="pensionPrice1" type="text" class="daily-menu"  ng-model="pensionPrice1.$value">
+                                                            </td>
+                                                            <td>
+                                                                <input id="pensionPrice2" type="text" class="daily-menu"  ng-model="pensionPrice2.$value">
+                                                            </td>
+                                                            <td>
+                                                                <input id="pensionPrice3" type="text" class="daily-menu" ng-model="pensionPrice3.$value">
+                                                            </td>
+                                                            <td>
+                                                                <input id="pensionPrice4" type="text" class="daily-menu" ng-model="pensionPrice4.$value">
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-md-2"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <section id="spaAdmin" class="bg-white" ng-if="!adminLogin || adminCenter" ng-hide="previewOpen">
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Cenník Kúpele</h3>
+                                </div>
+                                <div class="panel-body p-md">
+
+                                    <div class="row">
+                                        <div class="form-inline">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">Sauna</div>
+                                                <input type="text" class="form-control text-center" ng-model="saunaPrice1.$value"  placeholder="{{saunaPrice1.$value}}">
+                                                <span class="input-group-addon">&euro;</span>
+                                            </div>
+                                            <div class="input-group">
+                                                <div class="input-group-addon">Masáž</div>
+                                                <input type="text" class="form-control text-center" ng-model="massagePrice.$value"  placeholder="{{massagePrice.$value}}">
+                                                <span class="input-group-addon">&euro;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-2"></div>
+                                        <div class="col-xs-12 col-md-8">
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                    <tr>
+                                                        <td colspan="5" class="text-center"><h4>Špeciálna procedura</h4></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-center"><h4>Počet osôb</h4></th>
+                                                        <th class="text-center"><h4>1 vaňa</h4></th>
+                                                        <th class="text-center"><h4>2 vane</h4></th>
+                                                        <th class="text-center"><h4>3 vane</h4></th>
+                                                        <th class="text-center"><h4>4 vane</h4></th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody id="prices-spa">
+                                                    <tr>
+                                                        <td>
+                                                            <h3>1</h3>
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaPrice1" type="text" class="daily-menu"  ng-model="spaPrice1.$value">
+                                                        </td>
+                                                        <td>
+                                                        </td>
+                                                        <td>
+                                                        </td>
+                                                        <td>
+
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <h3>2</h3>
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaPrice2" type="text" class="daily-menu"  ng-model="spaPrice2.$value">
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaPrice3" type="text" class="daily-menu" ng-model="spaPrice3.$value">
+                                                        </td>
+                                                        <td>
+                                                        </td>
+                                                        <td>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <h3>3</h3>
+                                                        </td>
+                                                        <td>
+
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaPrice4" type="text" class="daily-menu" ng-model="spaPrice4.$value">
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaPrice5" type="text" class="daily-menu" ng-model="spaPrice5.$value">
+                                                        </td>
+                                                        <td>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <h3>4</h3>
+                                                        </td>
+                                                        <td>
+
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaPrice6" type="text" class="daily-menu" ng-model="spaPrice6.$value">
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaPrice7" type="text" class="daily-menu" ng-model="spaPrice7.$value">
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaPrice8" type="text" class="daily-menu" ng-model="spaPrice8.$value">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <h3>5</h3>
+                                                        </td>
+                                                        <td>
+
+                                                        </td>
+                                                        <td>
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaPrice9" type="text" class="daily-menu" ng-model="spaPrice9.$value">
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaPrice10" type="text" class="daily-menu" ng-model="spaPrice10.$value">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <h3>6</h3>
+                                                        </td>
+                                                        <td>
+                                                        </td>
+                                                        <td>
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaPrice11" type="text" class="daily-menu" ng-model="spaPrice11.$value">
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaPrice12" type="text" class="daily-menu" ng-model="spaPrice12.$value">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <h3>7</h3>
+                                                        </td>
+                                                        <td>
+                                                        </td>
+                                                        <td>
+                                                        </td>
+                                                        <td>
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaPrice13" type="text" class="daily-menu" ng-model="spaPrice13.$value">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <h3>8</h3>
+                                                        </td>
+                                                        <td>
+                                                        </td>
+                                                        <td>
+                                                        </td>
+                                                        <td>
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaPrice14" type="text" class="daily-menu" ng-model="spaPrice14.$value">
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-md-2"></div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-12">
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                    <tr>
+                                                        <th colspan="8" class="text-center"><h4>Termíny Procedúr</h4></th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody id="spa-teminy">
+                                                    <tr>
+                                                        <td>
+                                                            <h3>Čas</h3>
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaTime1" type="text" class="daily-menu"  ng-model="spaTime1.$value">
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaTime2" type="text" class="daily-menu"  ng-model="spaTime2.$value">
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaTime3" type="text" class="daily-menu"  ng-model="spaTime3.$value">
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaTime4" type="text" class="daily-menu"  ng-model="spaTime4.$value">
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaTime5" type="text" class="daily-menu"  ng-model="spaTime5.$value">
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaTime6" type="text" class="daily-menu"  ng-model="spaTime6.$value">
+                                                        </td>
+                                                        <td>
+                                                            <input id="spaTime7" type="text" class="daily-menu"  ng-model="spaTime7.$value">
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </section>
+
+                <section id="menu" class="content-main bg" style="background: gray;" ng-show="adminCenter && previewOpen">
                     <div id="preview"  class="preview">
-                        <div id="content-logo" style="display: block;"></div>
+                        <div class="logo-left" ></div>
+                        <div class="logo-right"></div>
+
                         <h1 class="main-title" ng-click="printMenu()">Denné Menu</h1>
                         <div class="small-line"></div>
 
@@ -300,7 +837,7 @@
                                                 <h5 class="date">{{day1Date.$value}}</h5>
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <tr class="first-row">
                                             <td class="item-title">
                                                 <p>{{food1}}</p>
                                                 <span>{{dailyMenuWeight1.$value}}</span>
@@ -341,7 +878,7 @@
                                                 <h5 class="date">{{day2Date.$value}}</h5>
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <tr class="first-row">
                                             <td class="item-title">
                                                 <p>{{food1}}</p>
                                                 <span>{{dailyMenuWeight1.$value}}</span>
@@ -382,7 +919,7 @@
                                                 <h5 class="date">{{day3Date.$value}}</h5>
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <tr class="first-row">
                                             <td class="item-title">
                                                 <p>{{food1}}</p>
                                                 <span>{{dailyMenuWeight1.$value}}</span>
@@ -423,7 +960,7 @@
                                                 <h5 class="date">{{day4Date.$value}}</h5>
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <tr class="first-row">
                                             <td class="item-title">
                                                 <p>{{food1}}</p>
                                                 <span>{{dailyMenuWeight1.$value}}</span>
@@ -464,7 +1001,7 @@
                                                 <h5 class="date">{{day5Date.$value}}</h5>
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <tr class="first-row">
                                             <td class="item-title">
                                                 <p>{{food1}}</p>
                                                 <span>{{dailyMenuWeight1.$value}}</span>
@@ -498,7 +1035,6 @@
                     </div>
                 </section>
 
-
                 <section id="over" class="book bg-white" ng-show="editOver"
                          ng-style="{height: displayHeight + 'px'}">
                     <div class="center-wrap">
@@ -512,10 +1048,11 @@
                 <!-- include FOOTER -->
                 <div ng-include="'templates/footerAdmin.html'"></div>
                 <!-- end of FOOTER include -->
-
             </div>
+
         </div>
     </div>
+
 </div>
 
 

@@ -10,7 +10,7 @@
     </div>
 </div>
 
-<div class="wrapper" ng-class="{'init': isloading}">
+<div ng-cloak class="wrapper" ng-class="{'init': isloading}">
 
     <!-- include LEFT-NAVI -->
     <div ng-include="'templates/left.html'"></div>
@@ -22,11 +22,11 @@
         <div class="sub-menu" ng-class="{'open': openMobileMenu, 'show': subMenuState}">
             <div>
                 <ul>
-                    <li du-scrollspy="menu" offset=100"><span du-smooth-scroll="menu" ng-click="mobileMenu()">Denné Menu</span></li>
-                    <li du-scrollspy="book"><span du-smooth-scroll="book" ng-click="mobileMenu()">{{btnBookTableSvk}}</span></li>
-                    <li du-scrollspy="info2"><span du-smooth-scroll="info2" ng-click="mobileMenu()">Saloniky</span></li>
-                    <li du-scrollspy="kitchen" offset=100"><span du-smooth-scroll="kitchen" ng-click="mobileMenu()">Kuchyna</span></li>
-                    <li du-scrollspy="hours"><span du-smooth-scroll="hours" ng-click="mobileMenu()">{{openHours}}</span></li>
+                    <li du-scrollspy="menu" offset=100"><span du-smooth-scroll="menu" ng-click="mobileMenu()" translate>daily.menu</span></li>
+                    <li du-scrollspy="book"><span du-smooth-scroll="book" ng-click="mobileMenu()" translate>book.now</span></li>
+                    <li du-scrollspy="info2"><span du-smooth-scroll="info2" ng-click="mobileMenu()" translate>lounges</span></li>
+                    <li du-scrollspy="kitchen" offset=100"><span du-smooth-scroll="kitchen" ng-click="mobileMenu()" translate>kitchen</span></li>
+                    <li du-scrollspy="hours"><span du-smooth-scroll="hours" ng-click="mobileMenu()" translate>open.hours</span></li>
                 </ul>
             </div>
         </div>
@@ -50,7 +50,7 @@
                     <div class="center-wrap">
                         <div class="category-logo-wrap">
                             <div class="category-logo">
-                                <h2 class="category-title">{{categoryName}}</h2>
+                                <h2 class="category-title" translate>{{categoryName}}</h2>
                             </div>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                 <!--</section>-->
 
                 <section id="welcome" class="content-main bg bg-100 ">
-                    <h1 class="main-title">{{restaurantWelcome}}</h1>
+                    <h1 class="main-title" translate>welcome</h1>
                     <div class="small-line"></div>
                     <div class="content-main">
                         <p class="content-text">
@@ -77,70 +77,19 @@
 
                 <section id="menu" class="content-main bg bg-white">
 
-                    <div id="content-logo"></div>
-                    <h1 class="main-title" ng-click="printMenu()">Denné Menu</h1>
+                    <h1 class="main-title" translate>daily.menu</h1>
                     <div class="small-line"></div>
 
                     <div class="content-main no-padding">
                         <p class="align-center">Podávame v pracovné dni od <b>11:30</b> do <b>14:00</b> </br>Cena denného menu je <b class="red">{{dailyMenuPrice.$value}} &euro; </b></p>
                         <div class="daily-menu-list">
 
-                            <!--<div class="daily-menu-item" ng-repeat="day in dailyMenuList" ng-class="{'today': day.name == istoday}">-->
-                            <!--<table>-->
-                            <!--<tr class="menu-day">-->
-                            <!--<td>-->
-                            <!--<h5 ng-if="day.name == 'monday'">{{monday}}</h5>-->
-                            <!--<h5 ng-if="day.name == 'tuesday'">{{tuesday}}</h5>-->
-                            <!--<h5 ng-if="day.name == 'wednesday'">{{wednesday}}</h5>-->
-                            <!--<h5 ng-if="day.name == 'thursday'">{{thursday}}</h5>-->
-                            <!--<h5 ng-if="day.name == 'friday'">{{friday}}</h5>-->
-                            <!--</td>-->
-                            <!--<td>-->
-                            <!--</td>-->
-                            <!--<td colspan="1">-->
-                            <!--<h5 class="date" ng-if="day.name == 'monday'">{{mondayDate}}</h5>-->
-                            <!--<h5 class="date" ng-if="day.name == 'tuesday'">{{tuesdayDate}}</h5>-->
-                            <!--<h5 class="date" ng-if="day.name == 'wednesday'">{{wednesdayDate}}</h5>-->
-                            <!--<h5 class="date" ng-if="day.name == 'thursday'">{{thursdayDate}}</h5>-->
-                            <!--<h5 class="date" ng-if="day.name == 'friday'">{{fridayDate}}</h5>-->
-                            <!--</td>-->
-                            <!--</tr>-->
-                            <!--<tr>-->
-                            <!--<td class="item-title">-->
-                            <!--<p>{{food1}}</p>-->
-                            <!--<span>{{dailyMenuWeight1.$value}}</span>-->
-                            <!--</td>-->
-                            <!--<td colspan="2">-->
-                            <!--<p>{{day.food[0].text}}<b> ({{day.food[0].allergens}}) </b></p>-->
-                            <!--</td>-->
-                            <!--</tr>-->
-                            <!--<tr>-->
-                            <!--<td class="item-title">-->
-                            <!--<p>{{food2}}</p>-->
-                            <!--<span>{{dailyMenuWeight2.$value}}</span>-->
-                            <!--</td>-->
-                            <!--<td colspan="2">-->
-                            <!--<p>{{day.food[1].text}}<b> ({{day.food[1].allergens}})</b></p>-->
-                            <!--</td>-->
-                            <!--</tr>-->
-                            <!--<tr>-->
-                            <!--<td class="item-title">-->
-                            <!--<p>{{food3}}</p>-->
-                            <!--<span>{{dailyMenuWeight3.$value}}</span>-->
-                            <!--</td>-->
-                            <!--<td colspan="2">-->
-                            <!--<p>{{day.food[2].text}}<b> ({{day.food[2].allergens}}) </b></p>-->
-                            <!--</td>-->
-                            <!--</tr>-->
-                            <!--</table>-->
-                            <!--</div>-->
-
-                            <div class="daily-menu-item" ng-hide="day1Date.$value == yesterday || day1Date.$value == twoDaysAgo  || day1Date.$value == threeDaysAgo ||  day1Date.$value == fourDaysAgo ||  day1Date.$value == fiveDaysAgo"
-                                 ng-class="{'today': day1Date.$value == istoday}">
+                            <div class="daily-menu-item" ng-hide="todayName == 'tuesday' || todayName == 'wednesday' || todayName == 'thursday' || todayName == 'friday' "
+                                 ng-class="{'today': todayName == 'monday'}">
                                 <table>
                                     <tr class="menu-day">
                                         <td>
-                                            <h5>{{monday}}</h5>
+                                            <h5 translate>monday  {{istoday}}</h5>
                                         </td>
                                         <td>
                                         </td>
@@ -150,7 +99,7 @@
                                     </tr>
                                     <tr>
                                         <td class="item-title">
-                                            <p>{{food1}}</p>
+                                            <p translate>food1</p>
                                             <span>{{dailyMenuWeight1.$value}}</span>
                                         </td>
                                         <td colspan="2">
@@ -159,7 +108,7 @@
                                     </tr>
                                     <tr>
                                         <td class="item-title">
-                                            <p>{{food2}}</p>
+                                            <p translate>food2</p>
                                             <span>{{dailyMenuWeight2.$value}}</span>
                                         </td>
                                         <td colspan="2">
@@ -168,7 +117,7 @@
                                     </tr>
                                     <tr>
                                         <td class="item-title">
-                                            <p>{{food3}}</p>
+                                            <p translate>food3</p>
                                             <span>{{dailyMenuWeight3.$value}}</span>
                                         </td>
                                         <td colspan="2">
@@ -177,12 +126,12 @@
                                     </tr>
                                 </table>
                             </div>
-                            <div class="daily-menu-item" ng-hide="day2Date.$value == yesterday || day2Date.$value == twoDaysAgo  || day2Date.$value == threeDaysAgo ||  day2Date.$value == fourDaysAgo"
-                                 ng-class="{'today': day2Date.$value == istoday}">
+                            <div class="daily-menu-item" ng-hide="todayName == 'wednesday' || todayName == 'thursday' || todayName == 'friday' "
+                                 ng-class="{'today': todayName == 'tuesday'}">
                                 <table>
                                     <tr class="menu-day">
                                         <td>
-                                            <h5>{{tuesday}}</h5>
+                                            <h5 translate>tuesday</h5>
                                         </td>
                                         <td>
                                         </td>
@@ -192,7 +141,7 @@
                                     </tr>
                                     <tr>
                                         <td class="item-title">
-                                            <p>{{food1}}</p>
+                                            <p translate>food1</p>
                                             <span>{{dailyMenuWeight1.$value}}</span>
                                         </td>
                                         <td colspan="2">
@@ -201,7 +150,7 @@
                                     </tr>
                                     <tr>
                                         <td class="item-title">
-                                            <p>{{food2}}</p>
+                                            <p translate>food2</p>
                                             <span>{{dailyMenuWeight2.$value}}</span>
                                         </td>
                                         <td colspan="2">
@@ -210,7 +159,7 @@
                                     </tr>
                                     <tr>
                                         <td class="item-title">
-                                            <p>{{food3}}</p>
+                                            <p translate>food3</p>
                                             <span>{{dailyMenuWeight3.$value}}</span>
                                         </td>
                                         <td colspan="2">
@@ -219,12 +168,12 @@
                                     </tr>
                                 </table>
                             </div>
-                            <div class="daily-menu-item" ng-hide="day3Date.$value == yesterday || day3Date.$value == twoDaysAgo  || day3Date.$value == threeDaysAgo"
-                                 ng-class="{'today': day3Date.$value == istoday}">
+                            <div class="daily-menu-item" ng-hide="todayName == 'thursday' || todayName == 'friday' "
+                                 ng-class="{'today': todayName == 'wednesday'}">
                                 <table>
                                     <tr class="menu-day">
                                         <td>
-                                            <h5>{{wednesday}}</h5>
+                                            <h5 translate>wednesday</h5>
                                         </td>
                                         <td>
                                         </td>
@@ -234,7 +183,7 @@
                                     </tr>
                                     <tr>
                                         <td class="item-title">
-                                            <p>{{food1}}</p>
+                                            <p translate>food1</p>
                                             <span>{{dailyMenuWeight1.$value}}</span>
                                         </td>
                                         <td colspan="2">
@@ -243,7 +192,7 @@
                                     </tr>
                                     <tr>
                                         <td class="item-title">
-                                            <p>{{food2}}</p>
+                                            <p translate>food2</p>
                                             <span>{{dailyMenuWeight2.$value}}</span>
                                         </td>
                                         <td colspan="2">
@@ -252,7 +201,7 @@
                                     </tr>
                                     <tr>
                                         <td class="item-title">
-                                            <p>{{food3}}</p>
+                                            <p translate>food3</p>
                                             <span>{{dailyMenuWeight3.$value}}</span>
                                         </td>
                                         <td colspan="2">
@@ -261,12 +210,12 @@
                                     </tr>
                                 </table>
                             </div>
-                            <div class="daily-menu-item" ng-hide="day4Date.$value == yesterday || day4Date.$value == twoDaysAgo"
-                                 ng-class="{'today': day4Date.$value == istoday}">
+                            <div class="daily-menu-item" ng-hide="todayName == 'friday' "
+                                 ng-class="{'today': todayName == 'thursday'}">
                                 <table>
                                     <tr class="menu-day">
                                         <td>
-                                            <h5>{{thursday}}</h5>
+                                            <h5 translate>thursday</h5>
                                         </td>
                                         <td>
                                         </td>
@@ -276,7 +225,7 @@
                                     </tr>
                                     <tr>
                                         <td class="item-title">
-                                            <p>{{food1}}</p>
+                                            <p translate>food1</p>
                                             <span>{{dailyMenuWeight1.$value}}</span>
                                         </td>
                                         <td colspan="2">
@@ -285,7 +234,7 @@
                                     </tr>
                                     <tr>
                                         <td class="item-title">
-                                            <p>{{food2}}</p>
+                                            <p translate>food2</p>
                                             <span>{{dailyMenuWeight2.$value}}</span>
                                         </td>
                                         <td colspan="2">
@@ -294,7 +243,7 @@
                                     </tr>
                                     <tr>
                                         <td class="item-title">
-                                            <p>{{food3}}</p>
+                                            <p translate>food3</p>
                                             <span>{{dailyMenuWeight3.$value}}</span>
                                         </td>
                                         <td colspan="2">
@@ -303,12 +252,12 @@
                                     </tr>
                                 </table>
                             </div>
-                            <div class="daily-menu-item" ng-hide="day5Date.$value == yesterday"
-                                 ng-class="{'today': day5Date.$value == istoday}">
+                            <div class="daily-menu-item"
+                                 ng-class="{'today': todayName == 'friday'}">
                                 <table>
                                     <tr class="menu-day">
                                         <td>
-                                            <h5>{{friday}}</h5>
+                                            <h5 translate>friday</h5>
                                         </td>
                                         <td>
                                         </td>
@@ -318,7 +267,7 @@
                                     </tr>
                                     <tr>
                                         <td class="item-title">
-                                            <p>{{food1}}</p>
+                                            <p translate>food1</p>
                                             <span>{{dailyMenuWeight1.$value}}</span>
                                         </td>
                                         <td colspan="2">
@@ -327,7 +276,7 @@
                                     </tr>
                                     <tr>
                                         <td class="item-title">
-                                            <p>{{food2}}</p>
+                                            <p translate>food2</p>
                                             <span>{{dailyMenuWeight2.$value}}</span>
                                         </td>
                                         <td colspan="2">
@@ -336,7 +285,7 @@
                                     </tr>
                                     <tr>
                                         <td class="item-title">
-                                            <p>{{food3}}</p>
+                                            <p translate>food3</p>
                                             <span>{{dailyMenuWeight3.$value}}</span>
                                         </td>
                                         <td colspan="2">
@@ -351,7 +300,7 @@
                 </section>
 
                 <section id="book" class="bg invert">
-                    <h1 class="main-title">{{btnBook}}</h1>
+                    <h1 class="main-title" translate>book.now</h1>
 
                     <div class="small-line"></div>
 
@@ -363,7 +312,7 @@
                                     <div class="wrap four label">
                                         <ng-md-icon icon="date_range" style="display: inline-block; position: relative; fill: #f5eddc;"
                                                     size="25px"></ng-md-icon>
-                                        <label for="date">{{dateLabel}}</label>
+                                        <label for="date" translate>date</label>
                                     </div>
                                     <div class="wrap four">
                                         <div class="input-wrap">
@@ -376,7 +325,7 @@
                                     <div class="wrap four label">
                                         <ng-md-icon icon="access_time" style="display: inline-block; position: relative; fill: #f5eddc;"
                                                     size="25px"></ng-md-icon>
-                                        <label for="time">{{timeLabel}}</label>
+                                        <label for="time" translate>time</label>
                                     </div>
                                     <div class="wrap four">
                                         <div class="input-wrap">
@@ -388,7 +337,7 @@
                                     <div class="wrap four label">
                                         <ng-md-icon icon="group" style="display: inline-block; position: relative; fill: #f5eddc;"
                                                     size="25px"></ng-md-icon>
-                                        <label for="amount">{{amountLabel}}</label>
+                                        <label for="amount" translate>amount</label>
                                     </div>
                                     <div class="wrap four">
                                         <div class="input-wrap">
@@ -400,12 +349,12 @@
                                     <div class="wrap four label">
                                         <ng-md-icon icon="local_restaurant" style="display: inline-block; position: relative; fill: #f5eddc;"
                                                     size="25px"></ng-md-icon>
-                                        <label for="room-type">{{roomLabel}}</label>
+                                        <label for="room-type" translate>room.type</label>
                                     </div>
                                     <div class="wrap four">
                                         <div class="input-wrap">
                                             <select id="room-type" name="room" ng-model="room" required>
-                                                <option value="" disabled selected hidden translate>vyberte</option>
+                                                <option value="" disabled selected hidden translate>select</option>
                                                 <option value="nezalezi" selected>Nezáleži</option>
                                                 <option value="pivonice">Pivo-nice</option>
                                                 <option value="pivobanka">Pivo-banka</option>
@@ -423,22 +372,22 @@
                                         <ng-md-icon icon="person"
                                                     style="display: inline-block; position: relative; fill: #f5eddc;"
                                                     size="25px"></ng-md-icon>
-                                        <label for="name">{{nameLabel}}</label>
+                                        <label for="name" translate>name</label>
                                     </div>
                                     <div class="wrap">
                                         <div class="input-wrap">
-                                            <input type="text" name="name" ng-model="name" class="form-control" placeholder="{{yourName}}" required/>
+                                            <input id="name"  type="text" name="name" ng-model="name" class="form-control" placeholder="{{yourName}}" required/>
                                         </div>
                                     </div>
                                     <div class="wrap label">
                                         <ng-md-icon icon="email"
                                                     style="display: inline-block; position: relative; fill: #f5eddc;"
                                                     size="25px"></ng-md-icon>
-                                        <label for="email">Email</label>
+                                        <label for="email" translate>email</label>
                                     </div>
                                     <div class="wrap">
                                         <div class="input-wrap">
-                                            <input type="email" name="email" ng-model="email" placeholder="email@email.com"
+                                            <input id="email" type="email" name="email" ng-model="email" placeholder="email@email.com"
                                                class="form-control" required/>
                                         </div>
                                     </div>
@@ -446,7 +395,7 @@
                                         <ng-md-icon icon="phone"
                                                     style="display: inline-block; position: relative; fill: #f5eddc;"
                                                     size="25px"></ng-md-icon>
-                                        <label for="phone">{{phoneLabel}}</label>
+                                        <label for="phone" translate>phone</label>
                                     </div>
                                     <div class="wrap">
                                         <div class="input-wrap">
@@ -457,11 +406,11 @@
                                         <ng-md-icon icon="textsms"
                                                     style="display: inline-block; position: relative; fill: #f5eddc;"
                                                     size="25px"></ng-md-icon>
-                                        <label for="text">poznámka</label>
+                                        <label for="text" translate>note</label>
                                     </div>
                                     <div class="wrap">
                                         <div class="input-wrap">
-                                            <input id="text" type="text" name="text" ng-model="text" placeholder="text"/>
+                                            <input id="text" type="text" name="text" ng-model="addText" placeholder="text"/>
                                         </div>
                                     </div>
                                 </div>
@@ -478,18 +427,12 @@
                             </div>
 
                             <div class="actions" ng-hide="bookFinnish">
-                                <p class="link-button phone" ng-hide="restaurantBookForm.$valid">
-                                    Prosím vyplnte všetky údaje
+                                <p class="link-button phone" ng-hide="restaurantBookForm.$valid" translate>
+                                    please.fill.all.data
                                 </p>
-
-                                <button ng-click="formsubmit(restaurantBookForm)"  ng-if="lang != 'eng'"  ng-disabled="!restaurantBookForm.$valid" class="btn-next btn-submit">
+                                <button ng-click="formsubmit(restaurantBookForm)" ng-disabled="!restaurantBookForm.$valid" class="btn-next btn-submit">
                                     <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
-                                    Odoslat
-                                    Rezervaciu
-                                </button>
-                                <button ng-click="formsubmit(restaurantBookForm)"  ng-if="lang != 'svk'" ng-disabled="!restaurantBookForm.$valid" class="btn-next btn-submit">
-                                    <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
-                                    Book Now
+                                    <span translate>book.now</span>
                                 </button>
                             </div>
 
@@ -497,17 +440,18 @@
                     </div>
                 </section>
 
-                <section id="contact" class="content-main content-kontakt bg bg-100">
-
+                <section id="contact" class="content-main content-kontakt bg bg-red">
+                    <h1 class="main-title" translate>contact</h1>
+                    <div class="small-line"></div>
                     <div class="info">
                         <div class="item">
-                            <ng-md-icon icon="settings_phone" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #000;"
-                                        size="4em"></ng-md-icon>
+                            <ng-md-icon icon="settings_phone" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;"
+                                        size="3em"></ng-md-icon>
                             <a href="tel:00421948828727">(+421) 0948 828 727</a>
                         </div>
                         <div class="item">
-                            <ng-md-icon icon="mail_outline" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #000;"
-                                        size="4em"></ng-md-icon>
+                            <ng-md-icon icon="mail_outline" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;"
+                                        size="3em"></ng-md-icon>
                             <a href="mailto:restaurant&#64minipivovartatras&#46sk" class="email">restaurant@minipivovartatras.sk</a>
                         </div>
                     </div>
@@ -518,7 +462,7 @@
 
 
                 <section id="info2" class="content-main bg bg-100">
-                    <h1 class="main-title">{{restaurantSaloniky}}</h1>
+                    <h1 class="main-title" translate>lounges</h1>
                     <div class="small-line"></div>
                     <div class="boxer">
                         <div class="salon">
@@ -561,61 +505,59 @@
                 </section>
 
                 <section class="content-main empty bg bg-kitchen">
-                     <h6 class="item-title">Naši kuchári</h6>
+                     <h6 class="item-title" translate>our.chefs</h6>
                 </section>
 
                 <section id="kitchen" class="content-main bg bg-black">
-                    <h1 class="main-title color-red">Varia moderným postupom</h1>
+                    <h1 class="main-title color-red" translate>Varia moderným postupom</h1>
                     <div class="small-line"></div>
-                    <div class="content-main">
+                    <div class="">
                         <p class="content-text color-light">
                             {{restaurantPribehText3}}
                         </p>
                     </div>
                 </section>
 
-
-
                 <section id="hours" class="bg bg-white">
                     <div class="content-main">
-                        <h1 class="main-title">{{otvaracieHodiny}}</h1>
+                        <h1 class="main-title" translate>open.hours</h1>
                         <div class="small-line"></div>
 
                         <div class="hours">
-                            <div class="day Monday">
-                                <span>{{monday}}</span>
-                                <span class="time1">11:00</span>
-                                <span class="time2">24:00</span>
+                            <div class="day monday" ng-class="{'today' : todayName == 'monday' }">
+                                <span translate>monday</span>
+                                <span class="time1">{{restMonTimeFrom.$value}}</span>
+                                <span class="time2">{{restMonTimeTo.$value}}</span>
                             </div>
-                            <div class="day Tuesday">
-                                <span>{{tuesday}}</span>
-                                <span class="time1">11:00</span>
-                                <span class="time2">24:00</span>
+                            <div class="day tuesday" ng-class="{'today' : todayName == 'tuesday' }">
+                                <span translate>tuesday</span>
+                                <span class="time1">{{restTueTimeFrom.$value}}</span>
+                                <span class="time2">{{restTueTimeTo.$value}}</span>
                             </div>
-                            <div class="day Wednesday">
-                                <span>{{wednesday}}</span>
-                                <span class="time1">11:00</span>
-                                <span class="time2">24:00</span>
+                            <div class="day wednesday" ng-class="{'today' : todayName == 'wednesday' }">
+                                <span translate>wednesday</span>
+                                <span class="time1">{{restWedTimeFrom.$value}}</span>
+                                <span class="time2">{{restWedTimeTo.$value}}</span>
                             </div>
-                            <div class="day Thursday">
-                                <span>&#138;tvrtok</span>
-                                <span class="time1">11:00</span>
-                                <span class="time2">24:00</span>
+                            <div class="day thursday" ng-class="{'today' : todayName == 'thursday' }">
+                                <span translate>thursday</span>
+                                <span class="time1">{{restThuTimeFrom.$value}}</span>
+                                <span class="time2">{{restThuTimeTo.$value}}</span>
                             </div>
-                            <div class="day Friday">
-                                <span>{{friday}}</span>
-                                <span class="time1">11:00</span>
-                                <span class="time2">02:00</span>
+                            <div class="day friday" ng-class="{'today' : todayName == 'friday' }">
+                                <span translate>friday</span>
+                                <span class="time1">{{restFriTimeFrom.$value}}</span>
+                                <span class="time2">{{restFriTimeTo.$value}}</span>
                             </div>
-                            <div class="day Saturday">
-                                <span>{{saturday}}</span>
-                                <span class="time1">11:00</span>
-                                <span class="time2">02:00</span>
+                            <div class="day saturday" ng-class="{'today' : todayName == 'saturday' }">
+                                <span translate>saturday</span>
+                                <span class="time1">{{restSatTimeFrom.$value}}</span>
+                                <span class="time2">{{restSatTimeTo.$value}}</span>
                             </div>
-                            <div class="day Sunday">
-                                <span>{{sunday}}</span>
-                                <span class="time1">11:00</span>
-                                <span class="time2">24:00</span>
+                            <div class="day sunday" ng-class="{'today' : todayName == 'sunday' }">
+                                <span translate>sunday</span>
+                                <span class="time1">{{restSunTimeFrom.$value}}</span>
+                                <span class="time2">{{restSunTimeTo.$value}}</span>
                             </div>
                         </div>
                     </div>
@@ -625,7 +567,7 @@
                 </section>
 
                 <section  id="info" class="content-main bg bg-100">
-                    <h1 class="main-title">{{restaurantPribehTitle}}</h1>
+                    <h1 class="main-title" translate>story</h1>
                     <div class="small-line"></div>
 
                     <div class="content-main">
@@ -633,11 +575,10 @@
                             {{restaurantPribehText}}
                         </p>
                         <p class="content-text">
-                            <b>Reštaurácia Tatras</b> {{restaurantPribehText2}}
+                            <b translate>restaurant</b><b> TATRAS</b> {{restaurantPribehText2}}
                         </p>
                     </div>
                 </section>
-
 
 
                 <section id="photos" class="content-main bg bg-100 flex-nopadding">

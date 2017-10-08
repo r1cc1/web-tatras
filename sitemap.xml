@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+  <loc>http://minipivovartatras.sk/</loc>
+  <lastmod>2017-08-13T17:20:45+00:00</lastmod>
+</url>
+  <url>
+    <loc>http://minipivovartatras.sk/#/welcome</loc>
+    <lastmod>2017-08-13T17:20:45+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://minipivovartatras.sk/#/beer</loc>
+    <lastmod>2017-08-13T17:20:45+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://minipivovartatras.sk/#/beer#beers</loc>
+    <lastmod>2017-08-13T17:20:45+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://minipivovartatras.sk/#/beer#history</loc>
+    <lastmod>2017-08-13T17:20:45+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://minipivovartatras.sk/#/beer#contact</loc>
+    <lastmod>2017-08-13T17:20:45+00:00</lastmod>
+  </url>
+
+  <url>
+    <loc>http://minipivovartatras.sk/#/restaurant</loc>
+    <lastmod>2017-08-13T17:20:45+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://minipivovartatras.sk/#/restaurant#menu</loc>
+    <lastmod>2017-08-13T17:20:45+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://minipivovartatras.sk/#/restaurant#book</loc>
+    <lastmod>2017-08-13T17:20:45+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://minipivovartatras.sk/#/restaurant#contact</loc>
+    <lastmod>2017-08-13T17:20:45+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://minipivovartatras.sk/#/restaurant#hours</loc>
+    <lastmod>2017-08-13T17:20:45+00:00</lastmod>
+  </url>
+
+  <url>
+    <loc>http://minipivovartatras.sk/#/pension</loc>
+    <lastmod>2017-08-13T17:20:45+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://minipivovartatras.sk/#/pension#info</loc>
+    <lastmod>2017-08-13T17:20:45+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://minipivovartatras.sk/#/pension#about</loc>
+    <lastmod>2017-08-13T17:20:45+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://minipivovartatras.sk/#/pension#book</loc>
+    <lastmod>2017-08-13T17:20:45+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://minipivovartatras.sk/#/pension#rooms</loc>
+    <lastmod>2017-08-13T17:20:45+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://minipivovartatras.sk/#/pension#contact</loc>
+    <lastmod>2017-08-13T17:20:45+00:00</lastmod>
+  </url>
+
+  <url>
+    <loc>http://minipivovartatras.sk/#/spa</loc>
+    <lastmod>2017-08-13T17:20:45+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://minipivovartatras.sk/#/spa#info</loc>
+    <lastmod>2017-08-13T17:20:45+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://minipivovartatras.sk/#/spa#prices</loc>
+    <lastmod>2017-08-13T17:20:45+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://minipivovartatras.sk/#/spa#book</loc>
+    <lastmod>2017-08-13T17:20:45+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://minipivovartatras.sk/#/spa#hours</loc>
+    <lastmod>2017-08-13T17:20:45+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://minipivovartatras.sk/#/spa#contact</loc>
+    <lastmod>2017-08-13T17:20:45+00:00</lastmod>
+  </url>
+</urlset>
