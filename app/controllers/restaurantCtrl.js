@@ -10,7 +10,7 @@ angular.module('restaurantCtrl', [])
             $scope.isloading = false;
             $scope.$apply();
         }
-        setTimeout(stopLoading, 1000);
+        setTimeout(stopLoading, 3000);
 
         // set Category
         $rootScope.categoryName = 'restaurant';
@@ -21,6 +21,10 @@ angular.module('restaurantCtrl', [])
         $scope.bookFinnish = false;
 
         $scope.btnIcon = 'local_restaurant';
+
+        $scope.restaurantText2 = "Podávame v pracovné dni od ";
+        $scope.restaurantMenuTime = "11:30";
+        $scope.restaurantText3 = "Cena za obedové menu s polievkou je ";
 
         $scope.restaurantSalonik1 = "Ponúka na výčape 8 druhov vlastného piva. Na tabuli je vždy aktuálne jedlo dňa.";
         $scope.restaurantSalonik2 = "Je prvá pivnica v našom pivovare, kde sa dozviete viac o histórii varenia piva v Poprade.";

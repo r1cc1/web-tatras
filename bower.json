@@ -27,7 +27,8 @@
     "angulartics-google-analytics": "^0.4.0",
     "angulartics": "^1.4.0",
     "angular-translate": "^2.15.2",
-    "angular-translate-loader-static-files": "^2.15.2"
+    "angular-translate-loader-static-files": "^2.15.2",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "angular-translate": "^2.15.2"

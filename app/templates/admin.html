@@ -1,34 +1,51 @@
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Uložit zmeny</h5>
+            </div>
+            <div class="modal-body">
+                Naozaj uložit zmeny na Server?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-dismiss="modal">Nie</button>
+                <button  ng-click="formsubmit(editMenuForm)" class="btn btn-success" style="float:right;" data-dismiss="modal">Uložit zmeny</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 <div class="admin-menu">
     <div class="menu-wrap">
 
         <div class="menu-left">
-            <button ng-show="previewOpen" ng-click="backToStart()" class="btn-submit" >
-                <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
-                naspäť upraviť Menu
+            <button ng-show="previewOpen" ng-click="closePreview()" class="btn-submit" >
+                <ng-md-icon icon="arrow_back" style="white" size="20"></ng-md-icon>
+                naspäť
             </button>
 
             <a ng-show="!previewOpen" ng-href="#/welcome" class="btn-submit" >
-                <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
-                naspäť na Stranku
+                <ng-md-icon icon="arrow_back" style="white" size="20"></ng-md-icon>
+                na Stránku
             </a>
 
         </div>
         <div class="menu-center">
-            <h1>WEB ADMIN CENTER</h1>
+            <h1>ADMIN CENTER</h1>
         </div>
         <div class="menu-right">
 
-            <button ng-show="!previewOpen  && !editOver && !adminLogin"  ng-click="showPreview()" class="btn-submit" >
+            <!-- Button trigger modal -->
+            <button ng-show="!previewOpen  && !editOver && !adminLogin" type="button" class="btn-submit"  style="float:right; background:#78fa89;" data-toggle="modal" data-target="#myModal">
                 <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
                 Potvrdiť Upravy
             </button>
 
-            <button ng-show="previewOpen && !editOver && !adminLogin"  ng-click="formsubmit(editMenuForm)" class="btn-submit" >
-                <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
-                zverejniť na Stránke
-            </button>
             <button ng-show="previewOpen  && !editOver && !adminLogin" ng-click="printMenu()" class="btn btn-print">
-                <ng-md-icon icon="share" style="white" size="20"></ng-md-icon>
+                <ng-md-icon icon="print" style="white" size="20"></ng-md-icon>
                 tlačiť MENU
             </button>
 
@@ -83,7 +100,7 @@
                                                             <br>
                                                             <div class="form-group">
                                                                 <div class="col-sm-offset-2 col-sm-10">
-                                                                    <button id="SubmitLoginForm" class="btn btn-warning btn-lg" style="float:right;" ng-click="logMeIn(loginEmail,loginPass); $event.stopPropagation();">Login</button>
+                                                                    <button id="SubmitLoginForm" class="btn btn-success btn-lg" style="float:right;" ng-click="logMeIn(loginEmail,loginPass); $event.stopPropagation();">Login</button>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -100,7 +117,7 @@
                     </div>
                 </header>
 
-                <section id="denneMennuAdmin" class="bg-white" ng-if="!adminLogin || adminCenter" ng-hide="previewOpen">
+                <section id="denneMennuAdmin" class="bg-white" ng-if="!adminLogin || adminCenter" ng-hide="previewOpen || editOver">
 
                     <div class="container">
 
@@ -117,7 +134,13 @@
                                                 <input type="text" class="form-control text-center" ng-model="dailyMenuPrice.$value"  placeholder="{{dailyMenuPrice.$value}}">
                                                 <span class="input-group-addon" id="basic-addon2">&euro;</span>
                                             </div>
+
+                                            <button ng-show="!previewOpen  && !editOver && !adminLogin"  ng-click="showPreview()" class="btn-submit" >
+                                                <ng-md-icon icon="zoom_out_map" style="white" size="20"></ng-md-icon>
+                                                Ukaž nahľad
+                                            </button>
                                         </div>
+
                                     </div>
                                     <br>
                                     <div class="row">
@@ -150,9 +173,9 @@
                                                 <tbody id="pricesTable-2">
                                                 <tr rowspan="2">
                                                     <td>
-                                                        <h3 ng-if="day1Name.$value == 'monday'">{{monday}}</h3>
+                                                       <h3 translate>monday</h3>
                                                         <br>
-                                                        <input id="day1Date" type="text" class="daily-menu text-center date" ng-model="day1Date.$value"  placeholder="{{day1Date.$value}}">
+                                                        <input id="day1Date" type="text" class="daily-menu text-center date" ng-model="day1Date.$value"  placeholder="dátum">
                                                         <br>
                                                         <br>
                                                         <p>Alergény</p>
@@ -172,9 +195,9 @@
                                                 </tr>
                                                 <tr rowspan="2">
                                                     <td>
-                                                        <h3 ng-if="day2Name.$value == 'tuesday'">{{tuesday}}</h3>
+                                                        <h3 translate>tuesday</h3>
                                                         <br>
-                                                        <input id="day2Date" type="text" class="daily-menu text-center date" ng-model="day2Date.$value"  placeholder="{{day2Date.$value}}">
+                                                        <input id="day2Date" type="text" class="daily-menu text-center date" ng-model="day2Date.$value" placeholder="dátum">
                                                         <br>
                                                         <br>
                                                         <p>Alergény</p>
@@ -194,9 +217,9 @@
                                                 </tr>
                                                 <tr rowspan="2">
                                                     <td>
-                                                        <h3 ng-if="day3Name.$value == 'wednesday'">{{wednesday}}</h3>
+                                                        <h3 translate>wednesday</h3>
                                                         <br>
-                                                        <input id="day3Date" type="text" class="daily-menu date text-center" ng-model="day3Date.$value"  placeholder="{{day3Date.$value}}">
+                                                        <input id="day3Date" type="text" class="daily-menu date text-center" ng-model="day3Date.$value"  placeholder="dátum">
                                                         <br>
                                                         <br>
                                                         <p>Alergény</p>
@@ -217,9 +240,9 @@
 
                                                 <tr rowspan="2">
                                                     <td>
-                                                        <h3 ng-if="day4Name.$value == 'thursday'">{{thursday}}</h3>
+                                                        <h3 translate>thursday</h3>
                                                         <br>
-                                                        <input type="text" class="daily-menu date text-center" ng-model="day4Date.$value"  placeholder="{{day4Date.$value}}">
+                                                        <input type="text" class="daily-menu date text-center" ng-model="day4Date.$value"  pplaceholder="dátum">
                                                         <br>
                                                         <br>
                                                         <p>Alergény</p>
@@ -240,9 +263,9 @@
 
                                                 <tr rowspan="2">
                                                     <td>
-                                                        <h3 ng-if="day5Name.$value == 'friday'">{{friday}}</h3>
+                                                        <h3 translate>friday</h3>
                                                         <br>
-                                                        <input type="text" class="daily-menu date text-center" ng-model="day5Date.$value"  placeholder="{{day5Date.$value}}">
+                                                        <input type="text" class="daily-menu date text-center" ng-model="day5Date.$value"  placeholder="dátum">
                                                         <br>
                                                         <br>
                                                         <p>Alergény</p>
@@ -272,17 +295,18 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </section>
 
-                <section id="openHoursTables" class="bg-white" ng-if="!adminLogin || adminCenter" ng-hide="previewOpen">
+                <section id="openHoursTables" class="bg-white" ng-if="!adminLogin || adminCenter" ng-hide="previewOpen || editOver">
                     <div class="container">
                         <br>
                         <br>
                         <div class="row">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title">{{openHours}}</h3>
+                                    <h3 class="panel-title" translate>open.hours</h3>
                                 </div>
                                 <div class="panel-body">
                                     <div class="row">
@@ -303,7 +327,7 @@
                                                     <tbody id="openHoursTable-1">
                                                     <tr rowspan="2">
                                                         <td>
-                                                            <h3>{{monday}}</h3>
+                                                            <h3 translate>monday</h3>
                                                         </td>
                                                         <td>
                                                             <input id="restMonTimeFrom" type="text" class="daily-menu" ng-model="restMonTimeFrom.$value">
@@ -314,7 +338,7 @@
                                                     </tr>
                                                     <tr rowspan="2">
                                                         <td>
-                                                            <h3>{{tuesday}}</h3>
+                                                            <h3 translate>tuesday</h3>
                                                         </td>
                                                         <td>
                                                             <input id="restTueTimeFrom" type="text" class="daily-menu" ng-model="restTueTimeFrom.$value">
@@ -325,7 +349,7 @@
                                                     </tr>
                                                     <tr rowspan="2">
                                                         <td>
-                                                            <h3>{{wednesday}}</h3>
+                                                            <h3 translate>wednesday</h3>
                                                         </td>
                                                         <td>
                                                             <input id="restWedTimeFrom" type="text" class="daily-menu" ng-model="restWedTimeFrom.$value">
@@ -337,7 +361,7 @@
 
                                                     <tr rowspan="2">
                                                         <td>
-                                                            <h3>{{thursday}}</h3>
+                                                            <h3 translate>thursday</h3>
                                                         </td>
                                                         <td>
                                                             <input id="restThuTimeFrom" type="text" class="daily-menu" ng-model="restThuTimeFrom.$value">
@@ -349,7 +373,7 @@
 
                                                     <tr rowspan="2">
                                                         <td>
-                                                            <h3>{{friday}}</h3>
+                                                            <h3 translate>friday</h3>
                                                         </td>
                                                         <td>
                                                             <input id="restFriTimeFrom" type="text" class="daily-menu" ng-model="restFriTimeFrom.$value">
@@ -361,7 +385,7 @@
 
                                                     <tr rowspan="2">
                                                         <td>
-                                                            <h3>{{saturday}}</h3>
+                                                            <h3 translate>saturday</h3>
                                                         </td>
                                                         <td>
                                                             <input id="restSatTimeFrom" type="text" class="daily-menu" ng-model="restSatTimeFrom.$value">
@@ -373,7 +397,7 @@
 
                                                     <tr rowspan="2">
                                                         <td>
-                                                            <h3>{{sunday}}</h3>
+                                                            <h3 translate>sunday</h3>
                                                         </td>
                                                         <td>
                                                             <input id="restSunTimeFrom" type="text" class="daily-menu" ng-model="restSunTimeFrom.$value">
@@ -403,7 +427,7 @@
                                                     <tbody id="openHoursTable-2">
                                                     <tr rowspan="2">
                                                         <td>
-                                                            <h3>{{monday}}</h3>
+                                                            <h3 translate>monday</h3>
                                                         </td>
                                                         <td>
                                                             <input id="spaMonTimeFrom" type="text" class="daily-menu" ng-model="spaMonTimeFrom.$value">
@@ -414,7 +438,7 @@
                                                     </tr>
                                                     <tr rowspan="2">
                                                         <td>
-                                                            <h3>{{tuesday}}</h3>
+                                                            <h3 translate>tuesday</h3>
                                                         </td>
                                                         <td>
                                                             <input id="spaTueTimeFrom" type="text" class="daily-menu" ng-model="spaTueTimeFrom.$value">
@@ -425,7 +449,7 @@
                                                     </tr>
                                                     <tr rowspan="2">
                                                         <td>
-                                                            <h3>{{wednesday}}</h3>
+                                                            <h3 translate>wednesday</h3>
                                                         </td>
                                                         <td>
                                                             <input id="spaWedTimeFrom" type="text" class="daily-menu" ng-model="spaWedTimeFrom.$value">
@@ -437,7 +461,7 @@
 
                                                     <tr rowspan="2">
                                                         <td>
-                                                            <h3>{{thursday}}</h3>
+                                                            <h3 translate>thursday</h3>
                                                         </td>
                                                         <td>
                                                             <input id="spaThuTimeFrom" type="text" class="daily-menu" ng-model="spaThuTimeFrom.$value">
@@ -449,7 +473,7 @@
 
                                                     <tr rowspan="2">
                                                         <td>
-                                                            <h3>{{friday}}</h3>
+                                                            <h3 translate>friday</h3>
                                                         </td>
                                                         <td>
                                                             <input id="spaFriTimeFrom" type="text" class="daily-menu" ng-model="spaFriTimeFrom.$value">
@@ -461,7 +485,7 @@
 
                                                     <tr rowspan="2">
                                                         <td>
-                                                            <h3>{{saturday}}</h3>
+                                                            <h3 translate>saturday</h3>
                                                         </td>
                                                         <td>
                                                             <input id="spaSatTimeFrom" type="text" class="daily-menu" ng-model="spaSatTimeFrom.$value">
@@ -473,7 +497,7 @@
 
                                                     <tr rowspan="2">
                                                         <td>
-                                                            <h3>{{sunday}}</h3>
+                                                            <h3 translate>sunday</h3>
                                                         </td>
                                                         <td>
                                                             <input id="spaSunTimeFrom" type="text" class="daily-menu" ng-model="spaSunTimeFrom.$value">
@@ -533,7 +557,7 @@
                     </div>
                 </section>
 
-                <section id="pensionAdmin" class="bg-white" ng-if="!adminLogin || adminCenter" ng-hide="previewOpen">
+                <section id="pensionAdmin" class="bg-white" ng-if="!adminLogin || adminCenter" ng-hide="previewOpen || editOver">
                     <div class="container">
 
                         <form name="adminForm" role="form">
@@ -587,7 +611,7 @@
                     </div>
                 </section>
 
-                <section id="spaAdmin" class="bg-white" ng-if="!adminLogin || adminCenter" ng-hide="previewOpen">
+                <section id="spaAdmin" class="bg-white" ng-if="!adminLogin || adminCenter" ng-hide="previewOpen || editOver">
                     <div class="container">
 
                         <div class="row">
@@ -821,7 +845,7 @@
                         <div class="small-line"></div>
 
                         <div class="content-main no-padding">
-                            <p class="align-center">Podávame v pracovné dni od <b>11:30</b> do <b>14:00</b> </br>Cena denného menu je <b class="red">{{dailyMenuPrice.$value}} &euro; </b></p>
+                            <p class="align-center">Podávame v pracovné dni od <b>11:30</b></br>Cena denného menu je <b class="red">{{dailyMenuPrice.$value}} &euro; </b></p>
                             <div class="daily-menu-list">
 
 
@@ -1040,7 +1064,19 @@
                     <div class="center-wrap">
 
                         <div class="center-content">
-                            <h1 class="main-title">Hotovo</h1>
+                            <h1 class="main-title">
+                                <ng-md-icon icon="check" size="30"></ng-md-icon>
+                                 Hotovo !</h1>
+                            <h3>Všetky zmeny boli uložené</h3>
+                            <br>
+
+                            <button type="button" class="btn btn-primary" ng-click="backToStart()" >
+                                Pokračovať v úprave
+                            </button>
+
+                            <a ng-href="#/welcome" class="btn btn-info" >
+                                Zobrazit webstránku
+                            </a>
                         </div>
                     </div>
                 </section>

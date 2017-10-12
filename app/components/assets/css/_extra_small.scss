@@ -3733,18 +3733,42 @@
     }
   }
 
+  #prices-spa.table {
+    table-layout:fixed;
+  }
+  #prices-spa.table > table > tr > td{
+    width: 20%;
+    vertical-align: middle;
+  }
+  #prices-spa.table  tr th, #prices-spa.table  tr td   {
+    height: 3em;
+    line-height: 3em;
+    vertical-align: middle;
+  }
+  #prices-spa > tr > th {
+    vertical-align: middle;
+    background: #f1ebda;
+  }
 
   #prices-spa h2{
+    font-size: 1.25em;
     font-family: 'Roboto-light', Arial, Helvetica;
     color: $color_black;
     text-align: center;
     background: $color_green;
     padding: 0.5em 0;
   }
-  #prices-spa h3{
-    display: inline-block;
-    text-align: center;
 
+
+  #prices-spa h3{
+    display: block;
+    text-align: center;
+    font-size: 1.5em;
+    margin: 0;
+    line-height: 1em;
+  }
+  #prices-spa h3 span{
+    font-size: 0.75em;
   }
 
   .panel-default>.panel-heading {
@@ -3755,6 +3779,10 @@
   .table>caption+thead>tr:first-child>td, .table>caption+thead>tr:first-child>th, .table>colgroup+thead>tr:first-child>td, .table>colgroup+thead>tr:first-child>th, .table>thead:first-child>tr:first-child>td, .table>thead:first-child>tr:first-child>th {
     border-top: 0;
     vertical-align: middle;
+  }
+
+  .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    padding:0!important;
   }
 }
 

@@ -22,10 +22,10 @@
         <div class="sub-menu" ng-class="{'open': openMobileMenu, 'show': subMenuState}">
             <div>
                 <ul>
-                    <li du-scrollspy="menu" offset=100"><span du-smooth-scroll="menu" ng-click="mobileMenu()" translate>daily.menu</span></li>
-                    <li du-scrollspy="book"><span du-smooth-scroll="book" ng-click="mobileMenu()" translate>book.now</span></li>
+                    <li du-scrollspy="kitchen"><span du-smooth-scroll="kitchen" ng-click="mobileMenu()" translate>kitchen</span></li>
+                    <li du-scrollspy="menu"><span du-smooth-scroll="menu" ng-click="mobileMenu()" translate>daily.menu</span></li>
                     <li du-scrollspy="info2"><span du-smooth-scroll="info2" ng-click="mobileMenu()" translate>lounges</span></li>
-                    <li du-scrollspy="kitchen" offset=100"><span du-smooth-scroll="kitchen" ng-click="mobileMenu()" translate>kitchen</span></li>
+                    <li du-scrollspy="book"><span du-smooth-scroll="book" ng-click="mobileMenu()" translate>book.now</span></li>
                     <li du-scrollspy="hours"><span du-smooth-scroll="hours" ng-click="mobileMenu()" translate>open.hours</span></li>
                 </ul>
             </div>
@@ -66,13 +66,22 @@
                     <h1 class="main-title" translate>welcome</h1>
                     <div class="small-line"></div>
                     <div class="content-main">
-                        <p class="content-text">
-                            {{restaurantText1}}
-                        </p>
+                        <p class="content-text">{{restaurantText1}}</p>
                     </div>
                 </section>
 
-                <section class="content-main empty bg bg-rebra">
+                <section id="chefs" class="content-main empty bg bg-kitchen">
+                    <h6 class="item-title" translate>our.chefs</h6>
+                </section>
+
+                <section id="kitchen" class="content-main bg bg-black">
+                    <h1 class="main-title color-red" translate>Varia moderným postupom</h1>
+                    <div class="small-line"></div>
+                    <div class="">
+                        <p class="content-text color-light">
+                            {{restaurantPribehText3}}
+                        </p>
+                    </div>
                 </section>
 
                 <section id="menu" class="content-main bg bg-white">
@@ -81,15 +90,18 @@
                     <div class="small-line"></div>
 
                     <div class="content-main no-padding">
-                        <p class="align-center">Podávame v pracovné dni od <b>11:30</b> do <b>14:00</b> </br>Cena denného menu je <b class="red">{{dailyMenuPrice.$value}} &euro; </b></p>
+                        <p class="align-center">
+                            {{restaurantText2}}<b>{{restaurantMenuTime}}</b><br>
+                            {{restaurantText3}}<b class="red">{{dailyMenuPrice.$value}} &euro; </b>
+                        </p>
                         <div class="daily-menu-list">
 
-                            <div class="daily-menu-item" ng-hide="todayName == 'tuesday' || todayName == 'wednesday' || todayName == 'thursday' || todayName == 'friday' "
+                            <div class="daily-menu-item" ng-hide="!day1food2.$value || todayName == 'tuesday' || todayName == 'wednesday' || todayName == 'thursday' || todayName == 'friday' || todayName == 'saturday' || todayName == 'sunday' "
                                  ng-class="{'today': todayName == 'monday'}">
                                 <table>
                                     <tr class="menu-day">
                                         <td>
-                                            <h5 translate>monday  {{istoday}}</h5>
+                                            <h5 translate>monday</h5>
                                         </td>
                                         <td>
                                         </td>
@@ -97,7 +109,7 @@
                                             <h5 class="date">{{day1Date.$value}}</h5>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr ng-if="day1food1.$value">
                                         <td class="item-title">
                                             <p translate>food1</p>
                                             <span>{{dailyMenuWeight1.$value}}</span>
@@ -106,7 +118,7 @@
                                             <p>{{day1food1.$value}}<b> ({{day1allergens1.$value}}) </b></p>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr ng-if="day1food2.$value">
                                         <td class="item-title">
                                             <p translate>food2</p>
                                             <span>{{dailyMenuWeight2.$value}}</span>
@@ -115,7 +127,7 @@
                                             <p>{{day1food2.$value}}<b> ({{day1allergens2.$value}}) </b></p>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr ng-if="day1food3.$value">
                                         <td class="item-title">
                                             <p translate>food3</p>
                                             <span>{{dailyMenuWeight3.$value}}</span>
@@ -126,7 +138,7 @@
                                     </tr>
                                 </table>
                             </div>
-                            <div class="daily-menu-item" ng-hide="todayName == 'wednesday' || todayName == 'thursday' || todayName == 'friday' "
+                            <div class="daily-menu-item" ng-hide="!day2food2.$value || todayName == 'wednesday' || todayName == 'thursday' || todayName == 'friday' || todayName == 'saturday' || todayName == 'sunday' "
                                  ng-class="{'today': todayName == 'tuesday'}">
                                 <table>
                                     <tr class="menu-day">
@@ -139,7 +151,7 @@
                                             <h5 class="date">{{day2Date.$value}}</h5>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr ng-if="day2food1.$value">
                                         <td class="item-title">
                                             <p translate>food1</p>
                                             <span>{{dailyMenuWeight1.$value}}</span>
@@ -148,7 +160,7 @@
                                             <p>{{day2food1.$value}}<b> ({{day2allergens1.$value}}) </b></p>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr ng-if="day2food2.$value">
                                         <td class="item-title">
                                             <p translate>food2</p>
                                             <span>{{dailyMenuWeight2.$value}}</span>
@@ -157,7 +169,7 @@
                                             <p>{{day2food2.$value}}<b> ({{day2allergens2.$value}}) </b></p>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr ng-if="day2food3.$value">
                                         <td class="item-title">
                                             <p translate>food3</p>
                                             <span>{{dailyMenuWeight3.$value}}</span>
@@ -168,7 +180,7 @@
                                     </tr>
                                 </table>
                             </div>
-                            <div class="daily-menu-item" ng-hide="todayName == 'thursday' || todayName == 'friday' "
+                            <div class="daily-menu-item" ng-hide="!day3food2.$value || todayName == 'thursday' || todayName == 'friday' || todayName == 'saturday' || todayName == 'sunday' "
                                  ng-class="{'today': todayName == 'wednesday'}">
                                 <table>
                                     <tr class="menu-day">
@@ -181,7 +193,7 @@
                                             <h5 class="date">{{day3Date.$value}}</h5>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr ng-if="day3food1.$value">
                                         <td class="item-title">
                                             <p translate>food1</p>
                                             <span>{{dailyMenuWeight1.$value}}</span>
@@ -190,7 +202,7 @@
                                             <p>{{day3food1.$value}}<b> ({{day3allergens1.$value}}) </b></p>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr ng-if="day3food2.$value">
                                         <td class="item-title">
                                             <p translate>food2</p>
                                             <span>{{dailyMenuWeight2.$value}}</span>
@@ -199,7 +211,7 @@
                                             <p>{{day3food2.$value}}<b> ({{day3allergens2.$value}}) </b></p>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr ng-if="day3food3.$value">
                                         <td class="item-title">
                                             <p translate>food3</p>
                                             <span>{{dailyMenuWeight3.$value}}</span>
@@ -210,7 +222,7 @@
                                     </tr>
                                 </table>
                             </div>
-                            <div class="daily-menu-item" ng-hide="todayName == 'friday' "
+                            <div class="daily-menu-item" ng-hide="!day4food2.$value || todayName == 'friday' || todayName == 'saturday' || todayName == 'sunday' "
                                  ng-class="{'today': todayName == 'thursday'}">
                                 <table>
                                     <tr class="menu-day">
@@ -223,7 +235,7 @@
                                             <h5 class="date">{{day4Date.$value}}</h5>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr ng-if="day4food1.$value">
                                         <td class="item-title">
                                             <p translate>food1</p>
                                             <span>{{dailyMenuWeight1.$value}}</span>
@@ -232,7 +244,7 @@
                                             <p>{{day4food1.$value}}<b> ({{day4allergens1.$value}}) </b></p>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr ng-if="day4food2.$value">
                                         <td class="item-title">
                                             <p translate>food2</p>
                                             <span>{{dailyMenuWeight2.$value}}</span>
@@ -241,18 +253,18 @@
                                             <p>{{day4food2.$value}}<b> ({{day4allergens2.$value}}) </b></p>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr ng-if="day4food3.$value">
                                         <td class="item-title">
                                             <p translate>food3</p>
                                             <span>{{dailyMenuWeight3.$value}}</span>
                                         </td>
                                         <td colspan="2">
-                                            <p>{{day4food3.$value}}<b> ({{day4allergens3.$value}}) </b></p>
+                                             <p>{{day4food3.$value}}<b> ({{day4allergens3.$value}}) </b></p>
                                         </td>
                                     </tr>
                                 </table>
                             </div>
-                            <div class="daily-menu-item"
+                            <div class="daily-menu-item" ng-hide="!day5food2.$value || todayName == 'saturday' || todayName == 'sunday' "
                                  ng-class="{'today': todayName == 'friday'}">
                                 <table>
                                     <tr class="menu-day">
@@ -265,7 +277,7 @@
                                             <h5 class="date">{{day5Date.$value}}</h5>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr ng-if="day5food1.$value">
                                         <td class="item-title">
                                             <p translate>food1</p>
                                             <span>{{dailyMenuWeight1.$value}}</span>
@@ -274,7 +286,7 @@
                                             <p>{{day5food1.$value}}<b> ({{day5allergens1.$value}}) </b></p>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr ng-if="day5food2.$value">
                                         <td class="item-title">
                                             <p translate>food2</p>
                                             <span>{{dailyMenuWeight2.$value}}</span>
@@ -283,7 +295,7 @@
                                             <p>{{day5food2.$value}}<b> ({{day5allergens2.$value}}) </b></p>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr ng-if="day5food2.$value">
                                         <td class="item-title">
                                             <p translate>food3</p>
                                             <span>{{dailyMenuWeight3.$value}}</span>
@@ -297,6 +309,52 @@
                         </div>
                     </div>
 
+                </section>
+
+                <section id="graphic" class="content-main empty bg bg-rebra">
+                </section>
+
+                <section id="info2" class="content-main bg bg-100">
+                    <h1 class="main-title" translate>lounges</h1>
+                    <div class="small-line"></div>
+                    <div class="boxer">
+                        <div class="salon">
+                            <h5>Barová pasáž</h5>
+                            <p>{{restaurantSalonik1}}</p>
+                        </div>
+                        <div class="salon">
+                            <h5>Pivo-nica</h5>
+                            <p>{{restaurantSalonik2}}</p>
+                        </div>
+                        <div class="salon">
+                            <h5>Pivo-banka</h5>
+                            <p>{{restaurantSalonik3}}</p>
+                        </div>
+                        <div class="salon">
+                            <h5>Likérka</h5>
+                            <p>{{restaurantSalonik4}}</p>
+                        </div>
+                        <div class="salon">
+                            <h5>Komôrka</h5>
+                            <p>{{restaurantSalonik5}}</p>
+                        </div>
+                        <div class="salon">
+                            <h5>Galérka</h5>
+                            <p>{{restaurantSalonik6}}</p>
+                        </div>
+                        <div class="salon">
+                            <h5>Záhradka</h5>
+                            <p>{{restaurantSalonik7}}</p>
+                        </div>
+                        <div class="salon">
+                            <h5>Hudobka</h5>
+                            <p>{{restaurantSalonik8}}</p>
+                        </div>
+                        <div class="salon">
+                            <h5>Kapacita</h5>
+                            <p>{{restaurantSalonik9}}</p>
+                        </div>
+                    </div>
                 </section>
 
                 <section id="book" class="bg invert">
@@ -457,65 +515,8 @@
                     </div>
                 </section>
 
+
                 <section class="content-main empty bg bg-salonik">
-                </section>
-
-
-                <section id="info2" class="content-main bg bg-100">
-                    <h1 class="main-title" translate>lounges</h1>
-                    <div class="small-line"></div>
-                    <div class="boxer">
-                        <div class="salon">
-                            <h5>Barová pasáž</h5>
-                            <p>{{restaurantSalonik1}}</p>
-                        </div>
-                        <div class="salon">
-                            <h5>Pivo-nica</h5>
-                            <p>{{restaurantSalonik2}}</p>
-                        </div>
-                        <div class="salon">
-                            <h5>Pivo-banka</h5>
-                            <p>{{restaurantSalonik3}}</p>
-                        </div>
-                        <div class="salon">
-                            <h5>Likérka</h5>
-                            <p>{{restaurantSalonik4}}</p>
-                        </div>
-                        <div class="salon">
-                            <h5>Komôrka</h5>
-                            <p>{{restaurantSalonik5}}</p>
-                        </div>
-                        <div class="salon">
-                            <h5>Galérka</h5>
-                            <p>{{restaurantSalonik6}}</p>
-                        </div>
-                        <div class="salon">
-                            <h5>Záhradka</h5>
-                            <p>{{restaurantSalonik7}}</p>
-                        </div>
-                        <div class="salon">
-                            <h5>Hudobka</h5>
-                            <p>{{restaurantSalonik8}}</p>
-                        </div>
-                        <div class="salon">
-                            <h5>Kapacita</h5>
-                            <p>{{restaurantSalonik9}}</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="content-main empty bg bg-kitchen">
-                     <h6 class="item-title" translate>our.chefs</h6>
-                </section>
-
-                <section id="kitchen" class="content-main bg bg-black">
-                    <h1 class="main-title color-red" translate>Varia moderným postupom</h1>
-                    <div class="small-line"></div>
-                    <div class="">
-                        <p class="content-text color-light">
-                            {{restaurantPribehText3}}
-                        </p>
-                    </div>
                 </section>
 
                 <section id="hours" class="bg bg-white">
@@ -579,7 +580,6 @@
                         </p>
                     </div>
                 </section>
-
 
                 <section id="photos" class="content-main bg bg-100 flex-nopadding">
 

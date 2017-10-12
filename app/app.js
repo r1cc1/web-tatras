@@ -29,6 +29,11 @@ angular.module('myApp', [
     .config(['$locationProvider', '$routeProvider', '$translateProvider', function ($locationProvider, $routeProvider, $translateProvider) {
 
 
+        $routeProvider.when('/en', {
+            templateUrl: 'templates/start.html',
+            controller: 'startCtrl'
+        });
+
         $routeProvider.when('/welcome', {
             templateUrl: 'templates/start.html',
             controller: 'startCtrl'

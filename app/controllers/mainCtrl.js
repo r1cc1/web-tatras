@@ -124,6 +124,7 @@ angular.module('mainCtrl', [])
                 onScroll();
             });
 
+
             angular.element(document).ready(function () {
                 getWindowHeight();
                 $rootScope.getCurrentDay();
@@ -137,7 +138,30 @@ angular.module('mainCtrl', [])
                     messagingSenderId: "679876825482"
                 };
 
+
                 firebase.initializeApp($rootScope.config);
+                //
+                // var firestore = firebase.firestore();
+                // var slost = firestore.doc("slots/months");
+                //
+                // var myNovember = firestore.collection("slots").doc("months").collection("october");
+                //
+                //
+                //
+                // slost.get().then(function (doc) {
+                //         if(doc && doc.exists) {
+                //             const myData = doc.data();
+                //             console.log(myData.october.s01102017);
+                //
+                //             $scope.october =  myData.october.s01102017;
+                //         }
+                //
+                //     }).catch (function (error) {
+                //         console.log('Got an ERROR: ' + error);
+                //     });
+                
+
+
 
                 var rootRef = firebase.database().ref();
 

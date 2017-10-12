@@ -10,13 +10,14 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title ng-if="!categoryName">Minipivovar TATRAS Poprad</title>
-    <title ng-if="categoryName">{{ categoryName | translate }} TATRAS Poprad</title>
+    <title ng-if="!categoryName">Minipivovar TATRAS, Poprad</title>
+    <title ng-if="categoryName">{{ categoryName | translate }} TATRAS, Poprad</title>
 
-    <meta name="description" content="Minipivovar TATRAS, Reštaurácia, Penzión ***, Pivné Kùpele">
+    <meta name="description" content="TATRAS | Minipivovar | Reštaurácia | Penzión *** | Pivné Kúpele | POPRAD">
     <meta name="keywords"
-          content="Tatras, Minipivovar Tatras, Minipivovar Poprad, Pivovar, Pivovar Poprad, Pivovar Tatras, Pivo, Beer,
-          Reštaurácia, Poprad, Tatry, Vysoké Tatry, Hight Tatras, Penzión, Pension, Pivné Kùpele, Beer Spa, Beer Wellness, Wellness, Vdovjak, ">
+          content="Tatras, Minipivovar Tatras, Minipivovar Poprad, Pivovar, Pivovar Poprad, Pivovar Tatras, Pivo, Beer, APA, IPA,
+          Reštaurácia, Poprad, Tatry, Vysoké Tatry, Hight Tatras, Penzión, Accomodation, Hotel, Room, Rooms, Private, Pivné Kúpele, Masáž,
+          Relax, Massage, Beer Spa, Beer Wellness, Wellness, podniky, bary, puby, krčmy, čapované, liter, sud, čapovat ">
 
     <meta name="robots" content="index,follow">
 
@@ -24,10 +25,17 @@
     <meta property="og:site_name" content="Minipivovar TATRAS Poprad" />
     <meta property="og:site" content="minipivovartatras.sk" />
     <meta property="og:title" content="Minipivovar TATRAS Poprad" />
-    <meta property="og:description" content="Minipivovar TATRAS, Reštaurácia, Penzión ***, Pivné Kùpele" />
+    <meta property="og:description" content="TATRAS | Minipivovar | Reštaurácia | Penzión *** | Pivné Kùpele" />
     <meta property="og:image" content="http://minipivovartatras.sk/components/assets/imgs/share.jpg?w=764&amp;h=400&amp;crop=1" />
     <meta property="og:url" content="http://minipivovartatras.sk/" />
     <meta property="og:type" content="website" />
+
+    <!-- language versions -->
+    <link rel="canonical" href="http://minipivovartatras.sk/">
+    <link rel="alternate" href="http://minipivovartatras.sk/#/sk"
+          hreflang="sk" />
+    <link rel="alternate" href="http://minipivovartatras.sk/#/en"
+          hreflang="en" />
 
     <!-- favicon -->
     <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="components/assets/imgs/icons/favicon.ico"/>
@@ -62,9 +70,9 @@
 
 <div ng-view class="app">
     <div class="index-links">
-        <a href="http://minipivovartatras.sk/"  target="_self">index</a>
-        <a href="http://minipivovartatras.sk/#/"  target="_self">home</a>
-        <a href="http://minipivovartatras.sk/#/welcome"  target="_self">Welcome</a>
+        <a href="http://minipivovartatras.sk/"  target="_self">Tatras</a>
+        <a href="http://minipivovartatras.sk/#/"  target="_self">Pivo</a>
+        <a href="http://minipivovartatras.sk/#/welcome"  target="_self">Tatras</a>
 
         <a href="http://minipivovartatras.sk/#/beer"  target="_self">Minipivovar</a>
         <a href="http://minipivovartatras.sk/#/beer#beers" target="_self">Ozajstné Pivo</a>
@@ -98,16 +106,18 @@
     </div>
 </div>
 
-<script src="components/assets/scripts/jquery-1.10.1.min.js"></script>
+<script src="components/bower/jquery/dist/jquery.min.js"></script>
 <script src="components/bower/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 <script src="components/bower/angular/angular.js"></script>
 <script src="components/bower/angular-route/angular-route.min.js"></script>
 <script src="components/bower/angular-sanitize/angular-sanitize.min.js"></script>
 <script src="components/bower/angular-animate/angular-animate.min.js"></script>
 <script src="components/bower/angular-scroll/angular-scroll.min.js"></script>
+<script src="components/bower/underscore/underscore-min.js"></script>
 
 <!-- AngularFire -->
-<script src="components/bower/firebase/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-firestore.js"></script>
 <script src="components/bower/angularfire/dist/angularfire.min.js"></script>
 
 <script src="components/bower/angular-material-icons/angular-material-icons.min.js"></script>
@@ -118,13 +128,10 @@
 <script src="components/bower/angular-flexslider/angular-flexslider.js"></script>
 <script src="components/bower/html2canvas/build/html2canvas.min.js"></script>
 <script src="components/bower/moment/min/moment-with-locales.js"></script>
-<script src="components/bower/angular-flexslider/angular-flexslider.js"></script>
 <script src="components/bower/angularjs-datepicker/dist/angular-datepicker.js"></script>
 
 <script src="components/bower/angular-translate/angular-translate.min.js"></script>
 <script src="components/bower/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
-
-<script src="components/assets/scripts/daypilot-all.min.js"></script>
 
 <!-- Google Analytics -->
 <script>
@@ -157,9 +164,10 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="components/bower/bootstrap/dist/js/bootstrap.min.js"></script>
 
+<!--
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-
+--<
 
 </body>
 </html>

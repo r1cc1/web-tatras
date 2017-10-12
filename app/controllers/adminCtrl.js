@@ -8,17 +8,17 @@ angular.module('adminCtrl', [])
 
         // set Category
         $rootScope.category = 'admin';
-        $rootScope.categoryName = 'admin';
+        $rootScope.categoryName = 'Admin Center';
 
         $scope.adminLogin = true;
         $scope.adminCenter = false;
-        $scope.adminUser = 'admin';
+        $scope.adminUser = 'Admin';
         $scope.adminPass = 'info123Tatras';
 
+        // TODO: Texty to Translate
         $scope.food1 = 'Polievka';
         $scope.food2 = 'Menu 1.';
         $scope.food3 = 'Menu 2.';
-
         $scope.person = 'osoba';
         $scope.people = 'osoby';
         $scope.night = 'noc';
@@ -26,16 +26,13 @@ angular.module('adminCtrl', [])
         $scope.showError = false;
 
         $scope.logMeIn = function (loginEmail, loginPass) {
-            console.log('--email--');
-            console.log(loginEmail);
-            console.log('--pass--');
-            console.log(loginPass);
+            // console.log('--user--');
+            // console.log(loginEmail);
+            // console.log('--pass--');
+            // console.log(loginPass);
 
             if(loginEmail === $scope.adminUser) {
-                console.log('MSG: good-email');
-
                 if(loginPass === $scope.adminPass) {
-                    console.log('MSG: good-pass');
                     /// open dashboard
                     $scope.adminCenter = true;
                     /// close Login
@@ -50,7 +47,6 @@ angular.module('adminCtrl', [])
 
             }else {
                 $scope.showError = true;
-                console.log('wrong-email');
                 $scope.adminLogin = true;
                 $scope.adminCenter = false;
             }
@@ -62,11 +58,13 @@ angular.module('adminCtrl', [])
         $scope.showPreview = function() {
             $scope.previewOpen = true;
         };
-
-        $scope.backToStart = function(){
+        $scope.closePreview = function(){
             $scope.previewOpen = false;
+        };
+        $scope.backToStart = function(){
             $scope.editOver = false;
         };
+
 
         $(function(){
             /// trigger login Fucntion from Enter key
@@ -78,145 +76,173 @@ angular.module('adminCtrl', [])
         });
 
         $scope.formsubmit = function () {
+            // set edit is over, set Flag
             $scope.editOver = true;
-            /// cena
-            console.log('$scope.dailyMenuPrice.$value ' + $scope.dailyMenuPrice.$value);
+
+            /// cena Denneho Menu
             $scope.dailyMenuPrice.$save();
 
-            /// vaha 1
-            console.log('$scope.dailyMenuWeight1.$value ' + $scope.dailyMenuWeight1.$value);
+            /// vaha Denneho Menu
             $scope.dailyMenuWeight1.$save();
-            /// vaha 2
-            console.log('$scope.dailyMenuWeight2.$value ' + $scope.dailyMenuWeight2.$value);
             $scope.dailyMenuWeight2.$save();
-            /// vaha 3
-            console.log('$scope.dailyMenuWeight3.$value ' + $scope.dailyMenuWeight3.$value);
             $scope.dailyMenuWeight3.$save();
 
-            /// day 1
-            console.log('$scope.day1Date.$value ' + $scope.day1Date.$value);
+            /// day 1 date
             $scope.day1Date.$save();
             /// day 1 food 1
-            console.log('$scope.day1food1.$value ' + $scope.day1food1.$value);
             $scope.day1food1.$save();
             /// day 1 food 1 allergens
-            console.log('$scope.day1allergens1.$value ' + $scope.day1allergens1.$value);
             $scope.day1allergens1.$save();
-
             /// day 1 food 2
-            console.log('$scope.day1food2.$value ' + $scope.day1food2.$value);
             $scope.day1food2.$save();
             /// day 1 food 2 allergens
-            console.log('$scope.day1allergens2.$value ' + $scope.day1allergens2.$value);
             $scope.day1allergens2.$save();
-
             /// day 1 food 3
-            console.log('$scope.day1food3.$value ' + $scope.day1food3.$value);
             $scope.day1food3.$save();
             /// day 1 food 3 allergens
-            console.log('$scope.day1allergens3.$value ' + $scope.day1allergens3.$value);
             $scope.day1allergens3.$save();
 
 
-            /// day 2
-            console.log('$scope.day2Date.$value ' + $scope.day2Date.$value);
+            /// day 2 date
             $scope.day2Date.$save();
             /// day 2 food 1
-            console.log('$scope.day2food1.$value ' + $scope.day2food1.$value);
             $scope.day2food1.$save();
             /// day 2 food 1 allergens
-            console.log('$scope.day2allergens1.$value ' + $scope.day2allergens1.$value);
             $scope.day2allergens1.$save();
-
             /// day 2 food 2
-            console.log('$scope.day2food2.$value ' + $scope.day2food2.$value);
             $scope.day2food2.$save();
             /// day 2 food 2 allergens
-            console.log('$scope.day2allergens2.$value ' + $scope.day2allergens2.$value);
             $scope.day2allergens2.$save();
-
             /// day 2 food 3
-            console.log('$scope.day2food3.$value ' + $scope.day2food3.$value);
             $scope.day2food3.$save();
             /// day 2 food 3 allergens
-            console.log('$scope.day2allergens3.$value ' + $scope.day2allergens3.$value);
             $scope.day2allergens3.$save();
 
-            /// day3
-            console.log('$scope.day3Date.$value ' + $scope.day3Date.$value);
+            /// day 3 date
             $scope.day3Date.$save();
             /// day3 food 1
-            console.log('$scope.day3food1.$value ' + $scope.day3food1.$value);
             $scope.day3food1.$save();
             /// day3 food 1 allergens
-            console.log('$scope.day3allergens1.$value ' + $scope.day3allergens1.$value);
             $scope.day3allergens1.$save();
-
             /// day3 food 2
-            console.log('$scope.day3food2.$value ' + $scope.day3food2.$value);
             $scope.day3food2.$save();
             /// day3 food 2 allergens
-            console.log('$scope.day3allergens2.$value ' + $scope.day3allergens2.$value);
             $scope.day3allergens2.$save();
-
             /// day3 food 3
-            console.log('$scope.day3food3.$value ' + $scope.day3food3.$value);
             $scope.day3food3.$save();
             /// day3 food 3 allergens
-            console.log('$scope.day3allergens3.$value ' + $scope.day3allergens3.$value);
             $scope.day3allergens3.$save();
 
 
-
-            /// day4
-            console.log('$scope.day4Date.$value ' + $scope.day4Date.$value);
+            /// day 4 date
             $scope.day4Date.$save();
             /// day4 food 1
-            console.log('$scope.day4food1.$value ' + $scope.day4food1.$value);
             $scope.day4food1.$save();
             /// day4 food 1 allergens
-            console.log('$scope.day4allergens1.$value ' + $scope.day4allergens1.$value);
             $scope.day4allergens1.$save();
-
             /// day4 food 2
-            console.log('$scope.day4food2.$value ' + $scope.day4food2.$value);
             $scope.day4food2.$save();
             /// day4 food 2 allergens
-            console.log('$scope.day4allergens2.$value ' + $scope.day4allergens2.$value);
             $scope.day4allergens2.$save();
-
             /// day4 food 3
-            console.log('$scope.day4food3.$value ' + $scope.day4food3.$value);
             $scope.day4food3.$save();
             /// day4 food 3 allergens
-            console.log('$scope.day4allergens3.$value ' + $scope.day4allergens3.$value);
             $scope.day4allergens3.$save();
 
 
-            /// day5
-            console.log('$scope.day5Date.$value ' + $scope.day5Date.$value);
+            /// day 5 date
             $scope.day5Date.$save();
             /// day5 food 1
-            console.log('$scope.day5food1.$value ' + $scope.day5food1.$value);
             $scope.day5food1.$save();
             /// day5 food 1 allergens
-            console.log('$scope.day5allergens1.$value ' + $scope.day5allergens1.$value);
             $scope.day5allergens1.$save();
-
             /// day5 food 2
-            console.log('$scope.day5food2.$value ' + $scope.day5food2.$value);
             $scope.day5food2.$save();
             /// day5 food 2 allergens
-            console.log('$scope.day5allergens2.$value ' + $scope.day5allergens2.$value);
             $scope.day5allergens2.$save();
-
             /// day5 food 3
-            console.log('$scope.day5food3.$value ' + $scope.day5food3.$value);
             $scope.day5food3.$save();
             /// day5 food 3 allergens
-            console.log('$scope.day5allergens3.$value ' + $scope.day5allergens3.$value);
             $scope.day5allergens3.$save();
 
+
+
+            /// Restauracia TIMES
+            /// Monday
+            $scope.restMonTimeFrom.$save();
+            $scope.restMonTimeTo.$save();
+            /// tuesday
+            $scope.restTueTimeFrom.$save();
+            $scope.restTueTimeTo.$save();
+            /// Wednesday
+            $scope.restWedTimeFrom.$save();
+            $scope.restWedTimeTo.$save();
+            /// Thursday
+            $scope.restThuTimeFrom.$save();
+            $scope.restThuTimeTo.$save();
+            /// Friday
+            $scope.restFriTimeFrom.$save();
+            $scope.restFriTimeTo.$save();
+            /// Saturday
+            $scope.restSatTimeFrom.$save();
+            $scope.restSatTimeTo.$save();
+            /// Sunday
+            $scope.restSunTimeFrom.$save();
+            $scope.restSunTimeTo.$save();
+
+
+
+            /// Kúpele TIMES
+            /// Monday
+            $scope.spaMonTimeFrom.$save();
+            $scope.spaMonTimeTo.$save();
+            /// tuesday
+            $scope.spaTueTimeFrom.$save();
+            $scope.spaTueTimeTo.$save();
+            /// Wednesday
+            $scope.spaWedTimeFrom.$save();
+            $scope.spaWedTimeTo.$save();
+            /// Thursday
+            $scope.spaThuTimeFrom.$save();
+            $scope.spaThuTimeTo.$save();
+            /// Friday
+            $scope.spaFriTimeFrom.$save();
+            $scope.spaFriTimeTo.$save();
+            /// Saturday
+            $scope.spaSatTimeFrom.$save();
+            $scope.spaSatTimeTo.$save();
+            /// Sunday
+            $scope.spaSunTimeFrom.$save();
+            $scope.spaSunTimeTo.$save();
+
+
+            /// Kúpele TERMINY
+            $scope.spaTime1.$save();
+            $scope.spaTime2.$save();
+            $scope.spaTime3.$save();
+            $scope.spaTime4.$save();
+            $scope.spaTime5.$save();
+            $scope.spaTime6.$save();
+            $scope.spaTime7.$save();
+
+
+            /// PENSION TIMES
+            /// OD
+            $scope.pensionTimeFrom.$save();
+            /// Do
+            $scope.pensionTimeTo.$save();
+            /// Checkin
+            $scope.pensionCheckIn.$save();
+            /// checkout
+            $scope.pensionCheckOut.$save();
+
+
+            /// PENSION Prices
+            /// OD
+            $scope.pensionPrice1.$save();
+            $scope.pensionPrice2.$save();
+            $scope.pensionPrice3.$save();
+            $scope.pensionPrice4.$save();
 
         };
 
@@ -269,76 +295,6 @@ angular.module('adminCtrl', [])
         // });
         //
 
-
-        $scope.dateConfig = {
-            startDate: "2014-09-01"
-        };
-
-        $scope.events = [
-            {
-                start: new DayPilot.Date("2014-09-01T10:00:00"),
-                end: new DayPilot.Date("2014-09-01T14:00:00"),
-                id: DayPilot.guid(),
-                text: "First Event"
-            },
-            {
-                start: new DayPilot.Date("2014-09-01T14:00:00"),
-                end: new DayPilot.Date("2014-09-01T16:00:00"),
-                id: DayPilot.guid(),
-                text: "Second Event"
-            },
-            {
-                start: new DayPilot.Date("2014-09-01T16:00:00"),
-                end: new DayPilot.Date("2014-09-01T18:00:00"),
-                id: DayPilot.guid(),
-                text: "Third Event"
-            },
-            {
-                start: new DayPilot.Date("2014-09-01T18:00:00"),
-                end: new DayPilot.Date("2014-09-01T20:00:00"),
-                id: DayPilot.guid(),
-                text: "Fourth Event"
-            },
-            {
-                start: new DayPilot.Date("2014-09-01T20:00:00"),
-                end: new DayPilot.Date("2014-09-01T22:00:00"),
-                id: DayPilot.guid(),
-                text: "Fifth Event"
-            },
-            {
-                start: new DayPilot.Date("2014-09-01T22:00:00"),
-                end: new DayPilot.Date("2014-09-01T24:00:00"),
-                id: DayPilot.guid(),
-                text: "Sixth Event"
-            },
-            {
-                start: new DayPilot.Date("2014-09-02T10:00:00"),
-                end: new DayPilot.Date("2014-09-02T14:00:00"),
-                id: DayPilot.guid(),
-                text: "Test Event"
-            }
-        ];
-
-        $scope.add = function() {
-            $scope.events.push(
-                {
-                    start: new DayPilot.Date("2014-09-01T10:00:00"),
-                    end: new DayPilot.Date("2014-09-01T12:00:00"),
-                    id: DayPilot.guid(),
-                    text: "Simple Event"
-                }
-            );
-        };
-
-        $scope.move = function() {
-            var event = $scope.events[0];
-            event.start = event.start.addDays(1);
-            event.end = event.end.addDays(1);
-        };
-
-        $scope.rename = function() {
-            $scope.events[0].text = "New name";
-        };
 
 
     }]);
