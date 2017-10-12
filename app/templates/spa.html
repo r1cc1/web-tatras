@@ -96,8 +96,8 @@
                             <br>
                             <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #fff;"
                                         size="25"></ng-md-icon>
-                                        <span translate>special.treatment</span>
-                                        {{spaLi5}}
+                                        <b translate>special.treatment</b>
+                            {{spaLi5}} <b>* {{spaLiTime}} </b>
                         </p>
                     </div>
                 </section>
@@ -278,8 +278,8 @@
                 </section>
 
                 <!-- book -->
-                <section id="book" class="bg invert">
-                    <h1 class="main-title" translate>book.now</h1>
+                <section id="book" class="bg bg-black">
+                    <h1 class="main-title color-red" translate>book.now</h1>
 
                     <div class="small-line"></div>
 
@@ -581,20 +581,22 @@
 
                             <div class="booking-done" ng-show="bookFinnish">
                                 <ng-md-icon icon="check_circle" style="display: block; position: relative;
-                                            background: #f1ebda; border-radius: 50%;
-                                            width: 150px; height:150px;fill: #2b2a29;"
+                                            background: #78fa89; border-radius: 50%;
+                                            width: 150px; height:150px;fill: rgb(43, 42, 41);"
                                             size="150"></ng-md-icon>
                                 <h4>{{bookingSend1}}</h4>
                                 <h4>{{bookingSend2}}</h4>
                             </div>
 
-                            <div class="actions" ng-hide="bookFinnish">
-                                <p class="link-button phone" ng-show="!spaBookForm.$valid" translate>please.fill.all.data</p>
+                            <div class="book-wrap" ng-hide="bookFinnish">
+                                <div class="actions" >
+                                    <p class="link-button phone" ng-show="!spaBookForm.$valid" translate>please.fill.all.data</p>
 
-                                <button ng-click="formsubmit(spaBookForm)" ng-disabled="!spaBookForm.$valid" class="btn-next btn-submit">
-                                    <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
-                                    <span translate>book.now</span>
-                                </button>
+                                    <button ng-click="formsubmit(spaBookForm)" ng-disabled="!spaBookForm.$valid" class="btn-next btn-submit">
+                                        <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
+                                        <span translate>book.now</span>
+                                    </button>
+                                </div>
                             </div>
 
                         </form>

@@ -75,7 +75,7 @@
                 </section>
 
                 <section id="kitchen" class="content-main bg bg-black">
-                    <h1 class="main-title color-red" translate>Varia moderným postupom</h1>
+                    <h1 class="main-title color-red" translate>cook.modern.process</h1>
                     <div class="small-line"></div>
                     <div class="">
                         <p class="content-text color-light">
@@ -357,7 +357,7 @@
                     </div>
                 </section>
 
-                <section id="book" class="bg invert">
+                <section id="book" class="content-main bg invert">
                     <h1 class="main-title" translate>book.now</h1>
 
                     <div class="small-line"></div>
@@ -413,7 +413,7 @@
                                         <div class="input-wrap">
                                             <select id="room-type" name="room" ng-model="room" required>
                                                 <option value="" disabled selected hidden translate>select</option>
-                                                <option value="nezalezi" selected>Nezáleži</option>
+                                                <option value="nezalezi" selected translate>Nezáleži</option>
                                                 <option value="pivonice">Pivo-nice</option>
                                                 <option value="pivobanka">Pivo-banka</option>
                                                 <option value="likerka">Likérka</option>
@@ -445,7 +445,7 @@
                                     </div>
                                     <div class="wrap">
                                         <div class="input-wrap">
-                                            <input id="email" type="email" name="email" ng-model="email" placeholder="email@email.com"
+                                            <input id="email" type="email" name="email" ng-model="email"
                                                class="form-control" required/>
                                         </div>
                                     </div>
@@ -457,7 +457,7 @@
                                     </div>
                                     <div class="wrap">
                                         <div class="input-wrap">
-                                            <input id="phone" type="number" name="phone" ng-model="phone" placeholder="+XXX XXX XXX XXX"/>
+                                            <input id="phone" type="text" name="phone" ng-model="phone" />
                                         </div>
                                     </div>
                                     <div class="wrap label">
@@ -477,23 +477,25 @@
 
                             <div class="booking-done" ng-show="bookFinnish">
                                 <ng-md-icon icon="check_circle" style="display: block; position: relative;
-                                            background: #f1ebda; border-radius: 50%;
-                                            width: 150px; height:150px;fill: #2b2a29;"
+                                            background: #78fa89; border-radius: 50%;
+                                            width: 150px; height:150px;fill: rgb(43, 42, 41);"
                                             size="150"></ng-md-icon>
                                 <h4>{{bookingSend1}}</h4>
                                 <h4>{{bookingSend2}}</h4>
                             </div>
 
-                            <div class="actions" ng-hide="bookFinnish">
-                                <p class="link-button phone" ng-hide="restaurantBookForm.$valid" translate>
-                                    please.fill.all.data
-                                </p>
-                                <button ng-click="formsubmit(restaurantBookForm)" ng-disabled="!restaurantBookForm.$valid" class="btn-next btn-submit">
-                                    <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
-                                    <span translate>book.now</span>
-                                </button>
-                            </div>
+                            <div class="book-wrap" ng-hide="bookFinnish">
+                                <div class="actions" >
+                                    <p class="link-button phone" ng-hide="restaurantBookForm.$valid" translate>
+                                        please.fill.all.data
+                                    </p>
+                                    <button ng-click="formsubmit(restaurantBookForm)" ng-disabled="!restaurantBookForm.$valid" class="btn-next btn-submit">
+                                        <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
+                                        <span translate>book.now</span>
+                                    </button>
+                                </div>
 
+                            </div>
                         </form>
                     </div>
                 </section>
@@ -573,11 +575,12 @@
 
                     <div class="content-main">
                         <p class="content-text">
-                            {{restaurantPribehText}}
+                            {{restaurantPribehText}}...<span class="more" ng-hide="showMoreHistory == true" ng-click="doShowMoreHistory();" translate>read.more</span>
                         </p>
-                        <p class="content-text">
+                        <p class="content-text" ng-show="showMoreHistory == true">
                             <b translate>restaurant</b><b> TATRAS</b> {{restaurantPribehText2}}
                         </p>
+
                     </div>
                 </section>
 

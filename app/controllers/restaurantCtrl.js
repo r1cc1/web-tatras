@@ -37,12 +37,19 @@ angular.module('restaurantCtrl', [])
         $scope.restaurantSalonik9 = "Celková kapacita reštaurácie je 171 hostí. Každý salónik sa môže rezervovať pre privátnu spoločnosť a uzavrieť.";
 
         $scope.restaurantText1 = "Príďte si vychutnať pokojnú atmosféru reštaurácie Tatras, príjemnú obsluhu, skvelé jedlo a „ozajstné pivo“.Radi Vás privítame pri oslave Vášho jubilea, firemnej akcii, svadbe, krstinách..."
-        $scope.restaurantPribehTitle = "Príbeh";
+
         $scope.restaurantPribehText = "V 90-tych rokoch minulého storočia, po oprave schátraného domu, vzniká v jeho priestore piváreň s názvom „Zvon“. Na výčape ponúka aj čierne pivo, čo bolo v Poprade v tom čase raritou. Piváreň strieda obchod s odevmi. Až potom prichádza myšlienka Reštauračného minipivovaru, teda vynikajúcej reštaurácie, ktorá by podávala i vlastné „ozajstné pivo“. Reštaurácie, ktorá využije bývalé obytné miestnosti starého nemeckého domu, pretvorené na útulné salóniky, ktoré budú mať spoločné črty, ale každý s vlastnou atmosférou a myšlienkou. Reštaurácie, ktorá ponúkne hosťovi niečo nezvyčajné a originálne, kde nájde zákutia na romantiku, obchodné rokovania či priestory pre rôzne akcie.";
         $scope.restaurantPribehText2 = " sa po dvoch rokoch projektovania, búrania, rekonštrukcie, výstavby a zariaďovania, otvára do skúšobnej prevádzky na jeseň 2016. Každý salónik má svoj názov podľa charakteru miestnosti a interiérového vybavenia. Hostia môžu často z pohodlia reštaurácie pozorovať sládka pri práci na varni. Vôňa chmeľu a mladého piva vtedy prenikne i do reštaurácie.„Tu varíme s láskou, koreníme smiechom“ – to je motto moderne vybavenej kuchyne reštaurácie Tatras, v ktorej šéfkuchár Milan Duráni so svojím tímom, pripravuje pre Vás z čerstvých surovín chutné jedlá. Milan Duráni desaťročie šefoval v prestížnych reštauráciach v Nemecku a Taliansku, odkiaľ si priniesol svoje zásady pre vybudovanie dobrej kuchyne – nie polotovary, nie chemické zvýrazňovače chuti, nie prehnane veľa jedál, nie... Kuchári pod jeho vedením vyrábajú vlastné zmesi korenín, omáčky, špaldové cestoviny, pečú vlastný chlieb, varia vlastnú pivnú polievku, miešajú svoju pivnú zmrzlinu.";
         $scope.restaurantPribehText3 = "Pomalým varením pri nízkych teplotách. Varia tak, ako by varili pre seba a svoje deti. Ponúkajú hosťovi možnosť vybrať si a uloviť pstruha z vlastného akvária a vybrať si spôsob, akým ho má kuchyňa pripraviť. Záleží im na čerstvosti a sezónnosti jedálnička. Ponúkané jedlá môžete spojiť s „ozajstným pivom“, a tak spoznať skutočný gurmánsky zážitok.  ";
 
-        $scope.bookingSend1 = 'Ďakujeme o Váš záujem, Vaša rezervácia bola odoslaná';
+
+        $scope.showMoreHistory = false;
+
+        $scope.doShowMoreHistory = function () {
+            $scope.showMoreHistory = !$scope.showMoreHistory;
+        };
+
+        $scope.bookingSend1 = 'Ďakujeme za Váš záujem, Vaša rezervácia bola odoslaná';
         $scope.bookingSend2 = 'Budeme Vás kontaktovať pre potvrdenie rezervácie.';
 
         $scope.mySlides = [
@@ -71,6 +78,17 @@ angular.module('restaurantCtrl', [])
         $scope.url = 'bookRestaurant.php';
 
         $scope.formsubmit = function () {
+
+            if ($scope.phone == null || $scope.phone == undefined) {
+                console.log('user nezadal PHONE');
+                $scope.phone = '---';
+            }
+            if ($scope.addText == null || $scope.addText == undefined) {
+                console.log('user nezadal addText');
+                $scope.addText = '---';
+            }
+
+
             $scope.formatTime = $scope.timer.toLocaleTimeString('sk-SK');
 
             console.log("addText " + $scope.addText);
@@ -87,8 +105,8 @@ angular.module('restaurantCtrl', [])
                     $scope.data = data;
                     $scope.result = data; // Show result from server in our <pre></pre> element
 
-                    console.log('Form poslane : ' + $scope.result);
-                    console.log('Form status > ' + $scope.status);
+                    console.log('Form poslana DATA : ' + $scope.result);
+                    console.log('Form status : ' + $scope.status);
 
                     $scope.bookFinnish = true;
                 })

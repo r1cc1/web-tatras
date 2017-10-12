@@ -115,7 +115,8 @@ angular.module('mainCtrl', [])
                 var day = dateObj.getUTCDate();
                 var year = dateObj.getUTCFullYear();
 
-                var today = day + ". " + month + ". " + year;
+                var today = day + "." + month + "." + year;
+                $rootScope.today = today;
                 console.log('Todays DATE is :' + today);
             };
 

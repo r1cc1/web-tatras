@@ -32,6 +32,12 @@ angular.module('homeCtrl', [])
         $scope.historyText5 = 'Prvú várku spodne kvaseného svetlého ležiaka plzenského typu varia sládkovia Ing. Ján Koma a Bc. Lukáš Vdovjak v novozaloženom minipivovare 30. septembra 2015. Nazvú ho „Odležiak“, keďže technológia minipivovaru je síce inštalovaná, ale budova je stále vo výstavbe, navarené pivo bude ešte rok ležať v tanku a čakať do 8. septembra 2016, kedy je reštaurácia otvorená do skúšobnej prevádzky. Pivo je skvostné – archívne, jeden navarený tank s objemom cca 5000 veľkých pív na výčape mizne do jedného mesiaca. Hostia naň doteraz s nostalgiou spomínajú. Tatras začína variť pivá spodne i vrchne kvasené - ležiaky i ale....';
         $scope.historyText6 = 'U všetkých navarených pív dodržiava Tatras zákon o čistote piva z r. 1516 – prvý zákon o potravinách na svete, vydaný bavorským vojvodom Viliamom IV. Ten určuje, že pivo môže byť vyrobené iba z vody, jačmenného alebo pšeničného sladu, chmeľu a za pomoci pivovarských kvasiniek. Vlastná 50 m hlboká studňa dodáva krištáľovú tatranskú vodu. Slad sa kupuje predovšetkým z českých Záhliníc, ale i z Nemecka. Chmeľ sa dováža z Čiech, Nemecka, Nového Zélandu, Anglicka či USA, kvasnice z Belgicka. ';
 
+        $scope.showMoreHistory = false;
+
+        $scope.doShowMoreHistory = function () {
+            $scope.showMoreHistory = !$scope.showMoreHistory;
+        };
+
         $scope.mySlides = [
             '/components/assets/imgs/varenie/varenie1.jpg',
             '/components/assets/imgs/varenie/Varenie3.jpg',

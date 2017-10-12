@@ -112,10 +112,9 @@
                     <div class="small-line"></div>
 
                     <div class="content-main">
-                        <p>{{historyText1}}</p>
-                    </div>
-                    <div class="content-main">
-                        <p>{{historyText2}}</p>
+                        <p>{{historyText1}}..
+                            <span class="more" ng-hide="showMoreHistory == true" ng-click="doShowMoreHistory();" translate>read.more</span></p>
+                        <p ng-show="showMoreHistory == true">{{historyText2}}</p>
                     </div>
                 </section>
 
@@ -155,10 +154,7 @@
                     </div>
                 </section>
 
-                <section id="about" class="content-main bg bg-black invert">
-                    <h1 class="main-title" translate>about.us</h1>
-                    <div class="small-line"></div>
-
+                <section id="about" class="bg bg-black invert">
                     <div class="content-main info">
                         <div class="item">
                             <p>Minipivovar TATRAS, s.r.o.</p>
@@ -169,9 +165,6 @@
                             <p>DIČ: 2021339045</p>
                         </div>
                     </div>
-
-                    <div class="small-line"></div>
-
                 </section>
 
                 <section class="last" ng-style="{height: teaserHeight + 'px'}">

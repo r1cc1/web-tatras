@@ -29,10 +29,9 @@ angular.module('pensionCtrl', [])
         $scope.bookingSend2 = 'Budeme Vás kontaktovať pre potvrdenie rezervácie.';
 
         $scope.pensionRoomText1 = 'Všetky izby sú vybavené LED televízorom, Wi-Fi internetom, chladničkou s minibarom, kúpeľňou sosprchovým kútom a fénom, WC. V budove sa nachádza kozmetika, krajčírstvo, zlatník. K dispozícií je privátne parkovisko strážené kamerovým systémom.';
-
-
-        $scope.pensionServiceText1 = 'Poloha penziónu je skvelým východiskovým bodom pre Vaše ďaľšie aktivity. Ak chcete zažiťpestrú dovolenku, navrhneme Vám program z ktorého si určite vyberiete. Zabezpečíme Vámzľavnené vstupenky.';
-        $scope.pensionServiceText2 = 'Doporučíme sprievodcu, vyhľadáme a zarezervujeme dopravné spojenie a večer môžetezregenerovať a načerpať sily v pivných kúpeloch, povečerať v našej reštaurácií a dobre savyspať v našom útulnom penzióne ktorý si určite zamilujete.';
+        $scope.pensionRoomText2 = 'Chcete si prenajať izbu na jeden či viac mesiacov? Je to možné. U nás sa budete cítiť ako„vo svojom“.';
+        $scope.pensionServiceText1 = 'Poloha penziónu je skvelým východiskovým bodom pre Vaše ďaľšie aktivity. Ak chcete zažiťpestrú dovolenku, navrhneme Vám program z ktorého si určite vyberiete. Zabezpečíme Vám zľavnené vstupenky.';
+        $scope.pensionServiceText2 = 'Doporučíme sprievodcu, vyhľadáme a zarezervujeme dopravné spojenie a večer môžete zregenerovať a načerpať sily v pivných kúpeloch, povečerať v našej reštaurácií a dobre savyspať v našom útulnom penzióne ktorý si určite zamilujete.';
 
         $scope.pensionOfferText1 = 'Prehliadku pivovaru s degustáciou a výkladom';
         $scope.pensionOfferText2 = 'Možnosť zúčastníť sa varenia piva so sládkom';

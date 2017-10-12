@@ -50,7 +50,7 @@
       left: 140px;
       top:0;
 
-      &.open {
+      &.show {
         left: 200px;
       }
     }
@@ -77,9 +77,6 @@
     .content-wrapper .content-main .boxer .box-15 {
       width: calc(100% / 3);
     }
-    .content-wrapper .content-main .boxer .box {
-      width: calc(100% / 2);
-    }
     .content-wrapper .content-main .boxer .box .img {
       height: 12em;
     }
@@ -91,12 +88,13 @@
       .btn-next {
         display: inline-block;
         width: auto;
+        float: right;
       }
     }
   }
 
   h2.category-title {
-    font-size: 2em;
+    font-size: 3em;
   }
   h1.logo-title {
     font-size: 7em;
@@ -105,8 +103,8 @@
     font-size: 2em;
   }
   .book-form .book-wrap {
-    padding: 2em;
-    margin: 1em 0 0 0;
+    padding: 0 2em;
+    margin: 4em 0;
   }
   .actions {
     text-align: center;
@@ -129,7 +127,7 @@
     padding: 3em 0;
   }
   .content-kontakt .info .item a {
-    font-size: 1em;
+    font-size: 1.5em;
     padding: 0;
   }
   .content-wrapper .content-main.empty {
@@ -138,6 +136,12 @@
   }
 
 
+  .content-wrapper .content-main .hours {
+    max-width: 22em;
+  }
+  .content-wrapper .content-main .hours .day span {
+    font-size: 1.5em;
+  }
 
   .content-wrapper .content-main.empty:after {
     height: calc(100% - 4em);
@@ -151,8 +155,32 @@
   }
 
   .actions .link-button {
-    display: table-cell;
+    display: inline-block;
     padding: 0;
+    float: left;
   }
 
+  footer {
+    padding: 2em;
+  }
+  footer p {
+    text-align: left;
+  }
+  footer .copyright {
+    padding: 0;
+  }
+  footer .copyright .row {
+    display: table;
+    width: 100%;
+  }
+  footer .copyright .row .col-md-4 {
+    display: table-cell;
+    width: 33.33%;
+    margin: 1em 0;
+    padding: 0 0 0 3em;
+  }
+  footer .copyright .row .col-md-4.facebook {
+    text-align: right;
+    margin: 0.5em 0;
+  }
 }

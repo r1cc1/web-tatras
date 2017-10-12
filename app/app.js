@@ -12,7 +12,6 @@ angular.module('myApp', [
     'angulartics.google.analytics',
     'ajoslin.promise-tracker',
     '720kb.datepicker',
-    'daypilot',
     'pascalprecht.translate',
     'mainCtrl',
     'startCtrl',

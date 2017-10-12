@@ -69,9 +69,6 @@
 
 
                 <section id="about" class="content-main bg bg-black">
-
-                    <div class="small-line"></div>
-
                     <div class=" info">
                         <div class="item">
                             <div class="table-info">
@@ -99,9 +96,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="small-line"></div>
-
                 </section>
 
                 <section id="info" class="content-main bg bg-100">
@@ -131,6 +125,10 @@
                                 </span>
                             </h1>
                             <p class="info"><b>1 <span translate>person</span> / 1 <span translate>night</span></b></p>
+                            <button du-smooth-scroll="book" class="btn-next btn-submit">
+                                <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
+                                <span translate>book.now</span>
+                            </button>
                         </div>
                         <div class="box">
 
@@ -148,7 +146,10 @@
                                 </span>
                             </h1>
                             <p class="info"><b>2 <span translate>people</span> / 1 <span translate>night</span></b></p>
-
+                            <button du-smooth-scroll="book" class="btn-next btn-submit">
+                                <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
+                                <span translate>book.now</span>
+                            </button>
 
                         </div>
                         <div class="box">
@@ -169,7 +170,10 @@
                                 </span>
                             </h1>
                             <p class="info"><b>3 <span translate>people</span> / 1 <span translate>night</span></b></p>
-
+                            <button du-smooth-scroll="book" class="btn-next btn-submit">
+                                <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
+                                <span translate>book.now</span>
+                            </button>
                         </div>
                         <div class="box">
 
@@ -191,7 +195,10 @@
                                 </span>
                             </h1>
                             <p class="info"><b>4 <span translate>people</span> / 1 <span translate>night</span></b></p>
-
+                            <button du-smooth-scroll="book" class="btn-next btn-submit">
+                                <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
+                                <span translate>book.now</span>
+                            </button>
                         </div>
 
                     </div>
@@ -224,12 +231,11 @@
                     </div>
 
                     <p class="content-text">
-                        Chcete si prenajať izbu na jeden či viac mesiacov? Je to možné. U nás sa budete cítiť ako
-                        „vo svojom“.
+                        {{pensionRoomText2}}
                     </p>
                 </section>
 
-                <section id="book" class="bg invert">
+                <section id="book" class="content-main bg invert">
                     <h1 class="main-title" translate>book.now</h1>
 
                     <div class="small-line"></div>
@@ -248,7 +254,7 @@
                                     <div class="wrap four">
                                         <div class="input-wrap">
                                             <datepicker date-format="dd.MM.yyyy" date-week-start-day="1" datepicker-mobile="true">
-                                                <input id="checkIn" class="date" type="text" ng-model="checkin" placeholder="01.01.2017" required/>
+                                                <input id="checkIn" class="date" type="text" ng-model="checkin" placeholder="{{today}}" required/>
                                             </datepicker>
                                         </div>
                                     </div>
@@ -262,7 +268,7 @@
                                     <div class="wrap four">
                                         <div class="input-wrap">
                                             <datepicker date-format="dd.MM.yyyy" date-week-start-day="1" datepicker-mobile="true">
-                                                <input id="checkOut" class="date" type="text" ng-model="checkout"  placeholder="07.01.2017" required/>
+                                                <input id="checkOut" class="date" type="text" ng-model="checkout"  placeholder="{{today}}" required/>
                                             </datepicker>
                                         </div>
                                     </div>
@@ -301,7 +307,7 @@
                                     </div>
                                     <div class="wrap">
                                         <div class="input-wrap">
-                                            <input type="text" name="name" ng-model="name" class="form-control" placeholder="{{yourName}}" required/>
+                                            <input type="text" name="name" ng-model="name" class="form-control" required/>
                                         </div>
                                     </div>
 
@@ -313,8 +319,7 @@
                                     </div>
                                     <div class="wrap">
                                         <div class="input-wrap">
-                                            <input type="email" name="email" ng-model="email" placeholder="email@email.com"
-                                                   class="form-control" required/>
+                                            <input type="email" name="email" ng-model="email" class="form-control" required/>
                                         </div>
                                     </div>
 
@@ -326,7 +331,7 @@
                                     </div>
                                     <div class="wrap">
                                         <div class="input-wrap">
-                                            <input id="phone" type="text" name="phone" ng-model="phone" placeholder="+XXX XXX XXX XXX"/>
+                                            <input id="phone" type="text" name="phone" ng-model="phone" placeholder=""/>
                                         </div>
                                     </div>
                                 </div>
@@ -334,22 +339,24 @@
 
                             <div class="booking-done" ng-if="bookFinnish">
                                 <ng-md-icon icon="check_circle" style="display: block; position: relative;
-                                            background: #f1ebda; border-radius: 50%;
-                                            width: 150px; height:150px;fill: #2b2a29;"
+                                            background: #78fa89; border-radius: 50%;
+                                            width: 150px; height:150px;fill: rgb(43, 42, 41);"
                                             size="150"></ng-md-icon>
                                 <h4>{{bookingSend1}}</h4>
                                 <h4>{{bookingSend2}}</h4>
                             </div>
 
 
-                            <div class="actions" ng-hide="bookFinnish">
-                                <p class="link-button phone" ng-hide="penzionForm.$valid" translate>
-                                    please.fill.all.data
-                                </p>
-                                <button data-ng-click="formsubmit(penzionForm)" ng-disabled="!penzionForm.$valid" class="btn-next btn-submit">
-                                    <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
-                                    <span translate>book.now</span>
-                                </button>
+                            <div class="book-wrap" ng-hide="bookFinnish">
+                                <div class="actions">
+                                    <p class="link-button phone" ng-hide="penzionForm.$valid" translate>
+                                        please.fill.all.data
+                                    </p>
+                                    <button data-ng-click="formsubmit(penzionForm)" ng-disabled="!penzionForm.$valid" class="btn-next btn-submit">
+                                        <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
+                                        <span translate>book.now</span>
+                                    </button>
+                                </div>
                             </div>
 
                         </form>

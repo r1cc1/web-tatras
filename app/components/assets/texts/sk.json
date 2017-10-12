@@ -40,6 +40,7 @@
   "food2" : "Obed",
   "food3" : "Jedlo",
   "our.chefs" : "Naši kuchári",
+  "cook.modern.process" : "Varia moderným postupom",
   "name" : "Meno",
   "your.name" : "Vaše Meno",
   "phone" : "Telefón",
@@ -50,6 +51,7 @@
   "room.type" : "Miestnost",
   "note" : "poznámka",
   "select" : "*vyberte",
+  "any" : "nezáleži",
   "please.fill.all.data" : "Prosím vyplňte všetky údaje",
   "story" : "príbeh",
   "lounges" : "salóniky",
@@ -78,5 +80,6 @@
   "bathtubs": "vane",
   "parking": "Parkovisko",
   "we.offer" : "Ponúkame vám",
-  "oasis.of.peace": "oáza pokoja"
+  "oasis.of.peace": "oáza pokoja",
+  "read.more": "čítať ďalej"
 }

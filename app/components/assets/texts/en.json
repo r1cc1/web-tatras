@@ -40,6 +40,7 @@
   "food2" : "Lunch",
   "food3" : "Meal",
   "our.chefs" : "Our Chefs",
+  "cook.modern.process" : "Cooking by modern process",
   "name" : "name",
   "your.name" : "your name",
   "phone" : "phone",
@@ -50,6 +51,7 @@
   "room.type" : "room type",
   "note" : "note",
   "select" : "*select",
+  "any" : "any",
   "please.fill.all.data" : "Please fill all required fields",
   "story" : "story",
   "lounges" : "lounges",
@@ -78,5 +80,6 @@
   "bathtubs": "bathtubs",
   "parking": "parking",
   "we.offer" : "we offer",
-  "oasis.of.peace": "oasis of peace"
+  "oasis.of.peace": "oasis of peace",
+  "read.more": "read more"
 }

@@ -800,21 +800,21 @@
           &.ng-hide {
             display: none;
           }
-
-          &:before {
-            transition-duration: .45s;
-            transition-property: width;
-            transition-delay: 0s;
-            transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-            content: '';
-            width: 0%;
-            height: 1px;
-            background: $color-beige-light;
-            display: block;
-            position: absolute;
-            top: 0;
-            left: -1px;
-          }
+          //
+          //&:before {
+          //  transition-duration: .45s;
+          //  transition-property: width;
+          //  transition-delay: 0s;
+          //  transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+          //  content: '';
+          //  width: 0%;
+          //  height: 1px;
+          //  background: $color-beige-light;
+          //  display: block;
+          //  position: absolute;
+          //  top: 0;
+          //  left: -1px;
+          //}
           &:after {
             transition-duration: .45s;
             transition-property: width;
@@ -1494,9 +1494,10 @@
         display: flex;
         flex-flow: row wrap;
         justify-content: space-around;
+        margin: -2em 0 4em 0;
 
         .box {
-          width: 90%;
+          width: 100%;
           padding: 0;
 
           &.bg-beige {
@@ -1527,6 +1528,47 @@
           img {
             width: 200px;
             height: auto;
+          }
+          .btn-next {
+            display: inline-block;
+            position: relative;
+            font-family: 'Roboto', Arial, Helvetica;
+            font-size: 1em;
+            font-weight: bold;
+            padding: 1em;
+            border: 0;
+            color: $color-black;
+            background: $color_beige;
+            margin: 0;
+            text-align: center;
+            text-transform: uppercase;
+            text-decoration: none;
+            float: none;
+            width: 100%;
+            @include transition(background 0.5s linear);
+
+            &:hover, &:focus {
+              color: $color-black;
+              border-color: $color-black;
+              background: $color_green;
+              @include transition(background 0.5s linear);
+            }
+
+            &:disabled {
+              background: $color_black;
+              cursor: not-allowed;
+              color: $color-red;
+
+              @include transition(background 0.5s linear);
+
+              &:hover, &:focus {
+                background: $color-red;
+                cursor: not-allowed;
+                color: $color_black;
+                border-color: $color-red;
+                @include transition(background 0.5s linear);
+              }
+            }
           }
         }
         .box-15 {
@@ -1609,7 +1651,17 @@
         }
       }
 
+      p {
+        span.more{
+          color: $color_red;
+          font-weight: bold;
+          cursor: pointer;
 
+          &:hover, &:focus {
+            color: $color_beige;
+          }
+        }
+      }
     }
 
 
@@ -1867,10 +1919,6 @@
       vertical-align: middle;
       margin: 0.5em auto 0 auto;
     }
-    a {
-      color: $color-black;
-      text-decoration: none;
-    }
     a:hover {
       cursor: pointer;
       color: #c02731;
@@ -1889,7 +1937,7 @@
         .col-md-4 {
           display: block;
           width: auto;
-          margin: 0.5em 0;
+          margin: 1em 0;
           text-align: center;
           vertical-align: middle;
 
@@ -1925,7 +1973,7 @@
     background: $color-black;
 
     p, a {
-      color: white;
+      color: $color_beige;
     }
   }
 
@@ -2612,13 +2660,14 @@
             padding: 0;
             h1 {
               margin: 0;
-              padding: 0.4em 0;
-              border-bottom: 2px solid $color_green;
+              padding: 0.5em 0;
+              border-bottom: 1px solid $color-beige;
+              text-align: right;
 
               span {
                 padding: 0;
                 font-size: 2em;
-                color: $color_green;
+                color: $color_red;
               }
             }
           }
@@ -3232,7 +3281,7 @@
     margin: 0 auto;
     width: 100%;
     table-layout: fixed;
-    margin-top: 1em;
+    padding: 0;
     text-align: right;
 
     &.start-btns {
@@ -3245,11 +3294,13 @@
       .btn {
         display: block;
         margin: 0;
-        padding: 0.5em;
+        padding: 0.5em 0;
         font-weight: 100;
         letter-spacing: 0.1em;
         text-transform: capitalize;
-        color: $color_beige;
+        color: white;
+        font-family: 'Playfair Display', serif;
+        text-align: left;
 
         &:hover, &:focus {
           border-color: transparent;
@@ -3258,7 +3309,7 @@
 
         &.main {
           border-bottom: 2px solid $color_beige;
-          padding: 1em;
+          padding: 1em 0;
           margin-bottom: 1em;
           font-weight: bold;
           letter-spacing: 0.4em;
@@ -3298,29 +3349,35 @@
       font-weight: bold;
       padding: 1em;
       border: 3px solid;
-      color: $color-black;
-      background: $color-beige;
-      margin: 1em;
+      color: $color_green;
+      background: $color_black;
+      margin: 0;
       text-align: center;
       text-transform: uppercase;
       text-decoration: none;
       float: none;
-      width: calc(100% - 2em);
+      width:100%;
       @include transition(background 0.5s linear);
 
       &:hover, &:focus {
         color: $color-black;
-        background: white;
+        border-color: $color_green;
+        background: $color_green;
         @include transition(background 0.5s linear);
       }
 
       &:disabled {
         background: $color_black;
-        color: white;
+        cursor: not-allowed;
+        color: $color-red;
+
+        @include transition(background 0.5s linear);
 
         &:hover, &:focus {
+          background: $color-red;
           cursor: not-allowed;
-          color: $color-red;
+          color: $color_black;
+          border-color: $color-red;
           @include transition(background 0.5s linear);
         }
       }
@@ -3405,6 +3462,7 @@
       text-decoration: none;
       letter-spacing: 2px;
       padding: 1em 0;
+      vertical-align: middle;
 
     }
   }
@@ -3678,6 +3736,7 @@
       line-height: 1.5em;
       padding: 0.5em 3em 0 0;
     }
+
 
 
     .content-main .daily-menu-list .daily-menu-item {
