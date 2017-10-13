@@ -162,7 +162,7 @@
     font-size: 1.5em;
 
     &.main-title {
-      font-size: 3em;
+      font-size: 2.5em;
       line-height: 1em;
       padding: 1em 0 0.5em 0;
       color: $color-black;
@@ -755,7 +755,7 @@
         transition: all 0.2s;
         letter-spacing: 1px;
         text-align: center;
-        padding: 1em 0;
+        padding: 1.25em 0;
 
         transition-duration: 0.75s, 1s;
         transition-property: transform, opacity;
@@ -1366,8 +1366,7 @@
           position: relative;
           display: table-cell;
           color: white;
-          font-size: 3em;
-          text-shadow: 0 0 2px $color-black;
+          font-size: 2.5em;
           text-align: center;
           vertical-align: middle;
         }
@@ -1494,7 +1493,15 @@
         display: flex;
         flex-flow: row wrap;
         justify-content: space-around;
-        margin: -2em 0 4em 0;
+        margin: 0;
+
+        &.salons {
+          margin: 2em 0;
+        }
+
+        &.rooms {
+          margin: -1em 0 3em 0;
+        }
 
         .box {
           width: 100%;
@@ -1656,6 +1663,7 @@
           color: $color_red;
           font-weight: bold;
           cursor: pointer;
+          text-decoration: underline;
 
           &:hover, &:focus {
             color: $color_beige;
@@ -1937,7 +1945,7 @@
         .col-md-4 {
           display: block;
           width: auto;
-          margin: 1em 0;
+          margin: 2em 0;
           text-align: center;
           vertical-align: middle;
 
@@ -2309,7 +2317,6 @@
       .daily-menu-item {
         display: block;
         position: relative;
-        border: 3px solid transparent;
         background: white;
         padding: 1em;
 
@@ -2338,7 +2345,7 @@
               &.item-title {
                 display: block;
                 width: auto;
-                min-width: 6em;
+                min-width: 3em;
                 padding-left: 0;
                 max-width: 4em;
               }
@@ -2561,7 +2568,7 @@
             border-top: 0;
             padding-left: 0;
             height: 2em;
-            margin: 2em 0 0 0;
+            margin: 3em 0 0 0;
           }
           &:last-child {
             border-right: 0;
@@ -2577,6 +2584,8 @@
             color: $color-beige-lightest;
             vertical-align: bottom;
             float: right;
+            position: relative;
+
           }
 
           .input-wrap {
@@ -2608,13 +2617,13 @@
                 border-bottom: 1px solid $color_red;
               }
               &.ng-untouched, &.ng-unvalid, &.ng-empty {
-                color: white !Important;
+                color: $color_beige !Important;
                 border-bottom: 1px solid $color_beige;
               }
 
               &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
                 font-family: 'Roboto', sans-serif;
-                color: $color_beige-lightest;
+                color: $color_beige;
                 font-weight: lighter;
                 top: 10px;
                 -moz-appearance: none;
@@ -2624,17 +2633,17 @@
               }
               &::-moz-placeholder { /* Firefox 19+ */
                 font-family: 'Roboto', sans-serif;
-                color: $color_beige-lightest;
+                color: $color_beige;
                 font-weight: lighter;
               }
               &:-ms-input-placeholder { /* IE 10+ */
                 font-family: 'Roboto', sans-serif;
-                color: $color_beige-lightest;
+                color: $color_beige;
                 font-weight: lighter;
               }
               &:-moz-placeholder { /* Firefox 18- */
                 font-family: 'Roboto', sans-serif;
-                color: $color_beige-lightest;
+                color: $color_beige;
                 font-weight: lighter;
               }
 
@@ -3291,6 +3300,11 @@
       justify-content: space-around;
       margin-top: 1em;
 
+      .category {
+        min-width: 13em;
+        margin: 1em 0;
+      }
+
       .btn {
         display: block;
         margin: 0;
@@ -3792,8 +3806,13 @@
     }
   }
 
-  #prices-spa.table {
+  #prices-spa.table > table {
     table-layout:fixed;
+    border: 0;
+  }
+  #prices-spa.table  {
+    table-layout:fixed;
+    border: 0;
   }
   #prices-spa.table > table > tr > td{
     width: 20%;
@@ -3812,9 +3831,9 @@
   #prices-spa h2{
     font-size: 1.25em;
     font-family: 'Roboto-light', Arial, Helvetica;
-    color: $color_black;
+    color: $color_red;
     text-align: center;
-    background: $color_green;
+    background: transparent;
     padding: 0.5em 0;
   }
 

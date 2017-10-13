@@ -18,6 +18,9 @@ angular.module('spaCtrl', [])
         // set Category
         $rootScope.categoryName = 'wellness';
 
+        // set default Mobile Menu
+        $rootScope.openMobileMenu = false;
+
         // ICON
         $scope.btnIcon = 'spa';
 
