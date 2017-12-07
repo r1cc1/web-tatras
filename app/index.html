@@ -13,7 +13,7 @@
     <title ng-if="!categoryName">Minipivovar TATRAS, Poprad</title>
     <title ng-if="categoryName">{{ categoryName | translate }} TATRAS, Poprad</title>
 
-    <meta name="description" content="TATRAS | Minipivovar | Reštaurácia | Penzión *** | Pivné Kúpele | POPRAD">
+    <meta name="description" content="Ozajstné Pivo, to je TATRAS | Minipivovar | Reštaurácia | Penzión *** | Pivné Kúpele | v Poprade">
     <meta name="keywords"
           content="Tatras, Minipivovar Tatras, Minipivovar Poprad, Pivovar, Pivovar Poprad, Pivovar Tatras, Pivo, Beer, APA, IPA,
           Reštaurácia, Poprad, Tatry, Vysoké Tatry, Hight Tatras, Penzión, Accomodation, Hotel, Room, Rooms, Private, Pivné Kúpele, Masáž,
@@ -25,7 +25,7 @@
     <meta property="og:site_name" content="Minipivovar TATRAS Poprad" />
     <meta property="og:site" content="minipivovartatras.sk" />
     <meta property="og:title" content="Minipivovar TATRAS Poprad" />
-    <meta property="og:description" content="TATRAS | Minipivovar | Reštaurácia | Penzión *** | Pivné Kùpele" />
+    <meta property="og:description" content="TATRAS | Minipivovar | Reštaurácia | Penzión *** | Pivné Kúpele | POPRAD" />
     <meta property="og:image" content="http://minipivovartatras.sk/components/assets/imgs/share.jpg?w=764&amp;h=400&amp;crop=1" />
     <meta property="og:url" content="http://minipivovartatras.sk/" />
     <meta property="og:type" content="website" />
@@ -57,8 +57,14 @@
     <link rel="stylesheet" type="text/css" media="all" href="components/bower/angular-material-icons/angular-material-icons.css">
     <link rel="stylesheet" type="text/css" media="all" href="components/bower/flexslider/flexslider.css">
     <link rel="stylesheet" type="text/css" media="all" href="components/bower/angularjs-datepicker/dist/angular-datepicker.css">
+    <link rel="stylesheet" type="text/css" media="all" href="components/bower/wickedpicker/dist/wickedpicker.min.css">
+    <!--<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css" />-->
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="components/bower/bootstrap/dist/css/bootstrap.min.css" >
+    <!-- Angular reservation minified css -->
+    <link rel="stylesheet" href="components/bower/angular-reservation/dist/angular-reservation.min.css">
+
     <link rel="stylesheet" type="text/css" media="all" href="components/assets/css/main.min.css">
 </head>
 <body>
@@ -107,33 +113,43 @@
     </div>
 </div>
 
+<!-- Libraries Dependences  -->
 <script src="components/bower/jquery/dist/jquery.min.js"></script>
 <script src="components/bower/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+<script src="components/bower/flexslider/jquery.flexslider.js"></script>
+<script src="components/bower/html2canvas/build/html2canvas.min.js"></script>
+<!-- Libraries Moment.js  -->
+<script src="components/bower/moment/min/moment-with-locales.js"></script>
+<script src="components/bower/moment-timezone/moment-timezone.js"></script>
+<!-- Libraries wickedpicker.js  -->
+<script src="components/bower/wickedpicker/dist/wickedpicker.min.js"></script>
+
+
+<!-- Angular Dependences  -->
 <script src="components/bower/angular/angular.js"></script>
 <script src="components/bower/angular-route/angular-route.min.js"></script>
 <script src="components/bower/angular-sanitize/angular-sanitize.min.js"></script>
 <script src="components/bower/angular-animate/angular-animate.min.js"></script>
 <script src="components/bower/angular-scroll/angular-scroll.min.js"></script>
-<script src="components/bower/underscore/underscore-min.js"></script>
-
+<script src="components/bower/angular-messages/angular-messages.min.js"></script>
+<!-- Angular Date Picker  -->
+<script src="components/bower/angularjs-datepicker/dist/angular-datepicker.js"></script>
+<!-- Angular Translate  -->
+<script src="components/bower/angular-translate/angular-translate.min.js"></script>
+<script src="components/bower/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
 <!-- AngularFire -->
-<script src="components/assets/scripts/firebase.js"></script>
-<script src="components/assets/scripts/firebase-firestore.js"></script>
+<script src="components/bower/firebase/firebase.js"></script>
+<script src="components/bower/firebase/firebase-firestore.js"></script>
 <script src="components/bower/angularfire/dist/angularfire.min.js"></script>
-
+<!-- Angular Material -->
 <script src="components/bower/angular-material-icons/angular-material-icons.min.js"></script>
 <script src="components/bower/promise-tracker/promise-tracker.js"></script>
 <script src="components/bower/promise-tracker/promise-tracker-http-interceptor.js"></script>
-
-<script src="components/bower/flexslider/jquery.flexslider.js"></script>
+<!-- Angular Flex Slider -->
 <script src="components/bower/angular-flexslider/angular-flexslider.js"></script>
-<script src="components/bower/html2canvas/build/html2canvas.min.js"></script>
-<script src="components/bower/moment/min/moment-with-locales.js"></script>
-<script src="components/bower/angularjs-datepicker/dist/angular-datepicker.js"></script>
-
-<script src="components/bower/angular-translate/angular-translate.min.js"></script>
-<script src="components/bower/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
-
+<!-- Angular Analytics -->
+<script src="components/bower/angulartics/dist/angulartics.min.js"></script>
+<script src="components/bower/angulartics-google-analytics/dist/angulartics-ga.min.js"></script>
 <!-- Google Analytics -->
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -147,9 +163,14 @@
         };
 </script>
 
-<script src="components/bower/angulartics/dist/angulartics.min.js"></script>
-<script src="components/bower/angulartics-google-analytics/dist/angulartics-ga.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="components/bower/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- bootstrap-timepicker -->
+<script src="components/bower/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+<!-- Underscore.js -->
+<script src="components/bower/underscore/underscore-min.js"></script>
 
+<!--- development -->
 <!--- controllers -->
 <script src="controllers/mainCtrl.js"></script>
 <script src="controllers/startCtrl.js"></script>
@@ -159,16 +180,14 @@
 <script src="controllers/spaCtrl.js"></script>
 <script src="controllers/shopCtrl.js"></script>
 <script src="controllers/adminCtrl.js"></script>
-
+<!--- main script -->
 <script src="app.js"></script>
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="components/bower/bootstrap/dist/js/bootstrap.min.js"></script>
 
-<!--
-<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
---<
-
+<!--&lt;!&ndash;- production &ndash;&gt;-->
+<!--&lt;!&ndash;- controllers &ndash;&gt;-->
+<!--<script src="modules.min.js"></script>-->
+<!--&lt;!&ndash;- main script &ndash;&gt;-->
+<!--<script src="app.min.js"></script>-->
 </body>
 </html>

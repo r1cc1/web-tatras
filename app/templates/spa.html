@@ -16,36 +16,54 @@
     <div ng-include="'templates/left.html'"></div>
     <!-- end of LEFT-NAVI include -->
 
-    <div class="fake-left" ng-class="{'show': subMenuState}"></div>
+    <div class="fake-left"></div>
 
     <div class="right">
-        <div class="sub-menu" ng-class="{'open': openMobileMenu, 'show': subMenuState}">
+        <div class="sub-menu" ng-class="{'open': openMobileMenu}">
             <div>
                 <ul>
-                    <li du-scrollspy="category"><span du-smooth-scroll="category" ng-click="mobileMenu()" translate>{{categoryName}}</span></li>
-                    <li du-scrollspy="info"><span du-smooth-scroll="info" ng-click="mobileMenu()" translate>treatment</span></li>
-                    <li du-scrollspy="prices"><span du-smooth-scroll="prices" ng-click="mobileMenu()" translate>price.list</span></li>
-                    <li du-scrollspy="book"><span du-smooth-scroll="book" ng-click="mobileMenu()" translate>book.now</span></li>
-                    <li du-scrollspy="hours"><span du-smooth-scroll="hours" ng-click="mobileMenu()" translate>open.hours</span></li>
+                    <li du-scrollspy="spa"><span du-smooth-scroll="spa" ng-click="closeMenu()" translate>welcome</span>
+                    </li>
+                    <li du-scrollspy="category"><span du-smooth-scroll="category" ng-click="closeMenu()" translate>perfect.relax</span>
+                    </li>
+                    <li du-scrollspy="info"><span du-smooth-scroll="info" ng-click="closeMenu()"
+                                                  translate>wellness</span></li>
+                    <li du-scrollspy="massage"><span du-smooth-scroll="massage" ng-click="closeMenu()"
+                                                     translate>massages</span></li>
+                    <li du-scrollspy="sauna"><span du-smooth-scroll="sauna" ng-click="closeMenu()"
+                                                   translate>sauna</span>
+                    </li>
+                    <li du-scrollspy="book"><span du-smooth-scroll="book" ng-click="closeMenu()"
+                                                  translate>book.now</span></li>
+                    <li du-scrollspy="hours"><span du-smooth-scroll="hours" ng-click="closeMenu()"
+                                                   translate>open.hours</span></li>
+                    <li du-scrollspy="contact"><span du-smooth-scroll="contact" ng-click="closeMenu()"
+                                                   translate>contact</span></li>
+                    <li du-scrollspy="info2"><span du-smooth-scroll="info2" ng-click="closeMenu()"
+                                                     translate>we.recommend</span></li>
                 </ul>
             </div>
         </div>
 
         <div class="right-content">
             <div class="top-nav">
-
                 <button class="hamburger hamburger--collapse" type="button" ng-click="mobileMenu()">
                       <span class="hamburger-box">
                         <span class="hamburger-inner"></span>
                       </span>
                 </button>
-
                 <div class="top-bar-logo">
+                </div>
+                <div class="call">
+                    <a href="tel:00421948028025" target="_self" name="call-us" class="btn-book" >
+                        <ng-md-icon icon="call" style="fill: #f5eddc" size="30"></ng-md-icon>
+                    </a>
                 </div>
             </div>
 
             <div class="content-wrapper">
-                <section id="spa" class="content-main bg bg-spa-3 flex-nopadding" ng-style="{height: displayHeight + 'px'}">
+                <section id="spa" class="content-main bg bg-spa-3 flex-nopadding"
+                         ng-style="{height: displayHeight + 'px'}">
                     <div class="center-wrap">
                         <div class="category-logo-wrap">
                             <div class="category-logo">
@@ -62,101 +80,117 @@
                 <section id="category" class="content-main bg-100">
                     <h1 class="main-title" translate>perfect.relax</h1>
                     <div class="small-line"></div>
-
-                    <div class="content-main">
-                        <p class="content-text">
-                            {{spaText1}}
-                        </p>
-                    </div>
-                </section>
-
-                <!-- info -->
-                <section id="info" class="content-main bg-black">
-
-                    <h1 class="main-title color-red" translate>special.treatment</h1>
-                    <div class="small-line"></div>
-
-                    <div class="content-main">
-                        <p class="content-text color-light">
-                            <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #fff;"
-                                        size="25"></ng-md-icon>
-                            {{spaLi1}}<br><br>
-
-                            <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #fff;"
-                                        size="25"></ng-md-icon>
-                            {{spaLi2}}<br><br>
-
-                            <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #fff;"
-                                        size="25"></ng-md-icon>
-                            {{spaLi3}}<br><br>
-                            <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #fff;"
-                                        size="25"></ng-md-icon>
-                            {{spaLi4}}
-                            <br>
-                            <br>
-                            <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #fff;"
-                                        size="25"></ng-md-icon>
-                                        <b translate>special.treatment</b>
-                            {{spaLi5}} <b>* {{spaLiTime}} </b>
-                        </p>
-                    </div>
+                    <p class="content-text">
+                        {{spaText1}}
+                    </p>
                 </section>
 
                 <section class="content-main empty bg bg-spa-4">
                 </section>
 
-                <!-- prices -->
-                <section id="prices" class="content-main bg-100">
-                    <h1 class="main-title" translate>price.list</h1>
+                <!-- info -->
+                <section id="info" class="content-main bg-white">
+
+                    <h1 class="main-title" translate>wellness</h1>
                     <div class="small-line"></div>
                     <br>
                     <br>
+                    <h2 class="sub-title align-center">
+                        {{spaText12}}
+                        <br>
+                        <br>
+                        {{spaText13}}</h2>
+
+                    <div class="small-line"></div>
+
+                    <div class="spa-box">
+                        <ng-md-icon icon="done"
+                                    style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                    size="20"></ng-md-icon>
+                        <h4 translate>sauna</h4>
+                        <span>{{spaLi1}}</span>
+
+                        <ng-md-icon icon="done"
+                                    style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                    size="20"></ng-md-icon>
+                        <h4 translate>ľadová kaď</h4>
+                        <span>{{spaLi2}}</span>
+
+                        <ng-md-icon icon="done"
+                                    style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                    size="20"></ng-md-icon>
+                        <h4 translate>pivný kúpeľ</h4>
+                        <span>{{spaLi3}}</span>
+
+                        <ng-md-icon icon="done"
+                                    style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                    size="20"></ng-md-icon>
+                        <h4 translate>čapovanie piva</h4>
+                        <span>{{spaLi5}}</span>
+
+                        <ng-md-icon icon="done"
+                                    style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                    size="20"></ng-md-icon>
+                        <h4 translate>ovsené lôžko</h4>
+                        <span>{{spaLi4}}</span>
+
+                        <!--<ng-md-icon icon="access_time"-->
+                                    <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"-->
+                                    <!--size="20"></ng-md-icon>-->
+                        <!--<h4 translate>{{spaLiTime}} </h4>-->
+                    </div>
+
+                    <div class="small-line"></div>
+                    <br>
+                    <br>
+
                     <div class="row">
                         <div class="col-xs-12 col-md-2"></div>
-                        <div class="col-xs-12 col-md-8">
+                        <div class="col-xs-12 col-md-8 no-padding">
                             <div class="table-responsive">
-                                <table id="prices-spa" class="table table-bordered">
-                                    <thead>
-                                    <tr style="background: #d6b472;">
-                                        <td colspan="5">
-                                            <h4 style="text-align: center;" translate>special.treatment</h4>
-                                        </td></tr>
-
-                                    <tr style="background: #f1ebda;">
-                                        <th class="text-center" colspan="5">
-                                            <h3>
-                                                <span translate>people</span>
-                                                <span translate> / </span>
-                                                <span translate>bathtubs</span>
-                                            </h3>
-                                        </th>
-                                    </tr>
-                                    <tr style="background: #f1ebda;">
-                                        <th class="text-center"><h3></h3></th>
-                                        <th class="text-center"><h3><span>1 </span></h3></th>
-                                        <th class="text-center"><h3><span>2 </span></h3></th>
-                                        <th class="text-center"><h3><span>3 </span></h3></th>
-                                        <th class="text-center"><h3><span>4 </span></h3></th>
-                                    </tr>
-                                    </thead>
-                                    <tbody >
+                                <table id="prices-spa" class="table table-bordered prices">
+                                    <tbody>
                                     <tr>
-                                        <td style="background: #f1ebda;">
+                                        <td  rowspan="2" colspan="2">
+
+                                            <ng-md-icon icon="access_time"
+                                                        style="display: block; position: relative; margin: 15px auto -10px auto; fill: #000;"
+                                                        size="20"></ng-md-icon>
+                                            <h2><span translate>{{spaLiTime}}</span></h2>
+                                        </td>
+                                        <td colspan="4">
+                                            <h3><span translate>bathtubs</span></h3>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center"><h3><span>1 </span></h3></td>
+                                        <td class="text-center"><h3><span>2 </span></h3></td>
+                                        <td class="text-center"><h3><span>3 </span></h3></td>
+                                        <td class="text-center"><h3><span>4 </span></h3></td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="8">
+                                            <h3 class="rotate"><span translate>people</span></h3>
+                                        </td>
+                                        <td>
                                             <h3><span>1 </span></h3>
                                         </td>
                                         <td>
-                                           <h2>{{spaPrice1.$value}} &euro;</h2>
-                                        </td><td></td><td></td><td></td>
+                                            <h2>&euro; {{spaPrice1.$value}}</h2>
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
                                     </tr>
                                     <tr>
-                                        <td style="background: #f1ebda;">
+                                        <td>
                                             <h3><span>2 </span></h3>
                                         </td>
                                         <td>
-                                            <h2>{{spaPrice2.$value}} &euro;</h2>
+                                            <h2>&euro; {{spaPrice2.$value}}</h2>
                                         </td>
                                         <td>
-                                            <h2>{{spaPrice3.$value}} &euro;</h2>
+                                            <h2>&euro; {{spaPrice3.$value}}</h2>
                                         </td>
                                         <td>
                                         </td>
@@ -164,40 +198,40 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="background: #f1ebda;">
+                                        <td>
                                             <h3><span>3</span></h3>
                                         </td>
                                         <td>
 
                                         </td>
                                         <td>
-                                            <h2>{{spaPrice4.$value}} &euro;</h2>
+                                            <h2>&euro; {{spaPrice4.$value}}</h2>
                                         </td>
                                         <td>
-                                            <h2>{{spaPrice5.$value}} &euro;</h2>
+                                            <h2>&euro; {{spaPrice5.$value}}</h2>
                                         </td>
                                         <td>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="background: #f1ebda;">
+                                        <td>
                                             <h3><span>4</span></h3>
                                         </td>
                                         <td>
 
                                         </td>
                                         <td>
-                                            <h2>{{spaPrice6.$value}} &euro;</h2>
+                                            <h2>&euro; {{spaPrice6.$value}}</h2>
                                         </td>
                                         <td>
-                                            <h2>{{spaPrice7.$value}} &euro;</h2>
+                                            <h2>&euro; {{spaPrice7.$value}}</h2>
                                         </td>
                                         <td>
-                                            <h2>{{spaPrice8.$value}} &euro;</h2>
+                                            <h2>&euro; {{spaPrice8.$value}}</h2>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="background: #f1ebda;">
+                                        <td>
                                             <h3><span>5 </span></h3>
                                         </td>
                                         <td>
@@ -206,14 +240,14 @@
                                         <td>
                                         </td>
                                         <td>
-                                            <h2>{{spaPrice9.$value}} &euro;</h2>
+                                            <h2>&euro; {{spaPrice9.$value}}</h2>
                                         </td>
                                         <td>
-                                            <h2>{{spaPrice10.$value}} &euro;</h2>
+                                            <h2>&euro; {{spaPrice10.$value}}</h2>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="background: #f1ebda;">
+                                        <td>
                                             <h3><span>6</span></h3>
                                         </td>
                                         <td>
@@ -221,14 +255,14 @@
                                         <td>
                                         </td>
                                         <td>
-                                            <h2>{{spaPrice11.$value}} &euro;</h2>
+                                            <h2>&euro; {{spaPrice11.$value}}</h2>
                                         </td>
                                         <td>
-                                            <h2>{{spaPrice12.$value}} &euro;</h2>
+                                            <h2>&euro; {{spaPrice12.$value}}</h2>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="background: #f1ebda;">
+                                        <td>
                                             <h3><span>7</span></h3>
                                         </td>
                                         <td>
@@ -238,11 +272,11 @@
                                         <td>
                                         </td>
                                         <td>
-                                            <h2>{{spaPrice13.$value}} &euro;</h2>
+                                            <h2>&euro; {{spaPrice13.$value}}</h2>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="background: #f1ebda;">
+                                        <td>
                                             <h3><span>8</span></h3>
                                         </td>
                                         <td>
@@ -252,7 +286,7 @@
                                         <td>
                                         </td>
                                         <td>
-                                            <h2>{{spaPrice14.$value}} &euro;</h2>
+                                            <h2>&euro; {{spaPrice14.$value}}</h2>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -261,24 +295,252 @@
                         </div>
                         <div class="col-xs-12 col-md-2"></div>
                     </div>
+                </section>
 
+                <section class="content-main empty bg bg-spa-massage">
+                </section>
 
-                    <div class="content-main boxer">
-                        <div class="salon">
-                            <h5>Sauna</h5>
-                            <span><b>1 </b> <b translate>person</b> / <b>1 </b> <b translate>hour</b></span>
-                            <h3>{{saunaPrice1.$value}} &euro;</h3>
+                <!-- prices -->
+                <section id="massage" class="content-main bg-100">
+                    <h1 class="main-title" translate>massages</h1>
+                    <div class="small-line"></div>
+                    <p class="content-text vip">
+                        {{massageText1}}
+                    </p>
+                    <br>
+                    <br>
+                    <div class="boxer">
+                        <div class="spa-box">
+                            <h4 translate>Klasická masáž</h4>
+                            <span>{{massageText2}}</span>
+                            <div class="prices-box">
+                                <div>
+                                    <ng-md-icon icon="access_time"
+                                                style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                                size="20"></ng-md-icon>
+                                    <span>{{massage1Time1.$value}} min</span>
+                                </div>
+
+                                <div class="price">
+                                    <ng-md-icon icon="euro_symbol"
+                                                style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"
+                                                size="30"></ng-md-icon>
+                                    <span>{{massage1Price1.$value}}</span>
+                                </div>
+                                <div>
+                                    <ng-md-icon icon="access_time"
+                                                style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                                size="20"></ng-md-icon>
+                                    <span>{{massage1Time2.$value}} min</span>
+                                </div>
+
+                                <div class="price">
+                                    <ng-md-icon icon="euro_symbol"
+                                                style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"
+                                                size="30"></ng-md-icon>
+                                    <span>{{massage1Price2.$value}}</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="salon">
-                            <h5 translate>classic.massage</h5>
-                            <span><b>1 </b> <b translate>person</b> / <b>1 </b> <b translate>hour</b></span>
-                            <h3>{{massagePrice.$value}} &euro;</h3>
+                        <div class="spa-box">
+                            <h4 translate>Intuitívna masáž</h4>
+                            <span>{{massageText3}}</span>
+
+                            <div class="prices-box">
+                                <div>
+                                    <ng-md-icon icon="access_time"
+                                                style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                                size="20"></ng-md-icon>
+                                    <span>{{massage2Time1.$value}} min</span>
+                                </div>
+
+                                <div class="price">
+                                    <ng-md-icon icon="euro_symbol"
+                                                style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"
+                                                size="30"></ng-md-icon>
+                                    <span>{{massage2Price1.$value}}</span>
+                                </div>
+                                <div>
+                                    <ng-md-icon icon="access_time"
+                                                style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                                size="20"></ng-md-icon>
+                                    <span>{{massage2Time2.$value}} min</span>
+                                </div>
+
+                                <div class="price">
+                                    <ng-md-icon icon="euro_symbol"
+                                                style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"
+                                                size="30"></ng-md-icon>
+                                    <span>{{massage2Price2.$value}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="spa-box">
+                            <h4 translate>Bankovanie</h4>
+                            <span>{{massageText4}}</span>
+                            <div class="prices-box">
+                                <div>
+                                    <ng-md-icon icon="access_time"
+                                                style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                                size="20"></ng-md-icon>
+                                    <span>{{massage3Time1.$value}} min</span>
+                                </div>
+
+                                <div class="price">
+                                    <ng-md-icon icon="euro_symbol"
+                                                style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"
+                                                size="30"></ng-md-icon>
+                                    <span>{{massage3Price1.$value}}</span>
+                                </div>
+                                <div>
+                                    <ng-md-icon icon="access_time"
+                                                style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                                size="20"></ng-md-icon>
+                                    <span>{{massage3Time2.$value}} min</span>
+                                </div>
+
+                                <div class="price">
+                                    <ng-md-icon icon="euro_symbol"
+                                                style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"
+                                                size="30"></ng-md-icon>
+                                    <span>{{massage3Price2.$value}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="spa-box">
+                            <h4 translate>Relaxačná / Aromatická masáž</h4>
+                            <span>{{massageText5}}</span>
+                            <div class="prices-box">
+                                <div>
+                                    <ng-md-icon icon="access_time"
+                                                style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                                size="20"></ng-md-icon>
+                                    <span>{{massage4Time1.$value}} min</span>
+                                </div>
+
+                                <div class="price">
+                                    <ng-md-icon icon="euro_symbol"
+                                                style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"
+                                                size="30"></ng-md-icon>
+                                    <span>{{massage4Price1.$value}}</span>
+                                </div>
+                                <div>
+                                    <ng-md-icon icon="access_time"
+                                                style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                                size="20"></ng-md-icon>
+                                    <span>{{massage4Time2.$value}} min</span>
+                                </div>
+
+                                <div class="price">
+                                    <ng-md-icon icon="euro_symbol"
+                                                style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"
+                                                size="30"></ng-md-icon>
+                                    <span>{{massage4Price2.$value}}</span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="spa-box">
+                            <h4 translate>Športová masáž</h4>
+                            <span>{{massageText6}}</span>
+                            <div class="prices-box">
+                                <div>
+                                    <ng-md-icon icon="access_time"
+                                                style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                                size="20"></ng-md-icon>
+                                    <span>{{massage5Time1.$value}} min</span>
+                                </div>
+
+                                <div class="price">
+                                    <ng-md-icon icon="euro_symbol"
+                                                style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"
+                                                size="30"></ng-md-icon>
+                                    <span>{{massage5Price1.$value}}</span>
+                                </div>
+                                <div>
+                                    <ng-md-icon icon="access_time"
+                                                style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                                size="20"></ng-md-icon>
+                                    <span>{{massage5Time2.$value}} min</span>
+                                </div>
+
+                                <div class="price">
+                                    <ng-md-icon icon="euro_symbol"
+                                                style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"
+                                                size="30"></ng-md-icon>
+                                    <span>{{massage5Price2.$value}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="spa-box">
+                            <h4 translate>Myofasciálna masáž</h4>
+                            <span>{{massageText7}}</span>
+                            <div class="prices-box">
+                                <div>
+                                    <ng-md-icon icon="access_time"
+                                                style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                                size="20"></ng-md-icon>
+                                    <span>{{massage6Time1.$value}} min</span>
+                                </div>
+
+                                <div class="price">
+                                    <ng-md-icon icon="euro_symbol"
+                                                style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"
+                                                size="30"></ng-md-icon>
+                                    <span>{{massage6Price1.$value}}</span>
+                                </div>
+                                <div>
+                                    <ng-md-icon icon="access_time"
+                                                style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                                size="20"></ng-md-icon>
+                                    <span>{{massage6Time2.$value}} min</span>
+                                </div>
+
+                                <div class="price">
+                                    <ng-md-icon icon="euro_symbol"
+                                                style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"
+                                                size="30"></ng-md-icon>
+                                    <span>{{massage6Price2.$value}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p>{{massageText8}}</p>
+
+                </section>
+
+                <section class="content-main empty bg bg-spa-2">
+                </section>
+
+                <!-- sauna -->
+                <section id="sauna" class="content-main bg-100">
+                    <h1 class="main-title" translate>sauna</h1>
+                    <div class="small-line"></div>
+                    <div class="boxer">
+                        <div class="spa-box">
+                            <span>{{spaLi1}}</span>
+
+                            <div class="prices-box">
+                                <div>
+                                    <ng-md-icon icon="access_time"
+                                                style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                                size="20"></ng-md-icon>
+                                    <span>{{saunaTime.$value}} min</span>
+                                </div>
+
+                                <div class="price">
+                                    <ng-md-icon icon="euro_symbol"
+                                                style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"
+                                                size="30"></ng-md-icon>
+                                    <span>{{saunaPrice.$value}}</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
 
                 <!-- book -->
-                <section id="book" class="bg bg-black">
+                <section id="book" class="content-main bg bg-black">
                     <h1 class="main-title color-red" translate>book.now</h1>
 
                     <div class="small-line"></div>
@@ -289,64 +551,72 @@
                             <div class="book-wrap" ng-hide="bookFinnish">
 
                                 <div class="row">
-                                    <div class="wrap four label">
-                                        <ng-md-icon icon="spa" style="display: inline-block; position: relative; fill: #f5eddc;"
+                                    <label class="wrap four label" for="treatment">
+                                        <ng-md-icon icon="spa"
+                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
                                                     size="25px"></ng-md-icon>
-                                        <label for="treatment" translate>treatment</label>
-                                    </div>
+                                        <span translate>treatment</span>
+                                    </label>
                                     <div class="wrap four">
                                         <div class="input-wrap select">
                                             <!--<select id="treatment" name="treatment"-->
-                                                    <!--ng-model="treatment" ng-change="showPrice()"-->
-                                                    <!--ng-options= "treatment.no as treatment.type for treatment in treatments">-->
+                                            <!--ng-model="treatment" ng-change="showPrice()"-->
+                                            <!--ng-options= "treatment.no as treatment.type for treatment in treatments">-->
                                             <!--</select>-->
 
-                                            <select id="treatment" name="treatment" ng-model="treatment" ng-change="checkPrices()" required>
+                                            <select id="treatment" name="treatment" ng-model="treatment"
+                                                    ng-change="checkPrices()" required>
                                                 <option value="" disabled selected hidden translate>select</option>
-                                                <option value="1" translate>special.treatment</option>
+                                                <option value="1" translate>wellness</option>
                                                 <option value="2" translate>Sauna</option>
                                                 <option value="3" translate>classic.massage</option>
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="wrap four label">
-                                        <ng-md-icon icon="group" style="display: inline-block; position: relative; fill: #f5eddc;"
+                                    <label class="wrap four label" for="amount">
+                                        <ng-md-icon icon="group"
+                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
                                                     size="25px"></ng-md-icon>
-                                        <label for="amount" translate>number.of.persons</label>
-                                    </div>
+                                        <span translate>number.of.persons</span>
+                                    </label>
                                     <div class="wrap four">
                                         <div class="wrap four">
                                             <div class="input-wrap select">
 
                                                 <!--<select id="amount" name="amount" ng-model="filterCondition.amount" ng-change="checkPrices()">-->
-                                                    <!--<option ng-selected="{{amount.value == filterCondition.amount}}"-->
-                                                            <!--ng-repeat="amount in amounts"-->
-                                                            <!--value="{{amount.value}}" translate>-->
-                                                        <!--{{amount.displayName}}-->
-                                                    <!--</option>-->
+                                                <!--<option ng-selected="{{amount.value == filterCondition.amount}}"-->
+                                                <!--ng-repeat="amount in amounts"-->
+                                                <!--value="{{amount.value}}" translate>-->
+                                                <!--{{amount.displayName}}-->
+                                                <!--</option>-->
                                                 <!--</select>-->
 
-                                                <select id="amount" name="amount" ng-model="amount" ng-init="checkPrices()" ng-change="checkPrices()" required>
+                                                <select id="amount" name="amount" ng-model="amount"
+                                                        ng-init="checkPrices()" ng-change="checkPrices()" required>
                                                     <option value="" disabled selected hidden translate>select</option>
-                                                    <option value="1" >1</option>
-                                                    <option value="2" >2</option>
-                                                    <option ng-if="treatment == 1 || treatment == 2" value="3" >3</option>
-                                                    <option ng-if="treatment == 1 || treatment == 2"value="4" >4</option>
-                                                    <option ng-if="treatment == 1 || treatment == 2"value="5" >5</option>
-                                                    <option ng-if="treatment == 1" value="6" >6</option>
-                                                    <option ng-if="treatment == 1" value="7" >7</option>
-                                                    <option ng-if="treatment == 1" value="8" >8</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option ng-if="treatment == 1 || treatment == 2" value="3">3
+                                                    </option>
+                                                    <option ng-if="treatment == 1 || treatment == 2" value="4">4
+                                                    </option>
+                                                    <option ng-if="treatment == 1 || treatment == 2" value="5">5
+                                                    </option>
+                                                    <option ng-if="treatment == 1" value="6">6</option>
+                                                    <option ng-if="treatment == 1" value="7">7</option>
+                                                    <option ng-if="treatment == 1" value="8">8</option>
                                                 </select>
 
 
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="wrap four label" ng-show="treatment == 1">
-                                        <ng-md-icon icon="space_bar" style="display: inline-block; position: relative; fill: #f5eddc;"
+                                    <label class="wrap four label" for="amount2" ng-show="treatment == 1">
+                                        <ng-md-icon icon="space_bar"
+                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
                                                     size="25px"></ng-md-icon>
-                                        <label for="amount2" translate>number.of.bathtubs</label>
-                                    </div>
+                                        <span translate>number.of.bathtubs</span>
+                                    </label>
                                     <div class="wrap four" ng-show="treatment == 1">
                                         <div class="input-wrap select">
 
@@ -358,219 +628,380 @@
                                             <!--</option>-->
                                             <!--</select>-->
 
-                                            <select id="amount2" name="amount2" ng-model="amount2" ng-change="checkPrices()" ng-required="treatment == 1">
+                                            <select id="amount2" name="amount2" ng-model="amount2"
+                                                    ng-change="checkPrices()" ng-required="treatment == 1">
                                                 <option value="" disabled selected hidden translate>select</option>
-                                                <option ng-if="amount >= 1 && amount <= 2" value="1" >1</option>
-                                                <option ng-if="amount >= 2 && amount <= 4" value="2" >2</option>
-                                                <option ng-if="amount >= 3 && amount <= 6" value="3" >3</option>
-                                                <option ng-if="amount >= 4 && amount <= 8"  value="4" >4</option>
+                                                <option ng-if="amount >= 1 && amount <= 2" value="1">1</option>
+                                                <option ng-if="amount >= 2 && amount <= 4" value="2">2</option>
+                                                <option ng-if="amount >= 3 && amount <= 6" value="3">3</option>
+                                                <option ng-if="amount >= 4 && amount <= 8" value="4">4</option>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
 
-                                    <!--<div class="wrap four label">-->
-                                        <!--<ng-md-icon icon="date_range" style="display: inline-block; position: relative; fill: #f5eddc; size="25px"></ng-md-icon>-->
-                                        <!--<label for="terminMonth"><span translate>date</span> & <span translate>time</span></label>-->
-                                    <!--</div>-->
+                                <!-- time and Date -->
+                                <div class="row">
+                                    <!--<label class="wrap four label" for="terminMonth">-->
+                                    <!--<ng-md-icon icon="date_range"-->
+                                    <!--style="display: inline-block; position: relative; fill: #f5eddc; size="25px"></ng-md-icon>-->
+                                    <!--<span translate>date</span>-->
+                                    <!--</label>-->
                                     <!--<div class="wrap four">-->
-                                        <!--<div class="input-wrap select">-->
-                                            <!--<select id="terminMonth" name="terminMonth"-->
-                                                    <!--ng-model="terminMonth" ng-change="showPrice()"-->
-                                                    <!--ng-options="x.no as x.name for x in terminMonths">-->
-                                            <!--</select>-->
-                                        <!--</div>-->
+                                    <!--<div class="input-wrap select">-->
+                                    <!--<select id="terminMonth" name="terminMonth"-->
+                                    <!--ng-model="terminMonth" ng-change="showPrice()"-->
+                                    <!--ng-options="x.no as x.name for x in terminMonths">-->
+                                    <!--</select>-->
                                     <!--</div>-->
-                                    <div class="wrap four label">
-                                        <ng-md-icon icon="date_range" style="display: inline-block; position: relative; fill: #f5eddc;"
+                                    <!--</div>-->
+
+                                    <label class="wrap four label" for="date">
+                                        <ng-md-icon icon="date_range"
+                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
                                                     size="25px"></ng-md-icon>
-                                        <label for="date" translate>date</label>
-                                    </div>
+                                        <span translate>date</span>
+                                    </label>
                                     <div class="wrap four">
                                         <div class="input-wrap">
-                                            <datepicker date-format="dd.MM.yyyy" date-week-start-day="1" datepicker-mobile="true">
-                                                <input id="date" class="date" type="text" ng-model="date"  placeholder="{{'select' | translate}}" required/>
+                                            <datepicker date-format="dd.MM.yyyy" date-week-start-day="1"
+                                                        datepicker-mobile="true">
+                                                <input id="date" class="date" type="text" ng-model="date"
+                                                       placeholder="{{today}}" required/>
                                             </datepicker>
                                         </div>
                                     </div>
-                                    <div class="wrap four label">
-                                        <ng-md-icon icon="access_time" style="display: inline-block; position: relative; fill: #f5eddc;"
+
+                                    <label class="wrap four label" for="termin">
+                                        <ng-md-icon icon="access_time"
+                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
                                                     size="25px"></ng-md-icon>
-                                        <label for="termin" translate>time</label>
-                                    </div>
+                                        <span translate>time</span>
+                                    </label>
                                     <div class="wrap four">
                                         <div class="input-wrap select">
                                             <select id="termin" name="termin" ng-model="termin" required>
                                                 <option value="" disabled selected hidden translate>select</option>
-                                                <option value="{{spaTime1.$value}}" >{{spaTime1.$value}}</option>
-                                                <option value="{{spaTime2.$value}}" >{{spaTime2.$value}}</option>
-                                                <option value="{{spaTime3.$value}}" >{{spaTime3.$value}}</option>
-                                                <option value="{{spaTime4.$value}}" >{{spaTime4.$value}}</option>
-                                                <option value="{{spaTime5.$value}}" >{{spaTime5.$value}}</option>
-                                                <option value="{{spaTime6.$value}}" >{{spaTime6.$value}}</option>
-                                                <option value="{{spaTime7.$value}}" >{{spaTime7.$value}}</option>
+                                                <option ng-if="spaTime1.$value" value="{{spaTime1.$value}}">
+                                                    {{spaTime1.$value}}
+                                                </option>
+                                                <option ng-if="spaTime2.$value" value="{{spaTime2.$value}}">
+                                                    {{spaTime2.$value}}
+                                                </option>
+                                                <option ng-if="spaTime3.$value" value="{{spaTime3.$value}}">
+                                                    {{spaTime3.$value}}
+                                                </option>
+                                                <option ng-if="spaTime4.$value" value="{{spaTime4.$value}}">
+                                                    {{spaTime4.$value}}
+                                                </option>
+                                                <option ng-if="spaTime5.$value" value="{{spaTime5.$value}}">
+                                                    {{spaTime5.$value}}
+                                                </option>
+                                                <option ng-if="spaTime6.$value" value="{{spaTime6.$value}}">
+                                                    {{spaTime6.$value}}
+                                                </option>
+                                                <option ng-if="spaTime7.$value" value="{{spaTime7.$value}}">
+                                                    {{spaTime7.$value}}
+                                                </option>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="calendar" ng-show="terminMonth == '9'">
-                                <table>
-                                    <thead>
-                                    <tr><td colspan="7">September 2017</td></tr>
-                                    <tr class="mobile">
-                                        <td>P</td>
-                                        <td>U</td>
-                                        <td>S</td>
-                                        <td>Š</td>
-                                        <td>P</td>
-                                        <td>S</td>
-                                        <td>N</td>
-                                    </tr>
-                                    <tr class="normal">
-                                        <td translate>monday</td>
-                                        <td translate>tuesday</td>
-                                        <td translate>wednesday</td>
-                                        <td translate>thursday</td>
-                                        <td translate>friday</td>
-                                        <td translate>saturday</td>
-                                        <td translate>sunday</td>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>
-                                            <span>25</span>
-                                            <button class="termin available" ng-click="setTermin(9,25,1)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime1.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,25,2)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime2.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,25,3)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime3.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,25,4)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime4.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,25,5)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime5.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,25,6)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime6.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,25,7)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime7.$value}}</button>
-                                        </td>
-                                        <td>
-                                            <span>26</span>
-                                            <button class="termin available" ng-click="setTermin(9,26,1)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime1.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,26,2)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime2.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,26,3)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime3.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,26,4)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime4.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,26,5)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime5.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,26,6)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime6.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,26,7)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime7.$value}}</button>
-                                        </td>
-                                        <td>
-                                            <span>27</span>
-                                            <button class="termin available" ng-click="setTermin(9,27,1)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime1.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,27,2)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime2.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,27,3)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime3.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,27,4)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime4.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,27,5)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime5.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,27,6)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime6.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,27,7)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime7.$value}}</button>
-                                        </td>
-                                        <td>
-                                            <span>28</span>
-                                            <button class="termin available" ng-click="setTermin(9,28,1)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime1.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,28,2)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime2.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,28,3)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime3.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,28,4)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime4.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,28,5)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime5.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,28,6)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime6.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,28,7)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime7.$value}}</button>
-                                        </td>
-                                        <td>
-                                            <span>29</span>
-                                            <button class="termin available" ng-click="setTermin(9,29,1)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime1.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,29,2)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime2.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,29,3)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime3.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,29,4)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime4.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,29,5)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime5.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,29,6)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime6.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,29,7)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime7.$value}}</button>
-                                        </td>
-                                        <td>
-                                            <span>30</span>
-                                            <button class="termin available" ng-click="setTermin(9,30,1)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime1.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,30,2)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime2.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,30,3)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime3.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,30,4)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime4.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,30,5)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime5.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,30,6)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime6.$value}}</button>
-                                            <button class="termin available" ng-click="setTermin(9,30,7)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime7.$value}}</button>
-                                        </td>
-                                        <td></td>
-                                    </tr>
-                                    </tbody>
-                                </table>
+                            <!--<div class="calendar" ng-controller="calendarDemo">-->
+                            <!--<h1>Select Date</h1>-->
+                            <!--<span>Selected date: <b>{{day.format('dddd, MMMM Do YYYY')}}</b></span>-->
+                            <!--<calendar selected="day"></calendar>-->
+                            <!--</div>-->
+
+                            <!--<div class="calendar">-->
+                            <!--<h2 translate>select.date</h2>-->
+
+                            <!--<table>-->
+                            <!--<thead>-->
+                            <!--<tr>-->
+                            <!--<td translate>november</td>-->
+                            <!--<td></td>-->
+                            <!--<td></td>-->
+                            <!--<td>2017</td>-->
+                            <!--<td></td>-->
+                            <!--<td></td>-->
+                            <!--<td>>></td>-->
+                            <!--</tr>-->
+                            <!--<tr class="mobile">-->
+                            <!--<td translate>monday.short</td>-->
+                            <!--<td translate>tuesday.short</td>-->
+                            <!--<td translate>wednesday.short</td>-->
+                            <!--<td translate>thursday.short</td>-->
+                            <!--<td translate>friday.short</td>-->
+                            <!--<td translate>saturday.short</td>-->
+                            <!--<td translate>sunday.short</td>-->
+                            <!--</tr>-->
+                            <!--<tr class="normal">-->
+                            <!--<td translate>monday</td>-->
+                            <!--<td translate>tuesday</td>-->
+                            <!--<td translate>wednesday</td>-->
+                            <!--<td translate>thursday</td>-->
+                            <!--<td translate>friday</td>-->
+                            <!--<td translate>saturday</td>-->
+                            <!--<td translate>sunday</td>-->
+                            <!--</tr>-->
+                            <!--</thead>-->
+                            <!--<tbody>-->
+
+                            <!--<tr>-->
+                            <!--<td ng-repeat="datalist in datalists" ng-click="select(datalist)"-->
+                            <!--ng-if="$index < 7">-->
+                            <!--<button ng-class="{selected: isActive(datalist)}"> {{ datalist.name }}-->
+                            <!--</button>-->
+                            <!--</td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                            <!--<td ng-repeat="datalist in datalists" ng-click="select(datalist)"-->
+                            <!--ng-if="$index < 14 && $index > 6">-->
+                            <!--<button ng-class="{selected: isActive(datalist)}"> {{ datalist.name }}-->
+                            <!--</button>-->
+                            <!--</td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                            <!--<td ng-repeat="datalist in datalists" ng-click="select(datalist)"-->
+                            <!--ng-if="$index < 21 && $index > 13">-->
+                            <!--<button ng-class="{selected: isActive(datalist)}"> {{ datalist.name }}-->
+                            <!--</button>-->
+                            <!--</td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                            <!--<td ng-repeat="datalist in datalists" ng-click="select(datalist)"-->
+                            <!--ng-if="$index < 28 && $index > 20">-->
+                            <!--<button ng-class="{selected: isActive(datalist)}"> {{ datalist.name }}-->
+                            <!--</button>-->
+                            <!--</td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                            <!--<td ng-repeat="datalist in datalists" ng-click="select(datalist)"-->
+                            <!--ng-if="$index < 31 && $index > 27">-->
+                            <!--<button ng-class="{selected: isActive(datalist)}"> {{ datalist.name }}-->
+                            <!--</button>-->
+                            <!--</td>-->
+                            <!--</tr>-->
+
+
+                            <!--<tr>-->
+                            <!--<td></td>-->
+                            <!--<td></td>-->
+                            <!--<td>-->
+                            <!--<button class="old" disabled>1</button>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                            <!--<button class="old">2</button>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                            <!--<button class="old">3</button>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                            <!--<button class="old">4</button>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                            <!--<button class="old">5</button>-->
+                            <!--</td>-->
+                            <!--&lt;!&ndash;<td>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<span>25</span>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<button class="termin available" ng-click="setTermin(9,25,1)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime1.$value}}</button>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<button class="termin available" ng-click="setTermin(9,25,2)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime2.$value}}</button>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<button class="termin available" ng-click="setTermin(9,25,3)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime3.$value}}</button>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<button class="termin available" ng-click="setTermin(9,25,4)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime4.$value}}</button>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<button class="termin available" ng-click="setTermin(9,25,5)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime5.$value}}</button>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<button class="termin available" ng-click="setTermin(9,25,6)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime6.$value}}</button>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<button class="termin available" ng-click="setTermin(9,25,7)" ng-class="{'available' : available, 'unavailable' : unavailable, 'old' : old}">{{spaTime7.$value}}</button>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</td>&ndash;&gt;-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                            <!--<td>-->
+                            <!--<button class="old">6</button>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                            <!--<button type="button" ng-click="toggle = !toggle"-->
+                            <!--ng-class="{'selected' : toggle}">7-->
+                            <!--</button>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                            <!--<button>8</button>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                            <!--<button>9</button>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                            <!--<button>10</button>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                            <!--<button>11</button>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                            <!--<button>12</button>-->
+                            <!--</td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                            <!--<td>-->
+                            <!--<button>13</button>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                            <!--<button>14</button>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                            <!--<button>15</button>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                            <!--<button class="unavailable">16</button>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                            <!--<button>17</button>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                            <!--<button>18</button>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                            <!--<button>19</button>-->
+                            <!--</td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                            <!--<td>-->
+                            <!--<button>20</button>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                            <!--<button>21</button>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                            <!--<button>22</button>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                            <!--<button>23</button>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                            <!--<button>24</button>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                            <!--<button>25</button>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                            <!--<button>26</button>-->
+                            <!--</td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                            <!--<td>-->
+                            <!--<button>27</button>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                            <!--<button>28</button>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                            <!--<button>29</button>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                            <!--<button>30</button>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                            <!--</td>-->
+                            <!--</tr>-->
+                            <!--</tbody>-->
+                            <!--</table>-->
+                            <!--</div>-->
+
+                            <div class="time-table" ng-hide="!treatment || !amount || !selectedDate || bookFinnish">
+                                <h4 translate>select.time</h4>
+                                <div class="time-wrap">
+                                    <div ng-if="spaTime1.$value">
+                                        <button>{{spaTime1.$value}}</button>
+                                    </div>
+                                    <div ng-if="spaTime2.$value">
+                                        <button>{{spaTime2.$value}}</button>
+                                    </div>
+                                    <div ng-if="spaTime3.$value">
+                                        <button class="unavailable">{{spaTime3.$value}}</button>
+                                    </div>
+                                    <div ng-if="spaTime4.$value">
+                                        <button>{{spaTime4.$value}}</button>
+                                    </div>
+                                    <div ng-if="spaTime5.$value">
+                                        <button class="unavailable">{{spaTime5.$value}}</button>
+                                    </div>
+                                    <div ng-if="spaTime6.$value">
+                                        <button>{{spaTime6.$value}}</button>
+                                    </div>
+                                    <div ng-if="spaTime7.$value">
+                                        <button class="unavailable">{{spaTime7.$value}}</button>
+                                    </div>
+
+                                </div>
                             </div>
 
                             <div class="book-wrap" ng-hide="bookFinnish">
 
                                 <div class="row">
 
-                                    <div class="wrap label">
+                                    <label class="wrap label" for="name">
                                         <ng-md-icon icon="person"
                                                     style="display: inline-block; position: relative; fill: #f5eddc;"
                                                     size="25px"></ng-md-icon>
-                                        <label for="name" translate>your.name</label>
-                                    </div>
+                                        <span translate>name.and.surname</span>
+                                    </label>
                                     <div class="wrap">
                                         <div class="input-wrap input">
-                                            <input id="name" type="text" name="name" ng-model="name" class="form-control" required/>
+                                            <input id="name" type="text" name="name" ng-model="name"
+                                                   class="form-control" required/>
                                         </div>
                                     </div>
-                                    <div class="wrap label">
+                                    <label class="wrap label" for="email">
                                         <ng-md-icon icon="email"
                                                     style="display: inline-block; position: relative; fill: #f5eddc;"
                                                     size="25px"></ng-md-icon>
-                                        <label for="email">email</label>
-                                    </div>
+                                        <span translate>email</span>
+                                    </label>
                                     <div class="wrap">
                                         <div class="input-wrap input">
                                             <input id="email" type="email" name="email" ng-model="email"
                                                    class="form-control" required/>
                                         </div>
                                     </div>
-
                                 </div>
-                                <div class="row">
 
-                                    <div class="wrap label">
+                                <div class="row">
+                                    <label class="wrap label" for="phone">
                                         <ng-md-icon icon="phone"
                                                     style="display: inline-block; position: relative; fill: #f5eddc;"
                                                     size="25px"></ng-md-icon>
-                                        <label for="phone" translate>phone</label>
-                                    </div>
+                                        <span translate>phone</span>
+                                    </label>
                                     <div class="wrap">
                                         <div class="input-wrap input">
-                                            <input id="phone" type="text" name="phone" ng-model="phone" />
+                                            <input id="phone" type="text" name="phone" ng-model="phone"/>
                                         </div>
                                     </div>
-                                    <div class="wrap label">
+                                    <label class="wrap label" for="text">
                                         <ng-md-icon icon="textsms"
                                                     style="display: inline-block; position: relative; fill: #f5eddc;"
                                                     size="25px"></ng-md-icon>
-                                        <label for="text" translate>note</label>
-                                    </div>
+                                        <span translate>note</span>
+                                    </label>
                                     <div class="wrap">
                                         <div class="input-wrap input">
-                                            <input id="text" type="text" name="text" ng-model="text" />
+                                            <input id="text" type="text" name="text" ng-model="text"/>
                                         </div>
 
                                     </div>
-
                                     <br>
                                     <br>
                                     <br>
-                                    <div class="wrap label">
+                                    <label class="wrap label" for="price">
                                         <ng-md-icon icon="local_offer"
                                                     style="display: inline-block; position: relative; fill: #f5eddc;"
                                                     size="25px"></ng-md-icon>
-                                        <label for="price" translate>price</label>
-                                    </div>
+                                        <span translate>price</span>
+                                    </label>
 
                                     <div id="price" class="wrap form-price">
                                         <h1 ng-if="!finalPrice"><span> 0.00 &euro;</span></h1>
@@ -589,10 +1020,12 @@
                             </div>
 
                             <div class="book-wrap" ng-hide="bookFinnish">
-                                <div class="actions" >
-                                    <p class="link-button phone" ng-show="!spaBookForm.$valid" translate>please.fill.all.data</p>
+                                <div class="actions">
+                                    <p class="link-button phone" ng-show="!spaBookForm.$valid" translate>
+                                        please.fill.all.data</p>
 
-                                    <button ng-click="formsubmit(spaBookForm)" ng-disabled="!spaBookForm.$valid" class="btn-next btn-submit">
+                                    <button ng-click="formsubmit(spaBookForm)" ng-disabled="!spaBookForm.$valid"
+                                            class="btn-next btn-submit">
                                         <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
                                         <span translate>book.now</span>
                                     </button>
@@ -602,8 +1035,6 @@
                         </form>
                     </div>
                 </section>
-
-
 
 
                 <section class="content-main empty bg bg-spa-2">
@@ -620,27 +1051,27 @@
                                 <span class="time1">{{spaMonTimeFrom.$value}}</span>
                                 <span class="time2">{{spaMonTimeTo.$value}}</span>
                             </div>
-                            <div class="day tuesday"  ng-class="{'today' : todayName == 'tuesday' }">
+                            <div class="day tuesday" ng-class="{'today' : todayName == 'tuesday' }">
                                 <span translate>tuesday</span>
                                 <span class="time1">{{spaTueTimeFrom.$value}}</span>
                                 <span class="time2">{{spaTueTimeTo.$value}}</span>
                             </div>
-                            <div class="day wednesday"  ng-class="{'today' : todayName == 'wednesday' }">
+                            <div class="day wednesday" ng-class="{'today' : todayName == 'wednesday' }">
                                 <span translate>wednesday</span>
                                 <span class="time1">{{spaWedTimeFrom.$value}}</span>
                                 <span class="time2">{{spaWedTimeTo.$value}}</span>
                             </div>
-                            <div class="day thursday"  ng-class="{'today' : todayName == 'thursday' }">
+                            <div class="day thursday" ng-class="{'today' : todayName == 'thursday' }">
                                 <span translate>thursday</span>
                                 <span class="time1">{{spaThuTimeFrom.$value}}</span>
                                 <span class="time2">{{spaThuTimeTo.$value}}</span>
                             </div>
-                            <div class="day friday"  ng-class="{'today' : todayName == 'friday' }">
+                            <div class="day friday" ng-class="{'today' : todayName == 'friday' }">
                                 <span translate>friday</span>
                                 <span class="time1">{{spaFriTimeFrom.$value}}</span>
                                 <span class="time2">{{spaFriTimeTo.$value}}</span>
                             </div>
-                            <div class="day saturday"  ng-class="{'today' : todayName == 'saturday' }">
+                            <div class="day saturday" ng-class="{'today' : todayName == 'saturday' }">
                                 <span translate>saturday</span>
                                 <span class="time1">{{spaSatTimeFrom.$value}}</span>
                                 <span class="time2">{{spaSatTimeTo.$value}}</span>
@@ -660,12 +1091,14 @@
 
                     <div class="info">
                         <div class="item">
-                            <ng-md-icon icon="settings_phone" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;"
+                            <ng-md-icon icon="settings_phone" class="icon"
+                                        style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;"
                                         size="3em"></ng-md-icon>
-                            <a href="tel:00421948828727">(+421) 0948 828 727</a>
+                            <a href="tel:00421948028025">(+421) 0948 028 025</a>
                         </div>
                         <div class="item">
-                            <ng-md-icon icon="mail_outline" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;"
+                            <ng-md-icon icon="mail_outline" class="icon"
+                                        style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;"
                                         size="3em"></ng-md-icon>
                             <a href="mailto:spa&#64minipivovartatras&#46sk" class="email">spa@minipivovartatras.sk</a>
                         </div>
@@ -676,9 +1109,7 @@
                     <h1 class="main-title" translate>we.recommend</h1>
                     <div class="small-line"></div>
 
-                    <div class="content-main">
-                        <p>{{spaText3}}</p>
-                    </div>
+                    <p>{{spaText3}}</p>
                 </section>
 
                 <!-- include FOOTER -->

@@ -16,17 +16,20 @@
     <div ng-include="'templates/left.html'"></div>
     <!-- end of LEFT-NAVI include -->
 
-    <div class="fake-left" ng-class="{'show': subMenuState}"></div>
+    <div class="fake-left"></div>
 
     <div class="right">
-        <div class="sub-menu" ng-class="{'open': openMobileMenu, 'show': subMenuState}">
+        <div class="sub-menu" ng-class="{'open': openMobileMenu}">
             <div>
                 <ul>
-                    <li du-scrollspy="welcome"><span du-smooth-scroll="welcome" ng-click="mobileMenu()" translate>{{categoryName}}</span></li>
-                    <li du-scrollspy="info"><span du-smooth-scroll="info" ng-click="mobileMenu()" translate>rooms</span></li>
-                    <li du-scrollspy="book"><span du-smooth-scroll="book" ng-click="mobileMenu()" translate>book.now</span></li>
-                    <li du-scrollspy="services"><span du-smooth-scroll="services" ng-click="mobileMenu()" translate>services</span></li>
-                    <li du-scrollspy="offer"><span du-smooth-scroll="offer" ng-click="mobileMenu()" translate>offer</span></li>
+                    <li du-scrollspy="pension"><span du-smooth-scroll="pension" ng-click="closeMenu()" translate>{{categoryName}}</span></li>
+                    <li du-scrollspy="welcome"><span du-smooth-scroll="welcome" ng-click="closeMenu()" translate>oasis.of.peace</span></li>
+                    <li du-scrollspy="rooms"><span du-smooth-scroll="rooms" ng-click="closeMenu()" translate>rooms</span></li>
+                    <li du-scrollspy="book"><span du-smooth-scroll="book" ng-click="closeMenu()" translate>book.now</span></li>
+                    <li du-scrollspy="contact"><span du-smooth-scroll="contact" ng-click="closeMenu()" translate>contact</span></li>
+                    <li du-scrollspy="services"><span du-smooth-scroll="services" ng-click="closeMenu()" translate>services</span></li>
+                    <li du-scrollspy="offer"><span du-smooth-scroll="offer" ng-click="closeMenu()" translate>offer</span></li>
+                    <li du-scrollspy="parking"><span du-smooth-scroll="parking" ng-click="closeMenu()" translate>parking</span></li>
                 </ul>
             </div>
         </div>
@@ -39,8 +42,12 @@
                         <span class="hamburger-inner"></span>
                       </span>
                 </button>
-
                 <div class="top-bar-logo">
+                </div>
+                <div class="call">
+                    <a href="tel:00421948028025" target="_self" name="call-us" class="btn-book" >
+                        <ng-md-icon icon="call" style="fill: #f5eddc" size="30"></ng-md-icon>
+                    </a>
                 </div>
             </div>
 
@@ -64,7 +71,7 @@
                 <section id="welcome" class="content-main bg bg-100">
                     <h1 class="main-title" translate>oasis.of.peace</h1>
                     <div class="small-line"></div>
-                    <p class="content-text">{{pensionText1}}</p>
+                    <p class="content-text vip">{{pensionText1}}</p>
                 </section>
 
 
@@ -74,22 +81,22 @@
                             <div class="table-info">
 
                                 <div class="table-info-item">
-                                    <ng-md-icon icon="login" style="display: inline-block; position: relative; margin: 0 auto; fill: #FFF;"
-                                                size="50"></ng-md-icon>
+                                    <ng-md-icon icon="login" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b471;"
+                                                size="100"></ng-md-icon>
                                     <span translate>check.in</span>
                                     <p>{{pensionCheckIn.$value}}</p>
                                 </div>
 
                                 <div class="table-info-item">
-                                    <ng-md-icon icon="room_service" style="display: inline-block; position: relative; margin: 0 auto; fill: #FFF;"
-                                                size="50"></ng-md-icon>
+                                    <ng-md-icon icon="room_service" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b471;"
+                                                size="100"></ng-md-icon>
                                     <span translate>reception</span>
                                     <p>{{pensionTimeFrom.$value}} - {{pensionTimeTo.$value}}</p>
                                 </div>
 
                                 <div class="table-info-item">
-                                    <ng-md-icon icon="logout" style="display: inline-block; position: relative; margin: 0 auto; fill: #FFF;"
-                                                size="50"></ng-md-icon>
+                                    <ng-md-icon icon="logout" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b471;"
+                                                size="100"></ng-md-icon>
                                     <span translate>check.out</span>
                                     <p>{{pensionCheckOut.$value}}</p>
                                 </div>
@@ -98,33 +105,31 @@
                     </div>
                 </section>
 
-                <section id="info" class="content-main bg bg-100">
+                <section id="rooms" class="content-main bg bg-100">
                     <h1 class="main-title" translate>rooms</h1>
                     <div class="small-line"></div>
-
-                    <p class="content-text">{{pensionRoomText1}}</p>
-
-                </section>
-
-                <section id="rooms" class="content-main bg bg-100">
-
+                    <p class="content-text">{{pensionRoomText1}} <b>{{parkingPrice.$value}} &euro; / <span translate>day</span></b>.
+                        <br>
+                        <br>
+                        {{pensionRoomText2}}
+                    </p>
+                    <div class="small-line"></div>
+                    <br>
+                    <br>
                     <div class="boxer rooms">
-
                         <div class="box">
                             <div class="icons">
                                 <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29"
                                             size="30"></ng-md-icon>
-                                <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29"
-                                            size="30"></ng-md-icon>
                             </div>
+                            <p class="info" translate>double.room</p>
                             <div class="img bg bg-pension08"></div>
-                            <p class="info" translate>double.room</p>
                             <h1 class="main-title price">
                                 <span>
-                                    {{pensionPrice1.$value}} &euro;
+                                    {{pensionPrice1.$value}} &euro; - {{pensionPrice5.$value}} &euro;
                                 </span>
                             </h1>
-                            <p class="info"><b>1 <span translate>person</span> / 1 <span translate>night</span></b></p>
+                            <p class="price-info"><b>1 <span translate>person</span> / 1 <span translate>night</span></b></p>
                             <button du-smooth-scroll="book" class="btn-next btn-submit">
                                 <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
                                 <span translate>book.now</span>
@@ -138,19 +143,18 @@
                                 <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29"
                                             size="30"></ng-md-icon>
                             </div>
+                            <p class="info" translate>double.room</p>
                             <div class="img bg bg-pension3"></div>
-                            <p class="info" translate>double.room</p>
                             <h1 class="main-title price">
                                 <span>
-                                    {{pensionPrice2.$value}} &euro;
+                                    {{pensionPrice2.$value}} &euro; - {{pensionPrice6.$value}} &euro;
                                 </span>
                             </h1>
-                            <p class="info"><b>2 <span translate>people</span> / 1 <span translate>night</span></b></p>
+                            <p class="price-info"><b>2 <span translate>people</span> / 1 <span translate>night</span></b></p>
                             <button du-smooth-scroll="book" class="btn-next btn-submit">
                                 <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
                                 <span translate>book.now</span>
                             </button>
-
                         </div>
                         <div class="box">
                             <div class="icons">
@@ -161,15 +165,14 @@
                                 <ng-md-icon icon="person_add" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29"
                                             size="30"></ng-md-icon>
                             </div>
+                            <p class="info" translate>double.room</p>
                             <div class="img bg bg-pension4"></div>
-
-                            <p class="info" translate>double.room</p>
                             <h1 class="main-title price">
                                 <span>
-                                    {{pensionPrice3.$value}} &euro;
+                                    {{pensionPrice3.$value}} &euro; - {{pensionPrice7.$value}} &euro;
                                 </span>
                             </h1>
-                            <p class="info"><b>3 <span translate>people</span> / 1 <span translate>night</span></b></p>
+                            <p class="price-info"><b>3 <span translate>people</span> / 1 <span translate>night</span></b></p>
                             <button du-smooth-scroll="book" class="btn-next btn-submit">
                                 <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
                                 <span translate>book.now</span>
@@ -187,14 +190,14 @@
                                 <ng-md-icon icon="person_add" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29"
                                             size="30"></ng-md-icon>
                             </div>
-                            <div class="img bg bg-pension04"></div>
                             <p class="info" translate>triple.room</p>
+                            <div class="img bg bg-pension04"></div>
                             <h1 class="main-title price">
                                 <span>
-                                    {{pensionPrice4.$value}} &euro;
+                                    {{pensionPrice4.$value}} &euro; - {{pensionPrice8.$value}} &euro;
                                 </span>
                             </h1>
-                            <p class="info"><b>4 <span translate>people</span> / 1 <span translate>night</span></b></p>
+                            <p class="price-info"><b>4 <span translate>people</span> / 1 <span translate>night</span></b></p>
                             <button du-smooth-scroll="book" class="btn-next btn-submit">
                                 <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
                                 <span translate>book.now</span>
@@ -202,7 +205,6 @@
                         </div>
 
                     </div>
-
                     <div class="feature-icons-set">
                         <div class="feature-icon">
                             <ng-md-icon icon="live_tv" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29"
@@ -230,9 +232,6 @@
                         </div>
                     </div>
 
-                    <p class="content-text">
-                        {{pensionRoomText2}}
-                    </p>
                 </section>
 
                 <section id="book" class="content-main bg bg-black">
@@ -245,12 +244,12 @@
 
                             <div class="book-wrap" ng-hide="bookFinnish">
                                 <div class="row">
-                                    <div class="wrap four label">
+                                    <label class="wrap four label" for="checkIn">
                                         <ng-md-icon icon="date_range"
                                                     style="display: inline-block; position: relative; fill: #f5eddc;"
                                                     size="25px"></ng-md-icon>
-                                        <label for="checkIn" translate>check.in</label>
-                                    </div>
+                                        <span  translate>check.in</span>
+                                    </label>
                                     <div class="wrap four">
                                         <div class="input-wrap">
                                             <datepicker date-format="dd.MM.yyyy" date-week-start-day="1" datepicker-mobile="true">
@@ -259,12 +258,12 @@
                                         </div>
                                     </div>
 
-                                    <div class="wrap four label">
+                                    <label class="wrap four label" for="checkOut">
                                         <ng-md-icon icon="date_range"
                                                     style="display: inline-block; position: relative; fill: #f5eddc;"
                                                     size="25px"></ng-md-icon>
-                                        <label for="checkOut" translate>check.out</label>
-                                    </div>
+                                        <span translate>check.out</span>
+                                    </label>
                                     <div class="wrap four">
                                         <div class="input-wrap">
                                             <datepicker date-format="dd.MM.yyyy" date-week-start-day="1" datepicker-mobile="true">
@@ -273,12 +272,12 @@
                                         </div>
                                     </div>
 
-                                    <div class="wrap four label">
+                                    <label class="wrap four label" for="amount">
                                         <ng-md-icon icon="group"
                                                     style="display: inline-block; position: relative; fill: #f5eddc;"
                                                     size="25px"></ng-md-icon>
-                                        <label for="amount" translate>amount</label>
-                                    </div>
+                                        <span translate>amount</span>
+                                    </label>
                                     <div class="wrap four">
                                         <div class="input-wrap">
                                             <select id="amount" name="amount" ng-model="amount" required>
@@ -299,36 +298,36 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="wrap label">
+                                    <label class="wrap label" for="name">
                                         <ng-md-icon icon="person"
                                                     style="display: inline-block; position: relative; fill: #f5eddc;"
                                                     size="25px"></ng-md-icon>
-                                        <label for="name" translate>name</label>
-                                    </div>
+                                        <span translate>name.and.surname</span>
+                                    </label>
                                     <div class="wrap">
                                         <div class="input-wrap">
-                                            <input type="text" name="name" ng-model="name" class="form-control" required/>
+                                            <input id="name" type="text" name="name" ng-model="name" class="form-control" required/>
                                         </div>
                                     </div>
 
-                                    <div class="wrap label">
+                                    <label class="wrap label" for="email">
                                         <ng-md-icon icon="email"
                                                     style="display: inline-block; position: relative; fill: #f5eddc;"
                                                     size="25px"></ng-md-icon>
-                                        <label for="email" translate>email</label>
-                                    </div>
+                                        <span  translate>email</span>
+                                    </label>
                                     <div class="wrap">
                                         <div class="input-wrap">
-                                            <input type="email" name="email" ng-model="email" class="form-control" required/>
+                                            <input id="email" type="email" name="email" ng-model="email" class="form-control" required/>
                                         </div>
                                     </div>
 
-                                    <div class="wrap label">
+                                    <label class="wrap label" for="phone">
                                         <ng-md-icon icon="phone"
                                                     style="display: inline-block; position: relative; fill: #f5eddc;"
                                                     size="25px"></ng-md-icon>
-                                        <label for="tel" translate>phone</label>
-                                    </div>
+                                        <span translate>phone</span>
+                                    </label>
                                     <div class="wrap">
                                         <div class="input-wrap">
                                             <input id="phone" type="text" name="phone" ng-model="phone" placeholder=""/>
@@ -370,12 +369,12 @@
                     <div class="info">
                         <div class="item">
                             <ng-md-icon icon="settings_phone" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29"
-                                        size="3em"></ng-md-icon>
-                            <a href="tel:00421948828727">(+421) 0948 828 727</a>
+                                        size="4em"></ng-md-icon>
+                            <a href="tel:00421948028025">(+421) 0948 028 025</a>
                         </div>
                         <div class="item">
                             <ng-md-icon icon="mail_outline" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29"
-                                        size="3em"></ng-md-icon>
+                                        size="4em"></ng-md-icon>
                             <a href="mailto:penzion&#64minipivovartatras&#46sk" class="email">penzion@minipivovartatras.sk</a>
                         </div>
                     </div>
@@ -387,14 +386,9 @@
                 <section id="services" class="content-main bg bg-100">
                     <h1 class="main-title" translate>services</h1>
                     <div class="small-line"></div>
+                    <p class="content-text">{{pensionServiceText1}}</p>
+                    <p class="content-text">{{pensionServiceText2}}</p>
 
-                    <div class="content-main">
-
-                        <p class="content-text">{{pensionServiceText1}}</p>
-
-                        <p class="content-text">{{pensionServiceText2}}</p>
-
-                    </div>
                     <div class="feature-icons-set">
                         <div class="feature-icon">
                             <ng-md-icon icon="landscape" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
@@ -424,32 +418,29 @@
                 </section>
 
 
-                <section id="offer" class="bg invert">
+                <section id="offer" class="content-main bg invert">
                     <h1 class="main-title" translate>we.offer</h1>
                     <div class="small-line"></div>
-
-                    <div class="content-main">
-                        <p class="content-text white">
-                            <!--<ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29"-->
-                                        <!--size="25"></ng-md-icon>-->
+                    <p class="content-text white">
+                        <!--<ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29"-->
+                        <!--size="25"></ng-md-icon>-->
                         <!--Raňajky v reštaurácií <br><br>-->
 
                         <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #fff;"
                                     size="25"></ng-md-icon>
 
                         {{pensionOfferText1}}
-                            <br>
-                            <br>
+                        <br>
+                        <br>
                         <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #fff;"
                                     size="25"></ng-md-icon>
                         {{pensionOfferText2}}
-                            <br>
-                            <br>
+                        <br>
+                        <br>
                         <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #fff;"
                                     size="25"></ng-md-icon>
                         {{pensionOfferText3}}
-                        </p>
-                    </div>
+                    </p>
                 </section>
 
                 <section id="parking" class="bg-white">
@@ -464,15 +455,6 @@
                         </div>
                     </div>
                 </section>
-
-
-                <!--<section id="photos" class="content-main bg bg-100 flex-nopadding">-->
-                    <!--<flex-slider slide="s in mySlides">-->
-                        <!--<li>-->
-                            <!--<img ng-src="{{s}}" alt="img-name"/>-->
-                        <!--</li>-->
-                    <!--</flex-slider>-->
-                <!--</section>-->
 
                 <!-- include FOOTER -->
                 <div ng-include="'templates/footer.html'"></div>

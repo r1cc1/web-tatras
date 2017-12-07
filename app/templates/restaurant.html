@@ -16,17 +16,22 @@
     <div ng-include="'templates/left.html'"></div>
     <!-- end of LEFT-NAVI include -->
 
-    <div class="fake-left" ng-class="{'show': subMenuState}"></div>
+    <div class="fake-left"></div>
 
     <div class="right">
-        <div class="sub-menu" ng-class="{'open': openMobileMenu, 'show': subMenuState}">
+        <div class="sub-menu" ng-class="{'open': openMobileMenu}">
             <div>
                 <ul>
-                    <li du-scrollspy="kitchen"><span du-smooth-scroll="kitchen" ng-click="mobileMenu()" translate>kitchen</span></li>
-                    <li du-scrollspy="menu"><span du-smooth-scroll="menu" ng-click="mobileMenu()" translate>daily.menu</span></li>
-                    <li du-scrollspy="info2"><span du-smooth-scroll="info2" ng-click="mobileMenu()" translate>lounges</span></li>
-                    <li du-scrollspy="book"><span du-smooth-scroll="book" ng-click="mobileMenu()" translate>book.now</span></li>
-                    <li du-scrollspy="hours"><span du-smooth-scroll="hours" ng-click="mobileMenu()" translate>open.hours</span></li>
+                    <li du-scrollspy="restaurant"><span du-smooth-scroll="restaurant" ng-click="closeMenu()" translate>restaurant</span></li>
+                    <li du-scrollspy="welcome"><span du-smooth-scroll="welcome" ng-click="closeMenu()" translate>welcome</span></li>
+                    <li du-scrollspy="kitchen"><span du-smooth-scroll="kitchen" ng-click="closeMenu()" translate>kitchen</span></li>
+                    <li du-scrollspy="menu"><span du-smooth-scroll="menu" ng-click="closeMenu()" translate>daily.menu</span></li>
+                    <li du-scrollspy="info2"><span du-smooth-scroll="info2" ng-click="closeMenu()" translate>lounges</span></li>
+                    <li du-scrollspy="book"><span du-smooth-scroll="book" ng-click="closeMenu()" translate>book.now</span></li>
+                    <li du-scrollspy="contact"><span du-smooth-scroll="contact" ng-click="closeMenu()" translate>contact</span></li>
+                    <li du-scrollspy="hours"><span du-smooth-scroll="hours" ng-click="closeMenu()" translate>open.hours</span></li>
+                    <li du-scrollspy="info"><span du-smooth-scroll="info" ng-click="closeMenu()" translate>story</span></li>
+                    <li du-scrollspy="photos"><span du-smooth-scroll="photos" ng-click="closeMenu()" translate>gallery</span></li>
                 </ul>
             </div>
         </div>
@@ -39,17 +44,21 @@
                         <span class="hamburger-inner"></span>
                       </span>
                 </button>
-
                 <div class="top-bar-logo">
+                </div>
+                <div class="call">
+                    <a href="tel:00421948828727" target="_self" name="call-us" class="btn-book" >
+                        <ng-md-icon icon="call" style="fill: #f5eddc" size="30"></ng-md-icon>
+                    </a>
                 </div>
             </div>
 
             <div class="content-wrapper">
 
-                <section id="restaurant" class="content-main bg bg-restaurant flex-nopadding" ng-style="{height: displayHeight + 'px'}">
+                <section id="restaurant" class="content-main bg bg-restaurant flex-nopadding full-height">
                     <div class="center-wrap">
                         <div class="category-logo-wrap">
-                            <div class="category-logo">
+                            <div class="category-logo" du-smooth-scroll="welcome">
                                 <h2 class="category-title" translate>{{categoryName}}</h2>
                             </div>
                         </div>
@@ -65,23 +74,28 @@
                 <section id="welcome" class="content-main bg bg-100 ">
                     <h1 class="main-title" translate>welcome</h1>
                     <div class="small-line"></div>
-                    <div class="content-main">
-                        <p class="content-text">{{restaurantText1}}</p>
-                    </div>
+                    <p class="content-text">
+                        {{restaurantText1}}
+                        <br>
+                        <br>
+                        {{restaurantText2}}
+                        <br>
+                        <br>
+                        <b>{{restaurantText3}}</b>
+                    </p>
                 </section>
 
                 <section id="chefs" class="content-main empty bg bg-kitchen">
-                    <h6 class="item-title" translate>our.chefs</h6>
                 </section>
 
                 <section id="kitchen" class="content-main bg bg-black">
-                    <h1 class="main-title color-red" translate>cook.modern.process</h1>
+                    <h1 class="main-title color-red" translate>our.chefs</h1>
                     <div class="small-line"></div>
-                    <div class="">
-                        <p class="content-text color-light">
-                            {{restaurantPribehText3}}
-                        </p>
-                    </div>
+                    <p class="content-text color-light vip">
+                        {{restaurantPribehText3}}
+                    </p>
+                    <div class="small-line"></div>
+                    <br>
                 </section>
 
                 <section id="menu" class="content-main bg bg-white">
@@ -91,12 +105,19 @@
 
                     <div class="content-main no-padding">
                         <p class="align-center">
-                            {{restaurantText2}}<b>{{restaurantMenuTime}}</b><br>
-                            {{restaurantText3}}<b class="red">{{dailyMenuPrice.$value}} &euro; </b>
+                            {{restaurantMenuText1}}<b><time>{{restaurantMenuTime}}</time></b>
+                            <br>
+                            <!--{{restaurantText5}}<b class="red">{{dailyMenuPrice3.$value}} &euro; </b>-->
+                            <!---->
+                            <!--<br>-->
+                            {{restaurantMenuText2}}<b class="red">{{dailyMenuPrice1.$value}} &euro; </b>
+                            <br>
+                            {{restaurantMenuText3}}<b class="red">{{dailyMenuPrice2.$value}} &euro; </b>
+
                         </p>
                         <div class="daily-menu-list">
 
-                            <div class="daily-menu-item" ng-hide="!day1food2.$value || todayName == 'tuesday' || todayName == 'wednesday' || todayName == 'thursday' || todayName == 'friday' || todayName == 'saturday' || todayName == 'sunday' "
+                            <div class="daily-menu-item" ng-hide="!day1food2.$value || todayName == 'tuesday' || todayName == 'wednesday' || todayName == 'thursday' || todayName == 'friday' || todayName == 'saturday' "
                                  ng-class="{'today': todayName == 'monday'}">
                                 <table>
                                     <tr class="menu-day">
@@ -112,33 +133,33 @@
                                     <tr ng-if="day1food1.$value">
                                         <td class="item-title">
                                             <p translate>food1</p>
-                                            <span>{{dailyMenuWeight1.$value}}</span>
+                                            <span>{{dailyMenuWeight1.$value}} ml</span>
                                         </td>
                                         <td colspan="2">
-                                            <p>{{day1food1.$value}}<b> ({{day1allergens1.$value}}) </b></p>
+                                            <p>{{day1food1.$value}}<b ng-hide="!day1allergens1.$value"> ({{day1allergens1.$value}}) </b></p>
                                         </td>
                                     </tr>
                                     <tr ng-if="day1food2.$value">
                                         <td class="item-title">
                                             <p translate>food2</p>
-                                            <span>{{dailyMenuWeight2.$value}}</span>
+                                            <span>{{dailyMenuWeight2.$value}} g</span>
                                         </td>
                                         <td colspan="2">
-                                            <p>{{day1food2.$value}}<b> ({{day1allergens2.$value}}) </b></p>
+                                            <p>{{day1food2.$value}}<b ng-hide="!day1allergens2.$value"> ({{day1allergens2.$value}}) </b></p>
                                         </td>
                                     </tr>
                                     <tr ng-if="day1food3.$value">
                                         <td class="item-title">
                                             <p translate>food3</p>
-                                            <span>{{dailyMenuWeight3.$value}}</span>
+                                            <span>{{dailyMenuWeight3.$value}} g</span>
                                         </td>
                                         <td colspan="2">
-                                            <p>{{day1food3.$value}}<b> ({{day1allergens3.$value}}) </b></p>
+                                            <p>{{day1food3.$value}}<b ng-hide="!day1allergens3.$value"> ({{day1allergens3.$value}}) </b></p>
                                         </td>
                                     </tr>
                                 </table>
                             </div>
-                            <div class="daily-menu-item" ng-hide="!day2food2.$value || todayName == 'wednesday' || todayName == 'thursday' || todayName == 'friday' || todayName == 'saturday' || todayName == 'sunday' "
+                            <div class="daily-menu-item" ng-hide="!day2food2.$value || todayName == 'wednesday' || todayName == 'thursday' || todayName == 'friday' || todayName == 'saturday'"
                                  ng-class="{'today': todayName == 'tuesday'}">
                                 <table>
                                     <tr class="menu-day">
@@ -154,33 +175,33 @@
                                     <tr ng-if="day2food1.$value">
                                         <td class="item-title">
                                             <p translate>food1</p>
-                                            <span>{{dailyMenuWeight1.$value}}</span>
+                                            <span>{{dailyMenuWeight1.$value}} ml</span>
                                         </td>
                                         <td colspan="2">
-                                            <p>{{day2food1.$value}}<b> ({{day2allergens1.$value}}) </b></p>
+                                            <p>{{day2food1.$value}}<b ng-hide="!day2allergens1.$value"> ({{day2allergens1.$value}}) </b></p>
                                         </td>
                                     </tr>
                                     <tr ng-if="day2food2.$value">
                                         <td class="item-title">
                                             <p translate>food2</p>
-                                            <span>{{dailyMenuWeight2.$value}}</span>
+                                            <span>{{dailyMenuWeight2.$value}} g</span>
                                         </td>
                                         <td colspan="2">
-                                            <p>{{day2food2.$value}}<b> ({{day2allergens2.$value}}) </b></p>
+                                            <p>{{day2food2.$value}}<b ng-hide="!day2allergens2.$value"> ({{day2allergens2.$value}}) </b></p>
                                         </td>
                                     </tr>
                                     <tr ng-if="day2food3.$value">
                                         <td class="item-title">
                                             <p translate>food3</p>
-                                            <span>{{dailyMenuWeight3.$value}}</span>
+                                            <span>{{dailyMenuWeight3.$value}} g</span>
                                         </td>
                                         <td colspan="2">
-                                            <p>{{day2food3.$value}}<b> ({{day2allergens3.$value}}) </b></p>
+                                            <p>{{day2food3.$value}}<b ng-hide="!day2allergens3.$value"> ({{day2allergens3.$value}}) </b></p>
                                         </td>
                                     </tr>
                                 </table>
                             </div>
-                            <div class="daily-menu-item" ng-hide="!day3food2.$value || todayName == 'thursday' || todayName == 'friday' || todayName == 'saturday' || todayName == 'sunday' "
+                            <div class="daily-menu-item" ng-hide="!day3food2.$value || todayName == 'thursday' || todayName == 'friday' || todayName == 'saturday' "
                                  ng-class="{'today': todayName == 'wednesday'}">
                                 <table>
                                     <tr class="menu-day">
@@ -196,33 +217,33 @@
                                     <tr ng-if="day3food1.$value">
                                         <td class="item-title">
                                             <p translate>food1</p>
-                                            <span>{{dailyMenuWeight1.$value}}</span>
+                                            <span>{{dailyMenuWeight1.$value}} ml</span>
                                         </td>
                                         <td colspan="2">
-                                            <p>{{day3food1.$value}}<b> ({{day3allergens1.$value}}) </b></p>
+                                            <p>{{day3food1.$value}}<b ng-hide="!day3allergens1.$value"> ({{day3allergens1.$value}}) </b></p>
                                         </td>
                                     </tr>
                                     <tr ng-if="day3food2.$value">
                                         <td class="item-title">
                                             <p translate>food2</p>
-                                            <span>{{dailyMenuWeight2.$value}}</span>
+                                            <span>{{dailyMenuWeight2.$value}} g</span>
                                         </td>
                                         <td colspan="2">
-                                            <p>{{day3food2.$value}}<b> ({{day3allergens2.$value}}) </b></p>
+                                            <p>{{day3food2.$value}}<b ng-hide="!day3allergens2.$value"> ({{day3allergens2.$value}}) </b></p>
                                         </td>
                                     </tr>
                                     <tr ng-if="day3food3.$value">
                                         <td class="item-title">
                                             <p translate>food3</p>
-                                            <span>{{dailyMenuWeight3.$value}}</span>
+                                            <span>{{dailyMenuWeight3.$value}} g</span>
                                         </td>
                                         <td colspan="2">
-                                            <p>{{day3food3.$value}}<b> ({{day3allergens3.$value}}) </b></p>
+                                            <p>{{day3food3.$value}}<b ng-hide="!day3allergens3.$value"> ({{day3allergens3.$value}}) </b></p>
                                         </td>
                                     </tr>
                                 </table>
                             </div>
-                            <div class="daily-menu-item" ng-hide="!day4food2.$value || todayName == 'friday' || todayName == 'saturday' || todayName == 'sunday' "
+                            <div class="daily-menu-item" ng-hide="!day4food2.$value || todayName == 'friday' || todayName == 'saturday'"
                                  ng-class="{'today': todayName == 'thursday'}">
                                 <table>
                                     <tr class="menu-day">
@@ -238,33 +259,33 @@
                                     <tr ng-if="day4food1.$value">
                                         <td class="item-title">
                                             <p translate>food1</p>
-                                            <span>{{dailyMenuWeight1.$value}}</span>
+                                            <span>{{dailyMenuWeight1.$value}} ml</span>
                                         </td>
                                         <td colspan="2">
-                                            <p>{{day4food1.$value}}<b> ({{day4allergens1.$value}}) </b></p>
+                                            <p>{{day4food1.$value}}<b ng-hide="!day4allergens1.$value"> ({{day4allergens1.$value}}) </b></p>
                                         </td>
                                     </tr>
                                     <tr ng-if="day4food2.$value">
                                         <td class="item-title">
                                             <p translate>food2</p>
-                                            <span>{{dailyMenuWeight2.$value}}</span>
+                                            <span>{{dailyMenuWeight2.$value}} g</span>
                                         </td>
                                         <td colspan="2">
-                                            <p>{{day4food2.$value}}<b> ({{day4allergens2.$value}}) </b></p>
+                                            <p>{{day4food2.$value}}<b ng-hide="!day4allergens2.$value"> ({{day4allergens2.$value}}) </b></p>
                                         </td>
                                     </tr>
                                     <tr ng-if="day4food3.$value">
                                         <td class="item-title">
                                             <p translate>food3</p>
-                                            <span>{{dailyMenuWeight3.$value}}</span>
+                                            <span>{{dailyMenuWeight3.$value}} g</span>
                                         </td>
                                         <td colspan="2">
-                                             <p>{{day4food3.$value}}<b> ({{day4allergens3.$value}}) </b></p>
+                                             <p>{{day4food3.$value}}<b ng-hide="!day4allergens3.$value"> ({{day4allergens3.$value}}) </b></p>
                                         </td>
                                     </tr>
                                 </table>
                             </div>
-                            <div class="daily-menu-item" ng-hide="!day5food2.$value || todayName == 'saturday' || todayName == 'sunday' "
+                            <div class="daily-menu-item" ng-hide="!day5food2.$value || todayName == 'saturday' "
                                  ng-class="{'today': todayName == 'friday'}">
                                 <table>
                                     <tr class="menu-day">
@@ -280,34 +301,39 @@
                                     <tr ng-if="day5food1.$value">
                                         <td class="item-title">
                                             <p translate>food1</p>
-                                            <span>{{dailyMenuWeight1.$value}}</span>
+                                            <span>{{dailyMenuWeight1.$value}} ml</span>
                                         </td>
                                         <td colspan="2">
-                                            <p>{{day5food1.$value}}<b> ({{day5allergens1.$value}}) </b></p>
+                                            <p>{{day5food1.$value}}<b ng-hide="!day5allergens3.$value"> ({{day5allergens1.$value}}) </b></p>
                                         </td>
                                     </tr>
                                     <tr ng-if="day5food2.$value">
                                         <td class="item-title">
                                             <p translate>food2</p>
-                                            <span>{{dailyMenuWeight2.$value}}</span>
+                                            <span>{{dailyMenuWeight2.$value}} g</span>
                                         </td>
                                         <td colspan="2">
-                                            <p>{{day5food2.$value}}<b> ({{day5allergens2.$value}}) </b></p>
+                                            <p>{{day5food2.$value}}<b ng-hide="!day5allergens2.$value"> ({{day5allergens2.$value}}) </b></p>
                                         </td>
                                     </tr>
                                     <tr ng-if="day5food3.$value">
                                         <td class="item-title">
                                             <p translate>food3</p>
-                                            <span>{{dailyMenuWeight3.$value}}</span>
+                                            <span>{{dailyMenuWeight3.$value}} g</span>
                                         </td>
                                         <td colspan="2">
-                                            <p>{{day5food3.$value}}<b> ({{day5allergens3.$value}}) </b></p>
+                                            <p>{{day5food3.$value}}<b ng-hide="!day5allergens3.$value"> ({{day5allergens3.$value}}) </b></p>
                                         </td>
                                     </tr>
                                 </table>
                             </div>
                         </div>
                     </div>
+
+
+                    <div class="small-line"></div>
+
+                    <h1 class="main-title" translate>bon.appetit</h1>
 
                 </section>
 
@@ -367,51 +393,53 @@
 
                             <div class="book-wrap" ng-hide="bookFinnish">
                                 <div class="row">
-                                    <div class="wrap four label">
+
+                                    <label for="date" class="wrap four label">
                                         <ng-md-icon icon="date_range" style="display: inline-block; position: relative; fill: #f5eddc;"
                                                     size="25px"></ng-md-icon>
-                                        <label for="date" translate>date</label>
-                                    </div>
+                                        <span translate>date</span>
+                                    </label>
                                     <div class="wrap four">
                                         <div class="input-wrap">
                                             <datepicker date-format="dd.MM.yyyy" date-week-start-day="1" datepicker-mobile="true">
-                                                <input id="date" class="date" type="text" ng-model="date"  placeholder="07.01.2017" required/>
+                                                <input id="date" class="date" type="text" ng-model="date"  placeholder="{{today}}" tabindex="1" required/>
                                             </datepicker>
                                         </div>
                                     </div>
 
-                                    <div class="wrap four label">
+                                    <label for="time" class="wrap four label" >
                                         <ng-md-icon icon="access_time" style="display: inline-block; position: relative; fill: #f5eddc;"
                                                     size="25px"></ng-md-icon>
-                                        <label for="time" translate>time</label>
-                                    </div>
+                                        <span translate>time</span>
+                                    </label>
                                     <div class="wrap four">
                                         <div class="input-wrap">
-                                            <input id="time" name="timer" class="time" type="time" min="11:00:00" max="24:00:00" placeholder="11:00:00"
-                                               ng-model="timer" pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$" required/>
+                                            <input id="time" name="timer" class="time timepicker" type="text" tabindex="2"
+                                                  ng-model="timer" ng-class="{'ng-invalid' : invalidTime }" ng-change="showTimer(timer);" required/>
+                                            <span class="warning" ng-show="invalidTime" translate>this.time.is.close</span>
                                         </div>
                                     </div>
 
-                                    <div class="wrap four label">
+                                    <label for="amount" class="wrap four label">
                                         <ng-md-icon icon="group" style="display: inline-block; position: relative; fill: #f5eddc;"
                                                     size="25px"></ng-md-icon>
-                                        <label for="amount" translate>amount</label>
-                                    </div>
+                                        <span translate>amount</span>
+                                    </label>
                                     <div class="wrap four">
                                         <div class="input-wrap">
-                                            <input id="amount" name="amount" type="text" placeholder="1-171" ng-model="amount" required/>
+                                            <input id="amount" name="amount" type="text" placeholder="1-200" ng-model="amount" tabindex="3" required/>
                                         </div>
                                     </div>
 
 
-                                    <div class="wrap four label">
+                                    <label for="room-type" class="wrap four label">
                                         <ng-md-icon icon="local_restaurant" style="display: inline-block; position: relative; fill: #f5eddc;"
                                                     size="25px"></ng-md-icon>
-                                        <label for="room-type" translate>room.type</label>
-                                    </div>
+                                        <span translate>room.type</span>
+                                    </label>
                                     <div class="wrap four">
                                         <div class="input-wrap">
-                                            <select id="room-type" name="room" ng-model="room" required>
+                                            <select id="room-type" name="room" ng-model="room" tabindex="4" required>
                                                 <option value="" disabled selected hidden translate>select</option>
                                                 <option value="nezalezi" selected translate>Nezáleži</option>
                                                 <option value="pivonice">Pivo-nice</option>
@@ -426,49 +454,52 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="wrap label">
+                                    <label class="wrap label" for="name">
                                         <ng-md-icon icon="person"
                                                     style="display: inline-block; position: relative; fill: #f5eddc;"
                                                     size="25px"></ng-md-icon>
-                                        <label for="name" translate>name</label>
-                                    </div>
+                                        <span translate>name.and.surname</span>
+                                    </label>
                                     <div class="wrap">
                                         <div class="input-wrap">
-                                            <input id="name"  type="text" name="name" ng-model="name" class="form-control" placeholder="{{yourName}}" required/>
+                                            <input id="name"  type="text" name="name" ng-model="name" class="form-control" tabindex="5" required/>
                                         </div>
                                     </div>
-                                    <div class="wrap label">
+
+                                    <label for="email" class="wrap label">
                                         <ng-md-icon icon="email"
                                                     style="display: inline-block; position: relative; fill: #f5eddc;"
                                                     size="25px"></ng-md-icon>
-                                        <label for="email" translate>email</label>
-                                    </div>
+                                        <span translate>email</span>
+                                    </label>
                                     <div class="wrap">
                                         <div class="input-wrap">
                                             <input id="email" type="email" name="email" ng-model="email"
-                                               class="form-control" required/>
+                                               class="form-control" tabindex="6" required/>
                                         </div>
                                     </div>
-                                    <div class="wrap label">
+
+                                    <label  for="phone" class="wrap label">
                                         <ng-md-icon icon="phone"
                                                     style="display: inline-block; position: relative; fill: #f5eddc;"
                                                     size="25px"></ng-md-icon>
-                                        <label for="phone" translate>phone</label>
-                                    </div>
+                                        <span translate>phone.number</span>
+                                    </label>
                                     <div class="wrap">
                                         <div class="input-wrap">
-                                            <input id="phone" type="text" name="phone" ng-model="phone" />
+                                            <input id="phone" type="text" name="phone" ng-model="phone" tabindex="7" />
                                         </div>
                                     </div>
-                                    <div class="wrap label">
+
+                                    <label  for="text" class="wrap label">
                                         <ng-md-icon icon="textsms"
                                                     style="display: inline-block; position: relative; fill: #f5eddc;"
                                                     size="25px"></ng-md-icon>
-                                        <label for="text" translate>note</label>
-                                    </div>
+                                        <span translate>note</span>
+                                    </label>
                                     <div class="wrap">
                                         <div class="input-wrap">
-                                            <input id="text" type="text" name="text" ng-model="addText" placeholder="text"/>
+                                            <input id="text" type="text" name="text" ng-model="addText" tabindex="8" />
                                         </div>
                                     </div>
                                 </div>
@@ -489,7 +520,7 @@
                                     <p class="link-button phone" ng-hide="restaurantBookForm.$valid" translate>
                                         please.fill.all.data
                                     </p>
-                                    <button ng-click="formsubmit(restaurantBookForm)" ng-disabled="!restaurantBookForm.$valid" class="btn-next btn-submit">
+                                    <button ng-click="formsubmit(restaurantBookForm)" ng-disabled="!restaurantBookForm.$valid" class="btn-next btn-submit" tabindex="9">
                                         <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
                                         <span translate>book.now</span>
                                     </button>
@@ -572,16 +603,12 @@
                 <section  id="info" class="content-main bg bg-100">
                     <h1 class="main-title" translate>story</h1>
                     <div class="small-line"></div>
-
-                    <div class="content-main">
-                        <p class="content-text">
-                            {{restaurantPribehText}}...<span class="more" ng-hide="showMoreHistory == true" ng-click="doShowMoreHistory();" translate>read.more</span>
-                        </p>
-                        <p class="content-text" ng-show="showMoreHistory == true">
-                            <b translate>restaurant</b><b> TATRAS</b> {{restaurantPribehText2}}
-                        </p>
-
-                    </div>
+                    <p class="content-text">
+                        {{restaurantPribehText}}...<span class="more" ng-hide="showMoreHistory == true" ng-click="doShowMoreHistory();" translate>read.more</span>
+                    </p>
+                    <p class="content-text" ng-show="showMoreHistory == true">
+                        <b translate>restaurant</b><b> TATRAS</b> {{restaurantPribehText2}}
+                    </p>
                 </section>
 
                 <section id="photos" class="content-main bg bg-100 flex-nopadding">

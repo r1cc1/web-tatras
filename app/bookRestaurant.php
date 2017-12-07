@@ -57,7 +57,7 @@ $message2 .= '<br>';
 $message2 .= '<img src="http://minipivovartatras.sk/components/assets/imgs/tatras_logo.png" alt="TATRAS Logo" style="display:block; position: relative; margin: 0 auto; width: 150px; height: 150px;"/>';
 $message2 .= '<br>';
 $message2 .= '<h1 style="text-align: center; color: #e0232e;">' . $name .'</h1>';
-$message2 .= '<h1 style="text-align: center;">Vaša žiadosť bola odoslaná</h1><br><br>';
+$message2 .= '<h1 style="text-align: center;">Ďakujeme za Váš záujem, žiadosť bola odoslaná.</h1><br><br>';
 $message2 .= '<h3 style="text-align: center;">Kópia Vašej žiadosti :</h3>';
 $message2 .= '<table style="padding: 10px; margin: 0 auto;">';
 $message2 .= '<tr><td>Dátum:</td><td><b>' . $date . '</b></td></tr>';

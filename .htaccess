@@ -1,0 +1,1 @@
+RewriteRule ^/%23/beer/%23tmavak /#/beer/#tmavak [R=301,L,NE]

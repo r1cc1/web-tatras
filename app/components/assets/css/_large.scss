@@ -4,14 +4,11 @@
   body:before {
     content: 'Large Screen';
   }
-  .content-wrapper .content-main .center-wrap .category-logo-wrap .category-logo {
-    padding: 3em 0 1.5em 0;
-  }
   h1.main-title {
     font-size: 3em;
   }
   h2.category-title {
-    font-size: 3em;
+    font-size: 58px;
   }
   h1.logo-title {
     font-size: 4em;
@@ -39,11 +36,6 @@
     line-height: 1.5em;
   }
 
-  .content-main {
-    &.content-kontakt{
-      padding: 0;
-    }
-  }
 
   .content-kontakt .info .item {
     display: table;
@@ -63,7 +55,7 @@
   }
 
   .right .content-wrapper .content-main .boxer .box {
-    width: calc(100% /2);
+    width: calc(100% / 2 - 1em);
     margin-bottom: 4em;
   }
   .right .content-wrapper .content-main .boxer .box .img {
@@ -77,6 +69,20 @@
     height: 3em;
   }
 
+  .bg.bg-pivo1 {
+    background-position: 0 30%;
+  }
+
+
+  .product-wrap {
+    padding: 2em 0;
+    flex-direction: row;
+
+    .product-image {
+      margin: 2em auto;
+      width: 50vw;
+    }
+  }
   .info .item p {
     padding-bottom: 0;
   }
@@ -87,6 +93,7 @@
   }
   .info .item p {
     font-size: 1.25em;
+    max-width: 100%;
   }
 
   .content-wrapper {
@@ -117,25 +124,24 @@
     padding-bottom: 1.5em;
   }
   .right .content-wrapper .content-main .boxer .salon {
-    width: 20em;
-    padding: 1em;
+    padding: 1em 0;
   }
   .content-wrapper .content-main .boxer .salon p {
-    font-size: 1em;
-    line-height: 1.75em;
+    font-size: 20px;
+    line-height: 1.5em;
   }
   .content-wrapper .content-main .boxer .salon h5 {
-    font-size: 1.5em;
-    text-align: center;
+    font-size: 26px;
+    text-align: left;
   }
 
   .content-wrapper .content-main .hours .day span {
-    font-size: 2em;
+    font-size: 24px;
   }
   .content-wrapper .content-main .hours {
-    max-width: 30em;
+    max-width: 25em;
     font-size: 1em;
-    margin: 4em auto 2em auto;
+    margin: 3em auto 2em auto;
   }
   .actions {
     margin: 0;
@@ -143,6 +149,9 @@
   }
   .right .actions .btn-next {
     right: 1em;
+  }
+  .shrink {
+    display: block;
   }
 
   .book-form .book-wrap {
@@ -157,10 +166,10 @@
     padding: 0 2em;
   }
   .right .sub-menu {
-    left: 0;
+    left: 50px;
 
     &.show {
-      left: 200px;
+      left: 50px;
       @include transition(all 0.5s ease);
     }
   }
@@ -169,14 +178,14 @@
     background-attachment: fixed;
   }
   .content-wrapper .book .center-wrap .center-content .logo img {
-    width: 20em;
-    height: 20em;
+    width: 16em;
+    height: 16em;
   }
   .actions.start-btns {
     margin-top: 1em;
   }
   .content-main {
-    padding: 5em 0 5em 0;
+    padding: 4em 0;
   }
   .content-wrapper .content-main.empty {
     height: 30em;
@@ -190,10 +199,8 @@
     min-width: 15em;
   }
 
-
   .preview .content-main .daily-menu-list .daily-menu-item {
     padding: 1em 0;
-
   }
   .preview .content-main .daily-menu-list .daily-menu-item table tr td {
     padding: 1em 0 1em 0;
@@ -201,10 +208,48 @@
   }
 
   .content-wrapper .content-main .boxer {
-    margin: 0 0 4em 0;
+    margin: 0 ;
+    padding: 2em;
   }
-
   .content-wrapper .content-main .boxer-big {
     margin: 0;
+    padding: 0;
+  }
+  .content-wrapper .content-main .boxer.salons {
+    margin: 2em auto;
+    max-width: 50em;
+    padding: 0;
+  }
+
+  .book-form .time-table .time-wrap {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+  }
+  .book-form .time-table .time-wrap div {
+    display: table-cell;
+  }
+
+  .content-main .beer-list .beer-type {
+    width: calc(100% / 2 - 4em);
+  }
+
+  .content-main .beer-list .beer-type.top:before {
+    width: 9em;
+    height: 9em;
+    left: 10px;
+    top: 6px;
+  }
+  .actions.start-btns .category {
+    width: auto;
+    margin: 1em 0;
+  }
+  .actions .btn.main {
+    font-size: 22px;
+  }
+
+  .controls .language span {
+    font-size: 24px;
+    padding: 10px;
   }
 }

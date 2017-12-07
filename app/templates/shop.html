@@ -1,4 +1,16 @@
-<div class="wrapper">
+<div class="loading" ng-class="{'close': !isloading}">
+    <div class="loading-wrap">
+        <div class="loading-align">
+            <div class="loading-content">
+                <div class="loading-logo"></div>
+                <div class="loading-progress" ng-class="{'load': isloading}">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-cloak class="wrapper" ng-class="{'init': isloading}">
 
     <!-- include LEFT-NAVI -->
     <div ng-include="'templates/left.html'"></div>
@@ -7,138 +19,171 @@
     <div class="fake-left"></div>
 
     <div class="right">
-        <div class="sub-menu" ng-class="{open: subMenuState}">
+        <div class="sub-menu" ng-class="{'open': openMobileMenu}">
             <div>
                 <ul>
-                    <li du-scrollspy="book"><span du-smooth-scroll="book">book</span></li>
-                    <li du-scrollspy="category"><span du-smooth-scroll="category">shop</span></li>
-                    <li du-scrollspy="open"><span du-smooth-scroll="open">Products</span></li>
-                    <li du-scrollspy="info"><span du-smooth-scroll="info">Info</span></li>
-                    <li du-scrollspy="photos"><span du-smooth-scroll="photos">Photos</span></li>
+                    <li du-scrollspy="shop"><span du-smooth-scroll="restaurant" ng-click="closeMenu()" translate>shop</span></li>
+                    <li du-scrollspy="welcome"><span du-smooth-scroll="welcome" ng-click="closeMenu()" translate>welcome</span></li>
+                    <li du-scrollspy="beer"><span du-smooth-scroll="beer" ng-click="closeMenu()" translate>beer</span></li>
+                    <li du-scrollspy="info"><span du-smooth-scroll="info" ng-click="closeMenu()" translate>for.sell</span></li>
+                    <li du-scrollspy="contact"><span du-smooth-scroll="contact" ng-click="closeMenu()" translate>contact</span></li>
+                    <li du-scrollspy="hours"><span du-smooth-scroll="hours" ng-click="closeMenu()" translate>open.hours</span></li>
                 </ul>
             </div>
         </div>
 
         <div class="right-content">
+            <div class="top-nav">
 
-            <div class="content-wrapper">
-
-                <button class="hamburger hamburger--collapse" type="button">
+                <button class="hamburger hamburger--collapse" type="button" ng-click="mobileMenu()">
                       <span class="hamburger-box">
                         <span class="hamburger-inner"></span>
                       </span>
                 </button>
+                <div class="top-bar-logo">
+                </div>
+                <div class="call">
+                    <a href="tel:00421948828727" target="_self" name="call-us" class="btn-book" >
+                        <ng-md-icon icon="call" style="fill: #f5eddc" size="30"></ng-md-icon>
+                    </a>
+                </div>
+            </div>
 
-                <section id="book" class="bg-shop book" ng-style="{height: displayHeight + 'px'}">
+            <div class="content-wrapper">
+
+                <section id="shop" class="content-main bg bg-podpivnik flex-nopadding full-height">
                     <div class="center-wrap">
-                        <div class="center-content">
-                            <h1 class="book-title">TATRAS {{categoryName}}</h1>
-                        </div>
-
-                        <div class="stick-bottom" du-smooth-scroll="category">
-                            <span></span>
-                        </div>
-                    </div>
-                </section>
-
-
-                <section id="category" class="content-main bg-100">
-                    <h1 class="main-title">{{shopTitle1}}</h1>
-                    <div class="small-line"></div>
-
-                    <div class="content-main">
-                        <p class="content-text">
-                            {{shopText1}}
-                            <br>
-                            <br>
-                            {{shopText2}}
-                        </p>
-                    </div>
-                </section>
-
-                <section id="open" class="content-main bg-100">
-                    <h1 class="main-title">{{openHours}}</h1>
-                    <div class="small-line"></div>
-
-                    <div class="content-main">
-
-                        <div>
-                            <div class="hours">
-                                <div class="day Monday">
-                                    <span>{{monday}}</span>
-                                    <span class="time1">11:00</span>
-                                    <span class="time2">23:00</span>
-                                </div>
-                                <div class="day Tuesday">
-                                    <span>{{tuesday}}</span>
-                                    <span class="time1">11:00</span>
-                                    <span class="time2">23:00</span>
-                                </div>
-                                <div class="day Wednesday">
-                                    <span>{{wednesday}}</span>
-                                    <span class="time1">11:00</span>
-                                    <span class="time2">23:00</span>
-                                </div>
-                                <div class="day Thursday">
-                                    <span>{{thursday}}</span>
-                                    <span class="time1">11:00</span>
-                                    <span class="time2">23:00</span>
-                                </div>
-                                <div class="day Friday">
-                                    <span>{{friday}}</span>
-                                    <span class="time1">11:00</span>
-                                    <span class="time2">01:00</span>
-                                </div>
-                                <div class="day Saturday">
-                                    <span>{{saturday}}</span>
-                                    <span class="time1">12:00</span>
-                                    <span class="time2">01:00</span>
-                                </div>
-                                <div class="day Sunday">
-                                    <span>{{sunday}}</span>
-                                    <span class="time1">12:00</span>
-                                    <span class="time2">23:00</span>
-                                </div>
+                        <div class="category-logo-wrap">
+                            <div class="category-logo" du-smooth-scroll="welcome">
+                                <h2 class="category-title" translate>{{categoryName}}</h2>
                             </div>
                         </div>
                     </div>
-                </section>
-
-                <section class="content-main empty bg-beer">
-                    <h6 class="item-title">IPA</h6>
-                    <h6 class="item-label">3.99 &euro;</h6>
-                </section>
-
-                <section id="info2" class="content-main bg-100">
-                    <h1 class="main-title">{{shopTitle2}}</h1>
-                    <div class="small-line"></div>
-
-                    <div class="content-main">
-                        <p>{{shopText3}}</p>
+                    <div class="stick-bottom">
+                        <span du-smooth-scroll="welcome"></span>
                     </div>
                 </section>
 
+                <section id="welcome" class="content-main bg bg-100 ">
+                    <h1 class="main-title" translate>welcome</h1>
+                    <div class="small-line"></div>
+                    <p class="content-text">
+                        {{shopText1}}
+                        <br>
+                        <br>
+                        {{shopText2}}
+                    </p>
+                </section>
 
-                <section id="photos" class="content-main bg-100 flex-nopadding">
-                    <flex-slider slide="s in mySlides">
-                        <li>
-                            <img ng-src="{{s}}">
-                        </li>
-                    </flex-slider>
+                <section class="content-main empty bg bg-sudok">
+                </section>
+
+                <section id="beer" class="content-main bg bg-100 ">
+                    <h1 class="main-title" translate>beer</h1>
+                    <div class="small-line"></div>
+                    <p class="content-text">
+                        {{shopText3}}
+                        <br>
+                        <br>
+                        {{shopText4}}
+                    </p>
+                </section>
+
+                <section class="content-main empty bg bg-piva">
+                </section>
+
+                <section id="info" class="content-main bg bg-100">
+                    <h1 class="main-title" translate>for.sell</h1>
+                    <div class="small-line"></div>
+                    <p class="content-text">
+                        <ul>
+                            <li>Pivá</li>
+                            <li>Vína</li>
+                            <li>Alkohol</li>
+                            <li>Zapožičanie výčapnej techniky</li>
+                            <li>Prenájom KEG súdkov</li>
+                            <li>Poháre</li>
+                            <li>Etikety</li>
+                            <li>Pivné tácky</li>
+                            <li>Pivná kozmetika</li>
+                            <li>Tatraslad</li>
+                        </ul>
+                    </p>
+                </section>
+
+                <section id="contact" class="content-main content-kontakt bg bg-red">
+                    <h1 class="main-title" translate>contact</h1>
+                    <div class="small-line"></div>
+
+                    <div class="info">
+                        <div class="item">
+                            <ng-md-icon icon="settings_phone" class="icon"
+                                        style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;"
+                                        size="3em"></ng-md-icon>
+                            <a href="tel:00421948028025">(+421) 0948 028 025</a>
+                        </div>
+                        <div class="item">
+                            <ng-md-icon icon="mail_outline" class="icon"
+                                        style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;"
+                                        size="3em"></ng-md-icon>
+                            <a href="mailto:info&#64minipivovartatras&#46sk" class="email">info@minipivovartatras.sk</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="hours" class="content-main bg-100">
+                    <h1 class="main-title" translate>open.hours</h1>
+                    <div class="small-line"></div>
+
+                    <div>
+                        <div class="hours">
+                            <div class="day monday" ng-class="{'today' : todayName == 'monday' }">
+                                <span translate>monday</span>
+                                <span class="time1">{{spaMonTimeFrom.$value}}</span>
+                                <span class="time2">{{spaMonTimeTo.$value}}</span>
+                            </div>
+                            <div class="day tuesday" ng-class="{'today' : todayName == 'tuesday' }">
+                                <span translate>tuesday</span>
+                                <span class="time1">{{spaTueTimeFrom.$value}}</span>
+                                <span class="time2">{{spaTueTimeTo.$value}}</span>
+                            </div>
+                            <div class="day wednesday" ng-class="{'today' : todayName == 'wednesday' }">
+                                <span translate>wednesday</span>
+                                <span class="time1">{{spaWedTimeFrom.$value}}</span>
+                                <span class="time2">{{spaWedTimeTo.$value}}</span>
+                            </div>
+                            <div class="day thursday" ng-class="{'today' : todayName == 'thursday' }">
+                                <span translate>thursday</span>
+                                <span class="time1">{{spaThuTimeFrom.$value}}</span>
+                                <span class="time2">{{spaThuTimeTo.$value}}</span>
+                            </div>
+                            <div class="day friday" ng-class="{'today' : todayName == 'friday' }">
+                                <span translate>friday</span>
+                                <span class="time1">{{spaFriTimeFrom.$value}}</span>
+                                <span class="time2">{{spaFriTimeTo.$value}}</span>
+                            </div>
+                            <div class="day saturday" ng-class="{'today' : todayName == 'saturday' }">
+                                <span translate>saturday</span>
+                                <span class="time1">{{spaSatTimeFrom.$value}}</span>
+                                <span class="time2">{{spaSatTimeTo.$value}}</span>
+                            </div>
+                            <div class="day sunday" ng-class="{'today' : todayName == 'sunday' }">
+                                <span translate>sunday</span>
+                                <span class="time1">{{spaSunTimeFrom.$value}}</span>
+                                <span class="time2">{{spaSunTimeTo.$value}}</span>
+                            </div>
+                        </div>
+                    </div>
                 </section>
 
                 <!-- include FOOTER -->
                 <div ng-include="'templates/footer.html'"></div>
                 <!-- end of FOOTER include -->
 
-            </div><!-- content-wraper -->
-        </div><!-- /right-content -->
-
+            </div>
+        </div>
     </div>
 </div>
-
-
-
 
 
 

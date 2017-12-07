@@ -108,8 +108,7 @@ angular.module('mainCtrl', [])
                 $rootScope.todayName = n;
                 console.log('Todays Name is :' + $rootScope.todayName);
 
-                $rootScope.currentDay = n;
-                console.log('Current Day ->' + $rootScope.currentDay);
+                $rootScope.currentDay = $rootScope.todayName;
 
                 var month = dateObj.getUTCMonth() + 1; //months from 1-12
                 var day = dateObj.getUTCDate();
@@ -172,7 +171,11 @@ angular.module('mainCtrl', [])
                 $scope.dailyMenuList = $firebaseArray(rootRef.child('week'));
                 console.log($scope.dailyMenuList);
 
-                $scope.dailyMenuPrice = $firebaseObject(rootRef.child('price'));
+                $scope.parkingPrice = $firebaseObject(rootRef.child('parkingPrice'));
+
+                $scope.dailyMenuPrice1 = $firebaseObject(rootRef.child('dailyMenuPrice1'));
+                $scope.dailyMenuPrice2 = $firebaseObject(rootRef.child('dailyMenuPrice2'));
+                $scope.dailyMenuPrice3 = $firebaseObject(rootRef.child('dailyMenuPrice3'));
 
                 $scope.dailyMenuWeight1 = $firebaseObject(rootRef.child('weight1'));
                 $scope.dailyMenuWeight2 = $firebaseObject(rootRef.child('weight2'));
@@ -270,6 +273,10 @@ angular.module('mainCtrl', [])
                 $scope.pensionPrice2 = $firebaseObject(rootRef.child('pensionPrice2'));
                 $scope.pensionPrice3 = $firebaseObject(rootRef.child('pensionPrice3'));
                 $scope.pensionPrice4 = $firebaseObject(rootRef.child('pensionPrice4'));
+                $scope.pensionPrice5 = $firebaseObject(rootRef.child('pensionPrice5'));
+                $scope.pensionPrice6 = $firebaseObject(rootRef.child('pensionPrice6'));
+                $scope.pensionPrice7 = $firebaseObject(rootRef.child('pensionPrice7'));
+                $scope.pensionPrice8 = $firebaseObject(rootRef.child('pensionPrice8'));
 
 
                 $scope.spaPrice1 = $firebaseObject(rootRef.child('spaPrice1'));
@@ -293,7 +300,40 @@ angular.module('mainCtrl', [])
                 $scope.saunaPrice4 = $firebaseObject(rootRef.child('saunaPrice4'));
                 $scope.saunaPrice5 = $firebaseObject(rootRef.child('saunaPrice5'));
 
-                $scope.massagePrice = $firebaseObject(rootRef.child('massagePrice'));
+                $scope.saunaPrice = $firebaseObject(rootRef.child('saunaPrice'));
+                $scope.saunaTime = $firebaseObject(rootRef.child('saunaTime'));
+
+                $scope.massage1Time1 = $firebaseObject(rootRef.child('massage1Time1'));
+                $scope.massage1Time2 = $firebaseObject(rootRef.child('massage1Time2'));
+                $scope.massage1Price1 = $firebaseObject(rootRef.child('massage1Price1'));
+                $scope.massage1Price2 = $firebaseObject(rootRef.child('massage1Price2'));
+                
+                $scope.massage2Time1 = $firebaseObject(rootRef.child('massage2Time1'));
+                $scope.massage2Time2 = $firebaseObject(rootRef.child('massage2Time2'));
+                $scope.massage2Price1 = $firebaseObject(rootRef.child('massage2Price1'));
+                $scope.massage2Price2 = $firebaseObject(rootRef.child('massage2Price2'));
+                
+                $scope.massage3Time1 = $firebaseObject(rootRef.child('massage3Time1'));
+                $scope.massage3Time2 = $firebaseObject(rootRef.child('massage3Time2'));
+                $scope.massage3Price1 = $firebaseObject(rootRef.child('massage3Price1'));
+                $scope.massage3Price2 = $firebaseObject(rootRef.child('massage3Price2'));
+                
+                $scope.massage4Time1 = $firebaseObject(rootRef.child('massage4Time1'));
+                $scope.massage4Time2 = $firebaseObject(rootRef.child('massage4Time2'));
+                $scope.massage4Price1 = $firebaseObject(rootRef.child('massage4Price1'));
+                $scope.massage4Price2 = $firebaseObject(rootRef.child('massage4Price2'));
+                
+                $scope.massage5Time1 = $firebaseObject(rootRef.child('massage5Time1'));
+                $scope.massage5Time2 = $firebaseObject(rootRef.child('massage5Time2'));
+                $scope.massage5Price1 = $firebaseObject(rootRef.child('massage5Price1'));
+                $scope.massage5Price2 = $firebaseObject(rootRef.child('massage5Price2'));
+                
+                $scope.massage6Time1 = $firebaseObject(rootRef.child('massage6Time1'));
+                $scope.massage6Time2 = $firebaseObject(rootRef.child('massage6Time2'));
+                $scope.massage6Price1 = $firebaseObject(rootRef.child('massage6Price1'));
+                $scope.massage6Price2 = $firebaseObject(rootRef.child('massage6Price2'));
+                
+                
 
                 $scope.spaTime1 = $firebaseObject(rootRef.child('spaTime1'));
                 $scope.spaTime2 = $firebaseObject(rootRef.child('spaTime2'));
@@ -304,33 +344,151 @@ angular.module('mainCtrl', [])
                 $scope.spaTime7 = $firebaseObject(rootRef.child('spaTime7'));
 
 
-                $scope.termin911 = $firebaseObject(rootRef.child('termin911'));
+                $scope.beer1active = $firebaseObject(rootRef.child('beer1active'));
+                $scope.beer1new = $firebaseObject(rootRef.child('beer1new'));
+                $scope.beer1name = $firebaseObject(rootRef.child('beer1name'));
+                $scope.beer1subtitle = $firebaseObject(rootRef.child('beer1subtitle'));
+                $scope.beer1text = $firebaseObject(rootRef.child('beer1text'));
+                $scope.beer1slady = $firebaseObject(rootRef.child('beer1slady'));
+                $scope.beer1chmele = $firebaseObject(rootRef.child('beer1chmele'));
+                $scope.beer1extrakt = $firebaseObject(rootRef.child('beer1extrakt'));
+                $scope.beer1alkohol = $firebaseObject(rootRef.child('beer1alkohol'));
+                $scope.beer1ibu = $firebaseObject(rootRef.child('beer1ibu'));
 
+                $scope.beer2active = $firebaseObject(rootRef.child('beer2active'));
+                $scope.beer2new = $firebaseObject(rootRef.child('beer2new'));
+                $scope.beer2name = $firebaseObject(rootRef.child('beer2name'));
+                $scope.beer2subtitle = $firebaseObject(rootRef.child('beer2subtitle'));
+                $scope.beer2text = $firebaseObject(rootRef.child('beer2text'));
+                $scope.beer2slady = $firebaseObject(rootRef.child('beer2slady'));
+                $scope.beer2chmele = $firebaseObject(rootRef.child('beer2chmele'));
+                $scope.beer2extrakt = $firebaseObject(rootRef.child('beer2extrakt'));
+                $scope.beer2alkohol = $firebaseObject(rootRef.child('beer2alkohol'));
+                $scope.beer2ibu = $firebaseObject(rootRef.child('beer2ibu'));
+
+                $scope.beer3active = $firebaseObject(rootRef.child('beer3active'));
+                $scope.beer3new = $firebaseObject(rootRef.child('beer3new'));
+                $scope.beer3name = $firebaseObject(rootRef.child('beer3name'));
+                $scope.beer3subtitle = $firebaseObject(rootRef.child('beer3subtitle'));
+                $scope.beer3text = $firebaseObject(rootRef.child('beer3text'));
+                $scope.beer3slady = $firebaseObject(rootRef.child('beer3slady'));
+                $scope.beer3chmele = $firebaseObject(rootRef.child('beer3chmele'));
+                $scope.beer3extrakt = $firebaseObject(rootRef.child('beer3extrakt'));
+                $scope.beer3alkohol = $firebaseObject(rootRef.child('beer3alkohol'));
+                $scope.beer3ibu = $firebaseObject(rootRef.child('beer3ibu'));
+
+                $scope.beer4active = $firebaseObject(rootRef.child('beer4active'));
+                $scope.beer4new = $firebaseObject(rootRef.child('beer4new'));
+                $scope.beer4name = $firebaseObject(rootRef.child('beer4name'));
+                $scope.beer4subtitle = $firebaseObject(rootRef.child('beer4subtitle'));
+                $scope.beer4text = $firebaseObject(rootRef.child('beer4text'));
+                $scope.beer4slady = $firebaseObject(rootRef.child('beer4slady'));
+                $scope.beer4chmele = $firebaseObject(rootRef.child('beer4chmele'));
+                $scope.beer4extrakt = $firebaseObject(rootRef.child('beer4extrakt'));
+                $scope.beer4alkohol = $firebaseObject(rootRef.child('beer4alkohol'));
+                $scope.beer4ibu = $firebaseObject(rootRef.child('beer4ibu'));
+
+                $scope.beer5active = $firebaseObject(rootRef.child('beer5active'));
+                $scope.beer5new = $firebaseObject(rootRef.child('beer5new'));
+                $scope.beer5name = $firebaseObject(rootRef.child('beer5name'));
+                $scope.beer5subtitle = $firebaseObject(rootRef.child('beer5subtitle'));
+                $scope.beer5text = $firebaseObject(rootRef.child('beer5text'));
+                $scope.beer5slady = $firebaseObject(rootRef.child('beer5slady'));
+                $scope.beer5chmele = $firebaseObject(rootRef.child('beer5chmele'));
+                $scope.beer5extrakt = $firebaseObject(rootRef.child('beer5extrakt'));
+                $scope.beer5alkohol = $firebaseObject(rootRef.child('beer5alkohol'));
+                $scope.beer5ibu = $firebaseObject(rootRef.child('beer5ibu'));
+
+                $scope.beer6active = $firebaseObject(rootRef.child('beer6active'));
+                $scope.beer6new = $firebaseObject(rootRef.child('beer6new'));
+                $scope.beer6name = $firebaseObject(rootRef.child('beer6name'));
+                $scope.beer6subtitle = $firebaseObject(rootRef.child('beer6subtitle'));
+                $scope.beer6text = $firebaseObject(rootRef.child('beer6text'));
+                $scope.beer6slady = $firebaseObject(rootRef.child('beer6slady'));
+                $scope.beer6chmele = $firebaseObject(rootRef.child('beer6chmele'));
+                $scope.beer6extrakt = $firebaseObject(rootRef.child('beer6extrakt'));
+                $scope.beer6alkohol = $firebaseObject(rootRef.child('beer6alkohol'));
+                $scope.beer6ibu = $firebaseObject(rootRef.child('beer6ibu'));
+
+                $scope.beer7active = $firebaseObject(rootRef.child('beer7active'));
+                $scope.beer7new = $firebaseObject(rootRef.child('beer7new'));
+                $scope.beer7name = $firebaseObject(rootRef.child('beer7name'));
+                $scope.beer7subtitle = $firebaseObject(rootRef.child('beer7subtitle'));
+                $scope.beer7text = $firebaseObject(rootRef.child('beer7text'));
+                $scope.beer7slady = $firebaseObject(rootRef.child('beer7slady'));
+                $scope.beer7chmele = $firebaseObject(rootRef.child('beer7chmele'));
+                $scope.beer7extrakt = $firebaseObject(rootRef.child('beer7extrakt'));
+                $scope.beer7alkohol = $firebaseObject(rootRef.child('beer7alkohol'));
+                $scope.beer7ibu = $firebaseObject(rootRef.child('beer7ibu'));
+
+                $scope.beer8active = $firebaseObject(rootRef.child('beer8active'));
+                $scope.beer8new = $firebaseObject(rootRef.child('beer8new'));
+                $scope.beer8name = $firebaseObject(rootRef.child('beer8name'));
+                $scope.beer8subtitle = $firebaseObject(rootRef.child('beer8subtitle'));
+                $scope.beer8text = $firebaseObject(rootRef.child('beer8text'));
+                $scope.beer8slady = $firebaseObject(rootRef.child('beer8slady'));
+                $scope.beer8chmele = $firebaseObject(rootRef.child('beer8chmele'));
+                $scope.beer8extrakt = $firebaseObject(rootRef.child('beer8extrakt'));
+                $scope.beer8alkohol = $firebaseObject(rootRef.child('beer8alkohol'));
+                $scope.beer8ibu = $firebaseObject(rootRef.child('beer8ibu'));
+
+                $scope.beer9active = $firebaseObject(rootRef.child('beer9active'));
+                $scope.beer9new = $firebaseObject(rootRef.child('beer9new'));
+                $scope.beer9name = $firebaseObject(rootRef.child('beer9name'));
+                $scope.beer9subtitle = $firebaseObject(rootRef.child('beer9subtitle'));
+                $scope.beer9text = $firebaseObject(rootRef.child('beer9text'));
+                $scope.beer9slady = $firebaseObject(rootRef.child('beer9slady'));
+                $scope.beer9chmele = $firebaseObject(rootRef.child('beer9chmele'));
+                $scope.beer9extrakt = $firebaseObject(rootRef.child('beer9extrakt'));
+                $scope.beer9alkohol = $firebaseObject(rootRef.child('beer9alkohol'));
+                $scope.beer9ibu = $firebaseObject(rootRef.child('beer9ibu'));
+
+                $scope.beer10active = $firebaseObject(rootRef.child('beer10active'));
+                $scope.beer10new = $firebaseObject(rootRef.child('beer10new'));
+                $scope.beer10name = $firebaseObject(rootRef.child('beer10name'));
+                $scope.beer10subtitle = $firebaseObject(rootRef.child('beer10subtitle'));
+                $scope.beer10text = $firebaseObject(rootRef.child('beer10text'));
+                $scope.beer10slady = $firebaseObject(rootRef.child('beer10slady'));
+                $scope.beer10chmele = $firebaseObject(rootRef.child('beer10chmele'));
+                $scope.beer10extrakt = $firebaseObject(rootRef.child('beer10extrakt'));
+                $scope.beer10alkohol = $firebaseObject(rootRef.child('beer10alkohol'));
+                $scope.beer10ibu = $firebaseObject(rootRef.child('beer10ibu'));
+
+                $scope.beer11active = $firebaseObject(rootRef.child('beer11active'));
+                $scope.beer11new = $firebaseObject(rootRef.child('beer11new'));
+                $scope.beer11name = $firebaseObject(rootRef.child('beer11name'));
+                $scope.beer11subtitle = $firebaseObject(rootRef.child('beer11subtitle'));
+                $scope.beer11text = $firebaseObject(rootRef.child('beer11text'));
+                $scope.beer11slady = $firebaseObject(rootRef.child('beer11slady'));
+                $scope.beer11chmele = $firebaseObject(rootRef.child('beer11chmele'));
+                $scope.beer11extrakt = $firebaseObject(rootRef.child('beer11extrakt'));
+                $scope.beer11alkohol = $firebaseObject(rootRef.child('beer11alkohol'));
+                $scope.beer11ibu = $firebaseObject(rootRef.child('beer11ibu'));
+
+                $scope.beer12active = $firebaseObject(rootRef.child('beer12active'));
+                $scope.beer12new = $firebaseObject(rootRef.child('beer12new'));
+                $scope.beer12name = $firebaseObject(rootRef.child('beer12name'));
+                $scope.beer12subtitle = $firebaseObject(rootRef.child('beer12subtitle'));
+                $scope.beer12text = $firebaseObject(rootRef.child('beer12text'));
+                $scope.beer12slady = $firebaseObject(rootRef.child('beer12slady'));
+                $scope.beer12chmele = $firebaseObject(rootRef.child('beer12chmele'));
+                $scope.beer12extrakt = $firebaseObject(rootRef.child('beer12extrakt'));
+                $scope.beer12alkohol = $firebaseObject(rootRef.child('beer12alkohol'));
+                $scope.beer12ibu = $firebaseObject(rootRef.child('beer12ibu'));
             });
+            
 
             window.addEventListener('resize', function () {
                 getWindowHeight();
             });
 
-            $scope.$watch('lang', function () {
-
-                if ($rootScope.lang === 'svk') {
-                    console.log('Active Language ' + $rootScope.lang);
-
-                    $rootScope.openHours = 'Otváracie Hodiny';
-                    $scope.setDaysSvk();
-                }
-                if ($rootScope.lang === 'eng') {
-                    console.log('Active Language ' + $rootScope.lang);
-
-                    $rootScope.openHours = 'Open Hours';
-                    $scope.setDaysEng();
-                }
-            });
-
             $scope.mobileMenu = function () {
                 $rootScope.openMobileMenu = !$rootScope.openMobileMenu;
                 console.log('$rootScope.openMobileMenu= ' + $rootScope.openMobileMenu);
+            };
+
+            $scope.closeMenu = function () {
+                $rootScope.openMobileMenu = false;
             };
 
             var $stopPropagation = $('a');

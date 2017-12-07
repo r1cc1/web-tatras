@@ -10,36 +10,37 @@
     font-size: 3em;
     line-height: 1em;
   }
-  .content-main p {
-    font-size: 1.5em;
-    line-height: 2em;
-    padding: 2em 3em 2em 3em;
-    display: block;
-    position: relative;
-    margin: 0 auto;
-    max-width: 30em;
-  }
   .left {
-    width: 200px;
+    width: 50px;
     left: 0;
+
+    &.open {
+      width:  200px;
+
+    }
+    .shrink {
+      display: block;
+      left: 0;
+
+      &.open {
+        display: none;
+      }
+    }
 
     div.left-wrap {
       padding-top: 2em;
     }
 
-    .controls {
-      .hamburger {
-        display: none;
-      }
-    }
     nav ul.main-menu li a {
       font-size: 1em;
       line-height: 2em;
     }
   }
   .fake-left {
+    width: 200px;
+
     &.show {
-      width: 248px;
+      width: 200px;
     }
   }
   .right {
@@ -47,10 +48,10 @@
     position: relative;
 
     .sub-menu {
-      left: 140px;
-      top:0;
+      left: 50px;
+      width: 150px;
 
-      &.show {
+      &.open {
         left: 200px;
       }
     }
@@ -71,8 +72,11 @@
       font-size: 1.5em;
     }
     .content-wrapper .content-main .boxer .salon {
-      width: calc(100% / 2.5);
+      width: calc(100% / 2 - 2em);
       padding: 0.5em;
+    }
+    .content-wrapper .content-main .boxer.salons {
+      margin: 2em auto;
     }
     .content-wrapper .content-main .boxer .box-15 {
       width: calc(100% / 3);
@@ -93,6 +97,12 @@
     }
   }
 
+  .content-main p {
+    font-size: 20px;
+    padding: 2em 1em;
+    max-width: 30em;
+    margin: 0 auto;
+  }
   h2.category-title {
     font-size: 3em;
   }
@@ -126,6 +136,11 @@
     max-width: 100%;
     padding: 3em 0;
   }
+
+  .content-main .daily-menu-list .daily-menu-item table tr span {
+    font-size: 16px !important;
+  }
+
   .content-kontakt .info .item a {
     font-size: 1.5em;
     padding: 0;
@@ -143,12 +158,13 @@
     font-size: 1.5em;
   }
 
+
   .content-wrapper .content-main.empty:after {
-    height: calc(100% - 4em);
-    width: calc(100% - 4em);
-    top: 2em;
-    left: 2em;
-    border: 2px solid white;
+    height: calc(100% - 3em);
+    width: calc(100% - 3em);
+    top: 1.5em;
+    left: 1.5em;
+    border: 1px solid white;
   }
   .bg.bg-spa-3 {
     background-position: center center;
@@ -159,6 +175,16 @@
     padding: 0;
     float: left;
   }
+  .spa-box {
+    padding: 2em 0 0 0;
+  }
+  .spa-box span {
+    font-size: 20px;
+  }
+  .prices h2 {
+    font-size: 20px;
+  }
+
 
   footer {
     padding: 2em;
@@ -178,6 +204,9 @@
     width: 33.33%;
     margin: 1em 0;
     padding: 0 0 0 3em;
+  }
+  footer .copyright .row .col-md-4.info-copy {
+    text-align: left;
   }
   footer .copyright .row .col-md-4.facebook {
     text-align: right;

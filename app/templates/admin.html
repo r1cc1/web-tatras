@@ -121,6 +121,10 @@
 
                     <div class="container">
 
+                        <br>
+                        <br>
+                        <br>
+
                         <div class="row">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
@@ -129,15 +133,10 @@
                                 <div class="panel-body">
                                     <div class="row">
                                         <div class="form-inline">
-                                            <div class="input-group">
-                                                <div class="input-group-addon">Cenna</div>
-                                                <input type="text" class="form-control text-center" ng-model="dailyMenuPrice.$value"  placeholder="{{dailyMenuPrice.$value}}">
-                                                <span class="input-group-addon" id="basic-addon2">&euro;</span>
-                                            </div>
 
-                                            <button ng-show="!previewOpen  && !editOver && !adminLogin"  ng-click="showPreview()" class="btn-submit" >
+                                            <button ng-show="!previewOpen  && !editOver && !adminLogin"  ng-click="showPreview()" class="btn btn-submit" >
                                                 <ng-md-icon icon="zoom_out_map" style="white" size="20"></ng-md-icon>
-                                                Ukaž nahľad
+                                                Ukaž nahľad & Tlač
                                             </button>
                                         </div>
 
@@ -149,24 +148,44 @@
                                             <table class="table table-bordered">
                                                 <thead>
                                                 <tr>
+                                                    <th class="text-center"></th>
+                                                    <th class="text-center"><h4>Polievka</h4></th>
+                                                    <th class="text-center"><h4>Menu A</h4></th>
+                                                    <th class="text-center"><h4>Menu B</h4></th>
+                                                </tr>
+                                                <tr>
                                                     <td>
-                                                        <h4>Váha</h4>
+                                                        <h3>Cena</h3>
                                                     </td>
-                                                    <td>
-                                                        <input type="text" class="daily-menu alergeny" ng-model="dailyMenuWeight1.$value" placeholder="ml">
+                                                    <td >
+
                                                     </td>
-                                                    <td>
-                                                        <input type="text" class="daily-menu alergeny"  ng-model="dailyMenuWeight2.$value" placeholder="g">
+                                                    <td class="price-tag">
+                                                        <input type="text" class="daily-menu"  ng-model="dailyMenuPrice1.$value" placeholder="&euro;">
                                                     </td>
-                                                    <td>
-                                                        <input  type="text" class="daily-menu alergeny"  ng-model="dailyMenuWeight3.$value" placeholder="g?">
+                                                    <td class="price-tag">
+                                                        <input  type="text" class="daily-menu"  ng-model="dailyMenuPrice2.$value" placeholder="&euro;">
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <th class="text-center"><h4>Den</h4></th>
-                                                    <th class="text-center"><h4>polievka</h4></th>
-                                                    <th class="text-center"><h4>hl.jedlo 1</h4></th>
-                                                    <th class="text-center"><h4>hl.jedlo 2</h4></th>
+                                                    <td>
+                                                        <h3>Váha</h3>
+                                                    </td>
+                                                    <td class="ml-tag">
+                                                        <input type="text" class="daily-menu alergeny" ng-model="dailyMenuWeight1.$value" placeholder="">
+                                                    </td>
+                                                    <td class="g-tag">
+                                                        <input type="text" class="daily-menu alergeny"  ng-model="dailyMenuWeight2.$value" placeholder="">
+                                                    </td>
+                                                    <td class="g-tag">
+                                                        <input  type="text" class="daily-menu alergeny"  ng-model="dailyMenuWeight3.$value" placeholder="">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-center"><h4></h4></th>
+                                                    <th class="text-center"><h4> </h4></th>
+                                                    <th class="text-center"><h4> </h4></th>
+                                                    <th class="text-center"><h4> </h4></th>
                                                 </tr>
 
                                                 </thead>
@@ -177,8 +196,7 @@
                                                         <br>
                                                         <input id="day1Date" type="text" class="daily-menu text-center date" ng-model="day1Date.$value"  placeholder="dátum">
                                                         <br>
-                                                        <br>
-                                                        <p>Alergény</p>
+                                                        <h3>Alergény</h3>
                                                     </td>
                                                     <td>
                                                         <textarea id="polievka1" class="polievka" ng-model="day1food1.$value" placeholder="{{day1food1.$value}}" ></textarea>
@@ -193,14 +211,19 @@
                                                         <input id="secondfood1alergen" type="text" class="daily-menu alergeny" ng-model="day1allergens3.$value" placeholder="_">
                                                     </td>
                                                 </tr>
+                                                <tr>
+                                                    <th class="text-center"><h4></h4></th>
+                                                    <th class="text-center"><h4> </h4></th>
+                                                    <th class="text-center"><h4> </h4></th>
+                                                    <th class="text-center"><h4> </h4></th>
+                                                </tr>
                                                 <tr rowspan="2">
                                                     <td>
                                                         <h3 translate>tuesday</h3>
                                                         <br>
                                                         <input id="day2Date" type="text" class="daily-menu text-center date" ng-model="day2Date.$value" placeholder="dátum">
                                                         <br>
-                                                        <br>
-                                                        <p>Alergény</p>
+                                                        <h3>Alergény</h3>
                                                     </td>
                                                     <td>
                                                         <textarea id="polievka1" class="polievka" ng-model="day2food1.$value" placeholder="{{day2food1.$value}}" ></textarea>
@@ -215,14 +238,19 @@
                                                         <input id="secondfood2alergen" type="text" class="daily-menu alergeny"  ng-model="day2allergens3.$value" placeholder="_">
                                                     </td>
                                                 </tr>
+                                                <tr>
+                                                    <th class="text-center"><h4></h4></th>
+                                                    <th class="text-center"><h4> </h4></th>
+                                                    <th class="text-center"><h4> </h4></th>
+                                                    <th class="text-center"><h4> </h4></th>
+                                                </tr>
                                                 <tr rowspan="2">
                                                     <td>
                                                         <h3 translate>wednesday</h3>
                                                         <br>
                                                         <input id="day3Date" type="text" class="daily-menu date text-center" ng-model="day3Date.$value"  placeholder="dátum">
                                                         <br>
-                                                        <br>
-                                                        <p>Alergény</p>
+                                                        <h3>Alergény</h3>
                                                     </td>
                                                     <td>
                                                         <textarea  class="polievka" ng-model="day3food1.$value" placeholder="{{day3food1.$value}}" ></textarea>
@@ -237,15 +265,19 @@
                                                         <input  type="text" class="daily-menu alergeny"  ng-model="day3allergens3.$value" placeholder="_">
                                                     </td>
                                                 </tr>
-
+                                                <tr>
+                                                    <th class="text-center"><h4></h4></th>
+                                                    <th class="text-center"><h4> </h4></th>
+                                                    <th class="text-center"><h4> </h4></th>
+                                                    <th class="text-center"><h4> </h4></th>
+                                                </tr>
                                                 <tr rowspan="2">
                                                     <td>
                                                         <h3 translate>thursday</h3>
                                                         <br>
                                                         <input type="text" class="daily-menu date text-center" ng-model="day4Date.$value"  pplaceholder="dátum">
                                                         <br>
-                                                        <br>
-                                                        <p>Alergény</p>
+                                                        <h3>Alergény</h3>
                                                     </td>
                                                     <td>
                                                         <textarea  class="polievka" ng-model="day4food1.$value" placeholder="{{day4food1.$value}}" ></textarea>
@@ -260,15 +292,19 @@
                                                         <input  type="text" class="daily-menu alergeny"  ng-model="day4allergens3.$value" placeholder="_">
                                                     </td>
                                                 </tr>
-
+                                                <tr>
+                                                    <th class="text-center"><h4></h4></th>
+                                                    <th class="text-center"><h4> </h4></th>
+                                                    <th class="text-center"><h4> </h4></th>
+                                                    <th class="text-center"><h4> </h4></th>
+                                                </tr>
                                                 <tr rowspan="2">
                                                     <td>
                                                         <h3 translate>friday</h3>
                                                         <br>
                                                         <input type="text" class="daily-menu date text-center" ng-model="day5Date.$value"  placeholder="dátum">
                                                         <br>
-                                                        <br>
-                                                        <p>Alergény</p>
+                                                        <h3>Alergény</h3>
                                                     </td>
                                                     <td>
                                                         <textarea  class="polievka" ng-model="day5food1.$value" placeholder="{{day5food1.$value}}" ></textarea>
@@ -299,6 +335,773 @@
                     </div>
                 </section>
 
+                <section id="beerCard" class="bg-white" ng-if="!adminLogin || adminCenter" ng-hide="previewOpen || editOver">
+
+                    <div class="container">
+                        <br>
+
+                        <div class="row">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Pivná karta</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-6">
+                                            <div class="beer-admin-line">
+                                                <h3># 1</h3>
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer1active" >
+                                                    <h3>STAV {{beer1active.$value}}</h3>
+                                                </label>
+                                                <label for="beer1active" >
+                                                    <h3 class="good" ng-if="beer1active.$value">Dostupné</h3>
+                                                    <h3 class="bad" ng-if="!beer1active.$value">Nedostupné</h3>
+                                                </label>
+                                                <input id="beer1active" type="checkbox" value="{{beer1active.$value}}" ng-model="beer1active.$value" ng-checked="beer1active.$value" />
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer1name" >
+                                                    <h3>Názov</h3>
+                                                </label>
+                                                <input id="beer1name" type="text" class="  beer-menu" ng-model="beer1name.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer1subtitle" >
+                                                    <h3>Titulka</h3>
+                                                </label>
+                                                <input id="beer1subtitle" type="text" class="  beer-menu" ng-model="beer1subtitle.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer1text" >
+                                                    <h3>Popis</h3>
+                                                </label>
+                                                <textarea id="beer1text" type="text" class="  beer-menu" ng-model="beer1text.$value" placeholder=""></textarea>
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer1slady" >
+                                                    <h3>Slady</h3></label>
+                                                <input id="beer1slady" type="text" class="  beer-menu" ng-model="beer1slady.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer1chmele" >
+                                                    <h3>Chmele</h3></label>
+                                                <textarea id="beer1chmele" type="text" class="beer-menu" ng-model="beer1chmele.$value" placeholder=""></textarea>
+                                            </div>
+                                            <div class="beer-admin-line percent">
+                                                <label for="beer1extrakt" >
+                                                    <h3>Extrakt</h3>
+                                                </label>
+                                                <input id="beer1extrakt" type="text" class=" beer-menu" ng-model="beer1extrakt.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line percent">
+                                                <label for="beer1alkohol" >
+                                                    <h3>Alkohol</h3>
+                                                </label>
+                                                <input id="beer1alkohol" type="text" class=" beer-menu" ng-model="beer1alkohol.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line ibu">
+                                                <label for="beer1ibu" >
+                                                    <h3>Horkosť</h3>
+                                                </label>
+                                                <input id="beer1ibu" type="text" class=" beer-menu" ng-model="beer1ibu.$value" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-md-6">
+                                            <div class="beer-admin-line">
+                                                <h3># 2</h3>
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer2active" >
+                                                    <h3>STAV</h3>
+                                                </label>
+                                                <label for="beer2active" >
+                                                    <h3 class="good" ng-if="beer2active.$value">Dostupné</h3>
+                                                    <h3 class="bad" ng-if="!beer2active.$value">Nedostupné</h3>
+                                                </label>
+                                                <input id="beer2active" type="checkbox" value="{{beer2active.$value}}" ng-model="beer2active.$value" ng-checked="beer2active.$value" />
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer2name" >
+                                                    <h3>Názov</h3>
+                                                </label>
+                                                <input id="beer2name" type="text" class="  beer-menu" ng-model="beer2name.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer2subtitle" >
+                                                    <h3>Titulka</h3>
+                                                </label>
+                                                <input id="beer2subtitle" type="text" class="  beer-menu" ng-model="beer2subtitle.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer2text" >
+                                                    <h3>Popis</h3>
+                                                </label>
+                                                <textarea id="beer2text" type="text" class="  beer-menu" ng-model="beer2text.$value" placeholder=""></textarea>
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer2slady" >
+                                                    <h3>Slady</h3></label>
+                                                <input id="beer2slady" type="text" class="  beer-menu" ng-model="beer2slady.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer2chmele" >
+                                                    <h3>Chmele</h3></label>
+                                                <textarea id="beer2chmele" type="text" class="beer-menu" ng-model="beer2chmele.$value" placeholder=""></textarea>
+                                            </div>
+                                            <div class="beer-admin-line percent">
+                                                <label for="beer2extrakt" >
+                                                    <h3>Extrakt</h3>
+                                                </label>
+                                                <input id="beer2extrakt" type="text" class=" beer-menu" ng-model="beer2extrakt.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line percent">
+                                                <label for="beer2alkohol" >
+                                                    <h3>Alkohol</h3>
+                                                </label>
+                                                <input id="beer2alkohol" type="text" class=" beer-menu" ng-model="beer2alkohol.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line ibu">
+                                                <label for="beer2ibu" >
+                                                    <h3>Horkosť</h3>
+                                                </label>
+                                                <input id="beer2ibu" type="text" class=" beer-menu" ng-model="beer2ibu.$value" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-6">
+                                            <div class="beer-admin-line">
+                                                <h3># 3</h3>
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer3active" >
+                                                    <h3>STAV</h3>
+                                                </label>
+                                                <label for="beer3active" >
+                                                    <h3 class="good" ng-if="beer3active.$value">Dostupné</h3>
+                                                    <h3 class="bad" ng-if="!beer3active.$value">Nedostupné</h3>
+                                                </label>
+                                                <input id="beer3active" type="checkbox" value="{{beer3active.$value}}" ng-model="beer3active.$value" ng-checked="beer3active.$value" />
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer3name" >
+                                                    <h3>Názov</h3>
+                                                </label>
+                                                <input id="beer3name" type="text" class="  beer-menu" ng-model="beer3name.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer3subtitle" >
+                                                    <h3>Titulka</h3>
+                                                </label>
+                                                <input id="beer3subtitle" type="text" class="  beer-menu" ng-model="beer3subtitle.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer3text" >
+                                                    <h3>Popis</h3>
+                                                </label>
+                                                <textarea id="beer3text" type="text" class="  beer-menu" ng-model="beer3text.$value" placeholder=""></textarea>
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer3slady" >
+                                                    <h3>Slady</h3></label>
+                                                <input id="beer3slady" type="text" class="  beer-menu" ng-model="beer3slady.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer3chmele" >
+                                                    <h3>Chmele</h3></label>
+                                                <textarea id="beer3chmele" type="text" class="beer-menu" ng-model="beer3chmele.$value" placeholder=""></textarea>
+                                            </div>
+                                            <div class="beer-admin-line percent">
+                                                <label for="beer3extrakt" >
+                                                    <h3>Extrakt</h3>
+                                                </label>
+                                                <input id="beer3extrakt" type="text" class=" beer-menu" ng-model="beer3extrakt.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line percent">
+                                                <label for="beer3alkohol" >
+                                                    <h3>Alkohol</h3>
+                                                </label>
+                                                <input id="beer3alkohol" type="text" class=" beer-menu" ng-model="beer3alkohol.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line ibu">
+                                                <label for="beer3ibu" >
+                                                    <h3>Horkosť</h3>
+                                                </label>
+                                                <input id="beer3ibu" type="text" class=" beer-menu" ng-model="beer3ibu.$value" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-md-6">
+                                            <div class="beer-admin-line">
+                                                <h3># 4</h3>
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer4active" >
+                                                    <h3>STAV</h3>
+                                                </label>
+                                                <label for="beer4active" >
+                                                    <h3 class="good" ng-if="beer4active.$value">Dostupné</h3>
+                                                    <h3 class="bad" ng-if="!beer4active.$value">Nedostupné</h3>
+                                                </label>
+                                                <input id="beer4active" type="checkbox" value="{{beer4active.$value}}" ng-model="beer4active.$value" ng-checked="beer4active.$value" />
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer4name" >
+                                                    <h3>Názov</h3>
+                                                </label>
+                                                <input id="beer4name" type="text" class="  beer-menu" ng-model="beer4name.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer4subtitle" >
+                                                    <h3>Titulka</h3>
+                                                </label>
+                                                <input id="beer4subtitle" type="text" class="  beer-menu" ng-model="beer4subtitle.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer4text" >
+                                                    <h3>Popis</h3>
+                                                </label>
+                                                <textarea id="beer4text" type="text" class="  beer-menu" ng-model="beer4text.$value" placeholder=""></textarea>
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer4slady" >
+                                                    <h3>Slady</h3></label>
+                                                <input id="beer4slady" type="text" class="  beer-menu" ng-model="beer4slady.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer4chmele" >
+                                                    <h3>Chmele</h3></label>
+                                                <textarea id="beer4chmele" type="text" class="beer-menu" ng-model="beer4chmele.$value" placeholder=""></textarea>
+                                            </div>
+                                            <div class="beer-admin-line percent">
+                                                <label for="beer4extrakt" >
+                                                    <h3>Extrakt</h3>
+                                                </label>
+                                                <input id="beer4extrakt" type="text" class=" beer-menu" ng-model="beer4extrakt.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line percent">
+                                                <label for="beer4alkohol" >
+                                                    <h3>Alkohol</h3>
+                                                </label>
+                                                <input id="beer4alkohol" type="text" class=" beer-menu" ng-model="beer4alkohol.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line ibu">
+                                                <label for="beer4ibu" >
+                                                    <h3>Horkosť</h3>
+                                                </label>
+                                                <input id="beer4ibu" type="text" class=" beer-menu" ng-model="beer4ibu.$value" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-6">
+                                            <div class="beer-admin-line">
+                                                <h3># 5</h3>
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer5active" >
+                                                    <h3>STAV</h3>
+                                                </label>
+                                                <label for="beer5active" >
+                                                    <h3 class="good" ng-if="beer5active.$value">Dostupné</h3>
+                                                    <h3 class="bad" ng-if="!beer5active.$value">Nedostupné</h3>
+                                                </label>
+                                                <input id="beer5active" type="checkbox" value="{{beer5active.$value}}" ng-model="beer5active.$value" ng-checked="beer5active.$value" />
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer5name" >
+                                                    <h3>Názov</h3>
+                                                </label>
+                                                <input id="beer5name" type="text" class="  beer-menu" ng-model="beer5name.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer5subtitle" >
+                                                    <h3>Titulka</h3>
+                                                </label>
+                                                <input id="beer5subtitle" type="text" class="  beer-menu" ng-model="beer5subtitle.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer5text" >
+                                                    <h3>Popis</h3>
+                                                </label>
+                                                <textarea id="beer5text" type="text" class="  beer-menu" ng-model="beer5text.$value" placeholder=""></textarea>
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer5slady" >
+                                                    <h3>Slady</h3></label>
+                                                <input id="beer5slady" type="text" class="  beer-menu" ng-model="beer5slady.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer5chmele" >
+                                                    <h3>Chmele</h3></label>
+                                                <textarea id="beer5chmele" type="text" class="beer-menu" ng-model="beer5chmele.$value" placeholder=""></textarea>
+                                            </div>
+                                            <div class="beer-admin-line percent">
+                                                <label for="beer5extrakt" >
+                                                    <h3>Extrakt</h3>
+                                                </label>
+                                                <input id="beer5extrakt" type="text" class=" beer-menu" ng-model="beer5extrakt.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line percent">
+                                                <label for="beer5alkohol" >
+                                                    <h3>Alkohol</h3>
+                                                </label>
+                                                <input id="beer5alkohol" type="text" class=" beer-menu" ng-model="beer5alkohol.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line ibu">
+                                                <label for="beer5ibu" >
+                                                    <h3>Horkosť</h3>
+                                                </label>
+                                                <input id="beer5ibu" type="text" class=" beer-menu" ng-model="beer5ibu.$value" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-md-6">
+                                            <div class="beer-admin-line">
+                                                <h3># 6</h3>
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer6active" >
+                                                    <h3>STAV</h3>
+                                                </label>
+                                                <label for="beer6active" >
+                                                    <h3 class="good" ng-if="beer6active.$value">Dostupné</h3>
+                                                    <h3 class="bad" ng-if="!beer6active.$value">Nedostupné</h3>
+                                                </label>
+                                                <input id="beer6active" type="checkbox" value="{{beer6active.$value}}" ng-model="beer6active.$value" ng-checked="beer6active.$value" />
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer6name" >
+                                                    <h3>Názov</h3>
+                                                </label>
+                                                <input id="beer6name" type="text" class="  beer-menu" ng-model="beer6name.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer6subtitle" >
+                                                    <h3>Titulka</h3>
+                                                </label>
+                                                <input id="beer6subtitle" type="text" class="  beer-menu" ng-model="beer6subtitle.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer6text" >
+                                                    <h3>Popis</h3>
+                                                </label>
+                                                <textarea id="beer6text" type="text" class="  beer-menu" ng-model="beer6text.$value" placeholder=""></textarea>
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer6slady" >
+                                                    <h3>Slady</h3></label>
+                                                <input id="beer6slady" type="text" class="  beer-menu" ng-model="beer6slady.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer6chmele" >
+                                                    <h3>Chmele</h3></label>
+                                                <textarea id="beer6chmele" type="text" class="beer-menu" ng-model="beer6chmele.$value" placeholder=""></textarea>
+                                            </div>
+                                            <div class="beer-admin-line percent">
+                                                <label for="beer6extrakt" >
+                                                    <h3>Extrakt</h3>
+                                                </label>
+                                                <input id="beer6extrakt" type="text" class=" beer-menu" ng-model="beer6extrakt.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line percent">
+                                                <label for="beer6alkohol" >
+                                                    <h3>Alkohol</h3>
+                                                </label>
+                                                <input id="beer6alkohol" type="text" class=" beer-menu" ng-model="beer6alkohol.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line ibu">
+                                                <label for="beer6ibu" >
+                                                    <h3>Horkosť</h3>
+                                                </label>
+                                                <input id="beer6ibu" type="text" class=" beer-menu" ng-model="beer6ibu.$value" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-6">
+                                            <div class="beer-admin-line">
+                                                <h3># 7</h3>
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer7active" >
+                                                    <h3>STAV</h3>
+                                                </label>
+                                                <label for="beer7active" >
+                                                    <h3 class="good" ng-if="beer7active.$value">Dostupné</h3>
+                                                    <h3 class="bad" ng-if="!beer7active.$value">Nedostupné</h3>
+                                                </label>
+                                                <input id="beer7active" type="checkbox" value="{{beer7active.$value}}" ng-model="beer7active.$value" ng-checked="beer7active.$value" />
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer7name" >
+                                                    <h3>Názov</h3>
+                                                </label>
+                                                <input id="beer7name" type="text" class="  beer-menu" ng-model="beer7name.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer7subtitle" >
+                                                    <h3>Titulka</h3>
+                                                </label>
+                                                <input id="beer7subtitle" type="text" class="  beer-menu" ng-model="beer7subtitle.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer7text" >
+                                                    <h3>Popis</h3>
+                                                </label>
+                                                <textarea id="beer7text" type="text" class="  beer-menu" ng-model="beer7text.$value" placeholder=""></textarea>
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer7slady" >
+                                                    <h3>Slady</h3></label>
+                                                <input id="beer7slady" type="text" class="  beer-menu" ng-model="beer7slady.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer7chmele" >
+                                                    <h3>Chmele</h3></label>
+                                                <textarea id="beer7chmele" type="text" class="beer-menu" ng-model="beer7chmele.$value" placeholder=""></textarea>
+                                            </div>
+                                            <div class="beer-admin-line percent">
+                                                <label for="beer7extrakt" >
+                                                    <h3>Extrakt</h3>
+                                                </label>
+                                                <input id="beer7extrakt" type="text" class=" beer-menu" ng-model="beer7extrakt.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line percent">
+                                                <label for="beer7alkohol" >
+                                                    <h3>Alkohol</h3>
+                                                </label>
+                                                <input id="beer7alkohol" type="text" class=" beer-menu" ng-model="beer7alkohol.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line ibu">
+                                                <label for="beer7ibu" >
+                                                    <h3>Horkosť</h3>
+                                                </label>
+                                                <input id="beer7ibu" type="text" class=" beer-menu" ng-model="beer7ibu.$value" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-md-6">
+                                            <div class="beer-admin-line">
+                                                <h3># 8</h3>
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer8active" >
+                                                    <h3>STAV</h3>
+                                                </label>
+                                                <label for="beer8active" >
+                                                    <h3 class="good" ng-if="beer8active.$value">Dostupné</h3>
+                                                    <h3 class="bad" ng-if="!beer8active.$value">Nedostupné</h3>
+                                                </label>
+                                                <input id="beer8active" type="checkbox" value="{{beer8active.$value}}" ng-model="beer8active.$value" ng-checked="beer8active.$value" />
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer8name" >
+                                                    <h3>Názov</h3>
+                                                </label>
+                                                <input id="beer8name" type="text" class="  beer-menu" ng-model="beer8name.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer8subtitle" >
+                                                    <h3>Titulka</h3>
+                                                </label>
+                                                <input id="beer8subtitle" type="text" class="  beer-menu" ng-model="beer8subtitle.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer8text" >
+                                                    <h3>Popis</h3>
+                                                </label>
+                                                <textarea id="beer8text" type="text" class="  beer-menu" ng-model="beer8text.$value" placeholder=""></textarea>
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer8slady" >
+                                                    <h3>Slady</h3></label>
+                                                <input id="beer8slady" type="text" class="  beer-menu" ng-model="beer8slady.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer8chmele" >
+                                                    <h3>Chmele</h3></label>
+                                                <textarea id="beer8chmele" type="text" class="beer-menu" ng-model="beer8chmele.$value" placeholder=""></textarea>
+                                            </div>
+                                            <div class="beer-admin-line percent">
+                                                <label for="beer8extrakt" >
+                                                    <h3>Extrakt</h3>
+                                                </label>
+                                                <input id="beer8extrakt" type="text" class=" beer-menu" ng-model="beer8extrakt.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line percent">
+                                                <label for="beer8alkohol" >
+                                                    <h3>Alkohol</h3>
+                                                </label>
+                                                <input id="beer8alkohol" type="text" class=" beer-menu" ng-model="beer8alkohol.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line ibu">
+                                                <label for="beer8ibu" >
+                                                    <h3>Horkosť</h3>
+                                                </label>
+                                                <input id="beer8ibu" type="text" class=" beer-menu" ng-model="beer8ibu.$value" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-6">
+                                            <div class="beer-admin-line">
+                                                <h3># 9</h3>
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer9active" >
+                                                    <h3>STAV</h3>
+                                                </label>
+                                                <label for="beer9active" >
+                                                    <h3 class="good" ng-if="beer9active.$value">Dostupné</h3>
+                                                    <h3 class="bad" ng-if="!beer9active.$value">Nedostupné</h3>
+                                                </label>
+                                                <input id="beer9active" type="checkbox" value="{{beer9active.$value}}" ng-model="beer9active.$value" ng-checked="beer9active.$value" />
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer9name" >
+                                                    <h3>Názov</h3>
+                                                </label>
+                                                <input id="beer9name" type="text" class="  beer-menu" ng-model="beer9name.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer9subtitle" >
+                                                    <h3>Titulka</h3>
+                                                </label>
+                                                <input id="beer9subtitle" type="text" class="  beer-menu" ng-model="beer9subtitle.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer9text" >
+                                                    <h3>Popis</h3>
+                                                </label>
+                                                <textarea id="beer9text" type="text" class="  beer-menu" ng-model="beer9text.$value" placeholder=""></textarea>
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer9slady" >
+                                                    <h3>Slady</h3></label>
+                                                <input id="beer9slady" type="text" class="  beer-menu" ng-model="beer9slady.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer9chmele" >
+                                                    <h3>Chmele</h3></label>
+                                                <textarea id="beer9chmele" type="text" class="beer-menu" ng-model="beer9chmele.$value" placeholder=""></textarea>
+                                            </div>
+                                            <div class="beer-admin-line percent">
+                                                <label for="beer9extrakt" >
+                                                    <h3>Extrakt</h3>
+                                                </label>
+                                                <input id="beer9extrakt" type="text" class=" beer-menu" ng-model="beer9extrakt.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line percent">
+                                                <label for="beer9alkohol" >
+                                                    <h3>Alkohol</h3>
+                                                </label>
+                                                <input id="beer9alkohol" type="text" class=" beer-menu" ng-model="beer9alkohol.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line ibu">
+                                                <label for="beer9ibu" >
+                                                    <h3>Horkosť</h3>
+                                                </label>
+                                                <input id="beer9ibu" type="text" class=" beer-menu" ng-model="beer9ibu.$value" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-md-6">
+                                            <div class="beer-admin-line">
+                                                <h3># 10</h3>
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer10active" >
+                                                    <h3>STAV</h3>
+                                                </label>
+                                                <label for="beer10active" >
+                                                    <h3 class="good" ng-if="beer10active.$value">Dostupné</h3>
+                                                    <h3 class="bad" ng-if="!beer10active.$value">Nedostupné</h3>
+                                                </label>
+                                                <input id="beer10active" type="checkbox" value="{{beer10active.$value}}" ng-model="beer10active.$value" ng-checked="beer10active.$value" />
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer10name" >
+                                                    <h3>Názov</h3>
+                                                </label>
+                                                <input id="beer10name" type="text" class="  beer-menu" ng-model="beer10name.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer10subtitle" >
+                                                    <h3>Titulka</h3>
+                                                </label>
+                                                <input id="beer10subtitle" type="text" class="  beer-menu" ng-model="beer10subtitle.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer10text" >
+                                                    <h3>Popis</h3>
+                                                </label>
+                                                <textarea id="beer10text" type="text" class="  beer-menu" ng-model="beer10text.$value" placeholder=""></textarea>
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer10slady" >
+                                                    <h3>Slady</h3></label>
+                                                <input id="beer10slady" type="text" class="  beer-menu" ng-model="beer10slady.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer10chmele" >
+                                                    <h3>Chmele</h3></label>
+                                                <textarea id="beer10chmele" type="text" class="beer-menu" ng-model="beer10chmele.$value" placeholder=""></textarea>
+                                            </div>
+                                            <div class="beer-admin-line percent">
+                                                <label for="beer10extrakt" >
+                                                    <h3>Extrakt</h3>
+                                                </label>
+                                                <input id="beer10extrakt" type="text" class=" beer-menu" ng-model="beer10extrakt.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line percent">
+                                                <label for="beer10alkohol" >
+                                                    <h3>Alkohol</h3>
+                                                </label>
+                                                <input id="beer10alkohol" type="text" class=" beer-menu" ng-model="beer10alkohol.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line ibu">
+                                                <label for="beer10ibu" >
+                                                    <h3>Horkosť</h3>
+                                                </label>
+                                                <input id="beer10ibu" type="text" class=" beer-menu" ng-model="beer10ibu.$value" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-6">
+                                            <div class="beer-admin-line">
+                                                <h3># 11</h3>
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer11active" >
+                                                    <h3>STAV</h3>
+                                                </label>
+                                                <label for="beer11active" >
+                                                    <h3 class="good" ng-if="beer11active.$value">Dostupné</h3>
+                                                    <h3 class="bad" ng-if="!beer11active.$value">Nedostupné</h3>
+                                                </label>
+                                                <input id="beer11active" type="checkbox" value="{{beer11active.$value}}" ng-model="beer11active.$value" ng-checked="beer11active.$value" />
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer11name" >
+                                                    <h3>Názov</h3>
+                                                </label>
+                                                <input id="beer11name" type="text" class="  beer-menu" ng-model="beer11name.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer11subtitle" >
+                                                    <h3>Titulka</h3>
+                                                </label>
+                                                <input id="beer11subtitle" type="text" class="  beer-menu" ng-model="beer11subtitle.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer11text" >
+                                                    <h3>Popis</h3>
+                                                </label>
+                                                <textarea id="beer11text" type="text" class="  beer-menu" ng-model="beer11text.$value" placeholder=""></textarea>
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer11slady" >
+                                                    <h3>Slady</h3></label>
+                                                <input id="beer11slady" type="text" class="  beer-menu" ng-model="beer11slady.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer11chmele" >
+                                                    <h3>Chmele</h3></label>
+                                                <textarea id="beer11chmele" type="text" class="beer-menu" ng-model="beer11chmele.$value" placeholder=""></textarea>
+                                            </div>
+                                            <div class="beer-admin-line percent">
+                                                <label for="beer11extrakt" >
+                                                    <h3>Extrakt</h3>
+                                                </label>
+                                                <input id="beer11extrakt" type="text" class=" beer-menu" ng-model="beer11extrakt.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line percent">
+                                                <label for="beer11alkohol" >
+                                                    <h3>Alkohol</h3>
+                                                </label>
+                                                <input id="beer11alkohol" type="text" class=" beer-menu" ng-model="beer11alkohol.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line ibu">
+                                                <label for="beer11ibu" >
+                                                    <h3>Horkosť</h3>
+                                                </label>
+                                                <input id="beer11ibu" type="text" class=" beer-menu" ng-model="beer11ibu.$value" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-md-6">
+                                            <div class="beer-admin-line">
+                                                <h3># 12</h3>
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer12active" >
+                                                    <h3>STAV</h3>
+                                                </label>
+                                                <label for="beer12active" >
+                                                    <h3 class="good" ng-if="beer12active.$value">Dostupné</h3>
+                                                    <h3 class="bad" ng-if="!beer12active.$value">Nedostupné</h3>
+                                                </label>
+                                                <input id="beer12active" type="checkbox" value="{{beer12active.$value}}" ng-model="beer12active.$value" ng-checked="beer12active.$value" />
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer12name" >
+                                                    <h3>Názov</h3>
+                                                </label>
+                                                <input id="beer12name" type="text" class="  beer-menu" ng-model="beer12name.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer12subtitle" >
+                                                    <h3>Titulka</h3>
+                                                </label>
+                                                <input id="beer12subtitle" type="text" class="  beer-menu" ng-model="beer12subtitle.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer12text" >
+                                                    <h3>Popis</h3>
+                                                </label>
+                                                <textarea id="beer12text" type="text" class="  beer-menu" ng-model="beer12text.$value" placeholder=""></textarea>
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer12slady" >
+                                                    <h3>Slady</h3></label>
+                                                <input id="beer12slady" type="text" class="  beer-menu" ng-model="beer12slady.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line">
+                                                <label for="beer12chmele" >
+                                                    <h3>Chmele</h3></label>
+                                                <textarea id="beer12chmele" type="text" class="beer-menu" ng-model="beer12chmele.$value" placeholder=""></textarea>
+                                            </div>
+                                            <div class="beer-admin-line percent">
+                                                <label for="beer12extrakt" >
+                                                    <h3>Extrakt</h3>
+                                                </label>
+                                                <input id="beer12extrakt" type="text" class=" beer-menu" ng-model="beer12extrakt.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line percent">
+                                                <label for="beer12alkohol" >
+                                                    <h3>Alkohol</h3>
+                                                </label>
+                                                <input id="beer12alkohol" type="text" class=" beer-menu" ng-model="beer12alkohol.$value" placeholder="">
+                                            </div>
+                                            <div class="beer-admin-line ibu">
+                                                <label for="beer12ibu" >
+                                                    <h3>Horkosť</h3>
+                                                </label>
+                                                <input id="beer12ibu" type="text" class=" beer-menu" ng-model="beer12ibu.$value" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
                 <section id="openHoursTables" class="bg-white" ng-if="!adminLogin || adminCenter" ng-hide="previewOpen || editOver">
                     <div class="container">
                         <br>
@@ -310,18 +1113,18 @@
                                 </div>
                                 <div class="panel-body">
                                     <div class="row">
-                                        <div class="col-xs-12 col-md-2"></div>
-                                        <div class="col-xs-12 col-md-4">
+                                        <div class="col-xs-12 col-md-0"></div>
+                                        <div class="col-xs-12 col-md-6">
                                             <div class="table-responsive">
                                                 <table class="table table-bordered">
                                                     <thead>
                                                     <tr>
-                                                        <th class="text-center" colspan="3"><h4>Restaurant</h4></th>
+                                                        <th class="text-center" colspan="3"><h4 translate>Restaurant</h4></th>
                                                     </tr>
                                                     <tr>
-                                                        <th class="text-center"><h4>Den</h4></th>
-                                                        <th class="text-center"><h4>Od</h4></th>
-                                                        <th class="text-center"><h4>Do</h4></th>
+                                                        <th class="text-center"><h3>Den</h3></th>
+                                                        <th class="text-center"><h3>Od</h3></th>
+                                                        <th class="text-center"><h3>Do</h3></th>
                                                     </tr>
                                                     </thead>
                                                     <tbody id="openHoursTable-1">
@@ -411,7 +1214,7 @@
                                                 </table>
                                             </div>
                                         </div>
-                                        <div class="col-xs-12 col-md-4">
+                                        <div class="col-xs-12 col-md-6">
                                             <div class="table-responsive">
                                                 <table class="table table-bordered">
                                                     <thead>
@@ -419,9 +1222,9 @@
                                                         <th class="text-center" colspan="3"><h4>Kúpele</h4></th>
                                                     </tr>
                                                     <tr>
-                                                        <th class="text-center"><h4>Den</h4></th>
-                                                        <th class="text-center"><h4>OD</h4></th>
-                                                        <th class="text-center"><h4>DO</h4></th>
+                                                        <th class="text-center"><h3>Den</h3></th>
+                                                        <th class="text-center"><h3>OD</h3></th>
+                                                        <th class="text-center"><h3>DO</h3></th>
                                                     </tr>
                                                     </thead>
                                                     <tbody id="openHoursTable-2">
@@ -511,11 +1314,11 @@
                                                 </table>
                                             </div>
                                         </div>
-                                        <div class="col-xs-12 col-md-2"></div>
+                                        <div class="col-xs-12 col-md-0"></div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-xs-12 col-md-2"></div>
-                                        <div class="col-xs-12 col-md-8">
+                                        <div class="col-xs-12 col-md-0"></div>
+                                        <div class="col-xs-12 col-md-12">
                                             <div class="table-responsive">
                                                 <table class="table table-bordered">
                                                     <thead>
@@ -523,10 +1326,10 @@
                                                         <th class="text-center" colspan="4"><h4>Penzion</h4></th>
                                                     </tr>
                                                     <tr>
-                                                        <th class="text-center"><h4>Od</h4></th>
-                                                        <th class="text-center"><h4>Do</h4></th>
-                                                        <th class="text-center"><h4>CheckIn</h4></th>
-                                                        <th class="text-center"><h4>CheckOut</h4></th>
+                                                        <th class="text-center"><h3>Od</h3></th>
+                                                        <th class="text-center"><h3>Do</h3></th>
+                                                        <th class="text-center"><h3>CheckIn</h3></th>
+                                                        <th class="text-center"><h3>CheckOut</h3></th>
                                                     </tr>
                                                     </thead>
                                                     <tbody id="openHoursTable-4">
@@ -548,7 +1351,7 @@
                                                 </table>
                                             </div>
                                         </div>
-                                        <div class="col-xs-12 col-md-2"></div>
+                                        <div class="col-xs-12 col-md-0"></div>
                                     </div>
                                 </div>
                             </div>
@@ -569,7 +1372,16 @@
                                     </div>
                                     <div class="panel-body p-md">
 
-
+                                        <div class="row">
+                                            <div class="form-inline">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">Parking</div>
+                                                    <input type="text" class="form-control text-center" ng-model="parkingPrice.$value"  placeholder="{{parkingPrice.$value}}">
+                                                    <span class="input-group-addon">&euro;</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
                                         <div class="row">
                                             <div class="col-xs-12 col-md-2"></div>
                                             <div class="col-xs-12 col-md-8">
@@ -577,25 +1389,42 @@
                                                     <table class="table table-bordered">
                                                         <thead>
                                                         <tr>
-                                                            <th class="text-center"><h4>1 {{person}}</h4></th>
-                                                            <th class="text-center"><h4>2 {{people}}</h4></th>
-                                                            <th class="text-center"><h4>3 {{people}}</h4></th>
-                                                            <th class="text-center"><h4>4 {{people}}</h4></th>
+                                                            <th class="text-center"><h3></h3></th>
+                                                            <th class="text-center"><h3>1 os.</h3></th>
+                                                            <th class="text-center"><h3>2 os.</h3></th>
+                                                            <th class="text-center"><h3>3 os.</h3></th>
+                                                            <th class="text-center"><h3>4 os.</h3></th>
                                                         </tr>
                                                         </thead>
                                                         <tbody id="prices-pension">
                                                         <tr>
-                                                            <td>
+                                                            <td class="text-center"><h3>Sezóna</h3></td>
+                                                            <td class="price-tag">
                                                                 <input id="pensionPrice1" type="text" class="daily-menu"  ng-model="pensionPrice1.$value">
                                                             </td>
-                                                            <td>
+                                                            <td class="price-tag">
                                                                 <input id="pensionPrice2" type="text" class="daily-menu"  ng-model="pensionPrice2.$value">
                                                             </td>
-                                                            <td>
+                                                            <td class="price-tag">
                                                                 <input id="pensionPrice3" type="text" class="daily-menu" ng-model="pensionPrice3.$value">
                                                             </td>
-                                                            <td>
+                                                            <td class="price-tag">
                                                                 <input id="pensionPrice4" type="text" class="daily-menu" ng-model="pensionPrice4.$value">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-center"><h3>Mimo</h3></td>
+                                                            <td class="price-tag">
+                                                                <input id="pensionPrice5" type="text" class="daily-menu"  ng-model="pensionPrice5.$value">
+                                                            </td>
+                                                            <td class="price-tag">
+                                                                <input id="pensionPrice6" type="text" class="daily-menu"  ng-model="pensionPrice6.$value">
+                                                            </td>
+                                                            <td class="price-tag">
+                                                                <input id="pensionPrice7" type="text" class="daily-menu" ng-model="pensionPrice7.$value">
+                                                            </td>
+                                                            <td class="price-tag">
+                                                                <input id="pensionPrice8" type="text" class="daily-menu" ng-model="pensionPrice8.$value">
                                                             </td>
                                                         </tr>
                                                         </tbody>
@@ -624,14 +1453,14 @@
                                     <div class="row">
                                         <div class="form-inline">
                                             <div class="input-group">
-                                                <div class="input-group-addon">Sauna</div>
-                                                <input type="text" class="form-control text-center" ng-model="saunaPrice1.$value"  placeholder="{{saunaPrice1.$value}}">
+                                                <div class="input-group-addon">Sauna Cena</div>
+                                                <input type="text" class="form-control text-center" ng-model="saunaPrice.$value"  placeholder="{{saunaPrice.$value}}">
                                                 <span class="input-group-addon">&euro;</span>
                                             </div>
                                             <div class="input-group">
-                                                <div class="input-group-addon">Masáž</div>
-                                                <input type="text" class="form-control text-center" ng-model="massagePrice.$value"  placeholder="{{massagePrice.$value}}">
-                                                <span class="input-group-addon">&euro;</span>
+                                                <div class="input-group-addon">Sauna čas</div>
+                                                <input type="text" class="form-control text-center" ng-model="saunaTime.$value"  placeholder="{{saunaTime.$value}}">
+                                                <span class="input-group-addon">min</span>
                                             </div>
                                         </div>
                                     </div>
@@ -644,22 +1473,22 @@
                                                 <table class="table table-bordered">
                                                     <thead>
                                                     <tr>
-                                                        <td colspan="5" class="text-center"><h4>Špeciálna procedura</h4></td>
+                                                        <td colspan="5" class="text-center"><h4>Pivné kúpele</h4></td>
                                                     </tr>
                                                     <tr>
-                                                        <th class="text-center"><h4>Počet osôb</h4></th>
-                                                        <th class="text-center"><h4>1 vaňa</h4></th>
-                                                        <th class="text-center"><h4>2 vane</h4></th>
-                                                        <th class="text-center"><h4>3 vane</h4></th>
-                                                        <th class="text-center"><h4>4 vane</h4></th>
+                                                        <th class="text-center"><h3>Počet</h3></th>
+                                                        <th class="text-center"><h3>1 vaňa</h3></th>
+                                                        <th class="text-center"><h3>2 vane</h3></th>
+                                                        <th class="text-center"><h3>3 vane</h3></th>
+                                                        <th class="text-center"><h3>4 vane</h3></th>
                                                     </tr>
                                                     </thead>
                                                     <tbody id="prices-spa">
                                                     <tr>
                                                         <td>
-                                                            <h3>1</h3>
+                                                            <h3>1 os.</h3>
                                                         </td>
-                                                        <td>
+                                                        <td class="price-tag">
                                                             <input id="spaPrice1" type="text" class="daily-menu"  ng-model="spaPrice1.$value">
                                                         </td>
                                                         <td>
@@ -672,12 +1501,12 @@
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <h3>2</h3>
+                                                            <h3>2 os.</h3>
                                                         </td>
-                                                        <td>
+                                                        <td class="price-tag">
                                                             <input id="spaPrice2" type="text" class="daily-menu"  ng-model="spaPrice2.$value">
                                                         </td>
-                                                        <td>
+                                                        <td class="price-tag">
                                                             <input id="spaPrice3" type="text" class="daily-menu" ng-model="spaPrice3.$value">
                                                         </td>
                                                         <td>
@@ -687,15 +1516,15 @@
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <h3>3</h3>
+                                                            <h3>3 os.</h3>
                                                         </td>
                                                         <td>
 
                                                         </td>
-                                                        <td>
+                                                        <td class="price-tag">
                                                             <input id="spaPrice4" type="text" class="daily-menu" ng-model="spaPrice4.$value">
                                                         </td>
-                                                        <td>
+                                                        <td class="price-tag">
                                                             <input id="spaPrice5" type="text" class="daily-menu" ng-model="spaPrice5.$value">
                                                         </td>
                                                         <td>
@@ -703,55 +1532,55 @@
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <h3>4</h3>
+                                                            <h3>4 os.</h3>
+                                                        </td>
+                                                        <td>
+
+                                                        </td>
+                                                        <td class="price-tag">
+                                                            <input id="spaPrice6" type="text" class="daily-menu" ng-model="spaPrice6.$value" /s>
+                                                        </td>
+                                                        <td class="price-tag">
+                                                            <input id="spaPrice7" type="text" class="daily-menu" ng-model="spaPrice7.$value" />
+                                                        </td>
+                                                        <td class="price-tag">
+                                                            <input id="spaPrice8" type="text" class="daily-menu" ng-model="spaPrice8.$value" />
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <h3>5 os.</h3>
                                                         </td>
                                                         <td>
 
                                                         </td>
                                                         <td>
-                                                            <input id="spaPrice6" type="text" class="daily-menu" ng-model="spaPrice6.$value">
                                                         </td>
-                                                        <td>
-                                                            <input id="spaPrice7" type="text" class="daily-menu" ng-model="spaPrice7.$value">
+                                                        <td class="price-tag">
+                                                            <input id="spaPrice9" type="text" class="daily-menu" ng-model="spaPrice9.$value" />
                                                         </td>
-                                                        <td>
-                                                            <input id="spaPrice8" type="text" class="daily-menu" ng-model="spaPrice8.$value">
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <h3>5</h3>
-                                                        </td>
-                                                        <td>
-
-                                                        </td>
-                                                        <td>
-                                                        </td>
-                                                        <td>
-                                                            <input id="spaPrice9" type="text" class="daily-menu" ng-model="spaPrice9.$value">
-                                                        </td>
-                                                        <td>
-                                                            <input id="spaPrice10" type="text" class="daily-menu" ng-model="spaPrice10.$value">
+                                                        <td class="price-tag">
+                                                            <input id="spaPrice10" type="text" class="daily-menu" ng-model="spaPrice10.$value" />
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <h3>6</h3>
+                                                            <h3>6 os.</h3>
                                                         </td>
                                                         <td>
                                                         </td>
                                                         <td>
                                                         </td>
-                                                        <td>
+                                                        <td class="price-tag">
                                                             <input id="spaPrice11" type="text" class="daily-menu" ng-model="spaPrice11.$value">
                                                         </td>
-                                                        <td>
+                                                        <td class="price-tag">
                                                             <input id="spaPrice12" type="text" class="daily-menu" ng-model="spaPrice12.$value">
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <h3>7</h3>
+                                                            <h3>7 os.</h3>
                                                         </td>
                                                         <td>
                                                         </td>
@@ -759,13 +1588,13 @@
                                                         </td>
                                                         <td>
                                                         </td>
-                                                        <td>
+                                                        <td class="price-tag">
                                                             <input id="spaPrice13" type="text" class="daily-menu" ng-model="spaPrice13.$value">
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <h3>8</h3>
+                                                            <h3>8 os</h3>
                                                         </td>
                                                         <td>
                                                         </td>
@@ -773,7 +1602,7 @@
                                                         </td>
                                                         <td>
                                                         </td>
-                                                        <td>
+                                                        <td class="price-tag">
                                                             <input id="spaPrice14" type="text" class="daily-menu" ng-model="spaPrice14.$value">
                                                         </td>
                                                     </tr>
@@ -816,9 +1645,6 @@
                                                         <td>
                                                             <input id="spaTime6" type="text" class="daily-menu"  ng-model="spaTime6.$value">
                                                         </td>
-                                                        <td>
-                                                            <input id="spaTime7" type="text" class="daily-menu"  ng-model="spaTime7.$value">
-                                                        </td>
                                                     </tr>
                                                     </tbody>
                                                 </table>
@@ -826,9 +1652,148 @@
                                         </div>
                                     </div>
 
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-2"></div>
+                                        <div class="col-xs-12 col-md-8">
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                    <tr>
+                                                        <td colspan="3" class="text-center"><h4>Masáže</h4></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-center"><h3>TYP</h3></th>
+                                                        <th class="text-center"><h3>ČAS</h3></th>
+                                                        <th class="text-center"><h3>CENA</h3></th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody id="prices-massage">
+                                                    <tr>
+                                                        <td rowspan="2">
+                                                            <h3>Klasická masáž</h3>
+                                                        </td>
+                                                        <td class="min-tag">
+                                                            <input id="massage1Time1" type="text"  class="daily-menu"  ng-model="massage1Time1.$value">
+                                                        </td>
+                                                        <td class="price-tag">
+                                                            <input id="massage1Price1" type="text" class="daily-menu"  ng-model="massage1Price1.$value">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="min-tag">
+                                                            <input id="massage1Time2" type="text"  class="daily-menu" ng-model="massage1Time2.$value">
+                                                        </td>
+                                                        <td class="price-tag">
+                                                            <input id="massage1Price2" type="text" class="daily-menu"  ng-model="massage1Price2.$value">
+                                                        </td>
+                                                    </tr>
 
+                                                    <tr>
+                                                        <td rowspan="2">
+                                                            <h3>Intuitívna masáž</h3>
+                                                        </td>
+                                                        <td class="min-tag">
+                                                            <input id="massage2Time1" type="text"  class="daily-menu"  ng-model="massage2Time1.$value">
+                                                        </td>
+                                                        <td class="price-tag">
+                                                            <input id="massage2Price1" type="text" class="daily-menu"  ng-model="massage2Price1.$value">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="min-tag">
+                                                            <input id="massage2Time2" type="text"  class="daily-menu" ng-model="massage2Time2.$value">
+                                                        </td>
+                                                        <td class="price-tag">
+                                                            <input id="massage2Price2" type="text" class="daily-menu"  ng-model="massage2Price2.$value">
+                                                        </td>
+                                                    </tr>
 
+                                                    <tr>
+                                                        <td rowspan="2">
+                                                            <h3>Bankovanie</h3>
+                                                        </td>
+                                                        <td class="min-tag">
+                                                            <input id="massage3Time1" type="text"  class="daily-menu"  ng-model="massage3Time1.$value">
+                                                        </td>
+                                                        <td class="price-tag">
+                                                            <input id="massage3Price1" type="text" class="daily-menu"  ng-model="massage3Price1.$value">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="min-tag">
+                                                            <input id="massage3Time2" type="text"  class="daily-menu" ng-model="massage3Time2.$value">
+                                                        </td>
+                                                        <td class="price-tag">
+                                                            <input id="massage3Price2" type="text" class="daily-menu"  ng-model="massage3Price2.$value">
+                                                        </td>
+                                                    </tr>
 
+                                                    <tr>
+                                                        <td rowspan="2">
+                                                            <h3>Relaxačná / Aromatická masáž</h3>
+                                                        </td>
+                                                        <td class="min-tag">
+                                                            <input id="massage4Time1" type="text"  class="daily-menu"  ng-model="massage4Time1.$value">
+                                                        </td>
+                                                        <td class="price-tag">
+                                                            <input id="massage4Price1" type="text" class="daily-menu"  ng-model="massage4Price1.$value">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="min-tag">
+                                                            <input id="massage4Time2" type="text"  class="daily-menu" ng-model="massage4Time2.$value">
+                                                        </td>
+                                                        <td class="price-tag">
+                                                            <input id="massage4Price2" type="text" class="daily-menu"  ng-model="massage4Price2.$value">
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td rowspan="2">
+                                                            <h3>Športová masáž</h3>
+                                                        </td>
+                                                        <td class="min-tag">
+                                                            <input id="massage5Time1" type="text"  class="daily-menu"  ng-model="massage5Time1.$value">
+                                                        </td>
+                                                        <td class="price-tag">
+                                                            <input id="massage5Price1" type="text" class="daily-menu"  ng-model="massage5Price1.$value">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="min-tag">
+                                                            <input id="massage5Time2" type="text"  class="daily-menu" ng-model="massage5Time2.$value">
+                                                        </td>
+                                                        <td class="price-tag">
+                                                            <input id="massage5Price2" type="text" class="daily-menu"  ng-model="massage5Price2.$value">
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td rowspan="2">
+                                                            <h3>Myofasciálna</h3>
+                                                        </td>
+                                                        <td class="min-tag">
+                                                            <input id="massage6Time1" type="text"  class="daily-menu"  ng-model="massage6Time1.$value">
+                                                        </td>
+                                                        <td class="price-tag">
+                                                            <input id="massage6Price1" type="text" class="daily-menu"  ng-model="massage6Price1.$value">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="min-tag">
+                                                            <input id="massage6Time2" type="text"  class="daily-menu" ng-model="massage6Time2.$value">
+                                                        </td>
+                                                        <td class="price-tag">
+                                                            <input id="massage6Price2" type="text" class="daily-menu"  ng-model="massage6Price2.$value">
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-md-2"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -839,21 +1804,29 @@
                 <section id="menu" class="content-main bg" style="background: gray;" ng-show="adminCenter && previewOpen">
                     <div id="preview"  class="preview">
                         <div class="logo-left" ></div>
-                        <div class="logo-right"></div>
+                        <div class="logo-right">
+                            <img src="./components/assets/imgs/tatras_logo.png" width="100%" height="auto" alt="Logo TATRAS"/>
+                        </div>
 
                         <h1 class="main-title" ng-click="printMenu()">Denné Menu</h1>
                         <div class="small-line"></div>
 
                         <div class="content-main no-padding">
-                            <p class="align-center">Podávame v pracovné dni od <b>11:30</b></br>Cena denného menu je <b class="red">{{dailyMenuPrice.$value}} &euro; </b></p>
+                            <p class="align-center">
+                                <!--Podávame v pracovné dni od <b>11:30</b>-->
+                                <!--</br>-->
+                                Polievka & Menu A za <b class="red">{{dailyMenuPrice1.$value}} &euro; </b>
+                                </br>
+                                Polievka & Menu B za <b class="red">{{dailyMenuPrice2.$value}} &euro; </b>
+                            </p>
                             <div class="daily-menu-list">
 
 
-                                <div class="daily-menu-item">
+                                <div class="daily-menu-item" ng-if="day1food1.$value">
                                     <table>
                                         <tr class="menu-day">
                                             <td>
-                                                <h5>{{monday}}</h5>
+                                                <h5 translate>monday</h5>
                                             </td>
                                             <td>
                                             </td>
@@ -863,38 +1836,38 @@
                                         </tr>
                                         <tr class="first-row">
                                             <td class="item-title">
-                                                <p>{{food1}}</p>
-                                                <span>{{dailyMenuWeight1.$value}}</span>
+                                                <p class="food-name" translate>food1</p>
+                                                <span class="food-weight">{{dailyMenuWeight1.$value}} ml</span>
                                             </td>
                                             <td colspan="2">
-                                                <p>{{day1food1.$value}}<b> ({{day1allergens1.$value}}) </b></p>
+                                                <p>{{day1food1.$value}}<b ng-if="day1allergens1.$value"> ({{day1allergens1.$value}}) </b></p>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="item-title">
-                                                <p>{{food2}}</p>
-                                                <span>{{dailyMenuWeight2.$value}}</span>
+                                                <p class="food-name" translate>food2</p>
+                                                <span class="food-weight">{{dailyMenuWeight2.$value}} g</span>
                                             </td>
                                             <td colspan="2">
-                                                <p>{{day1food2.$value}}<b> ({{day1allergens2.$value}}) </b></p>
+                                                <p>{{day1food2.$value}}<b ng-if="day1allergens2.$value"> ({{day1allergens2.$value}}) </b></p>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="item-title">
-                                                <p>{{food3}}</p>
-                                                <span>{{dailyMenuWeight3.$value}}</span>
+                                                <p class="food-name" translate>food3</p>
+                                                <span class="food-weight">{{dailyMenuWeight3.$value}} g</span>
                                             </td>
                                             <td colspan="2">
-                                                <p>{{day1food3.$value}}<b> ({{day1allergens3.$value}}) </b></p>
+                                                <p>{{day1food3.$value}}<b ng-if="day1allergens3.$value"> ({{day1allergens3.$value}}) </b></p>
                                             </td>
                                         </tr>
                                     </table>
                                 </div>
-                                <div class="daily-menu-item">
+                                <div class="daily-menu-item" ng-if="day2food1.$value">
                                     <table>
                                         <tr class="menu-day">
                                             <td>
-                                                <h5>{{tuesday}}</h5>
+                                                <h5 translate>tuesday</h5>
                                             </td>
                                             <td>
                                             </td>
@@ -904,38 +1877,38 @@
                                         </tr>
                                         <tr class="first-row">
                                             <td class="item-title">
-                                                <p>{{food1}}</p>
-                                                <span>{{dailyMenuWeight1.$value}}</span>
+                                                <p class="food-name" translate>food1</p>
+                                                <span class="food-weight">{{dailyMenuWeight1.$value}} ml</span>
                                             </td>
                                             <td colspan="2">
-                                                <p>{{day2food1.$value}}<b> ({{day2allergens1.$value}}) </b></p>
+                                                <p>{{day2food1.$value}}<b ng-if="day2allergens1.$value"> ({{day2allergens1.$value}}) </b></p>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="item-title">
-                                                <p>{{food2}}</p>
-                                                <span>{{dailyMenuWeight2.$value}}</span>
+                                                <p class="food-name" translate>food2</p>
+                                                <span class="food-weight">{{dailyMenuWeight2.$value}} g</span>
                                             </td>
                                             <td colspan="2">
-                                                <p>{{day2food2.$value}}<b> ({{day2allergens2.$value}}) </b></p>
+                                                <p>{{day2food2.$value}}<b ng-if="day2allergens2.$value"> ({{day2allergens2.$value}}) </b></p>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="item-title">
-                                                <p>{{food3}}</p>
-                                                <span>{{dailyMenuWeight3.$value}}</span>
+                                                <p class="food-name" translate>food3</p>
+                                                <span class="food-weight">{{dailyMenuWeight3.$value}} g</span>
                                             </td>
                                             <td colspan="2">
-                                                <p>{{day2food3.$value}}<b> ({{day2allergens3.$value}}) </b></p>
+                                                <p>{{day2food3.$value}}<b ng-if="day2allergens3.$value"> ({{day2allergens3.$value}}) </b></p>
                                             </td>
                                         </tr>
                                     </table>
                                 </div>
-                                <div class="daily-menu-item">
+                                <div class="daily-menu-item" ng-if="day3food1.$value">
                                     <table>
                                         <tr class="menu-day">
                                             <td>
-                                                <h5>{{wednesday}}</h5>
+                                                <h5 translate>wednesday</h5>
                                             </td>
                                             <td>
                                             </td>
@@ -945,38 +1918,38 @@
                                         </tr>
                                         <tr class="first-row">
                                             <td class="item-title">
-                                                <p>{{food1}}</p>
-                                                <span>{{dailyMenuWeight1.$value}}</span>
+                                                <p class="food-name" translate>food1</p>
+                                                <span class="food-weight">{{dailyMenuWeight1.$value}} ml</span>
                                             </td>
                                             <td colspan="2">
-                                                <p>{{day3food1.$value}}<b> ({{day3allergens1.$value}}) </b></p>
+                                                <p>{{day3food1.$value}}<b ng-if="day3allergens1.$value"> ({{day3allergens1.$value}}) </b></p>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="item-title">
-                                                <p>{{food2}}</p>
-                                                <span>{{dailyMenuWeight2.$value}}</span>
+                                                <p class="food-name" translate>food2</p>
+                                                <span class="food-weight">{{dailyMenuWeight2.$value}} g</span>
                                             </td>
                                             <td colspan="2">
-                                                <p>{{day3food2.$value}}<b> ({{day3allergens2.$value}}) </b></p>
+                                                <p>{{day3food2.$value}}<b ng-if="day3allergens2.$value"> ({{day3allergens2.$value}}) </b></p>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="item-title">
-                                                <p>{{food3}}</p>
-                                                <span>{{dailyMenuWeight3.$value}}</span>
+                                                <p class="food-name" translate>food3</p>
+                                                <span class="food-weight">{{dailyMenuWeight3.$value}} g</span>
                                             </td>
                                             <td colspan="2">
-                                                <p>{{day3food3.$value}}<b> ({{day3allergens3.$value}}) </b></p>
+                                                <p>{{day3food3.$value}}<b ng-if="day3allergens3.$value"> ({{day3allergens3.$value}}) </b></p>
                                             </td>
                                         </tr>
                                     </table>
                                 </div>
-                                <div class="daily-menu-item">
+                                <div class="daily-menu-item" ng-if="day4food1.$value">
                                     <table>
                                         <tr class="menu-day">
                                             <td>
-                                                <h5>{{thursday}}</h5>
+                                                <h5 translate>thursday</h5>
                                             </td>
                                             <td>
                                             </td>
@@ -986,38 +1959,38 @@
                                         </tr>
                                         <tr class="first-row">
                                             <td class="item-title">
-                                                <p>{{food1}}</p>
-                                                <span>{{dailyMenuWeight1.$value}}</span>
+                                                <p class="food-name" translate>food1</p>
+                                                <span class="food-weight">{{dailyMenuWeight1.$value}} ml</span>
                                             </td>
                                             <td colspan="2">
-                                                <p>{{day4food1.$value}}<b> ({{day4allergens1.$value}}) </b></p>
+                                                <p>{{day4food1.$value}}<b ng-if="day4allergens1.$value"> ({{day4allergens1.$value}}) </b></p>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="item-title">
-                                                <p>{{food2}}</p>
-                                                <span>{{dailyMenuWeight2.$value}}</span>
+                                                <p class="food-name" translate>food2</p>
+                                                <span class="food-weight">{{dailyMenuWeight2.$value}} g</span>
                                             </td>
                                             <td colspan="2">
-                                                <p>{{day4food2.$value}}<b> ({{day4allergens2.$value}}) </b></p>
+                                                <p>{{day4food2.$value}}<b ng-if="day4allergens2.$value"> ({{day4allergens2.$value}}) </b></p>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="item-title">
-                                                <p>{{food3}}</p>
-                                                <span>{{dailyMenuWeight3.$value}}</span>
+                                                <p class="food-name" translate>food3</p>
+                                                <span class="food-weight">{{dailyMenuWeight3.$value}} g</span>
                                             </td>
                                             <td colspan="2">
-                                                <p>{{day4food3.$value}}<b> ({{day4allergens3.$value}}) </b></p>
+                                                <p>{{day4food3.$value}}<b ng-if="day4allergens3.$value"> ({{day4allergens3.$value}}) </b></p>
                                             </td>
                                         </tr>
                                     </table>
                                 </div>
-                                <div class="daily-menu-item" >
+                                <div class="daily-menu-item" ng-if="day5food1.$value">
                                     <table>
                                         <tr class="menu-day">
                                             <td>
-                                                <h5>{{friday}}</h5>
+                                                <h5 translate>friday</h5>
                                             </td>
                                             <td>
                                             </td>
@@ -1027,29 +2000,29 @@
                                         </tr>
                                         <tr class="first-row">
                                             <td class="item-title">
-                                                <p>{{food1}}</p>
-                                                <span>{{dailyMenuWeight1.$value}}</span>
+                                                <p class="food-name" translate>food1</p>
+                                                <span class="food-weight">{{dailyMenuWeight1.$value}} ml</span>
                                             </td>
                                             <td colspan="2">
-                                                <p>{{day5food1.$value}}<b> ({{day5allergens1.$value}}) </b></p>
+                                                <p>{{day5food1.$value}}<b ng-if="day5allergens1.$value"> ({{day5allergens1.$value}}) </b></p>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="item-title">
-                                                <p>{{food2}}</p>
-                                                <span>{{dailyMenuWeight2.$value}}</span>
+                                                <p class="food-name" translate>food2</p>
+                                                <span class="food-weight">{{dailyMenuWeight2.$value}} g</span>
                                             </td>
                                             <td colspan="2">
-                                                <p>{{day5food2.$value}}<b> ({{day5allergens2.$value}}) </b></p>
+                                                <p>{{day5food2.$value}}<b ng-if="day5allergens2.$value"> ({{day5allergens2.$value}}) </b></p>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="item-title">
-                                                <p>{{food3}}</p>
-                                                <span>{{dailyMenuWeight3.$value}}</span>
+                                                <p class="food-name" translate>food3</p>
+                                                <span class="food-weight">{{dailyMenuWeight3.$value}} g</span>
                                             </td>
                                             <td colspan="2">
-                                                <p>{{day5food3.$value}}<b> ({{day5allergens3.$value}}) </b></p>
+                                                <p>{{day5food3.$value}}<b ng-if="day5allergens3.$value"> ({{day5allergens3.$value}}) </b></p>
                                             </td>
                                         </tr>
                                     </table>

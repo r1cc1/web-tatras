@@ -5,10 +5,10 @@
                         <span class="hamburger-inner"></span>
                       </span>
         </button>
-        <!--<div class="language">-->
-            <!--<span ng-if="language == 'sk' || language != 'en'" ng-click="changeLanguage('en')">EN</span>-->
-            <!--<span ng-if="language == 'en' || language != 'sk'" ng-click="changeLanguage('sk')">SK</span>-->
-        <!--</div>-->
+        <div class="language">
+            <span ng-if="language == 'sk' || language != 'en'" ng-click="changeLanguage('en')">EN</span>
+            <span ng-if="language == 'en' || language != 'sk'" ng-click="changeLanguage('sk')">SK</span>
+        </div>
     </div>
     <div class="left-wrap">
         <a ng-href="#/welcome" target="_self" ng-click="scrollToTop()" class="logo">
@@ -30,22 +30,39 @@
                     <li ng-class="getClass('/spa')">
                         <a ng-href="#/spa" ng-class="getClass('/spa')" ng-click="scrollToTop()" target="_self" translate>wellness</a>
                     </li>
-                    <!--<li ng-class="getClass('/shop')">-->
-                    <!--<a ng-href="/shop" ng-class="getClass('/shop')" ng-click="scrollToTop()" target="_self" translate>shop</a>-->
-                    <!--</li>-->
+                    <li ng-class="getClass('/shop')">
+                        <a ng-href="#/shop" ng-class="getClass('/shop')" ng-click="scrollToTop()" target="_self" translate>shop</a>
+                    </li>
                 </ul>
             </nav>
         </div>
         <div class="call-action">
-
             <a href="tel:00421948828727" target="_self" name="call-us" class="btn-book" ng-if="isHome">
-                <ng-md-icon icon="{{btnIcon}}" style="fill: #2b2a29" size="20"></ng-md-icon>
+                <ng-md-icon icon="call" style="fill: #2b2a29" size="20"></ng-md-icon>
                 <span translate>call.us</span>
             </a>
-            <button class="btn-book" du-smooth-scroll="book" ng-if="!isHome" ng-click="mobileMenu()">
+            <button class="btn-book" du-smooth-scroll="book" ng-if="!isHome" ng-click="closeMenu()">
                 <ng-md-icon icon="{{btnIcon}}" style="fill: #2b2a29" size="20"></ng-md-icon>
                 <span translate>book.now</span>
             </button>
+        </div>
+    </div>
+    <div class="shrink" ng-class="{'open' : openMobileMenu}">
+        <div class="top-bar-logo">
+        </div>
+        <button class="hamburger hamburger--collapse" type="button" ng-click="mobileMenu()">
+                      <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                      </span>
+        </button>
+        <!--<div class="language">-->
+        <!--<span ng-if="language == 'sk' || language != 'en'" ng-click="changeLanguage('en')">EN</span>-->
+        <!--<span ng-if="language == 'en' || language != 'sk'" ng-click="changeLanguage('sk')">SK</span>-->
+        <!--</div>-->
+        <div class="call">
+            <a href="tel:00421948828727" target="_self" name="call-us" class="btn-book" >
+                <ng-md-icon icon="call" style="fill: #f5eddc" size="25"></ng-md-icon>
+            </a>
         </div>
     </div>
 </div>

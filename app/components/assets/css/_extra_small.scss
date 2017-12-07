@@ -10,7 +10,7 @@
     top: 0;
     color: red;
     z-index: 9999;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.75);
     padding: 10px;
   }
   body {
@@ -133,14 +133,15 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
     font-size: 1.5em;
-    line-height: 1em;
-    font-weight: normal;
+    line-height: 1.25em;
     font-weight: bold;
     color: rgb(43, 42, 41);
     text-transform: none;
     text-decoration: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+
   }
   h5 {
     margin-bottom: -1em;
@@ -148,6 +149,8 @@
   h1.center, h2.center, h3.center, h4.center, h5.center, h6.center {
     text-align: center;
   }
+
+
 
   h1 {
     font-family: 'Playfair Display', serif;
@@ -162,12 +165,15 @@
     font-size: 1.5em;
 
     &.main-title {
-      font-size: 2.5em;
+      font-size: 32px;
       line-height: 1em;
-      padding: 1em 0 0.5em 0;
+      padding: 1em 0;
       color: $color-black;
-      text-transform: capitalize;
+      text-transform: uppercase;
 
+      &.color-white {
+        color: white;
+      }
       &.color-light {
         color: $color_beige-lightest;
       }
@@ -191,8 +197,10 @@
           text-transform: none;
           font-size: 1em;
           font-weight: bold;
-          border: 2px solid $color-black;
+          border: 0;
           display: block;
+          padding: 1em 0 0 0;
+          color: $color_red;
         }
       }
       &.tag {
@@ -216,19 +224,25 @@
     line-height: 25px;
     color: #333;
 
+    &.sub-title {
+      text-align: center;
+      margin-bottom: 2em;
+    }
+
     &.category-title {
-      font-size: 1.75em;
+      font-size: 28px;
       padding: 0;
       display: block;
-      line-height: 1em;
-      color: white;
-      font-family: 'Roboto-light', Arial, Helvetica;
+      line-height: 1.5em;
+      color: transparent;
+      font-family: 'Roboto', Arial, Helvetica;
       text-transform: uppercase;
-      letter-spacing: 0.5em;
+      letter-spacing: 0.3em;
       text-align: center;
-      font-weight: lighter;
-      left: 0.25em;
+      font-weight: 200;
       position: relative;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: $color-beige-light;
     }
   }
 
@@ -252,6 +266,17 @@
       border-top: 2px solid $color-red;
       margin-top: 1em;
       font-weight: lighter;
+    }
+  }
+  h4 {
+    &.tatras {
+      color: #f5eddc;
+      font-size: 5em;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 1em;
+      margin-top: -12px;
+      letter-spacing: 15px;
     }
   }
 
@@ -280,7 +305,7 @@
     display: block;
     position: relative;
     padding: 0;
-    letter-spacing: 0px;
+    letter-spacing: 0;
     width: 60%;
     margin: 0 auto;
     margin-top: 10%;
@@ -338,7 +363,21 @@
       vertical-align: top;
       width: 100%;
       background: $url_logo_silueta no-repeat center center;
-      background-size: auto 80%;
+      background-size: auto 65%;
+    }
+    .call {
+      display: block;
+      position: absolute;
+      top: 13px;
+      right: 20px;
+      width: 25px;
+      height: 25px;
+
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
     }
 
   }
@@ -354,7 +393,7 @@
       position: absolute;
       left: 0;
       background: transparent;
-      padding: 1.5em 1em;
+      padding: 12px 5px;
 
       .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
         background-color: $color_red;
@@ -367,16 +406,13 @@
       right: 0;
       top: 0;
       width: auto;
-      min-width: 4em;
-      padding-right: 1em;
 
       span {
         color: $color_beige;
         display: inline-block;
-        font-size: 1em;
-        padding: 1em 0.5em 0.5em 0.5em;
+        font-size: 28px;
+        padding: 5px 10px;
         cursor: pointer;
-        @include transition(all, 1s, linear);
 
         &.active {
           color: white;
@@ -390,7 +426,54 @@
       }
     }
   }
-  $left_width: calc(100% - 49px);
+
+  .shrink {
+    display: none;
+    position: absolute;
+    width: 50px;
+    height: 100vh;
+    background: $color-black;
+    left: 0;
+    top: 0;
+    z-index: 99;
+
+    .hamburger {
+      display: table-cell;
+      width: 50px;
+      padding: 8px;
+
+      .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+        width: 2.5em;
+        height: 2px;
+        background-color: $color_red;
+        border-radius: 0;
+      }
+      .hamburger-box {
+        top: 2px;
+      }
+    }
+
+    .top-bar-logo {
+      display: block;
+      text-align: center;
+      vertical-align: top;
+      width: 120px;
+      background: $url_logo_silueta no-repeat center center;
+      background-size: auto 80%;
+      top: calc(100% / 2 );
+      left: -35px;
+      position: absolute;
+      height: 40px;
+      transform: rotate(-90deg);
+    }
+    .call {
+      display: block;
+      position: absolute;
+      bottom: 15px;
+      left: 10px;
+    }
+}
+  $left_width: calc(100% - 120px);
   .left {
     display: block;
     position: fixed;
@@ -403,11 +486,12 @@
     vertical-align: top;
     top: 0;
     left:-100%;
-    @include transition(all 1s cubic-bezier(0.4, 0, 1, 1));
+    overflow: hidden;
+    @include transition(left 0.5s cubic-bezier(0.4, 0, 1, 1));
 
     &.open {
       left: 0;
-      @include transition(left 0.5s ease);
+      @include transition(left 0.5s cubic-bezier(0.4, 0, 1, 1));
     }
 
     div.left-wrap {
@@ -415,8 +499,8 @@
       height: 100%;
       min-width: 200px;
       margin: 0 auto;
-      width: auto;
-      padding-top: 1em;
+      width: 100%;
+      padding-top: 25px;
 
       .logo {
         display: table-row;
@@ -481,7 +565,7 @@
 
       div {
         display: table-row;
-        height: 10%;
+        height: 70px;
 
         &.call-action {
           display: table-cell;
@@ -509,6 +593,7 @@
             left: 0;
             height: 6em;
             border: 0;
+            border-radius: 0;
             z-index: 1;
 
             &:before {
@@ -602,80 +687,98 @@
         nav {
           display: table-cell;
           vertical-align: middle;
-          padding-bottom: 4em;
+          padding-bottom: 70px;
+          padding-top: 1em;
         }
       }
     }
   }
   .fake-left {
-    display: inline-block;
+    display: block;
     position: relative;
     background: transparent;
     width: 200px;
     height: 100%;
-    @include transition(all 1s cubic-bezier(0.4, 0, 1, 1));
+    @include transition(all 0.5s cubic-bezier(0.4, 0, 1, 1));
+
+    &.open {
+      width: 200px;
+      @include transition(all 0.5s cubic-bezier(0.4, 0, 1, 1));
+    }
   }
   .sub-menu {
-    display: block;
+    display: table;
     position: fixed;
-    right: -3.5em;
-    width: 3.5em;
-    height: 100%;
+    right: -120px;
+    width: 120px;
+    height: 100vh;
     z-index: 99;
     top: 0;
     overflow: hidden;
-    @include transition(all 0.5s ease);
+    background: $color_black;
+    @include transition(right 0.5s cubic-bezier(0.4, 0, 1, 1));
 
     &.open {
       opacity: 1;
       right: 0;
-      @include transition(all 0.5s ease);
+      @include transition(right 0.5s cubic-bezier(0.4, 0, 1, 1));
     }
 
     div {
-      display: block;
-      position: absolute;
+      display: table-cell;
+      position: relative;
       height: 100%;
       top: 0;
       width: 100%;
-      background: $color_beige-lightest;
+      background: #f5eddc;
+      vertical-align:top;
 
       ul {
         list-style: none;
-        display: block;
+        display: flex;
         height: 100%;
         width: 100%;
         padding: 0;
         margin: 0;
+        flex-direction: column;
+        flex-flow: wrap;
 
         li {
-          display: table;
-          height: 20%;
+          height: auto;
           table-layout: fixed;
-          width: 3.5em;
-          background: #f1ebda;
+          width: 100%;
+          color: $color-black;
+          background: $color_beige-lightest;
 
           a, span {
-            display: table-cell;
+            display: block;
             position: relative;
             text-decoration: none;
             font-family: 'Roboto', sans-serif;
-            font-size: 0.75em;
-            line-height: 1em;
-            color: $color-black;
-            text-align: right;
+            font-size: 12px;
+            line-height: 1.5em;
+            color: inherit;
+            text-align: left;
             text-transform: uppercase;
-            transform: rotate(-90deg);
+            //transform: rotate(-90deg);
             margin: 0 auto;
             vertical-align: middle;
             cursor: pointer;
-            top: 1em;
+            padding: 1em;
+
           }
           &:hover, &:focus {
-            box-shadow: inset -5px -1px 0 -1px $color-beige;
+            box-shadow: inset -5px -1px 0 -1px $color-black;
+            color: $color-black;
+            background: white;
+            @include transition(all 0.5s cubic-bezier(0.4, 0, 1, 1));
           }
           &.active {
             background: $color-beige;
+
+            &:hover, &:focus {
+              color: $color_beige-lightest;
+            }
           }
         }
       }
@@ -753,9 +856,9 @@
         -ms-transition: all 0.2s;
         -o-transition: all 0.2s;
         transition: all 0.2s;
-        letter-spacing: 1px;
+        letter-spacing: 3px;
         text-align: center;
-        padding: 1.25em 0;
+        padding: 1em 0;
 
         transition-duration: 0.75s, 1s;
         transition-property: transform, opacity;
@@ -781,7 +884,7 @@
           }
         }
         a {
-          color: white;
+          color: inherit;
           display: inline-block;
           text-decoration: none;
           text-transform: uppercase;
@@ -824,7 +927,7 @@
             width: 0%;
             height: 1px;
             background: $color-beige-light;
-            display: block;
+            display: none;
             position: absolute;
             bottom: 0;
             right: 1px;
@@ -833,6 +936,7 @@
           &:hover {
             cursor: pointer;
             color: #d7b56d;
+
 
             &:after, &:before {
               width: 100%;
@@ -843,9 +947,25 @@
         &.active {
           border-bottom: 0;
           border-top: 0;
+          background:#d6b471;
+
+          &:hover {
+            cursor: pointer;
+            color: $color_black;
+
+            a {
+              color: inherit;
+            }
+
+            &:after, &:before {
+              width: 100%;
+              background: $color_red;
+
+            }
+          }
 
           a {
-            color: $color-beige-light;
+            color: $color-black;
             font-weight: bold;
 
           }
@@ -887,26 +1007,86 @@
   .admin-center textarea {
     overflow: auto;
     width: 100%;
-    background: $color-beige-lightest;
     min-height: 7em;
     font-size: 1.25em;
     border: 0;
     padding: 1em;
+    border-bottom: 2px solid #eee;
+
   }
 
   .admin-center input.daily-menu {
     font-size: 1.25em;
     border: 0;
     padding: 1em;
-    width: 100%;
-    background: $color-beige-lightest;
     text-align: center;
+    width: 100%;
+  }
+  .admin-center input.beer-menu {
+    font-size: 1.25em;
+    border: 0;
+    padding: 1em;
+  }
+  .admin-center {
+    .price-tag {
+      position: relative;
+      &:after {
+        content: '€';
+        display: block;
+        position: absolute;
+        color: silver;
+        top: 10px;
+        right: 20px;
+        font-size: 2em;
+      }
+    }
+    .ml-tag {
+      position: relative;
+      &:after {
+        content: 'ml';
+        display: block;
+        position: absolute;
+        color: silver;
+        top: 10px;
+        right: 20px;
+        font-size: 2em;
+      }
+    }
+    .g-tag {
+      position: relative;
+      &:after {
+        content: 'g';
+        display: block;
+        position: absolute;
+        color: silver;
+        top: 10px;
+        right: 20px;
+        font-size: 2em;
+      }
+    }
+    .min-tag {
+      position: relative;
+      &:after {
+        content: 'min';
+        display: block;
+        position: absolute;
+        color: silver;
+        top: 10px;
+        right: 20px;
+        font-size: 2em;
+      }
+    }
   }
   .admin-center h3 {
     margin: 0;
-    padding: 1em 0;
+    padding: 1em;
     font-size: 1.25em;
     text-transform: uppercase;
+    color: silver;
+
+    &.panel-title {
+      color: black;
+    }
   }
   .admin-center table p {
     margin: 0;
@@ -939,12 +1119,21 @@
       background-image: $url_logo;
     }
     &.bg-pivo1 {
-      background-image: $url_pivo_01;
+      background-image: $url_photo_3beers;
 
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        background: $color_black;
+        top:0;bottom:0;left:0;right:0;
+        width: 100%; height: 100%;
+        z-index: 2;
+        opacity: 0.5;
+      }
     }
     &.bg-pivo5 {
       background-image: $url_pivo_05;
-
       background-position: 0 55%;
       background-size: 100% auto;
 
@@ -956,7 +1145,7 @@
         top:0;bottom:0;left:0;right:0;
         width: 100%; height: 100%;
         z-index: 2;
-        opacity: 0.7;
+        opacity: 0.5;
       }
     }
     &.bg-beerhand {
@@ -976,7 +1165,23 @@
         top:0;bottom:0;left:0;right:0;
         width: 100%; height: 100%;
         z-index: 2;
-        opacity: 0.7;
+        opacity: 0.5;
+      }
+    }
+    &.bg-piva {
+      background-image: $url_photo_pivo_flase;
+      background-position: center center;
+      background-size: cover;
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        background: $color_black;
+        top:0;bottom:0;left:0;right:0;
+        width: 100%; height: 100%;
+        z-index: 2;
+        opacity: 0.5;
       }
     }
     &.bg-exterier {
@@ -1002,7 +1207,7 @@
         top:0;bottom:0;left:0;right:0;
         width: 100%; height: 100%;
         z-index: 2;
-        opacity: 0.7;
+        opacity: 0.5;
       }
     }
     &.bg-beer {
@@ -1044,7 +1249,7 @@
         top:0;bottom:0;left:0;right:0;
         width: 100%; height: 100%;
         z-index: 2;
-        opacity: 0.7;
+        opacity: 0.5;
       }
     }
     &.bg-spa-4 {
@@ -1059,6 +1264,9 @@
     &.bg-spa-7 {
       background-image: url("../imgs/spa/kupele7.jpg");
     }
+    &.bg-spa-massage {
+      background-image: $url_photo_spa7;
+    }
 
     &.bg-pension {
       background-image: $url_photo_08;
@@ -1071,7 +1279,7 @@
         top:0;bottom:0;left:0;right:0;
         width: 100%; height: 100%;
         z-index: 2;
-        opacity: 0.7;
+        opacity: 0.5;
       }
     }
     &.bg-pension2 {
@@ -1095,7 +1303,7 @@
         top:0;bottom:0;left:0;right:0;
         width: 100%; height: 100%;
         z-index: 2;
-        opacity: 0.7;
+        opacity: 0.5;
       }
     }
     &.bg-pension02 {
@@ -1123,9 +1331,47 @@
 
     &.bg-podpivnik {
       background-image: $url_photo_podpivnik;
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        background: $color_black;
+        top:0;bottom:0;left:0;right:0;
+        width: 100%; height: 100%;
+        z-index: 2;
+        opacity: 0.5;
+      }
     }
-    &.bg-shop {
-      background-image: url("../imgs/shop.jpg");
+    &.bg-sudok {
+
+      background-image: $url_photo_sudok;
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        background: $color_black;
+        top:0;bottom:0;left:0;right:0;
+        width: 100%; height: 100%;
+        z-index: 2;
+        opacity: 0.5;
+      }
+    }
+    &.bg-uterak {
+
+      background-image: $url_photo_pension06;
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        background: $color_black;
+        top:0;bottom:0;left:0;right:0;
+        width: 100%; height: 100%;
+        z-index: 2;
+        opacity: 0.5;
+      }
     }
   }
 
@@ -1259,7 +1505,7 @@
       width: 100%;
       min-height: 100%;
       height: 100%;
-      background: $color_black;
+      background: transparent;
 
       left: 0;
       top: 0;
@@ -1337,7 +1583,7 @@
         }
       }
       &.empty {
-        height: 20em;
+        height: 50vh;
         min-height: 20em;
         padding: 0;
         display: table;
@@ -1356,7 +1602,7 @@
           top: 1em;
           left: 1em;
           border: 1px solid white;
-
+          opacity: 0.6;
         }
         &:before{
           display: none !important;
@@ -1384,6 +1630,11 @@
         }
       }
 
+      &.full-height {
+        height: 100vh;
+        min-height: 100vh;
+      }
+
       .hours {
         display: table;
         position: relative;
@@ -1397,7 +1648,7 @@
         .day {
           display: table;
           width: 100%;
-          padding: 0.5em 0;
+          padding: 0.25em 0;
           table-layout: fixed;
 
           span {
@@ -1453,8 +1704,8 @@
           width: 40px;
           height: 40px;
           margin-left: -7.5pt;
-          border-left: 5pt solid;
-          border-bottom: 5pt solid;
+          border-left: 1.5pt solid;
+          border-bottom: 1.5pt solid;
           border-color: white;
           -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
@@ -1484,15 +1735,13 @@
           .category-logo {
             display: inline-block;
             position: relative;
-            border-bottom: 2px solid $color_beige;
-            padding-bottom: 0.5em;
           }
         }
       }
       .boxer {
         display: flex;
         flex-flow: row wrap;
-        justify-content: space-around;
+        justify-content: space-between;
         margin: 0;
 
         &.salons {
@@ -1514,11 +1763,12 @@
             display: block;
             position: relative;
             width: 100%;
-            height: 300px;
+            height: 250px;
             background-attachment: scroll;
           }
           .icons {
             padding: 1em 0;
+            display: inline-block;
           }
           p {
             padding: 1em 0 0 0;
@@ -1527,9 +1777,11 @@
 
             &.info {
               padding: 0;
-              line-height: 2em;
-              color: white;
-              background: $color_black;
+              line-height: 3em;
+              color: #2b2a29;
+              text-transform: uppercase;
+              display: inline-block;
+              float: right;
             }
           }
           img {
@@ -1552,6 +1804,8 @@
             text-decoration: none;
             float: none;
             width: 100%;
+            border: 5px double white;
+            border-radius: 0;
             @include transition(background 0.5s linear);
 
             &:hover, &:focus {
@@ -1588,14 +1842,17 @@
         }
 
         .salon {
-          width: 18em;
+          width: auto;
           padding: 1em;
 
           h5 {
-            text-align: center;
+            text-align: left;
             display: block;
             margin: 1em 0 0 0;
-            font-size: 1.25em;
+            font-size: 24px;
+            &.align-center {
+              text-align: center;
+            }
           }
           span {
             text-align: center;
@@ -1614,7 +1871,7 @@
             margin: 0;
           }
           p {
-            font-size: 1em;
+            font-size: 16px;
             line-height: 1.5em;
             margin-top: 1em;
             padding: 0;
@@ -1661,7 +1918,7 @@
       p {
         span.more{
           color: $color_red;
-          font-weight: bold;
+          font-weight: 200;
           cursor: pointer;
           text-decoration: underline;
 
@@ -1896,9 +2153,7 @@
     .small-line {
       display: block;
       position: relative;
-      width: calc(100% - 5em);
-      max-width: 16em;
-      min-width: 8em;
+      width: calc(100% - 4em);
       height: 2px;
       background: #d7b56d;
       margin: 0 auto;
@@ -1977,7 +2232,7 @@
   }
 
   footer {
-    border-top: 4px solid #d7b56d;
+    border-top: 2px solid #d7b56d;
     background: $color-black;
 
     p, a {
@@ -2065,7 +2320,108 @@
   .content-main {
     display: block;
     position: relative;
-    padding: 2em 0 2em 0;
+    padding: 2em 1em;
+    width: 100%;
+
+    .beer-list {
+      margin: 0 auto;
+      width: auto;
+      padding: 2em 1em 0 1em;
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: -2em;
+
+      .beer-type {
+        margin: 0 auto;
+        border-bottom: 1px solid $color_beige;
+        padding: 3em 0 1em 0;
+
+        .beer-head {
+          display: block;
+          position: relative;
+
+          h4 {
+            display: block;
+            padding: 0;
+            text-align: right;
+            font-size: 1em;
+            font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+            position: absolute;
+            right: 0;
+            margin: 0;
+            top: 0.20em;
+            font-weight: 400;
+            &.out {
+              display: none;
+            }
+          }
+
+          h6 {
+            color: silver;
+          }
+
+          .beer-name {
+            h2 {
+              display: inline-block;
+              text-align: left;
+              padding: 0;
+              text-transform: uppercase;
+              font-size: 2em;
+            }
+          }
+        }
+        .beer-body {
+          display: block;
+          padding: 2em 0;
+        }
+
+        &.new {
+          h4 {
+            background: limegreen;
+            color: white;
+            text-transform: uppercase;
+            padding: 0.3em 0.5em 0.25em 0.5em;
+          }
+        }
+        &.top {
+          h6 {
+            color: #d6b471;
+          }
+          h4 {
+            background: #d6b471;
+            color: white;
+            text-transform: uppercase;
+            padding: 0.3em 0.5em 0.25em 0.5em;
+          }
+
+
+          &:before {
+            content: '';
+            display: block;
+            position: relative;
+            background: transparent $url_logo_korunka no-repeat;
+            right: 0;
+            width: 7em;
+            height: 7em;
+            z-index: 2;
+            background-size: cover;
+            float: right;
+            margin-left: 0;
+            left: 8px;
+            top: 10px;
+          }
+        }
+        &.not-active {
+          h4.out {
+            display: block;
+            background: $color_red;
+            color: white;
+            text-transform: uppercase;
+            padding: 0.3em 0.5em 0.25em 0.5em;
+          }
+        }
+      }
+    }
 
     .price-list {
       margin: 0 auto;
@@ -2127,10 +2483,15 @@
 
     p {
       font-family: 'Roboto-light', Arial, Helvetica;
-      font-size: 1em;
-      line-height: 2em;
-      padding: 2em;
+      font-size: 15px;
+      line-height: 1.5em;
+      padding: 3em 1em 2em 1em;
+      margin: 0;
       text-align: left;
+
+      &.vip {
+        font-style: italic;
+      }
 
       &.align-center {
         text-align: center;
@@ -2190,6 +2551,9 @@
     }
     ul {
       list-style-type: none;
+      text-align: center;
+      padding: 0;
+      margin: 0;
 
       li {
         font-size: 1.5em;
@@ -2281,12 +2645,12 @@
 
         ng-md-icon {
           display: block;
-          width: 3em;
-          height: 3em;
+          width: 4em;
+          height: 4em;
           svg {
             display: block;
-            width: 3em;
-            height: 3em;
+            width: 4em;
+            height: 4em;
           }
         }
         p {
@@ -2299,8 +2663,8 @@
         span {
           text-align: center;
           display: block;
-          padding-top: 1em;
-          color: $color-red;
+          padding-top: 0.5em;
+          color: #d6b471;
           text-transform: uppercase;
         }
       }
@@ -2333,13 +2697,14 @@
               border-bottom: 1px solid $color-beige;
 
               td {
-                padding: 1em 1em 2em 0;
+                padding: 1em 0;
               }
             }
 
             td {
-              padding: 2em 0 1em 0;
+              padding: 1em 0;
               text-align: left;
+              vertical-align: top;
 
 
               &.item-title {
@@ -2347,21 +2712,14 @@
                 width: auto;
                 min-width: 3em;
                 padding-left: 0;
-                max-width: 4em;
-              }
-              .food-image {
-                display: block;
-                position: relative;
-                height: 200px;
-                background-attachment: scroll;
-                background-size: contain;
+                padding-right: 1em;
               }
             }
             h5 {
               margin: 0;
               text-align: left;
               font-size: 1.25em;
-              text-transform: capitalize;
+              text-transform: uppercase;
 
               &.date {
                 float: right;
@@ -2370,7 +2728,7 @@
 
             p, span {
               display: inline-block;
-              font-size: 1em;
+              font-size: 15px;
               line-height: 1.5em;
               font-family: 'Roboto-light', Arial, Helvetica;
               margin: 0;
@@ -2378,14 +2736,16 @@
               text-align: left;
 
               b {
-                color: $color_red;
+                color: gray;
                 font-weight: normal;
-                font-size: 0.8em;
+                font-size: 12px;
               }
             }
             span {
+              display: block;
               padding-left: 0;
               color: $color-beige;
+              font-size: 12px;
               font-weight: bold;
             }
           }
@@ -2394,6 +2754,7 @@
         &.today {
           border-color: transparent;
           background: $color_beige-light;
+          border: 5px double white;
 
           table tr.menu-day {
             border-bottom: 1px solid white;
@@ -2416,6 +2777,27 @@
   }
 
 
+  .product-wrap {
+    display: flex;
+    position: relative;
+    padding: 2em 1em;
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    .product-image {
+      display: block;
+      position: relative;
+      height: auto;
+      overflow: hidden;
+      margin: 1em 0;
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
   .book-form {
     display: block;
     position: relative;
@@ -2428,7 +2810,7 @@
       margin: 1em 0;
 
       table, th, td {
-        border: 1px solid $color-beige-light;
+        border: 1px solid transparent;
         border-collapse: collapse;
       }
 
@@ -2436,14 +2818,13 @@
         color: $color-beige-light;
         table-layout: fixed;
         width: 100%;
-        max-width: 40em;
+        max-width: 30em;
         margin: 0 auto;
 
         thead {
            tr {
              td {
                padding: 1em;
-               font-weight: bold;
              }
 
              &:last-child {
@@ -2456,7 +2837,7 @@
           td {
             text-transform: uppercase;
             text-align: center;
-            border: 1px solid $color-beige-light;
+            border: 1px solid transparent;
             padding: 0;
             border-collapse: collapse;
             width: calc(100% / 7);
@@ -2471,22 +2852,29 @@
               display: block;
               position: relative;
               font-size: 1em;
-              line-height: 1.5em;
+              line-height: 1em;
               text-align: center;
               -webkit-appearance: none;
               text-transform: uppercase;
               font-family: 'Roboto', Roboto, Helvetica, Arial;
               color: #2b2a29;
-              font-weight: lighter;
+              font-weight: bold;
               width: 100%;
-              background: #f1ebda;
+              background: $color_beige;
               transition: all 0.25s linear;
               border: 0;
               z-index: 1;
-              margin: 2px auto;
+              margin:0;
+              padding: 1em 0;
+              @include transition(all 0.5s ease);
+
+              &:hover, &:focus {
+                background: white;
+                @include transition(all 0.5s ease);
+              }
 
               &.available {
-                background: $color_green;
+                background: white;
 
                 &:hover, &:focus {
                   text-decoration: underline;
@@ -2498,22 +2886,111 @@
                 text-decoration: line-through;
               }
               &.old {
-                background: gray;
+                background: black;
                 cursor: not-allowed;
-                text-decoration: line-through;
+                color: $color_beige;
               }
               &.selected {
-                background: white;
-              }
-
-              &:last-child {
-                margin-bottom: 1px;
+                background: $color_green;
               }
             }
           }
         }
         tr:nth-child(even) {
           //background-color: #dddddd;
+        }
+      }
+    }
+
+    @mixin vertical-centre($height){ height:$height; line-height:$height !important; display:inline-block; vertical-align:middle; }
+    $border-colour:#CCC;
+    calendar { display:block; box-sizing:border-box; -moz-box-sizing:border-box; background:white; width:auto; max-width: 30em; border:0; margin: 0 auto; margin-bottom:10px;
+      $secondary-colour:#2875C7;
+      $spacing:10px;
+      $icon-width:40px;
+      $header-height:40px;
+
+      >div.header { float:left; width:100%; background:$color_black; height:$header-height; color:white;
+        >* { @include vertical-centre($header-height); }
+        >i { float:left; width:$icon-width; font-size:1.125em; font-weight:bold; position:relative; box-sizing:border-box; -moz-box-sizing:border-box; padding:0 $spacing; cursor:pointer; }
+        >i.fa-angle-left { text-align:left; }
+        >i.fa-angle-right { text-align:right; margin-left:$icon-width*-1; }
+        >span { float:left; width:100%; font-weight:bold; text-transform:uppercase; box-sizing:border-box; -moz-box-sizing:border-box; padding-left:$icon-width+$spacing; margin-left:$icon-width*-1; text-align:center; padding-right:$icon-width; color:inherit; }
+      }
+      >div.week { float:left; width:100%; border-top:solid 1px $color_black;
+        &:first-child { border-top:none; }
+        >span.day { float:left; width:calc(100%/7); padding: 1em; box-sizing:border-box; -moz-box-sizing:border-box; border-left:solid 1px $color_black; font-size:1em; text-align:center; @include vertical-centre(30px); background:$color_beige; height: auto; cursor:pointer; color:black;
+          &:first-child { border-left:none; }
+          &.today { background:$color-beige-light; }
+          &.different-month { color:$color_beige;     background: black;
+            border-color: #2b2b2a;}
+          &.selected { background:white; color:$color_black; }
+        }
+        &.names>span { color:$color_beige; font-weight:bold; background: $color_black; border: transparent; }
+      }
+    }
+
+    .time-table {
+      .time-wrap {
+        width: 100%;
+        max-width: 30em;
+        margin: 0 auto;
+
+        h4 {
+          color: white;
+          padding: 1em;
+        }
+        div {
+          display: block;
+          padding: 1px;
+
+          button {
+            display: block;
+            position: relative;
+            font-size: 1em;
+            line-height: 1em;
+            text-align: center;
+            -webkit-appearance: none;
+            text-transform: uppercase;
+            font-family: 'Roboto', Roboto, Helvetica, Arial;
+            color: #2b2a29;
+            font-weight: bold;
+            width: 100%;
+            background: $color_beige;
+            transition: all 0.25s linear;
+            border: 0;
+            z-index: 1;
+            margin:0;
+            padding: 1em 0;
+            @include transition(all 0.5s ease);
+
+            &:hover, &:focus {
+              background: white;
+              @include transition(all 0.5s ease);
+            }
+
+            &.available {
+              background: $color_green;
+
+              &:hover, &:focus {
+                text-decoration: underline;
+              }
+            }
+            &.unavailable {
+              background: $color_red;
+              cursor: not-allowed;
+              text-decoration: line-through;
+            }
+            &.old {
+              background: black;
+              cursor: not-allowed;
+              color: $color_beige;
+            }
+            &.selected {
+              background: $color_green;
+
+            }
+          }
         }
       }
     }
@@ -2541,8 +3018,18 @@
           font-family: 'Roboto-light', sans-serif;
           font-size: 1em;
           font-weight: bold;
-          padding:1.2em 0 0 0;
+          padding: 0.5em 0;
           text-transform: uppercase;
+          color: white;
+          float: right;
+
+          &.warning {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background: $color_red;
+            color: $color_black;
+          }
 
           &.booking-steps {
             float: right;
@@ -2612,11 +3099,11 @@
               border: 0;
               border-bottom: 1px solid $color_green;
 
-              &.ng-required {
+              &.ng-required, &.ng-invalid {
                 color: $color_red;
                 border-bottom: 1px solid $color_red;
               }
-              &.ng-untouched, &.ng-unvalid, &.ng-empty {
+              &.ng-untouched, &.ng-empty {
                 color: $color_beige !Important;
                 border-bottom: 1px solid $color_beige;
               }
@@ -2710,19 +3197,28 @@
     .info {
       display: table;
       position: relative;
-      padding: 1em 0;
+      padding: 2em 0;
       width: 100%;
 
       .item {
         display: block;
         position: relative;
-        padding: 1em 0;
+        padding: 2em 0;
         width: auto;
 
         .icon {
           width: 4em;
           height: 4em;
 
+          ng-md-icon {
+            width: 4em;
+            height: 4em;
+
+            svg {
+              width: 4em;
+              height: 4em;
+            }
+          }
         }
 
         a, p {
@@ -2731,14 +3227,13 @@
           font-size: 1em;
           display: block;
           padding: 0;
-          margin: 0;
           color: $color-black;
         }
         a {
           font-weight: bold;
           text-decoration: none;
-          font-size: 1.2em;
-          padding: 0.2em 0;
+          font-size: 1.25em;
+          padding: 0;
         }
         a:hover {
           cursor: pointer;
@@ -2859,106 +3354,6 @@
     }
   }
 
-  #beer-list {
-    padding-top: 20px;
-    margin-right: -8px;
-  }
-
-  .beer-list {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: auto;
-    font-size: 0;
-    margin-bottom: 20px;
-    overflow: hidden;
-
-    .beer {
-      display: inline-block;
-      position: relative;
-      width: 32.5%;
-      height: auto;
-      border: 4px solid white;
-      margin-left: -4px;
-      margin-top: -4px;
-      overflow: hidden;
-      vertical-align: top;
-
-      .beer-foto {
-        display: block;
-        position: relative;
-        width: auto;
-        height: auto;
-        overflow: hidden;
-        vertical-align: top;
-
-        img {
-          display: block;
-          width: 100%;
-        }
-      }
-      .beer-name {
-        display: block;
-        position: absolute;
-        z-index: 2;
-        width: 100%;
-        top: 5%;
-        -webkit-transition: all 1s ease-in-out;
-        -moz-transition: all 1s ease-in-out;
-        -o-transition: all 1s ease-in-out;
-        transition: all 1s ease-in-out;
-
-        h3 {
-          display: block;
-          color: white;
-          font-size: 20px;
-          text-transform: uppercase;
-          text-align: center !important;
-          margin: 0 auto;
-          text-shadow: 0 0 3px black;
-        }
-      }
-      .bottom {
-        top: 80% !important;
-      }
-      .beer-info {
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: auto;
-        left: -100%;
-        z-index: 2;
-        top: 50%;
-        @include transition(all 1s ease-in-out);
-
-        p {
-          text-align: center;
-          display: block;
-          padding: 10px;
-          color: black;
-          margin: 0;
-          font-size: 15px;
-          background: rgba(255, 255, 255, 0.8);
-        }
-      }
-
-      &:hover {
-        .beer-foto {
-          img {
-            -webkit-filter: blur(2px);
-            filter: blur(2px);
-            @include transition(all 1s ease-in-out);
-          }
-          cursor: pointer;
-        }
-        .beer-info {
-          left: 0;
-          @include transition(all 1s ease-in-out);
-        }
-      }
-    }
-  }
-
   .no-padding {
     padding: 0 !important;
   }
@@ -3028,7 +3423,7 @@
         width: 100px;
         height: 100px;
         top: -170px;
-        box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 1);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 1);
         -webkit-transition: all 5s ease-in-out;
         -moz-transition: all 5s ease-in-out;
         -o-transition: all 5s ease-in-out;
@@ -3059,7 +3454,7 @@
       }
       &.loaded {
         .backlight {
-          box-shadow: 0px 0px 100px 100px rgba(255, 255, 255, 0.7);
+          box-shadow: 0 0 100px 100px rgba(255, 255, 255, 0.7);
         }
         img {
           opacity: 1;
@@ -3299,21 +3694,21 @@
       flex-flow: row wrap;
       justify-content: space-around;
       margin-top: 1em;
+      left: 0.5em;
 
       .category {
-        min-width: 13em;
+        width: 50%;
         margin: 1em 0;
       }
 
       .btn {
         display: block;
         margin: 0;
-        padding: 0.5em 0;
+        padding: 0.25em 0;
         font-weight: 100;
         letter-spacing: 0.1em;
         text-transform: capitalize;
         color: white;
-        font-family: 'Playfair Display', serif;
         text-align: left;
 
         &:hover, &:focus {
@@ -3323,16 +3718,16 @@
 
         &.main {
           border-bottom: 2px solid $color_beige;
-          padding: 1em 0;
-          margin-bottom: 1em;
+          padding: 5px 0;
+          margin-bottom: 15px;
           font-weight: bold;
-          letter-spacing: 0.4em;
+          letter-spacing: 3px;
           text-transform: uppercase;
-          color: white;
+          color: $color_beige;
 
           &:hover, &:focus {
             color: $color_red;
-            border-bottom: 2px solid $color_red;
+            border-bottom: 2px solid white;
           }
         }
       }
@@ -3533,6 +3928,10 @@
     text-align: center;
     color: white;
     padding: 0;
+    margin: 0;
+  }
+  .info .item {
+    padding: 1em 0;
   }
 
   .loading {
@@ -3573,10 +3972,10 @@
           }
           .loading-progress {
             display: inline-block;
-            height: 2px;
+            height: 1px;
             background: $color_beige;
             width: 0;
-            margin-top: 2em;
+            margin-top: 1em;
             -webkit-animation: wth 2s;
             animation: wth 2s;
             animation-fill-mode: forwards;
@@ -3787,9 +4186,15 @@
     }
      .content-main .daily-menu-list .daily-menu-item table tr p,
      .content-main .daily-menu-list .daily-menu-item table tr span {
-      font-size: 2em;
+      font-size: 27px;
       line-height: 1.25em;
        font-weight: lighter;
+    }
+    .content-main .daily-menu-list .daily-menu-item table tr p.food-name{
+      min-width: 120px;
+    }
+    .content-main .daily-menu-list .daily-menu-item table tr span.food-weight {
+      font-size: 21px;
     }
     .content-main .daily-menu-list {
       padding: 2em 0 0 0;
@@ -3806,49 +4211,180 @@
     }
   }
 
-  #prices-spa.table > table {
+  .spa-box {
+    display: block;
+    position: relative;
+    padding: 2em 1em 0 1em;
+    max-width: 40em;
+    margin: 0 auto;
+
+    h4 {
+      display: inline-block;
+    }
+    span {
+      display: block;
+      padding-bottom: 2em;
+      padding-top: 1em;
+      font-size: 15px;
+    }
+  }
+  .prices.table > table {
     table-layout:fixed;
     border: 0;
   }
-  #prices-spa.table  {
-    table-layout:fixed;
+  .prices.table  {
     border: 0;
   }
-  #prices-spa.table > table > tr > td{
+  .prices.table > table > tr > td{
     width: 20%;
     vertical-align: middle;
   }
-  #prices-spa.table  tr th, #prices-spa.table  tr td   {
+  .prices.table  tr th, .prices.table  tr td   {
     height: 3em;
     line-height: 3em;
     vertical-align: middle;
+    min-width: 30px;
   }
-  #prices-spa > tr > th {
+  .prices > tr > th {
     vertical-align: middle;
     background: #f1ebda;
   }
 
-  #prices-spa h2{
+  .prices h2{
     font-size: 1.25em;
-    font-family: 'Roboto-light', Arial, Helvetica;
-    color: $color_red;
+    font-family: 'Roboto', Arial, Helvetica;
+    color: $color_black;
     text-align: center;
-    background: transparent;
     padding: 0.5em 0;
+    font-weight: lighter;
   }
 
-
-  #prices-spa h3{
+  .prices h4{
+    color: $color_black;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0.5em 0;
+  }
+  .prices h3{
     display: block;
     text-align: center;
     font-size: 1.5em;
     margin: 0;
     line-height: 1em;
+    color: $color_black;
   }
-  #prices-spa h3 span{
+  .prices h3.rotate {
+    width: 16px;
+    transform: rotate(-90deg);
+    left: 10px;
+    position: relative;
+  }
+  .prices h3 span{
     font-size: 0.75em;
+    color: #d6b471;
   }
 
+  .prices-box {
+    width: 100%;
+    padding: 1em 0;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #d6b46c;
+    margin: -1em 0 2em 0;
+    max-width: 20em;
+
+    div {
+      width: 50%;
+
+      ng-md-icon {
+        vertical-align: top;
+      }
+      span {
+        font-size: 20px;
+        display: inline-block;
+        padding: 0;
+        top: -4px;
+        position: relative;
+      }
+
+      &.price {
+        span {
+          color: $color_red;
+          font-size: 30px;
+          font-family: 'Roboto', Arial, Helvetica;
+          font-weight: 500;
+          padding-left: 10px;
+          float: right;
+        }
+      }
+    }
+  }
+
+
+  .beer-admin-line {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    position: relative;
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-bottom:  1px solid #ddd;
+
+    &:first-child {
+      border-top: 1px solid #ddd;
+    }
+
+    h3 {
+      color: black;
+
+      &.good {
+        background: $color-green;
+        width: 100%;
+        text-align: center;
+      }
+      &.bad {
+        background: $color_red;
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    label {
+      display: table-cell;
+      width: 25%;
+      vertical-align: top;
+      text-align: left;
+      border-right: 1px solid #ddd;
+    }
+    input, textarea {
+      display: table-cell;
+      width: 100%;
+      text-align: left;
+      border: 0;
+    }
+    &.ibu {
+      &:after {
+        content: 'IBU';
+        display: block;
+        position: absolute;
+        color: silver;
+        top: 10px;
+        right: 20px;
+        font-size: 2em;
+      }
+    }
+    &.percent {
+      &:after {
+        content: '%';
+        display: block;
+        position: absolute;
+        color: silver;
+        top: 10px;
+        right: 20px;
+        font-size: 2em;
+      }
+    }
+  }
   .panel-default>.panel-heading {
     background-color: $color-beige-light;
     border-color: $color-beige;
@@ -3861,6 +4397,11 @@
 
   .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
     padding:0!important;
+  }
+
+
+  .wickedpicker {
+    z-index: 999;
   }
 }
 

@@ -22,9 +22,11 @@ angular.module('restaurantCtrl', [])
 
         $scope.btnIcon = 'local_restaurant';
 
-        $scope.restaurantText2 = "Podávame v pracovné dni od ";
+        $scope.restaurantMenuText1 = "Podávame v pracovné dni od ";
         $scope.restaurantMenuTime = "11:30";
-        $scope.restaurantText3 = "Cena za obedové menu s polievkou je ";
+        $scope.restaurantMenuText2 = "Polievka & Menu A za ";
+        $scope.restaurantMenuText3 = "Polievka & Menu B za ";
+        $scope.restaurantMenuText4 = "Polievka";
 
         $scope.restaurantSalonik1 = "Ponúka na výčape 8 druhov vlastného piva. Na tabuli je vždy aktuálne jedlo dňa.";
         $scope.restaurantSalonik2 = "Je prvá pivnica v našom pivovare, kde sa dozviete viac o histórii varenia piva v Poprade.";
@@ -36,11 +38,14 @@ angular.module('restaurantCtrl', [])
         $scope.restaurantSalonik8 = "Pripomína najlepších slovenských spevákov. Je jediným fajčiarskym salónikom v našej reštaurácii. ";
         $scope.restaurantSalonik9 = "Celková kapacita reštaurácie je 171 hostí. Každý salónik sa môže rezervovať pre privátnu spoločnosť a uzavrieť.";
 
-        $scope.restaurantText1 = "Príďte si vychutnať pokojnú atmosféru reštaurácie Tatras, príjemnú obsluhu, skvelé jedlo a „ozajstné pivo“.Radi Vás privítame pri oslave Vášho jubilea, firemnej akcii, svadbe, krstinách..."
+        $scope.restaurantText1 = "Príďte si vychutnať pokojnú atmosféru reštaurácie Tatras, príjemnú obsluhu, skvelé jedlo a „ozajstné pivo“. ";
+        $scope.restaurantText2 = "Radi Vás privítame pri oslave Vášho jubilea, firemnej akcii, svadbe, krstinách... Celková kapacita reštaurácie je 8 miestnosti a 171 hostí. Každý salónik sa môže rezervovať pre privátnu spoločnosť a uzavrieť.";
+        $scope.restaurantText3 = "Otvorené máme sedem dní v týždni.";
+
 
         $scope.restaurantPribehText = "V 90-tych rokoch minulého storočia, po oprave schátraného domu, vzniká v jeho priestore piváreň s názvom „Zvon“. Na výčape ponúka aj čierne pivo, čo bolo v Poprade v tom čase raritou. Piváreň strieda obchod s odevmi. Až potom prichádza myšlienka Reštauračného minipivovaru, teda vynikajúcej reštaurácie, ktorá by podávala i vlastné „ozajstné pivo“. Reštaurácie, ktorá využije bývalé obytné miestnosti starého nemeckého domu, pretvorené na útulné salóniky, ktoré budú mať spoločné črty, ale každý s vlastnou atmosférou a myšlienkou. Reštaurácie, ktorá ponúkne hosťovi niečo nezvyčajné a originálne, kde nájde zákutia na romantiku, obchodné rokovania či priestory pre rôzne akcie.";
         $scope.restaurantPribehText2 = " sa po dvoch rokoch projektovania, búrania, rekonštrukcie, výstavby a zariaďovania, otvára do skúšobnej prevádzky na jeseň 2016. Každý salónik má svoj názov podľa charakteru miestnosti a interiérového vybavenia. Hostia môžu často z pohodlia reštaurácie pozorovať sládka pri práci na varni. Vôňa chmeľu a mladého piva vtedy prenikne i do reštaurácie.„Tu varíme s láskou, koreníme smiechom“ – to je motto moderne vybavenej kuchyne reštaurácie Tatras, v ktorej šéfkuchár Milan Duráni so svojím tímom, pripravuje pre Vás z čerstvých surovín chutné jedlá. Milan Duráni desaťročie šefoval v prestížnych reštauráciach v Nemecku a Taliansku, odkiaľ si priniesol svoje zásady pre vybudovanie dobrej kuchyne – nie polotovary, nie chemické zvýrazňovače chuti, nie prehnane veľa jedál, nie... Kuchári pod jeho vedením vyrábajú vlastné zmesi korenín, omáčky, špaldové cestoviny, pečú vlastný chlieb, varia vlastnú pivnú polievku, miešajú svoju pivnú zmrzlinu.";
-        $scope.restaurantPribehText3 = "Pomalým varením pri nízkych teplotách. Varia tak, ako by varili pre seba a svoje deti. Ponúkajú hosťovi možnosť vybrať si a uloviť pstruha z vlastného akvária a vybrať si spôsob, akým ho má kuchyňa pripraviť. Záleží im na čerstvosti a sezónnosti jedálnička. Ponúkané jedlá môžete spojiť s „ozajstným pivom“, a tak spoznať skutočný gurmánsky zážitok.  ";
+        $scope.restaurantPribehText3 = "Naši kuchári varia moderným postupom – pomalým varením pri nízkych teplotách. Varia tak, ako by varili pre seba a svoje deti. Ponúkajú hosťovi možnosť vybrať si a uloviť pstruha z vlastného akvária a vybrať si spôsob, akým ho má kuchyňa pripraviť. Záleží im na čerstvosti a sezónnosti jedálnička. Ponúkané jedlá môžete spojiť s „ozajstným pivom“, a tak spoznať skutočný gurmánsky zážitok.";
 
 
         $scope.showMoreHistory = false;
@@ -48,6 +53,7 @@ angular.module('restaurantCtrl', [])
         $scope.doShowMoreHistory = function () {
             $scope.showMoreHistory = !$scope.showMoreHistory;
         };
+
 
         $scope.bookingSend1 = 'Ďakujeme za Váš záujem, Vaša rezervácia bola odoslaná';
         $scope.bookingSend2 = 'Budeme Vás kontaktovať pre potvrdenie rezervácie.';
@@ -71,9 +77,28 @@ angular.module('restaurantCtrl', [])
             });
             $scope.currentDay = new Date().toDateInputValue();
             $scope.day = $scope.currentDay;
-            console.log($scope.currentDay);
+            console.log('TimerNow ' + $scope.currentDay);
         };
         $scope.todayDate();
+
+
+        $scope.showTimer = function (data) {
+            var TimerNow = data.replace(/\s+/g, '');
+            console.log('TimerNow: ' + TimerNow);
+
+            if (TimerNow < $scope.restMonTimeFrom.$value) {
+                $scope.invalidTime = true;
+                console.log('TimerNow JE MENSI AKO OTVARACI CAS');
+            }
+            if (TimerNow > $scope.restMonTimeTo.$value) {
+                $scope.invalidTime = true;
+                console.log('TimerNow JE VACSI AKO OTVARACI CAS');
+            } else {
+                $scope.invalidTime = false;
+            }
+        };
+
+
 
         $scope.url = 'bookRestaurant.php';
 
@@ -90,6 +115,8 @@ angular.module('restaurantCtrl', [])
 
 
             $scope.formatTime = $scope.timer.toLocaleTimeString('sk-SK');
+            console.log("NOTformatTime " + $scope.timer);
+            console.log("formatTime " + $scope.formatTime);
 
             console.log("addText " + $scope.addText);
 
@@ -178,6 +205,10 @@ angular.module('restaurantCtrl', [])
         /// get day name and highlight the day
         $rootScope.getCurrentDay();
 
+        var options = {
+            twentyFour: true
+        };
+        jQuery('.timepicker').wickedpicker(options);
 
     }]);
 

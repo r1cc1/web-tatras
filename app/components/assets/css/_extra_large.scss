@@ -11,8 +11,25 @@
     text-align: right;
     padding: 1.5em 0 2em 0;
   }
+  .left {
+    width: 200px;
+  }
+  .left .shrink {
+    display: none;
+  }
+  .fake-left {
+    width: 350px;
+  }
+  .right .sub-menu {
+    left: 200px;
+  }
   .right .actions .btn-next {
     right: 2.5em;
+  }
+  .controls {
+    .hamburger {
+      display: none;
+    }
   }
   .content-main .table-info .table-info-item span {
     font-size: 1.25em;
@@ -21,14 +38,19 @@
     font-size: 2em;
   }
   .right .content-wrapper .content-main .boxer .box {
-    width: calc(100% / 4);
+    width: calc(100% / 2 - 2em);
   }
   .right .content-wrapper .content-main .boxer .box .img {
-    height: 16em;
+    height: 400px;
+  }
+  .right .content-wrapper .content-main .boxer  {
+    margin: 2em auto;
+    max-width: 60em;
+    padding: 0;
   }
   .right .content-wrapper .content-main .boxer .salon {
     width: calc(100% / 3);
-    padding: 1em 4em;
+    padding: 1em;
   }
   .content-main .daily-menu-list {
     max-width: calc(100% - 10em);
@@ -56,4 +78,5 @@
     height: 40em;
     min-height: 40em;
   }
+
 }
