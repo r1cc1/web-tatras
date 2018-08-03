@@ -1,5 +1,5 @@
 //* Medium Screen *//
-@media all and(min-width: 46em) {
+@media all and(min-width: 34em) {
   //* helper *//
   body:before {
     content: 'Medium Screen';
@@ -69,11 +69,13 @@
       width: calc(100% / 3);
     }
     .content-main .table-info .table-info-item p {
-      font-size: 1.5em;
+      font-size: 2em;
     }
+    
+
     .content-wrapper .content-main .boxer .salon {
-      width: calc(100% / 2 - 2em);
-      padding: 0.5em;
+      width: calc(100% / 2 - 1em);
+      padding: 1em;
     }
     .content-wrapper .content-main .boxer.salons {
       margin: 2em auto;
@@ -82,23 +84,25 @@
       width: calc(100% / 3);
     }
     .content-wrapper .content-main .boxer .box .img {
-      height: 12em;
+      height: 20em;
     }
     .content-wrapper .small-line {
-      width: 100%;
+      width: 20%;
       max-width: 24em;
     }
     .actions {
       .btn-next {
         display: inline-block;
         width: auto;
-        float: right;
+        min-width: 15em;
       }
     }
   }
 
+
+
   .content-main p {
-    font-size: 20px;
+    font-size: 1.5em;
     padding: 2em 1em;
     max-width: 30em;
     margin: 0 auto;
@@ -145,11 +149,6 @@
     font-size: 1.5em;
     padding: 0;
   }
-  .content-wrapper .content-main.empty {
-    height: 20em;
-    min-height: 20em;
-  }
-
 
   .content-wrapper .content-main .hours {
     max-width: 22em;
@@ -167,7 +166,7 @@
     border: 1px solid white;
   }
   .bg.bg-spa-3 {
-    background-position: center center;
+    background-position: 10px center;
   }
 
   .actions .link-button {
@@ -185,9 +184,37 @@
     font-size: 20px;
   }
 
+  .content-main .beer-list .beer-type {
+    width: calc(100% / 2 - 2em);
+    margin: 1em;
+  }
+
+  .content-main .beer-list p {
+    font-size: 1em;
+}
+
+  .content-main .beer-list .beer-type .beer-head .beer-name h2 {
+    font-size: 1.75em;
+}
+
+  .content-wrapper .book .center-wrap .center-content .logo a.award {
+    width: auto;
+}
+.content-wrapper .book .center-wrap .center-content .logo a.award:first-child {
+  order: 2;
+}
+.prize-box {
+  padding: 1em 0;
+  max-width: 40em;
+  margin: 0 auto;
+}
+.prices-box {
+  margin: 1em auto;
+  max-width: 20em;
+}
 
   footer {
-    padding: 2em;
+    padding: 1em;
   }
   footer p {
     text-align: left;
@@ -203,13 +230,33 @@
     display: table-cell;
     width: 33.33%;
     margin: 1em 0;
-    padding: 0 0 0 3em;
+    padding: 0;
   }
   footer .copyright .row .col-md-4.info-copy {
-    text-align: left;
+    text-align: right;
+  }
+  footer .copyright .row .col-md-4.info-copy p {
+    text-align: right;
   }
   footer .copyright .row .col-md-4.facebook {
-    text-align: right;
+    text-align: left;
     margin: 0.5em 0;
+    padding-left: 2em;
+  }
+  .content-wrapper .book {
+    height: calc(100vh - 100px);
+  }
+
+  .content-main .beer-list .beer-type.top.top2017:before,
+  .content-main .beer-list .beer-type.top.top2018:before {
+    width: 6em;
+    height: 6em;
+  }
+  
+
+  h3.prize,  h3.prize-mini {
+    font-size: 4em;
+    top: 34px;
+    left: 10px;
   }
 }

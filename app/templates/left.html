@@ -11,7 +11,7 @@
         </div>
     </div>
     <div class="left-wrap">
-        <a ng-href="#/welcome" target="_self" ng-click="scrollToTop()" class="logo">
+        <a ng-href="#!/welcome" target="_self" ng-click="scrollToTop()" class="logo">
             <img src="./components/assets/imgs/tatras_logo.png" alt="Minipivovar TATRAS Logo"/>
         </a>
         <div class="navigation">
@@ -19,32 +19,39 @@
                 <ul class="main-menu">
 
                     <li ng-class="getClass('/beer')">
-                        <a ng-href="#/beer" ng-class="getClass('/beer')" ng-click="scrollToTop()" target="_self" translate>minipivovar</a>
+                        <a ng-href="#!/beer" ng-class="getClass('/beer')" ng-click="scrollToTop()" target="_self" translate>minipivovar</a>
                     </li>
                     <li ng-class="getClass('/restaurant')">
-                        <a ng-href="#/restaurant" ng-class="getClass('/restaurant')" ng-click="scrollToTop()" target="_self" translate>restaurant</a>
+                        <a ng-href="#!/restaurant" ng-class="getClass('/restaurant')" ng-click="scrollToTop()" target="_self" translate>restaurant</a>
                     </li>
                     <li ng-class="getClass('/pension')">
-                        <a ng-href="#/pension" ng-class="getClass('/pension')" ng-click="scrollToTop()" target="_self" translate>pension</a>
+                        <a ng-href="#!/pension" ng-class="getClass('/pension')" ng-click="scrollToTop()" target="_self" translate>pension</a>
                     </li>
                     <li ng-class="getClass('/spa')">
-                        <a ng-href="#/spa" ng-class="getClass('/spa')" ng-click="scrollToTop()" target="_self" translate>wellness</a>
+                        <a ng-href="#!/spa" ng-class="getClass('/spa')" ng-click="scrollToTop()" target="_self" translate>wellness</a>
                     </li>
                     <li ng-class="getClass('/shop')">
-                        <a ng-href="#/shop" ng-class="getClass('/shop')" ng-click="scrollToTop()" target="_self" translate>shop</a>
+                        <a ng-href="#!/shop" ng-class="getClass('/shop')" ng-click="scrollToTop()" target="_self" translate>shop</a>
+                    </li>
+                    <li ng-class="getClass('/sutaz')" class="highlight">
+                        <a ng-href="#!/sutaz" ng-class="getClass('/sutaz')" ng-click="scrollToTop()" target="_self" translate>sutaz</a>
                     </li>
                 </ul>
             </nav>
         </div>
         <div class="call-action">
-            <a href="tel:00421948828727" target="_self" name="call-us" class="btn-book" ng-if="isHome">
+            <a href="tel:00421948828727" target="_self" name="call-us" class="btn-book" ng-if="categoryName == 'restaurant' || categoryName == 'minipivovar'">
                 <ng-md-icon icon="call" style="fill: #2b2a29" size="20"></ng-md-icon>
                 <span translate>call.us</span>
             </a>
-            <button class="btn-book" du-smooth-scroll="book" ng-if="!isHome" ng-click="closeMenu()">
-                <ng-md-icon icon="{{btnIcon}}" style="fill: #2b2a29" size="20"></ng-md-icon>
-                <span translate>book.now</span>
-            </button>
+            <a href="tel:00421948028025" target="_self" name="call-us" class="btn-book" ng-if="categoryName == 'wellness' || categoryName == 'shop' || categoryName == 'pension'">
+                <ng-md-icon icon="call" style="fill: #2b2a29" size="20"></ng-md-icon>
+                <span translate>call.us</span>
+            </a>
+            <!--<button class="btn-book" du-smooth-scroll="book" ng-if="!isHome" ng-click="closeMenu()">-->
+                <!--<ng-md-icon icon="{{btnIcon}}" style="fill: #2b2a29" size="20"></ng-md-icon>-->
+                <!--<span translate>book.now</span>-->
+            <!--</button>-->
         </div>
     </div>
     <div class="shrink" ng-class="{'open' : openMobileMenu}">
@@ -55,10 +62,7 @@
                         <span class="hamburger-inner"></span>
                       </span>
         </button>
-        <!--<div class="language">-->
-        <!--<span ng-if="language == 'sk' || language != 'en'" ng-click="changeLanguage('en')">EN</span>-->
-        <!--<span ng-if="language == 'en' || language != 'sk'" ng-click="changeLanguage('sk')">SK</span>-->
-        <!--</div>-->
+        
         <div class="call">
             <a href="tel:00421948828727" target="_self" name="call-us" class="btn-book" >
                 <ng-md-icon icon="call" style="fill: #f5eddc" size="25"></ng-md-icon>

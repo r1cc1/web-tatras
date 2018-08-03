@@ -22,12 +22,12 @@
         <div class="sub-menu" ng-class="{'open': openMobileMenu}">
             <div>
                 <ul>
-                    <li du-scrollspy="shop"><span du-smooth-scroll="restaurant" ng-click="closeMenu()" translate>shop</span></li>
                     <li du-scrollspy="welcome"><span du-smooth-scroll="welcome" ng-click="closeMenu()" translate>welcome</span></li>
                     <li du-scrollspy="beer"><span du-smooth-scroll="beer" ng-click="closeMenu()" translate>beer</span></li>
-                    <li du-scrollspy="info"><span du-smooth-scroll="info" ng-click="closeMenu()" translate>for.sell</span></li>
-                    <li du-scrollspy="contact"><span du-smooth-scroll="contact" ng-click="closeMenu()" translate>contact</span></li>
+                    <li du-scrollspy="info"><span du-smooth-scroll="info" ng-click="closeMenu()" translate>products</span></li>
                     <li du-scrollspy="hours"><span du-smooth-scroll="hours" ng-click="closeMenu()" translate>open.hours</span></li>
+                    <li du-scrollspy="contact"><span du-smooth-scroll="contact" ng-click="closeMenu()" translate>contact</span></li>
+
                 </ul>
             </div>
         </div>
@@ -51,7 +51,7 @@
 
             <div class="content-wrapper">
 
-                <section id="shop" class="content-main bg bg-podpivnik flex-nopadding full-height">
+                <section id="shop" class="content-main bg bg-shop flex-nopadding full-height">
                     <div class="center-wrap">
                         <div class="category-logo-wrap">
                             <div class="category-logo" du-smooth-scroll="welcome">
@@ -68,50 +68,137 @@
                     <h1 class="main-title" translate>welcome</h1>
                     <div class="small-line"></div>
                     <p class="content-text">
-                        {{shopText1}}
+                        <span class="odsek"></span>
+                        <span translate>shop.text.1</span>
                         <br>
                         <br>
-                        {{shopText2}}
-                    </p>
-                </section>
-
-                <section class="content-main empty bg bg-sudok">
-                </section>
-
-                <section id="beer" class="content-main bg bg-100 ">
-                    <h1 class="main-title" translate>beer</h1>
-                    <div class="small-line"></div>
-                    <p class="content-text">
-                        {{shopText3}}
-                        <br>
-                        <br>
-                        {{shopText4}}
+                        <span class="odsek"></span>
+                        <span translate>shop.text.2</span>
                     </p>
                 </section>
 
                 <section class="content-main empty bg bg-piva">
                 </section>
 
-                <section id="info" class="content-main bg bg-100">
-                    <h1 class="main-title" translate>for.sell</h1>
+                <section id="beer" class="content-main bg bg-100 ">
+                    <h1 class="main-title" translate>beer</h1>
                     <div class="small-line"></div>
                     <p class="content-text">
-                        <ul>
-                            <li>Pivá</li>
-                            <li>Vína</li>
-                            <li>Alkohol</li>
-                            <li>Zapožičanie výčapnej techniky</li>
-                            <li>Prenájom KEG súdkov</li>
-                            <li>Poháre</li>
-                            <li>Etikety</li>
-                            <li>Pivné tácky</li>
-                            <li>Pivná kozmetika</li>
-                            <li>Tatraslad</li>
-                        </ul>
+                        <span class="odsek"></span><span translate>shop.text.3</span>
+                        <br>
+                        <br>
+                        <span class="odsek"></span><span translate>shop.text.4</span>
+                        <br>
+                        <br>
+                        <span class="odsek"></span><span translate>shop.text.5</span>
+                        <br>
+                        <h2 class="sub-title align-center ">
+                                <b translate>shop.text.6</b>
+                        </h2>
+                        
+                        <div class="small-line"></div>
                     </p>
                 </section>
 
-                <section id="contact" class="content-main content-kontakt bg bg-red">
+                <section class="content-main empty bg bg-etikety">
+                </section>
+
+                <section id="info" class="content-main bg bg-100">
+                    <h1 class="main-title" translate>products</h1>
+                    <div class="small-line"></div>
+                    <p class="content-text">
+                        <ul>
+                            <li translate>beers</li>
+                            <li translate>wines</li>
+                            <li translate>spirits</li>
+                            <li translate>glasses</li>
+                            <li translate>etikety</li>
+                            <li translate>pivne.tacky</li>
+                            <li translate>tatras.slad</li>
+                            <li translate>kozmetika</li>
+                        </ul>
+                    </p>
+
+                    <div class="boxer salons">
+                        <div class="salon">
+                            <img src="/components/assets/imgs/gel.jpg" style="display: block; width: 100%; margin: 0 auto;"/>
+                            <h5 translate>shower.gel</h5>
+                        </div>
+                        <div class="salon">
+                            <img src="/components/assets/imgs/pena.jpg" style="display: block; width: 100%; margin: 0 auto;"/>
+                            <h5 translate>bath.foam</h5>
+                        </div>
+                        <div class="salon">
+                            <img src="/components/assets/imgs/sampon.jpg" style="display: block; width: 100%; margin: 0 auto;"/>
+                            <h5 translate>hair.shampoo</h5>
+                        </div>
+                        <div class="salon">
+                            <img src="/components/assets/imgs/mydlo p.jpg" style="display: block; width: 100%; margin: 0 auto;"/>
+                            <h5 translate>liquid.soap</h5>
+                        </div>
+                    </div>
+
+
+                    <h1 class="main-title" translate>services</h1>
+                    <div class="small-line"></div>
+                    <p class="content-text">
+                    <ul>
+                        <li translate>rent.of.tap.equipment</li>
+                        <li translate>rent.of.kegs</li>
+                    </ul>
+                    </p>
+                </section>
+
+                <section class="content-main empty bg bg-podpivnik">
+                </section>
+
+                <section id="hours" class="content-main bg-100">
+                    <h1 class="main-title" translate>open.hours</h1>
+                    <div class="small-line"></div>
+
+                    <div>
+                        <div class="hours">
+                            <div class="day monday" ng-class="{'today' : todayName == 'monday' }">
+                                <span translate>monday</span>
+                                <span class="time1" ng-if="shopMonTimeFrom.$value">{{shopMonTimeFrom.$value}}</span>
+                                <span class="time3" ng-if="!shopMonTimeFrom.$value"  style="text-align: center" translate>closed</span>
+                                <span class="time2" ng-if="shopMonTimeTo.$value">{{shopMonTimeTo.$value}}</span>
+                            </div>
+                            <div class="day tuesday" ng-class="{'today' : todayName == 'tuesday' }">
+                                <span translate>tuesday</span>
+                                <span class="time1">{{shopTueTimeFrom.$value}}</span>
+                                <span class="time2">{{shopTueTimeTo.$value}}</span>
+                            </div>
+                            <div class="day wednesday" ng-class="{'today' : todayName == 'wednesday' }">
+                                <span translate>wednesday</span>
+                                <span class="time1">{{shopWedTimeFrom.$value}}</span>
+                                <span class="time2">{{shopWedTimeTo.$value}}</span>
+                            </div>
+                            <div class="day thursday" ng-class="{'today' : todayName == 'thursday' }">
+                                <span translate>thursday</span>
+                                <span class="time1">{{shopThuTimeFrom.$value}}</span>
+                                <span class="time2">{{shopThuTimeTo.$value}}</span>
+                            </div>
+                            <div class="day friday" ng-class="{'today' : todayName == 'friday' }">
+                                <span translate>friday</span>
+                                <span class="time1">{{shopFriTimeFrom.$value}}</span>
+                                <span class="time2">{{shopFriTimeTo.$value}}</span>
+                            </div>
+                            <div class="day saturday" ng-class="{'today' : todayName == 'saturday' }">
+                                <span translate>saturday</span>
+                                <span class="time1">{{shopSatTimeFrom.$value}}</span>
+                                <span class="time2">{{shopSatTimeTo.$value}}</span>
+                            </div>
+                            <div class="day sunday" ng-class="{'today' : todayName == 'sunday' }">
+                                <span translate>sunday</span>
+                                <span class="time1">{{shopSunTimeFrom.$value}}</span>
+                                <span class="time2">{{shopSunTimeTo.$value}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="contact" class="content-main content-kontakt bg bg-beige">
                     <h1 class="main-title" translate>contact</h1>
                     <div class="small-line"></div>
 
@@ -127,51 +214,6 @@
                                         style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;"
                                         size="3em"></ng-md-icon>
                             <a href="mailto:info&#64minipivovartatras&#46sk" class="email">info@minipivovartatras.sk</a>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="hours" class="content-main bg-100">
-                    <h1 class="main-title" translate>open.hours</h1>
-                    <div class="small-line"></div>
-
-                    <div>
-                        <div class="hours">
-                            <div class="day monday" ng-class="{'today' : todayName == 'monday' }">
-                                <span translate>monday</span>
-                                <span class="time1">{{spaMonTimeFrom.$value}}</span>
-                                <span class="time2">{{spaMonTimeTo.$value}}</span>
-                            </div>
-                            <div class="day tuesday" ng-class="{'today' : todayName == 'tuesday' }">
-                                <span translate>tuesday</span>
-                                <span class="time1">{{spaTueTimeFrom.$value}}</span>
-                                <span class="time2">{{spaTueTimeTo.$value}}</span>
-                            </div>
-                            <div class="day wednesday" ng-class="{'today' : todayName == 'wednesday' }">
-                                <span translate>wednesday</span>
-                                <span class="time1">{{spaWedTimeFrom.$value}}</span>
-                                <span class="time2">{{spaWedTimeTo.$value}}</span>
-                            </div>
-                            <div class="day thursday" ng-class="{'today' : todayName == 'thursday' }">
-                                <span translate>thursday</span>
-                                <span class="time1">{{spaThuTimeFrom.$value}}</span>
-                                <span class="time2">{{spaThuTimeTo.$value}}</span>
-                            </div>
-                            <div class="day friday" ng-class="{'today' : todayName == 'friday' }">
-                                <span translate>friday</span>
-                                <span class="time1">{{spaFriTimeFrom.$value}}</span>
-                                <span class="time2">{{spaFriTimeTo.$value}}</span>
-                            </div>
-                            <div class="day saturday" ng-class="{'today' : todayName == 'saturday' }">
-                                <span translate>saturday</span>
-                                <span class="time1">{{spaSatTimeFrom.$value}}</span>
-                                <span class="time2">{{spaSatTimeTo.$value}}</span>
-                            </div>
-                            <div class="day sunday" ng-class="{'today' : todayName == 'sunday' }">
-                                <span translate>sunday</span>
-                                <span class="time1">{{spaSunTimeFrom.$value}}</span>
-                                <span class="time2">{{spaSunTimeTo.$value}}</span>
-                            </div>
                         </div>
                     </div>
                 </section>

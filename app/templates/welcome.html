@@ -1,0 +1,68 @@
+<div ng-cloak class="wrapper index bg-black">
+    <div class="controls start">
+        <div class="language">
+            <span ng-class="{'active' : language == 'sk'}" ng-click="changeLanguage('sk')">SK</span>
+            <span ng-class="{'active' : language == 'en'}" ng-click="changeLanguage('en')">EN</span>
+        </div>
+    </div>
+
+    <div class="center">
+        <div class="right-content">
+            <div class="content-wrapper">
+                <section id="welcome" class="book">
+                    <div class="center-wrap">
+                        <div class="center-content home">
+
+                            <div class="logo">
+                                <a href="#!/sutaz" id="triangle-topright" target="_self">
+                                    <span style="font-weight: 300;" translate>sutaz</span>
+                                    <span>O najlepšiu slovenskú pivovicu</span>
+                                    <span style="font-weight: 300;">2018</span>
+                                </a>
+                                <img src="./components/assets/imgs/tatras_logo.png" alt="Minipivovar TATRAS Logo" class="logo-img" />
+
+                                <div class="awards">
+                                    <a href="#!/beer#tmavak" class="award" target="_self">
+                                        <img src="./components/assets/imgs/zlata_korunka_2018.png" alt="Zlata Pivna korunka 2018" />
+                                        <h3>Tmavák 13°</h3>
+                                    </a>
+                                    <a href="#!/beer#weizen" class="award" target="_self">
+                                        <img src="./components/assets/imgs/zlata_korunka_2017.png" alt="Pivna korunka 2017" />
+                                        <h3>Weizen 11°</h3>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="actions start-btns">
+                                <div class="category">
+                                    <ng-md-icon icon="terrain" style="fill: #d6b472" size="40"></ng-md-icon>
+                                    <a ng-href="#!/beer" class="btn main" target="_self" translate>minipivovar</a>
+                                </div>
+                                <div class="category">
+                                    <ng-md-icon icon="restaurant_menu" style="fill: #d6b472" size="40"></ng-md-icon>
+                                    <a ng-href="#!/restaurant" class="btn main" target="_self" translate>restaurant</a>
+                                </div>
+                                <div class="category">
+                                    <ng-md-icon icon="hotel" style="fill: #d6b472" size="40"></ng-md-icon>
+                                    <a ng-href="#!/pension" class="btn main" target="_self" translate>pension</a>
+                                </div>
+                                <div class="category">
+                                    <ng-md-icon icon="spa" style="fill: #d6b472" size="40"></ng-md-icon>
+                                    <a ng-href="#!/spa" class="btn main" target="_self" translate>wellness</a>
+                                </div>
+                                <div class="category">
+                                    <ng-md-icon icon="shopping_basket" style="fill: #d6b472" size="40"></ng-md-icon>
+                                    <a ng-href="#!/shop" class="btn main" target="_self" translate>shop</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- include FOOTER -->
+<div ng-include="'templates/footer.html'"></div>

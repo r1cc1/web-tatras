@@ -17,6 +17,7 @@ angular.module('spaCtrl', [])
 
         // set Category
         $rootScope.categoryName = 'wellness';
+        $rootScope.categoryDescription = 'spa.text.1';
 
         // set default Mobile Menu
         $rootScope.openMobileMenu = false;
@@ -25,21 +26,8 @@ angular.module('spaCtrl', [])
         $scope.btnIcon = 'spa';
 
         // TEXTS
-        $scope.spaText1 = 'Kde inde by mali byť pivné kúpele, keď nie priamo v pivovare? Pivný kúpeľ bol už v stredoveku obľúbenou a účinnou terapiou. Využíva prírodné suroviny – chmeľ, výťažok z pivovarského mláta, kvasinky. Má liečivé účinky a je vynikajúcou prevenciou pred ochorením. Pivný kúpeľ prečisťuje pokožku, má ozdravný účinok na vlasy i pleť, uvoľňuje svaly, podporí Váš imunitný systém. Pivné kvasnice a látky obsiahnuté v pive odovzdávajú Vášmu telu celý rad B vitamínov. Proteíny a minerály prispievajú k celkovému zvláčneniu a renegerácií pokožky s omladzujúcim efektom, liečia akné a celulitídu. Priestor pivných kúpeľov poteší moderným interiérom nielen Vaše oko. Osviežia Vás očistné procesy, ktoré si môžete v tomto príjemnom prostredí vychutnať.';
-        $scope.spaText12 = 'Po návšteve u nás budete môcť povedať priateľom: ';
-        $scope.spaText13 = '„Kúpal som sa v pive“';
-
-        $scope.spaUl = 'Tato kúpeľnícka procedúra zahŕňa:';
-        $scope.spaLi1 = 'chmeľová suchá sauna, kde chmeľové silice vitalizujú a uvoľňujú kožné póry, prehriatím sa odplavia z tela škodlivé látky';
-        $scope.spaLi2 = 'ochladenie pod studeným vedrom vody alebo v studenej kadi';
-        $scope.spaLi3 = 'pivný vaňový perličkový kúpeľ. Teplota kúpeľa je 38 °C';
-        $scope.spaLi4 = 'odpočinok na lôžku z pravej pšeničnej slamy, kde dochádza k uvoľneniu napätia, únavy a stresu.';
-        $scope.spaLi5 = 's konzumáciou dobre vychladeného kvasnicového piva Tatras, ktoré si sami načapujete. Kvasnicové pivo obsahuje živé kultúry pivovarských kvasníc, ktoré priaznivo pôsobia na tráviaci trakt. Liečba tak pôsobí nielen zvonku, ale i zvnútra. Pivo môžete zajesť čerstvým domácim pivným chlebom s masťou.';
-
         $scope.spaLiTime = '75 min';
-
-        $scope.spaText3 = 'Odpočinok podporí vstrebávanie vitamínov a extraktov z predchádzajúceho kúpeľa.Pre dlhodobejší účinok sa odporúča byť niekoľko hodín bez opláchnutia alebo sprchy.Zažite ten pravý pivný kúpeľ pre dvoch v jednej vani. Na tento zážitok určite nezabudnete. Ležíte vo vani a môžete si, len tak mimochodom, načapovať pivo. Nie je to báječné? K dispozícii sú štyri vane či už pre jednotlivcov alebo pre pár. Kapacita pivných kúpeľov je max. 8 osôb. Ako doplnok sa ponúka masáž, zábal alebo maska z pivovarských kvasníc. Odporúčame Vám vypnúť mobil a myseľ a maximálne sa uvoľniť. So sebou si nič brať nemusíte. O všetko sa postaráme my (uteráky, plachty, prezuvky...). Celý priestor kúpeľov bude počas procedúry súkromný - iba Váš. Naša obsluha Vás iba uvedie, všetko vysvetlí a už Vás nikto nebude rušiť. Pivné kúpele neodporúčame tehotným ženám, ľuďom s vysokým krvným tlakom, chorobami srdca a otvorenými kožnými chorobami. Osoby alergické na bielkoviny, kvasnice či chmeľ by sa mali pred pivným kúpeľom poradiť s lekárom.';
-
+        
         $scope.massageText1 = 'Milí hostia, doprajte si masáž. Iste si tiež potrebujete oddýchnuť a načerpať nové sily. Naša masáž je umenie dotyku, ktorý pre Vás vieme použiť k zmierneniu napätia, utíšeniu bolesti, regeneriácii telesného a i duševného  zdravia.';
         $scope.massageText2 = 'prináša uvolnenie, odstraňuje únavu, celkovo posilňuje zdravie a imunitu.';
         $scope.massageText3 = 'podľa vašej predstavy, momentálnej nálady a kondície, zohľadnuje Vaše aktuálne rozpoloženie, je prirodzeným spojením najlepších európskych i východných smerov ( reflexnej masáže, akupresúry, Lomi lomi,  Shia-tsu, klasickej masáže...) Je prostriedkom ako z masáže pre seba získať čo najviac.';
@@ -50,18 +38,6 @@ angular.module('spaCtrl', [])
         $scope.massageText8 = 'Masáž je úžasný prostredok ako uľaviť organizmu, zmierniť stres a predchádzať bolestiam. Vstúpte a budete sa cítiť znovuzrodení a svet čarokrásny.';
 
         $scope.bookFinnish = false;
-
-        $scope.mySlides = [
-            './components/assets/imgs/jedlo/kolacik.jpg',
-            './components/assets/imgs/jedlo/loparik.jpg',
-            './components/assets/imgs/jedlo/rebra.JPG',
-            './components/assets/imgs/jedlo/polievka.jpg',
-            './components/assets/imgs/jedlo/licka.JPG'
-        ];
-
-        $scope.bookingSend1 = 'Ďakujeme o Váš záujem, Vaša rezervácia bola odoslaná';
-        $scope.bookingSend2 = 'Budeme Vás kontaktovať pre potvrdenie rezervácie.';
-
 
         $scope.spaPrices = false;
         $scope.showPrice = function () {
@@ -74,6 +50,13 @@ angular.module('spaCtrl', [])
         };
 
         $scope.url = 'bookSpa.php';
+
+        $scope.doShowMoreRelax = function () {
+            $scope.showMoreRelax = !$scope.showMoreRelax;
+        };
+        $scope.doShowMoreMassage = function () {
+            $scope.showMoreMassage = !$scope.showMoreMassage;
+        };
 
         $scope.getCurrentMonth = function() {
             var dateObj = new Date();
@@ -107,18 +90,6 @@ angular.module('spaCtrl', [])
 
         console.log('TerminMonth---');
         console.log($scope.terminMonth);
-        //
-        //
-        // $scope.terminTimes = [
-        //     {"no": "1", "name": "11:00"},
-        //     {"no": "2", "name": "12:30"},
-        //     {"no": "2", "name": "14:30"},
-        //     {"no": "3", "name": "16:00"},
-        //     {"no": "4", "name": "17:30"},
-        //     {"no": "5", "name": "19:00"},
-        //     {"no": "6", "name": "20:30"}
-        // ];
-
 
 
         $scope.datalists = [
@@ -216,30 +187,100 @@ angular.module('spaCtrl', [])
             $(event.target).addClass('selected');
         };
 
+        $scope.dateSelected = false;
 
-        //
-        // // number of persons
-        // $scope.amounts = [
-        //     {id: 0, value: '0', displayName: 'select'},
-        //     {id: 1, value: '1', displayName: '1'},
-        //     {id: 2, value: '2', displayName: '2'},
-        //     {id: 3, value: '3', displayName: '3'},
-        //     {id: 4, value: '4', displayName: '4'},
-        //     {id: 5, value: '5', displayName: '5'},
-        //     {id: 6, value: '6', displayName: '6'},
-        //     {id: 7, value: '7', displayName: '7'},
-        //     {id: 8, value: '8', displayName: '8'}
-        // ];
-        //
-        // // number of baths
-        // $scope.baths = [
-        //     {value: '0', displayName: 'select'}
-        // ];
-        //
-        // $scope.filterCondition={
-        //     bath: '0',
-        //     amount: '0'
-        // };
+        $scope.checkTimes = function () {
+
+            $scope.dateSelected = true;
+
+            function getDayName(dateStr, locale)
+            {
+                var date = new Date(dateStr);
+                return date.toLocaleDateString(locale, { weekday: 'long' });
+            }
+
+            if ($scope.date) {
+                var day = getDayName($scope.date, "en-US"); // Gives back 'Vrijdag' which is Dutch for Friday.
+                console.log('Day From Date is >>> ' + $scope.date + day);
+
+                if (day == 'Monday') {
+                    console.log('Selected is MONDAY');
+                    $scope.hideMe1 =  true;
+                    $scope.hideMe2 =  true;
+                    $scope.hideMe3 =  true;
+                    $scope.hideMe4 =  true;
+                    $scope.hideMe5 =  true;
+                    $scope.hideMe6 =  true;
+                    $scope.hideMe7 =  true;
+                    $scope.hideMeAll =  true;
+                }
+                if (day == 'Tuesday') {
+                    console.log('Selected is TUESDAY');
+                    $scope.hideMe1 =  true;
+                    $scope.hideMe2 =  false;
+                    $scope.hideMe3 =  false;
+                    $scope.hideMe4 =  false;
+                    $scope.hideMe5 =  false;
+                    $scope.hideMe6 =  true;
+                    $scope.hideMe7 =  true;
+                    $scope.hideMeAll =  false;
+                }
+                if (day == 'Wednesday') {
+                    console.log('Selected is WEDNESDAY');
+                    $scope.hideMe1 =  true;
+                    $scope.hideMe2 =  false;
+                    $scope.hideMe3 =  false;
+                    $scope.hideMe4 =  false;
+                    $scope.hideMe5 =  false;
+                    $scope.hideMe6 =  true;
+                    $scope.hideMe7 =  true;
+                    $scope.hideMeAll =  false;
+                }
+                if (day == 'Thursday') {
+                    console.log('Selected is THURSDAY');
+                    $scope.hideMe1 =  true;
+                    $scope.hideMe2 =  false;
+                    $scope.hideMe3 =  false;
+                    $scope.hideMe4 =  false;
+                    $scope.hideMe5 =  false;
+                    $scope.hideMe6 =  true;
+                    $scope.hideMe7 =  true;
+                }
+                if (day == 'Friday') {
+                    console.log('Selected is FRIDAY');
+                    $scope.hideMe1 =  true;
+                    $scope.hideMe2 =  false;
+                    $scope.hideMe3 =  false;
+                    $scope.hideMe4 =  false;
+                    $scope.hideMe5 =  false;
+                    $scope.hideMe6 =  false;
+                    $scope.hideMe7 =  true;
+                    $scope.hideMeAll =  false;
+                }
+                if (day == 'Saturday') {
+                    console.log('Selected is SATURDAY');
+                    $scope.hideMe1 =  false;
+                    $scope.hideMe2 =  false;
+                    $scope.hideMe3 =  false;
+                    $scope.hideMe4 =  false;
+                    $scope.hideMe5 =  false;
+                    $scope.hideMe6 =  false;
+                    $scope.hideMe7 =  true;
+                    $scope.hideMeAll =  false;
+                }
+                if (day == 'Sunday') {
+                    console.log('Selected is SUNDAY');
+                    $scope.hideMe1 =  false;
+                    $scope.hideMe2 =  false;
+                    $scope.hideMe3 =  false;
+                    $scope.hideMe4 =  false;
+                    $scope.hideMe5 =  false;
+                    $scope.hideMe6 =  false;
+                    $scope.hideMe7 =  true;
+                    $scope.hideMeAll =  false;
+                }
+            }
+        };
 
 
         $scope.checkPrices = function () {
@@ -324,16 +365,39 @@ angular.module('spaCtrl', [])
             }
             /// if Massage
             if ($scope.treatment == 3) {
+
+                console.log('if Massage ' + $scope.treatment);
+
                 if(!$scope.amount){
                     $scope.finalPrice = '0';
                 }
 
-                if($scope.amount == 1 ){
-                    $scope.finalPrice = $scope.massagePrice.$value;
+                if($scope.massageType == 1 ){
+                    $scope.finalPrice = $scope.massageType1s;
                 }
-                if($scope.amount == 2 ){
-                    $scope.finalPrice = ($scope.massagePrice.$value)*2;
+                if($scope.massageType == 2 ){
+                    $scope.finalPrice = $scope.massageType1l;
                 }
+                if($scope.massageType == 3 ){
+                    $scope.finalPrice = $scope.massageType2s;
+                }
+                if($scope.massageType == 4 ){
+                    $scope.finalPrice = $scope.massageType2l;
+                }
+                if($scope.massageType == 5 ){
+                    $scope.finalPrice = $scope.massageType3s;
+                }
+                if($scope.massageType == 6 ){
+                    $scope.finalPrice = $scope.massageType3l;
+                }
+
+                if($scope.massageType == 7 ){
+                    $scope.finalPrice = $scope.massageType4s;
+                }
+                if($scope.massageType == 8 ){
+                    $scope.finalPrice = $scope.massageType4l;
+                }
+
 
                 console.log('$scope.treatment ' + $scope.treatment);
                 console.log('$scope.finalPrice ' + $scope.finalPrice);
@@ -342,6 +406,20 @@ angular.module('spaCtrl', [])
             console.log('$scope.treatment ' + $scope.treatment);
             console.log('$scope.finalPrice ' + $scope.finalPrice);
         };
+
+        $scope.massageType1s = "15";
+        $scope.massageType1l = "28";
+
+        $scope.massageType2s = "19";
+        $scope.massageType2l = "29";
+
+        $scope.massageType3s = "15";
+        $scope.massageType3l = "28";
+
+        $scope.massageType4s = "14";
+        $scope.massageType4l = "25";
+
+
 
 
 
@@ -439,10 +517,15 @@ angular.module('spaCtrl', [])
                 if($scope.amount == 2 ){
                     $scope.finalPrice = ($scope.massagePrice.$value)*2;
                 }
-
                 console.log('$scope.treatment ' + $scope.treatment);
                 console.log('$scope.finalPrice ' + $scope.finalPrice);
             }
+
+
+
+
+
+
 
 
             console.log("treatment: " + $scope.treatment + " date: " + $scope.date + " termin: " + $scope.termin + " amount: " + $scope.amount +

@@ -1,0 +1,333 @@
+<div ng-cloak class="wrapper" ng-class="{'init': isloading}">
+
+    <!-- include LEFT-NAVI -->
+    <div ng-include="'templates/left.html'"></div>
+    <!-- end of LEFT-NAVI include -->
+
+    <div class="fake-left"></div>
+
+    <div class="right">
+        <div class="sub-menu" ng-class="{'open': openMobileMenu}">
+            <div>
+                <ul>
+                    <li du-scrollspy="start">
+                        <span du-smooth-scroll="start" ng-click="closeMenu()" translate>obsah</span>
+                    </li>
+                    <li du-scrollspy="one">
+                        <span du-smooth-scroll="one" ng-click="closeMenu()" translate>Aké údaje spracovávame?</span>
+                    </li>
+                    <li du-scrollspy="two">
+                        <span du-smooth-scroll="two" ng-click="closeMenu()" translate>Kategórie príjemcov</span>
+                    </li>
+                    <li du-scrollspy="three">
+                        <span du-smooth-scroll="three" ng-click="closeMenu()" translate>Účel spracúvania osobných údajov</span>
+                    </li>
+                    <li du-scrollspy="four">
+                        <span du-smooth-scroll="four" ng-click="closeMenu()" translate>Vaše práva a možnosti</span>
+                    </li>
+                    <li du-scrollspy="five">
+                        <span du-smooth-scroll="five" ng-click="closeMenu()" translate>Sťažnosti</span>
+                    </li>
+                    <li du-scrollspy="six">
+                        <span du-smooth-scroll="six" ng-click="closeMenu()" translate>Zmeny zásad</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="right-content">
+            <div class="top-nav">
+                <button class="hamburger hamburger--collapse" type="button" ng-click="mobileMenu()">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+                <div class="top-bar-logo">
+                </div>
+                <div class="call">
+                    <a href="tel:00421948028025" target="_self" name="call-us" class="btn-book">
+                        <ng-md-icon icon="call" style="fill: #f5eddc" size="30"></ng-md-icon>
+                    </a>
+                </div>
+            </div>
+
+            <div class="content-wrapper">
+
+                <!-- category -->
+                <section id="start" class="content-main bg-100">
+                    <h1 class="main-title" translate>privacy.policy</h1>
+                    <h2 class="sub-title">Informácie o spracúvaní vašich osobných údajov</h2>
+                    <div class="small-line"></div>
+                    <span class="gdpr-date">(platné od 25.5.2018)</span>
+                    <p class="content-text">
+
+                        <br>
+                        <span class="odsek"></span>
+                        Naša spoločnosť Minipivovar TATRAS, s.r.o. so sídlom Letisko Poprad-Tatry, 058 01 Poprad,, (ďalej len „správca“)
+                        jasne a otvorene prehlasuje, ako spracovávame Vaše osobné údaje v súlade s
+                        NARIADENÍM EUROPSKÉHO PARLAMENTU A RADY (EU) 2016/679, o ochrane fyzických osôb v
+                        súvislosti so spracovaním osobných údajov a o voľnom pohybe týchto údajov
+                        a o zrušení smernice 95/46/ES, všeobecné nariadenie o ochrane osobných údajov
+                        (ďalej len ako „GDPR“).
+                        <br>
+                        <br>
+                        <h1 id="one" style="font-size: 2em;">1.Aké údaje spracovávame?</h1>
+                        <p>Zhromažďujeme osobné údaje, ktoré nám poskytnete, ak sa na nás obrátite s otázkou, či dopytom
+                            na službu, alebo tovar. Osobné údaje, ktoré nám poskytnete, zahŕňajú povinné údaje, ako napríklad
+                            kontaktné informácie, tak nepovinné údaje. Bez uvedenia povinných údajov nie je možné
+                            vybaviť vašu požiadavku. Dobrovoľne nám poskytnete osobné údaje tam, kde Vás žiadame o
+                            udelenie súhlasu, napr. pri vypĺňaní objednávacieho formulára, v rozsahu tam uvedenom.</p>
+                        <h2 style="text-align: center;">Konkrétne údaje, ktoré od Vás žiadame:</h2>
+                        <br>
+                        <ul>
+                            <li>Meno a Priezvisko</li>
+                            <li>Emailová adresa</li>
+                            <li>Tel. číslo</li>
+                        </ul>
+                        <br>
+                        <br>
+                        <h1 id="two" style="font-size: 2em;">2.Kategórie príjemcov</h1>
+                        <h2 style="text-align: center;">A.Objednávací formulár</h2>
+                        <p>Vaše osobné údaje sú poskytnuté nasledujúcim kategóriám:
+                            <br>
+                            <br> - Príjemca v členskom štáte (EÚ a EHP)
+                            <br> - Poskytovateľ webhostingu za účelom uchovávania a zálohovania údajov
+                            <br> - Poskytovateľ IT servisu/údržby (len k nahliadnutiu)
+                            <br> -Príjemca v tretej krajine alebo medzinárodnej organizácii - Nie je.
+                            <br> Prenos osobných údajov do tretej krajiny, alebo medzinárodnej organizácii: Nie je a ani
+                            sa nezamýšľa.
+                        </p>
+                        <br>
+                        <h2 style="text-align: center;">B. Cookies</h2>
+                        <p>Vaše osobné údaje môžu byť poskytnuté nasledujúcim kategóriám:
+                            <br>
+                            <br> -Príjemca v členskom štáte (EÚ a EHP)
+                            <br> -Poskytovateľ webhostingu za účelom uchovávania a zálohovania údajov
+                            <br> -Poskytovateľ IT servisu/údržby (len k nahliadnutiu)
+                            <br> -Poskytovateľ trackovacích služieb za účelom skvalitňovania služieb
+                            <br> -Príjemca v tretej krajine alebo medzinárodnej organizácii - Nie je.
+                            <br>
+                            <br> Prenos osobných údajov do tretej krajiny, alebo medzinárodnej organizácii: Nie je a ani
+                            sa nezamýšľa.
+                        </p>
+                        <br>
+
+                        <h1 id="three" style="font-size: 2em;">3.Účel spracovania osobných údajov</h1>
+                        <h2 style="text-align: center;">A.Objednávací formulár</h2>
+                        <p>Osobné údaje uvedené v Objednávacom formulári sú spracovávané za účelom spätného kontaktovania
+                            a zaslania objednaného tovaru/služby</p>
+                        <br>
+                        <h2 style="text-align: center;">B.Registračný formulár do sútaže</h2>
+                        <p>Osobné údaje uvedené v Registračnom formulári sú spracovávané za účelom identifikacie a spätného
+                            kontaktovania v pripade Víťazstva v sutazi</p>
+                        <br>
+                        <h2 style="text-align: center;">C.Cookies</h2>
+                        <p>Vďaka cookies si navštívené webové stránky pamätajú vaše úkony a nastavenia, ktoré ste na nich
+                            previedli, takže tieto údaje nemusíte zadávať opakovane, zlepšujú a zjednodušujú Vašu návštevu
+                            webu.
+                            <br>
+                            <br>
+                            <b>O súboroch cookies:</b>
+                            <br> Keď používate web www.minipivovartatras.sk, môže dôjsť k zhromažďovaniu vašich osobných
+                            údajov. V takomto prípade sa ukladajú informácie o používaní a stránkach, ktoré
+                            ste navštívili. Môžu sa týkať technických údajov o vašom zariadení a internetovom pripojení,
+                            napríklad operačného systému, verzie prehliadača, IP adresy, súborov cookie a jedinečných
+                            identifikátorov. Pri návšteve webu www.minipivovartatras.sk na ktorom sú poskytované naše služby,
+                            môžu byť používané rôzne technológie na rozpoznanie vašej osoby, aby sme získali viac informácií
+                            o používateľoch. Môže k tomu dochádzať priamo alebo prostredníctvom používania technológie
+                            tretích strán. Môže ísť napr. o používanie súborov cookie.
+                            <br>
+                            <br>
+                            <b>Čo sú cookies?</b>
+                            <br> Cookie je malý textový súbor, ktorý sa uloží vo vašom počítači alebo mobilnom zariadení a je
+                            opäť používaný behom vašich ďalších návštev. Vďaka cookies si navštívené webové
+                            stránky pamätajú vaše úkony a nastavenia, ktoré ste na nich previedli, takže tieto údaje nemusíte
+                            zadávať opakovane, zlepšujú a zjednodušujú Vašu návštevu webu. Aké cookies používame? Existujú
+                            dva typy súborov cookies, trvalé a dočasné (sessioncookies a relačné súbory cookies). Trvalé
+                            cookies sú uložené ako súbor vo vašom počítači alebo mobilnom zariadení, a to najviac po
+                            dobu 12 mesiacov. Sessioncookies sú uložené dočasné a zmiznú potom, čo zavriete prehliadač. Pokiaľ sa
+                            prihlásite k registrovanému účtu, použijeme trvalé súbory cookies napríklad k uloženiu vami
+                            zvoleného tovaru do nákupného košíku. Sessioncookies používame, keď použijete funkciu
+                            Filter produktov a tiež k tomu, aby sme skontrolovali, či ste prihlásený alebo či ste
+                            do svojho nákupného košíka vložili nejaký tovar.
+                            <br>
+                            <br>
+                            <b>Aké cookies spracovávame?</b>
+                            <br> Súbory cookies zhromažďujú informácie o používaní našich webových stránok. Tieto informácie
+                            zahrňujú typ internetového prehliadača a operačného systému, ktorý používate, názov domény miesta,
+                            z ktorého sa pripojujete (IP adresa), dátum, čas a trvanie návštevy, počet návštev, priemerný
+                            čas strávený na našich webových stránkach a stránky, ktorú zobrazujete. Súbor cookies obsahuje
+                            tiež jedinečné identifikačné číslo, ktoré identifikuje váš prehliadač. To nám pomáha rozpoznať
+                            váš prehliadač, keď znovu navštívite našu webovú stránku. Taktiež sledujeme, ako vyhľadávate
+                            na našej webovej stránke a aký tovar si prezeráte.
+                            <br>
+                            <br>
+                            <b>Cookies tretích strán</b>
+                            <br> Cookies tretích strán používame ku zhromažďovaniu štatistických údajov v súhrnnej podobe pomocou
+                            analytických nástrojov, ako je Google, Google Analytics, Google AdWords, Facebook Pixel V
+                            takom prípade sa zhromaždené dáta predávajú týmto poskytovateľom služieb tretích strán za
+                            účelom ich spracovania. Používame tiež inzertné funkcie služby Google Analytics, Google
+                            Analytics a Facebook Pixel. Používame cookiestretích strán trvalé i dočasné (sessioncookies).
+                            Trvalé cookies sú uložené vo vašom počítači alebo mobilnom zariadení, a to najviac po dobu
+                            24 mesiacov. Údaje, ktoré získame, môžu byť sprístupnené tretím stranám, spracovateľom Vašich
+                            osobných údajov, aby nám pomohli poskytovať naše služby (napr. účtovníctvo, poskytovateľ cloudových
+                            služieb, analýza, audit, platby, detekcia podvodov, marketing a vývoj). Tieto tretie strany majú
+                            prístup k Vašim osobným údajom v rozsahu  nutnom pre výkon ich činnosti, a sú zaviazaní ich
+                            neprezradiť a nepoužiť k iným účelom. Neovládame cookies z webových stránok tretích strán. Tretie
+                            strany zodpovedajú za to, ako funguje ich cookies a ako sú spracovávané
+                            osobné údaje.
+                            <br>
+                            <br>
+                            <b>K čomu sa cookies používajú?</b>
+                            <br> Súbory cookies nám pomáhajú zistiť, ako náš web funguje v rôznych lokalitách. Tiež používame
+                            súbory cookies za účelom pochopenia, zlepšenia a prevádzania výskumu produktov, funkcií a služieb, včítane
+                            vašich prístupov na e-shop z iných webov, aplikácií či zariadení, ako sú váš pracovný počítač
+                            či vaše mobilné zariadenie.
+                            <br> Tabuľka súborov cookies</p>
+
+                        <table width="558">
+                            <tbody>
+                                <tr>
+                                    <td width="212">
+                                        <em>Vydavateľ/ Názov cookie</em>
+                                    </td>
+                                    <td width="189">
+                                        <em>Typ cookie</em>
+                                    </td>
+                                    <td width="156">
+                                        <em>Trvanlivosť</em>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="212">
+                                        <strong>Google Analytics</strong>
+                                        <br> (_ga, cid, utmv, utmz, utma, utmb, utmc)</td>
+                                    <td width="189">Analytical, Tracking</td>
+                                    <td width="156">Persistent, 26 mesiacov</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>Pre správny chod nášho webu a reklamných produktov používame rôzne typy súborov cookies.
+                            Súbory cookies tretích strán pochádzajúcich z reklám iných webov a sledujú vaše používanie webu
+                            pre marketingové účely. Tieto údaje budú aktualizované. K uplynutiu doby užívania súborov
+                            cookies dôjde buď na základe rotácie alebo sa počíta od posledného dňa, kedy užívateľ interagoval
+                            s webovou stránkou.</p>
+                        <br>
+                        <h1>4.Vaše práva a možnosti</h1>
+                        <h2>Právo na prístup:</h2>
+                        <p>Chceme zachovať otvorenosť a transparentnosť o spracúvaní vašich údajov. Ak chcete získať
+                            ďalšie informácie o spôsobe spracúvania osobných údajov, máte právo požiadať spoločnosť
+                            Minipivovar TATRAS s.r.o. o vydanie potvrdenia o tom, či spoločnosť Minipivovar TATRAS
+                            s.r.o.  spracúva osobné údaje, ktoré sa Vás týkajú. Ak áno, máte právo získať prístup
+                            k u svojim osobným údajom, ktorý vám poskytneme vo forme tzv. registra (najmä, účel, kategórie
+                            osobných údajov, kategórie príjemcov osobných údajov, ktorým boli alebo budú osobné údaje poskytnuté,
+                            doba uchovávania alebo kritériá na určenie doby uchovávania, informácie o zdroji zhromaždených
+                            osobných údajov). Ak dostaneme žiadosť o získanie prístupu, môže sa stať, že si od vás vyžiadame
+                            ďalšie informácie, aby sme zistili, k akým údajom chcete získať prístup, a ubezpečili
+                            sa, že ich poskytneme správnej osobe.</p>
+                        <h2>Právo na opravu:</h2>
+                        <p>Kedykoľvek máte právo požiadať o opravu svojich osobných údajov, ak sú nesprávne. V rámci
+                            uvedeného účelu máte takisto právo na doplnenie akýchkoľvek neúplných osobných údajov.</p>
+                        <h2>Právo na výmaz:</h2>
+                        <p>Máte právo požiadať o vymazanie osobných údajov, ktoré o vás spracúvame, a to v týchto
+                            prípadoch:</p>
+                        <ul>
+                            <li>údaje už nie sú potrebné na účel, na ktorý boli získané alebo spracúvané;</li>
+                            <li>odvolali ste svoj súhlas, na základe ktorého sa spracúvanie vykonáva, a na spracúvanie neexistuje
+                                žiadny ďalší právny základ;</li>
+                            <li>máte námietky týkajúce sa preváženia vašich záujmov nad spracúvaním vašich osobných údajov spoločnosťou
+                                Minipivovar TATRAS s.r.o. a neexistuje žiadny oprávnený záujem spoločnosti Minipivovar TATRAS
+                                s.r.o. na spracúvanie vašich osobných údajov, ktorý by bol dôležitejší ako váš záujem;</li>
+                            <li>máte námietky voči spracúvaniu vašich osobných údajov na účely priameho marketingu;</li>
+                            <li>osobné údaje sú spracúvané nezákonne;</li>
+                            <li>osobné údaje je potrebné vymazať, aby bol zachovaný súlad so zákonnou povinnosťou, ktorá sa na
+                                nás vzťahuje;</li>
+                            <li>boli zhromaždené osobné údaje dieťaťa (osoby mladšej ako 16 rokov), za ktoré nesiete zodpovednosť
+                                ako zákonný zástupca týkajúcu sa používania IT služieb, napr. sociálnych médií.</li>
+                        </ul>
+                        <p>Môže sa stať, že nevyhovieme vašej žiadosti o výmaz, a to v prípade, že nám v tom
+                            bránia zákonné povinnosti. Môže k tomu dôjsť v prípade, že spracúvanie je potrebné
+                            na uplatnenie nášho práva na slobodu prejavu a prístupu k informáciám, splnenie zákonnej
+                            povinnosti, ktorá sa na nás vzťahuje, alebo na preukazovanie, uplatnenie alebo obhajovanie právnych
+                            nárokov.</p>
+                        <h2>Právo na obmedzenie:</h2>
+                        <p>Máte právo požiadať, aby bolo spracúvanie vašich osobných údajov do určitej miery obmedzené a to,
+                            ak namietate správnosť vašich osobných údajov (počas obdobia, počas ktorého máme možnosť overiť
+                            správnosť osobných údajov), ak je spracúvanie osobných údajov nezákonné, namietate výmaz a žiadate
+                            namiesto toho obmedzenie ich použitia, ak my už osobné údaje na daný účel nepotrebujeme, ale
+                            vy ich potrebujete na uplatnenie právneho nároku alebo ak namietate  preváženie vašich záujmov
+                            nad spracúvaním osobných údajov ( až do overenia, či oprávnené záujmy na našej strane prevažujú
+                            nad vašimi oprávnenými záujmami).</p>
+                        <h2>Právo namietať:</h2>
+                        <p>Oprávnený záujem:</p>
+                        <p>Ak máte osobné dôvody týkajúce sa vašej konkrétnej situácie, máte právo namietať proti spracúvaniu
+                            vašich osobných údajov, ak je právnym základom pre také spracúvanie náš oprávnený záujem. Ak
+                            však náš oprávnený záujem na spracúvanie prevyšuje nad vašim osobným záujmom, môžeme pokračovať
+                            v spracúvaní vašich údajov, a to aj napriek vašej námietke voči spracúvaniu.</p>
+                        <p>Priamy marketing (vrátane analýz vykonávaných na účely priameho marketingu):</p>
+                        <p>Máte možnosť vzniesť námietku voči spracúvaniu Vašich osobných údajov na účely priameho marketingu.
+                            Námietka sa týka aj analýz osobných údajov (tzv. profilovanie), ktoré sa vykonávajú v súvislosti
+                            s priamym marketingom.  Ak máte námietky voči priamemu marketingu, prestaneme spracúvať
+                            vaše osobné údaje na tento účel, ako aj na účel všetkých typov akcií priameho marketingu.Ak sa
+                            rozhodnete odmietnuť spracúvanie svojich osobných údajov na účely priameho marketingu, nebudete
+                            od nás dostávať osobné ponuky ani iné informácie.</p>
+                        <h2>Právo na prenosnosť osobných údajov:</h2>
+                        <p>Ak je naše právo na spracúvanie vašich osobných údajov založené na vašom súhlase, máte právo požiadať
+                            o prenos údajov, ktoré sa vás týkajú a ktoré ste nám poskytli, inému prevádzkovateľovi
+                            osobných údajov (napr. dátová brána).</p>
+                        <h1>5.Sťažnosti</h1>
+                        <p>Máte právo podať sťažnosť na Úrad na ochranu osobných údajov Slovenskej republiky (Office forPersonalDataProtection
+                            of the Slovak Republic), 
+                            <a href="http://www.dataprotection.gov.sk/">www.dataprotection.gov.sk</a>.</p>
+
+                        <p>Kontaktné údaje</p>
+                        <p>Ak chcete získať ďalšie informácie o spracúvaní osobných údajov alebo ak máte nejaké otázky,
+                            môžete sa na nás kedykoľvek obrátiť na adrese:</p>
+                        <p>Minipivovar TATRAS s.r.o.
+                            <br> Letisko Poprad-Tatry
+                            <br> 058 01 Poprad</p>
+                        <p>
+                            <a href="mailto:{{email.$value}}" class="email" name="email-kontakt" target="_self">{{email.$value}}</a>
+                            <br>
+                            <a href="http://www.minipivovartatras.sk">www.minipivovartatras.sk</a>
+                        </p>
+                        <h1>6.     Zmeny zásad</h1>
+                        <p>Tieto zásady ochrany údajov môžeme aktualizovať s cieľom opraviť nezrovnalosti alebo zachovať
+                            súlad s novými zákonnými alebo technologickými požiadavkami. Najnovšiu aktualizovanú verziu
+                            zásad ochrany osobných údajov nájdete vždy na tejto stránke. O rozsiahlych zmenách (týkajúcich
+                            sa napr. účelov spracúvania osobných údajov alebo kategórií osobných údajov) vás budeme informovať
+                            e-mailom alebo na webe www.minipivovartatras.sk</p>
+                    </p>
+
+                </section>
+
+
+                <section id="contact" class="content-main content-kontakt bg bg-beige">
+                    <h1 class="main-title color-white" translate>contact</h1>
+                    <div class="small-line white"></div>
+
+                    <div class="info">
+                        <div class="item">
+                            <ng-md-icon icon="settings_phone" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;"
+                                size="3em"></ng-md-icon>
+                            <a href="tel:00421948028025">(+421) 0948 028 025</a>
+                        </div>
+                        <div class="item">
+                            <ng-md-icon icon="mail_outline" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;" size="3em"></ng-md-icon>
+                            <a href="mailto:{{categoryEmail}}" class="email">{{categoryEmail}}</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- include FOOTER -->
+                <div ng-include="'templates/footerNew.html'"></div>
+
+                <!-- end of FOOTER include -->
+
+            </div>
+            <!-- content-wraper -->
+        </div>
+        <!-- /right-content -->
+
+    </div>
+</div>

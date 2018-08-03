@@ -6,7 +6,7 @@
                 <h5 class="modal-title" id="exampleModalLabel">Uložit zmeny</h5>
             </div>
             <div class="modal-body">
-                Naozaj uložit zmeny na Server?
+                Uložit zmeny na Server?
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-warning" data-dismiss="modal">Nie</button>
@@ -15,8 +15,6 @@
         </div>
     </div>
 </div>
-
-
 
 <div class="admin-menu">
     <div class="menu-wrap">
@@ -29,7 +27,7 @@
 
             <a ng-show="!previewOpen" ng-href="#/welcome" class="btn-submit" >
                 <ng-md-icon icon="arrow_back" style="white" size="20"></ng-md-icon>
-                na Stránku
+                naspäť
             </a>
 
         </div>
@@ -39,16 +37,20 @@
         <div class="menu-right">
 
             <!-- Button trigger modal -->
-            <button ng-show="!previewOpen  && !editOver && !adminLogin" type="button" class="btn-submit"  style="float:right; background:#78fa89;" data-toggle="modal" data-target="#myModal">
+            <button ng-show="!preview2Open && !previewOpen  && !editOver && !adminLogin" type="button" class="btn-submit"  style="float:right; background:#78fa89;" data-toggle="modal" data-target="#myModal">
                 <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
                 Potvrdiť Upravy
             </button>
 
-            <button ng-show="previewOpen  && !editOver && !adminLogin" ng-click="printMenu()" class="btn btn-print">
+            <button ng-show="!preview2Open && previewOpen  && !editOver && !adminLogin" ng-click="printMenu()" class="btn btn-print">
                 <ng-md-icon icon="print" style="white" size="20"></ng-md-icon>
-                tlačiť MENU
+                Tlačiť MENU
             </button>
 
+            <button ng-show="preview2Open"  ng-click="printCertifikat()" class="btn btn-submit" style="float:right; background:#78fa89;">
+                <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
+                Exportuj Certifikát
+            </button>
         </div>
     </div>
 </div>
@@ -117,11 +119,64 @@
                     </div>
                 </header>
 
-                <section id="denneMennuAdmin" class="bg-white" ng-if="!adminLogin || adminCenter" ng-hide="previewOpen || editOver">
+                <section id="certifikat" class="content-main bg" style="background: gray;" ng-show="preview2Open">
+                    <div id="certifikatPreview"  class="preview-landscape">
+                        <div class="bg-image">
+                            <img src="./components/assets/imgs/certifikat.png" width="100%" height="auto" alt="Certifikat TATRAS"/>
+                            <h1 class="main-title-name">{{cerName}}</h1>
+                            <h2 class="date-title">{{today}}</h1>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="certifikatAdmin" class="bg-white" ng-if="!adminLogin || adminCenter" ng-hide="previewOpen || editOver">
+
+                    <div class="container">
+                        <br><br>
+                        <div class="row">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Certifikát generátor</h3>
+                                </div>
+                                <div class="panel-body">
+                        
+                                    <div class="row">
+
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                <tr>
+                                                    <th class="text-center"><h4>Meno Degustátora</h4></th>
+                                                    <th class="text-center"><input id="cerName" type="text" class="daily-menu" ng-model="cerName" placeholder="Meno Priezvisko"/></th>
+                                                </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-inline">
+                                            <button ng-show="!preview2Open || !previewOpen && !editOver && !adminLogin"  ng-click="showPreview2(cerName)" class="btn btn-submit" style="border: 1px solid #ecdbb9;">
+                                                <ng-md-icon icon="zoom_out_map" style="white" size="20"></ng-md-icon>
+                                                Generuj Certifikát
+                                            </button>
+                                            <button ng-show="preview2Open"  ng-click="printCertifikat(cerName)" class="btn btn-submit" style=" background:#78fa89;">
+                                                <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
+                                                Exportuj Certifikát
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section id="denneMennuAdmin" class="bg-white" ng-if="!adminLogin || adminCenter" ng-hide="preview2Open || previewOpen || editOver">
 
                     <div class="container">
 
-                        <br>
                         <br>
                         <br>
 
@@ -133,8 +188,7 @@
                                 <div class="panel-body">
                                     <div class="row">
                                         <div class="form-inline">
-
-                                            <button ng-show="!previewOpen  && !editOver && !adminLogin"  ng-click="showPreview()" class="btn btn-submit" >
+                                            <button ng-show="!previewOpen  && !editOver && !adminLogin"  ng-click="showPreview()" class="btn btn-submit" style="border: 1px solid #ecdbb9;">
                                                 <ng-md-icon icon="zoom_out_map" style="white" size="20"></ng-md-icon>
                                                 Ukaž nahľad & Tlač
                                             </button>
@@ -319,11 +373,6 @@
                                                         <input  type="text" class="daily-menu alergeny"  ng-model="day5allergens3.$value" placeholder="_">
                                                     </td>
                                                 </tr>
-
-
-
-
-
                                                 </tbody>
                                             </table>
                                         </div>
@@ -335,7 +384,7 @@
                     </div>
                 </section>
 
-                <section id="beerCard" class="bg-white" ng-if="!adminLogin || adminCenter" ng-hide="previewOpen || editOver">
+                <section id="beerCard" class="bg-white" ng-if="!adminLogin || adminCenter" ng-hide="preview2Open || previewOpen || editOver">
 
                     <div class="container">
                         <br>
@@ -1102,7 +1151,7 @@
                     </div>
                 </section>
 
-                <section id="openHoursTables" class="bg-white" ng-if="!adminLogin || adminCenter" ng-hide="previewOpen || editOver">
+                <section id="openHoursTables" class="bg-white" ng-if="!adminLogin || adminCenter" ng-hide="preview2Open || previewOpen || editOver">
                     <div class="container">
                         <br>
                         <br>
@@ -1318,7 +1367,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-12 col-md-0"></div>
-                                        <div class="col-xs-12 col-md-12">
+                                        <div class="col-xs-12 col-md-6">
                                             <div class="table-responsive">
                                                 <table class="table table-bordered">
                                                     <thead>
@@ -1351,6 +1400,106 @@
                                                 </table>
                                             </div>
                                         </div>
+                                        <div class="col-xs-12 col-md-6">
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                    <tr>
+                                                        <th class="text-center" colspan="3"><h4>Predajnicka</h4></th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-center"><h3>Den</h3></th>
+                                                        <th class="text-center"><h3>OD</h3></th>
+                                                        <th class="text-center"><h3>DO</h3></th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody id="openHoursTable-3">
+                                                    <tr rowspan="2">
+                                                        <td>
+                                                            <h3 translate>monday</h3>
+                                                        </td>
+                                                        <td>
+                                                            <input id="shopMonTimeFrom" type="text" class="daily-menu" ng-model="shopMonTimeFrom.$value">
+                                                        </td>
+                                                        <td>
+                                                            <input id="shopMonTimeTo" type="text" class="daily-menu"  ng-model="shopMonTimeTo.$value">
+                                                        </td>
+                                                    </tr>
+                                                    <tr rowspan="2">
+                                                        <td>
+                                                            <h3 translate>tuesday</h3>
+                                                        </td>
+                                                        <td>
+                                                            <input id="shopTueTimeFrom" type="text" class="daily-menu" ng-model="shopTueTimeFrom.$value">
+                                                        </td>
+                                                        <td>
+                                                            <input id="shopTueTimeTo" type="text" class="daily-menu"  ng-model="shopTueTimeTo.$value">
+                                                        </td>
+                                                    </tr>
+                                                    <tr rowspan="2">
+                                                        <td>
+                                                            <h3 translate>wednesday</h3>
+                                                        </td>
+                                                        <td>
+                                                            <input id="shopWedTimeFrom" type="text" class="daily-menu" ng-model="shopWedTimeFrom.$value">
+                                                        </td>
+                                                        <td>
+                                                            <input id="shopWedTimeTo" type="text" class="daily-menu"  ng-model="shopWedTimeTo.$value">
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr rowspan="2">
+                                                        <td>
+                                                            <h3 translate>thursday</h3>
+                                                        </td>
+                                                        <td>
+                                                            <input id="shopThuTimeFrom" type="text" class="daily-menu" ng-model="shopThuTimeFrom.$value">
+                                                        </td>
+                                                        <td>
+                                                            <input id="shopThuTimeTo" type="text" class="daily-menu"  ng-model="shopThuTimeTo.$value">
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr rowspan="2">
+                                                        <td>
+                                                            <h3 translate>friday</h3>
+                                                        </td>
+                                                        <td>
+                                                            <input id="shopFriTimeFrom" type="text" class="daily-menu" ng-model="shopFriTimeFrom.$value">
+                                                        </td>
+                                                        <td>
+                                                            <input id="shopFriTimeTo" type="text" class="daily-menu"  ng-model="shopFriTimeTo.$value">
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr rowspan="2">
+                                                        <td>
+                                                            <h3 translate>saturday</h3>
+                                                        </td>
+                                                        <td>
+                                                            <input id="shopSatTimeFrom" type="text" class="daily-menu" ng-model="shopSatTimeFrom.$value">
+                                                        </td>
+                                                        <td>
+                                                            <input id="shopSatTimeTo" type="text" class="daily-menu"  ng-model="shopSatTimeTo.$value">
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr rowspan="2">
+                                                        <td>
+                                                            <h3 translate>sunday</h3>
+                                                        </td>
+                                                        <td>
+                                                            <input id="shopSunTimeFrom" type="text" class="daily-menu" ng-model="shopSunTimeFrom.$value">
+                                                        </td>
+                                                        <td>
+                                                            <input id="shopSunTimeTo" type="text" class="daily-menu"  ng-model="shopSunTimeTo.$value">
+                                                        </td>
+                                                    </tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
                                         <div class="col-xs-12 col-md-0"></div>
                                     </div>
                                 </div>
@@ -1360,7 +1509,7 @@
                     </div>
                 </section>
 
-                <section id="pensionAdmin" class="bg-white" ng-if="!adminLogin || adminCenter" ng-hide="previewOpen || editOver">
+                <section id="pensionAdmin" class="bg-white" ng-if="!adminLogin || adminCenter" ng-hide="preview2Open || previewOpen || editOver">
                     <div class="container">
 
                         <form name="adminForm" role="form">
@@ -1440,7 +1589,7 @@
                     </div>
                 </section>
 
-                <section id="spaAdmin" class="bg-white" ng-if="!adminLogin || adminCenter" ng-hide="previewOpen || editOver">
+                <section id="spaAdmin" class="bg-white" ng-if="!adminLogin || adminCenter" ng-hide="preview2Open || previewOpen || editOver">
                     <div class="container">
 
                         <div class="row">
@@ -1808,13 +1957,13 @@
                             <img src="./components/assets/imgs/tatras_logo.png" width="100%" height="auto" alt="Logo TATRAS"/>
                         </div>
 
-                        <h1 class="main-title" ng-click="printMenu()">Denné Menu</h1>
+                        <h1 class="main-title" ng-click="printMenu()" translate>daily.menu</h1>
                         <div class="small-line"></div>
 
                         <div class="content-main no-padding">
                             <p class="align-center">
-                                <!--Podávame v pracovné dni od <b>11:30</b>-->
-                                <!--</br>-->
+                                Podávame v pracovné dni od <b translate>daily.text.2</b>
+                                </br>
                                 Polievka & Menu A za <b class="red">{{dailyMenuPrice1.$value}} &euro; </b>
                                 </br>
                                 Polievka & Menu B za <b class="red">{{dailyMenuPrice2.$value}} &euro; </b>
@@ -2031,6 +2180,8 @@
                         </div>
                     </div>
                 </section>
+
+             
 
                 <section id="over" class="book bg-white" ng-show="editOver"
                          ng-style="{height: displayHeight + 'px'}">

@@ -63,9 +63,9 @@ $message2 .= '<tr><td>Počet osôb:</td><td><b>' . $amount . '</b></td></tr>';
 $message2 .= '<tr><td>Tel. číslo:</td><td><a href="tel:' . $phone . '">' . $phone . '</a></td></tr>';
 $message2 .= '<tr><td>Email:</td><td><a href="mailto:' . $from . '" class="email">' . $from . '</a></td></tr>';
 $message2 .= '</table><br><br>';
-$message2 .= '<div style="display: block; padding: 10px; margin: 0 auto; background: #e0232e; width: 100%; color: #2b2a29; text-align: center;">';
+$message2 .= '<div style="display: block; padding: 10px 0; margin: 0 auto; background: #e0232e; width: 100%; color: #2b2a29; text-align: center;">';
 $message2 .= '<h4>UPOZORNENIE!</h4><h4> Táto žiadost není platná ako rezervácia.<br> Budeme Vás kontaktovať pre potvrdenie rezervácie.</h4></div>';
-$message2 .= '<div style="display:block; position: relative; background-color: #2b2a29; width: 100%; padding: 10px;bottom: 0; z-index: 2;left: 0; text-align: center; color: #FFFFFF;">
+$message2 .= '<div style="display:block; position: relative; background-color: #2b2a29; width: 100%; padding: 10px 0;bottom: 0; z-index: 2;left: 0; text-align: center; color: #FFFFFF;">
                     <div class="item" ><br>
                     <a href="tel:00421948828727" style="color: white; font-size: 18px; text-decoration: none;">(+421) 0948 828 727</a>
                     <br><br>

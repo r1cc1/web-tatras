@@ -10,21 +10,14 @@ angular.module('adminCtrl', [])
         $rootScope.category = 'admin';
         $rootScope.categoryName = 'Admin Center';
 
-        $scope.adminLogin = false;
-        $scope.adminCenter = true;
+
+        // set defaults
+        $scope.adminLogin = true;
+        $scope.adminCenter = false;
+        $scope.showError = false;
 
         $scope.adminUser = 'Admin';
         $scope.adminPass = 'info123Tatras';
-
-        // TODO: Texty to Translate
-        $scope.food1 = 'Polievka';
-        $scope.food2 = 'Menu A';
-        $scope.food3 = 'Menu B';
-        $scope.person = 'osoba';
-        $scope.people = 'osoby';
-        $scope.night = 'noc';
-
-        $scope.showError = false;
 
         $scope.logMeIn = function (loginEmail, loginPass) {
             // console.log('--user--');
@@ -54,24 +47,23 @@ angular.module('adminCtrl', [])
         };
 
         $scope.previewOpen = false;
+        $scope.preview2Open = false;
         $scope.editOver = false;
 
         $scope.showPreview = function() {
             $scope.previewOpen = true;
+            console.log('showPreview');
         };
         $scope.closePreview = function(){
             $scope.previewOpen = false;
+            $scope.editOver = false;
+            console.log('closePreview');
+            $scope.$apply();
         };
+
         $scope.backToStart = function(){
             $scope.editOver = false;
         };
-
-        // /// BEERS
-        // $scope.beer1Activation = function() {
-        //     console.log('beer1Activation init');
-        //     $scope.beer1active = !$scope.beer1active;
-        // };
-
 
         $(function(){
             /// trigger login Fucntion from Enter key
@@ -81,6 +73,7 @@ angular.module('adminCtrl', [])
                 }
             })
         });
+
 
         $scope.formsubmit = function () {
             // set edit is over, set Flag
@@ -225,6 +218,30 @@ angular.module('adminCtrl', [])
             $scope.spaSunTimeTo.$save();
 
 
+            /// SHOP TIMES
+            /// Monday
+            $scope.shopMonTimeFrom.$save();
+            $scope.shopMonTimeTo.$save();
+            /// tuesday
+            $scope.shopTueTimeFrom.$save();
+            $scope.shopTueTimeTo.$save();
+            /// Wednesday
+            $scope.shopWedTimeFrom.$save();
+            $scope.shopWedTimeTo.$save();
+            /// Thursday
+            $scope.shopThuTimeFrom.$save();
+            $scope.shopThuTimeTo.$save();
+            /// Friday
+            $scope.shopFriTimeFrom.$save();
+            $scope.shopFriTimeTo.$save();
+            /// Saturday
+            $scope.shopSatTimeFrom.$save();
+            $scope.shopSatTimeTo.$save();
+            /// Sunday
+            $scope.shopSunTimeFrom.$save();
+            $scope.shopSunTimeTo.$save();
+
+
             /// Kúpele TERMINY
             $scope.spaTime1.$save();
             $scope.spaTime2.$save();
@@ -286,6 +303,11 @@ angular.module('adminCtrl', [])
             $scope.pensionPrice2.$save();
             $scope.pensionPrice3.$save();
             $scope.pensionPrice4.$save();
+
+            $scope.pensionPrice5.$save();
+            $scope.pensionPrice6.$save();
+            $scope.pensionPrice7.$save();
+            $scope.pensionPrice8.$save();
 
 
             $scope.beer1active.$save();
@@ -415,20 +437,53 @@ angular.module('adminCtrl', [])
             function explode(){
                 html2canvas($('#preview'), {
 
+
                     onrendered: function(canvas) {
+                        var img = canvas.toDataURL();
+                        //console.log("png: "+img);
 
-                        var img    = canvas.toDataURL("image/png");
+                        download(img, "Denné Menu_" +$rootScope.today+".png", "image/png");
+                        $scope.closePreview();
+                    }
 
-                        var winPrint = window.open('', '', 'left=0,top=0,width=800,height=600,toolbar=0,scrollbars=0,status=0');
-                        winPrint.document.write('<div style="display:block;position: relative;">');
-                        winPrint.document.write('<img src="'+img+'"/></div>');
-                        winPrint.document.close();
-                        winPrint.focus();
+                    // onrendered: function(canvas) {
+                    //     var img    = canvas.toDataURL("image/png");
+                    //     var winPrint = window.open('', '', 'left=0,top=0,width=1000,height=1000,toolbar=0,scrollbars=0,status=0');
+                    //     winPrint.document.write('<div style="display:block;position: relative;">');
+                    //     winPrint.document.write('<img src="'+img+'"/></div>');
+                    //     winPrint.document.close();
+                    //     winPrint.focus();
+                    // }
+                });
+            }
+            setTimeout(explode, 1000);
+        };
 
+
+        $scope.showPreview2 = function(data) {
+            $scope.preview2Open = true;
+            $scope.cerName = data;
+            $scope.$apply();
+
+        };
+        $scope.closePreview2 = function(){
+            $scope.preview2Open = false;
+        };
+        $scope.printCertifikat = function() {
+            function explode(){
+                html2canvas($('#certifikatPreview'), {
+
+                    onrendered: function(canvas) {
+                        var img = canvas.toDataURL();
+                        //console.log("png: "+img);
+
+                        download(img, "Certifikát_" +$scope.cerName+".png", "image/png");
+                        $scope.closePreview2();
                     }
                 });
             }
             setTimeout(explode, 1000);
+
         };
 
         //

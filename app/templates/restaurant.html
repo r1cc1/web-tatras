@@ -22,16 +22,14 @@
         <div class="sub-menu" ng-class="{'open': openMobileMenu}">
             <div>
                 <ul>
-                    <li du-scrollspy="restaurant"><span du-smooth-scroll="restaurant" ng-click="closeMenu()" translate>restaurant</span></li>
-                    <li du-scrollspy="welcome"><span du-smooth-scroll="welcome" ng-click="closeMenu()" translate>welcome</span></li>
-                    <li du-scrollspy="kitchen"><span du-smooth-scroll="kitchen" ng-click="closeMenu()" translate>kitchen</span></li>
-                    <li du-scrollspy="menu"><span du-smooth-scroll="menu" ng-click="closeMenu()" translate>daily.menu</span></li>
-                    <li du-scrollspy="info2"><span du-smooth-scroll="info2" ng-click="closeMenu()" translate>lounges</span></li>
-                    <li du-scrollspy="book"><span du-smooth-scroll="book" ng-click="closeMenu()" translate>book.now</span></li>
-                    <li du-scrollspy="contact"><span du-smooth-scroll="contact" ng-click="closeMenu()" translate>contact</span></li>
-                    <li du-scrollspy="hours"><span du-smooth-scroll="hours" ng-click="closeMenu()" translate>open.hours</span></li>
                     <li du-scrollspy="info"><span du-smooth-scroll="info" ng-click="closeMenu()" translate>story</span></li>
-                    <li du-scrollspy="photos"><span du-smooth-scroll="photos" ng-click="closeMenu()" translate>gallery</span></li>
+                    <li du-scrollspy="kitchen"><span du-smooth-scroll="kitchen" ng-click="closeMenu()" translate>kitchen</span></li>
+                    <li du-scrollspy="restaurant"><span du-smooth-scroll="restaurant" ng-click="closeMenu()" translate>restaurant</span></li>
+                    <li du-scrollspy="offer"><span du-smooth-scroll="offer" ng-click="closeMenu()" translate>we.recommend</span></li>
+                    <li du-scrollspy="menu"><span du-smooth-scroll="menu" ng-click="closeMenu()" translate>daily.menu</span></li>
+                    <li du-scrollspy="book"><span du-smooth-scroll="book" ng-click="closeMenu()" translate>book.now</span></li>
+                    <li du-scrollspy="hours"><span du-smooth-scroll="hours" ng-click="closeMenu()" translate>open.hours</span></li>
+                    <li du-scrollspy="contact"><span du-smooth-scroll="contact" ng-click="closeMenu()" translate>contact</span></li>
                 </ul>
             </div>
         </div>
@@ -54,34 +52,31 @@
             </div>
 
             <div class="content-wrapper">
-
-                <section id="restaurant" class="content-main bg bg-restaurant flex-nopadding full-height">
+                <section id="welcome" class="content-main bg bg-restaurant flex-nopadding full-height">
                     <div class="center-wrap">
                         <div class="category-logo-wrap">
-                            <div class="category-logo" du-smooth-scroll="welcome">
+                            <div class="category-logo" du-smooth-scroll="info">
                                 <h2 class="category-title" translate>{{categoryName}}</h2>
                             </div>
                         </div>
                     </div>
                     <div class="stick-bottom">
-                        <span du-smooth-scroll="welcome"></span>
+                        <span du-smooth-scroll="info"></span>
                     </div>
                 </section>
 
-                <!--<section class="content-main empty bg bg-rebra">-->
-                <!--</section>-->
-
-                <section id="welcome" class="content-main bg bg-100 ">
-                    <h1 class="main-title" translate>welcome</h1>
+                <section  id="info" class="content-main bg bg-100">
+                    <h1 class="main-title" translate>story</h1>
                     <div class="small-line"></div>
                     <p class="content-text">
-                        {{restaurantText1}}
+                        <span class="odsek"></span> 
+                        <span translate>restaurant.text.1</span> 
+                        <button class="btn show-more" ng-hide="showMoreHistory == true" ng-click="doShowMoreHistory();" translate>read.more</button>
                         <br>
                         <br>
-                        {{restaurantText2}}
-                        <br>
-                        <br>
-                        <b>{{restaurantText3}}</b>
+                        <span class="content-text" ng-show="showMoreHistory == true">
+                            <span class="odsek"></span> <span translate>restaurant.text.2</span> 
+                        </span>
                     </p>
                 </section>
 
@@ -89,13 +84,122 @@
                 </section>
 
                 <section id="kitchen" class="content-main bg bg-black">
-                    <h1 class="main-title color-red" translate>our.chefs</h1>
+                    <h1 class="main-title" translate>our.chefs</h1>
                     <div class="small-line"></div>
                     <p class="content-text color-light vip">
-                        {{restaurantPribehText3}}
+                        <span class="odsek"></span>
+                        <span translate>restaurant.text.3</span> 
+                        <br>
+                        <span class="odsek"></span> 
+                        <span translate>restaurant.text.4</span> 
                     </p>
                     <div class="small-line"></div>
                     <br>
+                </section>
+
+                <section id="graphic" class="content-main empty bg bg-bar">
+                </section>
+
+                <section id="restaurant" class="content-main bg bg-100 ">
+                    <h1 class="main-title" translate>restaurant</h1>
+                    <div class="small-line"></div>
+                    <p class="content-text">
+                        <span class="odsek"></span>
+                        <span translate>restaurant.text.5</span> 
+                        <br>
+                        <br>
+                        <span class="odsek"></span>
+                        <span translate>restaurant.text.6</span> 
+                    </p>
+                    <div class="small-line"></div>
+                    <div class="boxer salons">
+                        <div class="salon">
+                            <h5 translate>lounge.name.1</h5>
+                            <p translate>lounge.text.1</p>
+                        </div>
+                        <div class="salon">
+                                <h5 translate>lounge.name.2</h5>
+                                <p translate>lounge.text.2</p>
+                        </div>
+                        <div class="salon">
+                            <img src="/components/assets/imgs/new/_RK_5912.JPG" style="display: block; width: 100%; margin: 0 auto;">
+                        </div>
+                        <div class="salon">
+                                <h5 translate>lounge.name.3</h5>
+                                <p translate>lounge.text.3</p>
+                        </div>
+                        <div class="salon">
+                                <h5 translate>lounge.name.4</h5>
+                                <p translate>lounge.text.4</p>
+                        </div>
+                        <div class="salon">
+                            <img src="/components/assets/imgs/komorka.jpg" style="display: block; width: 100%; margin: 0 auto;">
+                        </div>
+                        <div class="salon">
+                                <h5 translate>lounge.name.5</h5>
+                                <p translate>lounge.text.5</p>
+                        </div>
+                        <div class="salon">
+                                <h5 translate>lounge.name.6</h5>
+                                <p translate>lounge.text.6</p>
+                        </div>
+                        <div class="salon">
+                                <h5 translate>lounge.name.7</h5>
+                                <p translate>lounge.text.7</p>
+                        </div>
+                        <div class="salon">
+                                <h5 translate>lounge.name.8</h5>
+                                <p translate>lounge.text.8</p>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="small-line"></div>
+                    <br>
+                    <br>
+                    <h2 class="sub-title" translate>restaurant.text.7</h2>
+                </section>
+
+                <section class="content-main empty bg bg-licka">
+                </section>
+
+                <section id="offer" class="content-main bg bg-100">
+                    <h1 class="main-title" translate>we.recommend</h1>
+                    <h2 class="sub-title" translate>restaurant.text.8</h2>
+                    <div class="small-line"></div>
+
+                    <div class="boxer salons">
+                        <div class="salon">
+                            <img src="/components/assets/imgs/jacobus.jpg" style="display: block; width: 100%; margin: 0 auto;"/>
+                            <h5 translate>set.name.1</h5>
+                            <p translate>set.text.1</p>
+                        </div>
+                        <div class="salon">
+                            <img src="/components/assets/imgs/degustacia.jpg" style="display: block; width: 100%; margin: 0 auto;"/>
+                            <h5 translate>set.name.2</h5>
+                            <p translate>set.text.2</p>
+                        </div>
+                        <div class="salon">
+                            <img src="/components/assets/imgs/jedlo/polievka.jpg" style="display: block; width: 100%; margin: 0 auto;"/>
+                            <h5 translate>set.name.3</h5>
+                            <p translate>set.text.3</p>
+                        </div>
+
+                        <div class="salon">
+                            <img src="/components/assets/imgs/jedlo/_RK_0105.JPG" style="display: block; width: 100%; margin: 0 auto;"/>
+                            <h5 translate>set.name.4</h5>
+                            <p translate>set.text.4</p>
+                        </div>
+                        <div class="salon">
+                            <img src="/components/assets/imgs/jedlo/kolacik.jpg" style="display: block; width: 100%; margin: 0 auto;"/>
+                            <h5 translate>set.name.5</h5>
+                            <p translate>set.text.5</p>
+                        </div>
+                    </div>
+
+                </section>
+
+                <section class="content-main empty bg bg-rebra">
                 </section>
 
                 <section id="menu" class="content-main bg bg-white">
@@ -105,16 +209,18 @@
 
                     <div class="content-main no-padding">
                         <p class="align-center">
-                            {{restaurantMenuText1}}<b><time>{{restaurantMenuTime}}</time></b>
+                            <span translate>daily.text.1</span>
+                            <b translate>daily.text.2</b>
                             <br>
-                            <!--{{restaurantText5}}<b class="red">{{dailyMenuPrice3.$value}} &euro; </b>-->
-                            <!---->
-                            <!--<br>-->
-                            {{restaurantMenuText2}}<b class="red">{{dailyMenuPrice1.$value}} &euro; </b>
                             <br>
-                            {{restaurantMenuText3}}<b class="red">{{dailyMenuPrice2.$value}} &euro; </b>
+                            <span translate>daily.text.3</span><b class="red">{{dailyMenuPrice1.$value}} &euro; </b>
+                            <br>
+                            <span translate>daily.text.4</span><b class="red">{{dailyMenuPrice2.$value}} &euro; </b>
 
                         </p>
+
+                        <div class="small-line"></div>
+
                         <div class="daily-menu-list">
 
                             <div class="daily-menu-item" ng-hide="!day1food2.$value || todayName == 'tuesday' || todayName == 'wednesday' || todayName == 'thursday' || todayName == 'friday' || todayName == 'saturday' "
@@ -122,7 +228,8 @@
                                 <table>
                                     <tr class="menu-day">
                                         <td>
-                                            <h5 translate>monday</h5>
+                                            <h5 class="dayname" translate>monday</h5>
+                                            <h5 class="todays" translate>today</h5>
                                         </td>
                                         <td>
                                         </td>
@@ -164,7 +271,8 @@
                                 <table>
                                     <tr class="menu-day">
                                         <td>
-                                            <h5 translate>tuesday</h5>
+                                                <h5 class="dayname" translate>tuesday</h5>
+                                                <h5 class="todays" translate>today</h5>
                                         </td>
                                         <td>
                                         </td>
@@ -206,7 +314,8 @@
                                 <table>
                                     <tr class="menu-day">
                                         <td>
-                                            <h5 translate>wednesday</h5>
+                                                <h5 class="dayname" translate>wednesday</h5>
+                                                <h5 class="todays" translate>today</h5>
                                         </td>
                                         <td>
                                         </td>
@@ -248,7 +357,8 @@
                                 <table>
                                     <tr class="menu-day">
                                         <td>
-                                            <h5 translate>thursday</h5>
+                                            <h5 class="dayname" translate>thursday</h5>
+                                            <h5 class="todays" translate>today</h5>
                                         </td>
                                         <td>
                                         </td>
@@ -290,7 +400,8 @@
                                 <table>
                                     <tr class="menu-day">
                                         <td>
-                                            <h5 translate>friday</h5>
+                                            <h5 class="dayname" translate>friday</h5>
+                                            <h5 class="todays" translate>today</h5>
                                         </td>
                                         <td>
                                         </td>
@@ -330,61 +441,13 @@
                         </div>
                     </div>
 
-
-                    <div class="small-line"></div>
-
-                    <h1 class="main-title" translate>bon.appetit</h1>
-
                 </section>
 
-                <section id="graphic" class="content-main empty bg bg-rebra">
-                </section>
-
-                <section id="info2" class="content-main bg bg-100">
-                    <h1 class="main-title" translate>lounges</h1>
-                    <div class="small-line"></div>
-                    <div class="boxer salons">
-                        <div class="salon">
-                            <h5>Barová pasáž</h5>
-                            <p>{{restaurantSalonik1}}</p>
-                        </div>
-                        <div class="salon">
-                            <h5>Pivo-nica</h5>
-                            <p>{{restaurantSalonik2}}</p>
-                        </div>
-                        <div class="salon">
-                            <h5>Pivo-banka</h5>
-                            <p>{{restaurantSalonik3}}</p>
-                        </div>
-                        <div class="salon">
-                            <h5>Likérka</h5>
-                            <p>{{restaurantSalonik4}}</p>
-                        </div>
-                        <div class="salon">
-                            <h5>Komôrka</h5>
-                            <p>{{restaurantSalonik5}}</p>
-                        </div>
-                        <div class="salon">
-                            <h5>Galérka</h5>
-                            <p>{{restaurantSalonik6}}</p>
-                        </div>
-                        <div class="salon">
-                            <h5>Záhradka</h5>
-                            <p>{{restaurantSalonik7}}</p>
-                        </div>
-                        <div class="salon">
-                            <h5>Hudobka</h5>
-                            <p>{{restaurantSalonik8}}</p>
-                        </div>
-                        <div class="salon">
-                            <h5>Kapacita</h5>
-                            <p>{{restaurantSalonik9}}</p>
-                        </div>
-                    </div>
-                </section>
+                <!--<section class="content-main empty bg bg-interier">-->
+                <!--</section>-->
 
                 <section id="book" class="content-main bg bg-black">
-                    <h1 class="main-title color-red" translate>book.now</h1>
+                    <h1 class="main-title color-white" translate>book.now</h1>
 
                     <div class="small-line"></div>
 
@@ -442,13 +505,13 @@
                                             <select id="room-type" name="room" ng-model="room" tabindex="4" required>
                                                 <option value="" disabled selected hidden translate>select</option>
                                                 <option value="nezalezi" selected translate>Nezáleži</option>
-                                                <option value="pivonice">Pivo-nice</option>
-                                                <option value="pivobanka">Pivo-banka</option>
-                                                <option value="likerka">Likérka</option>
-                                                <option value="komorka">Komôrka</option>
-                                                <option value="galerka">Galérka</option>
-                                                <option value="zahradka">Záhradka</option>
-                                                <option value="hudobka">Hudobka</option>
+                                                <option value="pivonice" translate>lounge.name.2</option>
+                                                <option value="pivobanka" translate>lounge.name.3</option>
+                                                <option value="likerka" translate>lounge.name.4</option>
+                                                <option value="komorka" translate>lounge.name.5</option>
+                                                <option value="galerka" translate>lounge.name.6</option>
+                                                <option value="zahradka" translate>lounge.name.7</option>
+                                                <option value="hudobka" translate>lounge.name.8</option>
                                             </select>
                                         </div>
                                     </div>
@@ -502,6 +565,10 @@
                                             <input id="text" type="text" name="text" ng-model="addText" tabindex="8" />
                                         </div>
                                     </div>
+                                    <label class="wrap label" for="cb1">
+                                        <input type="checkbox" name="cb" id="cb1" ng-model="suhlas" required>
+                                        <span translate>agree.terms</span>
+                                    </label>
                                 </div>
                             </div>
 
@@ -511,8 +578,8 @@
                                             background: #78fa89; border-radius: 50%;
                                             width: 150px; height:150px;fill: rgb(43, 42, 41);"
                                             size="150"></ng-md-icon>
-                                <h4>{{bookingSend1}}</h4>
-                                <h4>{{bookingSend2}}</h4>
+                                <h4 translate>booking.text.1</h4>
+                                <h4 translate>booking.text.2</h4>
                             </div>
 
                             <div class="book-wrap" ng-hide="bookFinnish">
@@ -531,28 +598,8 @@
                     </div>
                 </section>
 
-                <section id="contact" class="content-main content-kontakt bg bg-red">
-                    <h1 class="main-title" translate>contact</h1>
-                    <div class="small-line"></div>
-                    <div class="info">
-                        <div class="item">
-                            <ng-md-icon icon="settings_phone" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;"
-                                        size="3em"></ng-md-icon>
-                            <a href="tel:00421948828727">(+421) 0948 828 727</a>
-                        </div>
-                        <div class="item">
-                            <ng-md-icon icon="mail_outline" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;"
-                                        size="3em"></ng-md-icon>
-                            <a href="mailto:restaurant&#64minipivovartatras&#46sk" class="email">restaurant@minipivovartatras.sk</a>
-                        </div>
-                    </div>
-                </section>
 
-
-                <section class="content-main empty bg bg-salonik">
-                </section>
-
-                <section id="hours" class="bg bg-white">
+                <section id="hours" class="content-main bg bg-white">
                     <div class="content-main">
                         <h1 class="main-title" translate>open.hours</h1>
                         <div class="small-line"></div>
@@ -597,28 +644,31 @@
                     </div>
                 </section>
 
-                <section class="content-main empty bg bg-bar">
-                </section>
+                <section id="contact" class="content-main content-kontakt bg bg-beige">
+                    <h1 class="main-title color-white" translate>contact</h1>
+                    <div class="small-line white"></div>
+                    <div class="info">
+                        <div class="item">
+                            <ng-md-icon icon="settings_phone" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;"
+                                        size="3em"></ng-md-icon>
+                            <a href="tel:00421948828727">(+421) 0948 828 727</a>
+                        </div>
+                        <div class="item">
+                            <ng-md-icon icon="mail_outline" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;"
+                                        size="3em"></ng-md-icon>
+                            <a href="mailto:restaurant&#64minipivovartatras&#46sk" class="email">restaurant@minipivovartatras.sk</a>
+                        </div>
 
-                <section  id="info" class="content-main bg bg-100">
-                    <h1 class="main-title" translate>story</h1>
-                    <div class="small-line"></div>
-                    <p class="content-text">
-                        {{restaurantPribehText}}...<span class="more" ng-hide="showMoreHistory == true" ng-click="doShowMoreHistory();" translate>read.more</span>
-                    </p>
-                    <p class="content-text" ng-show="showMoreHistory == true">
-                        <b translate>restaurant</b><b> TATRAS</b> {{restaurantPribehText2}}
-                    </p>
-                </section>
-
-                <section id="photos" class="content-main bg bg-100 flex-nopadding">
-
-                    <flex-slider slide="s in mySlides">
-                        <li>
-                             <img ng-src="{{s}}">
-                        </li>
-                    </flex-slider>
-
+                        <div class="item" style="paddging-top: 1em;">
+                            <img src="/components/assets/imgs/tripadvisor.png" style="display: block; height: 4em; margin: 0 auto;"/>
+                            <a href="https://www.tripadvisor.sk/Restaurant_Review-g274938-d11948183-Reviews-Restauracny_minipivovar_TATRAS-Poprad_Presov_Region.html" class="email">tripadvisor Reviews</a>
+                        </div>
+                        <div class="item" style="paddging-top: 1em;">
+                            <ng-md-icon icon="facebook" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;"
+                                        size="3em"></ng-md-icon>
+                            <a href="https://www.facebook.com/minipivovartatras" class="email">fb.com/minipivovartatras</a>
+                        </div>
+                    </div>
                 </section>
 
                 <!-- include FOOTER -->

@@ -1,0 +1,95 @@
+<footer id="footer" class="" ng-cloak ng-show="!isLoading">
+
+        <div class="container">
+                <div class="col-md-4 col-lg-4 col-sm-4 hidden-xs text-left">
+                        <b>{{content}}</b><br>
+                        <li ng-class="getClass('/beer')">
+                            <a ng-href="#!/beer" ng-class="getClass('/beer')" ng-click="scrollToTop()" target="_self" translate>minipivovar</a>
+                        </li>
+                        <li ng-class="getClass('/restaurant')">
+                            <a ng-href="#!/restaurant" ng-class="getClass('/restaurant')" ng-click="scrollToTop()" target="_self" translate>restaurant</a>
+                        </li>
+                        <li ng-class="getClass('/pension')">
+                            <a ng-href="#!/pension" ng-class="getClass('/pension')" ng-click="scrollToTop()" target="_self" translate>pension</a>
+                        </li>
+                        <li ng-class="getClass('/spa')">
+                            <a ng-href="#!/spa" ng-class="getClass('/spa')" ng-click="scrollToTop()" target="_self" translate>wellness</a>
+                        </li>
+                        <li ng-class="getClass('/shop')">
+                            <a ng-href="#!/shop" ng-class="getClass('/shop')" ng-click="scrollToTop()" target="_self" translate>shop</a>
+                        </li>
+                        <li ng-class="getClass('/sutaz')">
+                            <a ng-href="#!/sutaz" ng-class="getClass('/sutaz')" ng-click="scrollToTop()" target="_self" translate>sutaz</a>
+                        </li>
+                    </div>
+    
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 text-center">
+                <b>{{category_12}}</b>
+                <p class="color-white">
+                    <a href="mailto:{{categoryEmail}}" class="email" name="email-kontakt" target="_self">
+                        {{categoryEmail}}
+                    </a>
+                    <br>
+                    <a href="tel:00421{{phone.$value}}" target="_self"><span ng-show="lang != 'sk'">+421</span><span ng-show="lang != 'en'">0</span>{{phone.$value}}</a>
+                    <br>
+                    <a href="tel:00421{{phone2.$value}}" target="_self"><span ng-show="lang != 'sk'">+421</span><span ng-show="lang != 'en'">0</span>{{phone2.$value}}</a>
+                    <br>
+                    <a href="https://minipivovartatras.sk/" class="email" name="email-kontakt" target="_self">
+                        minipivovartatras.sk
+                    </a>
+                </p>
+                <div class="contacts">
+                    <a href="https://www.facebook.com/" class="email" name="email-kontakt" ng-cloak ng-show="email.$value" target="_blank">
+                        <span class="icon icon-facebook"></span>
+                    </a>
+                    <a href="https://www.instagram.com/tls_air/" class="email" name="email-kontakt" ng-cloak target="_blank">
+                        <span class="icon icon-instagram"></span>
+                    </a>
+    
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-4 col-sm-4 col-sx-6 text-right">
+                <b>Minipivovar TATRAS, s.r.o.</b>
+                <p class="color-white">
+                        Námestie sväteho Egídia 60
+                    <br> 05801 Poprad
+                </p>
+                <p class="color-white">
+                        IČO: 36450308<br>
+                        DIČ: 2021339045<br>
+                </p>
+                <p class="color-white">
+                        <a href="#!/gdpr" class="email" target="_self" title="{{privacyPolicy}}">{{privacyPolicy}}</a>
+                    </p>
+            </div>
+            <div class="vissible-xs hidden-md hidden-lg col-sx-12">
+                <br>
+            </div>
+            <div class="col-xs-12">
+                    <div class="col-md-4 vissible-md vissible-lg">
+                            <p></p>
+                        </div>
+                        <div class="col-md-4 text-center no-padding">
+                            <p>
+                                created by
+                                <a href="https://gresh.io/" class="email" target="_blank" title="greshio | creative studio">greshio.</a>
+                            </p>
+                        </div>
+                    
+            
+                <div class="col-lg-4 col-md-4 hidden-lg hidden-md text-center">
+                    <p>
+                        © {{currentYear}} Minipivovar TATRAS
+                    </p>
+                </div>
+                <div class="hidden-sm hidden-xs col-md-4  no-padding text-right">
+                    <p>
+                        © {{currentYear}} Minipivovar TATRAS
+                    </p>
+                </div>
+    
+            </div>
+        </div>
+        </div>
+    </footer>

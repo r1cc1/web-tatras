@@ -10,10 +10,13 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title ng-if="!categoryName">Minipivovar TATRAS, Poprad</title>
-    <title ng-if="categoryName">{{ categoryName | translate }} TATRAS, Poprad</title>
 
-    <meta name="description" content="Ozajstné Pivo, to je TATRAS | Minipivovar | Reštaurácia | Penzión *** | Pivné Kúpele | v Poprade">
+    <title ng-if="!categoryName">Ozajstné Pivo, to je TATRAS | Minipivovar TATRAS | POPRAD Tatry</title>
+    <title ng-if="categoryName">{{ categoryName | translate }} TATRAS | POPRAD Tatry</title>
+
+    <meta ng-if="!categoryDescription" name="description" content="TATRAS | Minipivovar | Reštaurácia | Penzión | Pivné Kúpele | POPRAD Tatry">
+    <meta ng-if="categoryDescription" name="description" content="{{ categoryDescription | translate }}">
+
     <meta name="keywords"
           content="Tatras, Minipivovar Tatras, Minipivovar Poprad, Pivovar, Pivovar Poprad, Pivovar Tatras, Pivo, Beer, APA, IPA,
           Reštaurácia, Poprad, Tatry, Vysoké Tatry, Hight Tatras, Penzión, Accomodation, Hotel, Room, Rooms, Private, Pivné Kúpele, Masáž,
@@ -22,19 +25,19 @@
     <meta name="robots" content="index,follow">
 
     <!-- facebook share image -->
-    <meta property="og:site_name" content="Minipivovar TATRAS Poprad" />
+    <meta property="og:site_name" content="Minipivovar TATRAS, Poprad" />
     <meta property="og:site" content="minipivovartatras.sk" />
     <meta property="og:title" content="Minipivovar TATRAS Poprad" />
-    <meta property="og:description" content="TATRAS | Minipivovar | Reštaurácia | Penzión *** | Pivné Kúpele | POPRAD" />
+    <meta property="og:description" content="Ozajstné Pivo, to je TATRAS | Minipivovar | Reštaurácia | Penzión *** | Pivné Kúpele | v Poprade" />
     <meta property="og:image" content="http://minipivovartatras.sk/components/assets/imgs/share.jpg?w=764&amp;h=400&amp;crop=1" />
-    <meta property="og:url" content="http://minipivovartatras.sk/" />
+    <meta property="og:url" content="https://minipivovartatras.sk/" />
     <meta property="og:type" content="website" />
 
     <!-- language versions -->
-    <link rel="canonical" href="http://minipivovartatras.sk/">
-    <link rel="alternate" href="http://minipivovartatras.sk/#/sk"
+    <link rel="canonical" href="https://minipivovartatras.sk/">
+    <link rel="alternate" href="https://minipivovartatras.sk/#!/sk"
           hreflang="sk" />
-    <link rel="alternate" href="http://minipivovartatras.sk/#/en"
+    <link rel="alternate" href="https://minipivovartatras.sk/#!/en"
           hreflang="en" />
 
     <!-- favicon -->
@@ -50,13 +53,13 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <link rel="stylesheet" href="components/bower/html5-boilerplate/dist/css/normalize.css">
-    <link rel="stylesheet" href="components/bower/html5-boilerplate/dist/css/main.css">
+    <link rel="stylesheet" href="components/bower/html5-boilerplate/dist/css/normalize.min.css">
+    <link rel="stylesheet" href="components/bower/html5-boilerplate/dist/css/main.min.css">
 
-    <link rel="stylesheet" type="text/css" media="all" href="components/assets/css/hamburger.css">
+    <link rel="stylesheet" type="text/css" media="all" href="components/assets/css/hamburger.min.css">
     <link rel="stylesheet" type="text/css" media="all" href="components/bower/angular-material-icons/angular-material-icons.css">
-    <link rel="stylesheet" type="text/css" media="all" href="components/bower/flexslider/flexslider.css">
-    <link rel="stylesheet" type="text/css" media="all" href="components/bower/angularjs-datepicker/dist/angular-datepicker.css">
+    <link rel="stylesheet" type="text/css" media="all" href="components/bower/flexslider/flexslider.min.css">
+    <link rel="stylesheet" type="text/css" media="all" href="components/bower/angularjs-datepicker/dist/angular-datepicker.min.css">
     <link rel="stylesheet" type="text/css" media="all" href="components/bower/wickedpicker/dist/wickedpicker.min.css">
     <!--<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css" />-->
 
@@ -65,7 +68,7 @@
     <!-- Angular reservation minified css -->
     <link rel="stylesheet" href="components/bower/angular-reservation/dist/angular-reservation.min.css">
 
-    <link rel="stylesheet" type="text/css" media="all" href="components/assets/css/main.min.css">
+    <link rel="stylesheet" type="text/css" media="all" href="components/assets/css/main.css">
 </head>
 <body>
 
@@ -74,12 +77,11 @@
     your browser</a> to improve your experience.</p>
 <![endif]-->
 
-<div ng-view class="app">
+<div ng-view class="app" style="color: #2b2a29;">
     <p>Všetky pivá varené v Tatrase majú vlastnú tajnú receptúru. Aby sa zachovala ich nezameniteľná vôňa a chuť, pivá sa nefiltrujú ani nepasterizujú. Nepoužívajú sa žiadne konzervačné látky, prísady, náhrady sladu, ochucovadlá, arómy, stabilizátory peny či farbivá</p>
     <div class="index-links">
-        <a href="http://minipivovartatras.sk/"  target="_self">Tatras</a>
-        <a href="http://minipivovartatras.sk/#/"  target="_self">Pivo</a>
-        <a href="http://minipivovartatras.sk/#/welcome"  target="_self">Tatras</a>
+        <a href="http://minipivovartatras.sk/"  target="_self">Minipivovar TATRAS</a>
+        <a href="http://minipivovartatras.sk/#/welcome"  target="_self">Minipivovar TATRAS</a>
 
         <a href="http://minipivovartatras.sk/#/beer"  target="_self">Minipivovar</a>
         <a href="http://minipivovartatras.sk/#/beer#beers" target="_self">Ozajstné Pivo</a>
@@ -109,7 +111,8 @@
         <a href="http://minipivovartatras.sk/#/spa#hours" target="_self">Otváracie Hodiny</a>
         <a href="http://minipivovartatras.sk/#/spa#contact" target="_self">Kontakt</a>
 
-        <!-- <a href="www.minipivovartatras.sk/#/shop" class="btn" translate>shop</a> -->
+        <a href="www.minipivovartatras.sk/#/shop" class="btn" translate>predajnicka</a>
+        <a href="www.minipivovartatras.sk/#/sutaz" class="btn" translate>Sutaz</a>
     </div>
 </div>
 
@@ -151,7 +154,7 @@
 <script src="components/bower/angulartics/dist/angulartics.min.js"></script>
 <script src="components/bower/angulartics-google-analytics/dist/angulartics-ga.min.js"></script>
 <!-- Google Analytics -->
-<script>
+<script async>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -162,23 +165,26 @@
             (window['ga'].q = window['ga'].q || []).push(arguments)
         };
 </script>
-
+    
 <!-- Latest compiled and minified JavaScript -->
 <script src="components/bower/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- bootstrap-timepicker -->
 <script src="components/bower/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
 <!-- Underscore.js -->
 <script src="components/bower/underscore/underscore-min.js"></script>
+<!-- Download.js -->
+<script src="components/bower/downloadjs/download.min.js"></script>
 
 <!--- development -->
 <!--- controllers -->
 <script src="controllers/mainCtrl.js"></script>
-<script src="controllers/startCtrl.js"></script>
-<script src="controllers/homeCtrl.js"></script>
+<script src="controllers/welcomeCtrl.js"></script>
+<script src="controllers/beerCtrl.js"></script>
 <script src="controllers/restaurantCtrl.js"></script>
 <script src="controllers/pensionCtrl.js"></script>
 <script src="controllers/spaCtrl.js"></script>
 <script src="controllers/shopCtrl.js"></script>
+<script src="controllers/sutazCtrl.js"></script>
 <script src="controllers/adminCtrl.js"></script>
 <!--- main script -->
 <script src="app.js"></script>

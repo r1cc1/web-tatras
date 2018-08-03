@@ -23,9 +23,6 @@
   .right .sub-menu {
     left: 200px;
   }
-  .right .actions .btn-next {
-    right: 2.5em;
-  }
   .controls {
     .hamburger {
       display: none;
@@ -49,8 +46,8 @@
     padding: 0;
   }
   .right .content-wrapper .content-main .boxer .salon {
-    width: calc(100% / 3);
-    padding: 1em;
+    width: calc(100% / 2);
+    padding: 2em;
   }
   .content-main .daily-menu-list {
     max-width: calc(100% - 10em);
@@ -66,12 +63,12 @@
     font-size: 2em;
   }
   .content-wrapper .content-main .boxer .salon p {
-    font-size: 1.5em;
+    font-size: 1.25em;
     line-height: 1.5em;
   }
   .content-wrapper .book .center-wrap .center-content .logo img {
-    width: 20em;
-    height: 20em;
+    width: 24em;
+    height: 24em;
   }
 
   .content-wrapper .content-main.empty {

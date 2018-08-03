@@ -1,0 +1,468 @@
+<!-- include LEFT-NAVI -->
+<div ng-include="'templates/loading.html'"></div>
+<!-- end of LEFT-NAVI include -->
+
+<div ng-cloak class="wrapper" ng-class="{'init': isloading}">
+
+    <!-- include LEFT-NAVI -->
+    <div ng-include="'templates/left.html'"></div>
+    <!-- end of LEFT-NAVI include -->
+
+    <div class="fake-left"></div>
+
+    <div class="right">
+        <div class="sub-menu" ng-class="{'open': openMobileMenu}">
+            <div>
+                <ul>
+                    <li du-scrollspy="start">
+                        <span du-smooth-scroll="start" ng-click="closeMenu()">ŠTATÚT Súťaže</span>
+                    </li>
+                    <li du-scrollspy="prices">
+                        <span du-smooth-scroll="prices" ng-click="closeMenu()">Ceny Súťaže</span>
+                    </li>
+                    <li du-scrollspy="register">
+                        <span du-smooth-scroll="register" ng-click="closeMenu()" translate>registrácia</span>
+                    </li>
+                    <li du-scrollspy="contact">
+                        <span du-smooth-scroll="contact" ng-click="closeMenu()" translate>contact</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="right-content">
+            <div class="top-nav">
+                <button class="hamburger hamburger--collapse" type="button" ng-click="mobileMenu()">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+                <div class="top-bar-logo">
+                </div>
+                <div class="call">
+                    <a href="tel:00421948028025" target="_self" name="call-us" class="btn-book">
+                        <ng-md-icon icon="call" style="fill: #f5eddc" size="30"></ng-md-icon>
+                    </a>
+                </div>
+            </div>
+
+            <div class="content-wrapper">
+                <section id="sutaz" class="content-main bg bg-sutaz flex-nopadding" ng-style="{height: displayHeight + 'px'}">
+                    <div class="center-wrap">
+                        <div class="category-logo-wrap">
+                            <div class="category-logo">
+                                <h2 class="category-title" translate>sutaz</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stick-bottom">
+                        <span du-smooth-scroll="start"></span>
+                    </div>
+                </section>
+
+                <!-- category -->
+                <section id="start" class="content-main bg-100">
+                    <h1 class="main-title">Štatút súťaže</h1>
+                    <h2 class="sub-title">„O najlepšiu slovenskú pivovicu 2018”</h2>
+                    <div class="small-line"></div>
+                    <p class="content-text">
+                        <span class="odsek"></span>
+                        Vyhlasovateľom súťaže je Minipivovar TATRAS s.r.o., Nám. sv. Egídia 60, 058 01 Poprad, zastúpený konateľom spoločnosti Bc.
+                        Lukášom Vdovjakom.
+                        <br>
+                        <span class="odsek"></span>
+                        Súťaž bude prebiehať v priestoroch reštaurácie Minipivovar TATRAS, odo dňa 3.8.2018 od 16:00 hod., najneskôr do dňa 31.12.2018
+                        do 23:59 hod. Súťaže sa môže zúčastniť každá fyzická osoba, ktorá dovŕšila 18 rokov veku a spĺňa
+                        všetky podmienky stanovené v tomto štatúte. Súťažiací splní podmienky súťaže zakúpením degustačného
+                        setu, vyplnením hodnotiaceho hárku a zapísaním poradia na webovej stránke vyhlasovateľa.
+                        <br>
+                        <span class="odsek"></span>
+                        Účelom súťaže je porovnať a vyhodnotiť, ktorý pivný destilát, od slovenského výrobcu najviac chutí spotrebiteľom a vytvoriť
+                        tradíciu tejto formy súťaže.
+                        <br> Úvodné hodnotenie vykonajú dve hodnotiace komisie. Prvá degustačná komisia bude vytvorená členmi
+                        Slovenského rádu rytierov destilátu, druhú degustačnú komisiu navrhne vyhlasovateľ z miestnych znalcov.
+                        Každý člen komisie hodnotí vzorky anonymne a samostatne. Funkcia hodnotiteľa je bezpôžitková, čestná
+                        a nezastupiteľná. Po hodnotení týchto komisií bude vyhlásená celoročná degustačná súťaž pre širokú
+                        verejnosť – hostí reštaurácie Tatras. Súťaž prebieha formou anonymnej degustácie, so zachovaním maximálnej
+                        objektivity a nezávislosti.
+                        <br>
+                        <span class="odsek"></span>Predmetom súťaže je degustácia piatich vzoriek pivovice od slovenských výrobcov, ich ohodnotenie
+                        a zoradenie od najchutnejšej po najmenej chutnú.
+
+                        <button class="btn show-more" ng-hide="showMoreStatut == true" ng-click="doShowMoreStatut();" translate>read.more</button>
+
+                        <span ng-show="showMoreStatut == true">
+                            <br>
+                            <br> Vyhlásenie výsledkov tejto verejnej súťaže a výsledky hodnotenia oboch komisií sa uskutoční
+                            spolu so žrebovaním výhercov dňa 05.01.2019 v reštaurácii TATRAS.
+                            <br>
+                            <span class="odsek"></span>
+                            Degustátor obdrží prístupový kód, degustačný set a hodnotiací hárok. Degustačný set obsahuje 5 ks anonymných vzoriek naplnených
+                            v sklenených pohárikoch – pijačkách každá o objeme 0,015 L. Degustátor udeľuje víťazovi svojho
+                            hodnotenia 1 bod. Po skončení súťaže sa body spočítajú a celkovým víťazom sa stáva pivovica ktorá
+                            získala najviac bodov.
+                            <br>
+                            <span class="odsek"></span>
+                            Účasťou na súťaži vyjadruje súťažiaci súhlas s týmto štatútom. Ak osoba nesúhlasí s ktoroukoľvek podmienkou alebo bodom v
+                            tomto štatúte, nesmie sa súťaže zúčastniť. Vyhlasovateľ súťaže si vyhradzuje právo kedykoľvek
+                            zmeniť štatút alebo aj zrušiť súťaž, a to najmä v prípade, ak by mu hrozila škoda. Zmenu štatútu
+                            alebo zrušenie súťaže zverejní vyhlasovateľ na svojej webovej stránke . V prípade akýchkoľvek
+                            nejasností týkajúcich sa podmienok súťaže, alebo ustanovení štatútu si vyhlasovateľ súťaže vyhradzuje
+                            právo vysvetliť tieto nejasnosti a príp. zmeniť štatút. Vyhlasovateľ súťaže nezodpovedá za žiadne
+                            škody, ktoré vzniknú výhercom v súvislosti prijatými cenami.
+
+                            <br>
+                            <br>
+                            <b>Bc. Lukáš Vdovjak</b>
+                            <br>
+                            <i>Riaditeľ súťaže</i>
+                        </span>
+
+                    </p>
+
+                </section>
+
+                <section id="prices" class="content-main content-kontakt bg bg-beige">
+                    <h1 class="main-title color-white">Ceny súťaže</h1>
+                    <div class="small-line white"></div>
+
+                    <div class="prize-box">
+                        <h3 class="prize">1</h3>
+                        <h6 class="prize-title">Víkendový pobyt v penzióne TATRAS pre 2 osoby</h6>
+                    </div>
+
+                    <div class="prize-box">
+                        <h3 class="prize">2</h3>
+                        <h6 class="prize-title">Vstup do pivných kúpeľoch TATRAS pre 2 osoby</h6>
+                    </div>
+
+                    <div class="prize-box">
+                        <h3 class="prize">3</h3>
+                        <h6 class="prize-title">Fľaša pivného destilátu Jacobus Emerici 0.5 l</h6>
+                    </div>
+
+                    <br>
+
+                    <div class="prize-box">
+                        <h3 class="prize-mini">4</h3>
+                        <h6 class="prize-title">Sada piatich 1.0 l fliaš piva TATRAS</h6>
+                    </div>
+
+                    <div class="prize-box">
+                        <h3 class="prize-mini">5</h3>
+                        <h6 class="prize-title">Darčekové balenie pivnej kozmetiky TATRAS</h6>
+                    </div>
+
+                    <div class="prize-box">
+                        <h3 class="prize-mini">6</h3>
+                        <h6 class="prize-title">Kniha Etikety zo Spišskej Belej a Popradu</h6>
+                    </div>
+
+                    <div class="prize-box">
+                        <h3 class="prize-mini">7</h3>
+                        <h6 class="prize-title">Darčeková poukážka pre degustáciu pivovice</h6>
+                    </div>
+
+                    <div class="prize-box">
+                        <h3 class="prize-mini">8</h3>
+                        <h6 class="prize-title">Darčeková poukážka pre degustáciu pív TATRAS</h6>
+                    </div>
+
+                    <br>
+                    <br>
+                    <br>
+                    <div class="small-line"></div>
+                    <br>
+
+                    <p class="content-text">
+                        <span class="odsek"></span>Hodnota každej výhry je nižšia ako 350,- Eur, a preto nepodlieha dani z príjmov. Výherca stráca
+                        nárok na výhru ak si ju neprevezme do 30 dní od oznámenia o výhre. Vyžrebovaní výhercovia budú kontaktovaní
+                        e-mailom o výhre ceny, a to do 3 dní odo dňa uskutočnenia žrebovania. Odovzdanie cien sa uskutoční
+                        na mieste a v čase dohodnutom medzi vyhlasovateľom súťaže a výhercom.
+                        <br>
+                        <br>
+                        <span class="odsek"></span>Na výhru nemá súťažiaci právny nárok a nie je možné vymáhať ju súdnou cestou. Každý súťažiaci
+                        poskytne vyhlasovateľovi svoje osobné údaje v rozsahu nevyhnutnom na to, aby ho bolo možné jednoznačne
+                        identifikovať a následne v prípade výhry kontaktovať. Ak súťažiaci bude vyžrebovaný ako výherca a
+                        získa cenu, vyhlasovateľ môže zverejniť meno a priezvisko výhercu v súvislosti s výhrou ceny v súťaži.
+                    </p>
+                </section>
+
+                <!-- book -->
+                <section id="register" class="content-main bg bg-black">
+                    <h1 class="main-title color-white" ng-hide="bookFinnish">Registračny formulár</h1>
+                    <h1 class="main-title color-white" ng-Show="bookFinnish">Vaše hlasovanie</h1>
+                    <h2 class="sub-title color-beige" ng-hide="bookFinnish">zadajte Vaše hodnotenie</h2>
+                    <br>
+                    <div class="book-form">
+
+                        <form name="regForm" role="form">
+
+                            <div class="book-wrap" ng-hide="bookFinnish || loader || showError">
+                                <div class="row">
+                                    <div class="wrap" style="max-width:200px; margin: 0 auto;">
+                                        <label class=" label" for="kod" style="max-width:200px; margin: 0 auto;">
+                                            <span translate>Kód degustačného Setu</span>
+                                        </label>
+                                    </div>
+                                    <div class="wrap" style="max-width:200px; margin: 0 auto;">
+                                        <div class="input-wrap input">
+                                            <input id="kod" type="text" name="kod" ng-model="kod" style="text-transform: uppercase;" class="form-control" minlength="4"
+                                                maxlength="4" placeholder="kód" required/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="book-wrap" ng-hide="bookFinnish || loader || showError">
+
+                                <div class="row small">
+                                    <div class="wrap">
+                                        <label class=" label" for="first">
+                                            <span translate>1.miesto</span>
+                                        </label>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="input-wrap input">
+                                            <input id="first" type="text" name="first" ng-model="first" style="text-transform: uppercase;" class="form-control" minlength="1"
+                                                maxlength="1" pattern="^[ABCDEabcde]*" placeholder="1." required/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row small">
+                                    <div class="wrap">
+                                        <label class=" label" for="second">
+                                            <span translate>2.miesto</span>
+                                        </label>
+                                    </div>
+
+                                    <div class="wrap">
+                                        <div class="input-wrap input">
+                                            <input id="second" type="text" name="second" ng-model="second" style="text-transform: uppercase;" class="form-control" ng-class="{'ng-invalid': isSameNumber2, 'ng-valid': !isSameNumber2}"
+                                                minlength="1" maxlength="1" pattern="^[ABCDEabcde]*" placeholder="2." ng-change="checkIfSame2(second);"
+                                                required/>
+                                        </div>
+                                        <p style="color: red;padding: 5px;font-size: 1em; text-align: center;" ng-if="isSameNumber2">Duplicita.</p>
+                                    </div>
+                                </div>
+                                <div class="row small">
+
+                                    <div class="wrap">
+                                        <label class=" label" for="third">
+                                            <span translate>3.miesto</span>
+                                        </label>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="input-wrap input">
+                                            <input id="third" type="text" name="third" ng-model="third" style="text-transform: uppercase;" class="form-control" ng-class="{'ng-invalid': isSameNumber3, 'ng-valid': !isSameNumber3}"
+                                                minlength="1" maxlength="1" pattern="^[ABCDEabcde]*" placeholder="3." ng-change="checkIfSame3(third);"
+                                                required/>
+                                        </div>
+                                        <p style="color: red;padding: 5px;font-size: 1em; text-align: center;" ng-if="isSameNumber3">Duplicita.</p>
+                                    </div>
+                                </div>
+                                <div class="row small">
+
+                                    <div class="wrap">
+                                        <label class=" label" for="fourth">
+                                            <span translate>4.miesto</span>
+                                        </label>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="input-wrap input">
+                                            <input id="fourth" type="text" name="fourth" ng-model="fourth" style="text-transform: uppercase;" class="form-control" ng-class="{'ng-invalid': isSameNumber4, 'ng-valid': !isSameNumber4}"
+                                                minlength="1" maxlength="1" pattern="^[ABCDEabcde]*" placeholder="4." ng-change="checkIfSame4(fourth);"
+                                                required/>
+                                        </div>
+                                        <p style="color: red;padding: 5px;font-size: 1em; text-align: center;" ng-if="isSameNumber4">Duplicita.</p>
+                                    </div>
+                                </div>
+                                <div class="row small">
+                                    <div class="wrap">
+                                        <label class=" label" for="fifth">
+                                            <span translate>5.miesto</span>
+                                        </label>
+                                    </div>
+
+                                    <div class="wrap">
+                                        <div class="input-wrap input">
+                                            <input id="fifth" type="text" name="fifth" ng-model="fifth" style="text-transform: uppercase;" class="form-control" ng-class="{'ng-invalid': isSameNumber5, 'ng-valid': !isSameNumber5}"
+                                                minlength="1" maxlength="1" pattern="^[ABCDEabcde]*" placeholder="5." ng-change="checkIfSame5(fifth);"
+                                                required/>
+                                        </div>
+                                        <p style="color: red;padding: 5px;font-size: 1em; text-align: center;" ng-if="isSameNumber5">Duplicita.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="book-wrap" ng-hide="!kod || !first || !second || !third || !fourth || !fifth || bookFinnish || loader || showError"
+                                style="margin: 2em auto;">
+                                <div class="row">
+                                    <label class="wrap label" for="name">
+                                        <ng-md-icon icon="person" style="display: inline-block; position: relative; fill: #f5eddc;" size="25px"></ng-md-icon>
+                                        <span translate>name</span>
+                                    </label>
+                                    <div class="wrap">
+                                        <div class="input-wrap input">
+                                            <input id="name" type="text" name="name" ng-model="name" class="form-control" autocomplete="name" required/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="wrap label" for="surname">
+                                        <ng-md-icon icon="person" style="display: inline-block; position: relative; fill: #f5eddc;" size="25px"></ng-md-icon>
+                                        <span translate>surname</span>
+                                    </label>
+                                    <div class="wrap">
+                                        <div class="input-wrap input">
+                                            <input id="surname" type="text" name="surname" ng-model="surname" class="form-control" autocomplete="surname" required/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="book-wrap" ng-hide="!kod || !first || !second || !third || !fourth || !fifth || bookFinnish || loader || showError"
+                                style="margin: 2em auto;">
+                                <div class="row">
+                                    <label class="wrap label" for="email">
+                                        <ng-md-icon icon="email" style="display: inline-block; position: relative; fill: #f5eddc;" size="25px"></ng-md-icon>
+                                        <span translate>email.address</span>
+                                    </label>
+                                    <div class="wrap">
+                                        <div class="input-wrap input">
+                                            <input id="email" type="email" name="email" ng-model="email" class="form-control" autocomplete="email" required/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <span ng-hide="!kod || !first || !second || !third || !fourth || !fifth || bookFinnish || loader || showError" style="margin: 1em auto;"></span>
+                            <div class="book-wrap" ng-hide="bookFinnish || loader || showError" style="margin: 1em auto;">
+                                <div class="row">
+                                    <input type="checkbox" name="cb" id="cb1" ng-model="GDPR" required>
+                                    <label class="wrap label gdpr-label check" for="cb1">
+                                        <p translate>gdpr.text.sutaz</p>
+                                        <a ng-href="#!/gdpr" target="_self" translate>privacy.policy</a>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="booking-done" ng-show="bookFinnish">
+                                <br>
+                                <ng-md-icon icon="star" style="display: inline-block; position: relative;
+                                            background: transparent; border-radius: 50%;
+                                            width: 100px; height:100px;fill: #78fa89;" size="100"></ng-md-icon>
+                                <br>
+                                <h4 translate>1.MIESTO</h4>
+                                <h2 style="color:#78fa89; text-align: center; margin: 0; font-size: 3em; line-height: 1em;"> ( {{responseRank1}} ) {{responseRank1Brand}}</h2>
+                                <br>
+
+                                <h4 translate>2.MIESTO</h4>
+                                <h2 style="color:#e1242f; text-align: center; margin: 0; font-size: 2.5em; line-height: 1em;"> ( {{responseRank2}} ) {{responseRank2Brand}}</h2>
+
+                                <h4 translate>3.MIESTO</h4>
+                                <h2 style="color:#e1242f; text-align: center; margin: 0; font-size: 2.5em; line-height: 1em;"> ( {{responseRank3}} ) {{responseRank3Brand}}</h2>
+
+                                <h4 translate>4.MIESTO</h4>
+                                <h2 style="color:#e1242f; text-align: center; margin: 0; font-size: 2.5em; line-height: 1em;"> ( {{responseRank4}} ) {{responseRank4Brand}}</h2>
+
+                                <h4 translate>5.MIESTO</h4>
+                                <h2 style="color:#e1242f; text-align: center; margin: 0; font-size: 2.5em; line-height: 1em;"> ( {{responseRank5}} ) {{responseRank5Brand}}</h2>
+                                <br>
+                                <br>
+                                <br>
+                                <div class="small-line"></div>
+                                <br>
+                                <br>
+                                <h4 translate>sutaz.regsiter.1</h4>
+                                <br>
+                                <div class="actions" class="prize-title">
+                                    <button class="btn-next btn-submit" ng-click="resetForm();" du-smooth-scroll="register" translate>Nová Registrácia</button>
+                                </div>
+                            </div>
+
+                            <div class="booking-done" ng-show="showError">
+                                <br>
+                                <ng-md-icon icon="sentiment_dissatisfied" style="display: block; position: relative;
+                                            background: #e0242f; border-radius: 50%;
+                                            width: 100px; height:100px;fill: rgb(43, 42, 41);" size="100"></ng-md-icon>
+                                <br>
+                                <h2 style="color:#e1242f; text-align: center; margin: 0; font-size: 2em; line-height: 1em;">Nastala chyba</h2>
+                                <br>
+                                <h4 style="margin: 1em auto; font-size: 1.25em;" translate>Ubezpečte sa ,že ste zadali všetky údaje správne. </h4>
+                                <h4 style="margin: 1em auto; font-size: 1.25em; color: white;" translate>Registrovany kód hodnotiaceho setu nie je možne použit opakovane.</h4>
+                                <br>
+                                <div class="actions" class="prize-title">
+                                    <a ng-click="resetForm()" class="btn-next btn-submit" style="right: auto;float: none;" du-smooth-scroll="register">
+                                        <span translate>Skúsiť znova</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="booking-done" ng-show="loader">
+                                <br>
+                                <ng-md-icon icon="cached" style="display: block; position: relative;
+                                                background: #d6b472; border-radius: 50%;
+                                                width: 100px; height:100px;fill: rgb(43, 42, 41);" size="100" class="rotating"></ng-md-icon>
+                                <br>
+                                <h4 translate>spracuvávam...</h4>
+                            </div>
+                            <div class="book-wrap" ng-hide="bookFinnish">
+                                <div class="actions">
+                                    <p class="link-button phone" ng-show="!regForm.$valid" translate>
+                                        please.fill.all.data</p>
+
+                                    <button ng-click="formsubmit(regForm)" ng-disabled="!regForm.$valid" class="btn-next btn-submit" ng-hide="loader || showError"
+                                        du-smooth-scroll="register">
+                                        <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
+                                        <span translate>register</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </section>
+
+
+                <section id="contact" class="content-main content-kontakt bg bg-beige">
+                    <h1 class="main-title color-white" translate>contact</h1>
+                    <div class="small-line"></div>
+
+                    <div class="info">
+                        <div class="item">
+                            <ng-md-icon icon="settings_phone" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;"
+                                size="3em"></ng-md-icon>
+                            <a href="tel:00421948028025">(+421) 0948 028 025</a>
+                        </div>
+                        <div class="item">
+                            <ng-md-icon icon="mail_outline" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;" size="3em"></ng-md-icon>
+                            <a href="mailto:{{categoryEmail}}" class="email">{{categoryEmail}}</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="last" ng-style="{height: teaserHeight + 'px'}">
+                    <div class="map" ng-style="{height: teaserHeight + 'px'}">
+                        <div style="width:100%;max-width:100%;overflow:hidden;height:100%;color:red;">
+                            <div id="gmap_display" style="height:100%; width:100%;max-width:100%;">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10458.714031133324!2d20.3021651!3d49.0547361!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x737d3b4af45f4836!2sMinipivovar+Tatras!5e0!3m2!1ssk!2ssk!4v1496950044302"
+                                    style="height:100%;width:100%;border:0;" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- include FOOTER -->
+                <div ng-include="'templates/footer.html'"></div>
+                <!-- end of FOOTER include -->
+
+            </div>
+            <!-- content-wraper -->
+        </div>
+        <!-- /right-content -->
+
+    </div>
+</div>

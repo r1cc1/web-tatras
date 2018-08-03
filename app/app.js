@@ -14,76 +14,65 @@ angular.module('myApp', [
     '720kb.datepicker',
     'pascalprecht.translate',
     'mainCtrl',
-    'startCtrl',
-    'homeCtrl',
+    'welcomeCtrl',
+    'beerCtrl',
     'restaurantCtrl',
     'pensionCtrl',
     'spaCtrl',
     'shopCtrl',
+    'sutazCtrl',
     'adminCtrl'
 ])
-    .value('duScrollDuration', 500)
-    .value('duScrollOffset', 60 )
-    .value('duScrollSpyWait', 500)
+    .value('duScrollDuration', 200)
+    .value('duScrollOffset', 0 )
+    .value('duScrollSpyWait', 200)
     .config(['$locationProvider', '$routeProvider', '$translateProvider', function ($locationProvider, $routeProvider, $translateProvider) {
 
-
-        $routeProvider.when('/en', {
-            templateUrl: 'templates/start.html',
-            controller: 'startCtrl'
-        });
-
         $routeProvider.when('/welcome', {
-            templateUrl: 'templates/start.html',
-            controller: 'startCtrl'
+            templateUrl: 'templates/welcome.html',
+            controller: 'welcomeCtrl'
         });
-
         $routeProvider.when('/beer', {
-            templateUrl: 'templates/minipivovar.html',
-            controller: 'homeCtrl'
+            templateUrl: 'templates/beer.html',
+            controller: 'beerCtrl'
         });
-        $routeProvider.when('/home/svk', {
-            templateUrl: 'templates/minipivovar.html',
-            controller: 'homeCtrl'
-        });
-        $routeProvider.when('/home/svk#pivovica', {
-            templateUrl: 'templates/minipivovar.html',
-            controller: 'homeCtrl'
-        });
-
         $routeProvider.when('/restaurant', {
             templateUrl: 'templates/restaurant.html',
             controller: 'restaurantCtrl'
         });
-
         $routeProvider.when('/pension', {
             templateUrl: 'templates/pension.html',
             controller: 'pensionCtrl'
         });
-
         $routeProvider.when('/spa', {
             templateUrl: 'templates/spa.html',
             controller: 'spaCtrl'
         });
-
         $routeProvider.when('/shop', {
             templateUrl: 'templates/shop.html',
             controller: 'shopCtrl'
+        });
+        $routeProvider.when('/sutaz', {
+            templateUrl: 'templates/sutaz.html',
+            controller: 'sutazCtrl'
         });
         $routeProvider.when('/admin', {
             templateUrl: 'templates/admin.html',
             controller: 'adminCtrl'
         });
+        $routeProvider.when('/gdpr', {
+            templateUrl: 'templates/gdpr.html',
+            controller: 'adminCtrl'
+        });
 
         $routeProvider.otherwise({redirectTo: '/welcome'});
-        //$locationProvider.hashPrefix('#');
+        $locationProvider.hashPrefix('!');
 
         //use the HTML5 History API
         $locationProvider.html5Mode({
             enabled: false,
             requireBase: false
         });
-
 
         $translateProvider.preferredLanguage(navigator.language);
         $translateProvider.registerAvailableLanguageKeys(['en', 'sk'], {
@@ -95,9 +84,9 @@ angular.module('myApp', [
             prefix: 'components/assets/texts/',
             suffix: '.json'
         });
+
     }])
     .controller("calendarDemo", function($scope) {
-
 
         moment.locale('en'); // default the locale to English
         var localLocale = moment();
@@ -244,7 +233,7 @@ angular.module('myApp', [
 
             //get domain from URL
             $rootScope.domainUrl = $window.location.host;
-            console.log('domainUrl= ' + $rootScope.domainUrl);
+            //console.log('domainUrl= ' + $rootScope.domainUrl);
 
             ///Google Analytics
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -256,7 +245,6 @@ angular.module('myApp', [
             window['ga'] = window['ga'] || function() {
                     (window['ga'].q = window['ga'].q || []).push(arguments)
                 };
-
             ga('create', 'UA-101344344-1', 'auto');
         });
 

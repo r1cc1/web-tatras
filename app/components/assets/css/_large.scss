@@ -1,8 +1,6 @@
-//* Large Screen *//
-@media all and(min-width: 60em) {
-  //* helper *//
+@media all and (min-width: 60em) {
   body:before {
-    content: 'Large Screen';
+    content: "Large Screen";
   }
   h1.main-title {
     font-size: 3em;
@@ -18,238 +16,281 @@
     font-size: 2.4em;
     margin-top: 0.3em;
   }
-  .content-main p.welcome-text {
-    font-size: 1.5em;
-    line-height: 2em;
+  .content-main {
+    p.welcome-text {
+      font-size: 1.5em;
+      line-height: 2em;
+    }
+    .daily-menu-list {
+      max-width: 44em;
+      .daily-menu-item {
+        padding: 1em 2em;
+        margin: 1em 0;
+        table tr {
+          h5 {
+            font-size: 1.5em;
+          }
+          p,
+          span {
+            font-size: 1.5em;
+            line-height: 1.5em;
+          }
+        }
+      }
+    }
   }
-  .content-main .daily-menu-list {
-    max-width: 44em;
-  }
-  .content-main .daily-menu-list .daily-menu-item {
-    padding: 1em 2em;
-  }
-  .content-main .daily-menu-list .daily-menu-item table tr h5 {
-    font-size: 1.5em;
-  }
-  .content-main .daily-menu-list .daily-menu-item table tr p, .content-main .daily-menu-list .daily-menu-item table tr span {
-    font-size: 1.5em;
-    line-height: 1.5em;
-  }
-
-
   .content-kontakt .info .item {
     display: table;
     width: 50%;
     text-align: center;
     float: left;
     padding: 2em 0;
+    margin: 0 auto;
   }
-
   .content-main .table-info .table-info-item span {
     font-size: 1.5em;
   }
-
-  .right .content-main .table-info .table-info-item p {
-    font-size: 2em;
-    line-height: 2em;
+  .right {
+    .content-main .table-info .table-info-item p {
+      font-size: 3em;
+    }
+    .content-wrapper .content-main .boxer .box {
+      width: calc(100% / 2 - 1em);
+      margin-bottom: 4em;
+      .img {
+        height: 20em;
+      }
+    }
   }
-
-  .right .content-wrapper .content-main .boxer .box {
-    width: calc(100% / 2 - 1em);
-    margin-bottom: 4em;
-  }
-  .right .content-wrapper .content-main .boxer .box .img {
-    height: 20em;
-  }
-
   .content-main .feature-icons-set .feature-icon ng-md-icon svg {
     pointer-events: none;
     display: block;
     width: 3em;
     height: 3em;
   }
-
   .bg.bg-pivo1 {
     background-position: 0 30%;
   }
-
-
   .product-wrap {
-    padding: 2em 0;
+    padding: 0em 0;
     flex-direction: row;
-
     .product-image {
       margin: 2em auto;
       width: 50vw;
     }
   }
-  .info .item p {
-    padding-bottom: 0;
+  .info .item {
+    p {
+      padding-bottom: 0;
+    }
+    a {
+      font-size: 1.25em;
+      line-height: 2em;
+      padding-bottom: 0;
+    }
+    p {
+      font-size: 1.25em;
+      max-width: 100%;
+    }
   }
-  .info .item a {
-    font-size: 1.25em;
-    line-height: 2em;
-    padding-bottom: 0;
-  }
-  .info .item p {
-    font-size: 1.25em;
-    max-width: 100%;
-  }
-
   .content-wrapper {
-    .content-main.empty {
-      h6.item-label {
-        font-size: 2em;
-        top: 5em;
-      }
+    .content-main.empty h6.item-label {
+      font-size: 2em;
+      top: 5em;
     }
-    .book .center-wrap {
-      .center-content {
-
-        h1.book-title {
-          font-size: 4em;
-        }
-      }
+    .book .center-wrap .center-content h1.book-title {
+      font-size: 4em;
     }
   }
-  .content-main {
-    .table-info {
-      .table-info-item p {
-        font-size: 2em;
-      }
-    }
+  .content-main .table-info .table-info-item p {
+    font-size: 2em;
   }
   .content-wrapper .content-main.bg-beige .main-title {
     padding-top: 1em;
-    padding-bottom: 1.5em;
   }
   .right .content-wrapper .content-main .boxer .salon {
-    padding: 1em 0;
+    padding: 2em 0;
   }
-  .content-wrapper .content-main .boxer .salon p {
-    font-size: 20px;
-    line-height: 1.5em;
-  }
-  .content-wrapper .content-main .boxer .salon h5 {
-    font-size: 26px;
-    text-align: left;
-  }
-
-  .content-wrapper .content-main .hours .day span {
-    font-size: 24px;
-  }
-  .content-wrapper .content-main .hours {
-    max-width: 25em;
-    font-size: 1em;
-    margin: 3em auto 2em auto;
+  .content-wrapper .content-main {
+    .boxer .salon {
+      p {
+        font-size: 15px;
+        line-height: 20px;
+      }
+      h5 {
+        font-size: 24px;
+        text-align: left;
+      }
+    }
+    .hours {
+      .day span {
+        font-size: 22px;
+      }
+      max-width: 25em;
+      font-size: 1em;
+      margin: 3em auto 0 auto;
+    }
   }
   .actions {
     margin: 0;
-    padding: 1em;
-  }
-  .right .actions .btn-next {
-    right: 1em;
+    padding: 0;
+    flex-direction: row;
+    justify-content: space-evenly;
   }
   .shrink {
     display: block;
   }
-
   .book-form .book-wrap {
-    display: table;
+    display: flex;
     width: calc(100% - 4em);
     margin: 4em auto;
-    max-width: 50em;
+    max-width: 48em;
+    justify-content: space-evenly;
+    .row {
+      padding: 0 2em;
+    }
   }
-  .book-form .book-wrap .row {
-    display: table-cell;
-    width: 50%;
-    padding: 0 2em;
+  .book-form .book-wrap .row.small {
+    width: auto;
   }
   .right .sub-menu {
     left: 50px;
-
     &.show {
       left: 50px;
-      @include transition(all 0.5s ease);
     }
   }
-
   .bg {
     background-attachment: fixed;
   }
   .content-wrapper .book .center-wrap .center-content .logo img {
-    width: 16em;
-    height: 16em;
+    width: 20em;
+    height: 20em;
+    margin: 0 auto;
+    
   }
   .actions.start-btns {
-    margin-top: 1em;
+    margin-top: 2em;
+    .btn.main {
+      padding: 0;
+    }
+    .category:after {
+      height: 2px;
+      width: 50px;
+      left: auto;
+      top: 0.5em;
+      margin: 0 auto;
+    }
+    .btn.main.highlight {
+      background: #e31e25;
+      color: black;
+      padding: 0.5em 0;
+      font-weight: bold;
+      border: 4px double black;
+      margin: 1em auto;
+    }
+    .category {
+      &:hover:after {
+        background: white;
+        width: 100px;
+      }
+      &:last-child:after {
+        content: "";
+        display: block;
+      }
+    }
   }
   .content-main {
-    padding: 4em 0;
+    padding: 2em 0;
   }
   .content-wrapper .content-main.empty {
     height: 30em;
     min-height: 30em;
   }
-
   .content-main .daily-menu-list .daily-menu-item table tr td.item-title {
     display: table-cell;
     width: 15em;
     max-width: 15em;
     min-width: 15em;
   }
-
   .preview .content-main .daily-menu-list .daily-menu-item {
     padding: 1em 0;
+    margin: 2em 0;
+    table tr {
+      td {
+        padding: 1em 0 1em 0;
+        text-align: left;
+      }
+      span,
+      p {
+        line-height: 1em;
+      }
+    }
   }
-  .preview .content-main .daily-menu-list .daily-menu-item table tr td {
-    padding: 1em 0 1em 0;
-    text-align: left;
+  .content-wrapper .content-main {
+    .boxer {
+      margin: 0;
+      padding: 2em;
+    }
+    .boxer-big {
+      margin: 0;
+      padding: 0;
+    }
+    .boxer.salons {
+      margin: 2em auto;
+      max-width: 50em;
+      padding: 0;
+    }
   }
-
-  .content-wrapper .content-main .boxer {
-    margin: 0 ;
-    padding: 2em;
-  }
-  .content-wrapper .content-main .boxer-big {
-    margin: 0;
-    padding: 0;
-  }
-  .content-wrapper .content-main .boxer.salons {
-    margin: 2em auto;
-    max-width: 50em;
-    padding: 0;
-  }
-
   .book-form .time-table .time-wrap {
     display: table;
     table-layout: fixed;
     width: 100%;
+    div {
+      display: table-cell;
+    }
   }
-  .book-form .time-table .time-wrap div {
-    display: table-cell;
-  }
-
   .content-main .beer-list .beer-type {
-    width: calc(100% / 2 - 4em);
+    width: calc(100% / 3 - 2em);
+    margin: 1em;
+    &.top:before {
+      width: 9em;
+      height: 9em;
+      left: auto;
+      top: 3em;
+      right: -1em;
+    }
   }
-
-  .content-main .beer-list .beer-type.top:before {
-    width: 9em;
-    height: 9em;
-    left: 10px;
-    top: 6px;
+  .actions {
+    &.start-btns .category {
+      width: auto;
+      margin: 1em 0;
+    }
+    .btn.main {
+      font-size: 20px;
+    }
   }
-  .actions.start-btns .category {
-    width: auto;
-    margin: 1em 0;
-  }
-  .actions .btn.main {
-    font-size: 22px;
-  }
-
   .controls .language span {
-    font-size: 24px;
+    font-size: 18px;
     padding: 10px;
+  }
+  .content-wrapper .book .center-wrap .center-content .logo a.award {
+    h3 {
+      top: 5em;
+    }
+  }
+  button.show-more {
+    margin-bottom: -1em;
+  }
+  .content-wrapper .book .center-wrap .center-content .logo {
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 2em;
+  }
+  #triangle-topright span {
+    font-size: 1.25em;
+    line-height: 1.75em;
   }
 }

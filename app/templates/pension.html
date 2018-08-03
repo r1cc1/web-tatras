@@ -22,13 +22,11 @@
         <div class="sub-menu" ng-class="{'open': openMobileMenu}">
             <div>
                 <ul>
-                    <li du-scrollspy="pension"><span du-smooth-scroll="pension" ng-click="closeMenu()" translate>{{categoryName}}</span></li>
                     <li du-scrollspy="welcome"><span du-smooth-scroll="welcome" ng-click="closeMenu()" translate>oasis.of.peace</span></li>
                     <li du-scrollspy="rooms"><span du-smooth-scroll="rooms" ng-click="closeMenu()" translate>rooms</span></li>
+                    <li du-scrollspy="offer"><span du-smooth-scroll="offer" ng-click="closeMenu()" translate>offer.and.services</span></li>
                     <li du-scrollspy="book"><span du-smooth-scroll="book" ng-click="closeMenu()" translate>book.now</span></li>
                     <li du-scrollspy="contact"><span du-smooth-scroll="contact" ng-click="closeMenu()" translate>contact</span></li>
-                    <li du-scrollspy="services"><span du-smooth-scroll="services" ng-click="closeMenu()" translate>services</span></li>
-                    <li du-scrollspy="offer"><span du-smooth-scroll="offer" ng-click="closeMenu()" translate>offer</span></li>
                     <li du-scrollspy="parking"><span du-smooth-scroll="parking" ng-click="closeMenu()" translate>parking</span></li>
                 </ul>
             </div>
@@ -71,7 +69,10 @@
                 <section id="welcome" class="content-main bg bg-100">
                     <h1 class="main-title" translate>oasis.of.peace</h1>
                     <div class="small-line"></div>
-                    <p class="content-text vip">{{pensionText1}}</p>
+                    <p class="content-text vip">
+                        <span class="odsek"></span>
+                        <span translate>pension.text.1</span>
+                    </p>
                 </section>
 
 
@@ -108,10 +109,13 @@
                 <section id="rooms" class="content-main bg bg-100">
                     <h1 class="main-title" translate>rooms</h1>
                     <div class="small-line"></div>
-                    <p class="content-text">{{pensionRoomText1}} <b>{{parkingPrice.$value}} &euro; / <span translate>day</span></b>.
+                    <p class="content-text">
+                        <span class="odsek"></span>
+                        <span translate>pension.text.2</span><b style="color: #e0232e;">{{parkingPrice.$value}} &euro; / 24h</b>.
                         <br>
                         <br>
-                        {{pensionRoomText2}}
+                        <span class="odsek"></span>
+                        <span translate>pension.text.3</span>
                     </p>
                     <div class="small-line"></div>
                     <br>
@@ -121,15 +125,20 @@
                             <div class="icons">
                                 <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29"
                                             size="30"></ng-md-icon>
+                                            <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29"
+                                            size="30"></ng-md-icon>
                             </div>
                             <p class="info" translate>double.room</p>
                             <div class="img bg bg-pension08"></div>
                             <h1 class="main-title price">
                                 <span>
-                                    {{pensionPrice1.$value}} &euro; - {{pensionPrice5.$value}} &euro;
+                                    {{pensionPrice5.$value}} &euro; - {{pensionPrice1.$value}} &euro;
                                 </span>
                             </h1>
-                            <p class="price-info"><b>1 <span translate>person</span> / 1 <span translate>night</span></b></p>
+                            <p class="price-info">
+                                <span translate>nonseason.season</span><br>
+                                <b><span translate>room</span> 1 <span translate>night</span></b>
+                            </p>
                             <button du-smooth-scroll="book" class="btn-next btn-submit">
                                 <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
                                 <span translate>book.now</span>
@@ -147,10 +156,13 @@
                             <div class="img bg bg-pension3"></div>
                             <h1 class="main-title price">
                                 <span>
-                                    {{pensionPrice2.$value}} &euro; - {{pensionPrice6.$value}} &euro;
+                                    {{pensionPrice6.$value}} &euro; - {{pensionPrice2.$value}} &euro;
                                 </span>
                             </h1>
-                            <p class="price-info"><b>2 <span translate>people</span> / 1 <span translate>night</span></b></p>
+                            <p class="price-info">
+                                    <span translate>nonseason.season</span><br>
+                                <b><span translate>room</span> 1 <span translate>night</span></b>
+                            </p>
                             <button du-smooth-scroll="book" class="btn-next btn-submit">
                                 <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
                                 <span translate>book.now</span>
@@ -169,10 +181,13 @@
                             <div class="img bg bg-pension4"></div>
                             <h1 class="main-title price">
                                 <span>
-                                    {{pensionPrice3.$value}} &euro; - {{pensionPrice7.$value}} &euro;
+                                    {{pensionPrice7.$value}} &euro; - {{pensionPrice3.$value}} &euro;
                                 </span>
                             </h1>
-                            <p class="price-info"><b>3 <span translate>people</span> / 1 <span translate>night</span></b></p>
+                            <p class="price-info">
+                                    <span translate>nonseason.season</span><br>
+                                <b><span translate>room</span> 1 <span translate>night</span></b>
+                            </p>
                             <button du-smooth-scroll="book" class="btn-next btn-submit">
                                 <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
                                 <span translate>book.now</span>
@@ -194,10 +209,13 @@
                             <div class="img bg bg-pension04"></div>
                             <h1 class="main-title price">
                                 <span>
-                                    {{pensionPrice4.$value}} &euro; - {{pensionPrice8.$value}} &euro;
+                                    {{pensionPrice8.$value}} &euro; - {{pensionPrice4.$value}} &euro;
                                 </span>
                             </h1>
-                            <p class="price-info"><b>4 <span translate>people</span> / 1 <span translate>night</span></b></p>
+                            <p class="price-info">
+                                    <span translate>nonseason.season</span><br>
+                                <b><span translate>room</span> 1 <span translate>night</span></b>
+                            </p>
                             <button du-smooth-scroll="book" class="btn-next btn-submit">
                                 <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
                                 <span translate>book.now</span>
@@ -226,16 +244,77 @@
                             <ng-md-icon icon="smoke_free" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29"
                                         size="50"></ng-md-icon>
                         </div>
-                        <div class="feature-icon">
-                            <ng-md-icon icon="room_service" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29"
-                                        size="50"></ng-md-icon>
-                        </div>
                     </div>
 
                 </section>
 
+                <section class="content-main empty bg bg-pension2">
+                </section>
+
+                <section id="offer" class="content-main bg bg-white">
+                    <h1 class="main-title" translate>services</h1>
+                    <div class="small-line"></div>
+                    <p class="content-text">
+                        <span class="odsek"></span>
+                        <span translate>pension.text.4</span>
+                        <br>
+                        <br>
+                        <span class="odsek"></span>
+                        <span translate>pension.text.5</span>
+                    </p>
+                    <br>
+                    <div class="feature-icons-set">
+                        <div class="feature-icon">
+                            <ng-md-icon icon="landscape" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
+                                        size="50"></ng-md-icon>
+                        </div>
+                        <div class="feature-icon">
+                            <ng-md-icon icon="pool" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
+                                        size="50"></ng-md-icon>
+                        </div>
+                        <div class="feature-icon">
+                            <ng-md-icon icon="directions_bike" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
+                                        size="50"></ng-md-icon>
+                        </div>
+                        <div class="feature-icon">
+                            <ng-md-icon icon="spa" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
+                                        size="50"></ng-md-icon>
+                        </div>
+                        <div class="feature-icon">
+                            <ng-md-icon icon="local_bar" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
+                                        size="50"></ng-md-icon>
+                        </div>
+                        <div class="feature-icon">
+                            <ng-md-icon icon="shopping_cart" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
+                                        size="50"></ng-md-icon>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <h1 class="main-title" translate>we.offer</h1>
+                    <div class="small-line"></div>
+                    <p class="content-text ">
+
+                        <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                    size="25"></ng-md-icon>
+
+                                    <span translate>pension.text.6</span>
+                        <br>
+                        <br>
+                        <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                    size="25"></ng-md-icon>
+                                    <span translate>pension.text.7</span>
+                        <br>
+                        <br>
+                        <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
+                                    size="25"></ng-md-icon>
+                                    <span translate>pension.text.8</span>
+                    </p>
+
+                </section>
+
                 <section id="book" class="content-main bg bg-black">
-                    <h1 class="main-title color-red" translate>book.now</h1>
+                    <h1 class="main-title color-white" translate>book.now</h1>
 
                     <div class="small-line"></div>
 
@@ -333,6 +412,10 @@
                                             <input id="phone" type="text" name="phone" ng-model="phone" placeholder=""/>
                                         </div>
                                     </div>
+                                    <label class="wrap label" for="cb1">
+                                        <input type="checkbox" name="cb" id="cb1" ng-model="suhlas" required>
+                                        <span translate>agree.terms</span>
+                                    </label>
                                 </div>
                             </div>
 
@@ -341,8 +424,8 @@
                                             background: #78fa89; border-radius: 50%;
                                             width: 150px; height:150px;fill: rgb(43, 42, 41);"
                                             size="150"></ng-md-icon>
-                                <h4>{{bookingSend1}}</h4>
-                                <h4>{{bookingSend2}}</h4>
+                                <h4 translate>booking.text.1</h4>
+                                <h4 translate>booking.text.2</h4>
                             </div>
 
 
@@ -362,9 +445,9 @@
                     </div>
                 </section>
 
-                <section id="contact" class="content-main content-kontakt bg bg-red">
-                    <h1 class="main-title" translate>contact</h1>
-                    <div class="small-line"></div>
+                <section id="contact" class="content-main content-kontakt bg bg-beige">
+                    <h1 class="main-title color-white" translate>contact</h1>
+                    <div class="small-line white"></div>
 
                     <div class="info">
                         <div class="item">
@@ -377,77 +460,24 @@
                                         size="4em"></ng-md-icon>
                             <a href="mailto:penzion&#64minipivovartatras&#46sk" class="email">penzion@minipivovartatras.sk</a>
                         </div>
-                    </div>
-                </section>
-
-                <section class="content-main empty bg bg-pension2">
-                </section>
-
-                <section id="services" class="content-main bg bg-100">
-                    <h1 class="main-title" translate>services</h1>
-                    <div class="small-line"></div>
-                    <p class="content-text">{{pensionServiceText1}}</p>
-                    <p class="content-text">{{pensionServiceText2}}</p>
-
-                    <div class="feature-icons-set">
-                        <div class="feature-icon">
-                            <ng-md-icon icon="landscape" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
-                                        size="50"></ng-md-icon>
+                        <div class="item" style="paddging-top: 1em;">
+                            <img src="/components/assets/imgs/tripadvisor.png" style="display: block; width: 4em; margin: 0 auto;"/>
+                            <a href="https://www.tripadvisor.sk/Restaurant_Review-g274938-d11948183-Reviews-Restauracny_minipivovar_TATRAS-Poprad_Presov_Region.html" class="email">tripadvisor Reviews</a>
                         </div>
-                        <div class="feature-icon">
-                            <ng-md-icon icon="pool" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
-                                        size="50"></ng-md-icon>
-                        </div>
-                        <div class="feature-icon">
-                            <ng-md-icon icon="directions_bike" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
-                                        size="50"></ng-md-icon>
-                        </div>
-                        <div class="feature-icon">
-                            <ng-md-icon icon="spa" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
-                                        size="50"></ng-md-icon>
-                        </div>
-                        <div class="feature-icon">
-                            <ng-md-icon icon="local_bar" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
-                                        size="50"></ng-md-icon>
-                        </div>
-                        <div class="feature-icon">
-                            <ng-md-icon icon="shopping_cart" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
-                                        size="50"></ng-md-icon>
+                        <div class="item" style="paddging-top: 1em;">
+                            <ng-md-icon icon="facebook" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;"
+                                        size="3em"></ng-md-icon>
+                            <a href="https://www.facebook.com/minipivovartatras" class="email">facebook.com/minipivovartatras</a>
                         </div>
                     </div>
-                </section>
-
-
-                <section id="offer" class="content-main bg invert">
-                    <h1 class="main-title" translate>we.offer</h1>
-                    <div class="small-line"></div>
-                    <p class="content-text white">
-                        <!--<ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29"-->
-                        <!--size="25"></ng-md-icon>-->
-                        <!--Raňajky v reštaurácií <br><br>-->
-
-                        <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #fff;"
-                                    size="25"></ng-md-icon>
-
-                        {{pensionOfferText1}}
-                        <br>
-                        <br>
-                        <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #fff;"
-                                    size="25"></ng-md-icon>
-                        {{pensionOfferText2}}
-                        <br>
-                        <br>
-                        <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #fff;"
-                                    size="25"></ng-md-icon>
-                        {{pensionOfferText3}}
-                    </p>
                 </section>
 
                 <section id="parking" class="bg-white">
                     <div class="parking">
                         <img src="./components/assets/imgs/parking.png" width="100%" height="auto" alt="Parking Pension TATRAS"/>
+                        <img src="./components/assets/imgs/parking_2.png" width="100%" height="auto" alt="Parking Pension TATRAS"/>
                     </div>
-                    <div class="map">
+                    <div class="map" style="min-height: 60vh;">
                         <div style="width:100%;max-width:100%;overflow:hidden;height:100%;color:red;">
                             <div id="gmap_display2" style="height:100%; width:100%;max-width:100%;">
                                 <iframe src="https://www.google.com/maps/d/embed?mid=1b_YQf7k4nxt6XWl4QRVGXnjQ5Ow&hl=sk" " style="height:100%;width:100%;border:0;" frameborder="0" allowfullscreen></iframe>

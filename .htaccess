@@ -1,1 +1,51 @@
-RewriteRule ^/%23/beer/%23tmavak /#/beer/#tmavak [R=301,L,NE]
+<IfModule mod_headers.c>
+    RequestHeader set X-Prerender-Token "KPh5jYOxEc2hvlPYXmSc"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    <IfModule mod_proxy_http.c>
+        RewriteCond %{HTTP_USER_AGENT} baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora\ link\ preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator [NC,OR]
+        RewriteCond %{QUERY_STRING} _escaped_fragment_
+        
+        # Only proxy the request to Prerender if it's a request for HTML
+        RewriteRule ^(?!.*?(\.js|\.css|\.xml|\.less|\.png|\.jpg|\.jpeg|\.gif|\.pdf|\.doc|\.txt|\.ico|\.rss|\.zip|\.mp3|\.rar|\.exe|\.wmv|\.doc|\.avi|\.ppt|\.mpg|\.mpeg|\.tif|\.wav|\.mov|\.psd|\.ai|\.xls|\.mp4|\.m4a|\.swf|\.dat|\.dmg|\.iso|\.flv|\.m4v|\.torrent|\.ttf|\.woff))(.*) http://service.prerender.io/https://minipivovartatras.sk/ [P,L]
+    </IfModule>
+</IfModule>
+
+RewriteEngine on
+
+# Use https protocol
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [L,R]
+
+# Remove www from url
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [L,NE,R=301]
+
+Redirect 301 "/#!/beer#pivovica" "https://minipivovartatras.sk/#!/beer#pivovica"
+Redirect 301 "/#!/beer#panko" "https://minipivovartatras.sk/#!/beer#panko"
+Redirect 301 "/#!/beer#apa" "https://minipivovartatras.sk/#!/beer#apa"
+Redirect 301 "/#!/beer#epa" "https://minipivovartatras.sk/#!/beer#epa"
+Redirect 301 "/#!/beer#ipa" "https://minipivovartatras.sk/#!/beer#ipa"
+Redirect 301 "/#!/beer#ipl" "https://minipivovartatras.sk/#!/beer#ipl"
+Redirect 301 "/#!/beer#pils" "https://minipivovartatras.sk/#!/beer#pils"
+Redirect 301 "/#!/beer#stout" "https://minipivovartatras.sk/#!/beer#stout"
+Redirect 301 "/#!/beer#tmavak" "https://minipivovartatras.sk/#!/beer#tmavak"
+Redirect 301 "/#!/beer#weizen-bock" "https://minipivovartatras.sk/#!/beer#weizen-bock"
+Redirect 301 "/#!/beer#weizen" "https://minipivovartatras.sk/#!/beer#weizen"
+Redirect 301 "/#!/sutaz#register" "https://minipivovartatras.sk/#!/sutaz#register
+Redirect 301 "/#!/restaurant#menu" "https://minipivovartatras.sk/#!/restaurant#menu
+
+#RewriteRule ^pivovica /#!/beer#pivovica [R=301,NE,L]
+#RewriteRule ^beer%23pivovica /#!/beer#pivovica [R=301,NE,L]
+#RewriteRule ^beer\x2pivovica /#!/beer#pivovica [R=301,NE,L]
+
+RewriteRule ^register /#!/sutaz#register [R=301,NE,L]
+RewriteRule ^sutaz%23register /#!/sutaz#register [R=301,NE,L]
+RewriteRule ^sutaz\x2register /#!/sutaz#register [R=301,NE,L]
+
+
+

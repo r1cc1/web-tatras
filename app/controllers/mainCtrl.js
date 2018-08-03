@@ -1,7 +1,7 @@
 'use strict';
 angular.module('mainCtrl', [])
-    .controller('mainCtrl', ['$scope', '$location', '$document', '$rootScope', '$translate', '$firebaseArray', '$firebaseObject','$anchorScroll', '$timeout',
-        function ($scope, $location, $document, $rootScope, $translate, $firebaseArray, $firebaseObject, $anchorScroll, $timeout) {
+    .controller('mainCtrl', ['$scope', '$location', '$rootScope', '$translate', '$firebaseArray', '$firebaseObject','$anchorScroll', '$timeout',
+        function ($scope, $location, $rootScope, $translate, $firebaseArray, $firebaseObject, $anchorScroll, $timeout) {
 
             console.log('MainCtrl init');
 
@@ -11,27 +11,22 @@ angular.module('mainCtrl', [])
             // detect Language
             var getLang = navigator.language || navigator.userLanguage;
             var langLoad = getLang.toLowerCase();
-            console.log('Browser Language detected = ' + langLoad);
+            //console.log('Browser Language detected = ' + langLoad);
 
             // set Language
-            if (langLoad == 'sk' || langLoad == 'sk-sk' || langLoad == 'cz' || langLoad == 'cs-cz') {
+            if (langLoad == 'sk' || langLoad == 'sk-sk' || langLoad == 'cz' || langLoad == 'cs-cz' || langLoad == 'cs') {
                 $translate.use('sk');
                 $rootScope.language = 'sk';
-                console.log('mainCtrl - Language set = ' + $rootScope.language);
+                //console.log('mainCtrl - Language set = ' + $rootScope.language);
             }
             else {
-                $translate.use('sk');
-                $rootScope.language = 'sk';
-                console.log('mainCtrl - Language set = ' + $rootScope.language);
+                $translate.use('en');
+                $rootScope.language = 'en';
+                //console.log('mainCtrl - Language set = ' + $rootScope.language);
             }
-            // else {
-            //     $translate.use('en');
-            //     $rootScope.language = 'en';
-            //     console.log('mainCtrl - Language set = ' + $rootScope.language);
-            // }
 
             $rootScope.changeLanguage = function (lang) {
-                console.log('langSelected = ' + lang);
+                //console.log('langSelected = ' + lang);
                 $translate.use(lang);
                 $rootScope.language = lang;
             };
@@ -106,7 +101,7 @@ angular.module('mainCtrl', [])
                 var n = weekday[dateObj.getDay()];
 
                 $rootScope.todayName = n;
-                console.log('Todays Name is :' + $rootScope.todayName);
+                //console.log('Todays Name is :' + $rootScope.todayName);
 
                 $rootScope.currentDay = $rootScope.todayName;
 
@@ -116,7 +111,7 @@ angular.module('mainCtrl', [])
 
                 var today = day + "." + month + "." + year;
                 $rootScope.today = today;
-                console.log('Todays DATE is :' + today);
+                //console.log('Todays DATE is :' + today);
             };
 
 
@@ -140,36 +135,13 @@ angular.module('mainCtrl', [])
 
 
                 firebase.initializeApp($rootScope.config);
-                //
-                // var firestore = firebase.firestore();
-                // var slost = firestore.doc("slots/months");
-                //
-                // var myNovember = firestore.collection("slots").doc("months").collection("october");
-                //
-                //
-                //
-                // slost.get().then(function (doc) {
-                //         if(doc && doc.exists) {
-                //             const myData = doc.data();
-                //             console.log(myData.october.s01102017);
-                //
-                //             $scope.october =  myData.october.s01102017;
-                //         }
-                //
-                //     }).catch (function (error) {
-                //         console.log('Got an ERROR: ' + error);
-                //     });
-                
-
-
-
                 var rootRef = firebase.database().ref();
 
                 $scope.test = $firebaseArray(rootRef);
-                console.log($scope.test);
+                //console.log($scope.test);
 
                 $scope.dailyMenuList = $firebaseArray(rootRef.child('week'));
-                console.log($scope.dailyMenuList);
+                //console.log($scope.dailyMenuList);
 
                 $scope.parkingPrice = $firebaseObject(rootRef.child('parkingPrice'));
 
@@ -262,6 +234,21 @@ angular.module('mainCtrl', [])
                 $scope.spaSatTimeTo = $firebaseObject(rootRef.child('spaSatTimeTo'));
                 $scope.spaSunTimeFrom = $firebaseObject(rootRef.child('spaSunTimeFrom'));
                 $scope.spaSunTimeTo = $firebaseObject(rootRef.child('spaSunTimeTo'));
+
+                $scope.shopMonTimeFrom = $firebaseObject(rootRef.child('shopMonTimeFrom'));
+                $scope.shopMonTimeTo = $firebaseObject(rootRef.child('shopMonTimeTo'));
+                $scope.shopTueTimeFrom = $firebaseObject(rootRef.child('shopTueTimeFrom'));
+                $scope.shopTueTimeTo = $firebaseObject(rootRef.child('shopTueTimeTo'));
+                $scope.shopWedTimeFrom = $firebaseObject(rootRef.child('shopWedTimeFrom'));
+                $scope.shopWedTimeTo = $firebaseObject(rootRef.child('shopWedTimeTo'));
+                $scope.shopThuTimeFrom = $firebaseObject(rootRef.child('shopThuTimeFrom'));
+                $scope.shopThuTimeTo = $firebaseObject(rootRef.child('shopThuTimeTo'));
+                $scope.shopFriTimeFrom = $firebaseObject(rootRef.child('shopFriTimeFrom'));
+                $scope.shopFriTimeTo = $firebaseObject(rootRef.child('shopFriTimeTo'));
+                $scope.shopSatTimeFrom = $firebaseObject(rootRef.child('shopSatTimeFrom'));
+                $scope.shopSatTimeTo = $firebaseObject(rootRef.child('shopSatTimeTo'));
+                $scope.shopSunTimeFrom = $firebaseObject(rootRef.child('shopSunTimeFrom'));
+                $scope.shopSunTimeTo = $firebaseObject(rootRef.child('shopSunTimeTo'));
 
 
                 $scope.pensionCheckIn = $firebaseObject(rootRef.child('pensionCheckIn'));
@@ -475,6 +462,9 @@ angular.module('mainCtrl', [])
                 $scope.beer12extrakt = $firebaseObject(rootRef.child('beer12extrakt'));
                 $scope.beer12alkohol = $firebaseObject(rootRef.child('beer12alkohol'));
                 $scope.beer12ibu = $firebaseObject(rootRef.child('beer12ibu'));
+
+                $scope.loginUser = $firebaseObject(rootRef.child('loginUser'));
+                $scope.loginPass = $firebaseObject(rootRef.child('loginPass'));
             });
             
 
