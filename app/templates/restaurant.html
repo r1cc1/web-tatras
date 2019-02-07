@@ -1,14 +1,6 @@
-<div class="loading" ng-class="{'close': !isloading}">
-    <div class="loading-wrap">
-        <div class="loading-align">
-            <div class="loading-content">
-                <div class="loading-logo"></div>
-                <div class="loading-progress" ng-class="{'load': isloading}">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<!-- include Loading Component -->
+<div ng-include="'templates/loading.html'"></div>
+<!-- end of Loading include -->
 
 <div ng-cloak class="wrapper" ng-class="{'init': isloading}">
 
@@ -22,14 +14,30 @@
         <div class="sub-menu" ng-class="{'open': openMobileMenu}">
             <div>
                 <ul>
-                    <li du-scrollspy="info"><span du-smooth-scroll="info" ng-click="closeMenu()" translate>story</span></li>
-                    <li du-scrollspy="kitchen"><span du-smooth-scroll="kitchen" ng-click="closeMenu()" translate>kitchen</span></li>
-                    <li du-scrollspy="restaurant"><span du-smooth-scroll="restaurant" ng-click="closeMenu()" translate>restaurant</span></li>
-                    <li du-scrollspy="offer"><span du-smooth-scroll="offer" ng-click="closeMenu()" translate>we.recommend</span></li>
-                    <li du-scrollspy="menu"><span du-smooth-scroll="menu" ng-click="closeMenu()" translate>daily.menu</span></li>
-                    <li du-scrollspy="book"><span du-smooth-scroll="book" ng-click="closeMenu()" translate>book.now</span></li>
-                    <li du-scrollspy="hours"><span du-smooth-scroll="hours" ng-click="closeMenu()" translate>open.hours</span></li>
-                    <li du-scrollspy="contact"><span du-smooth-scroll="contact" ng-click="closeMenu()" translate>contact</span></li>
+                    <li du-scrollspy="info">
+                        <span du-smooth-scroll="info" ng-click="closeMenu()" translate>story</span>
+                    </li>
+                    <li du-scrollspy="kitchen">
+                        <span du-smooth-scroll="kitchen" ng-click="closeMenu()" translate>kitchen</span>
+                    </li>
+                    <li du-scrollspy="restaurant">
+                        <span du-smooth-scroll="restaurant" ng-click="closeMenu()" translate>restaurant</span>
+                    </li>
+                    <li du-scrollspy="offer">
+                        <span du-smooth-scroll="offer" ng-click="closeMenu()" translate>we.recommend</span>
+                    </li>
+                    <li du-scrollspy="menu">
+                        <span du-smooth-scroll="menu" ng-click="closeMenu()" translate>daily.menu</span>
+                    </li>
+                    <li du-scrollspy="book">
+                        <span du-smooth-scroll="book" ng-click="closeMenu()" translate>book.now</span>
+                    </li>
+                    <li du-scrollspy="hours">
+                        <span du-smooth-scroll="hours" ng-click="closeMenu()" translate>open.hours</span>
+                    </li>
+                    <li du-scrollspy="contact">
+                        <span du-smooth-scroll="contact" ng-click="closeMenu()" translate>contact</span>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -38,14 +46,14 @@
             <div class="top-nav">
 
                 <button class="hamburger hamburger--collapse" type="button" ng-click="mobileMenu()">
-                      <span class="hamburger-box">
+                    <span class="hamburger-box">
                         <span class="hamburger-inner"></span>
-                      </span>
+                    </span>
                 </button>
                 <div class="top-bar-logo">
                 </div>
                 <div class="call">
-                    <a href="tel:00421948828727" target="_self" name="call-us" class="btn-book" >
+                    <a href="tel:00421948828727" target="_self" name="call-us" class="btn-book">
                         <ng-md-icon icon="call" style="fill: #f5eddc" size="30"></ng-md-icon>
                     </a>
                 </div>
@@ -65,17 +73,18 @@
                     </div>
                 </section>
 
-                <section  id="info" class="content-main bg bg-100">
+                <section id="info" class="content-main bg bg-100">
                     <h1 class="main-title" translate>story</h1>
                     <div class="small-line"></div>
                     <p class="content-text">
-                        <span class="odsek"></span> 
-                        <span translate>restaurant.text.1</span> 
+                        <span class="odsek"></span>
+                        <span translate>restaurant.text.1</span>
                         <button class="btn show-more" ng-hide="showMoreHistory == true" ng-click="doShowMoreHistory();" translate>read.more</button>
                         <br>
                         <br>
                         <span class="content-text" ng-show="showMoreHistory == true">
-                            <span class="odsek"></span> <span translate>restaurant.text.2</span> 
+                            <span class="odsek"></span>
+                            <span translate>restaurant.text.2</span>
                         </span>
                     </p>
                 </section>
@@ -88,10 +97,10 @@
                     <div class="small-line"></div>
                     <p class="content-text color-light vip">
                         <span class="odsek"></span>
-                        <span translate>restaurant.text.3</span> 
+                        <span translate>restaurant.text.3</span>
                         <br>
-                        <span class="odsek"></span> 
-                        <span translate>restaurant.text.4</span> 
+                        <span class="odsek"></span>
+                        <span translate>restaurant.text.4</span>
                     </p>
                     <div class="small-line"></div>
                     <br>
@@ -102,61 +111,58 @@
 
                 <section id="restaurant" class="content-main bg bg-100 ">
                     <h1 class="main-title" translate>restaurant</h1>
+                    <h2 class="sub-title" translate>restaurant.text.5</h2>
                     <div class="small-line"></div>
-                    <p class="content-text">
-                        <span class="odsek"></span>
-                        <span translate>restaurant.text.5</span> 
-                        <br>
-                        <br>
-                        <span class="odsek"></span>
-                        <span translate>restaurant.text.6</span> 
-                    </p>
-                    <div class="small-line"></div>
+                   
                     <div class="boxer salons">
                         <div class="salon">
                             <h5 translate>lounge.name.1</h5>
                             <p translate>lounge.text.1</p>
                         </div>
                         <div class="salon">
-                                <h5 translate>lounge.name.2</h5>
-                                <p translate>lounge.text.2</p>
+                            <h5 translate>lounge.name.2</h5>
+                            <p translate>lounge.text.2</p>
                         </div>
                         <div class="salon">
                             <img src="/components/assets/imgs/new/_RK_5912.JPG" style="display: block; width: 100%; margin: 0 auto;">
                         </div>
                         <div class="salon">
-                                <h5 translate>lounge.name.3</h5>
-                                <p translate>lounge.text.3</p>
+                            <h5 translate>lounge.name.3</h5>
+                            <p translate>lounge.text.3</p>
                         </div>
                         <div class="salon">
-                                <h5 translate>lounge.name.4</h5>
-                                <p translate>lounge.text.4</p>
+                            <h5 translate>lounge.name.4</h5>
+                            <p translate>lounge.text.4</p>
                         </div>
                         <div class="salon">
                             <img src="/components/assets/imgs/komorka.jpg" style="display: block; width: 100%; margin: 0 auto;">
                         </div>
                         <div class="salon">
-                                <h5 translate>lounge.name.5</h5>
-                                <p translate>lounge.text.5</p>
+                            <h5 translate>lounge.name.5</h5>
+                            <p translate>lounge.text.5</p>
                         </div>
                         <div class="salon">
-                                <h5 translate>lounge.name.6</h5>
-                                <p translate>lounge.text.6</p>
+                            <h5 translate>lounge.name.6</h5>
+                            <p translate>lounge.text.6</p>
                         </div>
                         <div class="salon">
-                                <h5 translate>lounge.name.7</h5>
-                                <p translate>lounge.text.7</p>
+                            <h5 translate>lounge.name.7</h5>
+                            <p translate>lounge.text.7</p>
                         </div>
                         <div class="salon">
-                                <h5 translate>lounge.name.8</h5>
-                                <p translate>lounge.text.8</p>
+                            <h5 translate>lounge.name.8</h5>
+                            <p translate>lounge.text.8</p>
                         </div>
                     </div>
 
                     <br>
                     <div class="small-line"></div>
                     <br>
-                    <br>
+                    <p class="content-text">
+                            <span class="odsek"></span>
+                            <span translate>restaurant.text.6</span>
+                        </p>
+                        <br>
                     <h2 class="sub-title" translate>restaurant.text.7</h2>
                 </section>
 
@@ -170,28 +176,28 @@
 
                     <div class="boxer salons">
                         <div class="salon">
-                            <img src="/components/assets/imgs/jacobus.jpg" style="display: block; width: 100%; margin: 0 auto;"/>
+                            <img src="/components/assets/imgs/jacobus.jpg" style="display: block; width: 100%; margin: 0 auto;" />
                             <h5 translate>set.name.1</h5>
                             <p translate>set.text.1</p>
                         </div>
                         <div class="salon">
-                            <img src="/components/assets/imgs/degustacia.jpg" style="display: block; width: 100%; margin: 0 auto;"/>
+                            <img src="/components/assets/imgs/degustacia.jpg" style="display: block; width: 100%; margin: 0 auto;" />
                             <h5 translate>set.name.2</h5>
                             <p translate>set.text.2</p>
                         </div>
                         <div class="salon">
-                            <img src="/components/assets/imgs/jedlo/polievka.jpg" style="display: block; width: 100%; margin: 0 auto;"/>
+                            <img src="/components/assets/imgs/jedlo/polievka.jpg" style="display: block; width: 100%; margin: 0 auto;" />
                             <h5 translate>set.name.3</h5>
                             <p translate>set.text.3</p>
                         </div>
 
                         <div class="salon">
-                            <img src="/components/assets/imgs/jedlo/_RK_0105.JPG" style="display: block; width: 100%; margin: 0 auto;"/>
+                            <img src="/components/assets/imgs/jedlo/_RK_0105.JPG" style="display: block; width: 100%; margin: 0 auto;" />
                             <h5 translate>set.name.4</h5>
                             <p translate>set.text.4</p>
                         </div>
                         <div class="salon">
-                            <img src="/components/assets/imgs/jedlo/kolacik.jpg" style="display: block; width: 100%; margin: 0 auto;"/>
+                            <img src="/components/assets/imgs/jedlo/kolacik.jpg" style="display: block; width: 100%; margin: 0 auto;" />
                             <h5 translate>set.name.5</h5>
                             <p translate>set.text.5</p>
                         </div>
@@ -204,7 +210,7 @@
 
                 <section id="menu" class="content-main bg bg-white">
 
-                    <h1 class="main-title" translate>daily.menu</h1>
+                    <h1 class="main-title color-black" translate>daily.menu</h1>
                     <div class="small-line"></div>
 
                     <div class="content-main no-padding">
@@ -213,9 +219,11 @@
                             <b translate>daily.text.2</b>
                             <br>
                             <br>
-                            <span translate>daily.text.3</span><b class="red">{{dailyMenuPrice1.$value}} &euro; </b>
+                            <span translate>daily.text.3</span>
+                            <b class="red">{{dailyMenuPrice1.$value}} &euro; </b>
                             <br>
-                            <span translate>daily.text.4</span><b class="red">{{dailyMenuPrice2.$value}} &euro; </b>
+                            <span translate>daily.text.4</span>
+                            <b class="red">{{dailyMenuPrice2.$value}} &euro; </b>
 
                         </p>
 
@@ -224,7 +232,7 @@
                         <div class="daily-menu-list">
 
                             <div class="daily-menu-item" ng-hide="!day1food2.$value || todayName == 'tuesday' || todayName == 'wednesday' || todayName == 'thursday' || todayName == 'friday' || todayName == 'saturday' "
-                                 ng-class="{'today': todayName == 'monday'}">
+                                ng-class="{'today': todayName == 'monday'}">
                                 <table>
                                     <tr class="menu-day">
                                         <td>
@@ -243,7 +251,9 @@
                                             <span>{{dailyMenuWeight1.$value}} ml</span>
                                         </td>
                                         <td colspan="2">
-                                            <p>{{day1food1.$value}}<b ng-hide="!day1allergens1.$value"> ({{day1allergens1.$value}}) </b></p>
+                                            <p>{{day1food1.$value}}
+                                                <b ng-hide="!day1allergens1.$value"> ({{day1allergens1.$value}}) </b>
+                                            </p>
                                         </td>
                                     </tr>
                                     <tr ng-if="day1food2.$value">
@@ -252,7 +262,9 @@
                                             <span>{{dailyMenuWeight2.$value}} g</span>
                                         </td>
                                         <td colspan="2">
-                                            <p>{{day1food2.$value}}<b ng-hide="!day1allergens2.$value"> ({{day1allergens2.$value}}) </b></p>
+                                            <p>{{day1food2.$value}}
+                                                <b ng-hide="!day1allergens2.$value"> ({{day1allergens2.$value}}) </b>
+                                            </p>
                                         </td>
                                     </tr>
                                     <tr ng-if="day1food3.$value">
@@ -261,18 +273,20 @@
                                             <span>{{dailyMenuWeight3.$value}} g</span>
                                         </td>
                                         <td colspan="2">
-                                            <p>{{day1food3.$value}}<b ng-hide="!day1allergens3.$value"> ({{day1allergens3.$value}}) </b></p>
+                                            <p>{{day1food3.$value}}
+                                                <b ng-hide="!day1allergens3.$value"> ({{day1allergens3.$value}}) </b>
+                                            </p>
                                         </td>
                                     </tr>
                                 </table>
                             </div>
                             <div class="daily-menu-item" ng-hide="!day2food2.$value || todayName == 'wednesday' || todayName == 'thursday' || todayName == 'friday' || todayName == 'saturday'"
-                                 ng-class="{'today': todayName == 'tuesday'}">
+                                ng-class="{'today': todayName == 'tuesday'}">
                                 <table>
                                     <tr class="menu-day">
                                         <td>
-                                                <h5 class="dayname" translate>tuesday</h5>
-                                                <h5 class="todays" translate>today</h5>
+                                            <h5 class="dayname" translate>tuesday</h5>
+                                            <h5 class="todays" translate>today</h5>
                                         </td>
                                         <td>
                                         </td>
@@ -286,7 +300,9 @@
                                             <span>{{dailyMenuWeight1.$value}} ml</span>
                                         </td>
                                         <td colspan="2">
-                                            <p>{{day2food1.$value}}<b ng-hide="!day2allergens1.$value"> ({{day2allergens1.$value}}) </b></p>
+                                            <p>{{day2food1.$value}}
+                                                <b ng-hide="!day2allergens1.$value"> ({{day2allergens1.$value}}) </b>
+                                            </p>
                                         </td>
                                     </tr>
                                     <tr ng-if="day2food2.$value">
@@ -295,7 +311,9 @@
                                             <span>{{dailyMenuWeight2.$value}} g</span>
                                         </td>
                                         <td colspan="2">
-                                            <p>{{day2food2.$value}}<b ng-hide="!day2allergens2.$value"> ({{day2allergens2.$value}}) </b></p>
+                                            <p>{{day2food2.$value}}
+                                                <b ng-hide="!day2allergens2.$value"> ({{day2allergens2.$value}}) </b>
+                                            </p>
                                         </td>
                                     </tr>
                                     <tr ng-if="day2food3.$value">
@@ -304,18 +322,20 @@
                                             <span>{{dailyMenuWeight3.$value}} g</span>
                                         </td>
                                         <td colspan="2">
-                                            <p>{{day2food3.$value}}<b ng-hide="!day2allergens3.$value"> ({{day2allergens3.$value}}) </b></p>
+                                            <p>{{day2food3.$value}}
+                                                <b ng-hide="!day2allergens3.$value"> ({{day2allergens3.$value}}) </b>
+                                            </p>
                                         </td>
                                     </tr>
                                 </table>
                             </div>
                             <div class="daily-menu-item" ng-hide="!day3food2.$value || todayName == 'thursday' || todayName == 'friday' || todayName == 'saturday' "
-                                 ng-class="{'today': todayName == 'wednesday'}">
+                                ng-class="{'today': todayName == 'wednesday'}">
                                 <table>
                                     <tr class="menu-day">
                                         <td>
-                                                <h5 class="dayname" translate>wednesday</h5>
-                                                <h5 class="todays" translate>today</h5>
+                                            <h5 class="dayname" translate>wednesday</h5>
+                                            <h5 class="todays" translate>today</h5>
                                         </td>
                                         <td>
                                         </td>
@@ -329,7 +349,9 @@
                                             <span>{{dailyMenuWeight1.$value}} ml</span>
                                         </td>
                                         <td colspan="2">
-                                            <p>{{day3food1.$value}}<b ng-hide="!day3allergens1.$value"> ({{day3allergens1.$value}}) </b></p>
+                                            <p>{{day3food1.$value}}
+                                                <b ng-hide="!day3allergens1.$value"> ({{day3allergens1.$value}}) </b>
+                                            </p>
                                         </td>
                                     </tr>
                                     <tr ng-if="day3food2.$value">
@@ -338,7 +360,9 @@
                                             <span>{{dailyMenuWeight2.$value}} g</span>
                                         </td>
                                         <td colspan="2">
-                                            <p>{{day3food2.$value}}<b ng-hide="!day3allergens2.$value"> ({{day3allergens2.$value}}) </b></p>
+                                            <p>{{day3food2.$value}}
+                                                <b ng-hide="!day3allergens2.$value"> ({{day3allergens2.$value}}) </b>
+                                            </p>
                                         </td>
                                     </tr>
                                     <tr ng-if="day3food3.$value">
@@ -347,13 +371,14 @@
                                             <span>{{dailyMenuWeight3.$value}} g</span>
                                         </td>
                                         <td colspan="2">
-                                            <p>{{day3food3.$value}}<b ng-hide="!day3allergens3.$value"> ({{day3allergens3.$value}}) </b></p>
+                                            <p>{{day3food3.$value}}
+                                                <b ng-hide="!day3allergens3.$value"> ({{day3allergens3.$value}}) </b>
+                                            </p>
                                         </td>
                                     </tr>
                                 </table>
                             </div>
-                            <div class="daily-menu-item" ng-hide="!day4food2.$value || todayName == 'friday' || todayName == 'saturday'"
-                                 ng-class="{'today': todayName == 'thursday'}">
+                            <div class="daily-menu-item" ng-hide="!day4food2.$value || todayName == 'friday' || todayName == 'saturday'" ng-class="{'today': todayName == 'thursday'}">
                                 <table>
                                     <tr class="menu-day">
                                         <td>
@@ -372,7 +397,9 @@
                                             <span>{{dailyMenuWeight1.$value}} ml</span>
                                         </td>
                                         <td colspan="2">
-                                            <p>{{day4food1.$value}}<b ng-hide="!day4allergens1.$value"> ({{day4allergens1.$value}}) </b></p>
+                                            <p>{{day4food1.$value}}
+                                                <b ng-hide="!day4allergens1.$value"> ({{day4allergens1.$value}}) </b>
+                                            </p>
                                         </td>
                                     </tr>
                                     <tr ng-if="day4food2.$value">
@@ -381,7 +408,9 @@
                                             <span>{{dailyMenuWeight2.$value}} g</span>
                                         </td>
                                         <td colspan="2">
-                                            <p>{{day4food2.$value}}<b ng-hide="!day4allergens2.$value"> ({{day4allergens2.$value}}) </b></p>
+                                            <p>{{day4food2.$value}}
+                                                <b ng-hide="!day4allergens2.$value"> ({{day4allergens2.$value}}) </b>
+                                            </p>
                                         </td>
                                     </tr>
                                     <tr ng-if="day4food3.$value">
@@ -390,13 +419,14 @@
                                             <span>{{dailyMenuWeight3.$value}} g</span>
                                         </td>
                                         <td colspan="2">
-                                             <p>{{day4food3.$value}}<b ng-hide="!day4allergens3.$value"> ({{day4allergens3.$value}}) </b></p>
+                                            <p>{{day4food3.$value}}
+                                                <b ng-hide="!day4allergens3.$value"> ({{day4allergens3.$value}}) </b>
+                                            </p>
                                         </td>
                                     </tr>
                                 </table>
                             </div>
-                            <div class="daily-menu-item" ng-hide="!day5food2.$value || todayName == 'saturday' "
-                                 ng-class="{'today': todayName == 'friday'}">
+                            <div class="daily-menu-item" ng-hide="!day5food2.$value || todayName == 'saturday' " ng-class="{'today': todayName == 'friday'}">
                                 <table>
                                     <tr class="menu-day">
                                         <td>
@@ -415,7 +445,9 @@
                                             <span>{{dailyMenuWeight1.$value}} ml</span>
                                         </td>
                                         <td colspan="2">
-                                            <p>{{day5food1.$value}}<b ng-hide="!day5allergens3.$value"> ({{day5allergens1.$value}}) </b></p>
+                                            <p>{{day5food1.$value}}
+                                                <b ng-hide="!day5allergens3.$value"> ({{day5allergens1.$value}}) </b>
+                                            </p>
                                         </td>
                                     </tr>
                                     <tr ng-if="day5food2.$value">
@@ -424,7 +456,9 @@
                                             <span>{{dailyMenuWeight2.$value}} g</span>
                                         </td>
                                         <td colspan="2">
-                                            <p>{{day5food2.$value}}<b ng-hide="!day5allergens2.$value"> ({{day5allergens2.$value}}) </b></p>
+                                            <p>{{day5food2.$value}}
+                                                <b ng-hide="!day5allergens2.$value"> ({{day5allergens2.$value}}) </b>
+                                            </p>
                                         </td>
                                     </tr>
                                     <tr ng-if="day5food3.$value">
@@ -433,7 +467,9 @@
                                             <span>{{dailyMenuWeight3.$value}} g</span>
                                         </td>
                                         <td colspan="2">
-                                            <p>{{day5food3.$value}}<b ng-hide="!day5allergens3.$value"> ({{day5allergens3.$value}}) </b></p>
+                                            <p>{{day5food3.$value}}
+                                                <b ng-hide="!day5allergens3.$value"> ({{day5allergens3.$value}}) </b>
+                                            </p>
                                         </td>
                                     </tr>
                                 </table>
@@ -457,50 +493,50 @@
                             <div class="book-wrap" ng-hide="bookFinnish">
                                 <div class="row">
 
-                                    <label for="date" class="wrap four label">
-                                        <ng-md-icon icon="date_range" style="display: inline-block; position: relative; fill: #f5eddc;"
-                                                    size="25px"></ng-md-icon>
-                                        <span translate>date</span>
-                                    </label>
+
                                     <div class="wrap four">
+                                        <label for="date" class="wrap four label">
+                                            <ng-md-icon icon="date_range" style="display: inline-block; position: relative; fill: #f5eddc;" size="25px"></ng-md-icon>
+                                            <span translate>date</span>
+                                        </label>
                                         <div class="input-wrap">
                                             <datepicker date-format="dd.MM.yyyy" date-week-start-day="1" datepicker-mobile="true">
-                                                <input id="date" class="date" type="text" ng-model="date"  placeholder="{{today}}" tabindex="1" required/>
+                                                <input id="date" class="date" type="text" ng-model="date" placeholder="{{today}}" tabindex="1" required/>
                                             </datepicker>
                                         </div>
                                     </div>
 
-                                    <label for="time" class="wrap four label" >
-                                        <ng-md-icon icon="access_time" style="display: inline-block; position: relative; fill: #f5eddc;"
-                                                    size="25px"></ng-md-icon>
-                                        <span translate>time</span>
-                                    </label>
+
                                     <div class="wrap four">
+                                        <label for="time" class="wrap four label">
+                                            <ng-md-icon icon="access_time" style="display: inline-block; position: relative; fill: #f5eddc;" size="25px"></ng-md-icon>
+                                            <span translate>time</span>
+                                        </label>
                                         <div class="input-wrap">
-                                            <input id="time" name="timer" class="time timepicker" type="text" tabindex="2"
-                                                  ng-model="timer" ng-class="{'ng-invalid' : invalidTime }" ng-change="showTimer(timer);" required/>
+                                            <input id="time" name="timer" class="time timepicker" type="text" tabindex="2" ng-model="timer" ng-class="{'ng-invalid' : invalidTime }"
+                                                ng-change="showTimer(timer);" required/>
                                             <span class="warning" ng-show="invalidTime" translate>this.time.is.close</span>
                                         </div>
                                     </div>
 
-                                    <label for="amount" class="wrap four label">
-                                        <ng-md-icon icon="group" style="display: inline-block; position: relative; fill: #f5eddc;"
-                                                    size="25px"></ng-md-icon>
-                                        <span translate>amount</span>
-                                    </label>
+
                                     <div class="wrap four">
+                                        <label for="amount" class="wrap four label">
+                                            <ng-md-icon icon="group" style="display: inline-block; position: relative; fill: #f5eddc;" size="25px"></ng-md-icon>
+                                            <span translate>amount</span>
+                                        </label>
                                         <div class="input-wrap">
                                             <input id="amount" name="amount" type="text" placeholder="1-200" ng-model="amount" tabindex="3" required/>
                                         </div>
                                     </div>
 
 
-                                    <label for="room-type" class="wrap four label">
-                                        <ng-md-icon icon="local_restaurant" style="display: inline-block; position: relative; fill: #f5eddc;"
-                                                    size="25px"></ng-md-icon>
-                                        <span translate>room.type</span>
-                                    </label>
+
                                     <div class="wrap four">
+                                        <label for="room-type" class="wrap four label">
+                                            <ng-md-icon icon="local_restaurant" style="display: inline-block; position: relative; fill: #f5eddc;" size="25px"></ng-md-icon>
+                                            <span translate>room.type</span>
+                                        </label>
                                         <div class="input-wrap">
                                             <select id="room-type" name="room" ng-model="room" tabindex="4" required>
                                                 <option value="" disabled selected hidden translate>select</option>
@@ -517,58 +553,49 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <label class="wrap label" for="name">
-                                        <ng-md-icon icon="person"
-                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
-                                                    size="25px"></ng-md-icon>
-                                        <span translate>name.and.surname</span>
-                                    </label>
+
                                     <div class="wrap">
+                                        <label class="wrap label" for="name">
+                                            <ng-md-icon icon="person" style="display: inline-block; position: relative; fill: #f5eddc;" size="25px"></ng-md-icon>
+                                            <span translate>name.and.surname</span>
+                                        </label>
                                         <div class="input-wrap">
-                                            <input id="name"  type="text" name="name" ng-model="name" class="form-control" tabindex="5" required/>
+                                            <input id="name" type="text" name="name" ng-model="name" class="form-control" tabindex="5" required/>
                                         </div>
                                     </div>
 
-                                    <label for="email" class="wrap label">
-                                        <ng-md-icon icon="email"
-                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
-                                                    size="25px"></ng-md-icon>
-                                        <span translate>email</span>
-                                    </label>
+
                                     <div class="wrap">
+                                        <label for="email" class="wrap label">
+                                            <ng-md-icon icon="email" style="display: inline-block; position: relative; fill: #f5eddc;" size="25px"></ng-md-icon>
+                                            <span translate>email</span>
+                                        </label>
                                         <div class="input-wrap">
-                                            <input id="email" type="email" name="email" ng-model="email"
-                                               class="form-control" tabindex="6" required/>
+                                            <input id="email" type="email" name="email" ng-model="email" class="form-control" tabindex="6" required/>
                                         </div>
                                     </div>
 
-                                    <label  for="phone" class="wrap label">
-                                        <ng-md-icon icon="phone"
-                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
-                                                    size="25px"></ng-md-icon>
-                                        <span translate>phone.number</span>
-                                    </label>
+
                                     <div class="wrap">
+                                        <label for="phone" class="wrap label">
+                                            <ng-md-icon icon="phone" style="display: inline-block; position: relative; fill: #f5eddc;" size="25px"></ng-md-icon>
+                                            <span translate>phone.number</span>
+                                        </label>
                                         <div class="input-wrap">
                                             <input id="phone" type="text" name="phone" ng-model="phone" tabindex="7" />
                                         </div>
                                     </div>
 
-                                    <label  for="text" class="wrap label">
-                                        <ng-md-icon icon="textsms"
-                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
-                                                    size="25px"></ng-md-icon>
-                                        <span translate>note</span>
-                                    </label>
+
                                     <div class="wrap">
+                                        <label for="text" class="wrap label">
+                                            <ng-md-icon icon="textsms" style="display: inline-block; position: relative; fill: #f5eddc;" size="25px"></ng-md-icon>
+                                            <span translate>note</span>
+                                        </label>
                                         <div class="input-wrap">
                                             <input id="text" type="text" name="text" ng-model="addText" tabindex="8" />
                                         </div>
                                     </div>
-                                    <label class="wrap label" for="cb1">
-                                        <input type="checkbox" name="cb" id="cb1" ng-model="suhlas" required>
-                                        <span translate>agree.terms</span>
-                                    </label>
                                 </div>
                             </div>
 
@@ -576,14 +603,23 @@
                             <div class="booking-done" ng-show="bookFinnish">
                                 <ng-md-icon icon="check_circle" style="display: block; position: relative;
                                             background: #78fa89; border-radius: 50%;
-                                            width: 150px; height:150px;fill: rgb(43, 42, 41);"
-                                            size="150"></ng-md-icon>
+                                            width: 150px; height:150px;fill: rgb(43, 42, 41);" size="150"></ng-md-icon>
                                 <h4 translate>booking.text.1</h4>
                                 <h4 translate>booking.text.2</h4>
                             </div>
 
+                            <div class="book-wrap" ng-hide="bookFinnish || loader || showError" style="margin: 1em auto;">
+                                <div class="row">
+                                    <input type="checkbox" name="suhlas" id="suhlas" ng-model="suhlas" required>
+                                    <label class="wrap label gdpr-label check" for="suhlas">
+                                        <p translate>gdpr.text.normal</p>
+                                        <a ng-href="#!/gdpr" target="_self" translate>privacy.policy</a>
+                                    </label>
+                                </div>
+                            </div>
+
                             <div class="book-wrap" ng-hide="bookFinnish">
-                                <div class="actions" >
+                                <div class="actions">
                                     <p class="link-button phone" ng-hide="restaurantBookForm.$valid" translate>
                                         please.fill.all.data
                                     </p>
@@ -650,22 +686,21 @@
                     <div class="info">
                         <div class="item">
                             <ng-md-icon icon="settings_phone" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;"
-                                        size="3em"></ng-md-icon>
+                                size="3em"></ng-md-icon>
                             <a href="tel:00421948828727">(+421) 0948 828 727</a>
                         </div>
                         <div class="item">
-                            <ng-md-icon icon="mail_outline" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;"
-                                        size="3em"></ng-md-icon>
+                            <ng-md-icon icon="mail_outline" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;" size="3em"></ng-md-icon>
                             <a href="mailto:restaurant&#64minipivovartatras&#46sk" class="email">restaurant@minipivovartatras.sk</a>
                         </div>
 
                         <div class="item" style="paddging-top: 1em;">
-                            <img src="/components/assets/imgs/tripadvisor.png" style="display: block; height: 4em; margin: 0 auto;"/>
-                            <a href="https://www.tripadvisor.sk/Restaurant_Review-g274938-d11948183-Reviews-Restauracny_minipivovar_TATRAS-Poprad_Presov_Region.html" class="email">tripadvisor Reviews</a>
+                            <img src="/components/assets/imgs/tripadvisor.png" style="display: block; height: 4em; margin: 0 auto;" />
+                            <a href="https://www.tripadvisor.sk/Restaurant_Review-g274938-d11948183-Reviews-Restauracny_minipivovar_TATRAS-Poprad_Presov_Region.html"
+                                class="email">tripadvisor Reviews</a>
                         </div>
                         <div class="item" style="paddging-top: 1em;">
-                            <ng-md-icon icon="facebook" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;"
-                                        size="3em"></ng-md-icon>
+                            <ng-md-icon icon="facebook" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;" size="3em"></ng-md-icon>
                             <a href="https://www.facebook.com/minipivovartatras" class="email">fb.com/minipivovartatras</a>
                         </div>
                     </div>
@@ -679,6 +714,3 @@
         </div>
     </div>
 </div>
-
-
-

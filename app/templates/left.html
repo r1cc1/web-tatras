@@ -17,7 +17,9 @@
         <div class="navigation">
             <nav class="shadow">
                 <ul class="main-menu">
-
+                        <li ng-class="getClass('/sutaz')" class="highlight">
+                            <a ng-href="#!/sutaz" ng-class="getClass('/sutaz')" ng-click="scrollToTop()" target="_self" translate>sutaz</a>
+                        </li>
                     <li ng-class="getClass('/beer')">
                         <a ng-href="#!/beer" ng-class="getClass('/beer')" ng-click="scrollToTop()" target="_self" translate>minipivovar</a>
                     </li>
@@ -33,25 +35,14 @@
                     <li ng-class="getClass('/shop')">
                         <a ng-href="#!/shop" ng-class="getClass('/shop')" ng-click="scrollToTop()" target="_self" translate>shop</a>
                     </li>
-                    <li ng-class="getClass('/sutaz')" class="highlight">
-                        <a ng-href="#!/sutaz" ng-class="getClass('/sutaz')" ng-click="scrollToTop()" target="_self" translate>sutaz</a>
-                    </li>
+                   
                 </ul>
             </nav>
         </div>
         <div class="call-action">
-            <a href="tel:00421948828727" target="_self" name="call-us" class="btn-book" ng-if="categoryName == 'restaurant' || categoryName == 'minipivovar'">
-                <ng-md-icon icon="call" style="fill: #2b2a29" size="20"></ng-md-icon>
-                <span translate>call.us</span>
-            </a>
-            <a href="tel:00421948028025" target="_self" name="call-us" class="btn-book" ng-if="categoryName == 'wellness' || categoryName == 'shop' || categoryName == 'pension'">
-                <ng-md-icon icon="call" style="fill: #2b2a29" size="20"></ng-md-icon>
-                <span translate>call.us</span>
-            </a>
-            <!--<button class="btn-book" du-smooth-scroll="book" ng-if="!isHome" ng-click="closeMenu()">-->
-                <!--<ng-md-icon icon="{{btnIcon}}" style="fill: #2b2a29" size="20"></ng-md-icon>-->
-                <!--<span translate>book.now</span>-->
-            <!--</button>-->
+            <a href="#contact" du-smooth-scroll="contact" ng-click="closeMenu()" target="_self" name="contact" class="btn-book">
+                    <span translate>contact.us</span>
+                </a>
         </div>
     </div>
     <div class="shrink" ng-class="{'open' : openMobileMenu}">

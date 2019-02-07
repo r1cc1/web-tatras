@@ -1,6 +1,15 @@
-<!-- include LEFT-NAVI -->
-<div ng-include="'templates/loading.html'"></div>
-<!-- end of LEFT-NAVI include -->
+<div class="loading" ng-class="{'close': !isloading}">
+    <div class="loading-wrap">
+        <div class="loading-align">
+            <div class="loading-content">
+                <div class="loading-logo"></div>
+                <div class="loading-progress" ng-class="{'load': isloading}">
+                </div>
+                <h4 style="color: white;" translate>true.beer</h4>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div ng-cloak class="wrapper" ng-class="{'init': isloading}">
 
@@ -15,13 +24,16 @@
             <div>
                 <ul>
                     <li du-scrollspy="start">
-                        <span du-smooth-scroll="start" ng-click="closeMenu()">ŠTATÚT Súťaže</span>
+                        <span du-smooth-scroll="start" ng-click="closeMenu()" translate>become.taster</span>
+                    </li>
+                    <li du-scrollspy="statut">
+                        <span du-smooth-scroll="start" ng-click="closeMenu()" translate>sutaz.statut</span>
                     </li>
                     <li du-scrollspy="prices">
-                        <span du-smooth-scroll="prices" ng-click="closeMenu()">Ceny Súťaže</span>
+                        <span du-smooth-scroll="prices" ng-click="closeMenu()" translate>sutaz.prices</span>
                     </li>
                     <li du-scrollspy="register">
-                        <span du-smooth-scroll="register" ng-click="closeMenu()" translate>registrácia</span>
+                        <span du-smooth-scroll="register" ng-click="closeMenu()" translate>registration.form</span>
                     </li>
                     <li du-scrollspy="contact">
                         <span du-smooth-scroll="contact" ng-click="closeMenu()" translate>contact</span>
@@ -60,114 +72,135 @@
                     </div>
                 </section>
 
-                <!-- category -->
-                <section id="start" class="content-main bg-100">
-                    <h1 class="main-title">Štatút súťaže</h1>
-                    <h2 class="sub-title">„O najlepšiu slovenskú pivovicu 2018”</h2>
+                <section id="start" class="content-main bg bg-beige">
+                    <h1 class="main-title color-white" translate>become.taster</h1>
+                    <h2 class="sub-title" translate>sutaz.full.title</h2>
+                    <div class="small-line white"></div>
+
+                    <p class="content-text">
+                        <span class="odsek"></span>
+                        <span translate>sutaz.text.1</span>
+                        <br>
+                        <br> <span translate>sutaz.text.2</span>
+                        <br>
+                        <br><span translate style="text-transform: capitalize;">price</span><b> 9,90 €</b>
+                    </p>
+                </section>
+
+
+                <section id="statut" class="content-main bg-100">
+                    <h1 class="main-title" translate>sutaz.statut</h1>
+                    <h2 class="sub-title" translate>sutaz.full.title</h2>
                     <div class="small-line"></div>
                     <p class="content-text">
                         <span class="odsek"></span>
-                        Vyhlasovateľom súťaže je Minipivovar TATRAS s.r.o., Nám. sv. Egídia 60, 058 01 Poprad, zastúpený konateľom spoločnosti Bc.
-                        Lukášom Vdovjakom.
+
+                        <span translate>
+                            sutaz.statut.1
+                        </span>
                         <br>
                         <span class="odsek"></span>
-                        Súťaž bude prebiehať v priestoroch reštaurácie Minipivovar TATRAS, odo dňa 3.8.2018 od 16:00 hod., najneskôr do dňa 31.12.2018
-                        do 23:59 hod. Súťaže sa môže zúčastniť každá fyzická osoba, ktorá dovŕšila 18 rokov veku a spĺňa
-                        všetky podmienky stanovené v tomto štatúte. Súťažiací splní podmienky súťaže zakúpením degustačného
-                        setu, vyplnením hodnotiaceho hárku a zapísaním poradia na webovej stránke vyhlasovateľa.
+                        <span translate>
+                            sutaz.statut.2
+                        </span>
+                        <br>
                         <br>
                         <span class="odsek"></span>
-                        Účelom súťaže je porovnať a vyhodnotiť, ktorý pivný destilát, od slovenského výrobcu najviac chutí spotrebiteľom a vytvoriť
-                        tradíciu tejto formy súťaže.
-                        <br> Úvodné hodnotenie vykonajú dve hodnotiace komisie. Prvá degustačná komisia bude vytvorená členmi
-                        Slovenského rádu rytierov destilátu, druhú degustačnú komisiu navrhne vyhlasovateľ z miestnych znalcov.
-                        Každý člen komisie hodnotí vzorky anonymne a samostatne. Funkcia hodnotiteľa je bezpôžitková, čestná
-                        a nezastupiteľná. Po hodnotení týchto komisií bude vyhlásená celoročná degustačná súťaž pre širokú
-                        verejnosť – hostí reštaurácie Tatras. Súťaž prebieha formou anonymnej degustácie, so zachovaním maximálnej
-                        objektivity a nezávislosti.
+                        <span translate>
+                            sutaz.statut.3
+                        </span>
                         <br>
-                        <span class="odsek"></span>Predmetom súťaže je degustácia piatich vzoriek pivovice od slovenských výrobcov, ich ohodnotenie
-                        a zoradenie od najchutnejšej po najmenej chutnú.
+                        <span class="odsek"></span>
+                        <span translate>
+                            sutaz.statut.4
+                        </span>
+                        <br>
+                        <span class="odsek"></span>
+                        <span translate>
+                            sutaz.statut.5
+                        </span>
 
                         <button class="btn show-more" ng-hide="showMoreStatut == true" ng-click="doShowMoreStatut();" translate>read.more</button>
 
                         <span ng-show="showMoreStatut == true">
                             <br>
-                            <br> Vyhlásenie výsledkov tejto verejnej súťaže a výsledky hodnotenia oboch komisií sa uskutoční
-                            spolu so žrebovaním výhercov dňa 05.01.2019 v reštaurácii TATRAS.
                             <br>
                             <span class="odsek"></span>
-                            Degustátor obdrží prístupový kód, degustačný set a hodnotiací hárok. Degustačný set obsahuje 5 ks anonymných vzoriek naplnených
-                            v sklenených pohárikoch – pijačkách každá o objeme 0,015 L. Degustátor udeľuje víťazovi svojho
-                            hodnotenia 1 bod. Po skončení súťaže sa body spočítajú a celkovým víťazom sa stáva pivovica ktorá
-                            získala najviac bodov.
+                            <span translate>
+                                sutaz.statut.6
+                            </span>
                             <br>
                             <span class="odsek"></span>
-                            Účasťou na súťaži vyjadruje súťažiaci súhlas s týmto štatútom. Ak osoba nesúhlasí s ktoroukoľvek podmienkou alebo bodom v
-                            tomto štatúte, nesmie sa súťaže zúčastniť. Vyhlasovateľ súťaže si vyhradzuje právo kedykoľvek
-                            zmeniť štatút alebo aj zrušiť súťaž, a to najmä v prípade, ak by mu hrozila škoda. Zmenu štatútu
-                            alebo zrušenie súťaže zverejní vyhlasovateľ na svojej webovej stránke . V prípade akýchkoľvek
-                            nejasností týkajúcich sa podmienok súťaže, alebo ustanovení štatútu si vyhlasovateľ súťaže vyhradzuje
-                            právo vysvetliť tieto nejasnosti a príp. zmeniť štatút. Vyhlasovateľ súťaže nezodpovedá za žiadne
-                            škody, ktoré vzniknú výhercom v súvislosti prijatými cenami.
-
+                            <span translate>
+                                sutaz.statut.7
+                            </span>
+                            <br>
+                            <span class="odsek"></span>
+                            <span translate>
+                                sutaz.statut.8
+                            </span>
+                            <br>
+                            <span translate>
+                                sutaz.statut.9
+                            </span>
                             <br>
                             <br>
                             <b>Bc. Lukáš Vdovjak</b>
                             <br>
-                            <i>Riaditeľ súťaže</i>
+                            <i translate>riaditel.sutaze</i>
                         </span>
 
                     </p>
+                </section>
 
+                <section class="content-main empty bg bg-rytieri">
                 </section>
 
                 <section id="prices" class="content-main content-kontakt bg bg-beige">
-                    <h1 class="main-title color-white">Ceny súťaže</h1>
+                    <h1 class="main-title color-white" translate>sutaz.prices</h1>
                     <div class="small-line white"></div>
 
                     <div class="prize-box">
                         <h3 class="prize">1</h3>
-                        <h6 class="prize-title">Víkendový pobyt v penzióne TATRAS pre 2 osoby</h6>
+                        <h6 class="prize-title" translate>sutaz.price.1</h6>
                     </div>
 
                     <div class="prize-box">
                         <h3 class="prize">2</h3>
-                        <h6 class="prize-title">Vstup do pivných kúpeľoch TATRAS pre 2 osoby</h6>
+                        <h6 class="prize-title" translate>sutaz.price.2</h6>
                     </div>
 
                     <div class="prize-box">
                         <h3 class="prize">3</h3>
-                        <h6 class="prize-title">Fľaša pivného destilátu Jacobus Emerici 0.5 l</h6>
+                        <h6 class="prize-title" translate>sutaz.price.3</h6>
                     </div>
 
                     <br>
 
                     <div class="prize-box">
                         <h3 class="prize-mini">4</h3>
-                        <h6 class="prize-title">Sada piatich 1.0 l fliaš piva TATRAS</h6>
+                        <h6 class="prize-title" translate>sutaz.price.4</h6>
                     </div>
 
                     <div class="prize-box">
                         <h3 class="prize-mini">5</h3>
-                        <h6 class="prize-title">Darčekové balenie pivnej kozmetiky TATRAS</h6>
+                        <h6 class="prize-title" translate>sutaz.price.5</h6>
                     </div>
 
                     <div class="prize-box">
                         <h3 class="prize-mini">6</h3>
-                        <h6 class="prize-title">Kniha Etikety zo Spišskej Belej a Popradu</h6>
+                        <h6 class="prize-title" translate>sutaz.price.6</h6>
                     </div>
 
                     <div class="prize-box">
                         <h3 class="prize-mini">7</h3>
-                        <h6 class="prize-title">Darčeková poukážka pre degustáciu pivovice</h6>
+                        <h6 class="prize-title" translate>sutaz.price.7</h6>
                     </div>
 
                     <div class="prize-box">
                         <h3 class="prize-mini">8</h3>
-                        <h6 class="prize-title">Darčeková poukážka pre degustáciu pív TATRAS</h6>
+                        <h6 class="prize-title" translate>sutaz.price.8</h6>
                     </div>
-
                     <br>
                     <br>
                     <br>
@@ -175,24 +208,24 @@
                     <br>
 
                     <p class="content-text">
-                        <span class="odsek"></span>Hodnota každej výhry je nižšia ako 350,- Eur, a preto nepodlieha dani z príjmov. Výherca stráca
-                        nárok na výhru ak si ju neprevezme do 30 dní od oznámenia o výhre. Vyžrebovaní výhercovia budú kontaktovaní
-                        e-mailom o výhre ceny, a to do 3 dní odo dňa uskutočnenia žrebovania. Odovzdanie cien sa uskutoční
-                        na mieste a v čase dohodnutom medzi vyhlasovateľom súťaže a výhercom.
+                        <span class="odsek"></span>
+                        <span translate>
+                            sutaz.price.text.1
+                        </span>
                         <br>
                         <br>
-                        <span class="odsek"></span>Na výhru nemá súťažiaci právny nárok a nie je možné vymáhať ju súdnou cestou. Každý súťažiaci
-                        poskytne vyhlasovateľovi svoje osobné údaje v rozsahu nevyhnutnom na to, aby ho bolo možné jednoznačne
-                        identifikovať a následne v prípade výhry kontaktovať. Ak súťažiaci bude vyžrebovaný ako výherca a
-                        získa cenu, vyhlasovateľ môže zverejniť meno a priezvisko výhercu v súvislosti s výhrou ceny v súťaži.
+                        <span class="odsek"></span>
+                        <span translate>
+                            sutaz.price.text.2
+                        </span>
                     </p>
                 </section>
 
                 <!-- book -->
                 <section id="register" class="content-main bg bg-black">
-                    <h1 class="main-title color-white" ng-hide="bookFinnish">Registračny formulár</h1>
-                    <h1 class="main-title color-white" ng-Show="bookFinnish">Vaše hlasovanie</h1>
-                    <h2 class="sub-title color-beige" ng-hide="bookFinnish">zadajte Vaše hodnotenie</h2>
+                    <h1 class="main-title color-white" ng-hide="bookFinnish" translate>registration.form</h1>
+                    <h1 class="main-title color-white" ng-Show="bookFinnish" translate>your.voting</h1>
+                    <h2 class="sub-title color-beige" ng-hide="bookFinnish" translate>enter.your.rating</h2>
                     <br>
                     <div class="book-form">
 
@@ -202,7 +235,7 @@
                                 <div class="row">
                                     <div class="wrap" style="max-width:200px; margin: 0 auto;">
                                         <label class=" label" for="kod" style="max-width:200px; margin: 0 auto;">
-                                            <span translate>Kód degustačného Setu</span>
+                                            <span translate>degustation.set.code</span>
                                         </label>
                                     </div>
                                     <div class="wrap" style="max-width:200px; margin: 0 auto;">
@@ -426,9 +459,8 @@
                     </div>
                 </section>
 
-
-                <section id="contact" class="content-main content-kontakt bg bg-beige">
-                    <h1 class="main-title color-white" translate>contact</h1>
+                <section id="contact" class="content-main content-kontakt bg bg-100">
+                    <h1 class="main-title" translate>contact</h1>
                     <div class="small-line"></div>
 
                     <div class="info">

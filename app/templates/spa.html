@@ -1,14 +1,6 @@
-<div class="loading" ng-class="{'close': !isloading}">
-    <div class="loading-wrap">
-        <div class="loading-align">
-            <div class="loading-content">
-                <div class="loading-logo"></div>
-                <div class="loading-progress" ng-class="{'load': isloading}">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<!-- include Loading Component -->
+<div ng-include="'templates/loading.html'"></div>
+<!-- end of Loading include -->
 
 <div ng-cloak class="wrapper" ng-class="{'init': isloading}">
 
@@ -22,21 +14,26 @@
         <div class="sub-menu" ng-class="{'open': openMobileMenu}">
             <div>
                 <ul>
-                    <li du-scrollspy="category"><span du-smooth-scroll="category" ng-click="closeMenu()" translate>perfect.relax</span>
+                    <li du-scrollspy="category">
+                        <span du-smooth-scroll="category" ng-click="closeMenu()" translate>perfect.relax</span>
                     </li>
-                    <li du-scrollspy="info"><span du-smooth-scroll="info" ng-click="closeMenu()"
-                                                  translate>treatment</span></li>
+                    <li du-scrollspy="info">
+                        <span du-smooth-scroll="info" ng-click="closeMenu()" translate>treatment</span>
+                    </li>
                     <!--<li du-scrollspy="massage"><span du-smooth-scroll="massage" ng-click="closeMenu()"-->
-                                                     <!--translate>massages</span></li>-->
-                    <li du-scrollspy="sauna"><span du-smooth-scroll="sauna" ng-click="closeMenu()"
-                                                   translate>sauna</span>
+                    <!--translate>massages</span></li>-->
+                    <li du-scrollspy="sauna">
+                        <span du-smooth-scroll="sauna" ng-click="closeMenu()" translate>sauna</span>
                     </li>
-                    <li du-scrollspy="book"><span du-smooth-scroll="book" ng-click="closeMenu()"
-                                                  translate>book.now</span></li>
-                    <li du-scrollspy="hours"><span du-smooth-scroll="hours" ng-click="closeMenu()"
-                                                   translate>open.hours</span></li>
-                    <li du-scrollspy="contact"><span du-smooth-scroll="contact" ng-click="closeMenu()"
-                                                     translate>contact</span></li>
+                    <li du-scrollspy="book">
+                        <span du-smooth-scroll="book" ng-click="closeMenu()" translate>book.now</span>
+                    </li>
+                    <li du-scrollspy="hours">
+                        <span du-smooth-scroll="hours" ng-click="closeMenu()" translate>open.hours</span>
+                    </li>
+                    <li du-scrollspy="contact">
+                        <span du-smooth-scroll="contact" ng-click="closeMenu()" translate>contact</span>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -44,22 +41,21 @@
         <div class="right-content">
             <div class="top-nav">
                 <button class="hamburger hamburger--collapse" type="button" ng-click="mobileMenu()">
-                      <span class="hamburger-box">
+                    <span class="hamburger-box">
                         <span class="hamburger-inner"></span>
-                      </span>
+                    </span>
                 </button>
                 <div class="top-bar-logo">
                 </div>
                 <div class="call">
-                    <a href="tel:00421948028025" target="_self" name="call-us" class="btn-book" >
+                    <a href="tel:00421948028025" target="_self" name="call-us" class="btn-book">
                         <ng-md-icon icon="call" style="fill: #f5eddc" size="30"></ng-md-icon>
                     </a>
                 </div>
             </div>
 
             <div class="content-wrapper">
-                <section id="spa" class="content-main bg bg-spa-3 flex-nopadding"
-                         ng-style="{height: displayHeight + 'px'}">
+                <section id="spa" class="content-main bg bg-spa-3 flex-nopadding" ng-style="{height: displayHeight + 'px'}">
                     <div class="center-wrap">
                         <div class="category-logo-wrap">
                             <div class="category-logo">
@@ -78,17 +74,19 @@
                     <div class="small-line"></div>
                     <p class="content-text">
                         <span class="odsek"></span>
-                            <span translate>spa.text.1</span>
-                            <button class="btn show-more" ng-hide="showMoreRelax == true" ng-click="doShowMoreRelax();" translate>show.more</button>
+                        <span translate>spa.text.1</span>
+                        <button class="btn show-more" ng-hide="showMoreRelax == true" ng-click="doShowMoreRelax();" translate>show.more</button>
                         <br>
                         <br>
                         <b ng-show="showMoreRelax == true" style="font-weight: lighter;">
                             <span class="odsek"></span>
                             <span translate>spa.text.2</span>
-                            <br><br>
+                            <br>
+                            <br>
                             <span class="odsek"></span>
                             <span translate>spa.text.3</span>
-                            <br><br>
+                            <br>
+                            <br>
                             <span class="odsek"></span>
                             <span translate>spa.text.4</span>
                         </b>
@@ -105,57 +103,42 @@
                     <div class="small-line"></div>
 
                     <div class="spa-box">
-                        <ng-md-icon icon="done"
-                                    style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
-                                    size="20"></ng-md-icon>
+                        <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;" size="20"></ng-md-icon>
                         <h4 translate>sauna</h4>
                         <span translate>spa.treatment.1</span>
 
-                        <ng-md-icon icon="done"
-                                    style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
-                                    size="20"></ng-md-icon>
+                        <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;" size="20"></ng-md-icon>
                         <h4 translate>ice.tube</h4>
                         <span translate>spa.treatment.2</span>
 
-                        <ng-md-icon icon="done"
-                                    style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
-                                    size="20"></ng-md-icon>
+                        <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;" size="20"></ng-md-icon>
                         <h4 translate>beer.bath</h4>
                         <span translate>spa.treatment.3</span>
 
-                        <ng-md-icon icon="done"
-                                    style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
-                                    size="20"></ng-md-icon>
+                        <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;" size="20"></ng-md-icon>
                         <h4 translate>tapping.of.beer</h4>
                         <span translate>spa.treatment.4</span>
 
-                        <ng-md-icon icon="done"
-                                    style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
-                                    size="20"></ng-md-icon>
+                        <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;" size="20"></ng-md-icon>
                         <h4 translate>oat.bed</h4>
                         <span translate>spa.treatment.5</span>
 
                         <!--<ng-md-icon icon="access_time"-->
-                                    <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"-->
-                                    <!--size="20"></ng-md-icon>-->
+                        <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"-->
+                        <!--size="20"></ng-md-icon>-->
                         <!--<h4 translate>{{spaLiTime}} </h4>-->
                     </div>
-                    
-                    <br><br>
-                    <div class="boxer">
-                        <div class="spa-box">
-                            <div class="prices-box">
-                                <h4 translate>spa.treatment</h4>
-                                <div>
-                                    <ng-md-icon icon="access_time"
-                                                style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
-                                                size="20"></ng-md-icon>
-                                    <span>{{spaLiTime}}</span>
-                                </div>
 
-                                <div class="price">
-                                    <span>{{spaPrice1.$value}} - {{spaPrice14.$value}} €</span>
-                                </div>
+                    <div class="boxer">
+                        <div class="prices-box">
+                            <h4 translate>spa.treatment</h4>
+                            <div>
+                                <ng-md-icon icon="access_time" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;" size="20"></ng-md-icon>
+                                <span>{{spaLiTime}}</span>
+                            </div>
+
+                            <div class="price">
+                                <span> {{spaPrice1.$value}} - {{spaPrice14.$value}} €</span>
                             </div>
                         </div>
                     </div>
@@ -168,142 +151,178 @@
                             <div class="table-responsive">
                                 <table id="prices-spa" class="table table-bordered prices">
                                     <tbody>
-                                    <tr>
-                                        <td  rowspan="2" colspan="2">
-                                            <h4 translate>price.list</h4>
+                                        <tr>
+                                            <td rowspan="2" colspan="2">
+                                                <h4 translate>price.list</h4>
 
-                                        </td>
-                                        <td colspan="4">
-                                            <h3><span translate>bathtubs</span></h3>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center"><h3><span>1 </span></h3></td>
-                                        <td class="text-center"><h3><span>2 </span></h3></td>
-                                        <td class="text-center"><h3><span>3 </span></h3></td>
-                                        <td class="text-center"><h3><span>4 </span></h3></td>
-                                    </tr>
-                                    <tr>
-                                        <td rowspan="8">
-                                            <h3 class="rotate"><span translate>people</span></h3>
-                                        </td>
-                                        <td>
-                                            <h3><span>1 </span></h3>
-                                        </td>
-                                        <td>
-                                            <h2>&euro; {{spaPrice1.$value}}</h2>
-                                        </td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h3><span>2 </span></h3>
-                                        </td>
-                                        <td>
-                                            <h2>&euro; {{spaPrice2.$value}}</h2>
-                                        </td>
-                                        <td>
-                                            <h2>&euro; {{spaPrice3.$value}}</h2>
-                                        </td>
-                                        <td>
-                                        </td>
-                                        <td>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h3><span>3</span></h3>
-                                        </td>
-                                        <td>
+                                            </td>
+                                            <td colspan="4">
+                                                <h3>
+                                                    <span translate>bathtubs</span>
+                                                </h3>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <h3>
+                                                    <span>1 </span>
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    <span>2 </span>
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    <span>3 </span>
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    <span>4 </span>
+                                                </h3>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="8">
+                                                <h3 class="rotate">
+                                                    <span translate>people</span>
+                                                </h3>
+                                            </td>
+                                            <td>
+                                                <h3>
+                                                    <span>1 </span>
+                                                </h3>
+                                            </td>
+                                            <td>
+                                                <h2>&euro; {{spaPrice1.$value}}</h2>
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h3>
+                                                    <span>2 </span>
+                                                </h3>
+                                            </td>
+                                            <td>
+                                                <h2>&euro; {{spaPrice2.$value}}</h2>
+                                            </td>
+                                            <td>
+                                                <h2>&euro; {{spaPrice3.$value}}</h2>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h3>
+                                                    <span>3</span>
+                                                </h3>
+                                            </td>
+                                            <td>
 
-                                        </td>
-                                        <td>
-                                            <h2>&euro; {{spaPrice4.$value}}</h2>
-                                        </td>
-                                        <td>
-                                            <h2>&euro; {{spaPrice5.$value}}</h2>
-                                        </td>
-                                        <td>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h3><span>4</span></h3>
-                                        </td>
-                                        <td>
+                                            </td>
+                                            <td>
+                                                <h2>&euro; {{spaPrice4.$value}}</h2>
+                                            </td>
+                                            <td>
+                                                <h2>&euro; {{spaPrice5.$value}}</h2>
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h3>
+                                                    <span>4</span>
+                                                </h3>
+                                            </td>
+                                            <td>
 
-                                        </td>
-                                        <td>
-                                            <h2>&euro; {{spaPrice6.$value}}</h2>
-                                        </td>
-                                        <td>
-                                            <h2>&euro; {{spaPrice7.$value}}</h2>
-                                        </td>
-                                        <td>
-                                            <h2>&euro; {{spaPrice8.$value}}</h2>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h3><span>5 </span></h3>
-                                        </td>
-                                        <td>
+                                            </td>
+                                            <td>
+                                                <h2>&euro; {{spaPrice6.$value}}</h2>
+                                            </td>
+                                            <td>
+                                                <h2>&euro; {{spaPrice7.$value}}</h2>
+                                            </td>
+                                            <td>
+                                                <h2>&euro; {{spaPrice8.$value}}</h2>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h3>
+                                                    <span>5 </span>
+                                                </h3>
+                                            </td>
+                                            <td>
 
-                                        </td>
-                                        <td>
-                                        </td>
-                                        <td>
-                                            <h2>&euro; {{spaPrice9.$value}}</h2>
-                                        </td>
-                                        <td>
-                                            <h2>&euro; {{spaPrice10.$value}}</h2>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h3><span>6</span></h3>
-                                        </td>
-                                        <td>
-                                        </td>
-                                        <td>
-                                        </td>
-                                        <td>
-                                            <h2>&euro; {{spaPrice11.$value}}</h2>
-                                        </td>
-                                        <td>
-                                            <h2>&euro; {{spaPrice12.$value}}</h2>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h3><span>7</span></h3>
-                                        </td>
-                                        <td>
-                                        </td>
-                                        <td>
-                                        </td>
-                                        <td>
-                                        </td>
-                                        <td>
-                                            <h2>&euro; {{spaPrice13.$value}}</h2>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h3><span>8</span></h3>
-                                        </td>
-                                        <td>
-                                        </td>
-                                        <td>
-                                        </td>
-                                        <td>
-                                        </td>
-                                        <td>
-                                            <h2>&euro; {{spaPrice14.$value}}</h2>
-                                        </td>
-                                    </tr>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                                <h2>&euro; {{spaPrice9.$value}}</h2>
+                                            </td>
+                                            <td>
+                                                <h2>&euro; {{spaPrice10.$value}}</h2>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h3>
+                                                    <span>6</span>
+                                                </h3>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                                <h2>&euro; {{spaPrice11.$value}}</h2>
+                                            </td>
+                                            <td>
+                                                <h2>&euro; {{spaPrice12.$value}}</h2>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h3>
+                                                    <span>7</span>
+                                                </h3>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                                <h2>&euro; {{spaPrice13.$value}}</h2>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h3>
+                                                    <span>8</span>
+                                                </h3>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                                <h2>&euro; {{spaPrice14.$value}}</h2>
+                                            </td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -317,219 +336,219 @@
 
                 <!--&lt;!&ndash; massages &ndash;&gt;-->
                 <!--<section id="massage" class="content-main bg-100">-->
-                    <!--<h1 class="main-title" translate>massages</h1>-->
-                    <!--<div class="small-line"></div>-->
-                    <!--<p class="content-text">-->
-                        <!--<span class="odsek"></span>{{massageText1}}-->
-                    <!--</p>-->
-                    <!--<br>-->
-                    <!--<br>-->
-                    <!--<div class="boxer">-->
-                        <!--<div class="spa-box">-->
-                            <!--<h4 translate>Klasická masáž</h4>-->
-                            <!--<span>{{massageText2}}</span>-->
-                            <!--<div class="prices-box">-->
-                                <!--<div>-->
-                                    <!--<ng-md-icon icon="access_time"-->
-                                                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"-->
-                                                <!--size="20"></ng-md-icon>-->
-                                    <!--<span>{{massage1Time1.$value}} min</span>-->
-                                <!--</div>-->
+                <!--<h1 class="main-title" translate>massages</h1>-->
+                <!--<div class="small-line"></div>-->
+                <!--<p class="content-text">-->
+                <!--<span class="odsek"></span>{{massageText1}}-->
+                <!--</p>-->
+                <!--<br>-->
+                <!--<br>-->
+                <!--<div class="boxer">-->
+                <!--<div class="spa-box">-->
+                <!--<h4 translate>Klasická masáž</h4>-->
+                <!--<span>{{massageText2}}</span>-->
+                <!--<div class="prices-box">-->
+                <!--<div>-->
+                <!--<ng-md-icon icon="access_time"-->
+                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"-->
+                <!--size="20"></ng-md-icon>-->
+                <!--<span>{{massage1Time1.$value}} min</span>-->
+                <!--</div>-->
 
-                                <!--<div class="price">-->
-                                    <!--<ng-md-icon icon="euro_symbol"-->
-                                                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"-->
-                                                <!--size="30"></ng-md-icon>-->
-                                    <!--<span>{{massage1Price1.$value}}</span>-->
-                                <!--</div>-->
-                                <!--<div>-->
-                                    <!--<ng-md-icon icon="access_time"-->
-                                                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"-->
-                                                <!--size="20"></ng-md-icon>-->
-                                    <!--<span>{{massage1Time2.$value}} min</span>-->
-                                <!--</div>-->
+                <!--<div class="price">-->
+                <!--<ng-md-icon icon="euro_symbol"-->
+                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"-->
+                <!--size="30"></ng-md-icon>-->
+                <!--<span>{{massage1Price1.$value}}</span>-->
+                <!--</div>-->
+                <!--<div>-->
+                <!--<ng-md-icon icon="access_time"-->
+                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"-->
+                <!--size="20"></ng-md-icon>-->
+                <!--<span>{{massage1Time2.$value}} min</span>-->
+                <!--</div>-->
 
-                                <!--<div class="price">-->
-                                    <!--<ng-md-icon icon="euro_symbol"-->
-                                                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"-->
-                                                <!--size="30"></ng-md-icon>-->
-                                    <!--<span>{{massage1Price2.$value}}</span>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
+                <!--<div class="price">-->
+                <!--<ng-md-icon icon="euro_symbol"-->
+                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"-->
+                <!--size="30"></ng-md-icon>-->
+                <!--<span>{{massage1Price2.$value}}</span>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
 
-                        <!--<div class="spa-box">-->
-                            <!--<button class="btn show-more" ng-click="toggle=!toggle">{{toggle ? 'Menej' : 'Zobraziť viac'}}</button>-->
-                        <!--</div>-->
-
-
-                        <!--<div class="spa-box" ng-show="toggle">-->
-                            <!--<h4 translate>Intuitívna masáž</h4>-->
-                            <!--<span>{{massageText3}}</span>-->
-
-                            <!--<div class="prices-box">-->
-                                <!--<div>-->
-                                    <!--<ng-md-icon icon="access_time"-->
-                                                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"-->
-                                                <!--size="20"></ng-md-icon>-->
-                                    <!--<span>{{massage2Time1.$value}} min</span>-->
-                                <!--</div>-->
-
-                                <!--<div class="price">-->
-                                    <!--<ng-md-icon icon="euro_symbol"-->
-                                                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"-->
-                                                <!--size="30"></ng-md-icon>-->
-                                    <!--<span>{{massage2Price1.$value}}</span>-->
-                                <!--</div>-->
-                                <!--<div>-->
-                                    <!--<ng-md-icon icon="access_time"-->
-                                                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"-->
-                                                <!--size="20"></ng-md-icon>-->
-                                    <!--<span>{{massage2Time2.$value}} min</span>-->
-                                <!--</div>-->
-
-                                <!--<div class="price">-->
-                                    <!--<ng-md-icon icon="euro_symbol"-->
-                                                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"-->
-                                                <!--size="30"></ng-md-icon>-->
-                                    <!--<span>{{massage2Price2.$value}}</span>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="spa-box" ng-show="toggle">-->
-                            <!--<h4 translate>Bankovanie</h4>-->
-                            <!--<span>{{massageText4}}</span>-->
-                            <!--<div class="prices-box">-->
-                                <!--<div>-->
-                                    <!--<ng-md-icon icon="access_time"-->
-                                                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"-->
-                                                <!--size="20"></ng-md-icon>-->
-                                    <!--<span>{{massage3Time1.$value}} min</span>-->
-                                <!--</div>-->
-
-                                <!--<div class="price">-->
-                                    <!--<ng-md-icon icon="euro_symbol"-->
-                                                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"-->
-                                                <!--size="30"></ng-md-icon>-->
-                                    <!--<span>{{massage3Price1.$value}}</span>-->
-                                <!--</div>-->
-                                <!--<div>-->
-                                    <!--<ng-md-icon icon="access_time"-->
-                                                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"-->
-                                                <!--size="20"></ng-md-icon>-->
-                                    <!--<span>{{massage3Time2.$value}} min</span>-->
-                                <!--</div>-->
-
-                                <!--<div class="price">-->
-                                    <!--<ng-md-icon icon="euro_symbol"-->
-                                                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"-->
-                                                <!--size="30"></ng-md-icon>-->
-                                    <!--<span>{{massage3Price2.$value}}</span>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="spa-box" ng-show="toggle">-->
-                            <!--<h4 translate>Relaxačná / Aromatická masáž</h4>-->
-                            <!--<span>{{massageText5}}</span>-->
-                            <!--<div class="prices-box">-->
-                                <!--<div>-->
-                                    <!--<ng-md-icon icon="access_time"-->
-                                                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"-->
-                                                <!--size="20"></ng-md-icon>-->
-                                    <!--<span>{{massage4Time1.$value}} min</span>-->
-                                <!--</div>-->
-
-                                <!--<div class="price">-->
-                                    <!--<ng-md-icon icon="euro_symbol"-->
-                                                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"-->
-                                                <!--size="30"></ng-md-icon>-->
-                                    <!--<span>{{massage4Price1.$value}}</span>-->
-                                <!--</div>-->
-                                <!--<div>-->
-                                    <!--<ng-md-icon icon="access_time"-->
-                                                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"-->
-                                                <!--size="20"></ng-md-icon>-->
-                                    <!--<span>{{massage4Time2.$value}} min</span>-->
-                                <!--</div>-->
-
-                                <!--<div class="price">-->
-                                    <!--<ng-md-icon icon="euro_symbol"-->
-                                                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"-->
-                                                <!--size="30"></ng-md-icon>-->
-                                    <!--<span>{{massage4Price2.$value}}</span>-->
-                                <!--</div>-->
-                            <!--</div>-->
-
-                        <!--</div>-->
-                        <!--<div class="spa-box" ng-show="toggle">-->
-                            <!--<h4 translate>Športová masáž</h4>-->
-                            <!--<span>{{massageText6}}</span>-->
-                            <!--<div class="prices-box">-->
-                                <!--<div>-->
-                                    <!--<ng-md-icon icon="access_time"-->
-                                                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"-->
-                                                <!--size="20"></ng-md-icon>-->
-                                    <!--<span>{{massage5Time1.$value}} min</span>-->
-                                <!--</div>-->
-
-                                <!--<div class="price">-->
-                                    <!--<ng-md-icon icon="euro_symbol"-->
-                                                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"-->
-                                                <!--size="30"></ng-md-icon>-->
-                                    <!--<span>{{massage5Price1.$value}}</span>-->
-                                <!--</div>-->
-                                <!--<div>-->
-                                    <!--<ng-md-icon icon="access_time"-->
-                                                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"-->
-                                                <!--size="20"></ng-md-icon>-->
-                                    <!--<span>{{massage5Time2.$value}} min</span>-->
-                                <!--</div>-->
-
-                                <!--<div class="price">-->
-                                    <!--<ng-md-icon icon="euro_symbol"-->
-                                                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"-->
-                                                <!--size="30"></ng-md-icon>-->
-                                    <!--<span>{{massage5Price2.$value}}</span>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="spa-box" ng-show="toggle">-->
-                            <!--<h4 translate>Myofasciálna masáž</h4>-->
-                            <!--<span>{{massageText7}}</span>-->
-                            <!--<div class="prices-box">-->
-                                <!--<div>-->
-                                    <!--<ng-md-icon icon="access_time"-->
-                                                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"-->
-                                                <!--size="20"></ng-md-icon>-->
-                                    <!--<span>{{massage6Time1.$value}} min</span>-->
-                                <!--</div>-->
-
-                                <!--<div class="price">-->
-                                    <!--<ng-md-icon icon="euro_symbol"-->
-                                                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"-->
-                                                <!--size="30"></ng-md-icon>-->
-                                    <!--<span>{{massage6Price1.$value}}</span>-->
-                                <!--</div>-->
-                                <!--<div>-->
-                                    <!--<ng-md-icon icon="access_time"-->
-                                                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"-->
-                                                <!--size="20"></ng-md-icon>-->
-                                    <!--<span>{{massage6Time2.$value}} min</span>-->
-                                <!--</div>-->
-
-                                <!--<div class="price">-->
-                                    <!--<ng-md-icon icon="euro_symbol"-->
-                                                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"-->
-                                                <!--size="30"></ng-md-icon>-->
-                                    <!--<span>{{massage6Price2.$value}}</span>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
+                <!--<div class="spa-box">-->
+                <!--<button class="btn show-more" ng-click="toggle=!toggle">{{toggle ? 'Menej' : 'Zobraziť viac'}}</button>-->
+                <!--</div>-->
 
 
+                <!--<div class="spa-box" ng-show="toggle">-->
+                <!--<h4 translate>Intuitívna masáž</h4>-->
+                <!--<span>{{massageText3}}</span>-->
 
-                    <!--</div>-->
-                    <!--<p><span class="odsek"></span>{{massageText8}}</p>-->
+                <!--<div class="prices-box">-->
+                <!--<div>-->
+                <!--<ng-md-icon icon="access_time"-->
+                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"-->
+                <!--size="20"></ng-md-icon>-->
+                <!--<span>{{massage2Time1.$value}} min</span>-->
+                <!--</div>-->
+
+                <!--<div class="price">-->
+                <!--<ng-md-icon icon="euro_symbol"-->
+                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"-->
+                <!--size="30"></ng-md-icon>-->
+                <!--<span>{{massage2Price1.$value}}</span>-->
+                <!--</div>-->
+                <!--<div>-->
+                <!--<ng-md-icon icon="access_time"-->
+                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"-->
+                <!--size="20"></ng-md-icon>-->
+                <!--<span>{{massage2Time2.$value}} min</span>-->
+                <!--</div>-->
+
+                <!--<div class="price">-->
+                <!--<ng-md-icon icon="euro_symbol"-->
+                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"-->
+                <!--size="30"></ng-md-icon>-->
+                <!--<span>{{massage2Price2.$value}}</span>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="spa-box" ng-show="toggle">-->
+                <!--<h4 translate>Bankovanie</h4>-->
+                <!--<span>{{massageText4}}</span>-->
+                <!--<div class="prices-box">-->
+                <!--<div>-->
+                <!--<ng-md-icon icon="access_time"-->
+                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"-->
+                <!--size="20"></ng-md-icon>-->
+                <!--<span>{{massage3Time1.$value}} min</span>-->
+                <!--</div>-->
+
+                <!--<div class="price">-->
+                <!--<ng-md-icon icon="euro_symbol"-->
+                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"-->
+                <!--size="30"></ng-md-icon>-->
+                <!--<span>{{massage3Price1.$value}}</span>-->
+                <!--</div>-->
+                <!--<div>-->
+                <!--<ng-md-icon icon="access_time"-->
+                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"-->
+                <!--size="20"></ng-md-icon>-->
+                <!--<span>{{massage3Time2.$value}} min</span>-->
+                <!--</div>-->
+
+                <!--<div class="price">-->
+                <!--<ng-md-icon icon="euro_symbol"-->
+                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"-->
+                <!--size="30"></ng-md-icon>-->
+                <!--<span>{{massage3Price2.$value}}</span>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="spa-box" ng-show="toggle">-->
+                <!--<h4 translate>Relaxačná / Aromatická masáž</h4>-->
+                <!--<span>{{massageText5}}</span>-->
+                <!--<div class="prices-box">-->
+                <!--<div>-->
+                <!--<ng-md-icon icon="access_time"-->
+                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"-->
+                <!--size="20"></ng-md-icon>-->
+                <!--<span>{{massage4Time1.$value}} min</span>-->
+                <!--</div>-->
+
+                <!--<div class="price">-->
+                <!--<ng-md-icon icon="euro_symbol"-->
+                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"-->
+                <!--size="30"></ng-md-icon>-->
+                <!--<span>{{massage4Price1.$value}}</span>-->
+                <!--</div>-->
+                <!--<div>-->
+                <!--<ng-md-icon icon="access_time"-->
+                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"-->
+                <!--size="20"></ng-md-icon>-->
+                <!--<span>{{massage4Time2.$value}} min</span>-->
+                <!--</div>-->
+
+                <!--<div class="price">-->
+                <!--<ng-md-icon icon="euro_symbol"-->
+                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"-->
+                <!--size="30"></ng-md-icon>-->
+                <!--<span>{{massage4Price2.$value}}</span>-->
+                <!--</div>-->
+                <!--</div>-->
+
+                <!--</div>-->
+                <!--<div class="spa-box" ng-show="toggle">-->
+                <!--<h4 translate>Športová masáž</h4>-->
+                <!--<span>{{massageText6}}</span>-->
+                <!--<div class="prices-box">-->
+                <!--<div>-->
+                <!--<ng-md-icon icon="access_time"-->
+                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"-->
+                <!--size="20"></ng-md-icon>-->
+                <!--<span>{{massage5Time1.$value}} min</span>-->
+                <!--</div>-->
+
+                <!--<div class="price">-->
+                <!--<ng-md-icon icon="euro_symbol"-->
+                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"-->
+                <!--size="30"></ng-md-icon>-->
+                <!--<span>{{massage5Price1.$value}}</span>-->
+                <!--</div>-->
+                <!--<div>-->
+                <!--<ng-md-icon icon="access_time"-->
+                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"-->
+                <!--size="20"></ng-md-icon>-->
+                <!--<span>{{massage5Time2.$value}} min</span>-->
+                <!--</div>-->
+
+                <!--<div class="price">-->
+                <!--<ng-md-icon icon="euro_symbol"-->
+                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"-->
+                <!--size="30"></ng-md-icon>-->
+                <!--<span>{{massage5Price2.$value}}</span>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="spa-box" ng-show="toggle">-->
+                <!--<h4 translate>Myofasciálna masáž</h4>-->
+                <!--<span>{{massageText7}}</span>-->
+                <!--<div class="prices-box">-->
+                <!--<div>-->
+                <!--<ng-md-icon icon="access_time"-->
+                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"-->
+                <!--size="20"></ng-md-icon>-->
+                <!--<span>{{massage6Time1.$value}} min</span>-->
+                <!--</div>-->
+
+                <!--<div class="price">-->
+                <!--<ng-md-icon icon="euro_symbol"-->
+                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"-->
+                <!--size="30"></ng-md-icon>-->
+                <!--<span>{{massage6Price1.$value}}</span>-->
+                <!--</div>-->
+                <!--<div>-->
+                <!--<ng-md-icon icon="access_time"-->
+                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"-->
+                <!--size="20"></ng-md-icon>-->
+                <!--<span>{{massage6Time2.$value}} min</span>-->
+                <!--</div>-->
+
+                <!--<div class="price">-->
+                <!--<ng-md-icon icon="euro_symbol"-->
+                <!--style="display: inline-block; position: relative; margin: 0 auto; fill: #e0232e;"-->
+                <!--size="30"></ng-md-icon>-->
+                <!--<span>{{massage6Price2.$value}}</span>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+
+
+
+                <!--</div>-->
+                <!--<p><span class="odsek"></span>{{massageText8}}</p>-->
 
                 <!--</section>-->
 
@@ -543,15 +562,97 @@
                     <div class="boxer">
                         <div class="spa-box">
                             <span translate>spa.treatment.1</span>
-                            <div class="prices-box">
-                                    <h4 translate>price</h4>
-                                    <span>{{saunaTime.$value}} min</span>
+                            <!-- <div class="prices-box">
+                                <h4 translate>price</h4>
+                                <span>{{saunaTime.$value}} min</span>
 
                                 <div class="price">
                                     <span>{{saunaPrice.$value}} €</span>
                                 </div>
+                            </div> -->
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-xs-12 col-md-2"></div>
+                        <div class="col-xs-12 col-md-8 no-padding">
+                            <div class="table-responsive">
+                                <table id="prices-spa" class="table table-bordered prices">
+                                    <tbody>
+                                         <tr>
+                                                <td colspan="2">
+                                                        <h4 translate>price.list</h4>
+                                                    </td>
+                                         </tr>
+                                         <tr>
+                                            <td>
+                                                <h4 translate>people</h4>
+
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    <span>{{saunaTime.$value}} min</span>
+                                                </h3>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                             <td>
+                                                <h3>
+                                                    <span>1</span>
+                                                </h3>
+                                            </td>
+                                            <td>
+                                                <h2>{{saunaPrice.$value}} €</h2>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h3>
+                                                    <span>2 </span>
+                                                </h3>
+                                            </td>
+                                            <td>
+                                                <h2>18,00 €</h2>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h3>
+                                                    <span>3</span>
+                                                </h3>
+                                            </td>
+                                            <td>
+                                                <h2>24,00 €</h2>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h3>
+                                                    <span>4</span>
+                                                </h3>
+                                            </td>
+                                            <td>
+                                                <h2>32,00 €</h2>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h3>
+                                                    <span>5 </span>
+                                                </h3>
+                                            </td>
+                                            <td>
+                                                <h2>40,00 €</h2>
+                                            </td>
+                                        </tr>
+                                    
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
+                        <div class="col-xs-12 col-md-2"></div>
                     </div>
                 </section>
 
@@ -567,21 +668,15 @@
                             <div class="book-wrap" ng-hide="bookFinnish">
 
                                 <div class="row">
-                                    <label class="wrap four label" for="treatment">
-                                        <ng-md-icon icon="spa"
-                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
-                                                    size="25px"></ng-md-icon>
-                                        <span translate>treatment</span>
-                                    </label>
+
                                     <div class="wrap four">
                                         <div class="input-wrap select">
-                                            <!--<select id="treatment" name="treatment"-->
-                                            <!--ng-model="treatment" ng-change="showPrice()"-->
-                                            <!--ng-options= "treatment.no as treatment.type for treatment in treatments">-->
-                                            <!--</select>-->
+                                            <label class="wrap four label" for="treatment">
+                                                <ng-md-icon icon="spa" style="display: inline-block; position: relative; fill: #f5eddc;" size="25px"></ng-md-icon>
+                                                <span translate>treatment</span>
+                                            </label>
 
-                                            <select id="treatment" name="treatment" ng-model="treatment"
-                                                    ng-change="checkPrices()" required>
+                                            <select id="treatment" name="treatment" ng-model="treatment" ng-change="checkPrices()" required>
                                                 <option value="" disabled selected hidden translate>select</option>
                                                 <option value="1" translate>wellness</option>
                                                 <option value="2" translate>Sauna</option>
@@ -591,17 +686,13 @@
                                     </div>
 
 
-
-                                    <label class="wrap four label" for="amount2" ng-show="treatment == 3">
-                                        <ng-md-icon icon="space_bar"
-                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
-                                                    size="25px"></ng-md-icon>
-                                        <span translate>type.of.massage</span>
-                                    </label>
                                     <div class="wrap four" ng-show="treatment == 3">
+                                        <label class="wrap four label" for="amount2" ng-show="treatment == 3">
+                                            <ng-md-icon icon="space_bar" style="display: inline-block; position: relative; fill: #f5eddc;" size="25px"></ng-md-icon>
+                                            <span translate>type.of.massage</span>
+                                        </label>
                                         <div class="input-wrap select">
-                                            <select id="massageType" name="massageType" ng-model="massageType"
-                                                    ng-change="checkPrices()">
+                                            <select id="massageType" name="massageType" ng-model="massageType" ng-change="checkPrices()">
                                                 <option value="" disabled selected hidden translate>select</option>
                                                 <option value="1" translate>classic.massage.short</option>
                                                 <option value="2" translate>classic.massage.long</option>
@@ -620,18 +711,16 @@
                                     </div>
 
 
-                                    <label class="wrap four label" for="amount">
-                                        <ng-md-icon icon="group"
-                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
-                                                    size="25px"></ng-md-icon>
-                                        <span translate>number.of.persons</span>
-                                    </label>
+
                                     <div class="wrap four">
+                                        <label class="wrap four label" for="amount">
+                                            <ng-md-icon icon="group" style="display: inline-block; position: relative; fill: #f5eddc;" size="25px"></ng-md-icon>
+                                            <span translate>number.of.persons</span>
+                                        </label>
                                         <div class="wrap four">
                                             <div class="input-wrap select">
 
-                                                <select id="amount" name="amount" ng-model="amount"
-                                                        ng-init="checkPrices()" ng-change="checkPrices()" required>
+                                                <select id="amount" name="amount" ng-model="amount" ng-init="checkPrices()" ng-change="checkPrices()" required>
                                                     <option value="" disabled selected hidden translate>select</option>
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
@@ -650,25 +739,15 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <label class="wrap four label" for="amount2" ng-show="treatment == 1">
-                                        <ng-md-icon icon="space_bar"
-                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
-                                                    size="25px"></ng-md-icon>
-                                        <span translate>number.of.bathtubs</span>
-                                    </label>
+
                                     <div class="wrap four" ng-show="treatment == 1">
+                                        <label class="wrap four label" for="amount2" ng-show="treatment == 1">
+                                            <ng-md-icon icon="space_bar" style="display: inline-block; position: relative; fill: #f5eddc;" size="25px"></ng-md-icon>
+                                            <span translate>number.of.bathtubs</span>
+                                        </label>
                                         <div class="input-wrap select">
 
-                                            <!--<select id="amount2" ng-model="filterCondition.bath" ng-change="checkPrices()">-->
-                                            <!--<option ng-selected="{{bath.value == filterCondition.bath}}"-->
-                                            <!--ng-repeat="bath in baths"-->
-                                            <!--value="{{bath.value}}" translate>-->
-                                            <!--{{bath.displayName}}-->
-                                            <!--</option>-->
-                                            <!--</select>-->
-
-                                            <select id="amount2" name="amount2" ng-model="amount2"
-                                                    ng-change="checkPrices()" ng-required="treatment == 1">
+                                            <select id="amount2" name="amount2" ng-model="amount2" ng-change="checkPrices()" ng-required="treatment == 1">
                                                 <option value="" disabled selected hidden translate>select</option>
                                                 <option ng-if="amount >= 1 && amount <= 2" value="1">1</option>
                                                 <option ng-if="amount >= 2 && amount <= 4" value="2">2</option>
@@ -681,30 +760,26 @@
 
                                 <!-- time and Date -->
                                 <div class="row">
-                                    <label class="wrap four label" for="date">
-                                        <ng-md-icon icon="date_range"
-                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
-                                                    size="25px"></ng-md-icon>
-                                        <span translate>date</span>
-                                    </label>
+
                                     <div class="wrap four">
+                                        <label class="wrap four label" for="date">
+                                            <ng-md-icon icon="date_range" style="display: inline-block; position: relative; fill: #f5eddc;" size="25px"></ng-md-icon>
+                                            <span translate>date</span>
+                                        </label>
                                         <div class="input-wrap">
-                                            <datepicker date-format="MM/dd/yyyy" date-week-start-day="1"
-                                                        datepicker-mobile="true">
-                                                <input id="date" class="date" type="text" ng-model="date"
-                                                       placeholder="* vyberte" ng-change="checkTimes()" required/>
+                                            <datepicker date-format="MM/dd/yyyy" date-week-start-day="1" datepicker-mobile="true">
+                                                <input id="date" class="date" type="text" ng-model="date" placeholder="{{ 'select' | translate}}" ng-change="checkTimes()"
+                                                    required/>
                                             </datepicker>
                                         </div>
                                     </div>
 
-                                    <label class="wrap four label" for="termin" ng-show="dateSelected">
-                                        <ng-md-icon icon="access_time"
-                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
-                                                    size="25px"></ng-md-icon>
-                                        <span translate>time</span>
-                                    </label>
-                                    <div class="wrap four" ng-show="dateSelected">
-                                        <div class="input-wrap select">
+                                    <div class="wrap four">
+                                        <label class="wrap four label" for="termin" ng-show="dateSelected">
+                                            <ng-md-icon icon="access_time" style="display: inline-block; position: relative; fill: #f5eddc;" size="25px"></ng-md-icon>
+                                            <span translate>time</span>
+                                        </label>
+                                        <div class="input-wrap select" ng-show="dateSelected">
                                             <select id="termin" name="termin" ng-model="termin" required ng-hide="hideMeAll">
                                                 <option value="" disabled selected hidden translate>select</option>
                                                 <option ng-if="spaTime1.$value" ng-hide="hideMe1" value="{{spaTime1.$value}}">
@@ -768,100 +843,83 @@
 
                                 <div class="row">
 
-                                    <label class="wrap label" for="name">
-                                        <ng-md-icon icon="person"
-                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
-                                                    size="25px"></ng-md-icon>
-                                        <span translate>name.and.surname</span>
-                                    </label>
+
                                     <div class="wrap">
+                                        <label class="wrap label" for="name">
+                                            <ng-md-icon icon="person" style="display: inline-block; position: relative; fill: #f5eddc;" size="25px"></ng-md-icon>
+                                            <span translate>name.and.surname</span>
+                                        </label>
                                         <div class="input-wrap input">
-                                            <input id="name" type="text" name="name" ng-model="name"
-                                                   class="form-control" required/>
+                                            <input id="name" type="text" name="name" ng-model="name" class="form-control" required/>
                                         </div>
                                     </div>
-                                    <label class="wrap label" for="email">
-                                        <ng-md-icon icon="email"
-                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
-                                                    size="25px"></ng-md-icon>
-                                        <span translate>email</span>
-                                    </label>
+
                                     <div class="wrap">
+                                        <label class="wrap label" for="email">
+                                            <ng-md-icon icon="email" style="display: inline-block; position: relative; fill: #f5eddc;" size="25px"></ng-md-icon>
+                                            <span translate>email</span>
+                                        </label>
                                         <div class="input-wrap input">
-                                            <input id="email" type="email" name="email" ng-model="email"
-                                                   class="form-control" required/>
+                                            <input id="email" type="email" name="email" ng-model="email" class="form-control" required/>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <label class="wrap label" for="phone">
-                                        <ng-md-icon icon="phone"
-                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
-                                                    size="25px"></ng-md-icon>
-                                        <span translate>phone</span>
-                                    </label>
+
                                     <div class="wrap">
+                                        <label class="wrap label" for="phone">
+                                            <ng-md-icon icon="phone" style="display: inline-block; position: relative; fill: #f5eddc;" size="25px"></ng-md-icon>
+                                            <span translate>phone</span>
+                                        </label>
                                         <div class="input-wrap input">
-                                            <input id="phone" type="text" name="phone" ng-model="phone"/>
+                                            <input id="phone" type="text" name="phone" ng-model="phone" />
                                         </div>
                                     </div>
-                                    <label class="wrap label" for="text">
-                                        <ng-md-icon icon="textsms"
-                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
-                                                    size="25px"></ng-md-icon>
-                                        <span translate>note</span>
-                                    </label>
+
                                     <div class="wrap">
+                                        <label class="wrap label" for="text">
+                                            <ng-md-icon icon="textsms" style="display: inline-block; position: relative; fill: #f5eddc;" size="25px"></ng-md-icon>
+                                            <span translate>note</span>
+                                        </label>
                                         <div class="input-wrap input">
-                                            <input id="text" type="text" name="text" ng-model="text"/>
+                                            <input id="text" type="text" name="text" ng-model="text" />
                                         </div>
-                                    </div>                                    
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="book-wrap" ng-hide="bookFinnish">
-    
-                                    <div class="row">
-                                        <label class="wrap label suhlas" for="suhlas">
-                                                <input type="checkbox" name="suhlas" id="suhlas" ng-model="suhlas" required>
-                                                <span translate>agree.terms</span>
-                                        </label>
-                                        <br>
-                                        <label class="wrap label" for="price" ng-hide="!treatment && !amount">
-                                            <ng-md-icon icon="local_offer"
-                                                        style="display: inline-block; position: relative; fill: #f5eddc;"
-                                                        size="25px"></ng-md-icon>
-                                            <span translate>price</span>
-                                        </label>
-    
-                                        <div id="price" class="wrap form-price" ng-hide="!treatment && !amount">
-                                            <h1 ng-if="!finalPrice"><span> 0.00 &euro;</span></h1>
-                                            <h1 ng-if="finalPrice"><span> {{finalPrice}}.00 &euro;</span></h1>
-                                        </div>
-
-                                    </div>
-                                    <div class="row">
-                                            <h5 class="link-button phone" ng-show="!spaBookForm.$valid" translate>
-                                                    please.fill.all.data</p>
-                                    </div>
-                                    
+                            <div class="book-wrap" ng-hide="bookFinnish || loader || showError" style="margin: 1em auto;">
+                                <div class="row">
+                                    <input type="checkbox" name="suhlas" id="suhlas" ng-model="suhlas" required>
+                                    <label class="wrap label gdpr-label check" for="suhlas">
+                                        <p translate>gdpr.text.normal</p>
+                                        <a ng-href="#!/gdpr" target="_self" translate>privacy.policy</a>
+                                    </label>
                                 </div>
+                            </div>
+                            <div class="prices-box" ng-if="finalPrice" ng-hide="!treatment && !amount">
+                                <h4 translate>price</h4>
+                                <div class="price">
+                                    <span ng-if="finalPrice"> {{finalPrice}}.00 &euro;</span>
+                                </div>
+                            </div>
 
                             <div class="booking-done" ng-show="bookFinnish">
                                 <ng-md-icon icon="check_circle" style="display: block; position: relative;
                                             background: #78fa89; border-radius: 50%;
-                                            width: 150px; height:150px;fill: rgb(43, 42, 41);"
-                                            size="150"></ng-md-icon>
-                                    <h4 translate>booking.text.1</h4>
-                                    <h4 translate>booking.text.2</h4>
+                                            width: 150px; height:150px;fill: rgb(43, 42, 41);" size="150"></ng-md-icon>
+                                <h4 translate>booking.text.1</h4>
+                                <h4 translate>booking.text.2</h4>
                             </div>
 
                             <div class="book-wrap" ng-hide="bookFinnish">
                                 <div class="actions">
+                                    <p class="link-button phone" ng-show="!spaBookForm.$valid" translate>
+                                        please.fill.all.data</p>
 
-                                    <button ng-click="formsubmit(spaBookForm)" ng-disabled="!spaBookForm.$valid"
-                                            class="btn-next btn-submit">
+                                    <button ng-click="formsubmit(spaBookForm)" ng-disabled="!spaBookForm.$valid" class="btn-next btn-submit" ng-hide="loader || showError"
+                                        du-smooth-scroll="register">
                                         <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
                                         <span translate>book.now</span>
                                     </button>
@@ -880,7 +938,7 @@
                             <div class="day monday" ng-class="{'today' : todayName == 'monday' }">
                                 <span translate>monday</span>
                                 <span class="time1" ng-if="spaMonTimeFrom.$value">{{spaMonTimeFrom.$value}}</span>
-                                <span class="time3" ng-if="!spaMonTimeFrom.$value"  style="text-align: center" translate>closed</span>
+                                <span class="time3" ng-if="!spaMonTimeFrom.$value" style="text-align: center" translate>closed</span>
                                 <span class="time2" ng-if="spaMonTimeTo.$value">{{spaMonTimeTo.$value}}</span>
                             </div>
                             <div class="day tuesday" ng-class="{'today' : todayName == 'tuesday' }">
@@ -920,10 +978,11 @@
                     <br>
                     <br>
                     <h2 class="sub-title align-center ">
-                            <br>
+                        <br>
                         <b translate>spa.text.5</b>
                         <br>
-                        <b translate>spa.text.6</b></h2>
+                        <b translate>spa.text.6</b>
+                    </h2>
 
                 </section>
 
@@ -933,20 +992,16 @@
 
                     <div class="info">
                         <div class="item">
-                            <ng-md-icon icon="settings_phone" class="icon"
-                                        style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;"
-                                        size="3em"></ng-md-icon>
+                            <ng-md-icon icon="settings_phone" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;"
+                                size="3em"></ng-md-icon>
                             <a href="tel:00421948028025">(+421) 0948 028 025</a>
                         </div>
                         <div class="item">
-                            <ng-md-icon icon="mail_outline" class="icon"
-                                        style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;"
-                                        size="3em"></ng-md-icon>
+                            <ng-md-icon icon="mail_outline" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;" size="3em"></ng-md-icon>
                             <a href="mailto:spa&#64minipivovartatras&#46sk" class="email">spa@minipivovartatras.sk</a>
                         </div>
                         <div class="item" style="float: none; padding-top: 1em;">
-                            <ng-md-icon icon="facebook" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;"
-                                        size="3em"></ng-md-icon>
+                            <ng-md-icon icon="facebook" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;" size="3em"></ng-md-icon>
                             <a href="https://www.facebook.com/minipivovartatras" class="email">fb.com/minipivovartatras</a>
                         </div>
                     </div>
@@ -956,14 +1011,10 @@
                 <div ng-include="'templates/footer.html'"></div>
                 <!-- end of FOOTER include -->
 
-            </div><!-- content-wraper -->
-        </div><!-- /right-content -->
+            </div>
+            <!-- content-wraper -->
+        </div>
+        <!-- /right-content -->
 
     </div>
 </div>
-
-
-
-
-
-

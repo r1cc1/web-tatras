@@ -28,12 +28,14 @@
   "november" : "november",
   "december" : "december",
 
+  "slovakia" : "Slovakia",
   "call.us" : "Call us",
   "welcome" : "Welcome!",
   "book.now" : "Book Now",
   "open.hours" : "Open Hours",
   "about.us" : "About us",
   "contact" : "Contact",
+  "contact.us" : "Contact us",
   "name" : "name",
   "surname" : "surname",
   "your.name" : "your name",
@@ -48,7 +50,7 @@
   "today" : "today",
   "amount" : "amount",
   "note" : "note",
-  "select" : "*select",
+  "select" : "* select",
   "any" : "any",
   "person" : "person",
   "per.person" : "per person",
@@ -72,9 +74,59 @@
   "register": "Register",
   "this.time.is.close": "At this time we are closed",
   "privacy.policy" : "Privacy Policies",
+  "gdpr.text.normal": "I agree with the processing and storage of my personal data in Minipivovar TATRAS Ltd., Poprad. The provision of the data is voluntary and without consequence, the data being used for reservation or online booking of our services. ",
+  
   "gdpr.text.sutaz": "I agree with the processing and storage of my personal data in Minipivovar TATRAS Ltd., Poprad. The provision of the data is voluntary and without consequence, the data being used for registration in this competition. ",
-
+  "sutaz.title": "Best Slovak beer spirit",
+  "sutaz.full.title": "Competition „Best Slovak beer spirit 2019”",
+  "become.taster": "Become a taster!",
   "sutaz": "Competition",
+  "sutaz.statut": "Competition status",
+  "sutaz.prices": "Prices",
+  "riaditel.sutaze": "Competition Director",
+  "registration.form": "Registration form",
+  "your.voting": "Your voting",
+  "enter.your.rating": "enter your rating",
+  "degustation.set.code": "Code of Degustation set",
+
+  "1.miesto": "1.place",
+  "2.miesto": "2.place",
+  "3.miesto": "3.place",
+  "4.miesto": "4.place",
+  "5.miesto": "5.place",
+  
+
+  "sutaz.text.1": "Competition “Best Slovak beer spirit 2019”. Join unique competition in which you can decide which spirit is the tastiest. Help us find the best beer spirit and win interesting prices!",
+  "sutaz.text.2": "Degustation set of 5 different slovak beer spirit brands.",
+
+  "sutaz.statut.1": "The annoucer of the competition is Minibrewery Tatras s. r. o., Námestie sv. Egídia 60, 058 01 Poprad, represented by the executive manager Bc. Lukáš Vdovjak.",
+  "sutaz.statut.2": "The competition will be held in Minibrewery Tatras from 16:00, 3. 8. 2018, until the 23:59, 31. 12. 2019. The competition can be attended by any person who had reached the age of 18 years and fulfills all the conditions laid down in this statue. The contestant will fulfill the conditions of the competition by a purchasing a tasting set, fill out the evaluation sheet and registering the order on the website of announcer. ",
+  "sutaz.statut.3": "The purpose of this competition is to compare and evaluate which beer spirits, from the Slovak producers, consumers most likes and create tradition of this form of competition. ",
+  "sutaz.statut.4": "The initial evaluation will be carrier out by two evaluation committees. The first tasting committee will be created by members of the Slovak Order of Knights of Spirits, the second tasting committee will be nominated by a local expert. Each member of committees evaluates the samples anonymously and separately. The function of the evaluator is fruitless, honest and irreplaceable. After the evaluation of these committees will be announced a year-long tasting contest for the general public - hosts by Tatras restaurant. The competition takes place in the form of anonymous tasting, while maintaining maximum objectivity and independence. ",
+  "sutaz.statut.5": "The subject of the competition is the tasting of five samples of the beer from Slovak producers, their evaluation and ranking from the most delicious to the least tasty. ",
+  "sutaz.statut.6": "The announcement of the results of this tender and the results of the evaluation of both committees will take place together with the winners drawing on 5. 1. 2019 in the Tatras restaurant. ",
+  "sutaz.statut.7": "The degustator will receive an access code, a tasting set, and a score sheet. The tasting set consists of 5 pieces of anonymous samples filled in glass cups - each with a volume of 0.015 l. The degustator gives the winner of his rating 1 point. At the end of the competition, the points will be counted together and the overall winner becomes the beer spirit that has earned the most points. ",
+  "sutaz.statut.8": "By participating in the competition, the competitor agrees to thes status. If a person disagrees with any of the conditions or points in this statue, he shall not take part in the sompetition. ",
+  "sutaz.statut.9": "The announcer reserves the right at any time to change the status or to cancel the contest. Changes of the status or cancellation of the competition will be published by announcer on their website. If there was something not clear regarding the terms of the competition or the provision of the statue, the announcer reserves rights to clarify these ambiguities or changes in the status. The announcer is not responsible for any damages incurred by the winner in connection with the accepted prizes. ",
+
+  "sutaz.price.1": "Weekend stay in guest house TATRAS for 2 person",
+  "sutaz.price.2": "Entry into the Beer SPA TATRAS for 2 person",
+  "sutaz.price.3": "Bottle of the beer spirit Jacobus Emerici 0.5 l",
+  "sutaz.price.4": "The set of five TATRAS beer bottles each 1.0 l",
+  "sutaz.price.5": "Gift set of beer cosmetics TATRAS",
+  "sutaz.price.6": "Book “Etikety from Spišská Belá and Poprad”",
+  "sutaz.price.7": "Gift voucher for tasting of beer spirit",
+  "sutaz.price.8": "Gift voucher for tasting of TATRAS beer",
+
+  "sutaz.price.text.1": "The value of every price is lower than 350,- eur, what means that it is not subject for income tax. The winner is losing claim for price if he does not take over the price until 30 days from announcement of winners. Winners will be contacted by email within 3 days after the draw. Handover of price will be held on the place and at the time agreed between announcer and winner. ",
+  "sutaz.price.text.2": "The winner has no legal claim on the price and can not be enforced by the law. Every competitor will provide to the announcer his personal information in the extent necessary to identify him and to be able to contact him in case of winning. If the participant will be chosen as a winner and he will gain the price, the announcer can share the name and surname of winner with connection with the winning prize. ",
+
+  
+
+  
+
+
+  
   "minipivovar": "Minibrewery",
   "restaurant": "Restaurant",
   "pension": "Guest house",
@@ -135,11 +187,11 @@
   "glasses": "Glasses",
   "etikety": "Labels",
   "pivne.tacky": "Beer coaster",
-  "tatras.slad": "Tatras roasted malt",
+  "TATRAS.slad": "TATRAS roasted malt",
   "kozmetika": "Beer cosmetics",
   "pivna.karta" : "Beer Card",
-  "ako.sa.vari.tatras" : "How is TATRAS made",
-  "prehliadka.pivovaru" : "Tour of minibrewery",
+  "ako.sa.vari.TATRAS" : "How is TATRAS made",
+  "prehliadka.pivovaru" : "Tour of brewery",
   "cena.prehliadky" : "Tour price",
   "nonseason.season" : "nonseason - season",
   "booking.text.1" : "Thank you for your interest, your reservation has been sent",
@@ -184,7 +236,7 @@
   
 
   "spa.text.1" : "Where else should be a beer spa, if not right in the brewery? Already in the Middle Ages were Beer spas favorite and efficient theraphy. Natural ingredients are: hops, extract from brewer draff, yeast. It has healing effect and it prevents against diseases. The beer bath clears skin, improves health of hair, relaxes muscles and supports immune system. Beer yeast and substances contained in beer transmit vitamins B to your body. Proteins and minerals contribute to softening and regenerating skin with youthful effect, treat acne and cellulitis. ",
-  "spa.text.2" : "The space of beer spas will pleased your eye not just with modern interior. You can enjoy clearing processes, which will refresh you in this pleasant environment. Rest supports absorption of vitamins and extracts from previous bath. For longer effect is recommended to be without shower after the beer bath. You can experience true beer bath for two people in one bath. You will never forget this experience. You  lay in a bath and , by the way,you can tap and drink  beer. Isn't that perfect? Dour baths are available, whether for individuals or couples. Capacity for beer spa is maximum 8 people. As a supplement service we offer massage, wrap or mask from beer yeast. ",
+  "spa.text.2" : "The space of beer spas will pleased your eye not just with modern interior. You can enjoy clearing processes, which will refresh you in this pleasant environment. Rest supports absorption of vitamins and extracts from previous bath. For longer effect is recommended to be without shower after the beer bath. You can experience true beer bath for two people in one bath. You will never forget this experience. You  lay in a bath and , by the way,you can tap and drink  beer. Isn't that perfect? Dour baths are available, whether for individuals or couples. Capacity for beer spa is maximum 8 people. As a supplement service we offer wrap or mask from beer yeast. ",
   "spa.text.3" : "For maximal relaxation we recommend to turn off your mobile phone and your mind. You do not need to take anything with you. We provide everything what is necessary: towels, sheets, slippers… Whole space of a beer spa procedure will be private - just yours. Our staff will introduce and explain  you the whole process. After that, nobody will disturb you. ",
   "spa.text.4" : "We do not recommend beer spas to pregnant women, people with high blood pressure, heart diseases and open skin diseases. Persons allergic to protein, yeasts and hops should ask for recommendation from their doctor. ",
   "spa.text.5" : "After our procedures you can say to your friends:",
@@ -199,7 +251,7 @@
   "spa.treatment.3" : "beer bead bath - the temperature is 38 °C",  
 
   "tapping.of.beer": "tapping of a beer",
-  "spa.treatment.4" : "During procedure you can tap chilled beer Tatras by yourself. Yeast beer contains live cultures of beer yeasts, which have a positive effect for digestion. Treatment acts on the body from outside and from inside also. After drinking beer, you can taste our fresh homemade beer bread with fat.",  
+  "spa.treatment.4" : "During procedure you can tap chilled beer TATRAS by yourself. Yeast beer contains live cultures of beer yeasts, which have a positive effect for digestion. Treatment acts on the body from outside and from inside also. After drinking beer, you can taste our fresh homemade beer bread with fat.",  
 
   "oat.bed": "oat bed",
   "spa.treatment.5" : "Rest on the bed from true wheat straw bed aimed to relaxing from tension, exhaustion and stress."  ,
@@ -209,26 +261,26 @@
   "history.text.2" : "Lukáš Vdovjak, native from Poprad, came with the idea of establishing his own mini brewery during his University study in Ostrava. Lukáš doesn't like the taste of dull beers of multinational corporations. He started to explore Czech micro breweries which produced totally different tasting beers - tastier, fuller, fragrant,  more colorful. ",
   "history.text.3" : "In the old house situated in the town square is a seat of a family firm . Lukáš suggested to his father to grasp house and rebuild it into a restaurant based minibrewery. In cooperation with his father (also a lover of excellent beer), experienced entrepreneur, compiled the feasibility study, which Lukáš chose to  his bachelor thesis. Lukáš, as a “homebrewer” tried to brew his first beer. He found out, that it is extremely hard to brew quality beer in “garage conditions”. He also felt, that he needed to gain more knowledge. Lukáš signed himself and his father to educational programme Maltster - Brewer, provided by The Slovak Chamber of Commerce in 2014. Lukáš became the youngest and his father the oldest student of this programme at Slovak Agriculture University in Nitra. During study both of them were preparing projects and starting with reconstruction and new extension of the  house with their goal to build a restaurant based minibrewery. Dream of owning minibrewery and producing the true beer has started to come true. Lukáš established his own firm, he  rented the part of a house and asked for a loan. Lukáš  was  getting more knowledge by studying at Slovak Technological University - Faculty of Chemical and Food Technology in Sensory Assessment of Beer Module and he became  a beer sommelier. ",
   "history.text.4" : "First brew batch bottom fermented light lager of Plzen type was brewed by Ing. Ján Koma and Bc. Lukáš Vdovjak in a new established minibrewery 30th September of 2015. They called it “Odležiak”. Brewing technology was already installed, but the building was still in reconstruction, so the already brewed beer would be waiting for another year, until the 8th September of 2016, when the restaurant was put into the test run. Beer was magnificent, the beer tank with capacity of 5 000 big glasses of tap beer disappeared in one month. ",
-  "history.text.5" : "Minibrewery Tatras started brew bottom and upper fermented beers - lagers and ALEs. Tatras observes the Beer Purity Act from 1516 - First Act about food beverages in world, released and signed by Bavarian Duke William IV. The Act determinants, that beer can be produced only from water, barley or wheat malt, hops, by help of brewer's yeast. ",
+  "history.text.5" : "Minibrewery TATRAS started brew bottom and upper fermented beers - lagers and ALEs. TATRAS observes the Beer Purity Act from 1516 - First Act about food beverages in world, released and signed by Bavarian Duke William IV. The Act determinants, that beer can be produced only from water, barley or wheat malt, hops, by help of brewer's yeast. ",
 
-  "brewery.text.2" : "All beers brewed in Tatras have a secret recipe. Beers are neither pasteurized  nor filtered to preserve the unique taste and scent. Preservative substances, ingredients, malt substitutes, flavorings, aromas, foam stabilizers or dyes are not used. Tatras does not thin beer with water as big breweries. Our beer stays live and full of vitamins. It does not have wit hold on for ages, but it has to have real taste, it has to be:",
+  "brewery.text.2" : "All beers brewed in TATRAS have a secret recipe. Beers are neither pasteurized  nor filtered to preserve the unique taste and scent. Preservative substances, ingredients, malt substitutes, flavorings, aromas, foam stabilizers or dyes are not used. TATRAS does not thin beer with water as big breweries. Our beer stays live and full of vitamins. It does not have wit hold on for ages, but it has to have real taste, it has to be:",
   "brewery.text.3" : "„different beer than others“",
   "brewery.text.4" : "How is TATRAS beer brewed",
-  "brewery.text.5" : "Carefully chosen barley or wheat malt is scraped and in stainless brewhouse is mixed with water. Crystal Tatras water is gained from our own deep drilling in the lager cellar. During the brewing process we are adding different types of hops. Brewed young beer is chilled and pumped into fermentation tank, where are already waiting brewer's yeast at the bottom. They starts to consume, in young beer, sugars and convert them into alcohol, carbon dioxide and heat. After the end of fermentation we overdraw beer to the lager tank and we let it rip. We use yeast in beer spa. Tank is attached by beer supply to the cockpit on the bar. Every beer is unique, brewed by its own recipe.",
+  "brewery.text.5" : "Carefully chosen barley or wheat malt is scraped and in stainless brewhouse is mixed with water. Crystal TATRAS water is gained from our own deep drilling in the lager cellar. During the brewing process we are adding different types of hops. Brewed young beer is chilled and pumped into fermentation tank, where are already waiting brewer's yeast at the bottom. They starts to consume, in young beer, sugars and convert them into alcohol, carbon dioxide and heat. After the end of fermentation we overdraw beer to the lager tank and we let it rip. We use yeast in beer spa. Tank is attached by beer supply to the cockpit on the bar. Every beer is unique, brewed by its own recipe.",
 
-  "brewery.text.6" : "In the Middle Ages was the Beer spirit favorite drink. Nowadays, almost nobody knows that it exists. Top brewer of Minipivovar Tatras, s. r. o., Bc. Lukáš Vdovjak decided to revive this traditional Beer spirit. Exactly for this purpose he brewed top fermented beer Tatras IPA (India pale ale) 14°. After lying down was this unpasteurized, unfiltered beer without any chemicals and preservatives or aromas moved to Tatranskej likérky, s. r. o. From this great drink was burned-out beer spirit by slow vacuum distillation at low temperature. For one liter of this alcohol we consumed 18 liters of beer, what is responsible for reasonable price.",
+  "brewery.text.6" : "In the Middle Ages was the Beer spirit favorite drink. Nowadays, almost nobody knows that it exists. Top brewer Bc. Lukáš Vdovjak decided to revive this traditional Beer spirit. Exactly for this purpose he brewed top fermented beer TATRAS IPA (India pale ale) 14°. After lying down was this unpasteurized, unfiltered beer without any chemicals and preservatives or aromas moved to Tatranskej likérky, s. r. o. From this great drink was burned-out beer spirit by slow vacuum distillation at low temperature. For one liter of this alcohol we consumed 18 liters of beer, what is responsible for reasonable price.",
   "brewery.text.7" : "This unique spirit is the real soul of beer. We recommended to cool it on 18°C. The beer will charm you by its onliest smell of beer foam and appetizing malty taste. Its sparkly and limpy that there is no need to drink it down. Otherwise, a long time after drinking this spirit you will feel pleasantly bitter taste of hops. Enjoy every glass twice. Drink little but excellent quality. Quality spirit is surely the Jacobus Emerici. You will not have a hangover from this drink. We provide it as a perfect unknown gift for your friends. You will talk with them for a long time, you will be excited from it, tasting it and comparing it with other spirits.",
   "brewery.text.8" : "We are offering to you the tour of our minibrewery with interpretation, during which you will be able to taste our beer directly from the tank. ",
   "brewery.text.9" : "Reservation is needed to be done at least one day before. The minimum number of participants is 5 people, and maximum of 15 people during one tour.",
 
-  "pension.text.1" : "Guest house is located in the centre of Poprad, on the 1 stupward floor of Minibrewery and Restaurant Tatras, next to beer spa. There are 4 comfortable, spacious and fully furnished rooms. The maximum capacity is 11 guests. It offers oasis of tranquility / peaceand perfect privacy.",
+  "pension.text.1" : "Guest house is located in the centre of Poprad, on the 1 stupward floor of Minibrewery and Restaurant TATRAS, next to beer spa. There are 4 comfortable, spacious and fully furnished rooms. The maximum capacity is 11 guests. It offers oasis of tranquility / peaceand perfect privacy.",
   "pension.text.2" : "All rooms are fully furnished with LED TV, Wi-Fi internet, fridge with minibar, bathroom with a shower, hairdryer and toilet. A beauty salon, tailoring, goldsmith are situated in the building. Available is also private parking spot secured by camera system, charged by ",
   "pension.text.3" : "Would you like to rent room for a month or more? It is possible! You will feel like at home. ",
   "pension.text.4" : "The location of guest house is a great starting point for your others activities. If you want to experience colorful holiday, we can suggest  you a programme, from which you will be able to choose. We can arrange to you tickets with sale.",
   "pension.text.5" : "We can recommend you a quide, we will searchand reserve transport connectionsand during the evening you can regenerate and  getenergy in the beer spa, dine in our restaurant and get good sleep in our comfortable guest house, in which you will fall in love.",
   "pension.text.6" : "Tour of minibrewery with tasting of beer and interpretation / lecture.",
   "pension.text.7" : "An opportunity to attend the brewing process with brewer",
-  "pension.text.8" : "The visit of the beer spa, sauna, massage",
+  "pension.text.8" : "The visit of the beer spa, sauna",
 
   "shop.text.1" : "You can find all beers produced by our minibrewery in this shop. They are suitable  for every occasion. All of them are yeasty, unfiltered and unpasteurised. We are offering also our beer spirit Pivovica Jacobus Emerici and other alcoholic sortiment as Slovakian wines.",
   "shop.text.2" : "For the collectors and for you we have prepared beautiful souvenirs - beer glasses, beer trey, beer etiquette of our minibrewery, beer cosmetic. We can send you the selected goods on your address.",
@@ -239,11 +291,11 @@
 
   "restaurant.text.1" : "In the 90s of lastcentury, after reconstruction of an outwornhouse, the pub called “Zvon“ was established. It had also a dark beer on a tap and that was unusual in that times. After that, the idea of Restarant Minibrewery is coming. The excellent restaurant should provide its own “true beer”. Restaurant, which use former residential spaces of old german house, recreated into cozy lounges with similar lines but each with different atmosphere and idea. Restaurant which will provide to its guests something special and original, where guest can find nooks for romance, business meetings, or spaces for different events. ",
   "restaurant.text.2" : "Restaurant TATRAS open its gates to the test run in fall of 2016, after two years of projecting, demolitions, constructions and furnishings. Every lounge has its own name according to its character and furnishment. Guests can often observe brewer in action from the lounge called Gallery. The smell of hop and young beer penetrates into restaurant too. ",
-  "restaurant.text.3" : "Our chefs cook by modern way - slow food cooking on low temperature. They cook as if for them and their families. Offer to guest the possibility to choose and catch trout from our own aquarium and choose the method, by which the kitchen should prepare it. Freshness and seasonality matters. You can match offered meals with our “real beer” and get to know the real gastronomic experience. ",
-  "restaurant.text.4" : "“We are cooking with love, adding spices by laugh” - that is motto of a modern equipped kitchen Tatras, in which Chef Cook Milan Duráni with his team prepares delicious meals from fresh ingredients. Milan Duráni headed //managed in prestigious restaurants in Germany and  Italy for decades, and from there he brought his principles for construction of a great cuisine - none ready to cookproducts, none chemical highlighters, no too many meals, none… Cooks ,under his supervision ,produce their own mixtures of seasonings, sauces, spelled pasta, bake homemade bread, cook homemade beer soup, mix homemade ice cream.",
-  "restaurant.text.5" : "Come to taste relaxing atmosphere of the restaurant Tatras, pleasant staff, tasty food and “real beer”. ",
+  "restaurant.text.3" : "Our chefs cook by modern way - slow food cooking on low temperature. They cook as if for them and their families. Offer to guest the possibility to choose and catch trout from our own aquarium and choose the method, by which the kitchen should prepare it. Freshness and seasonality matters. You can match offered meals with our “true beer” and get to know the real gastronomic experience. ",
+  "restaurant.text.4" : "“We are cooking with love, adding spices by laugh” - that is motto of a modern equipped kitchen TATRAS, in which Chef Cook Milan Duráni with his team prepares delicious meals from fresh ingredients. Milan Duráni headed //managed in prestigious restaurants in Germany and  Italy for decades, and from there he brought his principles for construction of a great cuisine - none ready to cookproducts, none chemical highlighters, no too many meals, none… Cooks ,under his supervision ,produce their own mixtures of seasonings, sauces, spelled pasta, bake homemade bread, cook homemade beer soup, mix homemade ice cream.",
+  "restaurant.text.5" : "Come to taste relaxing atmosphere of the restaurant TATRAS, pleasant staff, tasty food and “true beer”. ",
   "restaurant.text.6" : "We will welcome you at the celebration of your anniversaries, a business event, wedding, christening party… The total restaurant capacity is 8 lounges and 171 guests. It is possible to reserve and close every lounge for private company.",
-  "restaurant.text.7" : "We are here for you: Birthday celebrations, business party, friendly occasions, weddings...",
+  "restaurant.text.7" : "We are here for you.",
 
   "lounge.name.1" : "Bar passage",
   "lounge.name.2" : "Beer-cellar",
@@ -254,7 +306,7 @@
   "lounge.name.7" : "A Garden",
   "lounge.name.8" : "A Music Lounge",
 
-  "lounge.text.1" : "Offers 8 tap Tatras beers. On the board is always the meal of the day.",
+  "lounge.text.1" : "Offers 8 tap TATRAS beers. On the board is always the meal of the day.",
   "lounge.text.2" : "The first cellar in our minibrevery.. It is a place where you can get knowledge about the history of beer in Poprad",
   "lounge.text.3" : "The second cellar in our minibrewery. Here you will see  what was paid  for beer by in the past.",
   "lounge.text.4" : "This lounge is dedicated to love. It is said, if lovers  rub red heart in the middle, they will marry to the year and to the day.",

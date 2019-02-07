@@ -16,17 +16,9 @@ angular.module('adminCtrl', [])
         $scope.adminCenter = false;
         $scope.showError = false;
 
-        $scope.adminUser = 'Admin';
-        $scope.adminPass = 'info123Tatras';
-
         $scope.logMeIn = function (loginEmail, loginPass) {
-            // console.log('--user--');
-            // console.log(loginEmail);
-            // console.log('--pass--');
-            // console.log(loginPass);
-
-            if(loginEmail === $scope.adminUser) {
-                if(loginPass === $scope.adminPass) {
+            if(loginEmail === $scope.loginUser.$value) {
+                if(loginPass === $scope.loginPass.$value) {
                     /// open dashboard
                     $scope.adminCenter = true;
                     /// close Login
@@ -437,23 +429,12 @@ angular.module('adminCtrl', [])
             function explode(){
                 html2canvas($('#preview'), {
 
-
                     onrendered: function(canvas) {
                         var img = canvas.toDataURL();
                         //console.log("png: "+img);
-
                         download(img, "Denné Menu_" +$rootScope.today+".png", "image/png");
                         $scope.closePreview();
                     }
-
-                    // onrendered: function(canvas) {
-                    //     var img    = canvas.toDataURL("image/png");
-                    //     var winPrint = window.open('', '', 'left=0,top=0,width=1000,height=1000,toolbar=0,scrollbars=0,status=0');
-                    //     winPrint.document.write('<div style="display:block;position: relative;">');
-                    //     winPrint.document.write('<img src="'+img+'"/></div>');
-                    //     winPrint.document.close();
-                    //     winPrint.focus();
-                    // }
                 });
             }
             setTimeout(explode, 1000);

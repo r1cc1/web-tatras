@@ -4,8 +4,6 @@
   body:before {
     content: 'Medium Screen';
   }
-
-
   h1.main-title {
     font-size: 3em;
     line-height: 1em;
@@ -13,24 +11,19 @@
   .left {
     width: 50px;
     left: 0;
-
     &.open {
-      width:  200px;
-
+      width: 200px;
     }
     .shrink {
       display: block;
       left: 0;
-
       &.open {
         display: none;
       }
     }
-
     div.left-wrap {
       padding-top: 2em;
     }
-
     nav ul.main-menu li a {
       font-size: 1em;
       line-height: 2em;
@@ -38,7 +31,6 @@
   }
   .fake-left {
     width: 200px;
-
     &.show {
       width: 200px;
     }
@@ -46,11 +38,9 @@
   .right {
     display: table-cell;
     position: relative;
-
     .sub-menu {
       left: 50px;
       width: 150px;
-
       &.open {
         left: 200px;
       }
@@ -59,7 +49,6 @@
       display: block;
       position: relative;
       height: auto;
-
       .top-nav {
         display: none;
       }
@@ -71,8 +60,6 @@
     .content-main .table-info .table-info-item p {
       font-size: 2em;
     }
-    
-
     .content-wrapper .content-main .boxer .salon {
       width: calc(100% / 2 - 1em);
       padding: 1em;
@@ -98,13 +85,17 @@
       }
     }
   }
-
-
-
   .content-main p {
-    font-size: 1.5em;
+    font-size: 1.25em;
     padding: 2em 1em;
-    max-width: 30em;
+    width: 620px;
+    margin: 0 auto;
+  }
+  h1.gdpr-title {
+    max-width: 620px;
+  }
+  h2.gdpr-subtitle {
+    width: 620px;
     margin: 0 auto;
   }
   h2.category-title {
@@ -123,7 +114,6 @@
   .actions {
     text-align: center;
   }
-
   nav {
     ul.main-menu {
       li {
@@ -140,24 +130,23 @@
     max-width: 100%;
     padding: 3em 0;
   }
-
   .content-main .daily-menu-list .daily-menu-item table tr span {
     font-size: 16px !important;
   }
-
+  .content-main ul.gdpr-list {
+    width: 620px;
+    margin: 0 auto;
+}
   .content-kontakt .info .item a {
     font-size: 1.5em;
     padding: 0;
   }
-
   .content-wrapper .content-main .hours {
     max-width: 22em;
   }
   .content-wrapper .content-main .hours .day span {
     font-size: 1.5em;
   }
-
-
   .content-wrapper .content-main.empty:after {
     height: calc(100% - 3em);
     width: calc(100% - 3em);
@@ -168,7 +157,6 @@
   .bg.bg-spa-3 {
     background-position: 10px center;
   }
-
   .actions .link-button {
     display: inline-block;
     padding: 0;
@@ -183,36 +171,31 @@
   .prices h2 {
     font-size: 20px;
   }
-
   .content-main .beer-list .beer-type {
     width: calc(100% / 2 - 2em);
     margin: 1em;
   }
-
   .content-main .beer-list p {
     font-size: 1em;
-}
-
+  }
   .content-main .beer-list .beer-type .beer-head .beer-name h2 {
     font-size: 1.75em;
-}
-
+  }
   .content-wrapper .book .center-wrap .center-content .logo a.award {
     width: auto;
-}
-.content-wrapper .book .center-wrap .center-content .logo a.award:first-child {
-  order: 2;
-}
-.prize-box {
-  padding: 1em 0;
-  max-width: 40em;
-  margin: 0 auto;
-}
-.prices-box {
-  margin: 1em auto;
-  max-width: 20em;
-}
-
+  }
+  .content-wrapper .book .center-wrap .center-content .logo a.award:first-child {
+    order: 2;
+  }
+  .prize-box {
+    padding: 1em 0;
+    max-width: 40em;
+    margin: 0 auto;
+  }
+  .prices-box {
+    margin: 1em auto;
+    max-width: 20em;
+  }
   footer {
     padding: 1em;
   }
@@ -246,15 +229,13 @@
   .content-wrapper .book {
     height: calc(100vh - 100px);
   }
-
   .content-main .beer-list .beer-type.top.top2017:before,
   .content-main .beer-list .beer-type.top.top2018:before {
     width: 6em;
     height: 6em;
   }
-  
-
-  h3.prize,  h3.prize-mini {
+  h3.prize,
+  h3.prize-mini {
     font-size: 4em;
     top: 34px;
     left: 10px;

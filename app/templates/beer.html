@@ -1,14 +1,6 @@
-<div class="loading" ng-class="{'close': !isloading}">
-    <div class="loading-wrap">
-        <div class="loading-align">
-            <div class="loading-content">
-                <div class="loading-logo"></div>
-                <div class="loading-progress" ng-class="{'load': isloading}">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<!-- include Loading Component -->
+<div ng-include="'templates/loading.html'"></div>
+<!-- end of Loading include -->
 
 <div ng-cloak class="wrapper" ng-class="{'init': isloading}">
 
@@ -22,13 +14,27 @@
         <div class="sub-menu" ng-class="{'open': openMobileMenu}">
             <div>
                 <ul>
-                    <li du-scrollspy="history"><span du-smooth-scroll="history" ng-click="closeMenu()" translate>story</span></li>
-                    <li du-scrollspy="beers"><span du-smooth-scroll="beers" ng-click="closeMenu()" translate>true.beer</span></li>
-                    <li du-scrollspy="our-beer"><span du-smooth-scroll="our-beer" ng-click="closeMenu()" translate>pivna.karta</span></li>
-                    <li du-scrollspy="pivovica"><span du-smooth-scroll="pivovica" ng-click="closeMenu()" translate>pivovica</span></li>
-                    <li du-scrollspy="visit"><span du-smooth-scroll="visit" ng-click="closeMenu()" translate>prehliadka.pivovaru</span></li>
-                    <li du-scrollspy="media"><span du-smooth-scroll="media" ng-click="closeMenu()" translate>media.about.us</span></li></li>
-                    <li du-scrollspy="contact" offset="100"><span du-smooth-scroll="contact" ng-click="closeMenu()" translate>contact</span>
+                    <li du-scrollspy="history">
+                        <span du-smooth-scroll="history" ng-click="closeMenu()" translate>story</span>
+                    </li>
+                    <li du-scrollspy="beers">
+                        <span du-smooth-scroll="beers" ng-click="closeMenu()" translate>true.beer</span>
+                    </li>
+                    <li du-scrollspy="our-beer">
+                        <span du-smooth-scroll="our-beer" ng-click="closeMenu()" translate>pivna.karta</span>
+                    </li>
+                    <li du-scrollspy="pivovica">
+                        <span du-smooth-scroll="pivovica" ng-click="closeMenu()" translate>pivovica</span>
+                    </li>
+                    <li du-scrollspy="visit">
+                        <span du-smooth-scroll="visit" ng-click="closeMenu()" translate>prehliadka.pivovaru</span>
+                    </li>
+                    <li du-scrollspy="media">
+                        <span du-smooth-scroll="media" ng-click="closeMenu()" translate>media.about.us</span>
+                    </li>
+                    </li>
+                    <li du-scrollspy="contact" offset="100">
+                        <span du-smooth-scroll="contact" ng-click="closeMenu()" translate>contact</span>
                 </ul>
             </div>
         </div>
@@ -36,9 +42,9 @@
         <div class="right-content">
             <div class="top-nav">
                 <button class="hamburger hamburger--collapse" type="button" ng-click="mobileMenu()">
-                      <span class="hamburger-box">
+                    <span class="hamburger-box">
                         <span class="hamburger-inner"></span>
-                      </span>
+                    </span>
                 </button>
                 <div class="top-bar-logo">
                 </div>
@@ -69,33 +75,33 @@
                     <div class="small-line"></div>
 
                     <p>
-                        <span class="odsek"></span> 
+                        <span class="odsek"></span>
                         <span translate>history.text.1</span>
-                        <button class="btn show-more" ng-hide="showMoreHistory == true" ng-click="doShowMoreHistory();" translate>read.more</button>
-                        <span ng-show="showMoreHistory == true">
-                        <br>
-                        <br>
-                        <span class="odsek"></span> 
-                        <span translate>history.text.2</span>
-                        <br>
-                        <br>
-                        <img src="/components/assets/imgs/exterier/vonku.jpg" style="display: block; width: 100%; margin: 1em auto;"/>
-                        <br>
-                        <span class="odsek"></span> 
-                        <span translate>history.text.3</span>
-                        <br>
-                        <br>
-                        <img src="/components/assets/imgs/varenie/sladkovia.JPG" style="display: block; width: 100%; margin: 1em auto;"/>
-                        <br>
-                        <span class="odsek"></span> 
-                        <span translate>history.text.4</span>
-                        <br>
-                        <br>
-                        <img src="/components/assets/imgs/varenie/new/_RK_5715.JPG" style="display: block; width: 100%; margin: 1em auto;"/>
-                        <br>
-                        <span class="odsek"></span> 
-                        <span translate>history.text.5</span>
-                    </span>
+                        <button class="btn show-more" ng-hide="showMoreHistory" ng-click="doShowMoreHistory();" translate>read.more</button>
+                        <span ng-show="showMoreHistory">
+                            <br>
+                            <br>
+                            <span class="odsek"></span>
+                            <span translate>history.text.2</span>
+                            <br>
+                            <br>
+                            <img src="/components/assets/imgs/exterier/vonku.jpg" style="display: block; width: 100%; margin: 1em auto;" />
+                            <br>
+                            <span class="odsek"></span>
+                            <span translate>history.text.3</span>
+                            <br>
+                            <br>
+                            <img src="/components/assets/imgs/varenie/sladkovia.JPG" style="display: block; width: 100%; margin: 1em auto;" />
+                            <br>
+                            <span class="odsek"></span>
+                            <span translate>history.text.4</span>
+                            <br>
+                            <br>
+                            <img src="/components/assets/imgs/varenie/new/_RK_5715.JPG" style="display: block; width: 100%; margin: 1em auto;" />
+                            <br>
+                            <span class="odsek"></span>
+                            <span translate>history.text.5</span>
+                        </span>
                     </p>
 
                 </section>
@@ -107,19 +113,21 @@
                     <h1 class="main-title" translate>true.beer</h1>
                     <div class="small-line"></div>
                     <p class="vip  color-light">
-                        <span class="odsek"></span><span translate>brewery.text.2</span>
-                        </p>
-                        <br>
-                        <h2 class="sub-title" style="display: block; text-align: center; color: #d6b471;" translate>brewery.text.3</h2>
+                        <span class="odsek"></span>
+                        <span translate>brewery.text.2</span>
+                    </p>
+                    <br>
+                    <h2 class="sub-title" style="display: block; text-align: center; color: #d6b471;" translate>brewery.text.3</h2>
                     <div class="product-wrap">
                         <div class="product-image">
-                            <img src="/components/assets/imgs/varenie/new/_RK_5691.JPG"/>
+                            <img src="/components/assets/imgs/varenie/new/_RK_5691.JPG" />
                         </div>
                     </div>
                     <h1 class="main-title" translate>brewery.text.4</h1>
                     <div class="small-line"></div>
-                    <p class="vip color-light" ><span class="odsek"></span>
-                        <span translate>brewery.text.5</span>    
+                    <p class="vip color-light">
+                        <span class="odsek"></span>
+                        <span translate>brewery.text.5</span>
                     </p>
                 </section>
 
@@ -129,332 +137,406 @@
                 <section id="our-beer" class="content-main bg bg-100 box">
 
                     <div class="content-main">
-                        <h1 class="main-title" translate>pivna.karta</h1>
+                        <h1 class="main-title color-black" translate>pivna.karta</h1>
                         <div class="small-line"></div>
 
                         <div class="beer-list">
-                                <div id="tmavak" class="beer-type top top2018" ng-class="{'new' : beer3new.$value, 'not-active' : !beer3active.$value}">
-                                        <div class="beer-head">
-                                            <div class="beer-name">
-                                                <h2>{{beer3name.$value}} {{beer3extrakt.$value}}&deg;</h2>
-                                                <img src="/components/assets/imgs/pivo/pivo6.JPG"/>
-                                                <h6 ng-if="beer3subtitle.$value" translate>beer.3.title</h6>
-                                                <h4 class="out" translate>sold.out</h4>
-                                            </div>
-                                        </div>
-                                        <p class="beer-body" ng-show="toggle3 == true">
-                                            <span translate>extrakt</span><b> {{beer3extrakt.$value}}% </b>
-                                            <br>
-                                            <span translate>alkohol</span><b> {{beer3alkohol.$value}}%</b>
-                                            <br>
-                                            <span translate>horkost</span><b> {{beer3ibu.$value}} IBU</b>
-                                            <br>
-                                            <br>
-                                            <span translate>beer.3.text</span>
-                                            <br>
-                                            <br>
-                                            <span translate>slady</span><i> {{beer3slady.$value}}.</i>
-                                            <br>
-                                            <span translate>chmele</span><i> {{beer3chmele.$value}}.</i>
-                                        </p>
-                                        <button class="btn show-more" ng-click="toggle3text();" translate>{{toggle3 ? 'less' : 'show.more'}}</button>
-                                    </div>
-
-                            <div id="weizen" class="beer-type top top2017" ng-class="{'new' : beer4new.$value, 'not-active' : !beer4active.$value}">
+                            <div id="tmavak" class="beer-type top top2018" ng-class="{'new' : beer3new.$value, 'not-active' : !beer3active.$value}">
+                                <h2>{{beer3name.$value}} {{beer3extrakt.$value}}&deg;</h2>
+                                <h6 ng-if="beer3subtitle.$value" translate>beer.3.title</h6>
                                 <div class="beer-head">
                                     <div class="beer-name">
-                                        <h2>{{beer4name.$value}} {{beer4extrakt.$value}}&deg;</h2>
-                                        <img src="/components/assets/imgs/pivo/pivo4.JPG"/>
-                                        <h6 ng-if="beer3subtitle.$value" translate>beer.4.title</h6>
+                                        <img src="/components/assets/imgs/pivo/pivo6.JPG" />
+                                        <h4 class="out" translate>sold.out</h4>
+                                    </div>
+                                </div>
+                                <p class="beer-body">
+                                    <span translate>extrakt</span>
+                                    <b> {{beer3extrakt.$value}}% </b>
+                                    <br>
+                                    <span translate>alkohol</span>
+                                    <b> {{beer3alkohol.$value}}%</b>
+                                    <br>
+                                    <span translate>horkost</span>
+                                    <b> {{beer3ibu.$value}} IBU</b>
+                                    <br>
+                                    <br>
+                                    <span translate>beer.3.text</span>
+                                    <br>
+                                    <br>
+                                    <span translate>slady</span>
+                                    <i> {{beer3slady.$value}}.</i>
+                                    <br>
+                                    <span translate>chmele</span>
+                                    <i> {{beer3chmele.$value}}.</i>
+                                </p>
+
+                            </div>
+
+                            <div id="weizen" class="beer-type top top2017" ng-class="{'new' : beer4new.$value, 'not-active' : !beer4active.$value}">
+                                <h2>{{beer4name.$value}} {{beer4extrakt.$value}}&deg;</h2>
+                                <h6 ng-if="beer3subtitle.$value" translate>beer.4.title</h6>
+                                <div class="beer-head">
+                                    <div class="beer-name">
+
+                                        <img src="/components/assets/imgs/pivo/pivo4.JPG" />
+
                                         <h4 translate>top</h4>
                                         <h4 class="out" translate>sold.out</h4>
                                     </div>
                                 </div>
-                                <p class="beer-body" ng-show="toggle4 == true">
-                                        <span translate>extrakt</span><b> {{beer4extrakt.$value}}% </b>
-                                        <br>
-                                        <span translate>alkohol</span><b> {{beer4alkohol.$value}}%</b>
-                                        <br>
-                                        <span translate>horkost</span><b> {{beer4ibu.$value}} IBU</b>
-                                        <br>
-                                        <br>
-                                        <span translate>beer.4.text</span>
-                                        <br>
-                                        <br>
-                                        <span translate>slady</span><i> {{beer4slady.$value}}.</i>
-                                        <br>
-                                        <span translate>chmele</span><i> {{beer4chmele.$value}}.</i>
+                                <p class="beer-body">
+                                    <span translate>extrakt</span>
+                                    <b> {{beer4extrakt.$value}}% </b>
+                                    <br>
+                                    <span translate>alkohol</span>
+                                    <b> {{beer4alkohol.$value}}%</b>
+                                    <br>
+                                    <span translate>horkost</span>
+                                    <b> {{beer4ibu.$value}} IBU</b>
+                                    <br>
+                                    <br>
+                                    <span translate>beer.4.text</span>
+                                    <br>
+                                    <br>
+                                    <span translate>slady</span>
+                                    <i> {{beer4slady.$value}}.</i>
+                                    <br>
+                                    <span translate>chmele</span>
+                                    <i> {{beer4chmele.$value}}.</i>
                                 </p>
-                                <button class="btn show-more" ng-click="toggle4text();" translate>{{toggle4 ? 'less' : 'show.more'}}</button>
                             </div>
 
-                            <div id="epa" class="beer-type" ng-class="{'new' : beer6new.$value, 'not-active' : !beer6active.$value}">
+
+
+
+                            <div id="ipa" class="beer-type" ng-class="{'new' : beer11new.$value, 'not-active' : !beer11active.$value}" ng-show="toggle11">
+                                <h2>{{beer11name.$value}} {{beer11extrakt.$value}}&deg;</h2>
+                                <h6 ng-if="beer11subtitle.$value" translate>beer.11.title</h6>
                                 <div class="beer-head">
                                     <div class="beer-name">
-                                        <h2>{{beer6name.$value}} {{beer6extrakt.$value}}&deg;</h2>
-                                        <img src="/components/assets/imgs/pivo/pivo_cierne2.jpg"/>
-                                        <h6 ng-if="beer6subtitle.$value" translate>beer.6.title</h6>
-                                        <h4 ng-if="beer6new.$value == true" translate>new</h4>
+                                        <img src="/components/assets/imgs/pivo/pivo5.JPG" />
                                         <h4 class="out" translate>sold.out</h4>
                                     </div>
                                 </div>
-                                <p class="beer-body" ng-show="toggle6 == true">
-                                        <span translate>extrakt</span><b> {{beer6extrakt.$value}}% </b>
-                                        <br>
-                                        <span translate>alkohol</span><b> {{beer6alkohol.$value}}%</b>
-                                        <br>
-                                        <span translate>horkost</span><b> {{beer6ibu.$value}} IBU</b>
-                                        <br>
-                                        <br>
-                                        <span translate>beer.6.text</span>
-                                        <br>
-                                        <br>
-                                        <span translate>slady</span><i> {{beer6slady.$value}}.</i>
-                                        <br>
-                                        <span translate>chmele</span><i> {{beer6chmele.$value}}.</i>
+                                <p class="beer-body">
+                                    <span translate>extrakt</span>
+                                    <b> {{beer11extrakt.$value}}% </b>
+                                    <br>
+                                    <span translate>alkohol</span>
+                                    <b> {{beer11alkohol.$value}}%</b>
+                                    <br>
+                                    <span translate>horkost</span>
+                                    <b> {{beer11ibu.$value}} IBU</b>
+                                    <br>
+                                    <br>
+                                    <span translate>beer.11.text</span>
+                                    <br>
+                                    <br>
+                                    <span translate>slady</span>
+                                    <i> {{beer11slady.$value}}.</i>
+                                    <br>
+                                    <span translate>chmele</span>
+                                    <i> {{beer11chmele.$value}}.</i>
                                 </p>
-                                <button class="btn show-more" ng-click="toggle6text();" translate>{{toggle6 ? 'less' : 'show.more'}}</button>
                             </div>
-
-                            <div id="panko" class="beer-type" ng-class="{'new' : beer2new.$value, 'not-active' : !beer2active.$value}">
+                            <div id="horkac" class="beer-type" ng-class="{'new' : beer9new.$value, 'not-active' : !beer9active.$value}" ng-show="toggle11">
+                                <h2>{{beer9name.$value}} {{beer9extrakt.$value}}&deg;</h2>
+                                <h6 ng-if="beer9subtitle.$value" translate>beer.9.title</h6>
                                 <div class="beer-head">
                                     <div class="beer-name">
-                                        <h2>{{beer2name.$value}} {{beer2extrakt.$value}}&deg;</h2>
+
+                                        <img src="/components/assets/imgs/pivo/pivo2.JPG" />
+
+                                        <h4 class="out" translate>sold.out</h4>
+                                    </div>
+                                </div>
+                                <p class="beer-body">
+                                    <span translate>extrakt</span>
+                                    <b> {{beer9extrakt.$value}}% </b>
+                                    <br>
+                                    <span translate>alkohol</span>
+                                    <b> {{beer9alkohol.$value}}%</b>
+                                    <br>
+                                    <span translate>horkost</span>
+                                    <b> {{beer9ibu.$value}} IBU</b>
+                                    <br>
+                                    <br>
+                                    <span translate>beer.9.text</span>
+                                    <br>
+                                    <br>
+                                    <span translate>slady</span>
+                                    <i> {{beer9slady.$value}}.</i>
+                                    <br>
+                                    <span translate>chmele</span>
+                                    <i> {{beer9chmele.$value}}.</i>
+                                </p>
+
+                            </div>
+                            <div id="stout" class="beer-type" ng-class="{'new' : beer10new.$value, 'not-active' : !beer10active.$value}" ng-show="toggle11">
+                                <h2>{{beer10name.$value}} {{beer10extrakt.$value}}&deg;</h2>
+                                <h6 ng-if="beer9subtitle.$value" translate>beer.10.title</h6>
+                                <div class="beer-head">
+                                    <div class="beer-name">
+
+                                        <img src="/components/assets/imgs/pivo/pivo_cierne1.jpg" />
+                                        <h4 class="out" translate>sold.out</h4>
+                                    </div>
+                                </div>
+                                <p class="beer-body">
+                                    <span translate>extrakt</span>
+                                    <b> {{beer10extrakt.$value}}% </b>
+                                    <br>
+                                    <span translate>alkohol</span>
+                                    <b> {{beer10alkohol.$value}}%</b>
+                                    <br>
+                                    <span translate>horkost</span>
+                                    <b> {{beer10ibu.$value}} IBU</b>
+                                    <br>
+                                    <br>
+                                    <span translate>beer.10.text</span>
+                                    <br>
+                                    <br>
+                                    <span translate>slady</span>
+                                    <i> {{beer10slady.$value}}.</i>
+                                    <br>
+                                    <span translate>chmele</span>
+                                    <i> {{beer10chmele.$value}}.</i>
+                                </p>
+                            </div>
+
+                            <div id="epa" class="beer-type" ng-class="{'new' : beer6new.$value, 'not-active' : !beer6active.$value}" ng-show="toggle11">
+                                <h2>{{beer6name.$value}} {{beer6extrakt.$value}}&deg;</h2>
+                                <h6 ng-if="beer6subtitle.$value" translate>beer.6.title</h6>
+                                <div class="beer-head">
+                                    <div class="beer-name">
+                                        <img src="/components/assets/imgs/pivo/pivo_cierne2.jpg" />
+                                        <h4 class="out" translate>sold.out</h4>
+                                    </div>
+                                </div>
+                                <p class="beer-body">
+                                    <span translate>extrakt</span>
+                                    <b> {{beer6extrakt.$value}}% </b>
+                                    <br>
+                                    <span translate>alkohol</span>
+                                    <b> {{beer6alkohol.$value}}%</b>
+                                    <br>
+                                    <span translate>horkost</span>
+                                    <b> {{beer6ibu.$value}} IBU</b>
+                                    <br>
+                                    <br>
+                                    <span translate>beer.6.text</span>
+                                    <br>
+                                    <br>
+                                    <span translate>slady</span>
+                                    <i> {{beer6slady.$value}}.</i>
+                                    <br>
+                                    <span translate>chmele</span>
+                                    <i> {{beer6chmele.$value}}.</i>
+                                </p>
+                            </div>
+
+                            <div id="panko" class="beer-type" ng-class="{'new' : beer2new.$value, 'not-active' : !beer2active.$value}" ng-show="toggle11">
+                                <h2>{{beer2name.$value}} {{beer2extrakt.$value}}&deg;</h2>
+                                <h6 ng-if="beer2subtitle.$value" translate>beer.2.title</h6>
+                                <div class="beer-head">
+                                    <div class="beer-name">
+
                                         <img src="/components/assets/imgs/pivo/pivo1.jpg">
-                                        <h6 ng-if="beer2subtitle.$value" translate>beer.2.title</h6>
                                         <h4 class="out" translate>sold.out</h4>
                                     </div>
                                 </div>
-                                <p class="beer-body" ng-show="toggle2 == true">
-                                        <span translate>extrakt</span><b> {{beer2extrakt.$value}}% </b>
-                                        <br>
-                                        <span translate>alkohol</span><b> {{beer2alkohol.$value}}%</b>
-                                        <br>
-                                        <span translate>horkost</span><b> {{beer2ibu.$value}} IBU</b>
-                                        <br>
-                                        <br>
-                                        <span translate>beer.2.text</span>
-                                        <br>
-                                        <br>
-                                        <span translate>slady</span><i> {{beer2slady.$value}}.</i>
-                                        <br>
-                                        <span translate>chmele</span><i> {{beer2chmele.$value}}.</i>
+                                <p class="beer-body">
+                                    <span translate>extrakt</span>
+                                    <b> {{beer2extrakt.$value}}% </b>
+                                    <br>
+                                    <span translate>alkohol</span>
+                                    <b> {{beer2alkohol.$value}}%</b>
+                                    <br>
+                                    <span translate>horkost</span>
+                                    <b> {{beer2ibu.$value}} IBU</b>
+                                    <br>
+                                    <br>
+                                    <span translate>beer.2.text</span>
+                                    <br>
+                                    <br>
+                                    <span translate>slady</span>
+                                    <i> {{beer2slady.$value}}.</i>
+                                    <br>
+                                    <span translate>chmele</span>
+                                    <i> {{beer2chmele.$value}}.</i>
                                 </p>
-                                <button class="btn show-more" ng-click="toggle2text();" translate>{{toggle2 ? 'less' : 'show.more'}}</button>
                             </div>
 
-                            <div id="pils" class="beer-type" ng-class="{'new' : beer1new.$value, 'not-active' : !beer1active.$value}">
+                            <div id="apa" class="beer-type" ng-class="{'new' : beer8new.$value, 'not-active' : !beer8active.$value}" ng-show="toggle11">
+                                <h2>{{beer8name.$value}} {{beer8extrakt.$value}}&deg;</h2>
+                                <h6 ng-if="beer8subtitle.$value" translate>beer.8.title</h6>
                                 <div class="beer-head">
                                     <div class="beer-name">
-                                        <h2>{{beer1name.$value}} {{beer1extrakt.$value}}&deg;</h2>
+
+                                        <img src="/components/assets/imgs/pivo/pivo_nove1.jpg" />
+                                        <h4 class="out" translate>sold.out</h4>
+
+                                    </div>
+                                </div>
+                                <p class="beer-body">
+                                    <span translate>extrakt</span>
+                                    <b> {{beer8extrakt.$value}}% </b>
+                                    <br>
+                                    <span translate>alkohol</span>
+                                    <b> {{beer8alkohol.$value}}%</b>
+                                    <br>
+                                    <span translate>horkost</span>
+                                    <b> {{beer8ibu.$value}} IBU</b>
+                                    <br>
+                                    <br>
+                                    <span translate>beer.8.text</span>
+                                    <br>
+                                    <br>
+                                    <span translate>slady</span>
+                                    <i> {{beer8slady.$value}}.</i>
+                                    <br>
+                                    <span translate>chmele</span>
+                                    <i> {{beer8chmele.$value}}.</i>
+                                </p>
+                            </div>
+
+                            <div id="pils" class="beer-type" ng-class="{'new' : beer1new.$value, 'not-active' : !beer1active.$value}" ng-show="toggle11">
+                                <h2>{{beer1name.$value}} {{beer1extrakt.$value}}&deg;</h2>
+                                <h6 ng-if="beer1subtitle.$value" translate>beer.1.title</h6>
+                                <div class="beer-head">
+                                    <div class="beer-name">
+
                                         <img src="/components/assets/imgs/pivo/pivo2.JPG">
-                                        <h6 ng-if="beer1subtitle.$value" translate>beer.1.title</h6>
                                         <h4 class="out" translate>sold.out</h4>
                                     </div>
                                 </div>
-                                <p class="beer-body" ng-show="toggle == true">
-                                        <span translate>extrakt</span><b> {{beer1extrakt.$value}}% </b>
-                                        <br>
-                                        <span translate>alkohol</span><b> {{beer1alkohol.$value}}%</b>
-                                        <br>
-                                        <span translate>horkost</span><b> {{beer1ibu.$value}} IBU</b>
-                                        <br>
-                                        <br>
-                                        <span translate>beer.1.text</span>
-                                        <br>
-                                        <br>
-                                        <span translate>slady</span><i> {{beer1slady.$value}}.</i>
-                                        <br>
-                                        <span translate>chmele</span><i> {{beer1chmele.$value}}.</i>
+                                <p class="beer-body">
+                                    <span translate>extrakt</span>
+                                    <b> {{beer1extrakt.$value}}% </b>
+                                    <br>
+                                    <span translate>alkohol</span>
+                                    <b> {{beer1alkohol.$value}}%</b>
+                                    <br>
+                                    <span translate>horkost</span>
+                                    <b> {{beer1ibu.$value}} IBU</b>
+                                    <br>
+                                    <br>
+                                    <span translate>beer.1.text</span>
+                                    <br>
+                                    <br>
+                                    <span translate>slady</span>
+                                    <i> {{beer1slady.$value}}.</i>
+                                    <br>
+                                    <span translate>chmele</span>
+                                    <i> {{beer1chmele.$value}}.</i>
                                 </p>
-                                <button class="btn show-more" ng-click="toggletext();" translate>{{toggle ? 'less' : 'show.more'}}</button>
                             </div>
 
-                            <div id="ipl" class="beer-type" ng-class="{'new' : beer5new.$value, 'not-active' : !beer5active.$value}">
+                            <div id="ipl" class="beer-type" ng-class="{'new' : beer5new.$value, 'not-active' : !beer5active.$value}" ng-show="toggle11">
+                                <h2>{{beer5name.$value}} {{beer5extrakt.$value}}&deg;</h2>
+                                <h6 ng-if="beer5subtitle.$value" translate>beer.5.title</h6>
                                 <div class="beer-head">
                                     <div class="beer-name">
-                                        <h2>{{beer5name.$value}} {{beer5extrakt.$value}}&deg;</h2>
-                                        <img src="/components/assets/imgs/pivo/pivo1.jpg"/>
-                                        <h6 ng-if="beer5subtitle.$value" translate>beer.5.title</h6>
+
+                                        <img src="/components/assets/imgs/pivo/pivo1.jpg" />
+
                                         <h4 class="out" translate>sold.out</h4>
                                     </div>
                                 </div>
-                                <p class="beer-body" ng-show="toggle5 == true">
-                                        <span translate>extrakt</span><b> {{beer5extrakt.$value}}% </b>
-                                        <br>
-                                        <span translate>alkohol</span><b> {{beer5alkohol.$value}}%</b>
-                                        <br>
-                                        <span translate>horkost</span><b> {{beer5ibu.$value}} IBU</b>
-                                        <br>
-                                        <br>
-                                        <span translate>beer.5.text</span>
-                                        <br>
-                                        <br>
-                                        <span translate>slady</span><i> {{beer5slady.$value}}.</i>
-                                        <br>
-                                        <span translate>chmele</span><i> {{beer5chmele.$value}}.</i>
+                                <p class="beer-body">
+                                    <span translate>extrakt</span>
+                                    <b> {{beer5extrakt.$value}}% </b>
+                                    <br>
+                                    <span translate>alkohol</span>
+                                    <b> {{beer5alkohol.$value}}%</b>
+                                    <br>
+                                    <span translate>horkost</span>
+                                    <b> {{beer5ibu.$value}} IBU</b>
+                                    <br>
+                                    <br>
+                                    <span translate>beer.5.text</span>
+                                    <br>
+                                    <br>
+                                    <span translate>slady</span>
+                                    <i> {{beer5slady.$value}}.</i>
+                                    <br>
+                                    <span translate>chmele</span>
+                                    <i> {{beer5chmele.$value}}.</i>
                                 </p>
-                                <button class="btn show-more" ng-click="toggle5text();" translate>{{toggle5 ? 'less' : 'show.more'}}</button>
                             </div>
 
-                            <div id="weizen-bok" class="beer-type" ng-class="{'new' : beer7new.$value, 'not-active' : !beer7active.$value}">
+                            <div id="weizen-bok" class="beer-type" ng-class="{'new' : beer7new.$value, 'not-active' : !beer7active.$value}" ng-show="toggle11">
+                                <h2>{{beer7name.$value}} {{beer7extrakt.$value}}&deg;</h2>
+                                <h6 ng-if="beer7subtitle.$value" translate>beer.7.title</h6>
                                 <div class="beer-head">
                                     <div class="beer-name">
-                                        <h2>{{beer7name.$value}} {{beer7extrakt.$value}}&deg;</h2>
-                                        <img src="/components/assets/imgs/pivo/pivo4.JPG"/>
-                                        <h6 ng-if="beer7subtitle.$value" translate>beer.7.title</h6>
+
+                                        <img src="/components/assets/imgs/pivo/pivo4.JPG" />
+
                                         <h4 class="out" translate>sold.out</h4>
                                     </div>
                                 </div>
-                                <p class="beer-body" ng-show="toggle7 == true">
-                                        <span translate>extrakt</span><b> {{beer7extrakt.$value}}% </b>
-                                        <br>
-                                        <span translate>alkohol</span><b> {{beer7alkohol.$value}}%</b>
-                                        <br>
-                                        <span translate>horkost</span><b> {{beer7ibu.$value}} IBU</b>
-                                        <br>
-                                        <br>
-                                        <span translate>beer.7.text</span>
-                                        <br>
-                                        <br>
-                                        <span translate>slady</span><i> {{beer7slady.$value}}.</i>
-                                        <br>
-                                        <span translate>chmele</span><i> {{beer7chmele.$value}}.</i>
+                                <p class="beer-body">
+                                    <span translate>extrakt</span>
+                                    <b> {{beer7extrakt.$value}}% </b>
+                                    <br>
+                                    <span translate>alkohol</span>
+                                    <b> {{beer7alkohol.$value}}%</b>
+                                    <br>
+                                    <span translate>horkost</span>
+                                    <b> {{beer7ibu.$value}} IBU</b>
+                                    <br>
+                                    <br>
+                                    <span translate>beer.7.text</span>
+                                    <br>
+                                    <br>
+                                    <span translate>slady</span>
+                                    <i> {{beer7slady.$value}}.</i>
+                                    <br>
+                                    <span translate>chmele</span>
+                                    <i> {{beer7chmele.$value}}.</i>
                                 </p>
-                                <button class="btn show-more" ng-click="toggle7text();" translate>{{toggle7 ? 'less' : 'show.more'}}</button>
                             </div>
 
-                            <div class="beer-type" ng-class="{'new' : beer11new.$value, 'not-active' : !beer11active.$value}">
-                                <div class="beer-head">
-                                    <div class="beer-name">
-                                        <h2>{{beer11name.$value}} {{beer11extrakt.$value}}&deg;</h2>
-                                        <img src="/components/assets/imgs/pivo/pivo5.JPG"/>
-                                        <h6 ng-if="beer11subtitle.$value" translate>beer.11.title</h6>
-                                        <h4 class="out" translate>sold.out</h4>
-                                    </div>
-                                </div>
-                                <p class="beer-body" ng-show="toggle11 == true">
-                                        <span translate>extrakt</span><b> {{beer11extrakt.$value}}% </b>
-                                        <br>
-                                        <span translate>alkohol</span><b> {{beer11alkohol.$value}}%</b>
-                                        <br>
-                                        <span translate>horkost</span><b> {{beer11ibu.$value}} IBU</b>
-                                        <br>
-                                        <br>
-                                        <span translate>beer.11.text</span>
-                                        <br>
-                                        <br>
-                                        <span translate>slady</span><i> {{beer11slady.$value}}.</i>
-                                        <br>
-                                        <span translate>chmele</span><i> {{beer11chmele.$value}}.</i>
-                                </p>
-                                <button class="btn show-more" ng-click="toggle11text();" translate>{{toggle11 ? 'less' : 'show.more'}}</button>
-                            </div>
 
-                            <div class="beer-type" ng-if="beer12name.$value" ng-class="{'new' : beer12new.$value, 'not-active' : !beer12active.$value}">
+
+
+                            <div class="beer-type" ng-if="beer12name.$value" ng-class="{'new' : beer12new.$value, 'not-active' : !beer12active.$value}"
+                                ng-show="toggle11">
                                 <div class="beer-head">
                                     <div class="beer-name">
                                         <h2>{{beer12name.$value}} {{beer12extrakt.$value}}&deg;</h2>
                                         <h6 ng-if="beer12subtitle.$value" translate>beer.12.title</h6>
                                     </div>
                                 </div>
-                                <p class="beer-body" ng-show="toggle12 == true">
-                                        <span translate>extrakt</span><b> {{beer12extrakt.$value}}% </b>
-                                        <br>
-                                        <span translate>alkohol</span><b> {{beer12alkohol.$value}}%</b>
-                                        <br>
-                                        <span translate>horkost</span><b> {{beer12ibu.$value}} IBU</b>
-                                        <br>
-                                        <br>
-                                         <span translate>beer.12.text</span>
-                                        <br>
-                                        <br>
-                                        <span translate>slady</span><i> {{beer12slady.$value}}.</i>
-                                        <br>
-                                        <span translate>chmele</span><i> {{beer12chmele.$value}}.</i>
+                                <p class="beer-body" ng-show="toggle12">
+                                    <span translate>extrakt</span>
+                                    <b> {{beer12extrakt.$value}}% </b>
+                                    <br>
+                                    <span translate>alkohol</span>
+                                    <b> {{beer12alkohol.$value}}%</b>
+                                    <br>
+                                    <span translate>horkost</span>
+                                    <b> {{beer12ibu.$value}} IBU</b>
+                                    <br>
+                                    <br>
+                                    <span translate>beer.12.text</span>
+                                    <br>
+                                    <br>
+                                    <span translate>slady</span>
+                                    <i> {{beer12slady.$value}}.</i>
+                                    <br>
+                                    <span translate>chmele</span>
+                                    <i> {{beer12chmele.$value}}.</i>
                                 </p>
-                                <button class="btn show-more" ng-click="toggle5text();" translate>{{toggle12 ? 'less' : 'show.more'}}</button>
                             </div>
-                            
-                            <div id="apa" class="beer-type" ng-class="{'new' : beer8new.$value, 'not-active' : !beer8active.$value}">
-                                <div class="beer-head">
-                                    <div class="beer-name">
-                                        <h2>{{beer8name.$value}} {{beer8extrakt.$value}}&deg;</h2>
-                                        <img src="/components/assets/imgs/pivo/pivo_nove1.jpg"/>
-                                        <h6 ng-if="beer8subtitle.$value" translate>beer.8.title</h6>
-                                        <h4 class="out" translate>sold.out</h4>
 
-                                    </div>
-                                </div>
-                                <p class="beer-body" ng-show="toggle8 == true">
-                                        <span translate>extrakt</span><b> {{beer8extrakt.$value}}% </b>
-                                        <br>
-                                        <span translate>alkohol</span><b> {{beer8alkohol.$value}}%</b>
-                                        <br>
-                                        <span translate>horkost</span><b> {{beer8ibu.$value}} IBU</b>
-                                        <br>
-                                        <br>
-                                        <span translate>beer.8.text</span>
-                                        <br>
-                                        <br>
-                                        <span translate>slady</span><i> {{beer8slady.$value}}.</i>
-                                        <br>
-                                        <span translate>chmele</span><i> {{beer8chmele.$value}}.</i>
-                                </p>
-                                <button class="btn show-more" ng-click="toggle8text();" translate>{{toggle8 ? 'less' : 'show.more'}}</button>
+                            <div>
+                                <button du-smooth-scroll="{{toggle11 ? 'ipa' : 'weizen'}}" class="btn show-more" ng-click="toggle11text();" style="margin: 0 auto;"
+                                    translate>{{toggle11 ? 'less' : 'show.more'}}</button>
                             </div>
-                            <div id="horkac" class="beer-type" ng-class="{'new' : beer9new.$value, 'not-active' : !beer9active.$value}">
-                                <div class="beer-head">
-                                    <div class="beer-name">
-                                        <h2>{{beer9name.$value}} {{beer9extrakt.$value}}&deg;</h2>
-                                        <img src="/components/assets/imgs/pivo/pivo2.JPG"/>
-                                        <h6 ng-if="beer9subtitle.$value" translate>beer.9.title</h6>
-                                        <h4 class="out" translate>sold.out</h4>
-                                    </div>
-                                </div>
-                                <p class="beer-body" ng-show="toggle9 == true">
-                                        <span translate>extrakt</span><b> {{beer9extrakt.$value}}% </b>
-                                        <br>
-                                        <span translate>alkohol</span><b> {{beer9alkohol.$value}}%</b>
-                                        <br>
-                                        <span translate>horkost</span><b> {{beer9ibu.$value}} IBU</b>
-                                        <br>
-                                        <br>
-                                        <span translate>beer.9.text</span>
-                                        <br>
-                                        <br>
-                                        <span translate>slady</span><i> {{beer9slady.$value}}.</i>
-                                        <br>
-                                        <span translate>chmele</span><i> {{beer9chmele.$value}}.</i>
-                                </p>
-                                <button class="btn show-more" ng-click="toggle9text();" translate>{{toggle9 ? 'less' : 'show.more'}}</button>
-                            </div>
-                            <div id="stout" class="beer-type" ng-class="{'new' : beer10new.$value, 'not-active' : !beer10active.$value}">
-                                <div class="beer-head">
-                                    <div class="beer-name">
-                                        <h2>{{beer10name.$value}} {{beer10extrakt.$value}}&deg;</h2>
-                                        <img src="/components/assets/imgs/pivo/pivo_cierne1.jpg"/>
-                                        <h6 ng-if="beer9subtitle.$value" translate>beer.10.title</h6>
-                                        <h4 class="out" translate>sold.out</h4>
-                                    </div>
-                                </div>
-                                <p class="beer-body" ng-show="toggle10">
-                                        <span translate>extrakt</span><b> {{beer10extrakt.$value}}% </b>
-                                        <br>
-                                        <span translate>alkohol</span><b> {{beer10alkohol.$value}}%</b>
-                                        <br>
-                                        <span translate>horkost</span><b> {{beer10ibu.$value}} IBU</b>
-                                        <br>
-                                        <br>
-                                        <span translate>beer.10.text</span>
-                                        <br>
-                                        <br>
-                                        <span translate>slady</span><i> {{beer10slady.$value}}.</i>
-                                        <br>
-                                        <span translate>chmele</span><i> {{beer10chmele.$value}}.</i>
-                                </p>
-                                <button class="btn show-more" ng-click="toggle10text();" translate>{{toggle10 ? 'less' : 'show.more'}}</button>
-                            </div>
+
                         </div>
                     </div>
                 </section>
@@ -464,41 +546,63 @@
 
                 <section id="pivovica" class="content-main bg bg-100">
                     <h1 class="main-title" translate>pivovica</h1>
-                    <div class="small-line"></div>
-                    <p><span class="odsek"></span><span translate>brewery.text.6</span>   
-                    <div class="product-wrap">
-                        <div class="product-image">
-                            <img src="/components/assets/imgs/pivovica_jakobus.jpg"/>
-                        </div>
-                    </div>
-                    <p>
-                        <span class="odsek"></span><span translate>brewery.text.7</span>   
-                    </p>
-                    <br>
-                    <div class="small-line"></div>
-                    <br>
-                    <!-- <h2 translate>O najlepšiu slovenskú pivovicu 2018</h2>
-                    <br>
-                    <a href="#!/sutaz" class="btn show-more" target="_self" translate>sutaz</a> -->
-                    
-                </section>
-
-                <section class="content-main empty bg bg-tankovna">
-                </section>
-
-                <section id="visit" class="content-main bg bg-100">
-                    <h1 class="main-title" translate>prehliadka.pivovaru</h1>
+                    <h2 class="sub-title">JACOBUS EMERICI</h2>
                     <div class="small-line"></div>
                     <p>
                         <span class="odsek"></span>
-                        <span translate>brewery.text.8</span>  
+                        <span translate>brewery.text.6</span>
+                    </p>
+                    <div class="small-line"></div>
+                    <div class="product-wrap">
+                        <div class="product-image">
+                            <img src="/components/assets/imgs/jacobus.jpg" />
+                        </div>
+                    </div>
+                    <div class="small-line"></div>
+                    <p>
+                        <span class="odsek"></span>
+                        <span translate>brewery.text.7</span>
+                    </p>
+                    <div class="small-line"></div>
+                </section>
+                <section class="content-main empty bg bg-sutaz">
+                </section>
+                <section id="competition" class="content-main bg bg-100">
+                    <h1 class="main-title" translate>become.taster</h1>
+                    <h2 class="sub-title" translate>sutaz.full.title</h2>
+                    <div class="small-line"></div>
+                    <p>
+                        <span class="odsek"></span>
+                        Zapoj sa do našej jedinečnej súťaže, kde práve ty rozhodneš, ktorá pivný destilát je najchutnejší.
+                        <br>
+                        <br>
+                        <b>Pomôž nájsť tú najlepšiu pivovicu a vyhraj zaujímavé ceny!</b>
+                        <br>
+                        <br>
+                        <a href="#!/sutaz" class="btn show-more" target="_self" translate>show.more</a>
+                    </p>
+                </section>
+
+                <!-- <section class="content-main empty bg bg-tankovna">
+                </section> -->
+
+
+                <section class="content-main empty bg bg-exterier">
+                    </section>
+
+                <section id="visit" class="content-main bg bg-beige">
+                    <h1 class="main-title color-white" translate>prehliadka.pivovaru</h1>
+                    <div class="small-line"></div>
+                    <p>
+                        <span class="odsek"></span>
+                        <span translate>brewery.text.8</span>
                         <br>
                         <br>
                         <br>
                         <b translate>brewery.text.9</b>
                     </p>
                     <div class="boxer no-padding">
-                        <div class="prices-box">
+                        <div class="prices-box white">
                             <h4 translate>cena.prehliadky</h4>
                             <span translate>per.person</span>
                             <div class="price">
@@ -508,87 +612,82 @@
                     </div>
                 </section>
 
-                  <section class="content-main empty bg bg-exterier">
-                </section>
 
                 <section id="media" class="content-main bg bg-100">
                     <h1 class="main-title" translate>media.about.us</h1>
                     <div class="small-line"></div>
 
                     <div class="boxer salons">
-                        <a class="salon" href="/components/assets/imgs/media/Pivne_hobby.pdf" target="_blank">
-                            <img src="/components/assets/imgs/hobby_logo.png" style="display: block; height: 3em; margin: 0 auto;"/>
-                            <h6>Pod Tatrami treba ochutnať „TATRAS“</h6>
-                            <p>13 / 2016</p>
+                        <a class="salon" href="https://bezmapy.com/pivne-kupele-v-poprade/" target="_blank">
+                            <img src="/components/assets/imgs/logo-krivky.jpg" style="display: block; height: 3em; margin: 0 auto;" />
+                            <h6>BLOG: Skúsil som pivné kúpele v Poprade. Takto prebieha procedúra</h6>
+                            <p>30. júla 2018</p>
                         </a>
-                        <a class="salon" href="https://spis.korzar.sme.sk/c/20559013/minipivovar-tatras-poprad-prekvapi-originalnymi-pivami.html" target="_blank">
-                            <img src="/components/assets/imgs/korzar_logo.jpeg" style="display: block; height: 3em; margin: 0 auto;"/>
-                            <h6>TATRAS prekvapí originálnymi pivami</h6>
-                            <p>15. jún 2017</p>
-                        </a>
-
-                        <a class="salon" href="http://www.podtatranske-noviny.sk/2017/07/v-poprade-sa-vari-najlepsie-psenicne-pivo-na-slovensku/" target="_blank">
-                            <img src="/components/assets/imgs/podtatranske_logo.png" style="display: block; height: 3em; margin: 0 auto;"/>
-                            <h6>V Poprade sa varí najlepšie pšeničné pivo na Slovensku</h6>
-                            <p>7. júl 2017</p>
-                        </a>
-
-                        <a class="salon" href="http://opive.sk/pivovar-tatras-podnik-ktory-sa-oplati-navstivit/" target="_blank">
-                            <img src="http://opive.sk/wp-content/uploads/2014/10/99Logo-opive-png.png" style="display: block; height: 3em; margin: 0 auto;"/>
-                            <h6>Pivovar Tatras: Podnik, ktorý sa oplatí navštíviť</h6>
-                            <p>26. júla 2017</p>
-                        </a>
-
-                        
-
 
                         <a class="salon" href="/components/assets/imgs/media/Novy_cas.jpg" target="_blank">
-                            <img src="/components/assets/imgs/novy_cas_logo.png" style="display: block; height: 3em; margin: 0 auto;"/>
+                            <img src="/components/assets/imgs/novy_cas_logo.png" style="display: block; height: 3em; margin: 0 auto;" />
                             <h6>Po vyše 100 rokoch sa do Popradu vrátili kúpele</h6>
                             <p>18. január 2018</p>
                         </a>
-                        <a class="salon" href="https://bezmapy.com/co-vidiet-v-poprade/#attachment_41549" target="_blank">
-                            <img src="http://bezmapy.com/wp-content/uploads/2015/03/logo-krivky.jpg" style="display: block; height: 3em; margin: 0 auto;"/>
-                            <h6>BLOG: Čo vidieť v Poprade a kam ísť? Tieto tipy na výlety som osobne overil</h6>
-                            <p>22. júl 2018</p>
+                        <a class="salon" href="http://opive.sk/pivovar-tatras-podnik-ktory-sa-oplati-navstivit/" target="_blank">
+                            <img src="/components/assets/imgs/99Logo-opive-png.png" style="display: block; height: 3em; margin: 0 auto;" />
+                            <h6>Pivovar Tatras: Podnik, ktorý sa oplatí navštíviť</h6>
+                            <p>26. júla 2017</p>
                         </a>
-
+                        <a class="salon" href="http://www.podtatranske-noviny.sk/2017/07/v-poprade-sa-vari-najlepsie-psenicne-pivo-na-slovensku/"
+                            target="_blank">
+                            <img src="/components/assets/imgs/podtatranske_logo.png" style="display: block; height: 3em; margin: 0 auto;" />
+                            <h6>V Poprade sa varí najlepšie pšeničné pivo na Slovensku</h6>
+                            <p>7. júl 2017</p>
+                        </a>
+                        <a class="salon" href="https://spis.korzar.sme.sk/c/20559013/minipivovar-tatras-poprad-prekvapi-originalnymi-pivami.html"
+                            target="_blank">
+                            <img src="/components/assets/imgs/korzar_logo.jpeg" style="display: block; height: 3em; margin: 0 auto;" />
+                            <h6>TATRAS prekvapí originálnymi pivami</h6>
+                            <p>15. jún 2017</p>
+                        </a>
+                        <a class="salon" href="/components/assets/imgs/media/Pivne_hobby.pdf" target="_blank">
+                            <img src="/components/assets/imgs/hobby_logo.png" style="display: block; height: 3em; margin: 0 auto;" />
+                            <h6>Pod Tatrami treba ochutnať „TATRAS“</h6>
+                            <p>13 / 2016</p>
+                        </a>
                     </div>
                 </section>
-              
+
 
                 <section id="contact" class="content-main content-kontakt bg bg-beige">
                     <h1 class="main-title color-white" translate>contact</h1>
-                    <div class="small-line white"></div>
+                    <div class="small-line"></div>
 
                     <div class="info">
                         <div class="item">
                             <ng-md-icon icon="settings_phone" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;"
-                                        size="3em"></ng-md-icon>
+                                size="3em"></ng-md-icon>
                             <a href="tel:00421948828727">(+421) 0948 828 727</a>
                         </div>
                         <div class="item">
-                            <ng-md-icon icon="mail_outline" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;"
-                                        size="3em"></ng-md-icon>
+                            <ng-md-icon icon="mail_outline" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;" size="3em"></ng-md-icon>
                             <a href="mailto:info&#64minipivovartatras&#46sk" class="email">info@minipivovartatras.sk</a>
                         </div>
-                        <div class="item" style="paddging-top: 1em;">
-                            <img src="/components/assets/imgs/tripadvisor.png" style="display: block; width: 4em; margin: 0 auto;"/>
-                            <a href="https://www.tripadvisor.sk/Restaurant_Review-g274938-d11948183-Reviews-Restauracny_minipivovar_TATRAS-Poprad_Presov_Region.html" class="email">tripadvisor Reviews</a>
+                        <div class="item" style="padding-top: 1em;">
+                            <img src="/components/assets/imgs/tripadvisor.png" style="display: block; width: 4em; margin: 0 auto;" />
+                            <a href="https://www.tripadvisor.sk/Restaurant_Review-g274938-d11948183-Reviews-Restauracny_minipivovar_TATRAS-Poprad_Presov_Region.html"
+                                class="email">tripadvisor Reviews</a>
                         </div>
-                        <div class="item" style="paddging-top: 1em;">
-                            <ng-md-icon icon="facebook" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;"
-                                        size="3em"></ng-md-icon>
+                        <div class="item" style="padding-top: 1em;">
+                            <ng-md-icon icon="facebook" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;" size="3em"></ng-md-icon>
                             <a href="https://www.facebook.com/minipivovartatras" class="email">fb.com/minipivovartatras</a>
                         </div>
                         <div class="item">
-                                <br>
-                                <div class="small-line"></div>
-                                <br>
-                                <br>
+                            <br>
+                            <div class="small-line"></div>
+                            <br>
+                            <br>
                             <p>Minipivovar TATRAS, s.r.o.</p>
                             <p>Námestie sväteho Egídia 60</p>
-                            <p>05801 Poprad, Slovensko</p>
+                            <p>05801 Poprad,
+                                <span translate>slovakia</span>
+                            </p>
                             <br>
                             <p>IČO: 36450308</p>
                             <p>DIČ: 2021339045</p>
@@ -601,7 +700,7 @@
                         <div style="width:100%;max-width:100%;overflow:hidden;height:100%;color:red;">
                             <div id="gmap_display" style="height:100%; width:100%;max-width:100%;">
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10458.714031133324!2d20.3021651!3d49.0547361!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x737d3b4af45f4836!2sMinipivovar+Tatras!5e0!3m2!1ssk!2ssk!4v1496950044302"
-                                style="height:100%;width:100%;border:0;" frameborder="0" allowfullscreen></iframe>
+                                    style="height:100%;width:100%;border:0;" frameborder="0" allowfullscreen></iframe>
                             </div>
                         </div>
                     </div>
@@ -615,9 +714,3 @@
         </div>
     </div>
 </div>
-
-
-
-
-
-

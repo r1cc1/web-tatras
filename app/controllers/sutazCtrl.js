@@ -16,7 +16,7 @@ angular.module('sutazCtrl', [])
         setTimeout(stopLoading, 1000);
 
         // set Category
-        $rootScope.categoryName = 'súťaž „O najlepšiu slovenskú pivovicu 2018”';
+        $rootScope.categoryName = 'sutaz.full.title';
 
         // set default Mobile Menu
         $rootScope.openMobileMenu = false;

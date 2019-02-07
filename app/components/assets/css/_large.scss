@@ -30,8 +30,7 @@
           h5 {
             font-size: 1.5em;
           }
-          p,
-          span {
+          p, span {
             font-size: 1.5em;
             line-height: 1.5em;
           }
@@ -57,6 +56,8 @@
     .content-wrapper .content-main .boxer .box {
       width: calc(100% / 2 - 1em);
       margin-bottom: 4em;
+      min-height: auto;
+      
       .img {
         height: 20em;
       }
@@ -116,6 +117,7 @@
       p {
         font-size: 15px;
         line-height: 20px;
+        width: auto;
       }
       h5 {
         font-size: 24px;
@@ -123,12 +125,14 @@
       }
     }
     .hours {
+      max-width: 25em;
+    font-size: 1em;
+    margin: 2em auto -2em auto;
+    width: 100%;
+    
       .day span {
         font-size: 22px;
       }
-      max-width: 25em;
-      font-size: 1em;
-      margin: 3em auto 0 auto;
     }
   }
   .actions {
@@ -148,10 +152,10 @@
     justify-content: space-evenly;
     .row {
       padding: 0 2em;
+      &.small {
+        width: auto;
+      }
     }
-  }
-  .book-form .book-wrap .row.small {
-    width: auto;
   }
   .right .sub-menu {
     left: 50px;
@@ -166,10 +170,15 @@
     width: 20em;
     height: 20em;
     margin: 0 auto;
-    
+  }
+  .wrapper.index {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    height: 100vh;
   }
   .actions.start-btns {
-    margin-top: 2em;
+    margin-top: 10em;
     .btn.main {
       padding: 0;
     }
@@ -200,7 +209,7 @@
     }
   }
   .content-main {
-    padding: 2em 0;
+    padding: 2em 1em 4em 1em;
   }
   .content-wrapper .content-main.empty {
     height: 30em;
@@ -220,8 +229,7 @@
         padding: 1em 0 1em 0;
         text-align: left;
       }
-      span,
-      p {
+      span, p {
         line-height: 1em;
       }
     }
@@ -250,7 +258,7 @@
     }
   }
   .content-main .beer-list .beer-type {
-    width: calc(100% / 3 - 2em);
+    width: calc(100% / 2 - 2em);
     margin: 1em;
     &.top:before {
       width: 9em;
@@ -260,6 +268,11 @@
       right: -1em;
     }
   }
+  .content-main .beer-list .beer-type .beer-body {
+    padding: 2em 0;
+    width: 80%;
+    float: left;
+}
   .actions {
     &.start-btns .category {
       width: auto;
@@ -273,10 +286,8 @@
     font-size: 18px;
     padding: 10px;
   }
-  .content-wrapper .book .center-wrap .center-content .logo a.award {
-    h3 {
-      top: 5em;
-    }
+  .content-wrapper .book .center-wrap .center-content .logo a.award h3 {
+    top: 5em;
   }
   button.show-more {
     margin-bottom: -1em;
@@ -289,8 +300,14 @@
     justify-content: space-evenly;
     margin: 2em;
   }
-  #triangle-topright span {
-    font-size: 1.25em;
-    line-height: 1.75em;
+  #triangle-topright {
+    margin: 0;
+    span {
+      font-size: 1em;
+      line-height: 1.5em;
+    }
+  }
+  .content-main .beer-list .beer-type .beer-head img {
+    width: 60%;
   }
 }

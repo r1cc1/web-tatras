@@ -1,14 +1,6 @@
-<div class="loading" ng-class="{'close': !isloading}">
-    <div class="loading-wrap">
-        <div class="loading-align">
-            <div class="loading-content">
-                <div class="loading-logo"></div>
-                <div class="loading-progress" ng-class="{'load': isloading}">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<!-- include Loading Component -->
+<div ng-include="'templates/loading.html'"></div>
+<!-- end of Loading include -->
 
 <div ng-cloak class="wrapper" ng-class="{'init': isloading}">
 
@@ -22,12 +14,24 @@
         <div class="sub-menu" ng-class="{'open': openMobileMenu}">
             <div>
                 <ul>
-                    <li du-scrollspy="welcome"><span du-smooth-scroll="welcome" ng-click="closeMenu()" translate>oasis.of.peace</span></li>
-                    <li du-scrollspy="rooms"><span du-smooth-scroll="rooms" ng-click="closeMenu()" translate>rooms</span></li>
-                    <li du-scrollspy="offer"><span du-smooth-scroll="offer" ng-click="closeMenu()" translate>offer.and.services</span></li>
-                    <li du-scrollspy="book"><span du-smooth-scroll="book" ng-click="closeMenu()" translate>book.now</span></li>
-                    <li du-scrollspy="contact"><span du-smooth-scroll="contact" ng-click="closeMenu()" translate>contact</span></li>
-                    <li du-scrollspy="parking"><span du-smooth-scroll="parking" ng-click="closeMenu()" translate>parking</span></li>
+                    <li du-scrollspy="welcome">
+                        <span du-smooth-scroll="welcome" ng-click="closeMenu()" translate>oasis.of.peace</span>
+                    </li>
+                    <li du-scrollspy="rooms">
+                        <span du-smooth-scroll="rooms" ng-click="closeMenu()" translate>rooms</span>
+                    </li>
+                    <li du-scrollspy="offer">
+                        <span du-smooth-scroll="offer" ng-click="closeMenu()" translate>offer.and.services</span>
+                    </li>
+                    <li du-scrollspy="book">
+                        <span du-smooth-scroll="book" ng-click="closeMenu()" translate>book.now</span>
+                    </li>
+                    <li du-scrollspy="contact">
+                        <span du-smooth-scroll="contact" ng-click="closeMenu()" translate>contact</span>
+                    </li>
+                    <li du-scrollspy="parking">
+                        <span du-smooth-scroll="parking" ng-click="closeMenu()" translate>parking</span>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -36,14 +40,14 @@
 
             <div class="top-nav">
                 <button class="hamburger hamburger--collapse " type="button" ng-click="mobileMenu()">
-                      <span class="hamburger-box">
+                    <span class="hamburger-box">
                         <span class="hamburger-inner"></span>
-                      </span>
+                    </span>
                 </button>
                 <div class="top-bar-logo">
                 </div>
                 <div class="call">
-                    <a href="tel:00421948028025" target="_self" name="call-us" class="btn-book" >
+                    <a href="tel:00421948028025" target="_self" name="call-us" class="btn-book">
                         <ng-md-icon icon="call" style="fill: #f5eddc" size="30"></ng-md-icon>
                     </a>
                 </div>
@@ -82,22 +86,19 @@
                             <div class="table-info">
 
                                 <div class="table-info-item">
-                                    <ng-md-icon icon="login" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b471;"
-                                                size="100"></ng-md-icon>
+                                    <ng-md-icon icon="login" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b471;" size="100"></ng-md-icon>
                                     <span translate>check.in</span>
                                     <p>{{pensionCheckIn.$value}}</p>
                                 </div>
 
                                 <div class="table-info-item">
-                                    <ng-md-icon icon="room_service" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b471;"
-                                                size="100"></ng-md-icon>
+                                    <ng-md-icon icon="room_service" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b471;" size="100"></ng-md-icon>
                                     <span translate>reception</span>
                                     <p>{{pensionTimeFrom.$value}} - {{pensionTimeTo.$value}}</p>
                                 </div>
 
                                 <div class="table-info-item">
-                                    <ng-md-icon icon="logout" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b471;"
-                                                size="100"></ng-md-icon>
+                                    <ng-md-icon icon="logout" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b471;" size="100"></ng-md-icon>
                                     <span translate>check.out</span>
                                     <p>{{pensionCheckOut.$value}}</p>
                                 </div>
@@ -111,7 +112,8 @@
                     <div class="small-line"></div>
                     <p class="content-text">
                         <span class="odsek"></span>
-                        <span translate>pension.text.2</span><b style="color: #e0232e;">{{parkingPrice.$value}} &euro; / 24h</b>.
+                        <span translate>pension.text.2</span>
+                        <b style="color: #e0232e;">{{parkingPrice.$value}} &euro; / 24h</b>.
                         <br>
                         <br>
                         <span class="odsek"></span>
@@ -123,10 +125,8 @@
                     <div class="boxer rooms">
                         <div class="box">
                             <div class="icons">
-                                <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29"
-                                            size="30"></ng-md-icon>
-                                            <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29"
-                                            size="30"></ng-md-icon>
+                                <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29" size="30"></ng-md-icon>
+                                <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29" size="30"></ng-md-icon>
                             </div>
                             <p class="info" translate>double.room</p>
                             <div class="img bg bg-pension08"></div>
@@ -136,8 +136,12 @@
                                 </span>
                             </h1>
                             <p class="price-info">
-                                <span translate>nonseason.season</span><br>
-                                <b><span translate>room</span> 1 <span translate>night</span></b>
+                                <span translate>nonseason.season</span>
+                                <br>
+                                <b>
+                                    <span translate>room</span> 1
+                                    <span translate>night</span>
+                                </b>
                             </p>
                             <button du-smooth-scroll="book" class="btn-next btn-submit">
                                 <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
@@ -147,10 +151,8 @@
                         <div class="box">
 
                             <div class="icons">
-                                <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29"
-                                            size="30"></ng-md-icon>
-                                <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29"
-                                            size="30"></ng-md-icon>
+                                <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29" size="30"></ng-md-icon>
+                                <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29" size="30"></ng-md-icon>
                             </div>
                             <p class="info" translate>double.room</p>
                             <div class="img bg bg-pension3"></div>
@@ -160,8 +162,12 @@
                                 </span>
                             </h1>
                             <p class="price-info">
-                                    <span translate>nonseason.season</span><br>
-                                <b><span translate>room</span> 1 <span translate>night</span></b>
+                                <span translate>nonseason.season</span>
+                                <br>
+                                <b>
+                                    <span translate>room</span> 1
+                                    <span translate>night</span>
+                                </b>
                             </p>
                             <button du-smooth-scroll="book" class="btn-next btn-submit">
                                 <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
@@ -170,12 +176,9 @@
                         </div>
                         <div class="box">
                             <div class="icons">
-                                <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29"
-                                            size="30"></ng-md-icon>
-                                <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29"
-                                            size="30"></ng-md-icon>
-                                <ng-md-icon icon="person_add" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29"
-                                            size="30"></ng-md-icon>
+                                <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29" size="30"></ng-md-icon>
+                                <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29" size="30"></ng-md-icon>
+                                <ng-md-icon icon="person_add" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29" size="30"></ng-md-icon>
                             </div>
                             <p class="info" translate>double.room</p>
                             <div class="img bg bg-pension4"></div>
@@ -185,8 +188,12 @@
                                 </span>
                             </h1>
                             <p class="price-info">
-                                    <span translate>nonseason.season</span><br>
-                                <b><span translate>room</span> 1 <span translate>night</span></b>
+                                <span translate>nonseason.season</span>
+                                <br>
+                                <b>
+                                    <span translate>room</span> 1
+                                    <span translate>night</span>
+                                </b>
                             </p>
                             <button du-smooth-scroll="book" class="btn-next btn-submit">
                                 <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
@@ -196,14 +203,10 @@
                         <div class="box">
 
                             <div class="icons">
-                                <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29"
-                                            size="30"></ng-md-icon>
-                                <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29"
-                                            size="30"></ng-md-icon>
-                                <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29"
-                                            size="30"></ng-md-icon>
-                                <ng-md-icon icon="person_add" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29"
-                                            size="30"></ng-md-icon>
+                                <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29" size="30"></ng-md-icon>
+                                <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29" size="30"></ng-md-icon>
+                                <ng-md-icon icon="person" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29" size="30"></ng-md-icon>
+                                <ng-md-icon icon="person_add" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29" size="30"></ng-md-icon>
                             </div>
                             <p class="info" translate>triple.room</p>
                             <div class="img bg bg-pension04"></div>
@@ -213,8 +216,12 @@
                                 </span>
                             </h1>
                             <p class="price-info">
-                                    <span translate>nonseason.season</span><br>
-                                <b><span translate>room</span> 1 <span translate>night</span></b>
+                                <span translate>nonseason.season</span>
+                                <br>
+                                <b>
+                                    <span translate>room</span> 1
+                                    <span translate>night</span>
+                                </b>
                             </p>
                             <button du-smooth-scroll="book" class="btn-next btn-submit">
                                 <ng-md-icon icon="check" style="white" size="20"></ng-md-icon>
@@ -225,24 +232,19 @@
                     </div>
                     <div class="feature-icons-set">
                         <div class="feature-icon">
-                            <ng-md-icon icon="live_tv" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29"
-                                        size="50"></ng-md-icon>
+                            <ng-md-icon icon="live_tv" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29" size="50"></ng-md-icon>
                         </div>
                         <div class="feature-icon">
-                            <ng-md-icon icon="kitchen" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29"
-                                        size="50"></ng-md-icon>
+                            <ng-md-icon icon="kitchen" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29" size="50"></ng-md-icon>
                         </div>
                         <div class="feature-icon">
-                            <ng-md-icon icon="wifi" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29"
-                                        size="50"></ng-md-icon>
+                            <ng-md-icon icon="wifi" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29" size="50"></ng-md-icon>
                         </div>
                         <div class="feature-icon">
-                            <ng-md-icon icon="local_parking" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29"
-                                        size="50"></ng-md-icon>
+                            <ng-md-icon icon="local_parking" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29" size="50"></ng-md-icon>
                         </div>
                         <div class="feature-icon">
-                            <ng-md-icon icon="smoke_free" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29"
-                                        size="50"></ng-md-icon>
+                            <ng-md-icon icon="smoke_free" style="display: inline-block; position: relative; margin: 0 auto; fill: #2b2a29" size="50"></ng-md-icon>
                         </div>
                     </div>
 
@@ -265,28 +267,22 @@
                     <br>
                     <div class="feature-icons-set">
                         <div class="feature-icon">
-                            <ng-md-icon icon="landscape" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
-                                        size="50"></ng-md-icon>
+                            <ng-md-icon icon="landscape" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;" size="50"></ng-md-icon>
                         </div>
                         <div class="feature-icon">
-                            <ng-md-icon icon="pool" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
-                                        size="50"></ng-md-icon>
+                            <ng-md-icon icon="pool" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;" size="50"></ng-md-icon>
                         </div>
                         <div class="feature-icon">
-                            <ng-md-icon icon="directions_bike" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
-                                        size="50"></ng-md-icon>
+                            <ng-md-icon icon="directions_bike" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;" size="50"></ng-md-icon>
                         </div>
                         <div class="feature-icon">
-                            <ng-md-icon icon="spa" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
-                                        size="50"></ng-md-icon>
+                            <ng-md-icon icon="spa" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;" size="50"></ng-md-icon>
                         </div>
                         <div class="feature-icon">
-                            <ng-md-icon icon="local_bar" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
-                                        size="50"></ng-md-icon>
+                            <ng-md-icon icon="local_bar" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;" size="50"></ng-md-icon>
                         </div>
                         <div class="feature-icon">
-                            <ng-md-icon icon="shopping_cart" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;"
-                                        size="50"></ng-md-icon>
+                            <ng-md-icon icon="shopping_cart" style="display: inline-block; position: relative; margin: 0 auto; fill: #d6b472;" size="50"></ng-md-icon>
                         </div>
                     </div>
                     <br>
@@ -295,20 +291,17 @@
                     <div class="small-line"></div>
                     <p class="content-text ">
 
-                        <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
-                                    size="25"></ng-md-icon>
+                        <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;" size="25"></ng-md-icon>
 
-                                    <span translate>pension.text.6</span>
+                        <span translate>pension.text.6</span>
                         <br>
                         <br>
-                        <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
-                                    size="25"></ng-md-icon>
-                                    <span translate>pension.text.7</span>
+                        <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;" size="25"></ng-md-icon>
+                        <span translate>pension.text.7</span>
                         <br>
                         <br>
-                        <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;"
-                                    size="25"></ng-md-icon>
-                                    <span translate>pension.text.8</span>
+                        <ng-md-icon icon="done" style="display: inline-block; position: relative; margin: 0 auto; fill: #000;" size="25"></ng-md-icon>
+                        <span translate>pension.text.8</span>
                     </p>
 
                 </section>
@@ -318,18 +311,17 @@
 
                     <div class="small-line"></div>
 
-                    <div class="book-form" >
+                    <div class="book-form">
                         <form name="penzionForm" role="form">
 
                             <div class="book-wrap" ng-hide="bookFinnish">
                                 <div class="row">
-                                    <label class="wrap four label" for="checkIn">
-                                        <ng-md-icon icon="date_range"
-                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
-                                                    size="25px"></ng-md-icon>
-                                        <span  translate>check.in</span>
-                                    </label>
+
                                     <div class="wrap four">
+                                        <label class="wrap four label" for="checkIn">
+                                            <ng-md-icon icon="date_range" style="display: inline-block; position: relative; fill: #f5eddc;" size="25px"></ng-md-icon>
+                                            <span translate>check.in</span>
+                                        </label>
                                         <div class="input-wrap">
                                             <datepicker date-format="dd.MM.yyyy" date-week-start-day="1" datepicker-mobile="true">
                                                 <input id="checkIn" class="date" type="text" ng-model="checkin" placeholder="{{today}}" required/>
@@ -338,96 +330,94 @@
                                     </div>
 
                                     <label class="wrap four label" for="checkOut">
-                                        <ng-md-icon icon="date_range"
-                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
-                                                    size="25px"></ng-md-icon>
+                                        <ng-md-icon icon="date_range" style="display: inline-block; position: relative; fill: #f5eddc;" size="25px"></ng-md-icon>
                                         <span translate>check.out</span>
                                     </label>
                                     <div class="wrap four">
                                         <div class="input-wrap">
                                             <datepicker date-format="dd.MM.yyyy" date-week-start-day="1" datepicker-mobile="true">
-                                                <input id="checkOut" class="date" type="text" ng-model="checkout"  placeholder="{{today}}" required/>
+                                                <input id="checkOut" class="date" type="text" ng-model="checkout" placeholder="{{today}}" required/>
                                             </datepicker>
                                         </div>
                                     </div>
 
-                                    <label class="wrap four label" for="amount">
-                                        <ng-md-icon icon="group"
-                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
-                                                    size="25px"></ng-md-icon>
-                                        <span translate>amount</span>
-                                    </label>
+
                                     <div class="wrap four">
+                                        <label class="wrap four label" for="amount">
+                                            <ng-md-icon icon="group" style="display: inline-block; position: relative; fill: #f5eddc;" size="25px"></ng-md-icon>
+                                            <span translate>amount</span>
+                                        </label>
                                         <div class="input-wrap">
                                             <select id="amount" name="amount" ng-model="amount" required>
                                                 <option value="" disabled selected hidden translate>select</option>
-                                                <option value="1" >1</option>
-                                                <option value="2" >2</option>
-                                                <option value="3" >3</option>
-                                                <option value="4" >4</option>
-                                                <option value="5" >5</option>
-                                                <option value="6" >6</option>
-                                                <option value="7" >7</option>
-                                                <option value="8" >8</option>
-                                                <option value="9" >9</option>
-                                                <option value="10" >10</option>
-                                                <option value="11" >11</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <label class="wrap label" for="name">
-                                        <ng-md-icon icon="person"
-                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
-                                                    size="25px"></ng-md-icon>
-                                        <span translate>name.and.surname</span>
-                                    </label>
+
                                     <div class="wrap">
+                                        <label class="wrap label" for="name">
+                                            <ng-md-icon icon="person" style="display: inline-block; position: relative; fill: #f5eddc;" size="25px"></ng-md-icon>
+                                            <span translate>name.and.surname</span>
+                                        </label>
                                         <div class="input-wrap">
                                             <input id="name" type="text" name="name" ng-model="name" class="form-control" required/>
                                         </div>
                                     </div>
 
-                                    <label class="wrap label" for="email">
-                                        <ng-md-icon icon="email"
-                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
-                                                    size="25px"></ng-md-icon>
-                                        <span  translate>email</span>
-                                    </label>
+
                                     <div class="wrap">
+                                        <label class="wrap label" for="email">
+                                            <ng-md-icon icon="email" style="display: inline-block; position: relative; fill: #f5eddc;" size="25px"></ng-md-icon>
+                                            <span translate>email</span>
+                                        </label>
                                         <div class="input-wrap">
                                             <input id="email" type="email" name="email" ng-model="email" class="form-control" required/>
                                         </div>
                                     </div>
 
-                                    <label class="wrap label" for="phone">
-                                        <ng-md-icon icon="phone"
-                                                    style="display: inline-block; position: relative; fill: #f5eddc;"
-                                                    size="25px"></ng-md-icon>
-                                        <span translate>phone</span>
-                                    </label>
+
                                     <div class="wrap">
+                                        <label class="wrap label" for="phone">
+                                            <ng-md-icon icon="phone" style="display: inline-block; position: relative; fill: #f5eddc;" size="25px"></ng-md-icon>
+                                            <span translate>phone</span>
+                                        </label>
                                         <div class="input-wrap">
-                                            <input id="phone" type="text" name="phone" ng-model="phone" placeholder=""/>
+                                            <input id="phone" type="text" name="phone" ng-model="phone" placeholder="" />
                                         </div>
                                     </div>
-                                    <label class="wrap label" for="cb1">
-                                        <input type="checkbox" name="cb" id="cb1" ng-model="suhlas" required>
-                                        <span translate>agree.terms</span>
-                                    </label>
                                 </div>
                             </div>
 
                             <div class="booking-done" ng-if="bookFinnish">
                                 <ng-md-icon icon="check_circle" style="display: block; position: relative;
                                             background: #78fa89; border-radius: 50%;
-                                            width: 150px; height:150px;fill: rgb(43, 42, 41);"
-                                            size="150"></ng-md-icon>
+                                            width: 150px; height:150px;fill: rgb(43, 42, 41);" size="150"></ng-md-icon>
                                 <h4 translate>booking.text.1</h4>
                                 <h4 translate>booking.text.2</h4>
                             </div>
 
+                            <div class="book-wrap" ng-hide="bookFinnish || loader || showError" style="margin: 1em auto;">
+                                <div class="row">
+                                    <input type="checkbox" name="suhlas" id="suhlas" ng-model="suhlas" required>
+                                    <label class="wrap label gdpr-label check" for="suhlas">
+                                        <p translate>gdpr.text.normal</p>
+                                        <a ng-href="#!/gdpr" target="_self" translate>privacy.policy</a>
+                                    </label>
+                                </div>
+                            </div>
 
                             <div class="book-wrap" ng-hide="bookFinnish">
                                 <div class="actions">
@@ -452,21 +442,20 @@
                     <div class="info">
                         <div class="item">
                             <ng-md-icon icon="settings_phone" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29"
-                                        size="4em"></ng-md-icon>
+                                size="3em"></ng-md-icon>
                             <a href="tel:00421948028025">(+421) 0948 028 025</a>
                         </div>
                         <div class="item">
-                            <ng-md-icon icon="mail_outline" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29"
-                                        size="4em"></ng-md-icon>
+                            <ng-md-icon icon="mail_outline" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29" size="3em"></ng-md-icon>
                             <a href="mailto:penzion&#64minipivovartatras&#46sk" class="email">penzion@minipivovartatras.sk</a>
                         </div>
                         <div class="item" style="paddging-top: 1em;">
-                            <img src="/components/assets/imgs/tripadvisor.png" style="display: block; width: 4em; margin: 0 auto;"/>
-                            <a href="https://www.tripadvisor.sk/Restaurant_Review-g274938-d11948183-Reviews-Restauracny_minipivovar_TATRAS-Poprad_Presov_Region.html" class="email">tripadvisor Reviews</a>
+                            <img src="/components/assets/imgs/tripadvisor.png" style="display: block; width: 4em; margin: 0 auto;" />
+                            <a href="https://www.tripadvisor.sk/Restaurant_Review-g274938-d11948183-Reviews-Restauracny_minipivovar_TATRAS-Poprad_Presov_Region.html"
+                                class="email">tripadvisor Reviews</a>
                         </div>
                         <div class="item" style="paddging-top: 1em;">
-                            <ng-md-icon icon="facebook" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;"
-                                        size="3em"></ng-md-icon>
+                            <ng-md-icon icon="facebook" class="icon" style="display: block; position: relative; margin: 0 auto; fill: #2b2a29;" size="3em"></ng-md-icon>
                             <a href="https://www.facebook.com/minipivovartatras" class="email">facebook.com/minipivovartatras</a>
                         </div>
                     </div>
@@ -474,26 +463,23 @@
 
                 <section id="parking" class="bg-white">
                     <div class="parking">
-                        <img src="./components/assets/imgs/parking.png" width="100%" height="auto" alt="Parking Pension TATRAS"/>
-                        <img src="./components/assets/imgs/parking_2.png" width="100%" height="auto" alt="Parking Pension TATRAS"/>
+                        <img src="./components/assets/imgs/parking.png" width="100%" height="auto" alt="Parking Pension TATRAS" />
+                        <img src="./components/assets/imgs/parking_2.png" width="100%" height="auto" alt="Parking Pension TATRAS" />
                     </div>
                     <div class="map" style="min-height: 60vh;">
                         <div style="width:100%;max-width:100%;overflow:hidden;height:100%;color:red;">
                             <div id="gmap_display2" style="height:100%; width:100%;max-width:100%;">
-                                <iframe src="https://www.google.com/maps/d/embed?mid=1b_YQf7k4nxt6XWl4QRVGXnjQ5Ow&hl=sk" " style="height:100%;width:100%;border:0;" frameborder="0" allowfullscreen></iframe>
+                                <iframe src="https://www.google.com/maps/d/embed?mid=1b_YQf7k4nxt6XWl4QRVGXnjQ5Ow&hl=sk" " style="height:100%;width:100%;border:0;
+                                    " frameborder="0 " allowfullscreen></iframe>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 <!-- include FOOTER -->
-                <div ng-include="'templates/footer.html'"></div>
+                <div ng-include=" 'templates/footer.html' "></div>
                 <!-- end of FOOTER include -->
             </div>
         </div>
     </div>
 </div>
-
-
-
-

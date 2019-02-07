@@ -21,6 +21,7 @@ angular.module('myApp', [
     'spaCtrl',
     'shopCtrl',
     'sutazCtrl',
+    'gdprCtrl',
     'adminCtrl'
 ])
     .value('duScrollDuration', 200)
@@ -62,7 +63,7 @@ angular.module('myApp', [
         });
         $routeProvider.when('/gdpr', {
             templateUrl: 'templates/gdpr.html',
-            controller: 'adminCtrl'
+            controller: 'gdprCtrl'
         });
 
         $routeProvider.otherwise({redirectTo: '/welcome'});

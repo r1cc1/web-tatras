@@ -1,14 +1,6 @@
-<div class="loading" ng-class="{'close': !isloading}">
-    <div class="loading-wrap">
-        <div class="loading-align">
-            <div class="loading-content">
-                <div class="loading-logo"></div>
-                <div class="loading-progress" ng-class="{'load': isloading}">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<!-- include Loading Component -->
+<div ng-include="'templates/loading.html'"></div>
+<!-- end of Loading include -->
 
 <div ng-cloak class="wrapper" ng-class="{'init': isloading}">
 
@@ -199,7 +191,7 @@
                 </section>
 
                 <section id="contact" class="content-main content-kontakt bg bg-beige">
-                    <h1 class="main-title" translate>contact</h1>
+                    <h1 class="main-title color-white" translate>contact</h1>
                     <div class="small-line"></div>
 
                     <div class="info">
